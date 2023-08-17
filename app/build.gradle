@@ -1,0 +1,169 @@
+//****************************************
+//************ app 壳的配置文件 ************
+//****************************************
+
+import com.live.vquonline.buildsrc.*
+
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'com.alibaba.arouter'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'dagger.hilt.android.plugin'
+
+android {
+    compileSdkVersion ProjectBuildConfig.compileSdkVersion
+    buildToolsVersion ProjectBuildConfig.buildToolsVersion
+    dexOptions {
+        dexInProcess true
+        preDexLibraries true
+        javaMaxHeapSize "6g"
+    }
+    defaultConfig {
+        applicationId ProjectBuildConfig.applicationId
+        minSdkVersion ProjectBuildConfig.minSdkVersion
+        targetSdkVersion ProjectBuildConfig.targetSdkVersion
+        versionCode ProjectBuildConfig.versionCode
+        versionName ProjectBuildConfig.versionName
+        testInstrumentationRunner DependencyConfig.AndroidX.AndroidJUnitRunner
+        multiDexKeepProguard file("multidexKeep.pro")
+
+        ndk {
+            // 设置支持的SO库架构
+//            abiFilters 'armeabi', 'x86', 'armeabi-v7a', 'x86_64', 'arm64-v8a','arm64-v8a','arm64-v8a'
+            abiFilters 'armeabi-v7a','arm64-v8a'
+        }
+        manifestPlaceholders = [qqappid: "1112111172"]
+    }
+
+//    androidExtensions {
+//        experimental = true
+//    }
+
+
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+
+    signingConfigs {
+        release {
+
+            storeFile file("xinyu.jks")
+            storePassword 'xinyu123'
+            keyAlias 'xinyu'
+            keyPassword 'xinyu123'
+
+            //【重要】下面这两句必须要加，要不然会crash
+            v1SigningEnabled true
+            v2SigningEnabled true
+        }
+        debug {
+            //TODO 修改为你的release签名文件信息
+            storeFile file("xinyu.jks")
+            storePassword 'xinyu123'
+            keyAlias 'xinyu'
+            keyPassword 'xinyu123'
+            //TODO 你的debug签名文件信息
+
+            //【重要】下面这两句必须要加，要不然会crash
+            v1SigningEnabled true
+            v2SigningEnabled true
+        }
+    }
+
+    buildTypes {
+        // 对应 ALPHA 版本
+        debug {
+            buildConfigField "String", "VERSION_TYPE", "\"${ProjectBuildConfig.Version.ALPHA}\""
+            signingConfig signingConfigs.debug
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        beta {
+            buildConfigField "String", "VERSION_TYPE", "\"${ProjectBuildConfig.Version.BETA}\""
+//            signingConfig signingConfigs.releaseConfig
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        release {
+            buildConfigField "String", "VERSION_TYPE", "\"${ProjectBuildConfig.Version.RELEASE}\""
+            signingConfig signingConfigs.release
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    // 自定义打包apk的文件名
+    android.applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+            if (outputFileName != null && outputFileName.endsWith('.apk')) {
+                outputFileName = "${ProjectBuildConfig.applicationId}" +
+                        "_${ProjectBuildConfig.versionCode}" +
+                        "(${ProjectBuildConfig.versionName})" +
+                        "_${variant.buildType.name}" +
+                        ".apk"
+            }
+        }
+
+        variant.mergeAssetsProvider.configure {
+            doLast {
+                delete(fileTree(dir: outputDir,
+                        includes: ['model/ai_bgseg_green.bundle',
+                                   'model/ai_face_processor_lite.bundle',
+                                   'model/ai_hairseg.bundle',
+                                   'model/ai_hand_processor.bundle',
+                                   'model/ai_human_processor_mb_fast.bundle',
+//                                   'model/ai_face_processor.bundle',
+                                   'model/ai_human_processor.bundle',
+                                   'graphics/controller_cpp.bundle',
+                                   'graphics/fuzzytoonfilter.bundle',
+                                   'graphics/body_slim.bundle',
+                                   'graphics/face_makeup.bundle',
+                                   'graphics/tongue.bundle',
+                                   'graphics/fxaa.bundle']))
+            }
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+
+    if (!ProjectBuildConfig.isAppMode) {
+        // 有业务组件时 把这个去掉 这里只是为了使用base里的依赖库
+        implementation project(path: ':module_home')
+        implementation project(path: ':module_login')
+        implementation project(path: ':module_dynamic')
+        implementation project(path: ':module_info')
+        implementation project(path: ':module_setting')
+        implementation project(path: ':module_message')
+        implementation project(path: ':module_relation')
+        implementation project(path: ':module_contact')
+        implementation project(path: ':module_anchor')
+        implementation project(path: ':module_vip')
+        implementation project(path: ':lib_common')
+        implementation project(path: ':lib_resources')
+        implementation project(path: ':module_mine')
+        implementation project(path: ':module_bill')
+//        implementation project(path: ':module_agora')
+        implementation project(path: ':module_auth')
+        implementation project(path: ':module_agora_2')
+        implementation project(path: ':video-range-slider')
+    } else {
+        implementation project(path: ':lib_common')
+    }
+    implementation DependencyConfig.JetPack.HiltCore
+
+    kapt DependencyConfig.GitHub.AutoServiceAnnotations
+    kapt DependencyConfig.JetPack.HiltApt
+    kapt DependencyConfig.JetPack.HiltAndroidx
+}

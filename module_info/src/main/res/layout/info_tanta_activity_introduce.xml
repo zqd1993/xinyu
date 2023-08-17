@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    tools:ignore="MissingDefaultResource,ResourceName">
+
+    <include
+        android:id="@+id/includeTitle"
+        layout="@layout/include_toolbar" />
+
+    <com.mshy.VInterestSpeed.common.ui.view.ShapeRelativeLayout
+        android:id="@+id/rl_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginRight="12dp"
+        android:minHeight="148dp"
+        app:layout_constraintTop_toBottomOf="@+id/includeTitle"
+        app:srl_layoutRadius="10dp"
+        app:srl_solidColor="@color/color_F5F5F5">
+
+        <EditText
+            android:id="@+id/et_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginBottom="40dp"
+            android:background="@null"
+            android:gravity="top"
+            android:hint="简单介绍一下自己吧…"
+            android:maxLength="100"
+            android:minHeight="95dp"
+            android:textColor="@color/color_273145"
+            android:textColorHint="@color/color_D3D1D7"
+            android:textSize="14sp" />
+
+
+    </com.mshy.VInterestSpeed.common.ui.view.ShapeRelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_hint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="12dp"
+        android:layout_marginBottom="12dp"
+        android:text="0/100"
+        android:textColor="@color/color_D3D1D7"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/rl_content"
+        app:layout_constraintRight_toRightOf="@+id/rl_content" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

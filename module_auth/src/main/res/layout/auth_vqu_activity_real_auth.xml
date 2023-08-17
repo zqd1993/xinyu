@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_FFFFFF">
+
+
+    <com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout
+        android:id="@+id/sll_auth_vqu_real_auth_img_bg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:sll_ratio="0.6946">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@mipmap/ic_auth_background" />
+    </com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout>
+
+    <com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sll_auth_vqu_real_auth_img_bg"
+        android:layout_marginTop="-16dp"
+        android:orientation="vertical"
+        app:sll_solidColor="@color/color_FFFFFF"
+        app:sll_topLeftRadius="16dp"
+        app:sll_topRightRadius="16dp">
+
+        <com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginRight="24dp"
+            app:sll_layoutRadius="6dp"
+            app:sll_solidColor="@color/color_FFF1F8">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:src="@mipmap/ic_auth_warn" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="@dimen/dp_10"
+                android:text="实名仅用验证您是否为真人用户，不会对信息做任何采集与保留，请放心认证。"
+                android:textColor="@color/color_222222"
+                android:textSize="12sp" />
+        </com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout>
+
+        <com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="16dp"
+            android:orientation="horizontal"
+            app:sll_layoutRadius="12dp"
+            app:sll_solidColor="@color/color_F5F5F5">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:text="真实姓名："
+                android:textColor="@color/color_222222"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/set_auth_vqu_real_auth_name"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="16dp"
+                android:background="@android:color/transparent"
+                android:gravity="center_vertical"
+                android:hint="请输入真实姓名"
+                android:singleLine="true"
+                android:textColor="@color/color_222222"
+                android:textColorHint="@color/color_BBBBBB"
+                android:textSize="14sp" />
+
+        </com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout>
+
+        <com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="16dp"
+            android:orientation="horizontal"
+            app:sll_layoutRadius="12dp"
+            app:sll_solidColor="@color/color_F5F5F5">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:text="身份证号："
+                android:textColor="@color/color_222222"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/set_auth_vqu_real_auth_id"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/vqu_shape_f7f8fa_r25"
+                android:digits="0123456789xX"
+                android:gravity="center_vertical"
+                android:hint="请输入身份证号码"
+                android:maxLength="18"
+                android:singleLine="true"
+                android:textColor="@color/color_273145"
+                android:textColorHint="@color/color_D3D1D7"
+                android:textSize="14sp" />
+        </com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout>
+
+    </com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout>
+
+    <Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="0dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_auth_real_auth_finish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:paddingTop="5dp"
+            android:paddingRight="14dp"
+            android:paddingBottom="5dp"
+            android:src="@mipmap/ic_back_white" />
+
+    </Toolbar>
+
+    <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
+        android:id="@+id/stv_auth_vqu_real_auth_commit"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="47.5dp"
+        android:layout_marginRight="47.5dp"
+        android:layout_marginBottom="54dp"
+        android:gravity="center"
+        android:text="马上认证"
+        android:textColor="@color/color_FFFFFF"
+        android:textSize="18sp"
+        app:stv_solidColor="@color/color_FF7AC2"
+        app:stv_layoutRadius="12dp"
+        app:stv_openSelector="true"
+        app:stv_solidTouchColor="@color/color_D3D1D7"
+         />
+</RelativeLayout>

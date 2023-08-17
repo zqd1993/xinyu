@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_FFFFFF">
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="100dp">
+
+            <com.mshy.VInterestSpeed.common.ui.view.ShapeConstraintLayout
+                android:id="@+id/scl_vqu_bill_recharge_diamond_parent"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintDimensionRatio="375:240"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/bg_bill_recharge_top"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <TextView
+                    android:id="@+id/tv_tanta_bill_recharge_diamond_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginBottom="92dp"
+                    android:includeFontPadding="false"
+                    android:textColor="@color/color_FFFFFF"
+                    android:textSize="36sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    tools:text="402208" />
+
+                <TextView
+                    android:id="@+id/tv_vqu_bill_recharge_diamond_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/mine_my_diamond"
+                    android:textColor="@color/color_FFFFFF"
+                    android:textSize="14sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_tanta_bill_recharge_diamond_num" />
+            </com.mshy.VInterestSpeed.common.ui.view.ShapeConstraintLayout>
+
+            <com.mshy.VInterestSpeed.common.ui.view.ShapeConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-40dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/scl_vqu_bill_recharge_diamond_parent"
+                app:scl_solidColor="@color/color_FFFFFF"
+                app:scl_topLeftRadius="20dp"
+                app:scl_topRightRadius="20dp">
+
+                <View
+                    android:id="@+id/v_first_recharge_banner"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="14dp"
+                    android:layout_marginEnd="14dp"
+                    android:background="@mipmap/bill_vqu_first_recharge_ad"
+                    android:visibility="gone"
+                    app:layout_constraintDimensionRatio="347:56"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/tv_vqu_bill_recharge_diamond_tips"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/mine_vqu_recharge_diamond_tips"
+                    android:textColor="@color/color_textDesc"
+                    android:textSize="12sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/v_first_recharge_banner" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_tanta_bill_recharge_options_list"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="9dp"
+                    android:layout_marginRight="12dp"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_vqu_bill_recharge_diamond_tips"
+                    app:spanCount="3"
+                    tools:listitem="@layout/bill_tanta_item_recharge_options" />
+
+                <TextView
+                    android:id="@+id/tv_bill_vqu_recharge_pay_type_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="20dp"
+                    android:text="请选择支付方式："
+                    android:textColor="@color/color_textDesc"
+                    android:textSize="12sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/rv_tanta_bill_recharge_options_list" />
+
+                <com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout
+                    android:id="@+id/sll_vqu_bill_recharge_pay_type_parent"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginRight="12dp"
+                    android:orientation="vertical"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_bill_vqu_recharge_pay_type_text">
+
+                    <com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout
+                        android:id="@+id/ll_tanta_wechat_pay"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingLeft="12dp"
+                        android:paddingRight="12dp"
+                        app:sll_layoutRadius="6dp"
+                        app:sll_solidColor="@color/color_F5F5F5">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:drawableLeft="@mipmap/ic_common_vqu_pay_dialog_wechat_logo"
+                            android:drawablePadding="7dp"
+                            android:gravity="center_vertical"
+                            android:text="@string/common_vqu_wechat_pay"
+                            android:textColor="@color/color_textMain"
+                            android:textSize="14sp" />
+
+                        <CheckBox
+                            android:id="@+id/cb_tanta_wechat"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:button="@drawable/tanta_selector_orange_tick"
+                            android:checked="true"
+                            android:clickable="false"
+                            android:enabled="false" />
+
+                    </com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout>
+
+
+                    <com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout
+                        android:id="@+id/ll_tanta_alipay_pay"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="8dp"
+                        android:orientation="horizontal"
+                        android:paddingLeft="12dp"
+                        android:paddingRight="12dp"
+                        app:sll_layoutRadius="6dp"
+                        app:sll_solidColor="@color/color_F5F5F5">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableStart="@mipmap/ic_common_vqu_pay_dialog_alipay_logo"
+                            android:drawablePadding="7dp"
+                            android:gravity="center_vertical"
+                            android:text="@string/common_vqu_alipay_pay"
+                            android:textColor="@color/color_textMain"
+                            android:textSize="14sp" />
+
+                        <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:paddingLeft="7dp"
+                            android:paddingTop="3dp"
+                            android:paddingRight="7dp"
+                            android:paddingBottom="3dp"
+                            android:text="首单随机立减，最高免单"
+                            android:textColor="@color/white"
+                            android:textSize="11sp"
+                            android:visibility="gone"
+                            app:stv_layoutRadius="12dp"
+                            app:stv_solidColor="@color/color_F4003F" />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_weight="1" />
+
+                        <CheckBox
+                            android:id="@+id/cb_tanta_alipay"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:button="@drawable/tanta_selector_orange_tick"
+                            android:clickable="false"
+                            android:enabled="false" />
+
+                    </com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout>
+
+                </com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_bill_tanta_recharge_agreement"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginTop="17dp"
+                    android:layout_marginRight="14dp"
+                    android:layout_marginBottom="193dp"
+                    android:autoLink="web"
+                    android:lineSpacingMultiplier="1.3"
+                    android:textColor="@color/color_A3AABE"
+                    android:textSize="10sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/sll_vqu_bill_recharge_pay_type_parent"
+                    tools:text="@string/vqu_bill_recharge_agreement" />
+
+            </com.mshy.VInterestSpeed.common.ui.view.ShapeConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
+        android:id="@+id/stv_bill_tanta_recharge_pay"
+        android:layout_width="0dp"
+        android:layout_height="49dp"
+        android:layout_marginLeft="47dp"
+        android:layout_marginRight="47dp"
+        android:layout_marginBottom="44dp"
+        android:gravity="center"
+        android:text="@string/vqu_bill_recharge_now"
+        android:textColor="@color/color_FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:stv_layoutRadius="12dp"
+        app:stv_solidColor="@color/color_FE8A34" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <include
+            android:id="@+id/tb_tanta_bill_bar"
+            layout="@layout/include_toolbar" />
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

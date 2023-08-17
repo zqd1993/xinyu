@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="36dp"
+    android:gravity="center"
+    android:textSize="14sp">
+
+    <com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="28dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        app:sll_layoutRadius="14dp">
+
+        <TextView
+            android:id="@+id/vqu_tv_main_call"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxEms="4"
+            android:maxLines="1"
+            android:text="Au.痞sasdadadasd/程"
+            android:textColor="#FF7AC2"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" 和 "
+            android:textColor="@color/color_FFFFFF"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/vqu_tv_vice_call"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxEms="4"
+            android:maxLines="1"
+            android:text="小可爱"
+            android:textColor="#FF7AC2"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" 快乐的开聊了"
+            android:textColor="@color/color_FFFFFF"
+            android:textSize="12sp" />
+    </com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout>
+</RelativeLayout>

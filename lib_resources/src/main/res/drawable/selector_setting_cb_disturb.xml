@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_checked="true" android:drawable="@mipmap/resources_tanta_common_ic_dis_on"/>
+    <item android:state_selected="true" android:drawable="@mipmap/resources_tanta_common_ic_dis_on"/>
+    <item android:state_checked="false" android:drawable="@mipmap/resources_tanta_common_ic_dis_off"/>
+    <item  android:drawable="@mipmap/resources_tanta_common_ic_dis_off"/>
+</selector>

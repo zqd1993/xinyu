@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="12dp"
+    android:layout_marginRight="12dp"
+    android:background="@color/color_FFFFFF"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="1dp"
+    app:elevation="0dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_hello_template_title_parent"
+            android:layout_width="0dp"
+            android:layout_height="54dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <TextView
+                android:id="@+id/tv_hello_template_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="12dp"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:textColor="@color/color_273145"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/iv_hello_template_edit"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="我的模板" />
+
+            <TextView
+                android:id="@+id/cb_hello_template_use"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/vqu_selector_tick"
+                android:drawablePadding="4dp"
+                android:text="@string/anchor_vqu_use_this_template"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_hello_template_delete"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:layout_marginRight="12dp"
+                android:src="@mipmap/ic_vqu_delete_bin"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/cb_hello_template_use"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_hello_template_edit"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:layout_marginRight="12dp"
+                android:src="@mipmap/ic_vqu_eidt_pan"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/iv_hello_template_delete"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/v_line"
+            android:layout_width="0dp"
+            android:layout_height="0.5dp"
+            android:background="#F5F4F7"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cl_hello_template_title_parent" />
+
+        <TextView
+            android:id="@+id/tv_hello_template_desc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/color_273145"
+            android:textSize="12sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/v_line"
+            tools:text="打不死的是信念，绕不开的是变化~" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:paddingBottom="20dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_hello_template_desc">
+
+
+            <ImageView
+                android:id="@+id/riv_hello_template_img"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.mshy.VInterestSpeed.common.ui.view.ShapeRelativeLayout
+                android:id="@+id/fl_hello_template_video_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                app:layout_constraintLeft_toRightOf="@id/riv_hello_template_img"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srl_layoutRadius="10dp">
+
+                <com.mshy.VInterestSpeed.common.ui.view.RoundAngleImageView
+                    android:id="@+id/riv_hello_template_video"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:scaleType="centerCrop"
+                    app:raiv_angle="10dp" />
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_centerInParent="true"
+                    android:src="@mipmap/ic_tanta_video_play" />
+            </com.mshy.VInterestSpeed.common.ui.view.ShapeRelativeLayout>
+
+            <com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout
+                android:id="@+id/fl_hello_template_voice_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="22dp"
+                android:layout_marginLeft="6dp"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/fl_hello_template_video_parent"
+                app:sll_layoutRadius="11dp"
+                app:sll_solidColor="@color/color_FF7AC2">
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="2dp"
+                    android:src="@mipmap/ic_tanta_info_stop" />
+
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="6dp"
+                    android:src="@mipmap/ic_tanta_achor_voice_wave" />
+
+                <TextView
+                    android:id="@+id/tv_hello_template_voice_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right|center_vertical"
+                    android:layout_marginLeft="6dp"
+                    android:layout_marginRight="8dp"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    tools:text="8''" />
+            </com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout>
+
+            <ImageView
+                android:id="@+id/iv_hello_template_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_vqu_anchor_hello_status_checking"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

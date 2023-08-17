@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@color/white">
+
+    <include
+        android:id="@+id/includeTitle"
+        layout="@layout/include_toolbar" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="406dp"
+        android:layout_marginStart="62dp"
+        android:layout_marginTop="62dp"
+        android:layout_marginEnd="62dp"
+        android:background="#FFEEEEEE"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/includeTitle">
+
+        <VideoView
+            android:id="@+id/video_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+
+    </androidx.cardview.widget.CardView>
+
+    <com.waynell.videorangeslider.RangeSlider
+        android:id="@+id/range_slider"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_marginStart="62dp"
+        android:layout_marginEnd="62dp"
+        android:layout_marginBottom="66dp"
+        android:background="@drawable/bg_radius_white_8"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:leftThumbDrawable="@mipmap/ic_slide_left"
+        app:leftThumbIndex="0"
+        app:lineColor="#FFF4003F"
+        app:lineHeight="2dp"
+        app:maskColor="@color/transparent"
+        app:rightThumbDrawable="@mipmap/ic_slide_right"
+        app:rightThumbIndex="100"
+        app:thumbWidth="13dp"
+        app:tickCount="100" />
+
+    <TextView
+        android:id="@+id/tv_crop_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/color_A3AABE"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/range_slider"
+        tools:text="当前截取时长:55秒" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.live.module.contact">
+
+    <application>
+
+        <activity
+            android:name=".activity.ContactTantaMyContactActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ContactTantaDailyActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ContactTantaExportActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ContactTantaInvitedRecordActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.ContactTantaInvitedRecordSearchActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ContactTantaFriendValueActivity"
+            android:screenOrientation="portrait" />
+
+    </application>
+
+</manifest>

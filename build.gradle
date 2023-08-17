@@ -1,0 +1,47 @@
+import com.live.vquonline.buildsrc.*
+
+buildscript {
+    ext {
+        kotlin_version = '1.5.10'
+    }
+    repositories {
+        google()
+        maven { url 'http://maven.faceunity.com/repository/maven-public/' }
+        maven { url 'https://repo1.maven.org/maven2/' }
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        maven { url 'https://maven.aliyun.com/nexus/content/repositories/jcenter' }
+        mavenCentral()
+        maven { url 'https://maven.google.com' }
+        // 配置HMS Core SDK的Maven仓地址。
+        maven {url 'https://developer.huawei.com/repo/'}//华为
+
+    }
+    dependencies {
+        classpath ProjectPluginManager.AndroidToolsPlugin
+        classpath ProjectPluginManager.KotlinPlugin
+        classpath ProjectPluginManager.ARouterRegister
+        classpath ProjectPluginManager.HiltPlugin
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.10'
+        // 增加agcp插件配置。
+        classpath 'com.huawei.agconnect:agcp:1.5.2.300'//华为
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        maven { url 'http://maven.faceunity.com/repository/maven-public/' }
+        maven { url 'https://repo1.maven.org/maven2/' }
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        maven { url 'https://maven.aliyun.com/nexus/content/repositories/jcenter' }
+        maven { url "https://jitpack.io" }
+        mavenCentral()
+        // 配置HMS Core SDK的Maven仓地址。
+        maven {url 'https://developer.huawei.com/repo/'}//华为
+
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

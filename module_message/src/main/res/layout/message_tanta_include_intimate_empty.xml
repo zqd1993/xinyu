@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/ll_empty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/resources_tanta_message_intimate_empty" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/message_vqu_intimate_empty_hint"
+            android:textColor="@color/color_999999"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/message_vqu_intimate_chat_hint"
+            android:textColor="@color/color_999999"
+            android:textSize="14sp" />
+
+        <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
+            android:id="@+id/tv_chat"
+            android:layout_width="120dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_marginTop="24dp"
+            android:gravity="center"
+            android:text="@string/message_vqu_intimate_go_chat"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:stv_layoutRadius="12dp"
+            app:stv_solidColor="@color/color_FF7AC2" />
+    </LinearLayout>
+</FrameLayout>

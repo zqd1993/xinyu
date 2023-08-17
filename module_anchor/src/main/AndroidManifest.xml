@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.live.module.anchor">
+
+    <application>
+        <activity
+            android:name=".activity.AnchorVquSettingsMenuActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.AnchorTantaRateSettingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.AnchorVquHelloSettingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.AnchorVquNewHelloTemplateActivity"
+            android:screenOrientation="portrait" />
+    </application>
+</manifest>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_FFFFFF">
+
+        <com.mshy.VInterestSpeed.common.ui.view.NoTouchViewPager
+            android:id="@+id/common_vqu_main_viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            app:layout_constraintBottom_toTopOf="@id/common_vqu_bottom_tab"
+            app:layout_constraintTop_toTopOf="parent" />
+        <ImageView
+            android:id="@+id/iv_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="4dp"
+            android:visibility="gone"
+            android:layout_marginBottom="12dp"
+            android:src="@mipmap/ic_common_totop"
+            app:layout_constraintBottom_toTopOf="@+id/banner_conversation"
+            app:layout_constraintRight_toRightOf="parent" />
+        <com.youth.banner.Banner
+            android:id="@+id/banner_conversation"
+            android:layout_width="142dp"
+            android:layout_height="44dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="60dp"
+            android:visibility="gone"
+            android:background="@drawable/shape_vqu_bg_home_message"
+            app:layout_constraintBottom_toTopOf="@+id/common_vqu_bottom_tab"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout
+            android:id="@+id/vqu_ll_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="39dp"
+            android:layout_gravity="bottom"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginBottom="13dp"
+            android:gravity="center_vertical"
+            app:layout_constraintBottom_toTopOf="@+id/common_vqu_bottom_tab"
+            android:orientation="horizontal"
+            android:paddingStart="12dp"
+            android:paddingEnd="10dp"
+            app:sll_layoutRadius="10dp"
+            app:sll_solidColor="@color/color_FFF1F8">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/home_vqu_main_perfect_data"
+                android:textColor="@color/color_222222"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/vqu_get_red_pakeage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/home_vqu_main_send_diamonds"
+                android:textColor="@color/color_FF7AC2"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="，你有"
+                android:textColor="@color/color_222222"
+                android:textSize="12sp" />
+            <TextView
+                android:id="@+id/vqu_get_diamond"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="金币"
+                android:textColor="@color/color_FF7AC2"
+                android:textSize="12sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="待领取"
+                android:textColor="@color/color_222222"
+                android:textSize="12sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="end|center_vertical"
+                >
+
+                <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
+                    android:id="@+id/vqu_btn_edit"
+                    android:layout_width="48dp"
+                    android:layout_height="25dp"
+                    android:textColor="@color/white"
+                    app:stv_startColor="@color/color_FF7AC2"
+                    app:stv_endColor="@color/color_FF7AC2"
+                    app:stv_layoutRadius="8dp"
+                    android:gravity="center"
+                    android:text="@string/home_vqu_main_goto"
+                    android:textSize="12sp" />
+
+                <ImageView
+                    android:id="@+id/vqu_iv_delete"
+                    android:layout_width="29dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_height="29dp"
+                    android:scaleType="center"
+                    android:src="@mipmap/resources_tanta_main_delete" />
+            </LinearLayout>
+
+        </com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout>
+        <me.majiajie.pagerbottomtabstrip.PageNavigationView
+            android:id="@+id/common_vqu_bottom_tab"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@drawable/resources_tab_background"
+            android:elevation="8dp"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <include
+        android:id="@+id/guide_layout"
+        layout="@layout/common_vqu_layout_guide"
+        android:visibility="gone" />
+</FrameLayout>

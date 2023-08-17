@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingTop="20dp"
+        android:paddingBottom="30dp"
+        app:sll_layoutRadius="12dp"
+        app:sll_solidColor="@color/color_FFFFFF">
+
+        <ImageView
+            android:id="@+id/iv_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_vqu_common_teen" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:gravity="center"
+            android:text="@string/common_vqu_teenmode_tip"
+            android:textColor="@color/color_273145"
+            android:textSize="16dp" />
+
+        <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
+            android:id="@+id/tv_remind"
+            android:layout_width="240dp"
+            android:layout_height="49dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="@string/common_vqu_teenmode_not"
+            android:textColor="@color/white"
+            app:stv_layoutRadius="12dp"
+            app:stv_solidColor="@color/color_FF7AC2" />
+
+        <TextView
+            android:id="@+id/tv_enter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center_vertical"
+            android:drawableRight="@mipmap/ic_tanta_arrow_right"
+            android:drawablePadding="6dp"
+            android:text="@string/common_vqu_teenmode_enter"
+            android:textColor="@color/color_A3AABE"
+            android:textSize="13sp" />
+
+    </com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout>
+</FrameLayout>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="base_colorPrimary">#FFFFFF</color>
+    <color name="base_colorPrimaryDark">#FFFFFF</color>
+    <color name="base_colorAccent">#FFFFFF</color>
+
+    <!--  渐变色  -->
+    <color name="common_btn_start_color">#FF0084</color>
+    <color name="common_btn_end_color">#FF3A00</color>
+
+    <color name="common_btn_white_color">#FFFFFF</color>
+    <color name="common_text_white_color">#FFFFFF</color>
+    <color name="common_layout_color">#2A2935</color>
+    <color name="common_main_layout_color">#1C1D23</color>
+    <color name="common_layout_text_color">#9F9DA5</color>
+
+    <color name="common_select_border_color">#EEEEEE</color>
+</resources>

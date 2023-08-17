@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@android:color/transparent" />
+    <item>
+        <bitmap
+
+            android:scaleType="centerCrop"
+            android:src="@mipmap/cover_1080" />
+    </item>
+    <item
+        android:width="178.5dp"
+        android:height="135.5dp"
+        android:gravity="center_horizontal"
+        android:top="200dp">
+        <bitmap
+            android:width="178.5dp"
+            android:height="135.5dp"
+            android:top="250dp"
+            android:src="@mipmap/icon_login_logo" />
+    </item>
+
+<!--    <item-->
+<!--        android:width="70dp"-->
+<!--        android:height="70dp"-->
+<!--        android:bottom="83dp"-->
+<!--        android:gravity="bottom|center_horizontal">-->
+<!--        <bitmap android:src="@mipmap/icon_cover_logo" />-->
+<!--    </item>-->
+</layer-list>

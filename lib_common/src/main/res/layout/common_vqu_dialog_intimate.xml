@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center">
+
+    <com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout
+        android:id="@+id/iv_bg"
+        android:layout_width="321dp"
+        android:layout_height="263dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="35dp"
+        app:sll_solidColor="@color/white"
+        app:sll_layoutRadius="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/view_white"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/vqu_shape_white_12_bg"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_bg"
+        app:layout_constraintLeft_toLeftOf="@+id/iv_bg"
+        app:layout_constraintRight_toRightOf="@+id/iv_bg"
+        app:layout_constraintTop_toTopOf="@+id/iv_bg" />
+
+    <ImageView
+        android:id="@+id/iv_top"
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:src="@mipmap/ic_intimate_level_bg_top"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:gravity="center_vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_top"
+        app:layout_constraintLeft_toLeftOf="@+id/iv_top"
+        app:layout_constraintRight_toRightOf="@+id/iv_top"
+        app:layout_constraintTop_toTopOf="@+id/iv_top">
+
+        <RelativeLayout
+            android:id="@+id/rl_right"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="-10dp"
+            android:layout_toRightOf="@+id/rl_left"
+            android:background="@drawable/shape_tanta_circle_head_bg_right">
+
+            <ImageView
+                android:id="@+id/iv_right"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_centerInParent="true" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_left"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/shape_tanta_circle_head_bg_left">
+
+            <ImageView
+                android:id="@+id/iv_left"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_centerInParent="true" />
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/iv_level"
+            android:layout_width="60dp"
+            android:layout_marginBottom="3dp"
+            android:layout_height="20dp"
+            android:layout_alignBottom="@+id/rl_left"
+            android:layout_centerHorizontal="true"
+            />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="恭喜你"
+        android:textStyle="bold"
+        android:textColor="@color/color_222222"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/ll_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/view_white"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <LinearLayout
+        android:id="@+id/ll_content"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="15dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/tv_des"
+        app:layout_constraintEnd_toEndOf="@+id/view_white"
+        app:layout_constraintStart_toStartOf="@+id/view_white"
+        app:layout_constraintTop_toBottomOf="@id/tv_title">
+
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/color_222222"
+            android:textSize="14sp"
+            tools:text="与 cp.晨曦 的亲密度等级达到【初识】阶段还差 166°C，升级至【朋友】阶段" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_des"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/color_FF7AC2"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_confirm"
+        app:layout_constraintEnd_toEndOf="@id/ll_content"
+        app:layout_constraintStart_toStartOf="@id/ll_content"
+        app:layout_constraintTop_toBottomOf="@id/ll_content"
+        tools:text="解锁与对方一周每天一分钟语音通话" />
+
+
+    <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
+        android:id="@+id/tv_confirm"
+        android:layout_width="240dp"
+        android:layout_height="49dp"
+        android:layout_marginBottom="31dp"
+        android:gravity="center"
+        android:text="我知道了"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@id/iv_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+       app:stv_solidColor="@color/color_FF7AC2"
+        app:stv_layoutRadius="12dp"
+         />
+
+    <ImageView
+        android:id="@+id/iv_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:src="@mipmap/resources_vqu_message_exposure_close"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_bg" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

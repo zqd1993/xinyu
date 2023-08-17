@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginStart="34dp"
+    android:layout_marginEnd="34dp"
+    android:background="@drawable/info_bg_dark_common_dialog"
+    android:paddingTop="20dp"
+    android:paddingBottom="25dp"
+    tools:ignore="MissingDefaultResource">
+
+
+    <TextView
+        android:id="@+id/tv_content"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="14dp"
+        android:gravity="center"
+        android:text="上传的头像与你的认证面容不一致，或照片内容敏感。你可以提交人工审核。"
+        android:textColor="@color/color_273145"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
+        android:id="@+id/tv_commit"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="46dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="提交人工审核"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_content"
+        app:stv_layoutRadius="12dp"
+        app:stv_solidColor="@color/color_FF7AC2" />
+
+    <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
+        android:id="@+id/tv_again"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="46dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="重新上传"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_commit"
+        app:stv_layoutRadius="12dp"
+        app:stv_solidColor="@color/color_FF7AC2" />
+
+    <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
+        android:id="@+id/tv_cancel"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="46dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="取消"
+        android:textColor="@color/color_273145"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_again"
+        app:stv_solidColor="@color/color_F5F5F5"
+        app:stv_layoutRadius="12dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

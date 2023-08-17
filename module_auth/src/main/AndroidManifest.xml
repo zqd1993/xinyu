@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.live.module.auth">
+
+    <uses-permission android:name="android.permission.CAMERA"/>
+
+    <application>
+
+
+        <activity
+            android:name=".activity.AuthVquRealAuthActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.AuthVquResultActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.AuthVquFaceIdentifyActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.AuthVquCenterActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.AuthVquAvatarActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.AuthVquCameraActivity"
+            android:screenOrientation="portrait" />
+    </application>
+</manifest>

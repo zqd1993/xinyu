@@ -1,0 +1,54 @@
+//****************************************
+//********* lib_common 的配置文件 **********
+//****************************************
+
+apply from: '../base_lib.gradle'
+
+import com.live.vquonline.buildsrc.*
+
+android {
+
+    defaultConfig {
+        resValue "string", "BUGLY_APP_ID", SDKKeyConfig.BUGLY_APP_ID
+    }
+
+    buildFeatures {
+        viewBinding = true
+    }
+
+}
+
+repositories {
+    flatDir {
+        dirs 'libs', '../lib_common/libs'
+    }
+}
+
+dependencies {
+    api fileTree(dir: "libs", include: ["*.jar", "*.aar"])
+
+//    api project(path: ':lib_base')
+    api project(path: ':lib_resources')
+    api project(path: ':lib_uikit')
+
+
+    api DependencyConfig.JetPack.HiltCore
+
+    kapt DependencyConfig.GitHub.ARouteCompiler
+//    kapt DependencyConfig.GitHub.EventBusAPT
+    kapt DependencyConfig.GitHub.AutoServiceAnnotations
+    kapt DependencyConfig.JetPack.HiltApt
+    kapt DependencyConfig.JetPack.HiltAndroidx
+    kapt DependencyConfig.JetPack.LifecycleCompilerAPT
+    api DependencyConfig.GitHub.PagerBottom
+    api DependencyConfig.GitHub.EasyDialog
+    api DependencyConfig.GitHub.Bubble
+    api DependencyConfig.GitHub.Rxandroid
+    api DependencyConfig.GitHub.Rxjava
+    api DependencyConfig.GitHub.SVGAPlayer
+    api DependencyConfig.GitHub.Banner
+    api DependencyConfig.GitHub.Lottie
+    api DependencyConfig.GitHub.Apng
+    api DependencyConfig.GitHub.Shadow
+    implementation project(path: ':video-range-slider')
+}

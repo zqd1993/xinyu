@@ -1,0 +1,11 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="app_name">ImagePreview</string>
+    <string name="string_count">%1$s/%2$s</string>
+    <string name="Playback_failed">播放失败</string>
+
+
+    <string name="str_intimate_level_up_start">与%1$s的亲密度等级达到【%2$s】阶段还差</string>
+    <string name="str_intimate_level_up_end">，升级至【%1$s】阶段</string>
+
+    <string name="contact_customer_service"><u>请联系客服</u></string>
+</resources>

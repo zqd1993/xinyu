@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.mshy.VInterestSpeed.common.ui.view.RoundAngleImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/bg_vip_center_top"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:raiv_ratio="0.573" />
+
+
+                <com.mshy.VInterestSpeed.common.ui.view.RoundAngleImageView
+                    android:id="@+id/raiv_vip_activity_center_vip_bg"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/bg_vip"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:raiv_ratio="0.304" />
+
+
+                <ImageView
+                    android:id="@+id/vip_center_user_avatar"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="20dp"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintLeft_toLeftOf="@id/raiv_vip_activity_center_vip_bg"
+                    app:layout_constraintTop_toTopOf="@id/raiv_vip_activity_center_vip_bg" />
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="70dp"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="@id/vip_center_user_avatar"
+                    app:layout_constraintLeft_toRightOf="@id/vip_center_user_avatar"
+                    app:layout_constraintRight_toRightOf="@id/raiv_vip_activity_center_vip_bg"
+                    app:layout_constraintTop_toTopOf="@id/vip_center_user_avatar">
+
+                    <TextView
+                        android:id="@+id/vip_center_user_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:textColor="@color/color_934800"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        tools:text="Eddie Richards" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:textColor="@color/color_934800"
+                        android:textSize="11sp"
+                        tools:text="未开通VIP会员" />
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="-23dp"
+                android:background="@color/color_FFFFFF"
+                android:orientation="vertical">
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:spanCount="3"
+                    tools:itemCount="3" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="30dp"
+                    android:src="@mipmap/ic_vip_interests" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:minHeight="?attr/actionBarSize"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="0dp"
+        app:layout_collapseMode="pin">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:paddingLeft="14dp"
+                android:paddingTop="5dp"
+                android:paddingRight="14dp"
+                android:paddingBottom="5dp"
+                android:src="@mipmap/ic_back_white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="会员中心"
+                android:textColor="@color/color_FFFFFF"
+                android:textSize="17sp" />
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
+        android:layout_width="280dp"
+        android:layout_height="49dp"
+        android:layout_marginBottom="41dp"
+        android:gravity="center"
+        android:text="立即开通"
+        android:textColor="@color/color_934800"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:stv_endColor="@color/color_EFBA8D"
+        app:stv_layoutRadius="25dp"
+        app:stv_startColor="@color/color_FADFC3" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

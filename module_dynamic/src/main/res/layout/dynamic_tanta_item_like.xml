@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    tools:ignore="ResourceName">
+
+    <ImageView
+        android:id="@+id/iv_head"
+        android:layout_width="49dp"
+        android:layout_height="49dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="12dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@tools:sample/backgrounds/scenic" />
+
+
+    <TextView
+        android:id="@+id/tv_like"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="6dp"
+        app:layout_constraintRight_toLeftOf="@+id/iv_img"
+        android:lines="2"
+        android:ellipsize="end"
+        android:text="点赞了你的动态"
+        android:textColor="@color/color_273145"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toRightOf="@+id/iv_head"
+        app:layout_constraintTop_toTopOf="@+id/iv_head" />
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/color_A3AABE"
+        android:textSize="11sp"
+        app:layout_constraintLeft_toRightOf="@+id/iv_head"
+        app:layout_constraintTop_toBottomOf="@+id/tv_like"
+        tools:text="3分钟前" />
+
+
+    <ImageView
+        android:id="@+id/iv_img"
+        android:layout_width="49dp"
+        android:layout_height="49dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@tools:sample/backgrounds/scenic" />
+
+    <ImageView
+        android:id="@+id/iv_video"
+        android:layout_width="19dp"
+        android:layout_height="19dp"
+        android:src="@mipmap/ic_tanta_video_play"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_img"
+        app:layout_constraintLeft_toLeftOf="@+id/iv_img"
+        app:layout_constraintRight_toRightOf="@+id/iv_img"
+        app:layout_constraintTop_toTopOf="@+id/iv_img" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginRight="12dp"
+        android:background="@color/color_F5F4F7"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_time" />
+</androidx.constraintlayout.widget.ConstraintLayout>

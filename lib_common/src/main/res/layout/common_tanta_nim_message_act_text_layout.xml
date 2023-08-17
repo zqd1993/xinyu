@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/textMessageLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+
+    <LinearLayout
+        android:id="@+id/ll_top"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="16dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="12dp"
+        android:paddingBottom="8dp">
+
+        <ImageView
+            android:id="@+id/edit_audio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/resources_tanta_nim_ic_click_sound" />
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1">
+
+            <EditText
+                android:id="@+id/editTextMessage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/resources_vqu_nim_bg_edit"
+                android:gravity="center_vertical"
+                android:hint="@string/nim_vqu_please_input_msg"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:textColor="#273145"
+                android:textColorHint="#A3AABE"
+                android:textCursorDrawable="@null"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/tv_record"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/resources_vqu_nim_bg_edit"
+                android:gravity="center"
+                android:text="按住 说话"
+                android:textColor="@color/color_273145"
+                android:textSize="14sp"
+                android:visibility="gone" />
+
+        </FrameLayout>
+
+        <ImageView
+            android:id="@+id/emoji_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/resources_tanta_nim_ic_click_emoji" />
+
+        <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
+            android:id="@+id/tv_send"
+            android:layout_width="64dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="12dp"
+            android:gravity="center"
+            android:text="@string/send"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:visibility="gone"
+            app:stv_layoutRadius="8dp"
+            app:stv_solidColor="@color/color_FF7AC2"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/edit_functional_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_below="@+id/ll_top"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+
+        <ImageView
+            android:id="@+id/edit_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@mipmap/resources_tanta_nim_ic_click_image" />
+
+        <ImageView
+            android:id="@+id/edit_video"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@mipmap/resources_tanta_nim_ic_click_video" />
+
+
+        <ImageView
+            android:id="@+id/edit_gift"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@mipmap/resources_tanta_nim_ic_click_gift" />
+
+        <ImageView
+            android:id="@+id/edit_common_msg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@mipmap/resources_tanta_nim_ic_click_common" />
+
+    </LinearLayout>
+</RelativeLayout>

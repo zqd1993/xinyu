@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="34dp"
+        android:layout_marginEnd="34dp"
+        android:background="@drawable/common_vqu_bg_common_hint_dialog"
+        android:paddingBottom="25dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/common_tanta_detainment_top"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout
+            android:layout_marginTop="24dp"
+            android:id="@+id/iv_head_circle"
+            android:layout_width="82dp"
+            android:layout_height="82dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:sll_layoutRadius="50dp"
+            app:sll_solidColor="@color/white" />
+
+        <ImageView
+            android:id="@+id/iv_head"
+            android:layout_width="79dp"
+            android:layout_height="79dp"
+            android:src="@mipmap/ic_common_head_circle_def"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_head_circle"
+            app:layout_constraintLeft_toLeftOf="@+id/iv_head_circle"
+            app:layout_constraintRight_toRightOf="@+id/iv_head_circle"
+            app:layout_constraintTop_toTopOf="@+id/iv_head_circle" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:textColor="@color/color_222222"
+            android:textSize="19sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_head"
+            tools:text="古灵精怪" />
+
+
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="14dp"
+            android:gravity="center"
+            android:textColor="@color/color_222222"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_title"
+            tools:text="确定删除该聊天？" />
+
+        <LinearLayout
+            android:id="@+id/ll_bottom_layout"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="14dp"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_content">
+
+            <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
+                android:id="@+id/tv_left"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="7dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="忍痛离开"
+                android:textColor="@color/color_222222"
+                android:textSize="14sp"
+                app:stv_endColor="@color/color_F5F5F5"
+                app:stv_layoutRadius="12dp"
+                app:stv_startColor="@color/color_F5F5F5" />
+
+            <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
+                android:id="@+id/tv_right"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="7dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="去看看"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:stv_endColor="@color/color_FF7AC2"
+                app:stv_layoutRadius="12dp"
+                app:stv_startColor="@color/color_FF7AC2" />
+
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

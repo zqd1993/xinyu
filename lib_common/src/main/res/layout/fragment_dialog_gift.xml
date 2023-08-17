@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom"
+    android:orientation="vertical">
+
+    <include
+        layout="@layout/resources_vqu_include_ad_banner"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="end"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="5dp"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/ll_gift_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/dialog_select_bottom"
+        android:orientation="vertical">
+
+        <com.mshy.VInterestSpeed.common.ui.view.magicindicator.MagicIndicator
+            android:id="@+id/gift_magic_indicator"
+            android:layout_width="match_parent"
+            android:layout_height="49dp"
+            android:layout_marginLeft="15dp" />
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/gift_pager"
+            android:layout_width="match_parent"
+            android:layout_height="233dp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:id="@+id/gift_shell_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/gift_shell_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="14dp"
+                    android:drawableLeft="@mipmap/agora_tanta_video_diamonds"
+                    android:drawablePadding="5dp"
+                    android:textColor="@color/color_222222"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    tools:text="16400" />
+
+                <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
+                    android:id="@+id/tv_recharge"
+                    android:layout_width="60dp"
+                    android:layout_height="32dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="12dp"
+                    android:layout_toRightOf="@+id/gift_shell_number"
+                    android:gravity="center"
+                    android:text="充值"
+                    android:textColor="@color/color_FF7AC2"
+                    android:textSize="14sp"
+                    app:stv_layoutRadius="8dp"
+                    app:stv_strokeColor="@color/color_FF7AC2"
+                    app:stv_strokeWidth="1dp" />
+
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:id="@+id/ll_gift_invisiable"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:layout_toLeftOf="@+id/rl_give_gift_parent"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <CheckBox
+                    android:id="@+id/cb_send_gift_invisible"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:button="@drawable/cb_disturb_selector" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="悄悄送礼"
+                    android:textColor="@color/color_FF7AC2"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <com.mshy.VInterestSpeed.common.ui.view.ShapeRelativeLayout
+                android:id="@+id/rl_give_gift_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                app:srl_layoutRadius="8dp"
+                android:layout_marginRight="16dp"
+                app:srl_solidColor="@color/color_F5F5F5">
+
+
+                <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
+                    android:id="@+id/tv_give_gift"
+                    android:layout_width="60dp"
+                    android:layout_height="32dp"
+                    android:layout_toRightOf="@id/ll_give_gift"
+                    android:gravity="center"
+                    android:text="赠送"
+                    android:textColor="#fff"
+                    android:textSize="14sp"
+                    app:stv_layoutRadius="8dp"
+                    app:stv_solidColor="@color/color_FF7AC2" />
+
+                <LinearLayout
+                    android:id="@+id/ll_give_gift"
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/show_select_number_gift"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:paddingLeft="16dp"
+                        android:paddingRight="6dp">
+
+                        <ImageView
+                            android:id="@+id/iv_min"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:paddingLeft="8dp"
+                            android:paddingRight="3dp"
+                            android:src="@mipmap/ic_gift_count_min"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/et_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="6dp"
+                            android:layout_weight="1"
+                            android:background="@null"
+                            android:gravity="center"
+                            android:inputType="number"
+                            android:text="1"
+                            android:textColor="@color/color_222222"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/iv_add"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:paddingLeft="3dp"
+                            android:paddingRight="8dp"
+                            android:src="@mipmap/ic_tanta_arrow_right" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </com.mshy.VInterestSpeed.common.ui.view.ShapeRelativeLayout>
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="76dp"
+    android:paddingLeft="16dp"
+    android:layout_marginBottom="15dp"
+    android:background="@color/white">
+
+
+    <ImageView
+        android:id="@+id/sdv_head"
+        android:layout_width="76dp"
+        android:layout_height="76dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--    <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView-->
+    <!--        android:id="@+id/tv_status"-->
+    <!--        android:layout_width="10dp"-->
+    <!--        android:layout_height="10dp"-->
+    <!--        app:layout_constraintEnd_toEndOf="@id/sdv_head"-->
+    <!--        app:layout_constraintBottom_toBottomOf="@id/sdv_head"-->
+    <!--         />-->
+    <View
+        android:id="@+id/view_online"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:background="@drawable/shape_point_green"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="@+id/sdv_head"
+        app:layout_constraintLeft_toLeftOf="@+id/sdv_head"/>
+
+    <ImageView
+        android:id="@+id/is_show_new_people"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/resources_vqu_main_home_new"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="@id/sdv_head"
+        app:layout_constraintTop_toTopOf="@id/sdv_head" />
+
+    <FrameLayout
+        android:id="@+id/frameLayout_end"
+        android:layout_width="62dp"
+        android:layout_height="28dp"
+        android:layout_marginRight="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout
+            android:id="@+id/fl_end"
+            android:layout_width="62dp"
+            android:layout_height="28dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="@id/sdv_head"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/sdv_head"
+            app:sll_layoutRadius="14dp"
+            app:sll_strokeWidth="1dp"
+            app:sll_strokeColor="@color/color_FF7AC2"
+            app:sll_solidColor="@color/color_FFFFFF"
+
+            >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/iv_chat_type"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/resources_tanta_main_home_chat" />
+
+                <TextView
+                    android:id="@+id/tv_chat"
+                    android:layout_marginLeft="4dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="@color/color_FF7AC2"
+                    android:textSize="12sp"
+                    tools:text="心动" />
+            </LinearLayout>
+
+
+        </com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout>
+    </FrameLayout>
+
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@id/sdv_head"
+        app:layout_constraintEnd_toStartOf="@id/frameLayout_end"
+        app:layout_constraintStart_toEndOf="@id/sdv_head"
+        app:layout_constraintTop_toTopOf="@id/sdv_head">
+
+        <LinearLayout
+            android:id="@+id/ll_nick_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_nick_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxEms="8"
+                android:maxLines="1"
+                android:textColor="@color/color_222222"
+                android:textSize="17sp"
+                android:layout_marginRight="4dp"
+                android:textStyle="bold"
+                tools:text="🪐山河悦⭐️" />
+
+            <ImageView
+                android:id="@+id/iv_real"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:layout_marginEnd="2dp"
+                android:src="@mipmap/resources_tanta_home_real"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/iv_real_person"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:layout_marginEnd="2dp"
+                android:src="@mipmap/home_tanta_iv_real_person"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/iv_vip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:layout_marginEnd="2dp"
+                android:src="@mipmap/ic_tanta_vip_label_small_light"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <include layout="@layout/common_include_noble_badge" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_des"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:lines="1"
+            android:textColor="@color/color_666666"
+            android:textSize="12sp"
+            tools:text="自由职业" />
+
+        <TextView
+            android:id="@+id/tv_sign"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:ellipsize="end"
+            android:lines="1"
+            android:textColor="@color/color_999999"
+            android:textSize="12sp"
+            tools:text="热爱生活、旅行、交友，欢迎来撩～" />
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/video_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+    <FrameLayout
+        android:id="@+id/remote_video_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <ImageView
+        android:id="@+id/remote_video_avatar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@+id/rl_agora_vqu_warm_parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
+            android:id="@+id/stv_agora_vqu_warm"
+            android:layout_width="match_parent"
+            android:layout_height="33dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="34dp"
+            android:layout_marginRight="12dp"
+            android:ellipsize="marquee"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center"
+            android:marqueeRepeatLimit="-1"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:singleLine="true"
+            android:text="正在智能监测色情违法内容，警觉交易转账均为诈骗"
+            android:textColor="#A3AABE"
+            android:textSize="14sp"
+            app:stv_layoutRadius="@dimen/dp_size_8"
+            app:stv_solidColor="#30000000" />
+    </RelativeLayout>
+
+
+    <!--    android:ellipsize="marquee"-->
+    <!--    android:singleLine="true"-->
+    <!--    android:focusable="true"-->
+    <!--    android:textIsSelectable="true"-->
+    <!--    android:focusableInTouchMode="true"-->
+
+    <ImageView
+        android:id="@+id/open_mini_window"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="10dp"
+        android:src="@mipmap/ic_reduce"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rl_agora_vqu_warm_parent"
+        tools:visibility="visible" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/vqu_video_head_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/open_mini_window">
+
+        <com.mshy.VInterestSpeed.common.ui.view.RoundAngleImageView
+            android:id="@+id/vqu_iv_call_head"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/color_FFFFFF"
+            android:padding="1dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:raiv_angle="10dp"
+            tools:layout_height="52dp"
+            tools:layout_width="52dp" />
+
+        <LinearLayout
+            android:id="@+id/panel_opposite_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="@+id/vqu_iv_call_head"
+            app:layout_constraintLeft_toRightOf="@+id/vqu_iv_call_head"
+            app:layout_constraintTop_toTopOf="@+id/vqu_iv_call_head">
+
+            <LinearLayout
+                android:id="@+id/layout_name_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/video_start_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp"
+                    tools:text="名字" />
+
+                <include layout="@layout/common_vqu_include_gender" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/video_start_cost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:textColor="#ffffffff"
+                android:textSize="12sp"
+                tools:text="武汉市 | 自由职业" />
+
+
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <FrameLayout
+        android:id="@+id/local_parent"
+        android:layout_width="100dp"
+        android:layout_height="133dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="12dp"
+        android:visibility="gone"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rl_agora_vqu_warm_parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/local_video_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:cardBackgroundColor="@android:color/transparent"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="0dp">
+
+        </androidx.cardview.widget.CardView>
+
+
+        <ImageView
+            android:id="@+id/iv_local_avatar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:visibility="visible" />
+
+        <com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout
+            android:id="@+id/sll_agora_vqu_video_close_camera"
+            android:layout_width="match_parent"
+            android:layout_height="22dp"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="6dp"
+            android:orientation="horizontal"
+            android:paddingLeft="6dp"
+            android:paddingRight="6dp"
+            app:sll_layoutRadius="13dp"
+            app:sll_solidColor="@color/color_4d000000">
+
+            <ImageView
+                android:id="@+id/iv_agora_vqu_video_close_camera_icon"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_gravity="center_vertical"
+                android:src="@mipmap/agora_vqu_video_close" />
+
+            <TextView
+                android:id="@+id/tv_agora_vqu_video_close_camera_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="关闭摄像头"
+                android:textColor="@color/color_FFFFFF"
+                android:textSize="10sp" />
+        </com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout>
+
+
+    </FrameLayout>
+
+
+    <LinearLayout
+        android:id="@+id/rl_deal_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="36dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_marginEnd="14dp"
+            android:layout_marginBottom="34dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/video_shoot"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:src="@mipmap/agora_vqu_video_photo"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+
+            <ImageView
+                android:id="@+id/vqu_video_mike"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:src="@drawable/selector_agora_voice_mike"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+
+            <ImageView
+                android:id="@+id/iv_video_beauty"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:src="@mipmap/agora_vqu__video_beauty"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/video_social_board"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_marginEnd="14dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+
+            <FrameLayout
+                android:id="@+id/video_callee_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+
+                android:visibility="visible">
+
+                <ImageView
+                    android:layout_width="120dp"
+                    android:layout_height="56dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/bg_tanta_button_hangup"
+                    android:scaleType="center"
+                    android:src="@mipmap/agora_tanta_video_callee_cancel" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/video_callee_answer"
+                android:layout_width="120dp"
+                android:layout_height="56dp"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="120dp"
+                    android:layout_height="56dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/bg_tanta_button_answer"
+                    android:scaleType="center"
+                    android:src="@mipmap/agora_tanta_video_callee_answer"
+                    android:visibility="visible" />
+            </FrameLayout>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/vqu_video_status_des"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="60dp"
+        android:textColor="@android:color/white"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/rl_deal_layout"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:text="28:26" />
+
+    <TextView
+        android:id="@+id/video_remote_duration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="17dp"
+        android:textColor="@android:color/white"
+        android:textSize="17dp"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rl_agora_vqu_warm_parent"
+        tools:text="28:26" />
+
+    <ImageView
+        android:id="@+id/video_gift"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="60dp"
+        android:src="@mipmap/agora_vqu_video_gift"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/rl_deal_layout"
+        app:layout_constraintRight_toRightOf="parent" />
+
+
+    <!--    <com.faceunity.nama.ui.FaceUnityView-->
+    <!--        android:id="@+id/fbcv_face_beauty"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent" />-->
+
+    <com.faceunity.nama.control.FaceBeautyControlView
+        android:id="@+id/fbcv_face_beauty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="12dp"
+        android:layout_marginBottom="300dp"
+        android:orientation="vertical"
+        android:paddingStart="1dp"
+        android:paddingTop="1dp"
+        android:paddingEnd="2dp"
+        android:paddingBottom="1dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:id="@+id/ll_gift_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        </LinearLayout>
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

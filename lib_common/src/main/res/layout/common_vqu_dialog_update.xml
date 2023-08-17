@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingBottom="30dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iv_top"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:src="@mipmap/ic_tanta_common_update_bg_top"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_new"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="57dp"
+                android:src="@mipmap/common_tanta_update_new"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
+                android:id="@+id/tv_version"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="8dp"
+                android:paddingTop="3dp"
+                android:paddingRight="8dp"
+                android:paddingBottom="3dp"
+                android:tag="beta_upgrade_info"
+                android:text="V2.1.0"
+                android:textColor="@color/color_FF7AC2"
+                android:textSize="14sp"
+                app:layout_constraintLeft_toLeftOf="@+id/iv_new"
+                app:layout_constraintTop_toBottomOf="@+id/iv_new"
+                app:stv_layoutRadius="4dp"
+                app:stv_solidColor="@color/white" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <!--            <ImageView-->
+        <!--                android:id="@+id/iv_close"-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_alignParentRight="true"-->
+        <!--                android:layout_marginStart="12dp"-->
+        <!--                android:layout_marginTop="12dp"-->
+        <!--                android:layout_marginEnd="12dp"-->
+        <!--                android:layout_marginBottom="12dp"-->
+        <!--                android:src="@mipmap/ic_dynamic_close" />-->
+
+        <com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingBottom="24dp"
+            app:sll_bottomLeftRadius="16dp"
+            app:sll_bottomRightRadius="16dp"
+            app:sll_solidColor="@color/white">
+
+
+            <TextView
+                android:id="@+id/tv_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="28dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="28dp"
+                android:lineSpacingExtra="4dp"
+                android:tag="beta_upgrade_feature"
+                android:textColor="@color/color_666666"
+                android:textSize="14sp"
+                tools:text="1、更新内容更新内容更新内更新内；\n2、更新内容更新内容更新容更新内； \n3、更新内容更新内新内容更新内容； \n4、更新内容更新内新内容更新内容；" />
+
+            <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
+                android:id="@+id/tv_update"
+                android:layout_width="240dp"
+                android:layout_height="49dp"
+                android:layout_marginTop="30dp"
+                android:gravity="center"
+                android:textSize="17dp"
+                android:tag="beta_confirm_button"
+                android:text="@string/common_vqu_update_btn"
+                android:textColor="@color/white"
+                app:stv_layoutRadius="12dp"
+                app:stv_solidColor="@color/color_FF7AC2" />
+
+            <RelativeLayout
+                android:id="@+id/rl_progressbar"
+                android:layout_width="240dp"
+                android:layout_height="49dp"
+                android:layout_marginTop="30dp"
+                android:visibility="gone"
+                >
+
+                <ProgressBar
+                    android:id="@+id/progressbar"
+                    style="@style/UpdateProgressBar"
+                    android:layout_width="240dp"
+                    android:layout_height="49dp"
+                    android:max="100"
+                    android:progress="0" />
+
+                <TextView
+                    android:id="@+id/tv_loading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="下载中..."
+                    android:textColor="@color/color_A3AABE"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_after"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:drawablePadding="6dp"
+                android:tag="beta_cancel_button"
+                android:text="@string/common_vqu_update_after"
+                android:textColor="@color/color_999999"
+                android:textSize="13sp" />
+        </com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout>
+
+
+    </LinearLayout>
+</RelativeLayout>

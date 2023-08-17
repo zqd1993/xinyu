@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
+        android:id="@+id/stv_mine_vqu_item_user_menu_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="16dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:textColor="@color/color_FFFFFF"
+        android:textSize="10sp"
+        android:visibility="visible"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:stv_bottomRightRadius="8dp"
+        app:stv_solidColor="@color/color_FF3B30"
+        app:stv_topLeftRadius="8dp"
+        app:stv_topRightRadius="8dp"
+        tools:text="高额提成" />
+
+    <ImageView
+        android:id="@+id/iv_mine_item_mine_user_menu_list_icon"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="13dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@mipmap/ic_mine_grid_menu_invite" />
+
+    <TextView
+        android:id="@+id/tv_mine_vqu_item_user_menu_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/color_273145"
+        android:textSize="12sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_mine_item_mine_user_menu_list_icon"
+        tools:text="邀请好友" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:sll_solidColor="@color/white"
+    app:sll_topLeftRadius="16dp"
+    app:sll_topRightRadius="16dp"
+    android:orientation="vertical"
+    tools:ignore="ResourceName">
+
+    <com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:sll_solidColor="@color/color_F5F4F7"
+        app:sll_topLeftRadius="16dp"
+        app:sll_topRightRadius="16dp">
+
+        <LinearLayout
+            android:id="@+id/ll_start"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="开始时间"
+                android:textColor="@color/vqu_selector_text_options_title_color"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_start_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="1994年03月10日"
+                android:textColor="@color/vqu_selector_text_options_title_color"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_end"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="结束时间"
+                android:textColor="@color/vqu_selector_text_options_title_color"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_end_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="1994年03月10日"
+                android:textColor="@color/vqu_selector_text_options_title_color"
+                android:textSize="11sp" />
+        </LinearLayout>
+    </com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout>
+
+    <FrameLayout
+        android:id="@+id/time_layout"
+        android:layout_width="match_parent"
+        android:layout_height="180dp" />
+
+    <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
+        android:id="@+id/tv_confirm"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:text="确定"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:stv_endColor="@color/color_FF7AC2"
+        app:stv_layoutRadius="12dp"
+        app:stv_startColor="@color/color_FF7AC2" />
+
+
+</com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout>

@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_FFFFFF"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/tb_anchor_vqu_new_hello_template_bar"
+        layout="@layout/include_toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <com.mshy.VInterestSpeed.common.ui.view.ShapeConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="148dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                app:scl_layoutRadius="12dp"
+                app:scl_solidColor="@color/color_F5F5F5">
+
+                <EditText
+                    android:id="@+id/et_anchor_vqu_new_hello_template_content"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginBottom="12dp"
+                    android:background="@android:color/transparent"
+                    android:gravity="left|top"
+                    android:hint="@string/anchor_vqu_new_template_content_hit"
+                    android:textColor="@color/color_222222"
+                    android:textColorHint="@color/color_999999"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toTopOf="@id/tv_anchor_vqu_new_hello_template_content_num"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_anchor_vqu_new_hello_template_content_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginBottom="12dp"
+                    android:text="0/50"
+                    android:textColor="@color/color_BBBBBB"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toRightOf="parent" />
+            </com.mshy.VInterestSpeed.common.ui.view.ShapeConstraintLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/anchor_vqu_new_template_add_img_title"
+                    android:textColor="@color/color_273145"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="4dp"
+                    android:text="@string/anchor_vqu_new_template_add_img_tips"
+                    android:textColor="@color/color_999999"
+                    android:textSize="11sp" />
+            </LinearLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_hello_template_image_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="20dp">
+
+                <com.mshy.VInterestSpeed.common.ui.view.RoundAngleImageView
+                    android:id="@+id/raiv_anchor_vqu_new_hello_template_img"
+                    android:layout_width="111dp"
+                    android:layout_height="111dp"
+                    android:background="@color/color_F5F5F5"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:raiv_angle="12dp" />
+
+                <ImageView
+                    android:id="@+id/iv_anchor_vqu_new_hello_template_img_add"
+                    android:layout_width="21dp"
+                    android:layout_height="21dp"
+                    android:layout_gravity="center"
+                    android:src="@mipmap/ic_img_add"
+                    app:layout_constraintBottom_toBottomOf="@id/raiv_anchor_vqu_new_hello_template_img"
+                    app:layout_constraintLeft_toLeftOf="@id/raiv_anchor_vqu_new_hello_template_img"
+                    app:layout_constraintRight_toRightOf="@id/raiv_anchor_vqu_new_hello_template_img"
+                    app:layout_constraintTop_toTopOf="@id/raiv_anchor_vqu_new_hello_template_img" />
+
+
+                <ImageView
+                    android:id="@+id/iv_anchor_vqu_new_hello_template_img_clear"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="13dp"
+                    android:paddingRight="20dp"
+                    android:paddingBottom="20dp"
+                    android:src="@mipmap/ic_common_vqu_search_clear"
+                    android:visibility="gone"
+                    app:layout_constraintLeft_toRightOf="@id/raiv_anchor_vqu_new_hello_template_img"
+                    app:layout_constraintRight_toRightOf="@id/raiv_anchor_vqu_new_hello_template_img"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="12dp"
+                android:background="@color/color_F5F4F7"
+                android:visibility="gone" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="30dp"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/anchor_vqu_new_template_add_video_title"
+                    android:textColor="@color/color_273145"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="4dp"
+                    android:text="@string/anchor_vqu_new_template_add_video_tips"
+                    android:textColor="@color/color_A3AABE"
+                    android:textSize="11sp" />
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_anchor_vqu_new_hello_template_video_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="20dp"
+                android:visibility="gone">
+
+                <com.mshy.VInterestSpeed.common.ui.view.RoundAngleImageView
+                    android:id="@+id/raiv_anchor_vqu_new_hello_template_video"
+                    android:layout_width="111dp"
+                    android:layout_height="111dp"
+                    android:background="@color/color_F7F8FA"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:raiv_angle="10dp" />
+
+                <ImageView
+                    android:id="@+id/iv_anchor_vqu_new_hello_template_video_add"
+                    android:layout_width="21dp"
+                    android:layout_height="21dp"
+                    android:layout_gravity="center"
+                    android:src="@mipmap/ic_img_add"
+                    app:layout_constraintBottom_toBottomOf="@id/raiv_anchor_vqu_new_hello_template_video"
+                    app:layout_constraintLeft_toLeftOf="@id/raiv_anchor_vqu_new_hello_template_video"
+                    app:layout_constraintRight_toRightOf="@id/raiv_anchor_vqu_new_hello_template_video"
+                    app:layout_constraintTop_toTopOf="@id/raiv_anchor_vqu_new_hello_template_video" />
+
+                <ImageView
+                    android:id="@+id/iv_anchor_vqu_new_hello_template_video_clear"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="13dp"
+                    android:paddingRight="20dp"
+                    android:paddingBottom="20dp"
+                    android:src="@mipmap/ic_common_vqu_search_clear"
+                    android:visibility="gone"
+                    app:layout_constraintLeft_toRightOf="@id/raiv_anchor_vqu_new_hello_template_video"
+                    app:layout_constraintRight_toRightOf="@id/raiv_anchor_vqu_new_hello_template_video"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="12dp"
+                android:background="@color/color_F5F4F7" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/anchor_vqu_new_template_add_voice_title"
+                    android:textColor="@color/color_273145"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="4dp"
+                    android:text="@string/anchor_vqu_new_template_add_voice_tips"
+                    android:textColor="@color/color_999999"
+                    android:textSize="11sp" />
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/rl_record"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    app:layout_constraintBottom_toTopOf="@+id/tv_tip"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent">
+
+                    <com.mshy.VInterestSpeed.common.ui.view.CompletedView
+                        android:id="@+id/progressBar"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_centerInParent="true"
+                        app:circleColor="@color/white"
+                        app:radiusCom="36dp"
+                        app:ringBgColor="@color/white"
+                        app:ringColor="#FE9B4B"
+                        app:strokeWidth="2dp" />
+
+                    <ImageView
+                        android:id="@+id/iv_record"
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:layout_centerInParent="true"
+                        android:src="@mipmap/ic_info_record" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tv_tip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="77dp"
+                    android:text="@string/anchor_vqu_new_template_record_voice_tips"
+                    android:textColor="@color/color_999999"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent" />
+
+                <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
+                    android:id="@+id/tv_again"
+                    android:layout_width="135dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="14dp"
+                    android:gravity="center"
+                    android:text="@string/anchor_vqu_new_template_record_again"
+                    android:textColor="@color/color_222222"
+                    android:textSize="17sp"
+                    android:visibility="visible"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_tip"
+                    app:stv_layoutRadius="12dp"
+                    app:stv_strokeColor="@color/color_FF7AC2"
+                    app:stv_strokeWidth="1dp" />
+
+
+                <Chronometer
+                    android:id="@+id/timer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/timer_default"
+                    android:textColor="@color/color_222222"
+                    android:textSize="15sp"
+                    app:layout_constraintBottom_toTopOf="@+id/rl_record"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent" />
+
+                <TextView
+                    android:id="@+id/downTimer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/timer_default"
+                    android:textColor="@color/color_222222"
+                    android:textSize="15sp"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toTopOf="@+id/rl_record"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.live.module.agora">
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <uses-sdk tools:overrideLibrary="io.agora.capture.framework" />
+
+    <application>
+<!--        <activity-->
+<!--            android:name=".activity.AgoraVquVideoActivity"-->
+<!--            android:launchMode="singleInstance"-->
+<!--            android:screenOrientation="portrait"-->
+<!--            android:taskAffinity=".callTask"-->
+<!--            android:theme="@style/SingleInstanceStyle" />-->
+
+        <activity
+            android:name=".activity.AgoraTantaVideo2Activity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.AgoraTantaAudio2Activity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.AgoraTantaMatchActivity"
+            android:screenOrientation="portrait" />
+
+<!--        <activity-->
+<!--            android:name=".activity.AgoraVquAudioActivity"-->
+<!--            android:launchMode="singleInstance"-->
+<!--            android:screenOrientation="portrait"-->
+<!--            android:taskAffinity=".callTask"-->
+<!--            android:theme="@style/SingleInstanceStyle" />-->
+
+        <activity
+            android:name=".activity.AgoraTantaBeautySettingActivity"
+            android:screenOrientation="portrait" />
+    </application>
+
+</manifest>

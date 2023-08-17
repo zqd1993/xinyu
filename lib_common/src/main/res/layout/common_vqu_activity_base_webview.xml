@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/vqu_status_bar"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:background="@color/white" />
+
+    <FrameLayout
+        android:id="@+id/vqu_fl_title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/white">
+
+        <FrameLayout
+            android:id="@+id/vqu_fl_back"
+            android:layout_width="48dp"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@mipmap/resources_return_black" />
+        </FrameLayout>
+
+        <ImageView
+            android:id="@+id/vqu_iv_close"
+            android:paddingEnd="14dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="48dp"
+            android:visibility="gone"
+            android:src="@mipmap/resources_vqu_close_web" />
+
+        <TextView
+            android:id="@+id/vqu_tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/color_273145"
+            android:textSize="18sp"
+            android:lines="1"
+            android:ellipsize="end"/>
+    </FrameLayout>
+
+    <ProgressBar
+        android:id="@+id/vqu_webview_progress"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:progress="50" />
+
+    <WebView
+        android:id="@+id/vqu_webview_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

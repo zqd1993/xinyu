@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_FFFFFF"
+    android:fitsSystemWindows="true">
+
+    <include
+        android:id="@+id/tb_relation_bar"
+        layout="@layout/include_toolbar" />
+
+    <com.scwang.smart.refresh.layout.SmartRefreshLayout
+        android:id="@+id/srl_relation_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tb_relation_bar">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_relation_vqu_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/relation_vqu_item_relation_list" />
+
+
+            <RelativeLayout
+                android:id="@+id/rl_not_vip_lock"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <com.mshy.VInterestSpeed.common.ui.view.blurview.RealtimeBlurView
+                    android:id="@+id/blurr_view_black"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    app:realtimeOverlayColor="@color/_55000000" />
+
+                <com.mshy.VInterestSpeed.common.ui.view.blurview.RealtimeBlurView
+                    android:id="@+id/blurr_view_white"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:visibility="gone"
+                    app:realtimeOverlayColor="@color/white_alpha_55" />
+
+                <com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout
+                    android:id="@+id/sll_vip_open"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="31dp"
+                    android:layout_marginEnd="31dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    app:sll_layoutRadius="12dp"
+                    app:sll_solidColor="@color/color_FFFFFF">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@mipmap/bg_relation_vqu_visitor_lock_top" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="解锁访客记录"
+                        android:textColor="@color/color_222222"
+                        android:textSize="19sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="开通VIP会员，不错过每一段缘分"
+                        android:textColor="@color/color_999999"
+                        android:textSize="15sp" />
+
+                    <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
+                        android:id="@+id/stv_open"
+                        android:layout_width="240dp"
+                        android:layout_height="49dp"
+                        android:layout_marginTop="30dp"
+                        android:gravity="center"
+                        android:text="立即开通"
+                        android:textColor="@color/color_652906"
+                        android:textSize="18sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:stv_endColor="@color/color_EEB090"
+                        app:stv_layoutRadius="12dp"
+                        app:stv_startColor="@color/color_FADCC0" />
+
+                    <TextView
+                        android:id="@+id/tv_think"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="30dp"
+                        android:text="再想想"
+                        android:textColor="@color/color_999999"
+                        android:textSize="15sp" />
+
+                </com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/llc_open_all"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/color_FFFFFF"
+                    android:paddingTop="8dp"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent">
+
+                    <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
+                        android:id="@+id/stv_open_all"
+                        android:layout_width="match_parent"
+                        android:layout_height="49dp"
+                        android:layout_marginLeft="47dp"
+                        android:layout_marginRight="47dp"
+                        android:layout_marginBottom="29dp"
+                        android:gravity="center"
+                        android:text="解锁全部访客"
+                        android:textColor="@color/color_FFFFFF"
+                        android:textSize="18sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:stv_endColor="@color/color_EEB090"
+                        app:stv_layoutRadius="12dp"
+                        app:stv_startColor="@color/color_FADCC0" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </RelativeLayout>
+        </FrameLayout>
+
+
+    </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

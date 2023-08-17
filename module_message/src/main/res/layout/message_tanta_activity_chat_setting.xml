@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:background="@color/color_FAFAFC">
+
+    <include
+        android:id="@+id/includeTitle"
+        layout="@layout/include_toolbar" />
+
+    <LinearLayout
+        android:id="@+id/ll_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingStart="12dp"
+        android:background="@color/white"
+        android:paddingTop="9dp"
+        android:paddingEnd="12dp"
+        android:paddingBottom="9dp">
+
+        <ImageView
+            android:id="@+id/sdv_head"
+            android:layout_width="63dp"
+            android:layout_height="63dp" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_nick_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/color_222222"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                tools:text="cp.晨曦" />
+
+            <TextView
+                android:id="@+id/tv_des"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/color_666666"
+                android:textSize="12sp"
+                tools:text="武汉丨28岁丨166cm丨未知" />
+
+            <TextView
+                android:id="@+id/tv_sign"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/color_999999"
+                android:textSize="12sp"
+                tools:text="要么是态度问题，要么是能力问题，要么两者都有问题" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:src="@mipmap/resources_tanta_message_ic_next" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:background="@color/color_FAFAFC" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:layout_height="54dp"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|start"
+            android:text="@string/message_vqu_top_chat"
+            android:textColor="@color/color_222222"
+            android:textSize="16sp" />
+
+
+        <CheckBox
+            android:id="@+id/cb_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|end"
+            android:button="@drawable/message_vqu_cb_disturb_selector" />
+
+    </FrameLayout>
+
+    <View
+        style="@style/line_f5f4f7"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp" />
+
+    <FrameLayout
+        android:id="@+id/fl_remark_name"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|start"
+            android:text="@string/message_vqu_set_remark"
+            android:textColor="@color/color_222222"
+            android:textSize="16sp" />
+        <TextView
+            android:id="@+id/tv_remark"
+            android:layout_gravity="center_vertical|end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="18dp"
+            android:textColor="@color/color_273145"
+            android:textSize="12sp"
+         />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|end"
+            android:src="@mipmap/resources_tanta_message_ic_next" />
+
+    </FrameLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:background="@color/color_FAFAFC" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:paddingStart="12dp"
+        android:background="@color/white"
+        android:paddingEnd="12dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|start"
+            android:text="@string/message_vqu_add_black"
+            android:textColor="@color/color_222222"
+            android:textSize="16sp" />
+
+
+        <CheckBox
+            android:id="@+id/cb_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|end"
+            android:button="@drawable/message_vqu_cb_disturb_selector" />
+
+    </FrameLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:background="@color/color_FAFAFC" />
+    <FrameLayout
+        android:id="@+id/fl_report"
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:layout_height="54dp"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|start"
+            android:text="举报"
+            android:textColor="@color/color_222222"
+            android:textSize="16sp" />
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|end"
+            android:src="@mipmap/resources_tanta_message_ic_next" />
+
+    </FrameLayout>
+
+</LinearLayout>

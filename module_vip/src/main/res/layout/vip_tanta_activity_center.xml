@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_000201">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingBottom="100dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.mshy.VInterestSpeed.common.ui.view.RoundAngleImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/bg_vip_center_top"
+                    app:raiv_ratio="0.512" />
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:scaleType="fitXY"
+                        android:src="@mipmap/bg_vip"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintDimensionRatio="343:100" />
+
+
+                    <com.mshy.VInterestSpeed.common.ui.view.RoundAngleImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:scaleType="fitXY"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:raiv_ratio="0.304" />
+
+                    <com.mshy.VInterestSpeed.common.ui.view.ShapeRelativeLayout
+                        android:id="@+id/sll_avatar"
+                        android:layout_width="44dp"
+                        android:layout_height="44dp"
+                        android:layout_marginStart="12dp"
+                        app:layout_constraintBottom_toTopOf="@id/stv_vip_tanta_vip_center_tips"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srl_layoutRadius="10dp"
+                        app:srl_strokeColor="@color/color_FFFFFF"
+                        app:srl_strokeWidth="2dp"
+
+                        >
+
+                        <ImageView
+                            android:id="@+id/iv_avatar"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_centerInParent="true"
+                            android:scaleType="centerCrop"
+                            tools:src="@mipmap/ic_launcher" />
+
+                    </com.mshy.VInterestSpeed.common.ui.view.ShapeRelativeLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="12dp"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toBottomOf="@id/sll_avatar"
+                        app:layout_constraintLeft_toRightOf="@id/sll_avatar"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/sll_avatar">
+
+                        <TextView
+                            android:id="@+id/vip_center_user_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:singleLine="true"
+                            android:text="Eddie Richards"
+                            android:textColor="@color/color_934800"
+                            android:textSize="17sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tv_vip_sub_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:singleLine="true"
+                            android:text="未开通VIP会员"
+                            android:textColor="@color/color_934800"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
+                        android:id="@+id/stv_vip_tanta_vip_center_tips"
+                        android:layout_width="0dp"
+                        android:layout_height="24dp"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="20dp"
+                        android:text="9大特权，提升个性化体验"
+                        android:textColor="#934800"
+                        android:textSize="11sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:stv_bottomLeftRadius="20dp"
+                        app:stv_bottomRightRadius="20dp"
+                        app:stv_solidColor="#40F2CEB6" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_recharge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="12dp"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="3"
+                tools:itemCount="3"
+                tools:listitem="@layout/vip_item_recharge" />
+
+            <com.mshy.VInterestSpeed.common.ui.view.ShapeRelativeLayout
+                android:id="@+id/srl_daily_gif"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="12dp"
+                android:textSize="17sp"
+                android:visibility="gone"
+                app:srl_layoutRadius="12dp"
+                app:srl_solidColor="#1A1B1A"
+                tools:visibility="visible">
+
+                <ImageView
+                    android:id="@+id/iv_daily_gif"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="12dp"
+                    android:src="@mipmap/ic_vip_daily_gif" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="8dp"
+                    android:layout_toEndOf="@+id/iv_daily_gif"
+                    android:src="@mipmap/ic_vip_daily_gift_desc" />
+
+                <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
+                    android:id="@+id/bt_daily_gif"
+                    android:layout_width="68dp"
+                    android:layout_height="28dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="12dp"
+                    android:gravity="center"
+                    android:text="领取"
+                    android:textColor="@color/color_934800"
+                    android:textSize="13sp"
+                    app:stv_endColor="#FED288"
+                    app:stv_layoutRadius="8dp"
+                    app:stv_startColor="#FDF5E9" />
+            </com.mshy.VInterestSpeed.common.ui.view.ShapeRelativeLayout>
+
+            <com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="16dp"
+                android:orientation="vertical"
+                app:sll_layoutRadius="20dp"
+                app:sll_solidColor="#19FFFFFF"
+                app:sll_strokeColor="#19FFFFFF"
+                app:sll_strokeWidth="0.5dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="24dp"
+                    android:src="@mipmap/ic_vip_interests" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_privilege"
+                    android:layout_marginBottom="24dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="20dp"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                    app:spanCount="3"
+                    tools:listitem="@layout/vip_item_privilege" />
+            </com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.core.widget.NestedScrollView>
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="32.5dp"
+        android:minHeight="?attr/actionBarSize"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="0dp"
+        app:layout_collapseMode="pin">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:paddingLeft="14dp"
+                android:paddingTop="5dp"
+                android:paddingRight="14dp"
+                android:paddingBottom="5dp"
+                android:src="@mipmap/ic_back_white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="会员中心"
+                android:textColor="@color/color_FFFFFF"
+                android:textSize="17sp" />
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
+        android:id="@+id/bt_pay"
+        android:layout_width="300dp"
+        android:layout_height="48dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="29dp"
+        android:gravity="center"
+        android:text="立即开通"
+        android:textColor="@color/color_652906"
+        android:textSize="17sp"
+        app:stv_endColor="@color/color_EEB090"
+        app:stv_layoutRadius="12dp"
+        app:stv_startColor="@color/color_FADCC0" />
+
+</RelativeLayout>

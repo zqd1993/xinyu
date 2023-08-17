@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:clickable="true"
+        android:orientation="vertical"
+        android:paddingBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:sll_layoutRadius="20dp"
+        app:sll_solidColor="@color/color_FFFFFF">
+
+        <TextView
+            android:id="@+id/tv_common_dialog_message_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="14dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="14dp"
+            android:textColor="@color/color_273145"
+            android:textSize="19sp"
+            tools:text="确定删除全部消息" />
+
+        <TextView
+            android:id="@+id/tv_common_dialog_message_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="14dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="14dp"
+            android:lineSpacingExtra="2dp"
+            android:maxHeight="280dp"
+            android:text="我们已接收到您的举报内容内容内容内容内容内容。"
+            android:textColor="@color/color_273145"
+            android:textSize="15sp" />
+
+
+        <LinearLayout
+            android:id="@+id/ll_common_dialog_message_doulbe_btn_parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal">
+
+            <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
+                android:id="@+id/stv_common_dialog_message_btn_left"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_marginLeft="14dp"
+                android:layout_marginRight="7.5dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/cancel"
+                android:textColor="@color/color_222222"
+                android:textSize="17sp"
+                app:stv_layoutRadius="12dp"
+                app:stv_solidColor="@color/color_F1F1F1" />
+
+            <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
+                android:id="@+id/stv_common_dialog_message_btn_right"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_marginLeft="7.5dp"
+                android:layout_marginRight="14dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/confirm"
+                android:textColor="@color/color_FFFFFF"
+                android:textSize="17sp"
+                app:stv_solidColor="@color/color_FF7AC2"
+                app:stv_layoutRadius="12dp"
+                />
+        </LinearLayout>
+
+
+        <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
+            android:id="@+id/stv_common_dialog_message_btn_single"
+            android:layout_width="240dp"
+            android:layout_height="49dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/confirm"
+            android:textColor="@color/color_FFFFFF"
+            android:textSize="16sp"
+            android:visibility="gone"
+            app:stv_layoutRadius="12dp"
+            app:stv_solidColor="@color/color_FF7AC2" />
+    </com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

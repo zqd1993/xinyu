@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item>
+        <shape android:shape="rectangle">
+
+            <solid android:color="@color/color_0DFE66A4" />
+
+            <corners android:radius="12dp" />
+
+            <stroke
+                android:width="2dp"
+                android:color="@color/color_FE66A4" />
+        </shape>
+
+    </item>
+
+
+<!--    <item-->
+<!--        android:drawable="@mipmap/ic_vqu_mine_withdrawal_mark_right_down"-->
+<!--        android:gravity="right|bottom"></item>-->
+</layer-list>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    tools:ignore="MissingDefaultResource,ResourceName">
+
+    <include
+        android:id="@+id/includeTitle"
+        layout="@layout/include_toolbar" />
+    <TextView
+        android:id="@+id/tv_pwd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="27dp"
+        android:layout_marginTop="40dp"
+        android:text="@string/setting_teen_mode_pwd"
+        android:textColor="@color/color_273145"
+        android:textSize="27sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/includeTitle" />
+
+    <com.mshy.VInterestSpeed.common.ui.view.editor.CaptchaInputView
+        android:id="@+id/civ_pwd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="27dp"
+        android:layout_marginTop="37dp"
+        android:layout_marginRight="27dp"
+        android:background="@null"
+        android:inputType="number"
+        android:maxLength="4"
+        app:civ_captchaBorderColor="@color/color_F5F5F5"
+        app:civ_captchaBorderHeight="56dp"
+        app:civ_captchaBorderRadius="12dp"
+        app:civ_captchaColor="@color/color_273145"
+        app:civ_captchaTextSize="17sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_pwd" />
+
+    <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
+        android:id="@+id/tv_bind"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="48dp"
+        android:layout_marginRight="48dp"
+        android:layout_marginBottom="64dp"
+        android:gravity="center"
+        android:text="@string/setting_teen_mode_close"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:stv_layoutRadius="12dp"
+        app:stv_solidColor="@color/color_FF7AC2"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

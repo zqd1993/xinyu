@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="Common_SplashTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@drawable/common_splash_screen</item>
+        <item name="android:windowFullscreen">true</item>
+        <!-- 在5.0后，增加了⼀个windowDrawsSystemBarBackgrounds属性，⽤来标志此窗⼝是否负责绘制系统栏背景，
+我们把它设成false，这样当它绘制windowBackground的时候，就会在NavigationBar之上。-->
+        <item name="android:windowDrawsSystemBarBackgrounds">false</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowContentOverlay">@null</item><!--⽬前这个属性未知-->
+        <!--沉浸透明状态栏可选，窗⼝是否是半透明，设置状态栏的效果，这个值也会影响状态效果-->
+        <item name="android:windowIsTranslucent">false</item>
+        <!--冷启动是⽤到的属性，窗⼝不可见时的预览图，为true时点击app图标会慢⼀会-->
+        <item name="android:windowDisablePreview">false</item>
+        <!--        <item name="android:windowBackground">@drawable/layer_launch2</item>&lt;!&ndash;替换启动⽩屏的图⽚&ndash;&gt;-->
+        <!--<item name="android:windowBackground">@mipmap/ic_splash_logo</item>--><!--替换启动⽩屏的图⽚-->
+        <item name="android:windowTranslucentStatus">true</item><!--这⾏代码使布局占据状态栏空间-->
+    </style>
+
+
+    <style name="Common_Animation_Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/translate_right_to_center</item>
+        <item name="android:activityOpenExitAnimation">@anim/translate_center_to_left</item>
+        <item name="android:activityCloseEnterAnimation">@anim/translate_left_to_center</item>
+        <item name="android:activityCloseExitAnimation">@anim/translate_center_to_right</item>
+    </style>
+
+    <!-- Base application theme. -->
+    <style name="Common_Base_AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/color_FFFFFF</item>
+        <item name="colorPrimaryDark">@color/color_FFFFFF</item>
+        <item name="colorAccent">@color/color_FFFFFF</item>
+        <item name="android:statusBarColor">@color/color_FFFFFF</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowAnimationStyle">@style/Common_Animation_Activity</item>
+        <item name="android:button">@style/CommonButtonStyle</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <style name="AppTheme" parent="Common_Base_AppTheme" />
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" tools:ignore="ResourceName" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" tools:ignore="ResourceName" />
+    <!--圆弧进度条-->
+    <declare-styleable name="TasksCompletedView">
+        <attr name="radiusCom" format="dimension" />
+        <attr name="strokeWidth" format="dimension" />
+        <attr name="circleColor" format="color" />
+        <attr name="ringColor" format="color" />
+        <attr name="ringBgColor" format="color" />
+    </declare-styleable>
+
+
+    <style name="CommonButtonStyle" parent="Base.Widget.AppCompat.Button">
+        <item name="android:background">@drawable/selector_button</item>
+        <!--<item name="android:textColor">@drawable/selector_text_color</item>-->
+        <item name="android:textColor">@color/color_FFFFFF</item>
+    </style>
+
+    <style name="translucent_video" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+
+    </style>
+
+    <style name="AppTheme_8.0" parent="@android:style/Theme.Translucent.NoTitleBar">
+        <!-- Customize your theme here. -->
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowDisablePreview">true</item>
+    </style>
+
+    <style name="TranslateActivityTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <style name="SelectiveDialog" parent="@android:style/Theme.Holo.Dialog">
+        <!-- 是否有边框 -->
+        <item name="android:windowFrame">@null</item>
+        <!--是否在悬浮Activity之上  -->
+        <item name="android:windowIsFloating">true</item>
+        <!--标题  -->
+        <item name="android:windowNoTitle">true</item>
+        <!--阴影  -->
+        <item name="android:windowIsTranslucent">true</item><!--半透明-->
+        <!-- 点外边可以消失  -->
+        <item name="android:windowCloseOnTouchOutside">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!-- 还可以加入一些弹出和退出的动画 (lan)-->
+    </style>
+
+    <style name="DialogActBgStyle" parent="Theme.AppCompat.Light.NoActionBar">
+        <!--是否悬浮在activity上 为true时 如果手机有虚拟的底部导航  会把底部虚拟的导航遮挡-->
+        <item name="android:windowIsFloating">false</item>
+        <!--透明是否-->
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowDisablePreview">true</item>
+
+        <item name="android:background">#00000000</item>
+        <item name="android:windowBackground">@color/transparent</item>
+        <!--模糊-->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!--设置没有窗口标题、dialog标题等各种标题-->
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:title">@null</item>
+        <item name="android:dialogTitle">@null</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="SingleInstanceStyle" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <style name="CustomButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dp_size_49</item>
+        <item name="android:textSize">@dimen/sp_16</item>
+        <item name="android:background">@drawable/bg_purple_selector</item>
+        <item name="android:layout_marginStart">@dimen/dp_size_26</item>
+        <item name="android:layout_marginEnd">@dimen/dp_size_26</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@drawable/base_btn_txt_color_selector</item>
+    </style>
+</resources>

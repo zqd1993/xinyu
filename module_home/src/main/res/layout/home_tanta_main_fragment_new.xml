@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:elevation="0dp"
+        app:layout_behavior="com.mshy.VInterestSpeed.common.ui.view.CustomBehavior">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/toolbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="230dp"
+            app:contentScrim="@android:color/white"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="230dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@mipmap/agora_tanta_home_bg" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="105dp"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginTop="48.5dp"
+                        android:layout_marginRight="12dp">
+
+                        <com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout
+                            android:id="@+id/vqu_sll_match_video"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="6dp"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical"
+                            app:sll_endColor="@color/color_FFFFFF"
+                            app:sll_layoutRadius="10dp"
+                            app:sll_orientation="sll_horizontal"
+                            app:sll_startColor="@color/color_FFFFFF">
+
+                            <com.opensource.svgaplayer.SVGAImageView
+                                android:id="@+id/vqu_video_apng"
+                                android:layout_width="match_parent"
+                                android:layout_height="60dp"
+                                app:autoPlay="true"
+                                app:source="match_video_svg.svga" />
+
+                            <TextView
+                                android:id="@+id/vqu_tv_match_video"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:text="视频速配"
+                                android:textColor="#FF7AC2"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="3dp"
+                                android:text="邂逅有缘人"
+                                android:textColor="@color/color_999999"
+                                android:textSize="10sp" />
+                        </com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout>
+
+                        <com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout
+                            android:id="@+id/vqu_sll_match_voice"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="6dp"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical"
+                            app:sll_endColor="@color/color_FFFFFF"
+                            app:sll_layoutRadius="10dp"
+                            app:sll_orientation="sll_horizontal"
+                            app:sll_startColor="@color/color_FFFFFF">
+
+                            <com.opensource.svgaplayer.SVGAImageView
+                                android:id="@+id/vqu_voice_apng"
+                                android:layout_width="match_parent"
+                                android:layout_height="60dp"
+                                app:autoPlay="true"
+                                app:source="match_voice_svg.svga" />
+
+                            <TextView
+                                android:id="@+id/vqu_tv_match_audio"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:text="语音速配"
+                                android:textColor="#FF7AC2"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="3dp"
+                                android:text="寻找声音恋人"
+                                android:textColor="@color/color_999999"
+                                android:textSize="10sp" />
+                        </com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout>
+
+                        <com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout
+                            android:id="@+id/vqu_sll_invitation"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="6dp"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical"
+                            app:sll_endColor="@color/color_FFFFFF"
+                            app:sll_layoutRadius="10dp"
+                            app:sll_orientation="sll_horizontal"
+                            app:sll_startColor="@color/color_FFFFFF">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="60dp"
+                                android:src="@mipmap/agora_tanta_share" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:text="分享邀请"
+                                android:textColor="#FF7AC2"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="3dp"
+                                android:text="超高额外奖励"
+                                android:textColor="@color/color_999999"
+                                android:textSize="10sp" />
+                        </com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout>
+
+                        <com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout
+                            android:id="@+id/vqu_sll_job_center"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical"
+                            app:sll_endColor="@color/color_FFFFFF"
+                            app:sll_layoutRadius="10dp"
+                            app:sll_orientation="sll_horizontal"
+                            app:sll_startColor="@color/color_FFFFFF">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="60dp"
+                                android:src="@mipmap/agora_tanta_job" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:text="任务中心"
+                                android:textColor="#FF7AC2"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="3dp"
+                                android:text="做任务领奖励"
+                                android:textColor="@color/color_999999"
+                                android:textSize="10sp"
+                                />
+                        </com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout>
+
+                    </LinearLayout>
+
+                    <com.mshy.VInterestSpeed.common.ui.view.ShapeRelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="64dp"
+                        android:layout_alignParentBottom="true"
+                        android:paddingLeft="12dp"
+                        android:paddingRight="12dp"
+                        app:srl_bottomLeftRadius="0dp"
+                        app:srl_bottomRightRadius="0dp"
+                        app:srl_solidColor="@color/color_FFFFFF"
+                        app:srl_topLeftRadius="16dp"
+                        app:srl_topRightRadius="16dp">
+
+                        <com.mshy.VInterestSpeed.common.ui.view.ShapeRelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            app:srl_bottomLeftRadius="0dp"
+                            app:srl_bottomRightRadius="0dp"
+                            app:srl_solidColor="@color/color_FFFFFF"
+                            app:srl_topLeftRadius="16dp"
+                            app:srl_topRightRadius="16dp">
+
+                            <include
+                                android:id="@+id/included_head_ad"
+                                layout="@layout/home_tanta_layout_tv_head" />
+                        </com.mshy.VInterestSpeed.common.ui.view.ShapeRelativeLayout>
+                    </com.mshy.VInterestSpeed.common.ui.view.ShapeRelativeLayout>
+
+                </RelativeLayout>
+
+            </FrameLayout>
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="0dp" />
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:background="@color/color_FFFFFF">
+
+            <TextView
+                android:id="@+id/tv_recommend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:text="推荐"
+                android:textColor="@color/color_222222"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:layout_width="6dp"
+                android:layout_height="3dp"
+                android:background="@drawable/vqu_shape_home_line"
+                app:layout_constraintLeft_toLeftOf="@+id/tv_recommend"
+                app:layout_constraintRight_toRightOf="@+id/tv_recommend"
+                app:layout_constraintTop_toBottomOf="@+id/tv_recommend" />
+
+            <ImageView
+                android:id="@+id/iv_home_vqu_main_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:padding="12dp"
+                android:src="@mipmap/resouces_tanta_home_search"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <FrameLayout
+        android:id="@+id/vqu_fl_parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <com.scwang.smart.refresh.layout.SmartRefreshLayout
+            android:id="@+id/smart"
+            android:layout_marginLeft="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_recommend"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+        <LinearLayout
+            android:id="@+id/ll_open"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:visibility="gone"
+            android:paddingTop="50dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_tanta_base_empty" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="开启'个性化推荐'后可启用推荐列表"
+                android:textColor="@color/color_A3AABE"
+                android:textSize="14sp" />
+
+            <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
+                android:id="@+id/tv_remind"
+                android:layout_width="150dp"
+                android:layout_height="49dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="立即开启"
+                android:textColor="@color/white"
+                app:stv_endColor="@color/color_7C69FE"
+                app:stv_layoutRadius="30dp"
+                app:stv_startColor="@color/color_BFB6FF" />
+        </LinearLayout>
+
+
+    </FrameLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

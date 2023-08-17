@@ -1,0 +1,16 @@
+import com.live.vquonline.buildsrc.*
+
+
+apply from: '../base_module.gradle'
+
+
+
+dependencies {
+    implementation project(":lib_faceunity_2")
+    implementation project(":lib_giftlibrary")
+
+//    implementation DependencyConfig.JetPack.HiltCore
+//    kapt DependencyConfig.JetPack.HiltApt
+//    kapt DependencyConfig.JetPack.HiltAndroidx
+//    kapt DependencyConfig.JetPack.LifecycleCompilerAPT
+}

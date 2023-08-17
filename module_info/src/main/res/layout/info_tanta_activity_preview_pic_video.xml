@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_1C1D23"
+    android:orientation="vertical"
+    tools:ignore="MissingDefaultResource">
+
+    <com.mshy.VInterestSpeed.common.ui.view.FixedViewPager
+        android:id="@+id/vp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_273145"
+        app:bvp_auto_play="false"
+        app:bvp_can_loop="false"
+        app:bvp_indicator_visibility="gone"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <ImageView
+        android:id="@+id/iv_back"
+        android:layout_marginTop="10dp"
+        android:padding="15dp"
+        android:src="@mipmap/ic_back_white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/tv_position"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:paddingLeft="18dp"
+        android:text="0/0"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+</RelativeLayout>

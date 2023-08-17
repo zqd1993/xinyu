@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_bill_tanta_item_recharge_options_root"
+    android:layout_width="match_parent"
+    android:layout_height="74dp"
+    android:layout_marginLeft="4dp"
+    android:layout_marginTop="3dp"
+    android:layout_marginRight="4dp"
+    android:layout_marginBottom="3dp"
+    android:background="@drawable/tanta_selector_recharge_options"
+    android:clickable="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/ll_vqu_item_bill_recharge_options_num_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tv_tanta_item_bill_recharge_options_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:textColor="@color/color_textMain"
+                android:textSize="19sp"
+                tools:text="420" />
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_marginLeft="4dp"
+                android:layout_gravity="center_vertical"
+                android:src="@mipmap/agora_tanta_video_diamonds" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        <TextView
+            android:id="@+id/tv_tanta_item_bill_recharge_options_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:textColor="@color/color_textDesc"
+            android:textSize="14sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ll_vqu_item_bill_recharge_options_num_parent"
+            tools:text="¥6" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
+        android:id="@+id/tv_tanta_item_bill_recharge_options_sale"
+        android:layout_width="wrap_content"
+        android:layout_height="16dp"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:paddingLeft="6dp"
+        android:paddingRight="6dp"
+        android:textColor="@color/color_FFFFFF"
+        android:textSize="10sp"
+        android:visibility="gone"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:stv_bottomLeftRadius="7.5dp"
+        app:stv_bottomRightRadius="7.5dp"
+        app:stv_solidColor="@color/color_FE8A34"
+        app:stv_topRightRadius="7.5dp"
+        tools:text="多送300金币"
+        tools:visibility="visible" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

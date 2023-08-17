@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical">
+    <ImageView
+        android:id="@+id/cai_input_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <com.mshy.VInterestSpeed.common.ui.view.editor.AutoDivisionEditText
+        android:id="@+id/cai_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="4"
+        android:layout_marginLeft="5dp"
+        android:textSize="17sp"
+        android:textColor="#FFFFFF"
+        android:background="@null"
+        android:textCursorDrawable="@null"/>
+
+
+
+    <ImageView
+        android:id="@+id/cai_function_image"
+        android:layout_width="30dp"
+        android:layout_height="40dp"
+        android:padding="5dp"
+        android:layout_marginLeft="6dp"
+        android:layout_weight="0.1" />
+
+</LinearLayout>

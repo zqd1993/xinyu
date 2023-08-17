@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_FFFFFF"
+    android:fitsSystemWindows="true">
+
+    <include
+        android:id="@+id/tb_common_vqu_city_selector_bar"
+        layout="@layout/include_search_toolbar_2" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_common_vqu_city_selector_locate_parent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18.5dp"
+        android:paddingLeft="14dp"
+        android:paddingRight="14dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tb_common_vqu_city_selector_bar">
+
+        <TextView
+            android:id="@+id/tv_common_vqu_city_selector_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_A3AABE"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="当前定位" />
+
+        <TextView
+            android:id="@+id/tv_common_vqu_city_selector_relocate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@mipmap/ic_common_vqu_relocate"
+            android:text="@string/common_vqu_relocate"
+            android:textColor="@color/color_A3AABE"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_common_vqu_city_selector_list"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="18.5dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/sib_common_vqu_city_selector_index"
+        app:layout_constraintTop_toBottomOf="@id/cl_common_vqu_city_selector_locate_parent" />
+
+    <com.mshy.VInterestSpeed.common.ui.view.SideIndexBar
+        android:id="@+id/sib_common_vqu_city_selector_index"
+        android:layout_width="36dp"
+        android:layout_height="500dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cl_common_vqu_city_selector_locate_parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

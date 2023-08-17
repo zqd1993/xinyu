@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tool="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_margin="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/ll_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_text_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_273145"
+            android:layout_marginBottom="5dp"
+            android:textSize="14sp"
+            tool:text="title" />
+
+
+        <TextView
+            android:id="@+id/tv_text_context1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tool:text="context1"
+            android:textColor="@color/color_A3AABE"
+            android:textSize="11sp" />
+
+        <TextView
+            android:id="@+id/tv_text_fields"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tool:text="context1"
+            android:textColor="@color/color_A3AABE"
+            android:textSize="11sp" />
+
+        <TextView
+            android:id="@+id/tv_text_context2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tool:text="context1"
+            android:textColor="@color/color_A3AABE"
+            android:textSize="11sp" />
+
+
+    </LinearLayout>
+
+</LinearLayout>

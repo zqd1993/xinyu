@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:fitsSystemWindows="false"
+    android:keepScreenOn="true">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/agora_tanta_matching_bg" />
+
+    <RelativeLayout
+        android:id="@+id/tanta_title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tanta_close_match"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:layout_centerVertical="true"
+            android:drawableLeft="@mipmap/ic_back_white"
+            android:gravity="center_vertical"
+            android:text="退出"
+            android:textColor="@color/color_FFFFFF"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tanta_match_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="语音速配"
+            android:textColor="@color/color_FFFFFF"
+            android:textSize="17sp" />
+
+        <FrameLayout
+            android:id="@+id/fl_tanta_ring_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp">
+
+            <com.opensource.svgaplayer.SVGAImageView
+                android:id="@+id/tanta_ring_amin"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                app:autoPlay="true"
+                app:source="tanta_match_ring_open_svg.svga" />
+
+            <ImageView
+                android:id="@+id/tanta_close_voice"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@mipmap/agora_tanta_close_match_voice"
+                android:visibility="gone" />
+        </FrameLayout>
+
+    </RelativeLayout>
+
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/tanta_match_apng"
+        android:layout_width="350dp"
+        android:layout_height="350dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tanta_sll_match_desc"
+        app:lottie_autoPlay="true"
+        app:lottie_fileName="vqu_matching.json"
+        app:lottie_imageAssetsFolder="images/"
+        app:lottie_loop="true" />
+
+
+    <TextView
+        android:id="@+id/tanta_match_shuoming"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="正在为您匹配有缘小姐姐，加速中~"
+        android:textColor="#FFFFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tanta_match_apng" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/tanta_head_layout"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tanta_match_apng"
+        app:layout_constraintLeft_toLeftOf="@+id/tanta_match_apng"
+        app:layout_constraintRight_toRightOf="@+id/tanta_match_apng"
+        app:layout_constraintTop_toTopOf="@+id/tanta_match_apng">
+
+        <ImageView
+            android:id="@+id/tanta_head_portrait"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <ImageView
+            android:id="@+id/tanta_iv_match_type"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            app:layout_constraintBottom_toBottomOf="@+id/tanta_head_portrait"
+            app:layout_constraintRight_toRightOf="@+id/tanta_head_portrait" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout
+        android:id="@+id/tanta_sll_match_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="34dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="12dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tanta_title_bar"
+        app:sll_layoutRadius="17dp"
+        app:sll_solidColor="#70000000">
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:scaleType="fitXY"
+            android:src="@mipmap/agora_tanta_match_desc" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="速配规则"
+            android:textColor="@color/color_FFFFFF"
+            android:textSize="14sp" />
+    </com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/tanta_rv_match_record"
+        android:layout_width="0dp"
+        android:layout_height="110dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tanta_sll_match_status" />
+
+    <com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout
+        android:id="@+id/tanta_sll_match_status"
+        android:layout_width="240dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="36dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tanta_match_shuoming"
+        app:sll_layoutRadius="12dp"
+        app:sll_solidColor="@color/color_FF7AC2"
+        tools:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tanta_tv_match"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="继续匹配"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tanta_count_down_match"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="3s后自动参与速配"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:visibility="gone"
+
+                />
+        </LinearLayout>
+
+
+    </com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

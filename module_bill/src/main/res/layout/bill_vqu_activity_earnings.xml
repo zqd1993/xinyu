@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_FFFFFF"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.mshy.VInterestSpeed.common.ui.view.ShapeConstraintLayout
+            android:id="@+id/scl_vqu_bill_recharge_diamond_parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:scaleType="fitXY"
+                android:src="@mipmap/bg_bill_earnings_top"
+                app:layout_constraintDimensionRatio="375:270"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/tv_vqu_bill_earnings_balance_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:includeFontPadding="false"
+                android:layout_marginTop="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:textColor="@color/color_FFFFFF"
+                android:textSize="36sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="402208" />
+
+            <TextView
+                android:id="@+id/tv_vqu_bill_recharge_diamond_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="16dp"
+                android:text="@string/mine_my_withdrawal"
+                android:textColor="@color/color_FFFFFF"
+                android:textSize="14sp"
+                app:layout_goneMarginBottom="40dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+
+                app:layout_constraintTop_toBottomOf="@id/tv_vqu_bill_earnings_balance_num" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4.5dp"
+                android:layout_marginBottom="6dp"
+                android:text="@string/common_vqu_yuan"
+                android:textColor="@color/color_FFFFFF"
+                android:textSize="14sp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/tv_vqu_bill_earnings_balance_num"
+                app:layout_constraintLeft_toRightOf="@id/tv_vqu_bill_earnings_balance_num" />
+
+
+            <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
+                android:id="@+id/stv_withdraw_ing"
+                android:layout_width="wrap_content"
+                android:layout_height="15dp"
+                android:gravity="center"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:textColor="@color/color_FFFFFF"
+                android:textSize="9sp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/tv_vqu_bill_recharge_diamond_txt"
+                app:layout_constraintLeft_toRightOf="@id/tv_vqu_bill_recharge_diamond_txt"
+                app:layout_constraintTop_toTopOf="@id/tv_vqu_bill_recharge_diamond_txt"
+                app:stv_layoutRadius="4dp"
+                app:stv_solidColor="#7F000000"
+                tools:text="提现中：100元"
+                tools:visibility="visible" />
+
+
+            <View
+                android:id="@+id/v_bill_tanta_placeholder"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+            <com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout
+                android:id="@+id/scl_recent_earnings"
+                android:layout_width="match_parent"
+                android:layout_height="49dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                app:layout_constraintBottom_toTopOf="@id/v_bill_tanta_placeholder"
+                app:sll_layoutRadius="6dp">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="今日收益:"
+                            android:textColor="@color/color_FFFFFF"
+                            android:textSize="12sp" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:scaleType="fitXY"
+                            android:src="@mipmap/bg_bill_earnings_value_gray" />
+
+                        <TextView
+                            android:id="@+id/tv_today_earnings"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:text="0"
+                            android:textColor="@color/color_FFFFFF"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            tools:text="4305" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="10dp"
+                    android:layout_gravity="center"
+                    android:background="@color/color_D3D1D7" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="近7日收益:"
+                            android:textColor="@color/color_FFFFFF"
+                            android:textSize="12sp" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:scaleType="fitXY"
+                            android:src="@mipmap/bg_bill_earnings_value_gray" />
+
+                        <TextView
+                            android:id="@+id/tv_seven_earnings"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:text="0"
+                            android:textColor="@color/color_FFFFFF"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            tools:text="402208" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            </com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout>
+
+
+        </com.mshy.VInterestSpeed.common.ui.view.ShapeConstraintLayout>
+
+        <com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-40dp"
+            android:orientation="vertical"
+            app:sll_solidColor="@color/color_FFFFFF"
+            app:sll_topLeftRadius="20dp"
+            app:sll_topRightRadius="20dp">
+
+            <com.mshy.VInterestSpeed.common.ui.view.magicindicator.MagicIndicator
+                android:id="@+id/magic_indicator"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="12dp"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp" />
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/view_pager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="none" />
+        </com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout>
+
+    </LinearLayout>
+
+
+    <include
+        android:id="@+id/tb_tanta_bill_bar"
+        layout="@layout/include_toolbar" />
+
+</RelativeLayout>

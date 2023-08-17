@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    tools:ignore="ResourceName">
+
+    <include
+        android:id="@+id/includeTitle"
+        layout="@layout/include_toolbar" />
+
+    <com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout
+        android:id="@+id/ll_email"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="12dp"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toBottomOf="@+id/includeTitle"
+        app:sll_layoutRadius="6dp"
+        app:sll_solidColor="@color/color_F5F5F5">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:text="邮箱地址："
+            android:textColor="@color/color_273145"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/et_email"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"
+            android:background="@null"
+            android:hint="请输入邮箱地址"
+            android:textColor="@color/color_273145"
+            android:textSize="12sp" />
+
+
+    </com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout>
+
+    <com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout
+        android:id="@+id/ll_time"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="12dp"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toBottomOf="@+id/ll_email"
+        app:sll_layoutRadius="6dp"
+        app:sll_solidColor="@color/color_F5F5F5">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:text="导出时间："
+            android:textColor="@color/color_273145"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:hint="请选择导出时间"
+            android:textColor="@color/color_273145"
+            android:textSize="12sp" />
+
+        <ImageView
+            android:id="@+id/iv_calendar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:src="@mipmap/ic_contact_calendar" />
+
+    </com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout>
+
+    <com.mshy.VInterestSpeed.common.ui.view.ShapeConstraintLayout
+        android:id="@+id/scl_sex"
+        android:layout_width="match_parent"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="12dp"
+        android:layout_height="60dp"
+        app:layout_constraintTop_toBottomOf="@+id/ll_time"
+        app:scl_layoutRadius="6dp"
+        app:scl_solidColor="@color/color_F5F5F5">
+
+
+        <!--性别选择-->
+        <TextView
+            android:id="@+id/label_sex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:gravity="center"
+            android:text="性别："
+            android:textColor="@color/color_273145"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_sex_all"
+            android:layout_width="57dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/bg_stroke_ff7ac2"
+            android:gravity="center"
+            android:text="全部"
+            android:textColor="@color/color_FF7AC2"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="@+id/label_sex"
+            app:layout_constraintStart_toEndOf="@+id/label_sex"
+            app:layout_constraintTop_toTopOf="@+id/label_sex"
+
+            />
+
+        <TextView
+            android:id="@+id/tv_sex_man"
+            android:layout_width="57dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/bg_gray_stroke_d3d1d7"
+            android:gravity="center"
+            android:text="男"
+            android:textColor="@color/color_273145"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="@+id/label_sex"
+            app:layout_constraintStart_toEndOf="@+id/tv_sex_all"
+            app:layout_constraintTop_toTopOf="@+id/label_sex" />
+
+        <TextView
+            android:id="@+id/tv_sex_woman"
+            android:layout_width="57dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/bg_gray_stroke_d3d1d7"
+            android:gravity="center"
+            android:text="女"
+            android:textColor="@color/color_273145"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="@+id/label_sex"
+            app:layout_constraintStart_toEndOf="@+id/tv_sex_man"
+            app:layout_constraintTop_toTopOf="@+id/label_sex" />
+
+
+    </com.mshy.VInterestSpeed.common.ui.view.ShapeConstraintLayout>
+
+    <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
+        android:id="@+id/tv_export"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginBottom="50dp"
+        android:gravity="center"
+        android:text="导出"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@+id/scl_sex"
+        app:stv_endColor="@color/color_FF7AC2"
+        app:stv_layoutRadius="12dp"
+        app:stv_startColor="@color/color_FF7AC2" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/sll_gender"
+    android:layout_width="wrap_content"
+    android:layout_height="15dp"
+    android:layout_marginEnd="3dp"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:paddingLeft="4dp"
+    android:paddingRight="4dp"
+    android:visibility="visible"
+    fresco:sll_layoutRadius="7dp"
+    fresco:sll_orientation="sll_vertical"
+    fresco:sll_solidColor="#1DBEF9">
+
+    <ImageView
+        android:id="@+id/iv_gender"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="1dp"
+        android:layout_height="wrap_content"
+        tools:src="@mipmap/resources_vqu_newboy" />
+
+    <TextView
+        android:id="@+id/tv_age"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="2dp"
+        android:textColor="#FFFFFF"
+        android:textSize="9sp"
+        tools:text="21" />
+</com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout>

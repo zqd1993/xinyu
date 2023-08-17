@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_FAFAFC">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/abl_contact_vqu_activity_my_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            app:elevation="0dp">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:id="@+id/ctl_vqu_activity_my_contact_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:contentScrim="@color/color_7C69FE"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout
+                        android:id="@+id/sll_contact_vqu_my_contact_img_bg_parent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:sll_ratio="0.68">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@mipmap/ic_contact_vqu_my_contact_bg" />
+
+                    </com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout>
+
+                    <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
+                        android:id="@+id/stv_contact_vqu_my_contact_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:layout_marginBottom="10dp"
+                        android:drawableRight="@mipmap/ic_arrow_small_right_white"
+                        android:drawablePadding="3.5dp"
+                        android:gravity="center"
+                        android:paddingLeft="12dp"
+                        android:paddingRight="12dp"
+                        android:textColor="@color/color_FFFFFF"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toTopOf="@id/tv_contact_vqu_my_contact_total_money"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:stv_layoutRadius="25dp"
+                        app:stv_strokeColor="@color/color_FFFFFF"
+                        app:stv_strokeWidth="1dp"
+                        tools:text="2021/11/21至2021/11/21" />
+
+
+                    <TextView
+                        android:id="@+id/tv_contact_vqu_my_contact_total_money"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="133dp"
+                        android:includeFontPadding="false"
+                        android:text="0"
+                        android:textColor="@color/color_FFFFFF"
+                        android:textSize="36sp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="123456" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:includeFontPadding="false"
+                        android:text="@string/contact_vqu_count_earnings_unit"
+                        android:textColor="@color/color_FFFFFF"
+                        android:textSize="14sp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_contact_vqu_my_contact_total_money" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:minHeight="?attr/actionBarSize"
+                    app:contentInsetLeft="0dp"
+                    app:contentInsetStart="0dp"
+                    app:layout_collapseMode="pin">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/tv_contact_vqu_my_contact_back"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:paddingLeft="14dp"
+                            android:paddingTop="5dp"
+                            android:paddingRight="14dp"
+                            android:paddingBottom="5dp"
+                            android:src="@mipmap/ic_back_white" />
+
+                        <TextView
+                            android:id="@+id/tv_contact_vqu_my_contact_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="@string/mine_vqu_menu_contacts"
+                            android:textColor="@color/color_FFFFFF"
+                            android:textSize="18sp" />
+
+                        <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
+                            android:id="@+id/tv_export"
+                            android:layout_width="64dp"
+                            android:layout_height="27dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="12dp"
+                            android:gravity="center"
+                            android:text="导出"
+                            android:textColor="@color/color_FFFFFF"
+                            android:textSize="12sp"
+                            android:visibility="gone"
+                            app:stv_layoutRadius="30dp" />
+                    </RelativeLayout>
+
+
+                </androidx.appcompat.widget.Toolbar>
+
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_contact_vqu_my_contact_invited_num_parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="19dp"
+                android:paddingBottom="13dp"
+                android:visibility="visible">
+
+                <TextView
+                    android:id="@+id/tv_contact_vqu_my_contact_invited_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="人脉收益(4人)" />
+
+                <TextView
+                    android:id="@+id/tv_contact_vqu_my_contact_invited_record"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:text="邀请记录"
+                    android:textColor="@color/color_FF7AC2"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toRightOf="@id/tv_contact_vqu_my_contact_invited_num"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
+                    android:id="@+id/stv_contact_vqu_my_contact_sort"
+                    android:layout_width="60dp"
+                    android:layout_height="29dp"
+                    android:layout_marginRight="12dp"
+                    android:gravity="center"
+                    android:text="@string/contact_vqu_sort"
+                    android:textColor="@color/color_FFFFFF"
+                    android:textSize="12sp"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:stv_endColor="@color/color_FF7AC2"
+                    app:stv_layoutRadius="8dp"
+                    app:stv_startColor="@color/color_FF7AC2" />
+
+                <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
+                    android:id="@+id/stv_contact_vqu_my_contact_more"
+                    android:layout_width="68dp"
+                    android:layout_height="29dp"
+                    android:layout_marginRight="12dp"
+                    android:gravity="center"
+                    android:text="@string/contact_vqu_invited_more"
+                    android:textColor="@color/color_FFFFFF"
+                    android:textSize="12sp"
+                    android:visibility="gone"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:stv_endColor="@color/color_7C69FE"
+                    app:stv_layoutRadius="15dp"
+                    app:stv_startColor="@color/color_BFB6FF" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <FrameLayout
+                android:id="@+id/fl_empty_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <LinearLayout
+                    android:id="@+id/ll_empty"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/iv_loadsir_empty"
+                        android:layout_width="280dp"
+                        android:layout_height="160dp"
+                        android:background="@mipmap/ic_tanta_my_contact_empty" />
+
+                    <TextView
+                        android:id="@+id/tv_loadsir_empty"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="邀请好友，即享高额提成"
+                        android:textColor="@color/color_A3AABE"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+
+            </FrameLayout>
+
+
+            <com.scwang.smart.refresh.layout.SmartRefreshLayout
+                android:id="@+id/srl_contact_vqu_my_contact_refresh"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_contact_vqu_my_contact_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+            </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
+        android:id="@+id/stv_contact_vqu_my_contact_more_bottom"
+        android:layout_width="0dp"
+        android:layout_height="49dp"
+        android:layout_marginLeft="47dp"
+        android:layout_marginRight="47dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:text="马上去邀请"
+        android:textColor="@color/color_FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@id/tv_contact_vqu_my_contact_invited_record_bottom"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:stv_endColor="@color/color_FF7AC2"
+        app:stv_layoutRadius="12dp"
+        app:stv_startColor="@color/color_FF7AC2" />
+
+    <TextView
+        android:id="@+id/tv_contact_vqu_my_contact_invited_record_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="34dp"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="20dp"
+        android:text="邀请记录"
+        android:textColor="@color/color_576990"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

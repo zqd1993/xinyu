@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/includeTitle"
+        layout="@layout/include_toolbar" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="160dp"
+        android:src="@mipmap/ic_base_network_error" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="哎呀,出错了"
+        android:textColor="@color/color_A3AABE"
+        android:textSize="14sp" />
+
+    <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
+        android:id="@+id/tv_error"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginLeft="104dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginRight="104dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:text="重启并上报错误"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ll_bottom"
+        app:stv_layoutRadius="12dp"
+        app:stv_solidColor="@color/color_FF7AC2" />
+
+</LinearLayout>

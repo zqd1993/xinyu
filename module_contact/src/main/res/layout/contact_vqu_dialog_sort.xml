@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:sll_bottomRightRadius="16dp"
+        android:clickable="true"
+        app:sll_solidColor="@color/color_FFFFFF"
+        app:sll_topRightRadius="16dp">
+
+        <TextView
+            android:id="@+id/tv_contact_vqu_sort_contribution"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:text="按贡献值排序"
+            android:textColor="@color/color_273145"
+            android:textSize="15sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:background="@color/color_F5F4F7" />
+
+        <TextView
+            android:id="@+id/tv_contact_vqu_sort_time"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:text="按注册时间排序"
+            android:textColor="@color/color_273145"
+            android:textSize="15sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:background="@color/color_F5F4F7" />
+
+        <TextView
+            android:id="@+id/tv_contact_vqu_sort_cancel"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="21dp"
+            android:gravity="center"
+            android:text="@string/cancel"
+            android:textColor="@color/color_A3AABE"
+            android:textSize="15sp" />
+    </com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

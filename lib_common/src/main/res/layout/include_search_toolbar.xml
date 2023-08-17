@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:background="@color/white"
+    android:theme="@style/AppTheme.AppBarOverlay"
+    app:contentInsetEnd="0dp"
+    app:contentInsetLeft="9.5dp"
+    app:contentInsetStart="0dp"
+    app:contentInsetStartWithNavigation="9.5dp"
+    app:layout_scrollFlags="scroll|enterAlways"
+    app:popupTheme="@style/AppTheme.PopupOverlay"
+    app:titleMargin="0dp"
+    tools:ignore="ResourceName">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/iv_vqu_search_toolbar_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="7.dp"
+            android:src="@mipmap/ic_back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.mshy.VInterestSpeed.common.ui.view.ShapeConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginRight="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/iv_vqu_search_toolbar_back"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:scl_layoutRadius="12dp"
+            app:scl_solidColor="@color/color_F5F5F5">
+
+
+            <com.mshy.VInterestSpeed.common.ui.view.ShapeConstraintLayout
+                android:layout_width="0dp"
+                android:layout_height="38dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="14dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/stv_vqu_search_bar_search"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/iv_vqu_search_toolbar_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/ic_common_vqu_search"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/tv_title"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginLeft="4dp"
+                    android:background="@android:color/transparent"
+                    android:imeActionLabel="搜索"
+                    android:imeOptions="actionSearch"
+                    android:singleLine="true"
+                    android:textColor="@color/color_222222"
+                    android:textColorHint="@color/color_BBBBBB"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toRightOf="@id/iv_vqu_search_toolbar_icon"
+                    app:layout_constraintRight_toLeftOf="@id/iv_vqu_search_toolbar_clear"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="居中显示居中显示" />
+
+
+                <ImageView
+                    android:id="@+id/iv_vqu_search_toolbar_clear"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="5dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:src="@mipmap/ic_common_vqu_search_clear"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </com.mshy.VInterestSpeed.common.ui.view.ShapeConstraintLayout>
+
+            <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
+                android:id="@+id/stv_vqu_search_bar_search"
+                android:layout_width="64dp"
+                android:layout_height="32dp"
+                android:layout_marginRight="4dp"
+                android:gravity="center"
+                android:text="搜索"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:stv_layoutRadius="8dp"
+                app:stv_solidColor="@color/color_FF7AC2" />
+        </com.mshy.VInterestSpeed.common.ui.view.ShapeConstraintLayout>
+
+
+        <!--        <TextView-->
+        <!--            android:id="@+id/tv_vqu_search_cancel"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginRight="12dp"-->
+        <!--            android:text="@string/cancel"-->
+        <!--            android:textColor="@color/color_A3AABE"-->
+        <!--            android:textSize="14sp"-->
+        <!--            android:visibility="gone"-->
+        <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--            app:layout_constraintRight_toRightOf="parent"-->
+        <!--            app:layout_constraintTop_toTopOf="parent" />-->
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.appcompat.widget.Toolbar>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:orientation="vertical"
+        android:paddingBottom="20dp"
+        app:sll_layoutRadius="12dp"
+        app:sll_solidColor="@color/color_FFFFFF">
+
+
+<!--        <com.mshy.VInterestSpeed.common.ui.view.ShapeRelativeLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            app:srl_ratio="0.56">-->
+
+            <ImageView
+                android:layout_width="160dp"
+                android:layout_height="122dp"
+                android:layout_marginTop="24dp"
+                android:layout_gravity="center_horizontal"
+                android:src="@mipmap/bg_common_vqu_bind_phone" />
+<!--        </com.mshy.VInterestSpeed.common.ui.view.ShapeRelativeLayout>-->
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="14dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="14dp"
+            android:lineSpacingExtra="2dp"
+            android:maxHeight="280dp"
+            android:text="绑定手机号"
+            android:textColor="@color/color_222222"
+            android:textSize="20sp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_common_dialog_message_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="14dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="14dp"
+            android:lineSpacingExtra="2dp"
+            android:maxHeight="280dp"
+            android:text="绑定手机后才可以进心语"
+            android:textColor="@color/color_999999"
+            android:textSize="14sp" />
+
+        <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
+            android:id="@+id/stv_common_dialog_message_btn_single"
+            android:layout_width="240dp"
+            android:layout_height="49dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="立即绑定"
+            android:textColor="@color/color_FFFFFF"
+            android:textSize="16sp"
+            app:stv_solidColor="@color/color_FF7AC2"
+            app:stv_layoutRadius="12dp"
+             />
+
+        <TextView
+            android:id="@+id/tv_common_tanta_bind_phone_change"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:drawableRight="@mipmap/ic_arrow_small_right_grey"
+            android:drawablePadding="6dp"
+            android:paddingLeft="30dp"
+            android:paddingTop="16dp"
+            android:paddingRight="30dp"
+            android:text="切换账号"
+            android:textColor="@color/color_999999"
+            android:textSize="13sp" />
+    </com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout>
+</FrameLayout>

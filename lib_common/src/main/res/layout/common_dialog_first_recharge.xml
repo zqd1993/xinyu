@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/bg_light" />
+
+            <com.mshy.VInterestSpeed.common.ui.view.ShapeConstraintLayout
+                android:layout_width="347dp"
+                android:layout_height="449.5dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="55dp"
+                android:clickable="true">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/bg_bill_first_recharge"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
+                    android:id="@+id/tv_common_first_recharge_tips"
+                    android:layout_width="0dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="52dp"
+                    android:layout_marginTop="190dp"
+                    android:layout_marginRight="55dp"
+                    android:gravity="center"
+                    android:text="首充任意金额即可获得大礼包"
+                    android:textColor="@color/color_FFFFFF"
+                    android:textSize="12sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:stv_layoutRadius="12.5dp"
+                    app:stv_solidColor="@color/color_FF6F47" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_common_first_recharge_list"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toTopOf="@id/tv_common_first_recharge_submit"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_common_first_recharge_tips"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_common_first_recharge_submit"
+                    android:layout_width="250dp"
+                    android:layout_height="60dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@mipmap/bg_bill_first_recharge_button"
+                    android:gravity="center_horizontal"
+                    android:paddingTop="11dp"
+                    android:text="立即充值"
+                    android:textColor="@color/color_A50900"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent" />
+
+            </com.mshy.VInterestSpeed.common.ui.view.ShapeConstraintLayout>
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/iv_close"
+            android:layout_width="27dp"
+            android:layout_height="27dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="15dp"
+            android:src="@mipmap/ic_dialog_close" />
+    </LinearLayout>
+
+
+</RelativeLayout>

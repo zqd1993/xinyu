@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">心语</string>
+    <string name="login_desc">手机号登录</string>
+
+    <string name="vqu_operation_success">操作成功</string>
+    <string name="vqu_operation_failure">操作失败</string>
+    <string name="agree_agreement">请先同意协议</string>
+    <!-- login  -->
+    <string name="login_dialog_user_agreement">用户协议及隐私政策</string>
+    <string name="login_phone_title">手机登录</string>
+    <string name="login_vqu_set_info_title">填写真实的信息能够帮助你更精准的匹配异性哦~</string>
+    <string name="login_auth_code_title">填写验证码</string>
+    <string name="login_send_auth_code">获取验证码</string>
+    <string name="vqu_girl">女生</string>
+    <string name="vqu_boy">男生</string>
+    <string name="vqu_login_set_info_gender_tips">性别选择后，无法修改，请选择真实性别</string>
+    <string name="vqu_login_nickname">昵称</string>
+    <string name="vqu_login_birthday">生日</string>
+    <string name="vqu_login_age">年龄</string>
+    <string name="vqu_login_city">城市</string>
+    <string name="vqu_login_invite_code">邀请码</string>
+    <string name="vqu_login_select_input">（选填）</string>
+    <string name="tanta_login_nickname_hint">请输入昵称</string>
+    <string name="vqu_login_birthday_hint">请选择生日</string>
+    <string name="tanta_login_age_hint">请选择年龄</string>
+    <string name="vqu_login_invite_code_input">请输入邀请码（选填）</string>
+    <string name="vqu_login_city_hint">请选择城市</string>
+    <string name="tanta_login_gender_hint">请选择性别</string>
+    <string name="tanta_login_avatar_hint">请上传头像</string>
+    <string name="vqu_login_next">下一步</string>
+    <string name="vqu_login_start_friend">开启缘分</string>
+
+    <string name="mine_edit_info">编辑资料</string>
+    <string name="mine_my_recharge">我的金币</string>
+    <string name="mine_my_earnings">我的收益</string>
+    <string name="vqu_diamond">金币</string>
+    <string name="mine_my_diamond">我的金币</string>
+    <string name="mine_my_withdrawal">收益余额（元）</string>
+    <string name="mine_vqu_recharge_diamond_tips">请选择充值金币：</string>
+    <string name="mine_vqu_earning_withdrawal_tips">请选择提现金额</string>
+    <string name="mine_vqu_earning_collection_tips">收款账号</string>
+    <string name="mine_vqu_alipay_name_hint">请输入支付宝认证名字</string>
+    <string name="mine_vqu_alipay_number_hint">请输入支付宝账号</string>
+    <string name="mine_vqu_alipay_name">支付宝实名：</string>
+    <string name="mine_vqu_alipay_number">支付宝账号：</string>
+    <string name="mine_vqu_alipay_account">支付宝账号</string>
+    <string name="mine_vqu_id">深情号：%s</string>
+    <string name="mine_vqu_focus">关注</string>
+    <string name="mine_vqu_focused">已关注</string>
+    <string name="mine_vqu_focused_each_other">互相关注</string>
+    <string name="mine_vqu_fans">粉丝</string>
+    <string name="mine_vqu_visitor">访客</string>
+    <string name="mine_vqu_track">足迹</string>
+    <string name="mine_vqu_praise">获赞</string>
+    <string name="mine_vqu_menu_invite">邀请好友</string>
+    <string name="mine_vqu_menu_task">任务中心</string>
+    <string name="mine_vqu_menu_noble">贵族中心</string>
+    <string name="mine_vqu_menu_backpack">我的背包</string>
+    <string name="mine_vqu_menu_contacts">我的人脉</string>
+    <string name="mine_vqu_menu_anchor">女神设置</string>
+    <string name="mine_vqu_menu_gift">送礼榜</string>
+    <string name="mine_vqu_menu_auth">我的认证</string>
+    <string name="mine_vqu_menu_invite_desc">高额提成</string>
+    <string name="mine_vqu_menu_task_desc">赚金币</string>
+    <string name="mine_vqu_menu_face">美颜设置</string>
+    <string name="mine_vqu_menu_service">在线客服</string>
+    <string name="mine_vqu_menu_report">违规公布</string>
+    <string name="mine_vqu_menu_system">系统设置</string>
+    <string name="mine_vqu_my_focus">我的关注</string>
+    <string name="mine_vqu_my_fans">我的粉丝</string>
+    <string name="mine_vqu_my_visitor">我的访客</string>
+    <string name="mine_vqu_my_track">我的足迹</string>
+    <string name="mine_vqu_my_praise">获赞</string>
+    <string name="mine_vqu_coupon">优惠券</string>
+    <string name="mine_vqu_try_card">体验卡</string>
+
+    <string name="relation_vqu_content_deleted">该内容已删除</string>
+
+    <string name="cancel">取消</string>
+    <string name="reject">不同意</string>
+    <string name="confirm">确定</string>
+    <string name="apply_and_go_on">已阅读并同意</string>
+    <string name="base_empty_tips_netword">请检查你的网络连接</string>
+    <string name="base_empty_tips_btn">重试</string>
+    <string name="base_fine_no_data">暂无查到相关数据</string>
+    <!-- dynamic  -->
+    <string name="dynamic_chat">私信</string>
+    <string name="dynamic_content_hint">这一刻你想说点什么…</string>
+    <string name="dynamic_content_report">提供更多信息有助于举报被快速处理~</string>
+    <string name="dynamic_publish">发布</string>
+    <string name="dynamic_publish_img">发布图片</string>
+    <string name="dynamic_publish_video">发布视频</string>
+    <string name="dynamic_publish_tip_title">发布须知</string>
+    <string name="dynamic_publish_tip_know">我知道了</string>
+    <string name="dynamic_commit">提交</string>
+    <string name="dynamic_report_desc">举报描述</string>
+    <string name="dynamic_report">举报</string>
+    <string name="dynamic_dynamic">TA的动态</string>
+    <string name="dynamic_dynamic_message">动态消息</string>
+    <string name="dynamic_dynamic_detail">动态详情</string>
+    <string name="dynamic_report_success">举报成功</string>
+    <string name="dynamic_report_urgency">需紧急处理</string>
+    <string name="dynamic_report_success_hint">我们已接收到您的举报内容，非常重视您的举报。每一条举报都会被认真核实，并依据国家法律法规及本平台条款积极处理，感谢您的配合。</string>
+    <string name="dynamic_report_optional">(选填)</string>
+    <string name="dynamic_publish_tip">
+        1、禁止发布色情，性暗示等低俗内容；
+        \n2、禁止发布国家政治，暴恐暴乱等内容；
+        \n3、不可涉及第三方平台信息；
+        \n4、不可使用他人的图片或视频发布。
+    </string>
+    <!-- info  -->
+    <string name="info_perfect_ratio">资料完善度</string>
+    <string name="info_head">头像</string>
+    <string name="info_nickname">昵称</string>
+    <string name="info_photo">展示照片</string>
+    <string name="info_photo_tip1">1、拖拽相片可以更改排序，单击查看大图可删除相册；</string>
+    <string name="info_photo_tip2">2、照片涉黄或者审核不通过将被删除，严重者冻结账号。</string>
+    <string name="info_video">展示视频</string>
+    <string name="info_video_tip">视频限制在15秒以内哦</string>
+    <string name="info_video_tip1">1、本人正面出镜，光线充足的高清才艺视频；</string>
+    <string name="info_video_tip2">2、拼接、含水印、特效、色情的图片均不予通过。</string>
+    <string name="info_voice">声音展示</string>
+    <string name="info_recording">去录制</string>
+    <string name="info_birthday">年龄</string>
+    <string name="info_perfect">去完善</string>
+    <string name="info_city">所在地</string>
+    <string name="info_height">身高</string>
+    <string name="info_weight">体重</string>
+    <string name="info_professional">职业</string>
+    <string name="info_income">年收入</string>
+    <string name="info_education">学历</string>
+    <string name="info_marital">婚姻状态</string>
+    <string name="info_introduction">自我介绍</string>
+    <string name="info_introduction_tip">添加自我介绍，更容易获得别人的关注哦~</string>
+    <string name="info_label">我的标签</string>
+    <string name="info_label_tip">我的个性标签</string>
+    <string name="info_nickname_empty">昵称不能为空</string>
+    <string name="info_nickname_length">昵称长度不能超过10</string>
+    <!-- bill  -->
+    <string name="agreement_text">
+ &lt;font&gt;欢迎您使用“心语”！心语非常重视保护用户（以下简称“您”）的个人信息和隐私，我们根据监管要求更新了&lt;a href=&quot;http://asset.zhenban.top/index/about/agreement_qy.html&quot;&gt;&lt;font color=&quot;#576990&quot;&gt;《用户服务协议》&lt;/font&gt;&lt;/a&gt;和&lt;a href=&quot;http://asset.zhenban.top/index/about/privacy_qy.html&quot;&gt;&lt;font color=&quot;#576990&quot;&gt;《心语隐私政策》&lt;/font&gt;&lt;/a&gt;；并希望通过以下《心语隐私政策（摘要）》帮助您直观、简洁地了解我们在必要范围内收集和使用您的个人信息类型和业务场景，以及我们处理您个人信息的基本规则。
+&lt;br&gt;                      心语隐私政策（摘要）
+&lt;br&gt;一、我们如何收集和使用个人信息
+&lt;br&gt;1．帮助您完成注册、登录及认证
+&lt;br&gt;注册心语帐号时，您需要提供手机号码、验证码匹配结果、昵称、头像、生日，如果您使用第三方帐号进行登录，需要您提供第三方帐号的昵称、头像、性别。在注册、登录或后续的使用过程中，您也可以向我们补充额外信息（如您的性别、星座、所在地、职业、学历、身高、体重、年收入、交友宣言、兴趣爱好、您本人的真实头像），有助于我们提供更好的服务，同时增进您与其他用户之间的互动、了解。如果您不提供这些信息，并不会影响您使用心语的基本功能。
+依据相关法律法规的规定，或为了满足实名认证的需要，保障用户帐号安全，在您使用心语实名认证、身份认证、兑换积分功能时，我们需要对您进行身份验证，并收集您的以下身份认证信息：姓名、身份证号码、电话号码、面部特征值（静态或动态）、与实名认证一致的收款帐号以及兑换积分记录信息。如果您拒绝向我们提供上述信息，我们将无法向您提供相关的功能及服务。
+&lt;br&gt;2．为您提供信息发布与互动服务
+&lt;br&gt;在您使用心语进行上传/发布信息以及进行相关行为（即上传发布音视频、图文内容、点赞、评论、关注、收藏、送礼时）时，我们将收集您上传、发布及形成的信息并有权展示您的昵称、头像和发布内容。当您使用心语向其他用户打赏、送礼时，我们将收集您的头像、昵称及送礼数据，并向其他用户进行展示。当您使用上传头像、进行真人认证、发布语音个性签名、发布动态（包括图文与视频内容）时，我们还会根据您所发布的内容请求您授权相机、照片、麦克风以及存储权限；请你知悉，权限的开启或授权是您使用上述功能的前提，如您关闭或拒绝授权将无法使用上述功能，但不会影响您使用其他功能与服务。
+&lt;br&gt;  请您注意，您在使用我们提供的服务时所提供的所有个人信息，除非您删除或通过系统设置拒绝我们收集，否则将在您使用我们的服务期间持续授权我们使用。在您注销帐号时，我们将停止使用并删除您的个人信息，或采取匿名化处理，使其不再与您关联到一起。
+&lt;br&gt;二、我们如何共享您的个人信息
+&lt;br&gt;我们会委托第三方服务提供商处理我们收集的您的个人信息，以便其为我们提供基础设施技术、数据分析、广告投放、营销决策等产品或技术支持，上述委托处理行为受《心语隐私政策》中所声明目的约束，并且我们会以合同方式对上述的第三方进行监督，以确保您的个人信息安全。
+&lt;br&gt;三、您的权利
+&lt;br&gt;在您使用心语期间，您可以通过相应页面提示或《心语隐私政策》载明的方式联系我们，以访问、更正、删除您的个人信息，以及行使改变授权同意的范围与注销帐号的权利，我们将及时响应您的请求。如果您需要您的个人信息副本，您可以通过我们提供的方式联系我们，在核实您的身份后，我们将向您提供您在我们服务中的个人信息副本（包括基本资料、身份信息），但法律法规另有规定的或《心语隐私政策》另有约定的除外。
+&lt;br&gt;四、未成年人保护
+&lt;br&gt;我们的产品和服务仅面向18周岁以上的成年人，任何不满18周岁的未成年人不得创建自己的用户帐号及/或使用我们的服务。如我们发现或审核出任何未成年人注册或使用我们的产品，我们将采取注销帐号、删除信息等措施禁止、限制未成年人使用。
+&lt;br&gt;五、如何联系我们
+&lt;br&gt;如果您对本隐私政策或个人信息保护有任何问题，您可以将您的书面疑问、意见或建议联系在线客服或发送邮件至：cxhylive@163.com。一般情况下，我们将在十五个工作日内回复。如果您对我们的回复或处理不满意，您还可以向履行个人信息保护职责的部门进行投诉、举报。&lt;/font&gt;
+    </string>
+
+
+    <string name="login_agreement_text">
+ &lt;font&gt;注册登录前需您阅读并同意&lt;a href=&quot;%1$s&quot;&gt;&lt;font color=&quot;#FF7AC2&quot;&gt;《用户协议》&lt;/font&gt;&lt;/a&gt;和&lt;a href=&quot;%2$s&quot;&gt;&lt;font color=&quot;#FF7AC2&quot;&gt;《隐私协议》&lt;/font&gt;&lt;/a&gt;
+    </string>
+
+    <string name="vqu_bill_recharge_agreement">
+        1、充值即代表已阅读并同意&lt;a href=&quot;#vqu_recharge_agreement#&quot;&gt;&lt;font color=&quot;#576990&quot;&gt;《心语充值服务协议》&lt;/font&gt;&lt;/a&gt;
+        &lt;br&gt;2、关注“心语交友”公众号，领取惊喜礼包&lt;a href=&quot;#copy_official_account#&quot;&gt;&lt;font color=&quot;#576990&quot;&gt; 复制公众号&lt;/font&gt;&lt;/a&gt;
+        &lt;br&gt;3、前往收支记录，可查询充值订单详情和消费详情
+        &lt;br&gt;4、禁止未成年人进行充值，点击详见&lt;a href=&quot;#vqu_juvenile_protection#&quot;&gt;&lt;font color=&quot;#576990&quot;&gt; 《心语未成年人保护计划》&lt;/font&gt;&lt;/a&gt;
+        &lt;br&gt;5、在充值过程中如遇任何问题，可联系官方客服
+    </string>
+
+    <string name="vqu_bill_new_withdrawal_account_tips">
+       为了保证您能快速提现，请认真阅读以下提示哦～
+        &lt;br&gt;1、请填写正确&lt;font color=&quot;#7C69FE&quot;&gt;【基本信息】&lt;/font&gt;及&lt;font color=&quot;#7C69FE&quot;&gt;【账号信息】&lt;/font&gt;，保证账号的准确性；
+        &lt;br&gt;2、请确保&lt;font color=&quot;#7C69FE&quot;&gt;【基本信息】&lt;/font&gt;及&lt;font color=&quot;#7C69FE&quot;&gt;【账号信息】&lt;/font&gt;为同一人，否则会影响您的提现进度；
+        &lt;br&gt;3、如在提现过程中有任何疑问，请及时联系客服处理。
+    </string>
+
+    <string name="vqu_bill_recharge_now">立即充值</string>
+    <string name="vqu_bill_withdrawal_now">立即提现</string>
+    <string name="vqu_bill_detail">收支明细</string>
+    <string name="vqu_bill_selector">筛选</string>
+    <string name="vqu_bill_balance">账户余额</string>
+    <string name="vqu_bill_copy_success">已复制到剪切板</string>
+    <string name="vqu_bill_apply_withdrawal">申请提现</string>
+    <string name="vqu_bill_withdrawal_text">
+        提现&lt;font color=&quot;#FF3B30&quot;&gt;%1$s&lt;/font&gt;元，实际到账&lt;font color=&quot;#FF3B30&quot;&gt;%2$s&lt;/font&gt;元
+         &lt;br&gt;收款账号：%3$s（%4$s）
+    </string>
+
+    <string name="vqu_bill_exchange_text">
+        将消耗&lt;font color=&quot;#FF3B30&quot;&gt;%1$s&lt;/font&gt;元，获得&lt;font color=&quot;#FF3B30&quot;&gt;%2$s&lt;/font&gt;金币
+        &lt;br&gt;（兑换金币成功后不可撤销）
+    </string>
+    <string name="vqu_bill_realname_not_null">真实姓名不能为空</string>
+    <string name="vqu_bill_alipay_account_not_null">支付宝账号不能为空</string>
+    <string name="vqu_bill_alipay_account_bind_error">支付宝账号绑定失败</string>
+    <string name="vqu_bill_withdraw_error">提现失败</string>
+    <string name="vqu_bill_withdraw_success">提现成功</string>
+    <string name="vqu_bill_get_withdraw_price_error">获取提现到账金额失败</string>
+    <string name="vqu_bill_exchange_diamond">兑换金币</string>
+    <string name="vqu_bill_earning_money_num">收益金额：%s</string>
+    <string name="vqu_bill_get_diamond_num">获得金币：%s</string>
+    <string name="vqu_bill_exchange_now">立即兑换</string>
+    <string name="vqu_bill_exchange_success">兑换成功</string>
+    <string name="vqu_bill_exchange_error">兑换失败</string>
+    <string name="vqu_bill_tab_diamond">金币</string>
+    <string name="vqu_bill_tab_earnings">收益</string>
+    <string name="vqu_bill_tab_withdrawal">提现记录</string>
+    <string name="vqu_bill_bind_account">请绑定账号</string>
+    <string name="vqu_bill_click_bind_account">点击绑定提现账号</string>
+    <string name="vqu_bill_withdraw_tips">提现说明</string>
+    <string name="vqu_bill_withdrawal_auth_tips">为保证资产安全，需要【实名认证】后才可以提现</string>
+
+    <!-- setting  -->
+    <string name="setting_disturb">勿扰模式</string>
+    <string name="setting_disturb_tip">(开启后主播不可群发打招呼给你)</string>
+    <string name="setting_account">账号绑定</string>
+    <string name="setting_msg">消息通知</string>
+    <string name="setting_blacklist">黑名单</string>
+    <string name="setting_cache">清除缓存</string>
+    <string name="setting_clear_chat">清空所有聊天记录</string>
+    <string name="setting_score">去评分</string>
+    <string name="setting_logoff">注销账号</string>
+    <string name="setting_clear_info">(清除所有资料)</string>
+    <string name="setting_about">关于心语</string>
+    <string name="setting_mobile">手机号</string>
+    <string name="setting_mobile_hint">请输入手机号</string>
+    <string name="setting_code">验证码</string>
+    <string name="setting_code_hint">请输入验证码</string>
+    <string name="setting_code_get">获取验证码</string>
+    <string name="setting_bind">绑定手机号</string>
+    <string name="setting_message_notice">你未开启通知权限，请在系统权限中开启</string>
+    <string name="setting_notice_open">去开启</string>
+    <string name="setting_fate">缘分牵线</string>
+    <string name="setting_recommended">个性化推荐</string>
+    <string name="setting_fate_tip">开启后，心语将用大数据为您匹配有缘人，牵线成功会发送缘分消息，关闭后，将不会收到缘分牵线。</string>
+    <string name="setting_recommended_tip">关闭后，将无法使用缘分页的推荐以及动态页的推荐和关注功能</string>
+    <string name="setting_chat_notice">私信通知</string>
+    <string name="setting_like_notice">点赞通知</string>
+    <string name="setting_chat_notice_tip">您已在系统设置中关闭了心语的通知，请在系统设置-通知中，允许心语获得权限，以便及时收到新消息提醒。</string>
+    <string name="setting_voice">声音</string>
+    <string name="setting_vibration">震动</string>
+    <string name="setting_scree_notice">飘屏通知</string>
+    <string name="setting_setting">设置</string>
+    <string name="setting_teen_mode_closed">未成年模式已关闭</string>
+    <string name="setting_teen_mode_close_tip">开启未成年模式，防止未成年使用</string>
+    <string name="setting_teen_mode_open">开启青少年模式</string>
+    <string name="setting_teen_mode_close">关闭青少年模式</string>
+    <string name="setting_teen_mode_pwd">输入密码</string>
+    <string name="setting_teen_mode">青少年模式</string>
+    <string name="setting_setpwd">设置密码</string>
+    <string name="setting_confirm_pwd">确认密码</string>
+    <string name="setting_tip">提示</string>
+    <string name="setting_clean_tip">是否删除心语数据？</string>
+    <string name="setting_cancel_tip">您确定要注销账号吗？</string>
+    <string name="setting_logout_tip">您确定要退出登陆吗？</string>
+    <string name="setting_cancle_account_tip">提交注销申请后，系统将注销心语账号并清除所有相关数据。
+注销心语账号是不可恢复的操作，你应自行备份相关的信息和数据，操作之前，请确认与心语账号相关的所有服务均已妥善处理。
+请谨记：注销心语账号，你将无法再使用心语账号或找回你添加或绑定的任何内容或信息（即使你使用相同的手机号码再次注册并使用心语），包括但不限于：
+\n1. 你将无法登录、使用本心语账号，你的朋友（包括喜欢、好友等）将无法通过本心语账号联系你；
+\n2. 你心语账号中的个人资料和历史信息（包括但不限于昵称、头像、财富值、收藏等）都将被永久全部清除，无法找回；
+\n3. 你心语账号绑定的手机号、第三方账号、实名信息都将被解绑，解绑后可重新注册新账号；
+\n4. 靓号将会被系统收回，并对平台其他用户开放申请；
+\n5 注销账号前，务必确认所有在心语内的收益已经提现，（相关无法提现的虚拟物品，你可以进行消费后再注销，或者直接舍弃），账号注销后，账户内的金币，购买的会员权益视为自动放弃。
+\n6. 请注意，注销你的心语账号并不代表本心语账号注销前的账号行为和相关责任得到豁免或减轻。
+\n7、用户自申请注销操作日起，给予7天的注销冷静期，期间可正常登录恢复使用，如申请注销后7天内未登录，则完成注销，所有数据不可恢复。</string>
+
+
+    <!-- common   -->
+    <string name="common_vqu_main_fate">缘分</string>
+    <string name="common_vqu_main_dynamic">动态</string>
+    <string name="common_vqu_main_msg">消息</string>
+    <string name="common_vqu_main_my">我的</string>
+    <!-- home   -->
+    <string name="home_vqu_main_goto">前往</string>
+    <string name="home_vqu_main_receive">，你有金币待领取</string>
+    <string name="home_vqu_main_send_diamonds">领红包</string>
+    <string name="home_vqu_main_perfect_data">完善资料</string>
+
+
+    <string name="common_vqu_relocate">重新定位</string>
+    <string name="common_vqu_search_city_or_py">搜索城市名称或拼音</string>
+
+
+    <string name="common_vqu_current_location">当前定位：%s</string>
+    <string name="common_vqu_locating">定位中</string>
+    <string name="common_vqu_locat_error">定位失败</string>
+
+    <string name="common_vqu_beckoning">心动</string>
+    <string name="common_vqu_accost">搭讪</string>
+    <string name="common_vqu_auth">心语提倡真实交友，通过【真人认证】后才可以心动交友哦~</string>
+    <string name="common_vqu_notification">心语系统通知</string>
+
+    <string name="common_vqu_select_recharge_tips">请选择充值数量</string>
+    <string name="common_vqu_select_recharge_data_error_tips">充值数据错误</string>
+    <string name="common_vqu_select_pay_way">请选择支付方式：</string>
+    <string name="common_vqu_select_pay_way_tips">请选择支付方式</string>
+    <string name="common_vqu_alipay_pay">支付宝支付</string>
+    <string name="common_vqu_wechat_pay">微信支付</string>
+    <string name="common_vqu_confirm_pay">确认支付</string>
+    <string name="common_vqu_warming">注：\n</string>
+    <string name="common_vqu_yuan">元</string>
+    <string name="common_vqu_withdrawaling">提现中：%s元</string>
+
+    <string name="common_vqu_go_to_auth">去认证</string>
+    <string name="common_vqu_go_to_no_auth">暂不认证</string>
+    <string name="common_vqu_go_to_real_auth">真人认证</string>
+    <string name="common_vqu_content_auth">心语提倡真实交友，通过【真人认证】后才可以心动交友哦~</string>
+    <string name="common_vqu_teenmode_close_tip">您已开启未成年模式\n所有功能关闭</string>
+    <string name="common_vqu_teenmode_tip">为呵护未成年人健康成长\n我们已推出青少年</string>
+    <string name="common_vqu_teenmode_close">关闭未成年模式</string>
+    <string name="common_vqu_teenmode_enter">进入青少年模式</string>
+    <string name="common_vqu_teenmode_not">不再提醒</string>
+    <string name="common_vqu_teenmode_pwd">忘记密码</string>
+    <string name="common_vqu_submit">提交</string>
+    <string name="common_vqu_update_btn">立即更新</string>
+    <string name="common_vqu_update_newversion">发现新版本</string>
+    <string name="common_vqu_update_after">以后再说</string>
+
+    <string name="common_vqu_share_img">生成图片</string>
+    <string name="common_vqu_share_wx">微信</string>
+    <string name="common_vqu_share_pyq">朋友圈</string>
+    <string name="common_vqu_share_qq">QQ</string>
+    <string name="common_vqu_share_qqzone">QQ空间</string>
+    <string name="common_vqu_share_copy">复制链接</string>
+
+    <string name="agora_app_id">fa2b713e581a47b7a9cbc03877c53904</string>
+    <string name="agora_vqu_dialog_content_txt">您的金币数量不足，请先充值</string>
+    <string name="agora_vqu_dialog_left_txt">放弃缘分</string>
+    <string name="agora_vqu_dialog_right_txt">立即充值</string>
+    <string name="agora_vqu_you_have_a_request">你有一个视频请求</string>
+    <string name="agora_vqu_talk_time">剩余通话时长</string>
+    <string name="agora_vqu_reduced">已减免</string>
+    <string name="agora_vqu_minute">分钟</string>
+
+
+    <string name="contact_vqu_my_invited">我的邀请（%s）人</string>
+    <string name="contact_vqu_invited_more">邀请更多</string>
+    <string name="contact_vqu_sort">排序</string>
+    <string name="contact_vqu_real_man">真人</string>
+    <string name="contact_vqu_id">ID：%s</string>
+    <string name="contact_vqu_register_date">注册时间：%s</string>
+    <string name="contact_vqu_give_unit">总收益</string>
+    <string name="contact_vqu_count_earnings_unit">我的收益（元）</string>
+    <string name="contact_vqu_setting_rate">收费设置</string>
+    <string name="contact_vqu_setting_hello">打招呼设置</string>
+    <string name="contact_vqu_setting_profit">分成详情</string>
+    <string name="contact_vqu_setting_link">缘分牵线说明</string>
+
+    <string name="goddess_vqu_rates_setting_explain">
+                收费设置说明：\n 1、对方主动给你发文字消息或与你进行视频/语音通话，你的收费依据本页设置。\n 2、互相关注后，双方发文字消息免费。\n\n 3、星级越高，可设置的价格越高，查看&lt;font color=&quot;#7C69FE&quot;&gt;&lt;a href=&quot;%s&quot;&gt;如何提高星级&lt;/a&gt;&lt;/font&gt;
+    </string>
+    <string name="anchor_vqu_use_this_template">使用此模板</string>
+    <string name="anchor_vqu_template_mark_tips">请输入模板备注</string>
+    <string name="anchor_vqu_template_mark_title">模板备注</string>
+    <string name="anchor_vqu_modify_template_mark_success">修改成功</string>
+    <string name="anchor_vqu_modify_template_mark_failed">修改失败</string>
+    <string name="anchor_vqu_set_failed">设置失败</string>
+    <string name="anchor_vqu_set_success">设置成功</string>
+    <string name="anchor_vqu_delete_success">删除成功</string>
+    <string name="anchor_vqu_delete_failed">删除失败</string>
+    <string name="anchor_vqu_new_template">新建模板</string>
+    <string name="anchor_vqu_new_template_content_hit">请输入文字内容文案</string>
+    <string name="anchor_vqu_new_template_add_img_title">添加图片</string>
+    <string name="anchor_vqu_new_template_add_img_tips">(仅可添加一张)</string>
+    <string name="anchor_vqu_new_template_add_video_title">添加视频</string>
+    <string name="anchor_vqu_new_template_add_video_tips">(限制15s以内)</string>
+    <string name="anchor_vqu_new_template_add_voice_title">添加语音</string>
+    <string name="anchor_vqu_new_template_add_voice_tips">(限制5~15秒)</string>
+    <string name="anchor_vqu_new_template_record_voice_tips">录制一段5~15秒的语音</string>
+    <string name="anchor_vqu_new_template_record_again">重录</string>
+    <string name="anchor_vqu_new_template_content_length">%s/50</string>
+    <string name="anchor_vqu_new_template_record_listen">点击试听</string>
+    <string name="anchor_vqu_new_template_record_playing">播放中</string>
+    <string name="anchor_vqu_new_template_record_finish">点击结束录音</string>
+    <string name="anchor_vqu_new_template_record_time">00:%s</string>
+
+    <string name="common_wechat_not_install">未安装微信，请先安装微信</string>
+    <string name="common_qq_not_install">未安装QQ，请先安装QQ</string>
+    <!-- nim   -->
+    <string name="nim_vqu_please_input_msg">请输入消息...</string>
+    <string name="nim_vqu_intimate_str">
+        1、在你们私信聊天当中，每产生消耗金币的行为即可增加亲密度（消息、私聊送礼、音视频通话都包括在内）；
+        \n2、1亲密度=10金币，不同等级可解锁不同特权奖励；
+        \n3、奖励最终解释权归心语所有。</string>
+
+    <string name="customactivityoncrash_error_activity_restart_app">重启</string>
+    <string name="customactivityoncrash_error_activity_error_occurred_explanation">小糖出错了</string>
+
+</resources>

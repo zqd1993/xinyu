@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.live.module.setting">
+
+    <application>
+        <activity
+            android:name=".activity.SettingVquActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.SettingVquBindMobileActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.SettingVquMessageActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.SettingVquTeenModeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.SettingVquTeenModeOpenActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.SettingVquBlackListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.SettingVquLogoffActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.SettingVquAboutActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.SettingVquTeenModePwdActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.SettingVquTeenModePwdCloseActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.SettingVquCloseTeenModeActivity"
+            android:screenOrientation="portrait" />
+    </application>
+
+</manifest>

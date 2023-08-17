@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:background="@color/green_4DC0A4"
+    tools:ignore="MissingDefaultResource">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/sll_center_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+
+
+        <com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout
+            android:id="@+id/sll_content"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="13.5dp"
+            android:orientation="vertical"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:paddingBottom="32dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:sll_endColor="@color/color_FFEEDA"
+            app:sll_layoutRadius="12dp"
+            app:sll_startColor="@color/color_FFFFFF">
+
+            <ImageView
+                android:id="@+id/iv_mine_dialog_daily_res"
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:layout_below="@+id/sll_center_content"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="39dp"
+                tools:src="@mipmap/ic_dialog_close" />
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/color_934800"
+                android:textSize="15sp"
+                tools:text="鼓掌翻天 X3" />
+
+            <TextView
+                android:id="@+id/bt_receive"
+                android:layout_width="258dp"
+                android:layout_height="54dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="30dp"
+                android:paddingTop="12dp"
+                android:gravity="center_horizontal"
+                android:text="立即领取"
+                android:background="@mipmap/ic_daily_gif_button"
+                android:textColor="@color/color_FFEEDA"
+                android:textSize="17sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ll_pay_way"
+                app:stv_endColor="@color/color_222839"
+                app:stv_layoutRadius="25dp"
+                app:stv_startColor="@color/color_585E71" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="16dp"
+                android:text="礼物领取后在【礼物】-【背包】中查看"
+                android:textColor="@color/color_934800"
+                android:textSize="12sp" />
+        </com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout>
+
+        <ImageView
+            android:id="@+id/iv_mine_dialog_daily_ttile"
+            android:layout_width="246dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/sll_center_content"
+            android:layout_centerHorizontal="true"
+            android:src="@mipmap/ic_daily_gif_top_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <ImageView
+            android:id="@+id/iv_mine_dialog_daily_close"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:src="@mipmap/ic_dialog_close"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sll_content" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</RelativeLayout>

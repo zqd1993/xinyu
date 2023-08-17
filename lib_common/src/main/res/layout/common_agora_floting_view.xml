@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+
+    <FrameLayout
+        android:id="@+id/floating_local_parent"
+        android:layout_width="100dp"
+        android:layout_height="134dp"
+        android:layout_margin="20dp"
+        android:layout_marginRight="12dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <FrameLayout
+            android:id="@+id/floating_video_parent"
+            android:layout_width="match_parent"
+            android:visibility="visible"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/floating_remote_avatar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop" />
+
+            <com.mshy.VInterestSpeed.common.ui.view.rc.RCFrameLayout
+                android:id="@+id/floating_remote_video_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:round_corner="8dp">
+
+            </com.mshy.VInterestSpeed.common.ui.view.rc.RCFrameLayout>
+
+
+
+
+            <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
+                android:id="@+id/floating_video_time"
+                android:layout_width="match_parent"
+                android:layout_height="26.5dp"
+                android:layout_gravity="bottom"
+                android:gravity="center"
+                android:textColor="@color/color_FFFFFF"
+                android:textSize="14dp"
+                app:stv_bottomLeftRadius="8dp"
+                app:stv_bottomRightRadius="8dp"
+                app:stv_solidColor="@color/color_4d000000"
+                tools:text="00:00" />
+        </FrameLayout>
+
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/floating_audio_contact_parent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/color_FFFFFF"
+            android:visibility="visible"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="25dp"
+                    android:src="@mipmap/ic_agora_contacting" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="12dp"
+                    android:text="通话中"
+                    android:textColor="@color/color_8B96B5"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:id="@+id/floating_audio_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="@color/color_273145"
+                    android:textSize="18sp"
+                    tools:text="00:00" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/floating_end_contact_parent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/color_FFFFFF"
+            android:visibility="gone"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="25dp"
+                    android:src="@mipmap/ic_agora_end_contact" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="12dp"
+                    android:text="结束通话"
+                    android:textColor="@color/color_8B96B5"
+                    android:textSize="12dp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+    </FrameLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

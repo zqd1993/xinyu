@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="12dp"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_read"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/message_vqu_read_all"
+        android:drawablePadding="12dp"
+        android:drawableStart="@mipmap/resources_vqu_message_read"
+        android:textColor="@color/color_475A7D"
+        android:textSize="15sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp"
+        android:background="@color/color_EDEDF0" />
+
+    <TextView
+        android:id="@+id/tv_clear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/message_vqu_clear_all"
+        android:textColor="@color/color_475A7D"
+        android:drawablePadding="12dp"
+        android:drawableStart="@mipmap/resources_vqu_message_clear"
+        android:textSize="15sp" />
+</LinearLayout>

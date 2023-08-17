@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools"
+
+    >
+    <!--ShapeTextView-->
+    <declare-styleable name="ShapeTextView">
+        <!--是否使用Selector选择器-->
+        <attr name="stv_openSelector" format="boolean" />
+        <!--按下填充色-->
+        <attr name="stv_solidTouchColor" format="color" />
+        <!--按下边框色-->
+        <attr name="stv_strokeTouchColor" format="color" />
+        <!--填充色-->
+        <attr name="stv_solidColor" format="color" />
+        <!--边框色-->
+        <attr name="stv_strokeColor" format="color" />
+        <!--边框宽度-->
+        <attr name="stv_strokeWidth" format="dimension" />
+        <!--设置渐变色-->
+        <attr name="stv_startColor" format="color" />
+        <attr name="stv_endColor" format="color" />
+        <!--圆角弧度-->
+        <attr name="stv_layoutRadius" format="dimension" />
+        <!--四个角的圆角弧度-->
+        <attr name="stv_topLeftRadius" format="dimension" />
+        <attr name="stv_topRightRadius" format="dimension" />
+        <attr name="stv_bottomLeftRadius" format="dimension" />
+        <attr name="stv_bottomRightRadius" format="dimension" />
+        <!--虚线边框宽度-->
+        <attr name="stv_dashWidth" format="dimension" />
+        <!--虚线边框间隙-->
+        <attr name="stv_dashGap" format="dimension" />
+        <!-- Standard orientation constant. -->
+        <attr name="stv_orientation">
+            <!-- 渐变从左至右 -->
+            <enum name="stv_horizontal" value="0" />
+            <!-- 渐变从上至下 -->
+            <enum name="stv_vertical" value="1" />
+        </attr>
+
+    </declare-styleable>
+
+    <!--ShapeTextView-->
+    <declare-styleable name="ShapeEditText">
+        <!--是否使用Selector选择器-->
+        <attr name="set_openSelector" format="boolean" />
+        <!--按下填充色-->
+        <attr name="set_solidTouchColor" format="color" />
+        <!--按下边框色-->
+        <attr name="set_strokeTouchColor" format="color" />
+        <!--填充色-->
+        <attr name="set_solidColor" format="color" />
+        <!--边框色-->
+        <attr name="set_strokeColor" format="color" />
+        <!--边框宽度-->
+        <attr name="set_strokeWidth" format="dimension" />
+        <!--设置渐变色-->
+        <attr name="set_startColor" format="color" />
+        <attr name="set_endColor" format="color" />
+        <!--圆角弧度-->
+        <attr name="set_layoutRadius" format="dimension" />
+        <!--四个角的圆角弧度-->
+        <attr name="set_topLeftRadius" format="dimension" />
+        <attr name="set_topRightRadius" format="dimension" />
+        <attr name="set_bottomLeftRadius" format="dimension" />
+        <attr name="set_bottomRightRadius" format="dimension" />
+        <!--虚线边框宽度-->
+        <attr name="set_dashWidth" format="dimension" />
+        <!--虚线边框间隙-->
+        <attr name="set_dashGap" format="dimension" />
+        <!-- Standard orientation constant. -->
+        <attr name="set_orientation">
+            <!-- 渐变从左至右 -->
+            <enum name="set_horizontal" value="0" />
+            <!-- 渐变从上至下 -->
+            <enum name="set_vertical" value="1" />
+        </attr>
+
+    </declare-styleable>
+
+    <!--ShapeLinearLayout-->
+    <declare-styleable name="ShapeLinearLayout">
+        <!--是否使用Selector选择器-->
+        <attr name="sll_openSelector" format="boolean" />
+        <!--按下填充色-->
+        <attr name="sll_solidTouchColor" format="color" />
+        <!--按下边框色-->
+        <attr name="sll_strokeTouchColor" format="color" />
+        <!--填充色-->
+        <attr name="sll_solidColor" format="color" />
+        <!--边框色-->
+        <attr name="sll_strokeColor" format="color" />
+        <!--边框宽度-->
+        <attr name="sll_strokeWidth" format="dimension" />
+        <!--设置渐变色-->
+        <attr name="sll_startColor" format="color" />
+        <attr name="sll_endColor" format="color" />
+        <!--圆角弧度-->
+        <attr name="sll_layoutRadius" format="dimension" />
+        <!--四个角的圆角弧度-->
+        <attr name="sll_topLeftRadius" format="dimension" />
+        <attr name="sll_topRightRadius" format="dimension" />
+        <attr name="sll_bottomLeftRadius" format="dimension" />
+        <attr name="sll_bottomRightRadius" format="dimension" />
+        <!--虚线边框宽度-->
+        <attr name="sll_dashWidth" format="dimension" />
+        <!--虚线边框间隙-->
+        <attr name="sll_dashGap" format="dimension" />
+        <!-- Standard orientation constant. -->
+        <attr name="sll_orientation">
+            <!-- 渐变从左至右 -->
+            <enum name="sll_horizontal" value="0" />
+            <!-- 渐变从上至下 -->
+            <enum name="sll_vertical" value="1" />
+        </attr>
+
+        <attr name="sll_ratio" format="float" />
+    </declare-styleable>
+
+
+    <!--ShapeRelativeLayout-->
+    <declare-styleable name="ShapeRelativeLayout">
+        <!--是否使用Selector选择器-->
+        <attr name="srl_openSelector" format="boolean" />
+        <!--按下填充色-->
+        <attr name="srl_solidTouchColor" format="color" />
+        <!--按下边框色-->
+        <attr name="srl_strokeTouchColor" format="color" />
+        <!--填充色-->
+        <attr name="srl_solidColor" format="color" />
+        <!--边框色-->
+        <attr name="srl_strokeColor" format="color" />
+        <!--边框宽度-->
+        <attr name="srl_strokeWidth" format="dimension" />
+        <!--设置渐变色-->
+        <attr name="srl_startColor" format="color" />
+        <attr name="srl_endColor" format="color" />
+        <!--圆角弧度-->
+        <attr name="srl_layoutRadius" format="dimension" />
+        <!--四个角的圆角弧度-->
+        <attr name="srl_topLeftRadius" format="dimension" />
+        <attr name="srl_topRightRadius" format="dimension" />
+        <attr name="srl_bottomLeftRadius" format="dimension" />
+        <attr name="srl_bottomRightRadius" format="dimension" />
+        <!--虚线边框宽度-->
+        <attr name="srl_dashWidth" format="dimension" />
+        <!--虚线边框间隙-->
+        <attr name="srl_dashGap" format="dimension" />
+        <!-- Standard orientation constant. -->
+        <attr name="srl_orientation">
+            <!-- 渐变从左至右 -->
+            <enum name="srl_horizontal" value="0" />
+            <!-- 渐变从上至下 -->
+            <enum name="srl_vertical" value="1" />
+        </attr>
+
+        <attr name="srl_ratio" format="float" />
+    </declare-styleable>
+
+    <!--ShapeLinearLayout-->
+    <declare-styleable name="ShapeConstraintLayout">
+        <!--是否使用Selector选择器-->
+        <attr name="scl_openSelector" format="boolean" />
+        <!--按下填充色-->
+        <attr name="scl_solidTouchColor" format="color" />
+        <!--按下边框色-->
+        <attr name="scl_strokeTouchColor" format="color" />
+        <!--填充色-->
+        <attr name="scl_solidColor" format="color" />
+        <!--边框色-->
+        <attr name="scl_strokeColor" format="color" />
+        <!--边框宽度-->
+        <attr name="scl_strokeWidth" format="dimension" />
+        <!--设置渐变色-->
+        <attr name="scl_startColor" format="color" />
+        <attr name="scl_endColor" format="color" />
+        <!--圆角弧度-->
+        <attr name="scl_layoutRadius" format="dimension" />
+        <!--四个角的圆角弧度-->
+        <attr name="scl_topLeftRadius" format="dimension" />
+        <attr name="scl_topRightRadius" format="dimension" />
+        <attr name="scl_bottomLeftRadius" format="dimension" />
+        <attr name="scl_bottomRightRadius" format="dimension" />
+        <!--虚线边框宽度-->
+        <attr name="scl_dashWidth" format="dimension" />
+        <!--虚线边框间隙-->
+        <attr name="scl_dashGap" format="dimension" />
+        <!-- Standard orientation constant. -->
+        <attr name="scl_orientation">
+            <!-- 渐变从左至右 -->
+            <enum name="scl_horizontal" value="0" />
+            <!-- 渐变从上至下 -->
+            <enum name="scl_vertical" value="1" />
+        </attr>
+        <attr name="scl_ratio" format="float" />
+    </declare-styleable>
+
+
+    <declare-styleable name="CaiEditText">
+        <attr name="common_edit_type">
+            <flag name="none" value="0x00000000" />
+            <flag name="text" value="0x00000001" />
+            <flag name="textCapCharacters" value="0x00001001" />
+            <flag name="textCapWords" value="0x00002001" />
+            <flag name="textCapSentences" value="0x00004001" />
+            <flag name="textAutoCorrect" value="0x00008001" />
+            <flag name="textAutoComplete" value="0x00010001" />
+            <flag name="textMultiLine" value="0x00020001" />
+            <flag name="textImeMultiLine" value="0x00040001" />
+            <flag name="textNoSuggestions" value="0x00080001" />
+            <flag name="textUri" value="0x00000011" />
+            <flag name="textEmailAddress" value="0x00000021" />
+            <flag name="textEmailSubject" value="0x00000031" />
+            <flag name="textShortMessage" value="0x00000041" />
+            <flag name="textLongMessage" value="0x00000051" />
+            <flag name="textPersonName" value="0x00000061" />
+            <flag name="textPostalAddress" value="0x00000071" />
+            <flag name="textPassword" value="0x00000081" />
+            <flag name="textVisiblePassword" value="0x00000091" />
+            <flag name="textWebEditText" value="0x000000a1" />
+            <flag name="textFilter" value="0x000000b1" />
+            <flag name="textPhonetic" value="0x000000c1" />
+            <flag name="textWebEmailAddress" value="0x000000d1" />
+            <flag name="textWebPassword" value="0x000000e1" />
+            <flag name="number" value="0x00000002" />
+            <flag name="numberSigned" value="0x00001002" />
+            <flag name="numberDecimal" value="0x00002002" />
+            <flag name="numberPassword" value="0x00000012" />
+            <flag name="phone" value="0x00000003" />
+            <flag name="datetime" value="0x00000004" />
+            <flag name="date" value="0x00000014" />
+            <flag name="time" value="0x00000024" />
+            <flag name="money" value="0x00000005" />
+            <flag name="nosub" value="0x00000006" />
+        </attr>
+
+        <attr name="common_left_img" format="reference" />
+        <attr name="common_right_img" format="reference" />
+        <attr name="common_hint" format="string" />
+        <attr name="common_left_img_enable" format="boolean" />
+        <attr name="common_right_img_enable" format="boolean" />
+        <attr name="common_gravity_center" format="boolean" />
+        <attr name="common_hint_color" format="reference" />
+        <attr name="common_text_color" format="color|reference" />
+    </declare-styleable>
+
+
+    <declare-styleable name="CaptchaInputView">
+        <attr name="civ_captchaBorderWidth" format="dimension" />
+        <attr name="civ_captchaBorderColor" format="color" />
+        <attr name="civ_captchaBorderRadius" format="dimension" />
+        <attr name="civ_captchaLength" format="integer" />
+        <attr name="civ_captchaWidth" format="dimension" />
+        <attr name="civ_captchaColor" format="color" />
+        <attr name="civ_captchaRadius" format="dimension" />
+        <attr name="civ_captchaViewSize" format="dimension" />
+        <attr name="civ_captchaTextSize" format="dimension" />
+        <attr name="civ_captchaViewPadding" format="dimension" />
+        <attr name="civ_captchaBorderHeight" format="dimension" />
+    </declare-styleable>
+
+
+    <declare-styleable name="CommonVquAvatarFrameView">
+        <attr name="avatarSize" format="dimension" />
+        <attr name="anchorVSize" format="dimension" />
+        <attr name="avatarFrameSize" format="dimension" />
+        //是否以头像框大小为基准
+        <attr name="isAvatarFrameStandard" format="boolean" />
+    </declare-styleable>
+    <declare-styleable name="DragRelativeLayout">
+        <!-- 动画时长  默认 400 -->
+        <attr name="drl_duration" format="integer"></attr>
+        <!-- 恢复系数 [0~1] 默认0.1-->
+        <attr name="drl_resume_ratio" format="float"></attr>
+        <!-- y方向开始平移系数 0~1.0 默认 0.5 -->
+        <attr name="drl_translationY_ratio" format="float"></attr>
+        <!-- y方向平移速率 1~oo 默认 2 -->
+        <attr name="drl_translationY_rate" format="integer"></attr>
+        <!-- 是否可以拖拽 默认true -->
+        <attr name="drl_drag_enable" format="boolean"></attr>
+        <!--是否是头条样式 默认false-->
+        <attr name="drl_tt_style_enable" format="boolean"></attr>
+    </declare-styleable>
+
+    <declare-styleable name="RoundAngleImageView">
+        <attr name="raiv_angle" format="dimension" />
+        <attr name="raiv_angleLeftTop" format="dimension" />
+        <attr name="raiv_angleRightTop" format="dimension" />
+        <attr name="raiv_angleLeftBottom" format="dimension" />
+        <attr name="raiv_angleRightBottom" format="dimension" />
+        <attr name="raiv_ratio" format="float" />
+    </declare-styleable>
+    <declare-styleable name="CollapsedTextView">
+        <attr name="collapsedLines" format="integer" />
+        <attr name="expandedText" format="string" />
+        <attr name="collapsedText" format="string" />
+        <attr name="expandedDrawable" format="reference" />
+        <attr name="collapsedDrawable" format="reference" />
+        <attr name="tipsGravity">
+            <flag name="end" value="0" />
+            <flag name="bottom" value="1" />
+        </attr>
+        <attr name="tipsColor" format="reference|color" />
+        <attr name="tipsUnderline" format="boolean" />
+        <attr name="tipsClickable" format="boolean" />
+    </declare-styleable>
+
+    <!-- *公共属性* -->
+    <!--圆形-->
+    <attr name="round_as_circle" format="boolean" />
+    <!--全部圆角半径-->
+    <attr name="round_corner" format="integer|dimension" />
+    <!--针对各个角的半径-->
+    <attr name="round_corner_top_left" format="integer|dimension" />
+    <attr name="round_corner_top_right" format="integer|dimension" />
+    <attr name="round_corner_bottom_left" format="integer|dimension" />
+    <attr name="round_corner_bottom_right" format="integer|dimension" />
+
+    <!--描边颜色／半径-->
+    <attr name="stroke_color" format="color|reference" />
+    <attr name="stroke_width" format="integer|dimension" />
+
+    <!-- 是否剪裁 RCLayout 的背景 -->
+    <attr name="clip_background" format="boolean" />
+
+    <!--真正用于解析的属性-->
+    <declare-styleable name="RCAttrs">
+        <attr name="round_as_circle" />
+        <attr name="round_corner" />
+        <attr name="round_corner_top_left" />
+        <attr name="round_corner_top_right" />
+        <attr name="round_corner_bottom_left" />
+        <attr name="round_corner_bottom_right" />
+        <attr name="stroke_color" />
+        <attr name="stroke_width" />
+        <attr name="clip_background" />
+    </declare-styleable>
+
+    <!--假体：用于提示-->
+    <declare-styleable name="RCRelativeLayout">
+        <attr name="round_as_circle" />
+        <attr name="round_corner" />
+        <attr name="round_corner_top_left" />
+        <attr name="round_corner_top_right" />
+        <attr name="round_corner_bottom_left" />
+        <attr name="round_corner_bottom_right" />
+        <attr name="stroke_color" />
+        <attr name="stroke_width" />
+        <attr name="clip_background" />
+    </declare-styleable>
+
+
+    <!--假体：用于提示-->
+    <declare-styleable name="RCFrameLayout">
+        <attr name="round_as_circle" />
+        <attr name="round_corner" />
+        <attr name="round_corner_top_left" />
+        <attr name="round_corner_top_right" />
+        <attr name="round_corner_bottom_left" />
+        <attr name="round_corner_bottom_right" />
+        <attr name="stroke_color" />
+        <attr name="stroke_width" />
+        <attr name="clip_background" />
+    </declare-styleable>
+</resources>

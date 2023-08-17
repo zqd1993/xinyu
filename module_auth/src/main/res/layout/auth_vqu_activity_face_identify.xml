@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_FFFFFF"
+    android:fitsSystemWindows="true"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/tb_auth_vqu_face_identify_bar"
+        layout="@layout/include_toolbar" />
+
+    <WebView
+        android:id="@+id/anchor_contract_webview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/anchor_contract_agree_button"
+        app:layout_constraintTop_toBottomOf="@id/tb_auth_vqu_face_identify_bar" />
+
+    <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
+        android:id="@+id/anchor_contract_agree_button"
+        android:layout_width="295dp"
+        android:layout_height="49dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp"
+        android:gravity="center"
+        android:text="同意女神服务协议"
+        android:textColor="@color/color_FFFFFF"
+        android:textSize="18sp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:stv_endColor="@color/color_7C69FE"
+        app:stv_layoutRadius="25dp"
+        app:stv_startColor="@color/color_BFB6FF" />
+    <!--    <TextView-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="49dp"-->
+    <!--        android:text="恭喜你完成了面容识别"-->
+    <!--        android:textColor="@color/color_273145"-->
+    <!--        android:textSize="16sp" />-->
+
+    <!--    <TextView-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="6dp"-->
+    <!--        android:text="只差上传真人头像即可获得真人认证"-->
+    <!--        android:textColor="@color/color_A3AABE"-->
+    <!--        android:textSize="14sp" />-->
+
+    <!--    <FrameLayout-->
+    <!--        android:layout_width="183dp"-->
+    <!--        android:layout_height="183dp"-->
+    <!--        android:layout_marginTop="20dp">-->
+
+    <!--        <com.mshy.VInterestSpeed.common.ui.view.RoundAngleImageView-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="match_parent"-->
+    <!--            android:src="@color/color_F7F8FA"-->
+    <!--            app:raiv_angle="12dp" />-->
+
+    <!--        <ImageView-->
+    <!--            android:layout_width="35dp"-->
+    <!--            android:layout_height="35dp"-->
+    <!--            android:layout_gravity="center"-->
+    <!--            android:src="@mipmap/ic_img_add" />-->
+    <!--    </FrameLayout>-->
+
+    <!--    <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="49dp"-->
+    <!--        android:layout_marginLeft="47.5dp"-->
+    <!--        android:layout_marginTop="95dp"-->
+    <!--        android:layout_marginRight="47.5dp"-->
+    <!--        android:gravity="center"-->
+    <!--        android:text="上传真人头像"-->
+    <!--        android:textColor="@color/color_FFFFFF"-->
+    <!--        android:textSize="18sp"-->
+    <!--        app:stv_endColor="@color/color_7C69FE"-->
+    <!--        app:stv_layoutRadius="25dp"-->
+    <!--        app:stv_startColor="@color/color_BFB6FF" />-->
+
+    <!--    <TextView-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="12dp"-->
+    <!--        android:text="请使用本人露脸照片哦~"-->
+    <!--        android:textColor="@color/color_A3AABE"-->
+    <!--        android:textSize="14sp" />-->
+</androidx.constraintlayout.widget.ConstraintLayout>

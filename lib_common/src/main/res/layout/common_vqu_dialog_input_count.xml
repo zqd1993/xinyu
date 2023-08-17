@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:orientation="vertical"
+        app:sll_layoutRadius="12dp"
+        app:sll_solidColor="@color/color_FFFFFF">
+
+        <TextView
+            android:id="@+id/tv_common_dialog_message_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="14dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginRight="20dp"
+            android:textColor="@color/color_273145"
+            android:textSize="19sp"
+            android:textStyle="bold"
+            tools:text="自定义常用语" />
+
+        <com.mshy.VInterestSpeed.common.ui.view.ShapeRelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="82dp"
+            android:layout_marginLeft="14dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="14dp"
+            app:srl_layoutRadius="6dp"
+            app:srl_solidColor="@color/color_FAFAFC">
+
+            <EditText
+                android:id="@+id/tv_common_dialog_message_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:background="@android:color/transparent"
+                android:gravity="top"
+                android:lineSpacingExtra="2dp"
+                android:maxHeight="280dp"
+                android:maxLength="50"
+                android:paddingLeft="12dp"
+                android:paddingTop="15dp"
+                android:paddingRight="12dp"
+                android:paddingBottom="15dp"
+                android:singleLine="true"
+                android:textColor="@color/color_273145"
+                android:textColorHint="@color/color_A3AABE"
+                android:textSize="15sp"
+                tools:hint="自定义常用语" />
+
+
+            <TextView
+                android:id="@+id/tv_common_dialog_message_length"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginRight="6dp"
+                android:layout_marginBottom="10dp"
+                android:text="0/50"
+                android:textColor="@color/color_A3AABE"
+                android:textSize="12sp" />
+
+        </com.mshy.VInterestSpeed.common.ui.view.ShapeRelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_common_dialog_message_doulbe_btn_parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal">
+
+            <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
+                android:id="@+id/stv_common_dialog_message_btn_left"
+                android:layout_width="wrap_content"
+                android:layout_height="49dp"
+                android:layout_marginLeft="14dp"
+                android:layout_marginRight="7.5dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/cancel"
+                android:textColor="@color/color_222222"
+                android:textSize="16sp"
+                app:stv_layoutRadius="12dp"
+                app:stv_solidColor="@color/color_F5F5F5" />
+
+            <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
+                android:id="@+id/stv_common_dialog_message_btn_right"
+                android:layout_width="wrap_content"
+                android:layout_height="49dp"
+                android:layout_marginLeft="7.5dp"
+                android:layout_marginRight="14dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:text="@string/confirm"
+                android:textSize="16sp"
+                app:stv_layoutRadius="12dp"
+                app:stv_solidColor="@color/color_FF7AC2"
+                />
+        </LinearLayout>
+
+
+        <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
+            android:id="@+id/stv_common_dialog_message_btn_single"
+            android:layout_width="match_parent"
+            android:layout_height="49dp"
+            android:layout_marginLeft="36dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="36dp"
+            android:layout_marginBottom="20dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/confirm"
+            android:textColor="@color/color_FFFFFF"
+            android:textSize="16sp"
+            android:visibility="gone"
+            app:stv_endColor="@color/color_7C69FE"
+            app:stv_layoutRadius="24.5dp"
+            app:stv_startColor="@color/color_BFB6FF" />
+    </com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout>
+</FrameLayout>

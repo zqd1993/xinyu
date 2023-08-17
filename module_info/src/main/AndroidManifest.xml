@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.live.module.info">
+
+    <application>
+        <activity
+            android:name=".activity.InfoVquEditActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.InfoVquPreviewPictureActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.InfoVquNicknameActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.InfoVquVoiceEditActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.InfoVquIntroduceActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.InfoVquLabelEditActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.InfoVquPersonalInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.InfoVquGiftListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.InfoVquPreviewPictureAndVideoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.InfoVquPreviewPicAndVideoActivity"
+            android:screenOrientation="portrait" />
+    </application>
+
+</manifest>

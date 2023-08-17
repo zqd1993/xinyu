@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="31dp"
+    android:paddingRight="31dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout
+            android:layout_width="match_parent"
+            android:paddingBottom="20dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            app:layout_constraintDimensionRatio="313:420"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:sll_layoutRadius="12dp"
+            app:sll_solidColor="@color/white">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_common_notice_top" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="开启系统通知"
+                android:textColor="@color/color_273145"
+                android:textSize="19sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="开启通知，可以第一时间收到Ta的消息"
+                android:textColor="@color/color_A3AABE"
+                android:textSize="14sp" />
+
+            <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
+                android:id="@+id/tv_open"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="36dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginRight="36dp"
+                android:gravity="center"
+                android:text="去开启"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:stv_layoutRadius="12dp"
+                app:stv_solidColor="@color/color_FF7AC2"
+                />
+
+            <TextView
+                android:id="@+id/tv_not"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="不再提示"
+                android:textColor="@color/color_A3AABE"
+                android:textSize="14sp" />
+        </com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</RelativeLayout>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_gravity="center"
+    android:background="@drawable/common_vqu_bg_common_hint_dialog"
+    android:paddingTop="20dp"
+    android:paddingBottom="25dp"
+    android:layout_marginStart="34dp"
+    android:layout_marginEnd="34dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tv_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="古灵精怪"
+        android:textColor="@color/color_222222"
+        android:textSize="19sp"
+        />
+
+    <View
+        android:id="@+id/view_line"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="1dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_title"/>
+
+    <TextView
+        android:id="@+id/tv_content"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/view_line"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginEnd="14dp"
+        android:gravity="left"
+        tools:text="确定删除该聊天？"
+        android:textColor="@color/color_222222"
+        android:textSize="14sp" />
+
+    <LinearLayout
+        android:id="@+id/ll_bottom_layout"
+        app:layout_constraintTop_toBottomOf="@id/tv_content"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginEnd="14dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="48dp">
+
+        <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
+            android:id="@+id/tv_left"
+            android:text="取消"
+            android:gravity="center"
+            android:textColor="@color/color_222222"
+            android:textSize="14sp"
+            android:layout_marginEnd="7dp"
+            app:stv_startColor="@color/color_F5F5F5"
+            app:stv_endColor="@color/color_F5F5F5"
+            app:stv_layoutRadius="12dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"/>
+
+        <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
+            android:id="@+id/tv_right"
+            android:text="确定"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:layout_marginStart="7dp"
+            app:stv_startColor="@color/color_FF7AC2"
+            app:stv_endColor="@color/color_FF7AC2"
+            app:stv_layoutRadius="12dp"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
+
+
+    <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
+        android:id="@+id/tv_single_button"
+        android:text="我知道了"
+        app:layout_constraintTop_toBottomOf="@id/tv_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        app:stv_startColor="@color/color_FF7AC2"
+        app:stv_endColor="@color/color_FF7AC2"
+        app:stv_layoutRadius="24dp"
+        android:layout_width="240dp"
+        android:layout_height="48dp"
+        android:visibility="gone"
+        />
+
+    <TextView
+        android:id="@+id/tv_future_no_tip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/ll_bottom_layout"
+        android:text="以后不再提示，直接退出"
+        android:visibility="gone"
+        android:textSize="10sp"
+        android:gravity="center_vertical"
+        android:drawableLeft="@mipmap/agora_future_no_tip_unselect"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>

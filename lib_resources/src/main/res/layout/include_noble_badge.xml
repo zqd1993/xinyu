@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fl_noble_badge"
+    android:layout_width="30dp"
+    android:layout_height="19dp"
+    android:visibility="gone"
+    tools:visibility="visible"
+    android:layout_marginEnd="3dp">
+    <ImageView
+        android:id="@+id/iv_noble_badge"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical" />
+</FrameLayout>

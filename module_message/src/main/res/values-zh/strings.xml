@@ -1,0 +1,27 @@
+<resources>
+
+    <string name="message_vqu_main_fragment_msg">消息</string>
+    <string name="message_vqu_main_fragment_intimate">亲密</string>
+    <string name="message_vqu_main_fragment_call_record">通话</string>
+    <string name="message_vqu_read_all">一键已读</string>
+    <string name="message_vqu_read_all_hint">消息气泡会清除，但消息不会丢失</string>
+    <string name="message_vqu_clear_all">清除消息</string>
+    <string name="message_vqu_clear_all_title">确定删除全部消息</string>
+    <string name="message_vqu_clear_all_hint">删除后数据无法恢复，请谨慎操作</string>
+    <string name="message_vqu_clear_all_left_btn">再考虑下</string>
+    <string name="message_vqu_clear_all_right_btn">确定删除</string>
+    <string name="message_vqu_no_msg_record">暂无消息记录</string>
+    <string name="message_vqu_intimate_empty_hint">亲密度≥10的亲密关系会在这里显示哦~</string>
+    <string name="message_vqu_intimate_chat_hint">立即聊天，遇见亲密的Ta</string>
+    <string name="message_vqu_intimate_go_chat">去聊天</string>
+    <string name="message_vqu_delete_dialog_hint">确定删除该聊天？</string>
+    <string name="message_vqu_chat_setting">好友设置</string>
+    <string name="message_vqu_top_chat">置顶聊天</string>
+    <string name="message_vqu_cancel_top_chat">取消置顶</string>
+    <string name="message_vqu_menu_set_remark">备注</string>
+    <string name="message_vqu_set_remark">设置备注名</string>
+    <string name="message_vqu_add_black">加入黑名单</string>
+    <string name="message_vqu_delete_chat">删除聊天</string>
+    <string name="message_vqu_common_word_title">聊天常用语</string>
+    <string name="message_vqu_common_word_replace">换一批</string>
+</resources>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.live.module.bill">
+
+    <application>
+        <activity
+            android:name=".activity.BillTantaRechargeActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name=".activity.BillTantaEarningsActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name=".activity.BillTantaDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.BillTantaExchangeDiamondActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.BillTantaAccountListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.BillTantaNewWithdrawalAccountActivity"
+            android:screenOrientation="portrait" />
+    </application>
+</manifest>

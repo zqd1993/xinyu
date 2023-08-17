@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:elevation="0dp"
+        app:layout_behavior="com.mshy.VInterestSpeed.common.ui.view.CustomBehavior">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/toolbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="190dp"
+            app:contentScrim="@android:color/white"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="190dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@color/white" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="68dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="48.5dp"
+                        android:layout_marginRight="16dp">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/vqu_sll_match_video"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="6dp"
+                            android:layout_weight="1"
+                            android:background="@mipmap/yj_home_video"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical"
+                            android:paddingLeft="12dp">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@mipmap/yj_home_video_right"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintRight_toRightOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/vqu_tv_match_video"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:text="视频速配"
+                                android:textColor="@color/white"
+                                android:textSize="17sp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toTopOf="@+id/tv_video"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_chainStyle="packed" />
+
+                            <TextView
+                                android:id="@+id/tv_video"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="6dp"
+                                android:text="邂逅有缘人"
+                                android:textColor="@color/white"
+                                android:textSize="11sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintLeft_toLeftOf="@+id/vqu_tv_match_video"
+                                app:layout_constraintTop_toBottomOf="@+id/vqu_tv_match_video" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/vqu_sll_match_voice"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="6dp"
+                            android:layout_weight="1"
+                            android:background="@mipmap/yj_home_audio"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical"
+                            android:paddingLeft="12dp">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@mipmap/yj_home_audio_right"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintRight_toRightOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/vqu_tv_match_audio"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:text="语音速配"
+                                android:textColor="@color/white"
+                                android:textSize="17sp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toTopOf="@+id/tv_audio"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_chainStyle="packed" />
+
+                            <TextView
+                                android:id="@+id/tv_audio"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="6dp"
+                                android:text="实时语音聊天"
+                                android:textColor="@color/white"
+                                android:textSize="11sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintLeft_toLeftOf="@+id/vqu_tv_match_audio"
+                                app:layout_constraintTop_toBottomOf="@+id/vqu_tv_match_audio" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                        >
+                        <!--                        <com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout-->
+                        <!--                            android:id="@+id/vqu_sll_match_video"-->
+                        <!--                            android:layout_width="0dp"-->
+                        <!--                            android:layout_height="match_parent"-->
+                        <!--                            android:layout_marginRight="6dp"-->
+                        <!--                            android:layout_weight="1"-->
+                        <!--                            android:gravity="center_horizontal"-->
+                        <!--                            android:orientation="vertical"-->
+                        <!--                            app:sll_layoutRadius="10dp"-->
+                        <!--                            app:sll_orientation="sll_horizontal"-->
+                        <!--                            app:sll_solidColor="@color/white">-->
+
+                        <!--                            <com.opensource.svgaplayer.SVGAImageView-->
+                        <!--                                android:id="@+id/vqu_video_apng"-->
+                        <!--                                android:layout_width="match_parent"-->
+                        <!--                                android:layout_height="60dp"-->
+                        <!--                                app:autoPlay="true"-->
+                        <!--                                app:source="match_video_svg.svga" />-->
+
+                        <!--                            <TextView-->
+                        <!--                                android:id="@+id/vqu_tv_match_video"-->
+                        <!--                                android:layout_width="wrap_content"-->
+                        <!--                                android:layout_height="wrap_content"-->
+                        <!--                                android:layout_marginTop="4dp"-->
+                        <!--                                android:text="视频速配"-->
+                        <!--                                android:textColor="#FE6920"-->
+                        <!--                                android:textSize="14sp"-->
+                        <!--                                android:textStyle="bold" />-->
+
+                        <!--                            <TextView-->
+                        <!--                                android:layout_width="wrap_content"-->
+                        <!--                                android:layout_height="wrap_content"-->
+                        <!--                                android:layout_marginTop="3dp"-->
+                        <!--                                android:text="邂逅有缘人"-->
+                        <!--                                android:textColor="#A3AABE"-->
+                        <!--                                android:textSize="10sp" />-->
+                        <!--                        </com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout>-->
+
+                        <!--                        <com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout-->
+                        <!--                            android:id="@+id/vqu_sll_match_voice"-->
+                        <!--                            android:layout_width="0dp"-->
+                        <!--                            android:layout_height="match_parent"-->
+                        <!--                            android:layout_marginRight="6dp"-->
+                        <!--                            android:layout_weight="1"-->
+                        <!--                            android:gravity="center_horizontal"-->
+                        <!--                            android:orientation="vertical"-->
+                        <!--                            app:sll_layoutRadius="10dp"-->
+                        <!--                            app:sll_orientation="sll_horizontal"-->
+                        <!--                            app:sll_solidColor="@color/white">-->
+
+                        <!--                            <com.opensource.svgaplayer.SVGAImageView-->
+                        <!--                                android:id="@+id/vqu_voice_apng"-->
+                        <!--                                android:layout_width="match_parent"-->
+                        <!--                                android:layout_height="60dp"-->
+                        <!--                                app:autoPlay="true"-->
+                        <!--                                app:source="match_voice_svg.svga" />-->
+
+                        <!--                            <TextView-->
+                        <!--                                android:id="@+id/vqu_tv_match_audio"-->
+                        <!--                                android:layout_width="wrap_content"-->
+                        <!--                                android:layout_height="wrap_content"-->
+                        <!--                                android:layout_marginTop="4dp"-->
+                        <!--                                android:text="语音速配"-->
+                        <!--                                android:textColor="#4B84F5"-->
+                        <!--                                android:textSize="14sp"-->
+                        <!--                                android:textStyle="bold" />-->
+
+                        <!--                            <TextView-->
+                        <!--                                android:layout_width="wrap_content"-->
+                        <!--                                android:layout_height="wrap_content"-->
+                        <!--                                android:layout_marginTop="3dp"-->
+                        <!--                                android:text="寻找声音恋人"-->
+                        <!--                                android:textColor="#A3AABE"-->
+                        <!--                                android:textSize="10sp" />-->
+                        <!--                        </com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout>-->
+
+                        <com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout
+                            android:id="@+id/vqu_sll_invitation"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="6dp"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical"
+                            android:visibility="gone"
+                            app:sll_layoutRadius="10dp"
+                            app:sll_orientation="sll_horizontal"
+                            app:sll_solidColor="@color/white">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="60dp"
+                                android:src="@mipmap/agora_tanta_share" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:text="分享邀请"
+                                android:textColor="#7C69FE"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="3dp"
+                                android:text="超高额外奖励"
+                                android:textColor="#A3AABE"
+                                android:textSize="10sp" />
+                        </com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout>
+
+                        <com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout
+                            android:id="@+id/vqu_sll_job_center"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical"
+                            android:visibility="gone"
+                            app:sll_layoutRadius="10dp"
+                            app:sll_orientation="sll_horizontal"
+                            app:sll_solidColor="@color/white">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="60dp"
+                                android:src="@mipmap/agora_tanta_job" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:text="任务中心"
+                                android:textColor="#FE6920"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="3dp"
+                                android:text="做任务领奖励"
+                                android:textColor="#A3AABE"
+                                android:textSize="10sp"
+                                android:textStyle="bold" />
+                        </com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout>
+
+                    </LinearLayout>
+
+                    <com.mshy.VInterestSpeed.common.ui.view.ShapeRelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="64dp"
+                        android:layout_alignParentBottom="true"
+                        android:paddingLeft="16dp"
+                        android:paddingRight="16dp"
+                        app:srl_bottomLeftRadius="0dp"
+                        app:srl_bottomRightRadius="0dp"
+                        app:srl_solidColor="@color/color_FFFFFF"
+                        app:srl_topLeftRadius="16dp"
+                        app:srl_topRightRadius="16dp">
+
+                        <com.mshy.VInterestSpeed.common.ui.view.ShapeRelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            app:srl_bottomLeftRadius="0dp"
+                            app:srl_bottomRightRadius="0dp"
+                            app:srl_solidColor="@color/color_FFFFFF"
+                            app:srl_topLeftRadius="16dp"
+                            app:srl_topRightRadius="16dp">
+
+                            <include
+                                android:id="@+id/included_head_ad"
+                                layout="@layout/home_tanta_layout_tv_head" />
+                        </com.mshy.VInterestSpeed.common.ui.view.ShapeRelativeLayout>
+                    </com.mshy.VInterestSpeed.common.ui.view.ShapeRelativeLayout>
+
+                </RelativeLayout>
+
+            </FrameLayout>
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="0dp" />
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/color_FFFFFF">
+
+            <com.mshy.VInterestSpeed.common.ui.view.magicindicator.MagicIndicator
+                android:id="@+id/vqu_magic_indicator"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp" />
+
+            <ImageView
+                android:id="@+id/iv_home_vqu_main_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:padding="12dp"
+                android:src="@mipmap/resouces_tanta_home_search"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <FrameLayout
+        android:id="@+id/vqu_fl_parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/vqu_view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never"
+            android:scrollbars="none" />
+
+
+    </FrameLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

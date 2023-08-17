@@ -1,0 +1,147 @@
+//****************************************
+//********** lib_base 的配置文件 ***********
+//****************************************
+
+apply from: '../base_lib.gradle'
+apply plugin: 'dagger.hilt.android.plugin'
+
+import com.live.vquonline.buildsrc.*
+
+android {
+
+    buildFeatures {
+        viewBinding = true
+    }
+
+    resourcePrefix "base_"
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+}
+
+repositories {
+    flatDir {
+        dirs 'libs', '../lib_common/libs'
+    }
+}
+
+dependencies {
+    api fileTree(dir: "libs", include: ["*.jar", "*.aar"])
+
+    api DependencyConfig.AndroidX.CoreKtx
+    api DependencyConfig.AndroidX.AppCompat
+    api DependencyConfig.AndroidX.ConstraintLayout
+    api DependencyConfig.AndroidX.ActivityKtx
+    api DependencyConfig.AndroidX.FragmentKtx
+    api DependencyConfig.AndroidX.MultiDex
+
+    api DependencyConfig.Android.Material
+
+    api DependencyConfig.Kotlin.Kotlin
+    api DependencyConfig.Kotlin.CoroutinesCore
+    api DependencyConfig.Kotlin.CoroutinesAndroid
+
+    api DependencyConfig.JetPack.ViewModel
+    api DependencyConfig.JetPack.ViewModelSavedState
+    api DependencyConfig.JetPack.LiveData
+    api DependencyConfig.JetPack.Lifecycle
+    api DependencyConfig.JetPack.HiltCore
+
+    api DependencyConfig.GitHub.Gson
+    api DependencyConfig.GitHub.MMKV
+    api DependencyConfig.GitHub.AutoSize
+    api DependencyConfig.GitHub.ARoute
+    api DependencyConfig.GitHub.RecyclerViewAdapter
+    api DependencyConfig.GitHub.EventBus
+    api DependencyConfig.GitHub.PermissionX
+    api DependencyConfig.GitHub.AutoService
+    api DependencyConfig.GitHub.OkHttp
+    api DependencyConfig.GitHub.OkHttpInterceptorLogging
+    api DependencyConfig.GitHub.Retrofit
+    api DependencyConfig.GitHub.RetrofitConverterGson
+    api DependencyConfig.GitHub.Coil
+    api DependencyConfig.GitHub.CoilGIF
+    api DependencyConfig.GitHub.CoilSVG
+    api DependencyConfig.GitHub.CoilVideo
+    api DependencyConfig.GitHub.LoadSir
+    api DependencyConfig.GitHub.PickerView
+    api DependencyConfig.GitHub.Flowlayout
+    api DependencyConfig.GitHub.Logutils
+    annotationProcessor DependencyConfig.GitHub.GlideCompiler
+    api DependencyConfig.GitHub.Glide
+    api DependencyConfig.GitHub.SmartRefreshLayoutKernel
+    api DependencyConfig.GitHub.SmartRefreshLayoutHeaderClassics
+    api DependencyConfig.GitHub.SmartRefreshLayoutFooterClassics
+    api DependencyConfig.GitHub.ZXing
+
+    //声网
+    api DependencyConfig.Agora.agora_builder
+    api DependencyConfig.Agora.agora_ains
+
+    /**
+     * 图片选择器
+     */
+    api DependencyConfig.GitHub.Pictureselector
+    api DependencyConfig.GitHub.Compress
+    api DependencyConfig.GitHub.Ucrop
+    api DependencyConfig.GitHub.Lucksiege
+    api DependencyConfig.GitHub.BannerViewPager
+    /**
+     * Ali
+     */
+    api DependencyConfig.GitHub.AliUpload
+    api DependencyConfig.GitHub.AliOos
+    api DependencyConfig.GitHub.AliSvideos
+    api DependencyConfig.GitHub.AliCore
+    api DependencyConfig.GitHub.AliAlivcConan
+    api DependencyConfig.GitHub.AliAlivcFFmpeg
+
+//    api DependencyConfig.GitHub.YokeyWord
+    api DependencyConfig.GitHub.GSYVideoPlayer
+//    api DependencyConfig.GitHub.VideoRangeSlider
+
+
+//    api DependencyConfig.SDK.XlogSDK
+    api DependencyConfig.SDK.CrashSDK
+    api DependencyConfig.SDK.TencentBugly
+    api DependencyConfig.SDK.TencentBuglyNative
+//    api DependencyConfig.SDK.TencentBuglyUpgrade
+//    api DependencyConfig.SDK.TencentTBSX5
+    api DependencyConfig.SDK.WechatSDK
+    api DependencyConfig.SDK.AlipaySDK
+
+
+    api DependencyConfig.UMSDK.common
+    api DependencyConfig.UMSDK.asms
+    api DependencyConfig.UMSDK.share_core
+    api DependencyConfig.UMSDK.share_qq
+    api DependencyConfig.UMSDK.share_wx
+
+    api DependencyConfig.GitHub.immersionbar
+    api DependencyConfig.GitHub.immersionbar_fragment
+    api DependencyConfig.GitHub.immersionbar_kotlin
+    api DependencyConfig.GitHub.Oaid
+
+    api DependencyConfig.SDK.Qiyu
+
+    kapt DependencyConfig.GitHub.ARouteCompiler
+    kapt DependencyConfig.GitHub.EventBusAPT
+    kapt DependencyConfig.GitHub.AutoServiceAnnotations
+    kapt DependencyConfig.JetPack.HiltApt
+    kapt DependencyConfig.JetPack.HiltAndroidx
+    kapt DependencyConfig.JetPack.LifecycleCompilerAPT
+
+    api project(path: ':lib_service')
+
+//    api 'com.faceunity:core:8.2.1'
+    api 'com.faceunity:core:8.1.0'
+//    api 'com.faceunity:model:8.2.1'
+    api 'com.faceunity:model:8.1.0'
+
+
+//    api "com.leon.channel:helper:2.0.3"
+//    api 'com.alicom.android:authSDK:LogOnlineStandardRelease-2.12.4-SNAPSHOT'
+}

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<com.mshy.VInterestSpeed.common.ui.view.ShapeRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll_vqu_pay_pay"
+    android:layout_width="match_parent"
+    android:layout_height="49dp"
+    android:layout_marginLeft="12dp"
+    android:layout_marginRight="12dp"
+    android:layout_marginBottom="8dp"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingLeft="12dp"
+    android:paddingRight="12dp"
+    app:srl_layoutRadius="6dp"
+    app:srl_solidColor="@color/color_F7F8FA">
+
+
+    <ImageView
+        android:id="@+id/iv_type"
+        android:layout_width="19dp"
+        android:layout_height="19dp"
+        android:layout_centerVertical="true"
+        android:src="@mipmap/ic_common_vqu_pay_dialog_wechat_logo" />
+
+    <TextView
+        android:id="@+id/tv_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="7dp"
+        android:layout_toEndOf="@+id/iv_type"
+        android:gravity="center_vertical"
+        android:text="@string/common_vqu_wechat_pay"
+        android:textColor="@color/color_222222"
+        android:textSize="14sp" />
+
+    <CheckBox
+        android:id="@+id/cb_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:button="@android:color/transparent"
+        android:checked="true"
+        android:clickable="false"
+        android:drawableLeft="@drawable/tanta_selector_vip_tick"
+        android:enabled="false" />
+
+</com.mshy.VInterestSpeed.common.ui.view.ShapeRelativeLayout>
+
+

@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="388dp"
+        android:layout_gravity="bottom"
+        android:orientation="vertical"
+        app:sll_solidColor="@color/color_FFFFFF"
+        app:sll_topLeftRadius="16dp"
+        app:sll_topRightRadius="16dp">
+
+        <com.mshy.VInterestSpeed.common.ui.view.ShapeConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iv_vqu_pay_finish"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="17dp"
+                android:paddingTop="17dp"
+                android:paddingRight="13dp"
+                android:paddingBottom="12dp"
+                android:src="@mipmap/ic_common_close"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
+                android:id="@+id/tv_title"
+                android:layout_width="0dp"
+                android:layout_height="49dp"
+                android:gravity="center"
+                android:text="充值"
+                android:textColor="@color/color_273145"
+                android:textSize="17sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:stv_endColor="@color/color_FFFFFF"
+                app:stv_orientation="stv_vertical"
+                app:stv_startColor="@color/color_267C69FE"
+                app:stv_topLeftRadius="16dp"
+                app:stv_topRightRadius="16dp" />
+        </com.mshy.VInterestSpeed.common.ui.view.ShapeConstraintLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="27dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="￥"
+                android:textColor="@color/color_273145"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/tv_vqu_pay_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/color_273145"
+                android:textSize="35sp"
+                tools:text="100" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="14dp"
+            android:layout_marginTop="35dp"
+            android:text="@string/common_vqu_select_pay_way"
+            android:textColor="@color/color_A3AABE"
+            android:textSize="12sp" />
+
+        <com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout
+            android:id="@+id/ll_tanta_wechat_pay"
+            android:layout_width="match_parent"
+            android:layout_height="49dp"
+            android:layout_marginLeft="14dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="14dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            app:sll_layoutRadius="6dp"
+            app:sll_solidColor="@color/color_F7F8FA">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableLeft="@mipmap/ic_common_vqu_pay_dialog_wechat_logo"
+                android:drawablePadding="7dp"
+                android:gravity="center_vertical"
+                android:text="@string/common_vqu_wechat_pay"
+                android:textColor="@color/color_273145"
+                android:textSize="14sp" />
+
+            <CheckBox
+                android:id="@+id/cb_tanta_wechat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@drawable/vqu_selector_tick"
+                android:checked="true"
+                android:clickable="false"
+                android:enabled="false" />
+
+        </com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout>
+
+        <com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout
+            android:id="@+id/ll_tanta_alipay_pay"
+            android:layout_width="match_parent"
+            android:layout_height="49dp"
+            android:layout_marginLeft="14dp"
+            android:layout_marginTop="12dp"
+            android:visibility="gone"
+            android:layout_marginRight="14dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            app:sll_layoutRadius="6dp"
+            app:sll_solidColor="@color/color_F7F8FA">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableStart="@mipmap/ic_common_vqu_pay_dialog_alipay_logo"
+                android:drawablePadding="7dp"
+                android:gravity="center_vertical"
+                android:text="@string/common_vqu_alipay_pay"
+                android:textColor="@color/color_273145"
+                android:textSize="14sp" />
+
+            <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:paddingLeft="7dp"
+                android:paddingTop="3dp"
+                android:paddingRight="7dp"
+                android:paddingBottom="3dp"
+                android:text="首单随机立减，最高免单"
+                android:textColor="@color/white"
+                android:textSize="11sp"
+                android:visibility="gone"
+                app:stv_layoutRadius="12dp"
+                app:stv_solidColor="@color/color_F4003F" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <CheckBox
+                android:id="@+id/cb_tanta_alipay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@drawable/vqu_selector_tick"
+                android:clickable="false"
+                android:enabled="false" />
+
+        </com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout>
+
+
+        <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
+            android:id="@+id/tv_pay"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="37dp"
+            android:layout_marginRight="40dp"
+            android:gravity="center"
+            android:text="@string/common_vqu_confirm_pay"
+            android:textColor="@color/color_FFFFFF"
+            android:textSize="16sp"
+            app:stv_endColor="@color/color_7C69FE"
+            app:stv_layoutRadius="24dp"
+            app:stv_orientation="stv_vertical"
+            app:stv_startColor="@color/color_BFB6FF" />
+
+    </com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout>
+</FrameLayout>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="31dp"
+        android:layout_marginTop="37dp"
+        android:layout_marginRight="31dp"
+        android:orientation="vertical"
+        android:paddingLeft="14dp"
+        android:paddingRight="14dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/iv_dialog_fate_link_top"
+        app:sll_layoutRadius="10dp"
+        app:sll_solidColor="@color/color_FFFFFF">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="62dp"
+            android:text="1、牵线说明："
+            android:textColor="#FE66A4"
+            android:textSize="15sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:lineSpacingExtra="1dp"
+            android:text="心语平台将用大数据为你匹配优质男用户，优先将你的个人资料卡主动推送曝光给当前在线的优质异性；"
+            android:textColor="#273145"
+            android:textSize="15sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="2、缘分同意："
+            android:textColor="#FE66A4"
+            android:textSize="15sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:lineSpacingExtra="1dp"
+            android:text="平台牵线匹配成功后，男生回复代表同意缘分，私聊由男生支付金币；"
+            android:textColor="#273145"
+            android:textSize="15sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="3、牵线秘籍："
+            android:textColor="#FE66A4"
+            android:textSize="15sp" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:lineSpacingExtra="1dp"
+            android:text="完善个人资料、通过真人认证、视频语音、 互动即时回复、每日登录等活跃女神用户， 可快速增加牵线曝光的次数哦。"
+            android:textColor="#273145"
+            android:textSize="15sp" />
+
+
+        <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
+            android:id="@+id/tv_confirm"
+            android:layout_width="match_parent"
+            android:layout_height="49dp"
+            android:layout_marginLeft="36dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginRight="36dp"
+            android:layout_marginBottom="20dp"
+            android:gravity="center"
+            android:text="我知道了"
+            android:textColor="@color/color_FFFFFF"
+            android:textSize="16sp"
+            app:stv_endColor="@color/color_FE66A4"
+            app:stv_layoutRadius="25dp"
+            app:stv_startColor="@color/color_FFB5DB" />
+    </com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout>
+
+    <ImageView
+        android:id="@+id/iv_dialog_fate_link_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ic_fate_link_dialog_top"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

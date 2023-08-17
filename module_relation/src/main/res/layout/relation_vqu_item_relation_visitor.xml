@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_relation_item_root"
+    android:layout_width="match_parent"
+    android:layout_height="90dp">
+
+
+    <View
+        android:id="@+id/v_relation_item_relation_list_dot"
+        android:layout_width="6dp"
+        android:layout_height="6dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="3dp"
+        android:background="@drawable/vqu_shape_fe66a4_r37"
+        android:gravity="center_vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.mshy.VInterestSpeed.common.ui.view.WaveView
+        android:id="@+id/wv_relation_vqu_item_relation_list_wave"
+        android:layout_width="85dp"
+        android:layout_height="85dp"
+        android:layout_gravity="center"
+        app:layout_constraintBottom_toBottomOf="@id/siv_relation_avatar"
+        app:layout_constraintLeft_toLeftOf="@id/siv_relation_avatar"
+        app:layout_constraintRight_toRightOf="@id/siv_relation_avatar"
+        app:layout_constraintTop_toTopOf="@id/siv_relation_avatar" />
+
+    <com.mshy.VInterestSpeed.common.ui.view.CommonVquAvatarFrameView
+        android:id="@+id/siv_relation_avatar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        app:anchorVSize="10dp"
+        app:avatarSize="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/v_relation_item_relation_list_dot"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@color/color_273145" />
+
+    <ImageView
+        android:id="@+id/iv_relation_vqu_item_relation_list_live"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:src="@mipmap/ic_relation_vqu_live"
+        android:visibility="gone"
+        tools:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@id/siv_relation_avatar"
+        app:layout_constraintLeft_toLeftOf="@id/siv_relation_avatar"
+        app:layout_constraintRight_toRightOf="@id/siv_relation_avatar"
+        app:layout_constraintTop_toTopOf="@id/siv_relation_avatar" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/siv_relation_avatar"
+        app:layout_constraintRight_toLeftOf="@id/stv_relation_vqu_item_relation_list_focus"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tv_nick_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:includeFontPadding="false"
+            android:textColor="@color/color_273145"
+            android:textSize="16sp"
+            app:layout_constraintLeft_toRightOf="@id/siv_relation_avatar"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="大姐大" />
+
+        <include
+            layout="@layout/common_vqu_include_gender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            app:layout_constraintBottom_toBottomOf="@id/tv_nick_name"
+            app:layout_constraintLeft_toRightOf="@id/tv_nick_name"
+            app:layout_constraintTop_toTopOf="@id/tv_nick_name" />
+
+        <TextView
+            android:id="@+id/tv_relation_desc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_marginRight="12dp"
+            android:singleLine="true"
+            android:textColor="@color/color_8B96B5"
+            android:textSize="12sp"
+            app:layout_constraintLeft_toLeftOf="@id/tv_nick_name"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_nick_name"
+            tools:text="心有多大，舞台就有多大" />
+        <TextView
+            android:id="@+id/tv_relation_time"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_marginRight="12dp"
+            android:singleLine="true"
+            android:textColor="@color/color_8B96B5"
+            android:textSize="12sp"
+            app:layout_constraintLeft_toLeftOf="@id/tv_nick_name"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_relation_desc"
+            tools:text="1分钟前" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
+        android:id="@+id/stv_relation_vqu_item_relation_list_focus"
+        android:layout_width="60dp"
+        android:layout_height="29dp"
+        android:layout_marginRight="12dp"
+        android:gravity="center"
+        android:text="关注"
+        android:textColor="@color/color_FFFFFF"
+        android:textSize="12sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:stv_endColor="@color/color_7C69FE"
+        app:stv_layoutRadius="15dp"
+        app:stv_startColor="@color/color_BFB6FF" />
+
+    <TextView
+        android:id="@+id/stv_relation_vqu_item_relation_list_like"
+        android:layout_width="wrap_content"
+        android:layout_height="28dp"
+        android:layout_marginRight="12dp"
+        android:background="@drawable/bg_tanta_search_list_like_selector"
+        android:drawableLeft="@drawable/ic_tanta_search_list_like_selector"
+        android:gravity="center_vertical"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:text="私信"
+        android:textColor="@color/selector_text_tanta_search_list_like"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0.5dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:background="@color/color_F5F4F7"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

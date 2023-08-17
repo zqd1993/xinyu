@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_contact_vqu_invited_record_search_bar"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:background="@color/color_FFFFFF"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="33dp"
+            android:layout_height="33dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="7.5dp"
+            android:src="@mipmap/resources_return_black"
+            app:layout_constraintBottom_toBottomOf="@+id/srl_search"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/srl_search" />
+
+        <com.mshy.VInterestSpeed.common.ui.view.ShapeRelativeLayout
+            android:id="@+id/srl_search"
+            android:layout_width="0dp"
+            android:layout_height="39dp"
+            android:layout_marginLeft="3.5dp"
+            android:layout_marginEnd="12dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/tv_search"
+            app:layout_constraintStart_toEndOf="@+id/iv_back"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srl_layoutRadius="20dp"
+            app:srl_solidColor="@color/color_F7F8FA">
+
+            <EditText
+                android:id="@+id/set_contact_vqu_invited_record_search_keyword"
+                android:layout_width="match_parent"
+                android:layout_height="39dp"
+
+                android:layout_toStartOf="@+id/iv_search_clear"
+                android:background="@drawable/bg_edit"
+                android:drawableLeft="@mipmap/ic_common_vqu_search"
+                android:drawablePadding="4dp"
+                android:hint="搜索心语号或昵称"
+                android:imeActionLabel="搜索"
+                android:imeOptions="actionSearch"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:singleLine="true"
+                android:textColor="@color/color_273145"
+                android:textColorHint="@color/color_A3AABE"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/iv_search_clear"
+                android:layout_width="13dp"
+                android:layout_height="13dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="12dp"
+                android:src="@mipmap/ic_common_vqu_search_clear" />
+
+        </com.mshy.VInterestSpeed.common.ui.view.ShapeRelativeLayout>
+
+
+        <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
+            android:id="@+id/tv_search"
+            android:layout_width="64dp"
+            android:layout_height="39dp"
+            android:layout_marginEnd="12dp"
+            android:gravity="center"
+            android:text="搜索"
+            android:textColor="@color/color_FFFFFF"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:stv_endColor="@color/color_FF7AC2"
+            app:stv_layoutRadius="8dp"
+            app:stv_startColor="@color/color_FF7AC2" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <com.scwang.smart.refresh.layout.SmartRefreshLayout
+        android:id="@+id/srl_contact_vqu_invited_record_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cl_contact_vqu_invited_record_search_bar">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_contact_vqu_invited_record_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+    </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

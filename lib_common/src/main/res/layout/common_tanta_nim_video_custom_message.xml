@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tool="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tool:background="@color/white">
+    <!--发送消息的edittext-->
+    <LinearLayout
+        android:id="@+id/ll_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="12dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="12dp"
+        android:paddingBottom="8dp"
+        android:visibility="gone"
+        tool:visibility="visible">
+
+        <ImageView
+            android:id="@+id/iv_video_left"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@mipmap/resources_tanta_nim_ic_video_left" />
+
+        <TextView
+            android:id="@+id/tv_left_video_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:textColor="@color/color_222222"
+            android:textSize="16sp"
+            tool:text="未接听视频" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:visibility="gone"
+        tool:visibility="gone">
+        <ImageView
+            android:id="@+id/iv_video_right"
+            android:layout_marginEnd="8dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@mipmap/resources_tanta_nim_ic_video_left" />
+        <TextView
+            android:id="@+id/tv_right_video_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            tool:text="未接听视频" />
+
+
+
+    </LinearLayout>
+
+</RelativeLayout>

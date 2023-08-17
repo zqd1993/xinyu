@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="6dp">
+
+    <ImageView
+        android:id="@+id/sdv_left"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:visibility="gone"
+        tools:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/sdv_right"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentEnd="true"
+        android:visibility="gone"
+        tools:visibility="visible"/>
+
+    <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
+        android:id="@+id/tv_content_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/sdv_left"
+        android:layout_marginStart="10dp"
+        android:layout_toEndOf="@id/sdv_left"
+        android:gravity="center_vertical"
+        android:visibility="gone"
+        android:maxWidth="250dp"
+        android:minHeight="40dp"
+        android:paddingStart="12dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="12dp"
+        android:paddingBottom="10dp"
+        android:textColor="@color/color_273145"
+        android:textSize="14sp"
+        app:stv_layoutRadius="10dp"
+        app:stv_solidColor="@color/white"
+        tools:text="在心语，每回复一条消息，都可以获得现金，现金可无门槛提现哦" />
+
+
+    <!--添加扣除费用的布局-->
+    <TextView
+        android:id="@+id/coin_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_content_left"
+        android:layout_alignStart="@id/tv_content_left"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="6dp"
+        android:drawableStart="@mipmap/resources_tanta_nim_ic_msg_earn"
+        android:drawablePadding="2dp"
+        android:gravity="center"
+        android:text="+0.012元"
+        android:textColor="@color/color_A3AABE"
+        android:textSize="12sp"
+        android:visibility="gone"
+        tools:visibility="gone" />
+
+
+    <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
+        android:id="@+id/tv_content_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/sdv_right"
+        android:layout_marginEnd="10dp"
+        android:layout_toStartOf="@id/sdv_right"
+        android:gravity="center_vertical"
+        android:maxWidth="250dp"
+        android:minHeight="40dp"
+        android:paddingStart="12dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="12dp"
+        android:paddingBottom="10dp"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:visibility="gone"
+        app:stv_layoutRadius="10dp"
+        app:stv_solidColor="@color/color_7C69FE"
+        tools:text="好的" />
+
+</RelativeLayout>
