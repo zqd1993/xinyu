@@ -16,6 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.live.vquonline.base.constant.VersionStatus;
 import com.live.vquonline.base.utils.SpUtils;
 import com.live.vquonline.base.utils.UtilsKt;
 import com.mshy.VInterestSpeed.common.CommonApplication;
@@ -67,6 +68,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import com.mshy.VInterestSpeed.common.BuildConfig;
 
 /**
  * 聊天界面基类
@@ -383,7 +385,9 @@ public class MessageFragment extends TFragment implements ModuleProxy {
      */
     @Override
     public boolean sendMessage(IMMessage message) {
-        message.setEnv("tchat");
+        if(BuildConfig.VERSION_TYPE != VersionStatus.RELEASE) {
+            message.setEnv("tchat");
+        }
         sendMsg(message);
         return true;
     }

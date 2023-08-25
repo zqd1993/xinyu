@@ -64,7 +64,7 @@ class PhoneAuthLogin(val context: Context) {
         }
 
         override fun onTokenFailed(s: String?) {
-            toast("错误--"+s)
+//            toast("错误--"+s)
             try {
                 val bean = GsonUtil.GsonToBean(s, OnKeyLoginFailedBean::class.java)
                 if (bean.code != ResultCode.CODE_ERROR_USER_CANCEL) {
@@ -205,7 +205,7 @@ class PhoneAuthLogin(val context: Context) {
             //LOGO相关设置
             .setLogoImgDrawable(ResUtils.getDrawable(R.mipmap.icon_login_logo))
             .setLogoScaleType(ImageView.ScaleType.FIT_XY)
-            .setLogoWidth(142)
+            .setLogoWidth(250)
             .setLogoHeight(190)
             .setLogoOffsetY(55)
             //手机号码

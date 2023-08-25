@@ -3,16 +3,21 @@ package com.live.module.bill.activity
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
+import android.content.Intent
 import android.text.TextPaint
 import android.text.method.LinkMovementMethod
+import android.util.Log
 import android.view.View
 import android.view.ViewGroup
 import androidx.activity.viewModels
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.SimpleItemAnimator
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.alibaba.android.arouter.launcher.ARouter
 import com.gyf.immersionbar.ImmersionBar
 import com.live.module.bill.R
+import com.live.module.bill.adapter.BillTantaPaymentAdapter
 import com.live.module.bill.adapter.BillTantaRechargeAdapter
 import com.live.module.bill.bean.BillTantaWechatPayTypeData
 import com.live.module.bill.databinding.BillTantaActivityRechargeBinding
@@ -23,15 +28,15 @@ import com.mshy.VInterestSpeed.common.bean.CommonTantaRechargeOptions
 import com.mshy.VInterestSpeed.common.bean.PayResultEvent
 import com.mshy.VInterestSpeed.common.bean.TantaPayBean
 import com.mshy.VInterestSpeed.common.bean.WebUrl
+import com.mshy.VInterestSpeed.common.bean.pay.BillPaymentData
+import com.mshy.VInterestSpeed.common.bean.pay.RechargeRoute
 import com.mshy.VInterestSpeed.common.constant.*
 import com.mshy.VInterestSpeed.common.ext.initClose
 import com.mshy.VInterestSpeed.common.ext.setViewClickListener
 import com.mshy.VInterestSpeed.common.ui.BaseActivity
-import com.mshy.VInterestSpeed.common.ui.dialog.BottomGiftFragmentDialog
 import com.mshy.VInterestSpeed.common.ui.dialog.CommonFirstRechargeDialog
 import com.mshy.VInterestSpeed.common.ui.dialog.MessageDialog
 import com.mshy.VInterestSpeed.common.ui.dialog.PayDialog
-import com.mshy.VInterestSpeed.common.ui.dialog.RechargePayPopWindow
 import com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
 import com.mshy.VInterestSpeed.common.utils.*
 import com.mshy.VInterestSpeed.uikit.common.util.log.LogUtil
@@ -62,13 +67,23 @@ class BillTantaRechargeActivity :
 
     private var mTantaWebUrl: WebUrl? = null
 
-    private var mPayType = WECHAT
+    private var mPayType = ""
 
     //是否首充
     private var mVquIsActivity = false
     private var wechatPayType: BillTantaWechatPayTypeData? = null
 
     private var itemRecharge: CommonTantaRechargeOptions? = null
+
+    private val mPaymentAdapter = BillTantaPaymentAdapter()
+
+    private val mAliPaymentAdapter = BillTantaPaymentAdapter()
+
+    private var billPaymentDataList: MutableList<BillPaymentData> = mutableListOf()
+
+    private var wechatRechargeRoute: MutableList<RechargeRoute> = mutableListOf()
+
+    private var aliRechargeRoute: MutableList<RechargeRoute> = mutableListOf()
 
     private val tantaPayDialog by lazy {
         PayDialog()
@@ -128,20 +143,25 @@ class BillTantaRechargeActivity :
 
 
         mBinding.llTantaWechatPay.setViewClickListener(0) {
-            mPayType = if (wechatPayType?.payType == 5) {
-                ADAPAY_WECHAT_APPLET
-            } else {
-                WECHAT
+            if (wechatRechargeRoute.size == 1) {
+                mPayType = if (wechatPayType?.payType == 5) {
+                    ADAPAY_WECHAT_APPLET
+                } else {
+                    wechatRechargeRoute[0].payCode
+                }
+                LoginUtils.equals("mPayType=$mPayType")
+                mBinding.cbTantaWechat.isChecked = true
+                mBinding.cbTantaAlipay.isChecked = false
             }
-            LoginUtils.equals("mPayType=$mPayType")
-            mBinding.cbTantaWechat.isChecked = true
-            mBinding.cbTantaAlipay.isChecked = false
         }
 
         mBinding.llTantaAlipayPay.setViewClickListener(0) {
-            mPayType = ALIPAY
-            mBinding.cbTantaWechat.isChecked = false
-            mBinding.cbTantaAlipay.isChecked = true
+            if (aliRechargeRoute.size == 1) {
+                mPayType = aliRechargeRoute[0].payCode
+                mPayType = ALIPAY
+                mBinding.cbTantaWechat.isChecked = false
+                mBinding.cbTantaAlipay.isChecked = true
+            }
         }
         mBinding.vFirstRechargeBanner.setViewClickListener(0) {
 
@@ -182,8 +202,34 @@ class BillTantaRechargeActivity :
             toast(R.string.common_vqu_select_pay_way_tips)
             return
         }
+        when (mPayType) {
+            "alipay" -> {
+                mViewModel.rechargeWarning(true)
+            }
 
-        mViewModel.rechargeWarning(true)
+            "sand_alipay" -> {
+                mViewModel.recharge(
+                    "sand_alipay",
+                    itemRecharge!!.id,
+                    -1,
+                    "xinyu://xinyu.recharge"
+                )
+            }
+
+            "wechat" -> {
+                mViewModel.rechargeWarning(true)
+            }
+
+            "sand_wechat" -> {
+                mViewModel.recharge(
+                    "sand_wechat",
+                    itemRecharge!!.id,
+                    -1,
+                    "xinyu://xinyu.recharge"
+                )
+            }
+        }
+
         RiskControlUtil.getToken(this@BillTantaRechargeActivity, 5)
 
     }
@@ -196,7 +242,7 @@ class BillTantaRechargeActivity :
 
         if (mPayType == ALIPAY) {
             mViewModel.createRechargeOrder(mPayType, itemRecharge!!.id, -1)
-        } else {
+        } else if(mPayType == WECHAT){
             mViewModel.getWechatPayType(1)
         }
     }
@@ -220,6 +266,32 @@ class BillTantaRechargeActivity :
             }
 
             mSelectedPosition = position
+        }
+
+        paymentAdapter(mBinding.rvWechatPay, mPaymentAdapter, true)
+        paymentAdapter(mBinding.rvAliPay, mAliPaymentAdapter, false)
+
+    }
+
+    private fun paymentAdapter(
+        recyclerView: RecyclerView,
+        adapter: BillTantaPaymentAdapter,
+        isWechat: Boolean
+    ) {
+        (recyclerView.itemAnimator as SimpleItemAnimator).supportsChangeAnimations = false
+        recyclerView.adapter = adapter
+        recyclerView.layoutManager = GridLayoutManager(this, 3)
+        adapter.setOnItemClickListener { _, _, position ->
+
+            val item = adapter.getItemOrNull(position) ?: return@setOnItemClickListener
+            mPayType = item.payCode
+            for (paymentData in billPaymentDataList) {
+                for (rechargeRoute in paymentData.rechargeRoute) {
+                    rechargeRoute.checked = rechargeRoute.payCode == item.payCode
+                }
+            }
+            mPaymentAdapter.notifyDataSetChanged()
+            mAliPaymentAdapter.notifyDataSetChanged()
         }
     }
 
@@ -360,7 +432,67 @@ class BillTantaRechargeActivity :
                 }
             }
         }
+
+        mViewModel.payConfigData.observe(this) {
+            billPaymentDataList.clear()
+            billPaymentDataList.addAll(it)
+            var isChecked = false
+            if (it.isNotEmpty()) {
+                for (paymentData in it) {
+                    if (mPayType.isNotEmpty()) {
+                        for (rechargeRoute in paymentData.rechargeRoute) {
+                            if (mPayType == rechargeRoute.payCode) {
+                                rechargeRoute.checked = true
+                            }
+                        }
+                    } else {
+                        if (!isChecked && paymentData.rechargeRoute.size > 0) {
+                            paymentData.rechargeRoute[0].checked = true
+                            mPayType = paymentData.rechargeRoute[0].payCode
+                            isChecked = true
+                        }
+                    }
+                    if (paymentData.payType == "wechat") {
+                        wechatRechargeRoute = paymentData.rechargeRoute
+                        if (wechatRechargeRoute.size > 0) {
+                            mBinding.llTantaWechatPay.visibility = View.VISIBLE
+                            if (wechatRechargeRoute.size > 1) {
+                                mPaymentAdapter.setNewInstance(wechatRechargeRoute)
+                                mBinding.cbTantaWechat.visibility = View.GONE
+                            } else {
+                                mBinding.cbTantaWechat.visibility = View.VISIBLE
+                            }
+                        }
+                    } else {
+                        aliRechargeRoute = paymentData.rechargeRoute
+                        if (aliRechargeRoute.size > 0) {
+                            mBinding.llTantaAlipayPay.visibility = View.VISIBLE
+                            if (aliRechargeRoute.size > 1) {
+                                mAliPaymentAdapter.setNewInstance(aliRechargeRoute)
+                                mBinding.cbTantaAlipay.visibility = View.GONE
+                            } else {
+                                mBinding.cbTantaWechat.visibility = View.VISIBLE
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        mViewModel.orderJson.observe(this) {
+            if (it != null) {
+                when (mPayType) {
+                    "sand_wechat" -> {
+                        PayUtils.sendWechat(this, it)
+                    }
+
+                    "sand_alipay" -> {
+                        PayUtils.sendWechat(this, it)
+                    }
+                }
+            }
+        }
     }
+
     private var firstInto = true
     override fun onResume() {
         super.onResume()
@@ -370,6 +502,17 @@ class BillTantaRechargeActivity :
         mViewModel.getWalletIndexData()
         mViewModel.getFirstRechargeInfo()
         mViewModel.getRechargeOptionsListData(2)
+        mViewModel.payConfig()
+    }
+
+    override fun onNewIntent(intent: Intent?) {
+        super.onNewIntent(intent)
+        val uri = intent!!.data
+        if (uri != null) {
+            val payCode = uri.getQueryParameter("payCode") // 支付宝支付完后返回app后 所传的code
+            Log.e("onNewIntent", "payCode:$payCode") //  2为成功
+            paySuccess()
+        }
     }
 
     override fun initRequestData() {
@@ -400,6 +543,7 @@ class BillTantaRechargeActivity :
                     )
                     ToastUtils.showLong(R.string.vqu_bill_copy_success)
                 }
+
                 "#vqu_recharge_agreement#" -> {
                     ARouter.getInstance().build(RouteUrl.Common.WebViewActivity)
                         .withString(
@@ -409,6 +553,7 @@ class BillTantaRechargeActivity :
                         )
                         .navigation()
                 }
+
                 "#vqu_juvenile_protection#" -> {
                     ARouter.getInstance().build(RouteUrl.Common.WebViewActivity)
                         .withString(
@@ -449,11 +594,15 @@ class BillTantaRechargeActivity :
         if (event.isSuccess) {
             toast("充值成功")
             tantaPayDialog.dismiss()
-            mViewModel.getWalletIndexData()
-            if (!mVquIsActivity) {
-                mVquIsActivity = true
-                mViewModel.getRechargeOptionsListData(2)
-            }
+            paySuccess()
+        }
+    }
+
+    private fun paySuccess() {
+        mViewModel.getWalletIndexData()
+        if (!mVquIsActivity) {
+            mVquIsActivity = true
+            mViewModel.getRechargeOptionsListData(2)
         }
     }
 }

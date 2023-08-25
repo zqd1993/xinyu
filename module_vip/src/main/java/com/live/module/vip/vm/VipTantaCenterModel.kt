@@ -1,5 +1,6 @@
 package com.live.module.vip.vm
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import com.live.module.vip.bean.TantaVipInfoBean
 import com.live.module.vip.repository.VipTantaCenterRepository
@@ -7,6 +8,8 @@ import com.live.vquonline.base.ktx.launchIO
 import com.live.vquonline.base.mvvm.vm.BaseViewModel
 import com.live.vquonline.base.utils.toast
 import com.mshy.VInterestSpeed.common.bean.TantaPayBean
+import com.mshy.VInterestSpeed.common.bean.pay.BillPaymentData
+import com.mshy.VInterestSpeed.common.bean.pay.PayOrderInfoBean
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.collect
@@ -26,6 +29,8 @@ class VipTantaCenterModel @Inject constructor(private val repository: VipTantaCe
     val vipOrderCreateResultData = MutableLiveData<TantaPayBean>()
     val vipIndexResultData = MutableLiveData<TantaVipInfoBean>()
     val vipDailyGifResultData = MutableLiveData<Any>()
+    val payConfigData = MutableLiveData<MutableList<BillPaymentData>>()
+    val orderJson = MutableLiveData<PayOrderInfoBean>()
 
     //开通类型 none  开通    add  升级    start 续费
     fun createRechargeOrder(
@@ -44,6 +49,7 @@ class VipTantaCenterModel @Inject constructor(private val repository: VipTantaCe
                     changeStateView(hide = true)
                 }
                 .collect {
+
                     vipOrderCreateResultData.postValue(it.data!!)
                 }
         }
@@ -77,5 +83,31 @@ class VipTantaCenterModel @Inject constructor(private val repository: VipTantaCe
                 }
         }
 
+    }
+
+    fun payConfig() {
+        launchIO {
+            repository.getPayConfig()
+                .catch {
+
+                }
+                .collect() {
+                    payConfigData.postValue(it.data!!)
+                }
+        }
+    }
+
+    fun payNobleOrder(channel: String, goodsId: String, polling: Int, scheme: String, type: String, id: String) {
+        launchIO {
+            repository.payNobleOrder(channel, goodsId, polling, scheme, type, id)
+                .catch {
+
+                }
+                .collect() {
+                    if(it.data != null){
+                        orderJson.postValue(it.data!!)
+                    }
+                }
+        }
     }
 }

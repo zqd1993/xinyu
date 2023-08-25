@@ -1,5 +1,7 @@
 package com.live.module.vip.activity
 
+import android.content.Intent
+import android.util.Log
 import android.view.View
 import androidx.activity.viewModels
 import com.alibaba.android.arouter.facade.annotation.Autowired
@@ -19,6 +21,7 @@ import com.live.vquonline.base.utils.EventBusRegister
 import com.live.vquonline.base.utils.toast
 import com.mshy.VInterestSpeed.common.bean.PayResultEvent
 import com.mshy.VInterestSpeed.common.bean.TantaPayBean
+import com.mshy.VInterestSpeed.common.bean.pay.BillPaymentData
 import com.mshy.VInterestSpeed.common.constant.NetBaseUrlConstant
 import com.mshy.VInterestSpeed.common.constant.RouteKey
 import com.mshy.VInterestSpeed.common.constant.RouteUrl
@@ -56,6 +59,9 @@ class VipTantaCenterActivity : BaseActivity<VipTantaActivityCenterBinding, VipTa
     private val privilegeAdapter = VipPrivilegeAdapter()
     private var vipPayInfoBean: VipPayInfoBean? = null
 
+    private var paymentList: MutableList<BillPaymentData> = mutableListOf()
+
+    private var payCode = ""
 
     private val vquPayDialog by lazy {
         PayDialog()
@@ -127,9 +133,11 @@ class VipTantaCenterActivity : BaseActivity<VipTantaActivityCenterBinding, VipTa
                 PayDialog.WECHAT -> {
                     PayUtils.wechatPay(this, it)
                 }
+
                 PayDialog.ALIPAY -> {
                     PayUtils.aliPay(this, it.payinfo)
                 }
+
                 PayDialog.WECHAT_APPLET -> {
                     jumpToWechatApplet(it)
                 }
@@ -139,6 +147,22 @@ class VipTantaCenterActivity : BaseActivity<VipTantaActivityCenterBinding, VipTa
         //每日礼物领取
         mViewModel.vipDailyGifResultData.observe(this) {
             mViewModel.getVipIndexInfo()
+        }
+        mViewModel.payConfigData.observe(this) {
+            paymentList = it
+        }
+        mViewModel.orderJson.observe(this) {
+            if (it != null) {
+                when (payCode) {
+                    "sand_wechat" -> {
+                        PayUtils.sendWechat(this, it)
+                    }
+
+                    "sand_alipay" -> {
+                        PayUtils.sendWechat(this, it)
+                    }
+                }
+            }
         }
     }
 
@@ -178,7 +202,7 @@ class VipTantaCenterActivity : BaseActivity<VipTantaActivityCenterBinding, VipTa
             finish()
         }
         mBinding.btPay.setViewClickListener(1) {
-            if (vipInfo == null || vipInfo?.list == null || vipInfo?.list?.size == 0) {
+            if (vipInfo == null || vipInfo?.list == null || vipInfo?.list?.size == 0 || paymentList.size == 0) {
                 toast("网络异常~")
                 return@setViewClickListener
             }
@@ -190,13 +214,42 @@ class VipTantaCenterActivity : BaseActivity<VipTantaActivityCenterBinding, VipTa
                 payWaySelectDialog.selectPayWayBean = rechargeAdapter.getPayInfo()
             }
             payWaySelectDialog.isVip = isVip
+            payWaySelectDialog.setContext(this)
+            payWaySelectDialog.setPayment(paymentList)
             payWaySelectDialog.show(supportFragmentManager, "")
             payWaySelectDialog.setOnSelectionClickListener {
                 vipPayInfoBean = it
-                mViewModel.createRechargeOrder(
-                    it.vip_id, it.pay_type,
-                    it.type, it.vip_goods_id
-                )
+                payCode = it.pay_type
+                when (it.pay_type) {
+                    PayDialog.WECHAT, PayDialog.ALIPAY -> {
+                        mViewModel.createRechargeOrder(
+                            it.vip_id, it.pay_type,
+                            it.type, it.vip_goods_id
+                        )
+                    }
+
+                    "sand_alipay" -> {
+                        mViewModel.payNobleOrder(
+                            "sand_alipay",
+                            it.vip_goods_id,
+                            -1,
+                            "xinyu://xinyu.vip",
+                            it.type,
+                            it.vip_id
+                        )
+                    }
+
+                    "sand_wechat" -> {
+                        mViewModel.payNobleOrder(
+                            "sand_wechat",
+                            it.vip_goods_id,
+                            -1,
+                            "xinyu://xinyu.vip",
+                            it.type,
+                            it.vip_id
+                        )
+                    }
+                }
             }
         }
 
@@ -214,6 +267,17 @@ class VipTantaCenterActivity : BaseActivity<VipTantaActivityCenterBinding, VipTa
     override fun onResume() {
         super.onResume()
         mViewModel.getVipIndexInfo()
+        mViewModel.payConfig()
+    }
+
+    override fun onNewIntent(intent: Intent?) {
+        super.onNewIntent(intent)
+        val uri = intent!!.data
+        if (uri != null) {
+            val payCode = uri.getQueryParameter("payCode") // 支付宝支付完后返回app后 所传的code
+            Log.e("onNewIntent", "payCode:$payCode") //  2为成功
+            paySuccess()
+        }
     }
 
     /**
@@ -235,11 +299,15 @@ class VipTantaCenterActivity : BaseActivity<VipTantaActivityCenterBinding, VipTa
     fun onRechargeEvent(event: PayResultEvent) {
         if (event.isSuccess) {
             toast("充值成功")
-            mViewModel.getVipIndexInfo()
-            ARouter.getInstance()
-                .build(RouteUrl.Vip.VipTantaMemberOpenSucceedActivity)
-                .withBoolean(RouteKey.TYPE_OPEN_SUCCEED, isVip)
-                .navigation()
+            paySuccess()
         }
+    }
+
+    private fun paySuccess() {
+        mViewModel.getVipIndexInfo()
+        ARouter.getInstance()
+            .build(RouteUrl.Vip.VipTantaMemberOpenSucceedActivity)
+            .withBoolean(RouteKey.TYPE_OPEN_SUCCEED, isVip)
+            .navigation()
     }
 }

@@ -26,6 +26,8 @@ import com.mshy.VInterestSpeed.common.ui.dialog.PayDialog
 import com.mshy.VInterestSpeed.common.utils.JumpKtUtils
 import com.mshy.VInterestSpeed.common.utils.ShareManager.iShareStatus
 import com.mshy.VInterestSpeed.common.utils.UserManager
+import com.qiyukf.unicorn.api.ConsultSource
+import com.qiyukf.unicorn.api.Unicorn
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
@@ -153,7 +155,10 @@ class MyJavascriptInterface(activity: FragmentActivity, webView: WebView) :
     @JavascriptInterface
     fun startP2PSession() {
         Log.d(TAG, "startP2PSession")
-        com.mshy.VInterestSpeed.uikit.api.NimUIKit.startP2PSession(context, "100091")
+//        com.mshy.VInterestSpeed.uikit.api.NimUIKit.startP2PSession(context, "100091")
+        // 启动聊天界面
+        val source = ConsultSource("客服", "客服", null)
+        Unicorn.openServiceActivity(context, "客服", source)
     }
 
     @JavascriptInterface

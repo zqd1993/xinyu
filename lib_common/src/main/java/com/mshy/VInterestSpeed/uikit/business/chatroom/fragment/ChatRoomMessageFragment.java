@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.live.vquonline.base.constant.VersionStatus;
 import com.mshy.VInterestSpeed.uikit.business.ait.AitManager;
 import com.mshy.VInterestSpeed.uikit.business.chatroom.helper.ChatRoomHelper;
 import com.mshy.VInterestSpeed.uikit.business.session.actions.BaseAction;
@@ -38,6 +39,7 @@ import com.netease.nimlib.sdk.robot.model.RobotMsgType;
 
 import java.util.ArrayList;
 import java.util.List;
+import com.mshy.VInterestSpeed.common.BuildConfig;
 
 /**
  * 聊天室直播互动fragment
@@ -175,7 +177,9 @@ public class ChatRoomMessageFragment extends TFragment implements ModuleProxy {
 
     @Override
     public boolean sendMessage(IMMessage msg) {
-        msg.setEnv("tchat");
+        if(BuildConfig.VERSION_TYPE != VersionStatus.RELEASE) {
+            msg.setEnv("tchat");
+        }
         ChatRoomMessage message = (ChatRoomMessage) msg;
 
         // 检查是否转换成机器人消息

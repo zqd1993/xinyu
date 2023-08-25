@@ -3,6 +3,7 @@ package com.mshy.VInterestSpeed.uikit.business.session.actions;
 import android.app.Activity;
 import android.content.Intent;
 
+import com.live.vquonline.base.constant.VersionStatus;
 import com.mshy.VInterestSpeed.common.utils.UmUtils;
 import com.mshy.VInterestSpeed.uikit.business.session.module.Container;
 import com.netease.nimlib.sdk.msg.constant.SessionTypeEnum;
@@ -10,6 +11,7 @@ import com.netease.nimlib.sdk.msg.model.IMMessage;
 
 import java.io.Serializable;
 import java.lang.ref.WeakReference;
+import com.mshy.VInterestSpeed.common.BuildConfig;
 
 /**
  * Action基类。<br>
@@ -73,7 +75,9 @@ public abstract class BaseAction implements Serializable {
     }
 
     protected void sendMessage(IMMessage message) {
-        message.setEnv("tchat");
+        if(BuildConfig.VERSION_TYPE != VersionStatus.RELEASE) {
+            message.setEnv("tchat");
+        }
         UmUtils.setUmEvent(getActivity(), UmUtils.PRIVATECHAT);
         getContainer().proxy.sendMessage(message);
     }

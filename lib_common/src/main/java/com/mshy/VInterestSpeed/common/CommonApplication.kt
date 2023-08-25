@@ -82,7 +82,7 @@ class CommonApplication : ApplicationLifecycle, ViewModelStoreOwner {
         lateinit var mCommonApplication: CommonApplication
 
         @SuppressLint("StaticFieldLeak")
-        lateinit var ysfOptions: YSFOptions
+        var ysfOptions: YSFOptions? = null
     }
 
     /**
@@ -479,10 +479,9 @@ class CommonApplication : ApplicationLifecycle, ViewModelStoreOwner {
 
     // 如果返回值为null，则全部使用默认参数。
     private fun options(): YSFOptions? {
-        val options = YSFOptions()
-        options.statusBarNotificationConfig = StatusBarNotificationConfig()
-        ysfOptions = options;
-        return options
+        ysfOptions = YSFOptions()
+        ysfOptions!!.statusBarNotificationConfig = StatusBarNotificationConfig()
+        return ysfOptions
     }
 
 }

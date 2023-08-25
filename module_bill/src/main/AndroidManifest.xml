@@ -6,7 +6,18 @@
         <activity
             android:name=".activity.BillTantaRechargeActivity"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize|stateHidden" />
+            android:windowSoftInputMode="adjustResize|stateHidden"
+            android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:host="xinyu.recharge"
+                    android:scheme="xinyu" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".activity.BillTantaEarningsActivity"
             android:screenOrientation="portrait"

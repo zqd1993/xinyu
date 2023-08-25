@@ -163,4 +163,6 @@
     <color name="color_textDesc">@color/color_999999</color>
 
     <color name="color_textLight">@color/color_FFFFFF</color>
+
+    <color name="color_FEF6EF">#FEF6EF</color>
 </resources>

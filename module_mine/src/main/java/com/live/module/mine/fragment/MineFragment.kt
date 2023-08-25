@@ -58,7 +58,7 @@ import org.greenrobot.eventbus.ThreadMode
 @AndroidEntryPoint
 @Route(path = RouteUrl.Mine.MineVquFragment)
 @EventBusRegister
-class MineFragment : BaseLazyFrameFragment<MineFragmentMineBinding, MineViewModel>() {
+class MineFragment : BaseLazyFrameFragment<MineFragmentMineBinding, MineViewMoadel>() {
 
     override val mViewModel: MineViewModel by viewModels()
 
@@ -199,12 +199,9 @@ class MineFragment : BaseLazyFrameFragment<MineFragmentMineBinding, MineViewMode
                 }
 
                 2 -> {    //在线客服
-//                    ARouter.getInstance().build(RouteUrl.Common.WebViewActivity)
-//                        .withString(RouteKey.URL, mVquUserHomeBean?.webUrl?.help ?: "")
-//                        .navigation()
-                    // 启动聊天界面
-                    val source = ConsultSource("客服", "客服", null)
-                    Unicorn.openServiceActivity(context, "客服", source)
+                    ARouter.getInstance().build(RouteUrl.Common.WebViewActivity)
+                        .withString(RouteKey.URL, mVquUserHomeBean?.webUrl?.help ?: "")
+                        .navigation()
                 }
 
                 3 -> {    //违规公布
@@ -870,9 +867,10 @@ class MineFragment : BaseLazyFrameFragment<MineFragmentMineBinding, MineViewMode
         }
         //设置客户端头像
         var uiCustomization = UICustomization()
-        uiCustomization.rightAvatar = NetBaseUrlConstant.IMAGE_URL + it.userinfo.avatar;
-        CommonApplication.ysfOptions.uiCustomization = uiCustomization
-
+        uiCustomization.rightAvatar = NetBaseUrlConstant.IMAGE_URL + it.userinfo.avatar
+        if (CommonApplication.ysfOptions != null) {
+            CommonApplication.ysfOptions!!.uiCustomization = uiCustomization
+        }
         var userInfo = YSFUserInfo()
         // App 的用户 ID
         userInfo.userId = it.userinfo.usercode

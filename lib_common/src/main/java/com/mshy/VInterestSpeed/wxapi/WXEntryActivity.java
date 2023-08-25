@@ -16,6 +16,9 @@ import com.tencent.mm.opensdk.modelmsg.SendAuth;
 import com.tencent.mm.opensdk.openapi.IWXAPI;
 import com.tencent.mm.opensdk.openapi.IWXAPIEventHandler;
 import com.tencent.mm.opensdk.openapi.WXAPIFactory;
+import com.mshy.VInterestSpeed.common.bean.PayResultEvent;
+
+import org.greenrobot.eventbus.EventBus;
 
 public class WXEntryActivity extends Activity implements IWXAPIEventHandler {
 
@@ -62,6 +65,7 @@ public class WXEntryActivity extends Activity implements IWXAPIEventHandler {
                 case ConstantsAPI.COMMAND_SENDAUTH:
                     String code = ((SendAuth.Resp) resp).code;
 //                    RxBus.getDefault().post(new CommonEvent(Constants.NOTIFY_WX_LOGIN_SUCCESS, code));
+                    EventBus.getDefault().post(new PayResultEvent());
                     break;
                 case ConstantsAPI.COMMAND_SENDMESSAGE_TO_WX:
                     //微信分享回调
@@ -74,6 +78,7 @@ public class WXEntryActivity extends Activity implements IWXAPIEventHandler {
                     if (TextUtils.equals(extraData, "paySuccess") || TextUtils.equals(extraData, "0000")) {
                         UtilsKt.toast("支付成功", Toast.LENGTH_SHORT);
 //                        RxBus.getDefault().post(new CommonEvent(Constants.NOTIFY_UPDATE_USER_INFO_SUCCESS));
+                        EventBus.getDefault().post(new PayResultEvent());
                     } else {
                         UtilsKt.toast("支付失败", Toast.LENGTH_SHORT);
                     }

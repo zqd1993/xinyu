@@ -19,23 +19,13 @@ import com.live.module.message.R
 import com.live.module.message.net.MessageVquApiService
 import com.live.module.message.net.MsgServiceManage
 import com.live.vquonline.base.BaseApplication
+import com.live.vquonline.base.constant.VersionStatus
 import com.live.vquonline.base.ktx.dp2px
 import com.live.vquonline.base.ktx.gone
 import com.live.vquonline.base.ktx.visible
 import com.live.vquonline.base.utils.EventBusUtils
 import com.live.vquonline.base.utils.SpUtils
 import com.live.vquonline.base.utils.toast
-import com.mshy.VInterestSpeed.common.bean.BaseResponse
-import com.mshy.VInterestSpeed.common.constant.NetBaseUrlConstant
-import com.mshy.VInterestSpeed.common.constant.RouteKey
-import com.mshy.VInterestSpeed.common.constant.RouteUrl
-import com.mshy.VInterestSpeed.common.ext.setViewClickListener
-import com.mshy.VInterestSpeed.common.ext.toast
-import com.mshy.VInterestSpeed.common.ui.dialog.*
-import com.mshy.VInterestSpeed.common.ui.vm.CommonPayViewModel
-import com.mshy.VInterestSpeed.common.utils.UserManager
-import com.mshy.VInterestSpeed.common.utils.UserSpUtils
-import com.mshy.VInterestSpeed.uikit.common.http.CommonCallBack
 import com.luck.picture.lib.basic.PictureSelector
 import com.luck.picture.lib.config.SelectMimeType
 import com.luck.picture.lib.engine.SandboxFileEngine
@@ -43,16 +33,27 @@ import com.luck.picture.lib.entity.LocalMedia
 import com.luck.picture.lib.interfaces.OnCallbackIndexListener
 import com.luck.picture.lib.interfaces.OnResultCallbackListener
 import com.luck.picture.lib.utils.SandboxTransformUtils
+import com.mshy.VInterestSpeed.common.bean.BaseResponse
 import com.mshy.VInterestSpeed.common.bean.gift.DialogGiftBean
 import com.mshy.VInterestSpeed.common.bean.gift.GiftListBean
 import com.mshy.VInterestSpeed.common.bean.video.VideoVquCallBean
+import com.mshy.VInterestSpeed.common.constant.NetBaseUrlConstant
+import com.mshy.VInterestSpeed.common.constant.RouteKey
+import com.mshy.VInterestSpeed.common.constant.RouteUrl
+import com.mshy.VInterestSpeed.common.ext.setViewClickListener
+import com.mshy.VInterestSpeed.common.ext.toast
+import com.mshy.VInterestSpeed.common.ui.dialog.*
+import com.mshy.VInterestSpeed.common.ui.vm.CommonPayViewModel
 import com.mshy.VInterestSpeed.common.utils.GlideEngine
+import com.mshy.VInterestSpeed.common.utils.UserManager
+import com.mshy.VInterestSpeed.common.utils.UserSpUtils
 import com.mshy.VInterestSpeed.uikit.attchment.MessageVquGiftAttachment
 import com.mshy.VInterestSpeed.uikit.bean.ChatIntimateBean
 import com.mshy.VInterestSpeed.uikit.bean.IMCostBean
 import com.mshy.VInterestSpeed.uikit.bean.NIMCommonWordBean
 import com.mshy.VInterestSpeed.uikit.business.session.fragment.MessageFragment
 import com.mshy.VInterestSpeed.uikit.common.adapter.MsgCommonWordAdapter
+import com.mshy.VInterestSpeed.uikit.common.http.CommonCallBack
 import com.mshy.VInterestSpeed.uikit.event.NotificationIntimateChangeEvent
 import com.mshy.VInterestSpeed.uikit.event.NotifyCommonWordEvent
 import com.netease.nimlib.sdk.msg.MessageBuilder
@@ -70,6 +71,7 @@ import top.zibin.luban.OnCompressListener
 import java.io.File
 import java.net.MalformedURLException
 import java.net.URL
+import com.mshy.VInterestSpeed.common.BuildConfig
 
 
 /**
@@ -443,7 +445,9 @@ class MessageVquMsgFragment : MessageFragment() {
         /**
          * 测试环境回调
          */
-        message.env = "tchat"
+        if (BuildConfig.VERSION_TYPE !== VersionStatus.RELEASE) {
+            message.env = "tchat"
+        }
         if (NetBaseUrlConstant.BASE_URL == "http://appta.pre.vqu.show/") {
             message.env = "pre"
         }

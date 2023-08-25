@@ -57,8 +57,8 @@ class BillTantaEarningsActivity :
     private var mTantaCurrentOptions: BillTantaWithdrawOptions? = null
 
     private var mAlipayAccount = ""
-//    private val mTitles = arrayOf("收益提现", "兑换金币")
-    private val mTitles = arrayOf( "兑换金币")
+    private val mTitles = arrayOf("收益提现", "兑换金币")
+//    private val mTitles = arrayOf( "兑换金币")
     private var mViewPagerAdapter: CommonVquMainPageAdapter? =
         null
     private val mFragments: ArrayList<Fragment> = ArrayList()
@@ -88,7 +88,7 @@ class BillTantaEarningsActivity :
         layoutParams.topMargin += height
 
 
-//        mFragments.add(BillVquWithdrawFragment.newInstance())
+        mFragments.add(BillVquWithdrawFragment.newInstance())
         mFragments.add(BillVquExchangeFragment.newInstance(2))
         mViewPagerAdapter =
             com.mshy.VInterestSpeed.common.ui.adapter.CommonVquMainPageAdapter(

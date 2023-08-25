@@ -4,6 +4,8 @@ import com.alibaba.fastjson.JSONObject
 import com.google.gson.internal.LinkedTreeMap
 import com.live.module.login.bean.LoginTantaNicknameBean
 import com.mshy.VInterestSpeed.common.bean.*
+import com.mshy.VInterestSpeed.common.bean.pay.BillPaymentData
+import com.mshy.VInterestSpeed.common.bean.pay.PayOrderInfoBean
 import com.mshy.VInterestSpeed.common.bean.video.VideoVquCallBean
 import com.mshy.VInterestSpeed.common.constant.NetBaseUrlConstant
 import com.mshy.VInterestSpeed.uikit.bean.ChatIntimateBean
@@ -313,5 +315,28 @@ interface GlobalApiService {
         @Field("match_id") match_id: String,
         @Field("type") type: String,
     ): Call<BaseResponse<VideoVquCallBean>>
+
+    @GET("pay/config")
+    suspend fun getPayConfig():BaseResponse<MutableList<BillPaymentData>>
+
+    @POST("wallet/recharge")
+    @FormUrlEncoded
+    suspend fun recharge(
+        @Field("channel") channel: String,
+        @Field("goods_id") goodsId: Int,
+        @Field("polling") polling: Int,
+        @Field("scheme") scheme: String
+    ): BaseResponse<PayOrderInfoBean>
+
+    @POST("vipOrder/payNobleOrder")
+    @FormUrlEncoded
+    suspend fun payNobleOrder(
+        @Field("pay_type") channel: String,
+        @Field("vip_goods_id") goodsId: String,
+        @Field("polling") polling: Int,
+        @Field("scheme") scheme: String,
+        @Field("type") type: String,
+        @Field("id") id: String
+    ): BaseResponse<PayOrderInfoBean>
 
 }

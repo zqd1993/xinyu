@@ -1,5 +1,6 @@
 package com.live.module.vip.bean
 
+import com.mshy.VInterestSpeed.common.bean.pay.RechargeRoute
 import java.io.Serializable
 
 /**
@@ -12,5 +13,6 @@ class VipPayInfoBean : Serializable {
     var pay_type: String = ""
     var type: String = ""
     var money: String = ""
+    var rechargeRoute: RechargeRoute? = null
 
 }

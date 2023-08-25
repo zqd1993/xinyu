@@ -4,17 +4,24 @@ import android.app.Activity
 import android.content.Context
 import android.os.Handler
 import android.os.Message
+import android.widget.Toast
 import com.alipay.sdk.app.PayTask
+import com.live.vquonline.base.utils.ToastUtils
 import com.live.vquonline.base.utils.toast
 import com.mshy.VInterestSpeed.common.bean.PayResultEvent
 import com.mshy.VInterestSpeed.common.bean.TantaPayBean
 import com.mshy.VInterestSpeed.common.bean.WechatPayInfo
+import com.mshy.VInterestSpeed.common.bean.pay.PayOrderInfoBean
 import com.mshy.VInterestSpeed.common.constant.PAY_RECHARGE_COIN_SUCCESS
 import com.mshy.VInterestSpeed.common.constant.WECHAT_APP_ID
+import com.pay.paytypelibrary.base.OnPayResultListener
+import com.pay.paytypelibrary.base.OrderInfo
+import com.pay.paytypelibrary.base.PayUtil
 import com.tencent.mm.opensdk.modelbiz.WXLaunchMiniProgram
 import com.tencent.mm.opensdk.modelpay.PayReq
 import com.tencent.mm.opensdk.openapi.WXAPIFactory
 import org.greenrobot.eventbus.EventBus
+import org.json.JSONObject
 
 /**
  * author: Lau
@@ -56,7 +63,8 @@ object PayUtils {
 //                    mViewModel.vquWalletIndex()
 //                    this@BillVquRechargeActivity.setResult(Activity.RESULT_OK)
                     EventBus.getDefault().post(PayResultEvent())
-                    EventBus.getDefault().post(com.mshy.VInterestSpeed.common.bean.RechargeCoinSuccessEvent())
+                    EventBus.getDefault()
+                        .post(com.mshy.VInterestSpeed.common.bean.RechargeCoinSuccessEvent())
 
 
 //                    val create =
@@ -99,8 +107,65 @@ object PayUtils {
 
     fun wxMiniPay(context: Context, result: TantaPayBean) {
         val wxApi = WXAPIFactory.createWXAPI(context, WECHAT_APP_ID, false)
-        val req =WXLaunchMiniProgram.Req()
+        val req = WXLaunchMiniProgram.Req()
         req.openId
 
+    }
+
+    fun sandAliPay(activity: Activity, orderJson: String) {
+        PayUtil.CashierPayMulti(activity, orderJson)
+    }
+
+    fun sendWechat(activity: Activity, infoBean: PayOrderInfoBean){
+        val orderJson = JSONObject()
+        orderJson.put("version", infoBean.version)
+        orderJson.put("mer_no", infoBean.mer_no)
+        orderJson.put("mer_order_no", infoBean.mer_order_no)
+        orderJson.put("create_time", infoBean.create_time)
+        orderJson.put("expire_time", infoBean.expire_time)
+        orderJson.put("order_amt", infoBean.order_amt)
+        orderJson.put("notify_url", infoBean.notify_url)
+        orderJson.put("return_url", infoBean.return_url)
+        orderJson.put("create_ip", infoBean.create_ip)
+        orderJson.put("product_code", infoBean.product_code)
+        orderJson.put("store_id", infoBean.store_id)
+        orderJson.put("goods_name", infoBean.goods_name)
+        orderJson.put("clear_cycle", infoBean.clear_cycle)
+        orderJson.put("pay_extra", infoBean.pay_extra)
+        orderJson.put("accsplit_flag", infoBean.accsplit_flag)
+        orderJson.put("jump_scheme", infoBean.jump_scheme)
+        orderJson.put("meta_option", infoBean.meta_option)
+        orderJson.put("sign_type", infoBean.sign_type)
+        orderJson.put("sign", infoBean.sign)
+        orderJson.put("order_status", infoBean.order_status)
+        PayUtil.CashierPaySingle(activity, orderJson.toString(), object : OnPayResultListener {
+            override fun onSuccess(orderInfo: OrderInfo) {
+                if(infoBean.product_code == "02010005") {
+                    startSandWeChatPay(activity, orderInfo)
+                }
+            }
+
+            override fun onError(s: String) {
+                ToastUtils.showToast("支付失败 ： $s", Toast.LENGTH_SHORT)
+            }
+        })
+    }
+
+    private  fun startSandWeChatPay(context: Context?, orderInfo: OrderInfo) {
+        val appId = orderInfo.wxAppId // 填应用AppId
+        val api = WXAPIFactory.createWXAPI(context, appId)
+        api.registerApp(appId)
+        val req = WXLaunchMiniProgram.Req()
+        req.userName = orderInfo.ghOriId // 填小程序原始id
+        req.path =
+            orderInfo.pathUrl + "token_id=" + orderInfo.tokenId //拉起小程序页面的可带参路径，不填默认拉起小程序首页，对于小游戏，可以只传入 query 部分，来实现传参效果，如：传入 "?foo=bar"。
+        req.miniprogramType = orderInfo.miniProgramType.toInt() // 可选打开 开发版，体验版和正式版
+        //先检测是否安装了微信
+        val isWXAppInstalledAndSupported = api.isWXAppInstalled
+        if (isWXAppInstalledAndSupported) {
+            api.sendReq(req)
+        } else {
+            toast("未安装微信，不能支付")
+        }
     }
 }
