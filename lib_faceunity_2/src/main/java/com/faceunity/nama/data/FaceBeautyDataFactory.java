@@ -15,6 +15,8 @@ import com.faceunity.nama.entity.FaceBeautyFilterBean;
 import com.faceunity.nama.entity.ModelAttributeData;
 import com.faceunity.nama.infe.AbstractFaceBeautyDataFactory;
 import com.faceunity.nama.repo.FaceBeautySource;
+import com.live.vquonline.base.utils.SpUtils;
+import com.mshy.VInterestSpeed.common.constant.SpKey;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -92,6 +94,10 @@ public class FaceBeautyDataFactory extends AbstractFaceBeautyDataFactory {
     /*默认滤镜选中下标*/
     private int currentFilterIndex = 0;
 
+    private int skinIndex = 0;
+
+    private int shapeIndex = 1;
+
     /**
      * 获取美肤参数列表
      *
@@ -100,6 +106,7 @@ public class FaceBeautyDataFactory extends AbstractFaceBeautyDataFactory {
     @NonNull
     @Override
     public ArrayList<FaceBeautyBean> getSkinBeauty() {
+        skinIndex = SpUtils.getInt(SpKey.SKIN_BEAUTY_VALUE, 0);
         return FaceBeautySource.buildSkinParams();
     }
 
@@ -111,9 +118,21 @@ public class FaceBeautyDataFactory extends AbstractFaceBeautyDataFactory {
     @NonNull
     @Override
     public ArrayList<FaceBeautyBean> getShapeBeauty() {
+        shapeIndex = SpUtils.getInt(SpKey.SHAPE_BEAUTY_VALUE, 1);
         return FaceBeautySource.buildShapeParams();
     }
-
+    @NonNull
+    @Override
+    public int getSkinIndex() {
+        skinIndex = SpUtils.getInt(SpKey.SKIN_BEAUTY_VALUE, 0);
+        return skinIndex;
+    }
+    @NonNull
+    @Override
+    public int getShapeIndex() {
+        shapeIndex = SpUtils.getInt(SpKey.SHAPE_BEAUTY_VALUE, 1);
+        return shapeIndex;
+    }
 
     /**
      * 获取美肤、美型扩展参数
@@ -207,6 +226,16 @@ public class FaceBeautyDataFactory extends AbstractFaceBeautyDataFactory {
         if (faceBeautySetMapping.containsKey(key)) {
             faceBeautySetMapping.get(key).setValue(value);
         }
+    }
+
+    @Override
+    public void onSkinSelected(int position) {
+        this.skinIndex = position;
+    }
+
+    @Override
+    public void onShapeSelected(int position) {
+        this.shapeIndex = position;
     }
 
     /**
@@ -316,6 +345,8 @@ public class FaceBeautyDataFactory extends AbstractFaceBeautyDataFactory {
     }
 
     public void save() {
+        SpUtils.put(SpKey.SKIN_BEAUTY_VALUE, this.skinIndex);
+        SpUtils.put(SpKey.SHAPE_BEAUTY_VALUE, this.shapeIndex);
         FaceBeautySource.save(faceBeauty);
     }
 

@@ -84,6 +84,10 @@ object SpKey {
 
     const val FACE_BEAUTY_VALUE = "faceBeautyValue"
 
+    const val SKIN_BEAUTY_VALUE = "skinBeautyValue"
+
+    const val SHAPE_BEAUTY_VALUE = "shapeBeautyValue"
+
     const val FACE_BEAUTY_ENABLE = "faceBeautyEnable"
 
     //是否不再显示开启通知提示

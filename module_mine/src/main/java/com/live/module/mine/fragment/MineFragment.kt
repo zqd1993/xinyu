@@ -37,7 +37,6 @@ import com.mshy.VInterestSpeed.common.ext.setViewClickListener
 import com.mshy.VInterestSpeed.common.ext.vquLoadRoundImage
 import com.mshy.VInterestSpeed.common.ui.BaseLazyFrameFragment
 import com.mshy.VInterestSpeed.common.utils.*
-import com.qiyukf.unicorn.api.ConsultSource
 import com.qiyukf.unicorn.api.UICustomization
 import com.qiyukf.unicorn.api.Unicorn
 import com.qiyukf.unicorn.api.YSFUserInfo
@@ -58,7 +57,7 @@ import org.greenrobot.eventbus.ThreadMode
 @AndroidEntryPoint
 @Route(path = RouteUrl.Mine.MineVquFragment)
 @EventBusRegister
-class MineFragment : BaseLazyFrameFragment<MineFragmentMineBinding, MineViewMoadel>() {
+class MineFragment : BaseLazyFrameFragment<MineFragmentMineBinding, MineViewModel>() {
 
     override val mViewModel: MineViewModel by viewModels()
 

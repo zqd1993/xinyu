@@ -26,6 +26,8 @@ import com.faceunity.nama.entity.ModelAttributeData;
 import com.faceunity.nama.infe.AbstractFaceBeautyDataFactory;
 import com.faceunity.nama.seekbar.DiscreteSeekBar;
 import com.live.faceunity.R;
+import com.live.vquonline.base.utils.SpUtils;
+import com.mshy.VInterestSpeed.common.constant.SpKey;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -87,6 +89,8 @@ public class FaceBeautyControlView extends BaseControlView {
         mModelAttributeRange = dataFactory.getModelAttributeRange();
         mSkinBeauty = dataFactory.getSkinBeauty();
         mShapeBeauty = dataFactory.getShapeBeauty();
+        mSkinIndex = dataFactory.getSkinIndex();
+        mShapeIndex = dataFactory.getShapeIndex();
         mFilters = dataFactory.getBeautyFilters();
         mFiltersAdapter.setData(mFilters);
 //        checkGroup.check(View.NO_ID);
@@ -170,9 +174,11 @@ public class FaceBeautyControlView extends BaseControlView {
                 if (isShinSelected) {
                     changeAdapterSelected(mBeautyAdapter, mSkinIndex, position);
                     mSkinIndex = position;
+                    mDataFactory.onSkinSelected(mSkinIndex);
                 } else {
                     changeAdapterSelected(mBeautyAdapter, mShapeIndex, position);
                     mShapeIndex = position;
+                    mDataFactory.onShapeSelected(mShapeIndex);
                 }
                 double value = mDataFactory.getParamIntensity(data.getKey());
                 double stand = mModelAttributeRange.get(data.getKey()).getStandV();

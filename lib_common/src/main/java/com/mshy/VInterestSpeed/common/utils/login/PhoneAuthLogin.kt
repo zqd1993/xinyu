@@ -233,7 +233,7 @@ class PhoneAuthLogin(val context: Context) {
             .setVendorPrivacyPrefix("《")
             .setVendorPrivacySuffix("》")
             .setProtocolAction("com.mshy.VInterestSpeed.common.ui.activity.CommonVquWebViewActivity")
-            .setPackageName("om.mshy.VInterestSpeed")
+            .setPackageName("xinyu.love")
             .setPrivacyOffsetY_B(43)
             .setAppPrivacyOne(
                 "《心语用户协议》",

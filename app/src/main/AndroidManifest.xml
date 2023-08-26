@@ -27,7 +27,7 @@
         <!--爱加密渠道id标识-->
         <meta-data
             android:name="channel_id"
-            android:value="101" />
+            android:value="22" />
         <!--适配华为（huawei）刘海屏-->
         <!-- 屏幕适配基准DP -->
         <meta-data
@@ -69,13 +69,13 @@
            />
 
         <!--协议页面webview-->
-        <activity
-            android:name="com.mobile.auth.gatewayauth.activity.AuthWebVeiwActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:exported="false"
-            android:launchMode="singleTop"
-            android:theme="@style/AuthTheme"
-            android:screenOrientation="behind" />
+<!--        <activity-->
+<!--            android:name="com.mobile.auth.gatewayauth.activity.AuthWebVeiwActivity"-->
+<!--            android:configChanges="orientation|keyboardHidden|screenSize"-->
+<!--            android:exported="false"-->
+<!--            android:launchMode="singleTop"-->
+<!--            android:theme="@style/AuthTheme"-->
+<!--            android:screenOrientation="behind" />-->
         <!--移动授权页-->
         <activity
             android:name="com.cmic.sso.sdk.activity.LoginAuthActivity"

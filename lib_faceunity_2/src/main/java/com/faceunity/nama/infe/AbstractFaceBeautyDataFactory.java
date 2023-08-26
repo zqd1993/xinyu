@@ -98,5 +98,28 @@ public abstract class AbstractFaceBeautyDataFactory {
      */
     public abstract void updateParamIntensity(String key, double value);
 
+    /**
+     * 选中美肤
+     * @param position
+     */
+    public abstract void onSkinSelected(int position);
+
+    /**
+     * 选中美型
+     * @param position
+     */
+    public abstract void onShapeSelected(int position);
+
+    /**
+     * 获取保存的美肤下标
+     * @return
+     */
+    public abstract int getSkinIndex();
+
+    /**
+     * 获取保存的美型下标
+     * @return
+     */
+    public abstract int getShapeIndex();
 
 }

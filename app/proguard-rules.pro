@@ -323,3 +323,28 @@
 -keep class com.tencent.wxop.** {*;}
 -dontwarn com.unionpay.**
 -keep class com.unionpay.** {*;}
+
+#友盟
+-keep class com.umeng.** {*;}
+-keep class org.repackage.** {*;}
+-keep class com.uyumao.** { *; }
+-keepclassmembers class * {
+   public <init> (org.json.JSONObject);
+}
+-keepclassmembers enum * {
+    public static **[] values();
+    public static ** valueOf(java.lang.String);
+}
+
+-keep class com.alipay.deviceid.** { *; }
+-keep class net.security.device.api.** {*;}
+-keep class org.json.** { *;}
+-keep class com.alibaba.fastjson.** {*;}
+-keep class com.alibaba.sdk.android.oss.** { *; }
+
+-dontwarn okio.**
+-dontwarn org.apache.commons.codec.binary.**
+
+-keepclassmembers,allowobfuscation class * {
+     @com.alibaba.fastjson.annotation.JSONField <fields>;
+}
