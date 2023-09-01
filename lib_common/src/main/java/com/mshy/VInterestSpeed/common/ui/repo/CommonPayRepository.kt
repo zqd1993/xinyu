@@ -1,7 +1,11 @@
 package com.mshy.VInterestSpeed.common.ui.repo
 
+import android.util.Log
 import com.live.vquonline.base.mvvm.m.BaseRepository
+import com.live.vquonline.base.utils.GsonUtil
 import com.mshy.VInterestSpeed.common.bean.*
+import com.mshy.VInterestSpeed.common.bean.pay.BillPaymentData
+import com.mshy.VInterestSpeed.common.bean.pay.PayOrderInfoBean
 import com.mshy.VInterestSpeed.common.helper.responseCodeExceptionHandler
 import com.mshy.VInterestSpeed.common.net.GlobalApiService
 import com.mshy.VInterestSpeed.common.net.GlobalServiceManage
@@ -52,4 +56,19 @@ class CommonPayRepository : BaseRepository() {
                 }
             }
         }
+
+    suspend fun getPayConfig() = request<BaseResponse<MutableList<BillPaymentData>>> {
+        mVquGlobalApi.getPayConfig().run {
+            responseCodeExceptionHandler(code, message) {
+                emit(this)
+            }
+        }
+    }
+    suspend fun recharge(channel: String, goodsId: Int, polling: Int, scheme: String) = request<BaseResponse<PayOrderInfoBean>> {
+        mVquGlobalApi.recharge(channel, goodsId, polling, scheme).run {
+            responseCodeExceptionHandler(code, message) {
+                emit(this)
+            }
+        }
+    }
 }

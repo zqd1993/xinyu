@@ -11,13 +11,36 @@
             android:screenOrientation="portrait" />
         <activity
             android:name="com.live.module.dynamic.activity.DynamicTantaDynamicListActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait" android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="xinyu.dynamic.list.recharge"
+                    android:scheme="xinyu" />
+            </intent-filter>
+        </activity>
         <activity
             android:name="com.live.module.dynamic.activity.DynamicTantaLikeListActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name="com.live.module.dynamic.activity.DynamicTantaDynamicDetailActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="xinyu.dynamic.detail.recharge"
+                    android:scheme="xinyu" />
+            </intent-filter>
+        </activity>
         <activity
             android:name="com.live.module.dynamic.activity.DynamicTantaVideoActivity"
             android:screenOrientation="portrait" />

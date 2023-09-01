@@ -327,6 +327,7 @@ class MessageVquRecentFragment :
     private fun onRecentContactsLoaded() {
         items.clear()
         items.addAll(loadedRecent)
+        adapter.notifyDataSetChanged()
         loadedRecent.clear()
         refreshMessages(
             true,

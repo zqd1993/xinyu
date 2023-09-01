@@ -251,10 +251,11 @@ class CommonVquMainActivity : BaseActivity<CommonVquActivityMainBinding, CommonV
         })
 
         val unReadNum = NIMClient.getService(MsgService::class.java).totalUnreadCount
+        val newVisitorCount = SpUtils.getInt(SpKey.NEW_VISITOR_COUNT, 0)
         if (SpUtils.getInt(SpKey.openGreen, 0) == 1) {
             vqu_NavigationController?.setMessageNumber(2, 0)
         } else {
-            vqu_NavigationController?.setMessageNumber(2, unReadNum)
+            vqu_NavigationController?.setMessageNumber(2, unReadNum + newVisitorCount!!)
         }
         mBinding.guideLayout.llGuideMsgItem.setViewClickListener {
             startARouterActivity(RouteUrl.Message.MessageVquGuideActivity)
@@ -615,7 +616,8 @@ class CommonVquMainActivity : BaseActivity<CommonVquActivityMainBinding, CommonV
         if (SpUtils.getInt(SpKey.openGreen, 0) == 1) {
             vqu_NavigationController?.setMessageNumber(2, 0)
         } else {
-            vqu_NavigationController?.setMessageNumber(2, event.count)
+            val newVisitorCount = SpUtils.getInt(SpKey.NEW_VISITOR_COUNT, 0)
+            vqu_NavigationController?.setMessageNumber(2, event.count + newVisitorCount!!)
         }
 
     }

@@ -8,11 +8,11 @@
     <!-- SDK 权限申明, 第三方 APP 接入时，请将 com.netease.nim.demo 替换为自己的包名 -->
     <!-- 和下面的 uses-permission 一起加入到你的 AndroidManifest 文件中。 -->
     <permission
-        android:name="xinyu.love.permission.RECEIVE_MSG"
+        android:name="com.queniang.zhenban.android.permission.RECEIVE_MSG"
         android:protectionLevel="signature" />
     <!-- 接收 SDK 消息广播权限， 第三方 APP 接入时，请将 com.netease.nim.demo 替换为自己的包名 -->
     <uses-permission android:name="android.permission.REORDER_TASKS" />
-    <uses-permission android:name="xinyu.love.permission.RECEIVE_MSG" />
+    <uses-permission android:name="com.queniang.zhenban.android.permission.RECEIVE_MSG" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <!-- 云信配置end -->
 
@@ -133,7 +133,18 @@
         <activity
             android:name=".ui.activity.CommonVquMainActivity"
             android:launchMode="singleTask"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="xinyu.main.recharge"
+                    android:scheme="xinyu" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".ui.activity.BaseWebViewActivity"
             android:screenOrientation="portrait">
@@ -212,7 +223,7 @@
         <!-- android:authorities="{包名}.ipc.provider", 请将com.netease.nim.demo替换为自己的包名 -->
         <provider
             android:name="com.netease.nimlib.ipc.NIMContentProvider"
-            android:authorities="xinyu.love.ipc.provider"
+            android:authorities="com.queniang.zhenban.android.ipc.provider"
             android:exported="false"
             android:process=":core" />
 
@@ -466,7 +477,7 @@
             android:name="com.mshy.VInterestSpeed.wxapi.WXEntryActivity"
             android:exported="true"
             android:launchMode="singleTask"
-            android:taskAffinity="xinyu.love"
+            android:taskAffinity="com.queniang.zhenban.android"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
 
         <activity

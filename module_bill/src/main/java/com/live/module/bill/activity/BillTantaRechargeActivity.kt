@@ -152,15 +152,36 @@ class BillTantaRechargeActivity :
                 LoginUtils.equals("mPayType=$mPayType")
                 mBinding.cbTantaWechat.isChecked = true
                 mBinding.cbTantaAlipay.isChecked = false
+                for (paymentData in billPaymentDataList) {
+                    for (rechargeRoute in paymentData.rechargeRoute) {
+                        rechargeRoute.checked = false
+                    }
+                }
+                if (mPaymentAdapter.data.size > 0) {
+                    mPaymentAdapter.notifyDataSetChanged()
+                }
+                if (mAliPaymentAdapter.data.size > 0) {
+                    mAliPaymentAdapter.notifyDataSetChanged()
+                }
             }
         }
 
         mBinding.llTantaAlipayPay.setViewClickListener(0) {
             if (aliRechargeRoute.size == 1) {
                 mPayType = aliRechargeRoute[0].payCode
-                mPayType = ALIPAY
                 mBinding.cbTantaWechat.isChecked = false
                 mBinding.cbTantaAlipay.isChecked = true
+                for (paymentData in billPaymentDataList) {
+                    for (rechargeRoute in paymentData.rechargeRoute) {
+                        rechargeRoute.checked = false
+                    }
+                }
+                if (mPaymentAdapter.data.size > 0) {
+                    mPaymentAdapter.notifyDataSetChanged()
+                }
+                if (mAliPaymentAdapter.data.size > 0) {
+                    mAliPaymentAdapter.notifyDataSetChanged()
+                }
             }
         }
         mBinding.vFirstRechargeBanner.setViewClickListener(0) {
@@ -242,7 +263,7 @@ class BillTantaRechargeActivity :
 
         if (mPayType == ALIPAY) {
             mViewModel.createRechargeOrder(mPayType, itemRecharge!!.id, -1)
-        } else if(mPayType == WECHAT){
+        } else if (mPayType == WECHAT) {
             mViewModel.getWechatPayType(1)
         }
     }
@@ -289,6 +310,11 @@ class BillTantaRechargeActivity :
                 for (rechargeRoute in paymentData.rechargeRoute) {
                     rechargeRoute.checked = rechargeRoute.payCode == item.payCode
                 }
+            }
+            if (mPayType.contains("wechat")) {
+                mBinding.cbTantaAlipay.isChecked = false
+            } else {
+                mBinding.cbTantaWechat.isChecked = false
             }
             mPaymentAdapter.notifyDataSetChanged()
             mAliPaymentAdapter.notifyDataSetChanged()
@@ -538,7 +564,7 @@ class BillTantaRechargeActivity :
                     cm.setPrimaryClip(
                         ClipData.newPlainText(
                             null,
-                            mTantaWebUrl?.wxOfficial ?: "心语交友"
+                            mTantaWebUrl?.wxOfficial ?: "鹊娘交友"
                         )
                     )
                     ToastUtils.showLong(R.string.vqu_bill_copy_success)

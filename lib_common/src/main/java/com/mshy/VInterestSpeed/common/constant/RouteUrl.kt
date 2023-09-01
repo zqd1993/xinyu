@@ -135,7 +135,7 @@ object RouteUrl {
         const val SettingVquLogoffActivity = "/module_setting/SettingVquLogoffActivity"
 
         /**
-         * 关于心语
+         * 关于鹊娘
          */
         const val SettingVquAboutActivity = "/module_setting/SettingVquAboutActivity"
     }

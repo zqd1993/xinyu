@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.Intent
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.view.View
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
@@ -48,6 +49,7 @@ class DynamicTantaReportActivity :
     @Autowired(name = RouteKey.USERID)
     @JvmField
     var userId = 0
+
     @Autowired(name = RouteKey.TYPE)
     @JvmField
     var type = 0
@@ -64,13 +66,13 @@ class DynamicTantaReportActivity :
         mBinding.includeTitle.toolbar.initClose(getString(R.string.dynamic_report)) {
             finish()
         }
-        mBinding.tvCommit.isEnabled=false
-        mBinding.tvCommit.isClickable=false
+        mBinding.tvCommit.isEnabled = false
+        mBinding.tvCommit.isClickable = false
         mBinding.rvReason.adapter = vquReportAdapter
         vquReportAdapter.setNbOnItemClickListener { adapter, view, position ->
             vquReportAdapter.setSel(position)
-            mBinding.tvCommit.isEnabled=true
-            mBinding.tvCommit.isClickable=true
+            mBinding.tvCommit.isEnabled = true
+            mBinding.tvCommit.isClickable = true
             mBinding.tvCommit.setStartColor(
                 resources.getColor(R.color.color_FF7AC2),
                 resources.getColor(R.color.color_FF7AC2)
@@ -78,28 +80,29 @@ class DynamicTantaReportActivity :
         }
         initImg()
         mBinding.tvCommit.setViewClickListener {
-            content = mBinding.etContent.text.toString().trim()
-            if (vquReportAdapter?.getSelId() == 0) {
-                "至少选择一项原因".toast()
-            } else {
-                if (selectPicList.isNullOrEmpty()) {//没有上传图片
-                    mViewModel.vquReport(
-                        type,
-                        vquReportAdapter?.getSelId(),
-                        userId.toString(),
-                        content,
-                        ""
-                    )
+            if (!isFastClick()) {
+                content = mBinding.etContent.text.toString().trim()
+                if (vquReportAdapter?.getSelId() == 0) {
+                    "至少选择一项原因".toast()
                 } else {
-                    loadingDialog =
-                        LoadingDialog(this@DynamicTantaReportActivity)
-                    loadingDialog?.show()
-                    mViewModel.vquUploadImg(selectPicList!!, "album")
+                    if (selectPicList.isNullOrEmpty()) {//没有上传图片
+                        mViewModel.vquReport(
+                            type,
+                            vquReportAdapter?.getSelId(),
+                            userId.toString(),
+                            content,
+                            ""
+                        )
+                    } else {
+                        loadingDialog =
+                            LoadingDialog(this@DynamicTantaReportActivity)
+                        loadingDialog?.show()
+                        mViewModel.vquUploadImg(selectPicList!!, "album")
+                    }
                 }
             }
-
         }
-        mBinding.etContent.addTextChangedListener(object : TextWatcher{
+        mBinding.etContent.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
             }
 
@@ -107,7 +110,7 @@ class DynamicTantaReportActivity :
             }
 
             override fun afterTextChanged(s: Editable?) {
-                mBinding.tvHint.text=s.toString().trim().length.toString()+"/100"
+                mBinding.tvHint.text = s.toString().trim().length.toString() + "/100"
             }
         })
     }
@@ -119,7 +122,7 @@ class DynamicTantaReportActivity :
     override fun initRequestData() {
         mViewModel.vquUrlData.observe(this, Observer {
             loadingDialog?.dismiss()
-            mViewModel.vquReport(type,vquReportAdapter?.getSelId(), userId.toString(), content, it)
+            mViewModel.vquReport(type, vquReportAdapter?.getSelId(), userId.toString(), content, it)
 
         })
         mViewModel.vquReportCateData.observe(this, Observer {
@@ -164,7 +167,11 @@ class DynamicTantaReportActivity :
                             media: LocalMedia?,
                             listener: OnCallbackIndexListener<LocalMedia>?
                         ) {
-                            SandboxTransformUtils.copyPathToSandbox(context,media?.realPath,media?.mimeType)
+                            SandboxTransformUtils.copyPathToSandbox(
+                                context,
+                                media?.realPath,
+                                media?.mimeType
+                            )
                         }
                     })
                     .isPageStrategy(true, 20, true)

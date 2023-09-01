@@ -36,6 +36,8 @@ class MessageVquRecentFragmentViewModel @Inject constructor(private val mRepo: M
 
     val vquSaveRemarkNameBean = MutableLiveData<BaseResponse<Any>>()
 
+    val isClearMsg = MutableLiveData<Boolean>()
+
     fun getBannerData() {
         launchIO {
             mRepo.vquGetBanner()
@@ -45,7 +47,8 @@ class MessageVquRecentFragmentViewModel @Inject constructor(private val mRepo: M
                 }
         }
     }
-    fun vquDelBeckons(uids:String) {
+
+    fun vquDelBeckons(uids: String) {
         launchIO {
             mRepo.vquDelBeckons(uids)
                 .catch { toast(it.message ?: "") }
@@ -94,5 +97,19 @@ class MessageVquRecentFragmentViewModel @Inject constructor(private val mRepo: M
         NIMClient.getService(MsgService::class.java).updateRecentAndNotify(recent)
     }
 
+    fun vquVisitorList() {
+        launchIO {
+            mRepo.vquVisitorList(1)
+                .catch { }
+                .collect {
+                    isClearMsg.postValue(true)
+                }
+        }
+
+    }
+
+    fun resetClearStatue() {
+        isClearMsg.postValue(false)
+    }
 
 }

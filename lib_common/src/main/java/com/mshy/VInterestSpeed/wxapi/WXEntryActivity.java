@@ -65,6 +65,7 @@ public class WXEntryActivity extends Activity implements IWXAPIEventHandler {
                 case ConstantsAPI.COMMAND_SENDAUTH:
                     String code = ((SendAuth.Resp) resp).code;
 //                    RxBus.getDefault().post(new CommonEvent(Constants.NOTIFY_WX_LOGIN_SUCCESS, code));
+                    UtilsKt.toast("支付成功", Toast.LENGTH_SHORT);
                     EventBus.getDefault().post(new PayResultEvent());
                     break;
                 case ConstantsAPI.COMMAND_SENDMESSAGE_TO_WX:

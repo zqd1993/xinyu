@@ -40,7 +40,7 @@
         android:textSize="14sp"
         app:stv_layoutRadius="10dp"
         app:stv_solidColor="@color/white"
-        tools:text="在心语，每回复一条消息，都可以获得现金，现金可无门槛提现哦" />
+        tools:text="在鹊娘，每回复一条消息，都可以获得现金，现金可无门槛提现哦" />
 
 
     <!--添加扣除费用的布局-->

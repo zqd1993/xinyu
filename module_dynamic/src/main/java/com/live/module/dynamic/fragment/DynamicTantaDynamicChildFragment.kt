@@ -272,7 +272,7 @@ class DynamicTantaDynamicChildFragment :
 
             } else {
                 CommonHintDialog()
-                    .setTitle("iv_avatar")
+                    .setTitle("认证提醒")
                     .setContent(resources.getString(R.string.common_vqu_auth))
                     .setLeftText("暂不认证")
                     .setRightText("去认证")

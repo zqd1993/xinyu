@@ -54,6 +54,7 @@
         android:gravity="center_vertical"
         android:layout_marginTop="8dp"
         android:text="获得金币：0"
+        android:paddingLeft="@dimen/dp_size_12"
         android:textColor="@color/color_222222"
         android:textSize="14sp"
         app:stv_solidColor="@color/color_F5F5F5"

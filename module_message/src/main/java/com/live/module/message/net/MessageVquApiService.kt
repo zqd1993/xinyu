@@ -5,6 +5,7 @@ import com.live.module.message.bean.CallRecordData
 import com.live.module.message.bean.ChatSettingBean
 import com.mshy.VInterestSpeed.common.bean.BaseResponse
 import com.mshy.VInterestSpeed.common.bean.CommonVquGlobalConfigBean
+import com.mshy.VInterestSpeed.common.bean.VquRelationListBean
 import com.mshy.VInterestSpeed.common.bean.gift.GiftListBean
 import com.mshy.VInterestSpeed.common.bean.video.VideoVquCallBean
 import com.mshy.VInterestSpeed.uikit.bean.ChatIntimateBean
@@ -127,5 +128,9 @@ interface MessageVquApiService {
     @POST("user/addCommonWord")
     @FormUrlEncoded
     suspend fun vquAddCommonWord(@Field("word") word: String): BaseResponse<Any>
+
+    @POST("user/visitor_list")
+    @FormUrlEncoded
+    suspend fun vquVisitorList(@Field("page") page: Int): BaseResponse<VquRelationListBean>
 
 }

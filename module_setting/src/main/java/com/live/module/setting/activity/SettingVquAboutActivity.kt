@@ -24,7 +24,7 @@ import dagger.hilt.android.AndroidEntryPoint
 /**
  * author: Tany
  * date: 2022/4/6
- * description:关于心语
+ * description:关于鹊娘
  */
 @AndroidEntryPoint
 @Route(path = RouteUrl.Setting.SettingVquAboutActivity)

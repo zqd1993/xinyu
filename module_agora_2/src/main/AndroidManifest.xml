@@ -11,33 +11,67 @@
     <uses-sdk tools:overrideLibrary="io.agora.capture.framework" />
 
     <application>
-<!--        <activity-->
-<!--            android:name=".activity.AgoraVquVideoActivity"-->
-<!--            android:launchMode="singleInstance"-->
-<!--            android:screenOrientation="portrait"-->
-<!--            android:taskAffinity=".callTask"-->
-<!--            android:theme="@style/SingleInstanceStyle" />-->
+        <!--        <activity-->
+        <!--            android:name=".activity.AgoraVquVideoActivity"-->
+        <!--            android:launchMode="singleInstance"-->
+        <!--            android:screenOrientation="portrait"-->
+        <!--            android:taskAffinity=".callTask"-->
+        <!--            android:theme="@style/SingleInstanceStyle" />-->
 
         <activity
             android:name=".activity.AgoraTantaVideo2Activity"
             android:launchMode="singleTop"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="xinyu.match.video.recharge"
+                    android:scheme="xinyu" />
+            </intent-filter>
+        </activity>
 
         <activity
             android:name=".activity.AgoraTantaAudio2Activity"
             android:launchMode="singleTop"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="xinyu.match.audio.recharge"
+                    android:scheme="xinyu" />
+            </intent-filter>
+        </activity>
 
         <activity
             android:name=".activity.AgoraTantaMatchActivity"
-            android:screenOrientation="portrait" />
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
 
-<!--        <activity-->
-<!--            android:name=".activity.AgoraVquAudioActivity"-->
-<!--            android:launchMode="singleInstance"-->
-<!--            android:screenOrientation="portrait"-->
-<!--            android:taskAffinity=".callTask"-->
-<!--            android:theme="@style/SingleInstanceStyle" />-->
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="xinyu.match.recharge"
+                    android:scheme="xinyu" />
+            </intent-filter>
+        </activity>
+
+        <!--        <activity-->
+        <!--            android:name=".activity.AgoraVquAudioActivity"-->
+        <!--            android:launchMode="singleInstance"-->
+        <!--            android:screenOrientation="portrait"-->
+        <!--            android:taskAffinity=".callTask"-->
+        <!--            android:theme="@style/SingleInstanceStyle" />-->
 
         <activity
             android:name=".activity.AgoraTantaBeautySettingActivity"

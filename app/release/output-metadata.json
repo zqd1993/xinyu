@@ -4,7 +4,7 @@
     "type": "APK",
     "kind": "Directory"
   },
-  "applicationId": "xinyu.love",
+  "applicationId": "com.queniang.zhenban.android",
   "variantName": "release",
   "elements": [
     {
@@ -12,7 +12,7 @@
       "filters": [],
       "versionCode": 1,
       "versionName": "1.0.0",
-      "outputFile": "xinyu.love_1(1.0.0)_release.apk"
+      "outputFile": "com.queniang.zhenban.android_1(1.0.0)_release.apk"
     }
   ]
 }

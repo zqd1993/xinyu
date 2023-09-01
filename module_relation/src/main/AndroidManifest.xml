@@ -5,7 +5,18 @@
     <application>
         <activity
             android:name=".activity.RelationVquActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait" android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="xinyu.relation.recharge"
+                    android:scheme="xinyu" />
+            </intent-filter>
+        </activity>
 
         <activity
             android:name=".activity.RelationVquPraiseListActivity"

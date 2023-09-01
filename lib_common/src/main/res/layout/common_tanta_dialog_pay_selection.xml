@@ -132,7 +132,8 @@
                     android:paddingLeft="12dp"
                     android:paddingRight="12dp"
                     app:sll_layoutRadius="6dp"
-                    app:sll_solidColor="@color/color_F7F8FA">
+                    app:sll_solidColor="@color/color_F7F8FA"
+                    android:visibility="gone">
 
                     <TextView
                         android:layout_width="0dp"
@@ -156,6 +157,13 @@
 
                 </com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout>
 
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_wechat_pay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:spanCount="3"
+                    android:layout_marginTop="@dimen/dp_size_8" />
 
                 <com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout
                     android:id="@+id/ll_tanta_alipay_pay"
@@ -209,6 +217,14 @@
                         android:enabled="false" />
 
                 </com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_ali_pay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_size_8"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:spanCount="3"/>
 
             </com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout>
 

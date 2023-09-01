@@ -205,8 +205,8 @@ class PhoneAuthLogin(val context: Context) {
             //LOGO相关设置
             .setLogoImgDrawable(ResUtils.getDrawable(R.mipmap.icon_login_logo))
             .setLogoScaleType(ImageView.ScaleType.FIT_XY)
-            .setLogoWidth(250)
-            .setLogoHeight(190)
+            .setLogoWidth(178)
+            .setLogoHeight(133)
             .setLogoOffsetY(55)
             //手机号码
             .setNumberColor(ResUtils.getColor(R.color.color_FFFFFF))
@@ -233,10 +233,10 @@ class PhoneAuthLogin(val context: Context) {
             .setVendorPrivacyPrefix("《")
             .setVendorPrivacySuffix("》")
             .setProtocolAction("com.mshy.VInterestSpeed.common.ui.activity.CommonVquWebViewActivity")
-            .setPackageName("xinyu.love")
+            .setPackageName("com.queniang.zhenban.android")
             .setPrivacyOffsetY_B(43)
             .setAppPrivacyOne(
-                "《心语用户协议》",
+                "《鹊娘用户协议》",
                 NetBaseUrlConstant.AGREEMENT_BASE_URL + NetBaseUrlConstant.AGREEMENT_URL
             )
             .setAppPrivacyTwo(

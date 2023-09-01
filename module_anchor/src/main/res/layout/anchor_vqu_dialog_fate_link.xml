@@ -32,7 +32,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:lineSpacingExtra="1dp"
-            android:text="心语平台将用大数据为你匹配优质男用户，优先将你的个人资料卡主动推送曝光给当前在线的优质异性；"
+            android:text="鹊娘平台将用大数据为你匹配优质男用户，优先将你的个人资料卡主动推送曝光给当前在线的优质异性；"
             android:textColor="#273145"
             android:textSize="15sp" />
 

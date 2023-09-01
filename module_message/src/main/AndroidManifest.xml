@@ -6,17 +6,18 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <!--  oppo推送配置权限-->
-    <uses-permission android:name="com.coloros.mcs.permission.RECIEVE_MCS_MESSAGE"/>
-    <uses-permission android:name="com.heytap.mcs.permission.RECIEVE_MCS_MESSAGE"/>
+    <uses-permission android:name="com.coloros.mcs.permission.RECIEVE_MCS_MESSAGE" />
+    <uses-permission android:name="com.heytap.mcs.permission.RECIEVE_MCS_MESSAGE" />
 
     <!-- 小米推送start -->
     <!--以下两处 {你的包名} 改开发者App的包名-->
-    <permission android:name="xinyu.love.permission.MIPUSH_RECEIVE"
+    <permission
+        android:name="com.queniang.zhenban.android.permission.MIPUSH_RECEIVE"
         android:protectionLevel="signature" />
-    <uses-permission android:name="xinyu.love.permission.MIPUSH_RECEIVE" />
+    <uses-permission android:name="com.queniang.zhenban.android.permission.MIPUSH_RECEIVE" />
     <!-- 小米推送end -->
 
     <application>
@@ -26,7 +27,7 @@
         <service
             android:name="com.xiaomi.push.service.XMPushService"
             android:enabled="true"
-            android:process=":mixpush"/>
+            android:process=":mixpush" />
         <service
             android:name="com.xiaomi.push.service.XMJobService"
             android:enabled="true"
@@ -35,25 +36,26 @@
             android:process=":mixpush" />
         <!--注：此service必须在3.0.1版本以后（包括3.0.1版本）加入-->
         <service
+            android:name="com.xiaomi.mipush.sdk.PushMessageHandler"
             android:enabled="true"
-            android:exported="true"
-            android:name="com.xiaomi.mipush.sdk.PushMessageHandler" />
+            android:exported="true" />
 
-        <service android:enabled="true"
-            android:name="com.xiaomi.mipush.sdk.MessageHandleService" />
+        <service
+            android:name="com.xiaomi.mipush.sdk.MessageHandleService"
+            android:enabled="true" />
         <!--注：此service必须在2.2.5版本以后（包括2.2.5版本）加入-->
         <receiver
-            android:exported="true"
-            android:name="com.xiaomi.push.service.receivers.NetworkStatusReceiver" >
+            android:name="com.xiaomi.push.service.receivers.NetworkStatusReceiver"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </receiver>
         <receiver
+            android:name="com.xiaomi.push.service.receivers.PingReceiver"
             android:exported="false"
-            android:process=":mixpush"
-            android:name="com.xiaomi.push.service.receivers.PingReceiver" >
+            android:process=":mixpush">
             <intent-filter>
                 <action android:name="com.xiaomi.push.PING_TIMER" />
             </intent-filter>
@@ -62,9 +64,9 @@
             android:name="com.netease.nimlib.mixpush.mi.MiPushReceiver"
             android:exported="true">
             <intent-filter android:priority="0x7fffffff">
-                <action android:name="com.xiaomi.mipush.RECEIVE_MESSAGE"/>
-                <action android:name="com.xiaomi.mipush.MESSAGE_ARRIVED"/>
-                <action android:name="com.xiaomi.mipush.ERROR"/>
+                <action android:name="com.xiaomi.mipush.RECEIVE_MESSAGE" />
+                <action android:name="com.xiaomi.mipush.MESSAGE_ARRIVED" />
+                <action android:name="com.xiaomi.mipush.ERROR" />
             </intent-filter>
         </receiver>
         <!-- 小米推送end -->
@@ -80,7 +82,7 @@
 
         <meta-data
             android:name="com.huawei.hms.client.appid"
-            android:value="107460895"/>
+            android:value="107460895" />
         <!-- 华为推送end -->
 
         <!-- vivo推送start -->
@@ -88,25 +90,25 @@
 
         <meta-data
             android:name="com.vivo.push.api_key"
-            android:value="a8820128d00613b7ef365a14799cf910"/>
+            android:value="a8820128d00613b7ef365a14799cf910" />
         <meta-data
             android:name="com.vivo.push.app_id"
-            android:value="105612212"/>
+            android:value="105612212" />
 
         <service
             android:name="com.vivo.push.sdk.service.CommandClientService"
-            android:permission="com.push.permission.UPSTAGESERVICE"
-            android:exported="true"/>
+            android:exported="true"
+            android:permission="com.push.permission.UPSTAGESERVICE" />
         <activity
             android:name="com.vivo.push.sdk.LinkProxyClientActivity"
             android:exported="false"
             android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
 
         <receiver android:name="com.netease.nimlib.mixpush.vivo.VivoPushReceiver">
             <intent-filter>
                 <!-- 接收 push 消息 -->
-                <action android:name="com.vivo.pushclient.action.RECEIVE"/>
+                <action android:name="com.vivo.pushclient.action.RECEIVE" />
             </intent-filter>
         </receiver>
         <!-- vivo推送end -->
@@ -118,7 +120,7 @@
 
             android:permission="com.coloros.mcs.permission.SEND_MCS_MESSAGE">
             <intent-filter>
-                <action android:name="com.coloros.mcs.action.RECEIVE_MCS_MESSAGE"/>
+                <action android:name="com.coloros.mcs.action.RECEIVE_MCS_MESSAGE" />
             </intent-filter>
         </service> <!--兼容Q以下版本-->
 
@@ -128,9 +130,9 @@
             android:permission="com.heytap.mcs.permission.SEND_PUSH_MESSAGE">
 
             <intent-filter>
-                <action android:name="com.heytap.mcs.action.RECEIVE_MCS_MESSAGE"/>
+                <action android:name="com.heytap.mcs.action.RECEIVE_MCS_MESSAGE" />
 
-                <action android:name="com.heytap.msp.push.RECEIVE_MCS_MESSAGE"/>
+                <action android:name="com.heytap.msp.push.RECEIVE_MCS_MESSAGE" />
             </intent-filter>
         </service> <!--兼容Q版本-->
         <!-- Oppo推送end -->
@@ -138,9 +140,21 @@
         <activity
             android:name=".ui.activity.MessageVquP2PActivity"
             android:configChanges="keyboardHidden|orientation"
+            android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="stateHidden|adjustResize" />
+            android:windowSoftInputMode="stateHidden|adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="xinyu.p2p.recharge"
+                    android:scheme="xinyu" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".ui.activity.MessageVquChatSettingActivity"
             android:screenOrientation="portrait" />

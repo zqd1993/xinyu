@@ -88,7 +88,7 @@ class HomeSearchActivity : BaseActivity<HomeTantaActivitySearchBinding, HomeVquS
         mAdapter.setNewInstance(mData)
 
         mBinding.tbHomeVquSearchBar.toolbar.initSearch(
-            "请输入心语号", onSearch = {
+            "请输入鹊娘号", onSearch = {
                 AppManager.getInstance().hideSoftKeyBoard(this@HomeSearchActivity)
                 mKeyWord = it
                 search()

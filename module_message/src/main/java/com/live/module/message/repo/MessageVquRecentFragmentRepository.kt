@@ -5,6 +5,7 @@ import com.live.vquonline.base.mvvm.m.BaseRepository
 import com.mshy.VInterestSpeed.common.bean.BaseResponse
 import com.mshy.VInterestSpeed.common.bean.CommonVquMainBannerBean
 import com.mshy.VInterestSpeed.common.bean.MessageVisitorBean
+import com.mshy.VInterestSpeed.common.bean.VquRelationListBean
 import com.mshy.VInterestSpeed.common.helper.responseCodeExceptionHandler
 import com.mshy.VInterestSpeed.common.net.GlobalApiService
 import com.mshy.VInterestSpeed.uikit.bean.ChatIntimateBean
@@ -61,6 +62,14 @@ class MessageVquRecentFragmentRepository @Inject constructor() : BaseRepository(
 
     suspend fun vquSaveRemarkName(userId: String, remarkName: String) = request<BaseResponse<Any>> {
         mApiMsg.saveRemark(userId, remarkName).run {
+            responseCodeExceptionHandler(code, message) {
+                emit(this)
+            }
+        }
+    }
+
+    suspend fun vquVisitorList(page: Int) = request<BaseResponse<VquRelationListBean>> {
+        mApiMsg.vquVisitorList(page).run {
             responseCodeExceptionHandler(code, message) {
                 emit(this)
             }

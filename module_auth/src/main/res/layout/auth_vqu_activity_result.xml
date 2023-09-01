@@ -27,7 +27,7 @@
         android:layout_marginTop="2.5dp"
         android:layout_marginRight="35dp"
         android:gravity="center"
-        android:text="恭喜您已通过真人认证，请开启您的心语交友之旅吧~"
+        android:text="恭喜您已通过真人认证，请开启您的鹊娘交友之旅吧~"
         android:textColor="@color/color_999999"
         android:textSize="13sp"
         app:layout_constraintLeft_toLeftOf="parent"

@@ -3,6 +3,7 @@ package com.live.module.mine.fragment
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
+import android.content.DialogInterface
 import android.content.pm.PackageInfo
 import android.content.pm.PackageManager
 import android.graphics.Typeface
@@ -467,7 +468,7 @@ class MineFragment : BaseLazyFrameFragment<MineFragmentMineBinding, MineViewMode
 
 //                val messageDialog = MessageDialog()
 //                messageDialog.setTitle("真人认证")
-//                messageDialog.setContent("心语提倡真实交友，真人认证通过后即可心动交友啦~")
+//                messageDialog.setContent("鹊娘提倡真实交友，真人认证通过后即可心动交友啦~")
 //                messageDialog.setRightText("去认证")
 //                messageDialog.setOnButtonClickListener(object :
 //                    MessageDialog.OnButtonClickListener {
@@ -882,7 +883,7 @@ class MineFragment : BaseLazyFrameFragment<MineFragmentMineBinding, MineViewMode
         var avatar =
             "{\"key\":\"avatar\", \"value\": \"${NetBaseUrlConstant.IMAGE_URL + it.userinfo.avatar}\"}"
         var index0 =
-            "{\"index\":0, \"key\":\"account\", \"label\":\"心语号\", \"value\":${it.userinfo.usercode}}"
+            "{\"index\":0, \"key\":\"account\", \"label\":\"鹊娘号\", \"value\":${it.userinfo.usercode}}"
         var index2 = "{\"index\":2,\"key\":\"desc\",\"label\":\"来源\",\"value\":\"$version\"}"
         var index1 =
             "{\"index\":1, \"key\":\"sex\", \"label\":\"性别\", \"value\": \"${gender}\"}"
@@ -959,11 +960,10 @@ class MineFragment : BaseLazyFrameFragment<MineFragmentMineBinding, MineViewMode
     @Subscribe(threadMode = ThreadMode.MAIN)
     fun onSignDayEvent(successData: SignDaySuccessData) {
         mSignDayViewModel.vquTodayActivityIndex()
-
+        mViewModel.vquWalletIndex()
         val dialog = SignDaySuccessDialog()
 
         dialog.setData(successData)
         dialog.show(childFragmentManager, "")
-
     }
 }

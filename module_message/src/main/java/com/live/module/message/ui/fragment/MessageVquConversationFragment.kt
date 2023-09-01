@@ -111,7 +111,8 @@ class MessageVquConversationFragment :
     override fun MessageTantaRecentFragmentBinding.initView() {
         loadingDialog = LoadingDialog(
             requireContext(),
-            "删除中请稍后")
+            "删除中请稍后"
+        )
         initMessageList()
         registerObservers(true)
     }
@@ -280,38 +281,58 @@ class MessageVquConversationFragment :
                             }
                         }
                     }
-                    ivHead?.vquLoadCircleImage(IMAGE_URL + lookMeInfo.avatar + "?x-oss-process=image/blur,r_50,s_30",
-                        R.mipmap.ic_common_head_circle_def)
+                    ivHead?.vquLoadCircleImage(
+                        IMAGE_URL + lookMeInfo.avatar + "?x-oss-process=image/blur,r_50,s_30",
+                        R.mipmap.ic_common_head_circle_def
+                    )
                     tvContent?.text = if (lookMeInfo.descriptiveCopy.isNullOrEmpty()) {
                         ""
                     } else {
                         lookMeInfo.descriptiveCopy
                     }
                     tvCount?.text = lookMeInfo.newVisitorCount.toString()
+                    SpUtils.putInt(SpKey.NEW_VISITOR_COUNT, lookMeInfo.newVisitorCount)
                 } else {
                     if (hasHeader) {
                         visitorsHeadView?.let {
+                            SpUtils.putInt(SpKey.NEW_VISITOR_COUNT, 0)
                             adapter.removeHeaderView(it)
                             hasHeader = false
                         }
                     }
                 }
-
-
             } else {
                 if (hasHeader) {
                     visitorsHeadView?.let {
+                        SpUtils.putInt(SpKey.NEW_VISITOR_COUNT, 0)
                         adapter.removeHeaderView(it)
                         hasHeader = false
                     }
                 }
             }
+            val unreadNum = NIMClient.getService(MsgService::class.java).totalUnreadCount
+            EventBus.getDefault().post(
+                UnReadCountEvent(
+                    unreadNum
+                )
+            )
         })
         NIMClient.getService(EventSubscribeServiceObserver::class.java)
             .observeEventChanged(Observer {
                 adapter.updateOnlineState(it)
             }, true)
-
+        mViewModel.isClearMsg.observe(this) {
+            if (it) {
+                mViewModel.resetClearStatue()
+                mViewModel.getVisitorsData()
+                SpUtils.putInt(SpKey.NEW_VISITOR_COUNT, 0)
+                EventBus.getDefault().post(
+                    UnReadCountEvent(
+                        0
+                    )
+                )
+            }
+        }
     }
 
     override fun initRequestData() {
@@ -414,6 +435,7 @@ class MessageVquConversationFragment :
         var eventSubscribeRequest = EventSubscribeRequest()
         eventSubscribeRequest.eventType = 1
         eventSubscribeRequest.publishers = idsList
+        mViewModel.vquVisitorList()
         NIMClient.getService(EventSubscribeService::class.java)
             .unSubscribeEvent(eventSubscribeRequest)
     }
@@ -427,8 +449,10 @@ class MessageVquConversationFragment :
             if (totalSize % splitSize == 0) totalSize / splitSize else totalSize / splitSize + 1
         val rows: MutableList<List<String>> = ArrayList()
         for (i in 0 until count) {
-            val cols = datas.subList(i * splitSize,
-                if (i == count - 1) totalSize else splitSize * (i + 1))
+            val cols = datas.subList(
+                i * splitSize,
+                if (i == count - 1) totalSize else splitSize * (i + 1)
+            )
             rows.add(cols)
         }
         return rows
@@ -585,8 +609,11 @@ class MessageVquConversationFragment :
             }
 
             override fun onUnreadCountChange(unreadCount: Int) {
-                EventBus.getDefault().post(UnReadCountEvent(
-                    unreadCount))
+                EventBus.getDefault().post(
+                    UnReadCountEvent(
+                        unreadCount
+                    )
+                )
             }
 
             override fun onItemClick(recent: RecentContact?) {

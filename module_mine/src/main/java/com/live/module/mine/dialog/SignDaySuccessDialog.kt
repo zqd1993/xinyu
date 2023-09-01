@@ -71,7 +71,7 @@ class SignDaySuccessDialog :
     override fun initRequestData() {
     }
 
-    fun setData(data: SignDaySuccessData) {
+    fun setData(data: SignDaySuccessData?) {
         mData = data
     }
 

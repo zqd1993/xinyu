@@ -1,5 +1,8 @@
 package com.mshy.VInterestSpeed.common.constant
 
+import com.live.vquonline.base.constant.VersionStatus
+import com.mshy.VInterestSpeed.common.BuildConfig
+
 
 /**
  * 接口公共地址
@@ -9,11 +12,14 @@ package com.mshy.VInterestSpeed.common.constant
  */
 object NetBaseUrlConstant {
     var BASE_URL = "http://api.zhenban.top/"//正式环境
-//    var BASE_URL = "http://120.78.160.71:8071/"//测试环境
+
+    var DEBUG_BASE_URL = "http://api.zhenban.top/"//测试环境
+//    var DEBUG_BASE_URL = "http://120.78.160.71:8071/"//测试环境
 
     var IMAGE_URL = "http://asset.zhenban.top/"
 
-    val MAIN_URL = BASE_URL + "api/"
+    val MAIN_URL =
+        if (BuildConfig.VERSION_TYPE == VersionStatus.RELEASE) BASE_URL + "api/" else DEBUG_BASE_URL + "api/"
 
     var ASSET_URL = ""
         get() {

@@ -52,7 +52,7 @@
             android:layout_marginRight="14dp"
             android:lineSpacingExtra="2dp"
             android:maxHeight="280dp"
-            android:text="绑定手机后才可以进心语"
+            android:text="绑定手机后才可以进鹊娘"
             android:textColor="@color/color_999999"
             android:textSize="14sp" />
 

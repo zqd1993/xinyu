@@ -123,6 +123,17 @@ class PayWaySelectDialog : BaseDialogFragment<VipTantaDialogPayWayBinding>() {
                 rechargeRoute = wechatRechargeRoute[0]
                 mBinding.cbWechatType.isChecked = true
                 mBinding.cbAliType.isChecked = false
+                for (paymentData in paymentData) {
+                    for (rechargeRoute in paymentData.rechargeRoute) {
+                        rechargeRoute.checked = false
+                    }
+                }
+                if (mPaymentAdapter.data.size > 0) {
+                    mPaymentAdapter.notifyDataSetChanged()
+                }
+                if (mAliPaymentAdapter.data.size > 0) {
+                    mAliPaymentAdapter.notifyDataSetChanged()
+                }
             }
         }
 
@@ -131,6 +142,17 @@ class PayWaySelectDialog : BaseDialogFragment<VipTantaDialogPayWayBinding>() {
                 rechargeRoute = aliRechargeRoute[0]
                 mBinding.cbWechatType.isChecked = false
                 mBinding.cbAliType.isChecked = true
+                for (paymentData in paymentData) {
+                    for (rechargeRoute in paymentData.rechargeRoute) {
+                        rechargeRoute.checked = false
+                    }
+                }
+                if (mPaymentAdapter.data.size > 0) {
+                    mPaymentAdapter.notifyDataSetChanged()
+                }
+                if (mAliPaymentAdapter.data.size > 0) {
+                    mAliPaymentAdapter.notifyDataSetChanged()
+                }
             }
         }
         mBinding.tvAgreement.setOnClickListener {
@@ -201,6 +223,11 @@ class PayWaySelectDialog : BaseDialogFragment<VipTantaDialogPayWayBinding>() {
                 for (rechargeRoute in paymentData.rechargeRoute) {
                     rechargeRoute.checked = rechargeRoute.payCode == item.payCode
                 }
+            }
+            if (rechargeRoute!!.payCode.contains("wechat")) {
+                mBinding.cbAliType.isChecked = false
+            } else {
+                mBinding.cbWechatType.isChecked = false
             }
             mPaymentAdapter.notifyDataSetChanged()
             mAliPaymentAdapter.notifyDataSetChanged()

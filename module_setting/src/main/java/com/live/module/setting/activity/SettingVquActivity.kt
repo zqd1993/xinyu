@@ -205,7 +205,7 @@ class SettingVquActivity : BaseActivity<SettingTantaActivitySettingBinding, Sett
                     deleteAllMsg()
                 }
 
-                getString(R.string.setting_about) -> {//关于心语
+                getString(R.string.setting_about) -> {//关于鹊娘
                     ARouter.getInstance()
                         .build(RouteUrl.Setting.SettingVquAboutActivity)
                         .navigation()
@@ -305,6 +305,7 @@ class SettingVquActivity : BaseActivity<SettingTantaActivitySettingBinding, Sett
                 com.mshy.VInterestSpeed.uikit.api.NimUIKit.logout()
                 NIMClient.getService(AuthService::class.java).logout()
                 UserSpUtils.clear()
+                SpUtils.putInt(SpKey.NEW_VISITOR_COUNT, 0)
                 EventBus.getDefault().post("mainFinish")
                 com.mshy.VInterestSpeed.uikit.util.IntimateUtils.getInstance().clearData()
                 if (Settings.canDrawOverlays(BaseApplication.context)) {

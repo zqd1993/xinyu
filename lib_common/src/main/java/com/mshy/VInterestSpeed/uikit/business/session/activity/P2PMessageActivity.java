@@ -2,20 +2,24 @@ package com.mshy.VInterestSpeed.uikit.business.session.activity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.widget.AppCompatTextView;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.live.vquonline.base.BaseApplication;
+import com.live.vquonline.base.utils.ToastUtils;
 import com.mshy.VInterestSpeed.common.constant.RouteUrl;
 import com.mshy.VInterestSpeed.common.ui.view.notification.SwipeMessageNotificationManager;
 import com.mshy.VInterestSpeed.common.utils.UmUtils;
@@ -316,4 +320,14 @@ public class P2PMessageActivity extends BaseMessageActivity {
         }
     }
 
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        Uri uri = intent.getData();
+        if (uri != null) {
+            String payCode = uri.getQueryParameter("payCode") ;// 支付宝支付完后返回app后 所传的code
+            Log.e("onNewIntent", "payCode:$payCode"); //  2为成功
+            ToastUtils.showToast("充值成功", Toast.LENGTH_SHORT);
+        }
+    }
 }

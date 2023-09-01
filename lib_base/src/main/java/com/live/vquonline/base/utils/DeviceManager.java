@@ -10,8 +10,10 @@ import android.provider.Settings;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.bytedance.hume.readapk.HumeSDK;
 import com.live.vquonline.base.BaseApplication;
 import com.live.vquonline.service.common.ICommonService;
 
@@ -115,7 +117,13 @@ public class DeviceManager {
     }
 
     public void setChannelName(String channelName) {
-        this.channelName = channelName;
+        String channel = HumeSDK.getChannel(mContext);
+        Log.d("channel", "channel = " + channel);
+        if (channel.equals("")) {
+            this.channelName = channelName;
+        } else {
+            this.channelName = channel;
+        }
     }
 
 

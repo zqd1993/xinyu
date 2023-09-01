@@ -10,6 +10,8 @@ import com.mshy.VInterestSpeed.common.bean.CommonVquRechargeData
 import com.mshy.VInterestSpeed.common.bean.IndexActivityBean
 import com.mshy.VInterestSpeed.common.bean.TantaPayBean
 import com.mshy.VInterestSpeed.common.bean.TantaWalletBean
+import com.mshy.VInterestSpeed.common.bean.pay.BillPaymentData
+import com.mshy.VInterestSpeed.common.bean.pay.PayOrderInfoBean
 import com.mshy.VInterestSpeed.common.ui.dialog.CommonFirstRechargeDialog
 import com.mshy.VInterestSpeed.common.ui.dialog.CommonRechargeDialog
 import com.mshy.VInterestSpeed.common.ui.repo.CommonPayRepository
@@ -36,6 +38,10 @@ class CommonPayViewModel : BaseViewModel() {
     val walletData = MutableLiveData<TantaWalletBean>()
 
     val firstRechargeResultData = MutableLiveData<IndexActivityBean>()
+
+    val payConfigData = MutableLiveData<MutableList<BillPaymentData>>()
+
+    val orderJson = MutableLiveData<PayOrderInfoBean>()
 
     fun recharge(type: String, payId: String) {
         launchIO {
@@ -121,6 +127,30 @@ class CommonPayViewModel : BaseViewModel() {
                     }
                 }
 
+        }
+    }
+
+    fun payConfig() {
+        launchIO {
+            repo.getPayConfig()
+                .catch {
+
+                }
+                .collect() {
+                    payConfigData.postValue(it.data!!)
+                }
+        }
+    }
+
+    fun recharge(channel: String, goodsId: Int, polling: Int, scheme: String) {
+        launchIO {
+            repo.recharge(channel, goodsId, polling, scheme)
+                .catch {
+
+                }
+                .collect() {
+                    orderJson.postValue(it.data!!)
+                }
         }
     }
 }
