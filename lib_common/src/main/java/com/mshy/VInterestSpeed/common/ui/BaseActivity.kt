@@ -239,7 +239,7 @@ abstract class BaseActivity<VB : ViewBinding, VM : BaseViewModel> : BaseFrameAct
         }
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val channelId = "customcaicai"
-            val channelName = "鹊娘系统通知"
+            val channelName = "心语系统通知"
             val importance = NotificationManager.IMPORTANCE_HIGH
             NotificationUtil.createNotificationChannel(
                 this,
@@ -291,7 +291,7 @@ abstract class BaseActivity<VB : ViewBinding, VM : BaseViewModel> : BaseFrameAct
             if (isBackground(this)) {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                     val channelId = "customcaicai"
-                    val channelName = "鹊娘系统通知"
+                    val channelName = "心语系统通知"
                     val importance = NotificationManager.IMPORTANCE_HIGH
                     NotificationUtil.createNotificationChannel(
                         this,
@@ -377,7 +377,7 @@ abstract class BaseActivity<VB : ViewBinding, VM : BaseViewModel> : BaseFrameAct
                     if (!UserManager.isVideo) {
                         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                             val channelId = "customcaicai"
-                            val channelName = "鹊娘系统通知"
+                            val channelName = "心语系统通知"
                             val importance = NotificationManager.IMPORTANCE_HIGH
                             NotificationUtil.createNotificationChannel(
                                 this,

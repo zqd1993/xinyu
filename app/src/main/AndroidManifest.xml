@@ -27,7 +27,7 @@
         <!--爱加密渠道id标识-->
         <meta-data
             android:name="channel_id"
-            android:value="800" />
+            android:value="401" />
         <!--适配华为（huawei）刘海屏-->
         <!-- 屏幕适配基准DP -->
         <meta-data
@@ -39,7 +39,7 @@
 
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="com.queniang.zhenban.android.fileProvider"
+            android:authorities="xinyu.love.fileProvider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data

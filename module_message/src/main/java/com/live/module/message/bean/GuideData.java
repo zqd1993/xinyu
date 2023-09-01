@@ -16,8 +16,8 @@ import java.util.List;
 public class GuideData {
     //总数据
     private final List<GuideBean> mAllData = new ArrayList<>();
-    private final String[] content = {"欢迎来到鹊娘",
-            "在鹊娘，每回复一条消息，都可以获得现金，现金可无门槛提现哦",
+    private final String[] content = {"欢迎来到心语",
+            "在心语，每回复一条消息，都可以获得现金，现金可无门槛提现哦",
             "快回复消息试试？", "好的", "回复消息越及时，得到的现金也越多",
             "通过真人认证后，所获得的现金将翻倍", "通过头像审核，才可开始获得现金哦，你准备好了吗？",
             "好的"};

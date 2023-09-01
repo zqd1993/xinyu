@@ -116,7 +116,7 @@
                         android:lines="1"
                         android:maxLength="18"
                         android:scrollHorizontally="true"
-                        android:text="教你如何玩转鹊娘"
+                        android:text="教你如何玩转心语"
                         android:textColor="#FF9F9DA5"
                         android:textSize="13sp" />
                 </LinearLayout>

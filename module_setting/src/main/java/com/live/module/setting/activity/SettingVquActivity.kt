@@ -205,7 +205,7 @@ class SettingVquActivity : BaseActivity<SettingTantaActivitySettingBinding, Sett
                     deleteAllMsg()
                 }
 
-                getString(R.string.setting_about) -> {//关于鹊娘
+                getString(R.string.setting_about) -> {//关于心语
                     ARouter.getInstance()
                         .build(RouteUrl.Setting.SettingVquAboutActivity)
                         .navigation()

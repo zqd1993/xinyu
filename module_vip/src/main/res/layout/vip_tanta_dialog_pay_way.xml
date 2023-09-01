@@ -285,7 +285,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="开通即同意《鹊娘会员协议》"
+            android:text="开通即同意《心语会员协议》"
             android:textColor="@color/color_999999"
             android:textSize="12sp"
             app:layout_constraintLeft_toLeftOf="parent"

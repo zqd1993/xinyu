@@ -9,11 +9,11 @@ package com.live.vquonline.buildsrc
 object ProjectBuildConfig {
     const val compileSdkVersion = 31
     const val buildToolsVersion = "30.0.2"
-    const val applicationId = "com.queniang.zhenban.android"
+    const val applicationId = "xinyu.love"
     const val minSdkVersion = 21
     const val targetSdkVersion = 30
-    const val versionCode = 1
-    const val versionName = "1.0.0"
+    const val versionCode = 2
+    const val versionName = "1.0.1"
     const val isAppMode = false
 
     /**

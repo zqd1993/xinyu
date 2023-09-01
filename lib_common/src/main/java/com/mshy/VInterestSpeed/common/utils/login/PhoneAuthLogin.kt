@@ -233,10 +233,10 @@ class PhoneAuthLogin(val context: Context) {
             .setVendorPrivacyPrefix("《")
             .setVendorPrivacySuffix("》")
             .setProtocolAction("com.mshy.VInterestSpeed.common.ui.activity.CommonVquWebViewActivity")
-            .setPackageName("com.queniang.zhenban.android")
+            .setPackageName("xinyu.love")
             .setPrivacyOffsetY_B(43)
             .setAppPrivacyOne(
-                "《鹊娘用户协议》",
+                "《心语用户协议》",
                 NetBaseUrlConstant.AGREEMENT_BASE_URL + NetBaseUrlConstant.AGREEMENT_URL
             )
             .setAppPrivacyTwo(
