@@ -293,9 +293,9 @@ class MessageVquConversationFragment :
                     tvCount?.text = lookMeInfo.newVisitorCount.toString()
                     SpUtils.putInt(SpKey.NEW_VISITOR_COUNT, lookMeInfo.newVisitorCount)
                 } else {
+                    SpUtils.putInt(SpKey.NEW_VISITOR_COUNT, 0)
                     if (hasHeader) {
                         visitorsHeadView?.let {
-                            SpUtils.putInt(SpKey.NEW_VISITOR_COUNT, 0)
                             adapter.removeHeaderView(it)
                             hasHeader = false
                         }

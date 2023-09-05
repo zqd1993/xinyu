@@ -684,7 +684,6 @@ class VideoCall : SensorEventListener, RtcEngineEventHandler {
 
                     //挂断
                     HANGUP -> {
-                        mWebSocketStateListeners?.onHangUp(json)
                         hangUpAfterSocket(json)
 //                        mWebSocketStateListeners.forEach {
 //                            it.onHangUp(json)
@@ -837,34 +836,6 @@ class VideoCall : SensorEventListener, RtcEngineEventHandler {
     }
 
     private fun hangupAfterSocketSync(json: String) {
-        VideoCallManager.isStarted = false
-
-        mHandler.postDelayed({
-            if (AppManager.isMiniWindow) {
-                com.mshy.VInterestSpeed.common.ui.view.floating.FloatWindow.get().hide()
-                AppManager.isMiniWindow = false
-            }
-        }, 500)
-
-        if (isConnecting) {
-            leaveChannel()
-        } else {
-            preLeaveChannel()
-        }
-        RtcEngineManager.removeRtcHandler(this)
-
-        preprocessor?.releaseFURender()
-        mVideoManager?.stopCapture()
-        mSensorManager?.unregisterListener(this)
-
-
-        VideoCallManager.release()
-        mRoomStateListeners?.onSurfaceDestroyed()
-
-
-//        mRoomStateListeners.forEach {
-//            it.onSurfaceDestroyed()
-//        }
 
         val hangUpBean: com.mshy.VInterestSpeed.common.bean.websocket.WebSocketResultBean<VquHangUpBean> =
             Gson().fromJson(
@@ -872,17 +843,51 @@ class VideoCall : SensorEventListener, RtcEngineEventHandler {
                 object :
                     TypeToken<com.mshy.VInterestSpeed.common.bean.websocket.WebSocketResultBean<VquHangUpBean?>?>() {}.type
             )
+        Log.d("video hangUpBean", "hangUpBean.data?.type = ${hangUpBean.data?.type}")
+        if (hangUpBean.data?.type != 10 && hangUpBean.data?.type != 11) {
+            mWebSocketStateListeners?.onHangUp(json)
+            VideoCallManager.isStarted = false
 
+            mHandler.postDelayed({
+                if (AppManager.isMiniWindow) {
+                    com.mshy.VInterestSpeed.common.ui.view.floating.FloatWindow.get().hide()
+                    AppManager.isMiniWindow = false
+                }
+            }, 500)
+
+            if (isConnecting) {
+                leaveChannel()
+            } else {
+                preLeaveChannel()
+            }
+            RtcEngineManager.removeRtcHandler(this)
+
+            preprocessor?.releaseFURender()
+            mVideoManager?.stopCapture()
+            mSensorManager?.unregisterListener(this)
+
+
+            VideoCallManager.release()
+            mRoomStateListeners?.onSurfaceDestroyed()
+
+
+//        mRoomStateListeners.forEach {
+//            it.onSurfaceDestroyed()
+//        }
+        }
         when (hangUpBean.data?.type ?: 7) {
             1 -> {
                 toast("已取消")
             }
+
             2 -> {
                 toast("已拒绝")
             }
+
             3 -> {
                 toast("超时无应答")
             }
+
             4 -> {
                 if (isCaller) {
                     toast("对方已挂断")
@@ -890,6 +895,7 @@ class VideoCall : SensorEventListener, RtcEngineEventHandler {
                     toast("通话已结束")
                 }
             }
+
             5 -> {
                 if (isCaller) {
                     toast("通话已结束")
@@ -897,23 +903,28 @@ class VideoCall : SensorEventListener, RtcEngineEventHandler {
                     toast("对方已挂断")
                 }
             }
+
             6 -> {
                 toast("费用不足已断开")
             }
+
             7 -> {}
             10 -> {
                 if (isCaller) {
                     toast("本次视频违规，请遵守平台相关规则")
+                    mWebSocketStateListeners?.onPronRemind()
                 } else {
 
                     toast("因对方视频通话违规系统挂断，请严格遵守平台相关规定。")
                 }
             }
+
             11 -> {
                 if (isCaller) {
                     toast("因对方视频通话违规系统挂断，请严格遵守平台相关规定。")
                 } else {
                     toast("本次视频违规，请遵守平台相关规则")
+                    mWebSocketStateListeners?.onPronRemind()
                 }
 
             }

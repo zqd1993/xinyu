@@ -10,9 +10,15 @@
     {
       "type": "SINGLE",
       "filters": [],
+<<<<<<< HEAD
       "versionCode": 1,
       "versionName": "1.0.0",
       "outputFile": "com.queniang.zhenban.android_1(1.0.0)_release.apk"
+=======
+      "versionCode": 3,
+      "versionName": "1.0.2",
+      "outputFile": "xinyu.love_3(1.0.2)_release.apk"
+>>>>>>> 5e27873 (视频违规黑屏&&消息数量修复)
     }
   ]
 }
