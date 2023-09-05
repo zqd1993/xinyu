@@ -52,7 +52,8 @@ import java.net.URL
 @EventBusRegister
 @AndroidEntryPoint
 @Route(path = RouteUrl.Agora2.AgoraTantaVideoActivity)
-class AgoraTantaVideo2Activity : BaseActivity<AgoraTantaActivityVideoBinding, AgoraTantaVideoViewModel>(),
+class AgoraTantaVideo2Activity :
+    BaseActivity<AgoraTantaActivityVideoBinding, AgoraTantaVideoViewModel>(),
     VideoCallManager.RoomStateListener, VideoCallManager.WebSocketListener {
 
     companion object {
@@ -70,8 +71,6 @@ class AgoraTantaVideo2Activity : BaseActivity<AgoraTantaActivityVideoBinding, Ag
     override val mViewModel: AgoraTantaVideoViewModel by viewModels()
 
     private var mRemoteUid = -1
-
-
 
 
     /**
@@ -109,11 +108,13 @@ class AgoraTantaVideo2Activity : BaseActivity<AgoraTantaActivityVideoBinding, Ag
 
     private var mVquRoomId = 0
 
-    private var mVquMPornCheckBeanV2: com.mshy.VInterestSpeed.common.bean.video.VideoVquPornCheckBeanV2? = null
+    private var mVquMPornCheckBeanV2: com.mshy.VInterestSpeed.common.bean.video.VideoVquPornCheckBeanV2? =
+        null
 
     private var mVquIsOpenDetection: Int = 0
     private var mVquDetectionTime: Int = 0
-    private var mVquMPornCheckV2List: ArrayList<com.mshy.VInterestSpeed.common.bean.video.VideoVquPornCheckBeanV2.PornCheckV2>? = null
+    private var mVquMPornCheckV2List: ArrayList<com.mshy.VInterestSpeed.common.bean.video.VideoVquPornCheckBeanV2.PornCheckV2>? =
+        null
     private var mCheckFromUser: Int = 0
 
     private var mVquMDiffNum: Int = 0
@@ -308,7 +309,10 @@ class AgoraTantaVideo2Activity : BaseActivity<AgoraTantaActivityVideoBinding, Ag
 
     private fun initData() {
         if (isMatch) {
-            com.mshy.VInterestSpeed.common.utils.UmUtils.setUmEvent(this, com.mshy.VInterestSpeed.common.utils.UmUtils.TRUNONVIDEOMATCH)
+            com.mshy.VInterestSpeed.common.utils.UmUtils.setUmEvent(
+                this,
+                com.mshy.VInterestSpeed.common.utils.UmUtils.TRUNONVIDEOMATCH
+            )
         }
 
         try {
@@ -431,7 +435,10 @@ class AgoraTantaVideo2Activity : BaseActivity<AgoraTantaActivityVideoBinding, Ag
                 return@setViewClickListener
             }
 
-            com.mshy.VInterestSpeed.common.utils.UmUtils.setUmEvent(this@AgoraTantaVideo2Activity, com.mshy.VInterestSpeed.common.utils.UmUtils.TURNONTHEVIDEO)
+            com.mshy.VInterestSpeed.common.utils.UmUtils.setUmEvent(
+                this@AgoraTantaVideo2Activity,
+                com.mshy.VInterestSpeed.common.utils.UmUtils.TURNONTHEVIDEO
+            )
             mVquMediaPlayer?.stop()
             //被叫者接听
             calleeAgreeVideo()
@@ -497,7 +504,7 @@ class AgoraTantaVideo2Activity : BaseActivity<AgoraTantaActivityVideoBinding, Ag
 
             if (mBinding.vquVideoMike.isSelected) {
                 toast("已关闭麦克风")
-            }else{
+            } else {
                 toast("已开启麦克风")
             }
 
@@ -605,20 +612,7 @@ class AgoraTantaVideo2Activity : BaseActivity<AgoraTantaActivityVideoBinding, Ag
             mBinding.ivAgoraVquVideoCloseCameraIcon.setImageResource(R.mipmap.agora_vqu_video_open)
             mBinding.tvAgoraVquVideoCloseCameraTxt.text = "打开摄像头"
 
-            val vquAvatar = if (mIsCaller) {
-                NetBaseUrlConstant.IMAGE_URL + mCallBean?.from_avatar
-            } else {
-                NetBaseUrlConstant.IMAGE_URL + mCallBean?.to_avatar
-            }
-
-            mBinding.ivLocalAvatar.vquLoadRoundImage(
-                vquAvatar,
-                dp2px(8f),
-                R.mipmap.ic_common_head_def
-            )
-
-            mBinding.localVideoView.gone()
-            mBinding.ivLocalAvatar.visible()
+            closeCamera()
 
         } else {
             mBinding.ivAgoraVquVideoCloseCameraIcon.setImageResource(R.mipmap.agora_vqu_video_close)
@@ -626,6 +620,23 @@ class AgoraTantaVideo2Activity : BaseActivity<AgoraTantaActivityVideoBinding, Ag
             mBinding.localVideoView.visible()
             mBinding.ivLocalAvatar.gone()
         }
+    }
+
+    private fun closeCamera() {
+        val vquAvatar = if (mIsCaller) {
+            NetBaseUrlConstant.IMAGE_URL + mCallBean?.from_avatar
+        } else {
+            NetBaseUrlConstant.IMAGE_URL + mCallBean?.to_avatar
+        }
+
+        mBinding.ivLocalAvatar.vquLoadRoundImage(
+            vquAvatar,
+            dp2px(8f),
+            R.mipmap.ic_common_head_def
+        )
+
+        mBinding.localVideoView.gone()
+        mBinding.ivLocalAvatar.visible()
     }
 
     /**
@@ -640,7 +651,10 @@ class AgoraTantaVideo2Activity : BaseActivity<AgoraTantaActivityVideoBinding, Ag
         bottomGiftFragmentDialog.arguments = bundle
         bottomGiftFragmentDialog.setOnGiftItemClickedListener(object :
             com.mshy.VInterestSpeed.common.ui.dialog.BottomGiftFragmentDialog.OnGiftItemClickedListener {
-            override fun onGiftClicked(bean: com.mshy.VInterestSpeed.common.bean.gift.DialogGiftBean?, giftCount: Int) {
+            override fun onGiftClicked(
+                bean: com.mshy.VInterestSpeed.common.bean.gift.DialogGiftBean?,
+                giftCount: Int
+            ) {
                 if (bean != null) {
                     //赠送礼物的socket
                     val requestBean: com.mshy.VInterestSpeed.common.bean.websocket.WebSocketRequestBean<VquGiftBean> =
@@ -754,7 +768,8 @@ class AgoraTantaVideo2Activity : BaseActivity<AgoraTantaActivityVideoBinding, Ag
             .setRightText("挂断")
             .setContentSize(15)
             .setContentGravity(Gravity.CENTER)
-            .setOnClickListener(object : com.mshy.VInterestSpeed.common.ui.dialog.CommonHintDialog.OnClickListener {
+            .setOnClickListener(object :
+                com.mshy.VInterestSpeed.common.ui.dialog.CommonHintDialog.OnClickListener {
                 override fun onLeft(dialogFragment: DialogFragment) {
                     dialogFragment.dismissAllowingStateLoss()
                 }
@@ -777,7 +792,8 @@ class AgoraTantaVideo2Activity : BaseActivity<AgoraTantaActivityVideoBinding, Ag
             .setContent("是否挂断")
             .setLeftText("取消")
             .setRightText("确定")
-            .setOnClickListener(object : com.mshy.VInterestSpeed.common.ui.dialog.CommonHintDialog.OnClickListener {
+            .setOnClickListener(object :
+                com.mshy.VInterestSpeed.common.ui.dialog.CommonHintDialog.OnClickListener {
                 override fun onLeft(dialogFragment: DialogFragment) {
                     dialogFragment.dismissAllowingStateLoss()
                 }
@@ -967,7 +983,8 @@ class AgoraTantaVideo2Activity : BaseActivity<AgoraTantaActivityVideoBinding, Ag
 
             .setContentSize(15)
             .setContentGravity(Gravity.CENTER)
-            .setOnClickListener(object : com.mshy.VInterestSpeed.common.ui.dialog.CommonHintDialog.OnClickListener {
+            .setOnClickListener(object :
+                com.mshy.VInterestSpeed.common.ui.dialog.CommonHintDialog.OnClickListener {
                 override fun onLeft(dialogFragment: DialogFragment) {}
                 override fun onRight(dialogFragment: DialogFragment) {
                     mPayViewModel.showRechargeDialog(supportFragmentManager)
@@ -1038,7 +1055,10 @@ class AgoraTantaVideo2Activity : BaseActivity<AgoraTantaActivityVideoBinding, Ag
      * 添加等待处理的礼物消息
      * 同时开启动画效果展示
      */
-    private fun addWaitGiftBean(noticeGiftBean: com.mshy.VInterestSpeed.common.bean.websocket.NoticeGiftBean, fromUid: String?) {
+    private fun addWaitGiftBean(
+        noticeGiftBean: com.mshy.VInterestSpeed.common.bean.websocket.NoticeGiftBean,
+        fromUid: String?
+    ) {
         val id: String
         val nickName: String
         val avater: String
@@ -1196,7 +1216,10 @@ class AgoraTantaVideo2Activity : BaseActivity<AgoraTantaActivityVideoBinding, Ag
         mBinding.videoRemoteDuration.text = time
     }
 
-    override fun onAddWaitGiftBean(noticeGiftBean: com.mshy.VInterestSpeed.common.bean.websocket.NoticeGiftBean, fromUid: String?) {
+    override fun onAddWaitGiftBean(
+        noticeGiftBean: com.mshy.VInterestSpeed.common.bean.websocket.NoticeGiftBean,
+        fromUid: String?
+    ) {
         Log.d(TAG, "onAddWaitGiftBean: ")
         runOnUiThread {
             addWaitGiftBean(noticeGiftBean, fromUid)
@@ -1210,5 +1233,13 @@ class AgoraTantaVideo2Activity : BaseActivity<AgoraTantaActivityVideoBinding, Ag
 
     override fun onNoCoin() {
         showRechargeHintDialog()
+    }
+
+    override fun onPronRemind() {
+        VideoCallManager.setEnableVideo(false)
+
+        RtcEngineManager.getRtcEngine().muteLocalVideoStream(true)
+        mBinding.sllAgoraVquVideoCloseCamera.visibility = View.GONE
+        closeCamera()
     }
 }

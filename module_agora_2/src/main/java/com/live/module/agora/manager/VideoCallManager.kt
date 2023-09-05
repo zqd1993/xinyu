@@ -137,6 +137,8 @@ object VideoCallManager {
         fun onAddSvg(giftsvga: String?)
 
         fun onNoCoin()
+
+        fun onPronRemind()
     }
 
     fun addWebSocketListener(listener: WebSocketListener?) {
