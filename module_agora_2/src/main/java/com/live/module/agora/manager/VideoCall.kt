@@ -274,6 +274,9 @@ class VideoCall : SensorEventListener, RtcEngineEventHandler {
 
     var isCameraIsError = false
 
+    var hangupType = 0
+
+    var roomId = 0
 
     /**
      * WebSocket
@@ -844,6 +847,11 @@ class VideoCall : SensorEventListener, RtcEngineEventHandler {
                     TypeToken<com.mshy.VInterestSpeed.common.bean.websocket.WebSocketResultBean<VquHangUpBean?>?>() {}.type
             )
         Log.d("video hangUpBean", "hangUpBean.data?.type = ${hangUpBean.data?.type}")
+        if (hangupType == hangUpBean.data?.type!! && roomId == hangUpBean.data?.roomId!!) {
+            return
+        }
+        hangupType = hangUpBean.data?.type!!
+        roomId = hangUpBean.data?.roomId!!
         if (hangUpBean.data?.type != 10 && hangUpBean.data?.type != 11) {
             mWebSocketStateListeners?.onHangUp(json)
             VideoCallManager.isStarted = false
@@ -915,13 +923,13 @@ class VideoCall : SensorEventListener, RtcEngineEventHandler {
                     mWebSocketStateListeners?.onPronRemind()
                 } else {
 
-                    toast("因对方视频通话违规系统挂断，请严格遵守平台相关规定。")
+                    toast("由于出现敏感信息，已关闭对方视频。")
                 }
             }
 
             11 -> {
                 if (isCaller) {
-                    toast("因对方视频通话违规系统挂断，请严格遵守平台相关规定。")
+                    toast("由于出现敏感信息，已关闭对方视频。")
                 } else {
                     toast("本次视频违规，请遵守平台相关规则")
                     mWebSocketStateListeners?.onPronRemind()

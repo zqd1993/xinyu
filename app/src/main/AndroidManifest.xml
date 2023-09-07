@@ -27,7 +27,7 @@
         <!--爱加密渠道id标识-->
         <meta-data
             android:name="channel_id"
-            android:value="22" />
+            android:value="100" />
         <!--适配华为（huawei）刘海屏-->
         <!-- 屏幕适配基准DP -->
         <meta-data
