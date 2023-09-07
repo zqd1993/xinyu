@@ -126,6 +126,7 @@ dependencies {
     api DependencyConfig.GitHub.Oaid
 
     api DependencyConfig.SDK.Qiyu
+    api DependencyConfig.SDK.Vasdolly
 
     kapt DependencyConfig.GitHub.ARouteCompiler
     kapt DependencyConfig.GitHub.EventBusAPT

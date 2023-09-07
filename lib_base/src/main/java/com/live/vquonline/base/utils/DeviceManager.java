@@ -14,8 +14,10 @@ import android.widget.Toast;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.bytedance.hume.readapk.HumeSDK;
+import com.kwai.monitor.payload.TurboHelper;
 import com.live.vquonline.base.BaseApplication;
 import com.live.vquonline.service.common.ICommonService;
+import com.tencent.vasdolly.helper.ChannelReaderUtil;
 
 /**
  * Created by abby on 2018/4/15.
@@ -117,8 +119,22 @@ public class DeviceManager {
     }
 
     public void setChannelName(String channelName) {
+        //获取抖音分包渠道号
         String channel = HumeSDK.getChannel(mContext);
-        Log.d("channel", "channel = " + channel);
+        Log.d("channel", "douyin channel = " + channel);
+        if (channel.equals("")) {
+            //获取快手分包渠道号
+            channel = TurboHelper.getChannel(mContext);
+            Log.d("channel", "kuaishou channel = " + channel);
+            if (channel.equals("")) {
+                //获取腾讯广告分包渠道号
+                channel = ChannelReaderUtil.getChannel(mContext);
+                if (channel == null) {
+                    channel = "";
+                }
+                Log.d("channel", "tencent channel = " + channel);
+            }
+        }
         if (channel.equals("")) {
             this.channelName = channelName;
         } else {

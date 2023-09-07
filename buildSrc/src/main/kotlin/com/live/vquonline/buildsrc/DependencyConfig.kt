@@ -279,6 +279,7 @@ object DependencyConfig {
         const val XlogSDK = "com.tencent.mars:mars-xlog:1.2.5"
         const val CrashSDK = "cat.ereza:customactivityoncrash:2.4.0"
         const val Qiyu = "com.qiyukf.unicorn:unicorn:8.7.0"
+        const val Vasdolly = "com.tencent.vasdolly:helper:3.0.4"
     }
 
     /**
