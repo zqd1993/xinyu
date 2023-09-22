@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/color_FAFAFC"
+    android:background="@color/color_F5F5F5"
     android:clipChildren="false">
 
     <!--    <com.scwang.smart.refresh.layout.SmartRefreshLayout-->
@@ -59,7 +59,7 @@
                         android:id="@+id/cafv_mine_vqu_user_avatar"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="12dp"
+                        android:layout_marginLeft="15dp"
                         app:anchorVSize="12dp"
                         app:avatarFrameSize="65dp"
                         app:avatarSize="60dp"
@@ -81,10 +81,10 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
-                            android:layout_marginLeft="12dp"
+                            android:layout_marginLeft="16dp"
                             android:layout_marginTop="7dp"
                             android:gravity="center"
-                            android:textColor="@color/color_textLight"
+                            android:textColor="@color/black"
                             android:textSize="20sp"
                             app:layout_constraintLeft_toLeftOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
@@ -126,11 +126,11 @@
                             android:id="@+id/tv_mine_vqu_user_vqu_id"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="12dp"
-                            android:layout_marginTop="8dp"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="12dp"
                             android:drawableRight="@mipmap/ic_mine_copy_white"
-                            android:drawablePadding="3dp"
-                            android:textColor="@color/color_textLight"
+                            android:drawablePadding="6dp"
+                            android:textColor="@color/black"
                             android:textSize="12sp"
                             app:layout_constraintLeft_toLeftOf="parent"
                             app:layout_constraintTop_toBottomOf="@id/tv_mine_vqu_user_name"
@@ -159,29 +159,28 @@
                                 app:layout_constraintRight_toRightOf="parent"
                                 app:layout_constraintTop_toTopOf="parent"
                                 app:stv_bottomLeftRadius="14.75dp"
-                                app:stv_solidColor="@color/_26000000"
+                                app:stv_solidColor="#30000000"
                                 app:stv_topLeftRadius="14.75dp" />
 
-                            <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
+                            <TextView
                                 android:id="@+id/iv_mine_vqu_user_improve_data"
                                 android:layout_width="wrap_content"
                                 android:layout_height="22dp"
-                                android:layout_marginTop="8dp"
+                                android:layout_marginTop="4dp"
                                 android:layout_marginRight="12dp"
+                                android:background="@mipmap/ic_mine_tips_complate_info"
+                                android:drawableEnd="@mipmap/iv_mine_vqu_user_improve_red_pack"
+                                android:drawablePadding="3dp"
                                 android:gravity="center"
                                 android:paddingLeft="10dp"
+                                android:paddingTop="3dp"
                                 android:paddingRight="10dp"
-                                android:src="@mipmap/ic_mine_tips_complate_info"
                                 android:text="完善资料领红包"
-                                android:textColor="@color/color_934800"
+                                android:textColor="@color/white"
                                 android:textSize="10sp"
                                 android:visibility="invisible"
                                 app:layout_constraintRight_toRightOf="parent"
                                 app:layout_constraintTop_toBottomOf="@id/tv_mine_to_edit_info"
-                                app:stv_bottomLeftRadius="9dp"
-                                app:stv_bottomRightRadius="9dp"
-                                app:stv_solidColor="#FBE84C"
-                                app:stv_topLeftRadius="9dp"
                                 tools:visibility="visible" />
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -192,9 +191,7 @@
                     android:id="@+id/ll_mine_fans_parent"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="12dp"
                     android:layout_marginTop="18dp"
-                    android:layout_marginRight="12dp"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
                     app:layout_constraintTop_toBottomOf="@id/cl_mine_user_info_parent">
@@ -211,9 +208,9 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
                             android:includeFontPadding="false"
-                            android:textColor="@color/color_FFFFFF"
-                            android:textSize="16sp"
-                            android:textStyle="italic|bold"
+                            android:textColor="@color/black"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
                             android:typeface="sans"
                             app:layout_constraintLeft_toLeftOf="parent"
                             app:layout_constraintRight_toRightOf="parent"
@@ -239,9 +236,9 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="3dp"
+                            android:layout_marginTop="4dp"
                             android:text="@string/mine_vqu_focus"
-                            android:textColor="@color/color_FFFFFF"
+                            android:textColor="@color/black"
                             android:textSize="12sp"
                             app:layout_constraintLeft_toLeftOf="@id/tv_mine_vqu_focus_num"
                             app:layout_constraintRight_toRightOf="@id/tv_mine_vqu_focus_num"
@@ -260,9 +257,9 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
                             android:includeFontPadding="false"
-                            android:textColor="@color/color_FFFFFF"
-                            android:textSize="16sp"
-                            android:textStyle="italic|bold"
+                            android:textColor="@color/black"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
                             android:typeface="sans"
                             app:layout_constraintLeft_toLeftOf="parent"
                             app:layout_constraintRight_toRightOf="parent"
@@ -288,9 +285,9 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="3dp"
+                            android:layout_marginTop="4dp"
                             android:text="@string/mine_vqu_fans"
-                            android:textColor="@color/color_FFFFFF"
+                            android:textColor="@color/black"
                             android:textSize="12sp"
                             app:layout_constraintLeft_toLeftOf="@id/tv_mine_vqu_fans_num"
                             app:layout_constraintRight_toRightOf="@id/tv_mine_vqu_fans_num"
@@ -310,9 +307,9 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
                             android:includeFontPadding="false"
-                            android:textColor="@color/color_FFFFFF"
-                            android:textSize="16sp"
-                            android:textStyle="italic|bold"
+                            android:textColor="@color/black"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
                             android:typeface="sans"
                             app:layout_constraintLeft_toLeftOf="parent"
                             app:layout_constraintRight_toRightOf="parent"
@@ -339,9 +336,9 @@
                             android:id="@+id/tv_mine_vqu_track_txt"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="3dp"
+                            android:layout_marginTop="4dp"
                             android:text="@string/mine_vqu_track"
-                            android:textColor="@color/color_FFFFFF"
+                            android:textColor="@color/black"
                             android:textSize="12sp"
                             app:layout_constraintLeft_toLeftOf="@id/tv_mine_vqu_track_num"
                             app:layout_constraintRight_toRightOf="@id/tv_mine_vqu_track_num"
@@ -361,9 +358,9 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
                             android:includeFontPadding="false"
-                            android:textColor="@color/color_FFFFFF"
-                            android:textSize="16sp"
-                            android:textStyle="italic|bold"
+                            android:textColor="@color/black"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
                             android:typeface="sans"
                             app:layout_constraintLeft_toLeftOf="parent"
                             app:layout_constraintRight_toRightOf="parent"
@@ -390,9 +387,9 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="3dp"
+                            android:layout_marginTop="4dp"
                             android:text="@string/mine_vqu_visitor"
-                            android:textColor="@color/color_FFFFFF"
+                            android:textColor="@color/black"
                             android:textSize="12sp"
                             app:layout_constraintLeft_toLeftOf="@id/tv_mine_vqu_visitor_num"
                             app:layout_constraintRight_toRightOf="@id/tv_mine_vqu_visitor_num"
@@ -405,13 +402,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_marginLeft="16dp"
+                    android:layout_marginTop="20dp"
                     android:layout_marginRight="16dp"
                     android:layout_weight="1"
                     android:background="@mipmap/bg_mine_tanta_vip"
-                    app:layout_constraintBottom_toBottomOf="@id/bg_top"
-                    app:layout_constraintDimensionRatio="343:55"
+                    app:layout_constraintDimensionRatio="329:53"
                     app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent">
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ll_mine_fans_parent">
 
 
                     <!--                    <ImageView-->
@@ -429,6 +427,7 @@
                         android:layout_height="24dp"
                         android:layout_marginStart="12dp"
                         android:src="@mipmap/agora_vqu_vip_crown"
+                        android:visibility="gone"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -439,6 +438,7 @@
                         android:layout_height="14dp"
                         android:layout_marginStart="8dp"
                         android:src="@mipmap/agora_vqu_vip_text"
+                        android:visibility="gone"
                         app:layout_constraintBottom_toBottomOf="@+id/iv_vip_crown"
                         app:layout_constraintStart_toEndOf="@+id/iv_vip_crown"
                         app:layout_constraintTop_toTopOf="@+id/iv_vip_crown" />
@@ -450,22 +450,34 @@
                         android:layout_marginLeft="8dp"
                         android:background="#FFEEDA"
                         android:textSize="14sp"
+                        android:visibility="gone"
                         app:layout_constraintBottom_toBottomOf="@+id/iv_vip_text"
                         app:layout_constraintStart_toEndOf="@+id/iv_vip_text"
                         app:layout_constraintTop_toTopOf="@+id/iv_vip_text" />
 
                     <TextView
+                        android:id="@+id/tv_vip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="92dp"
+                        android:layout_marginTop="@dimen/dp_size_9"
+                        android:text="VIP会员"
+                        android:textColor="#FFDCA9"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
                         android:id="@+id/tv_vip_tip"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="5dp"
                         android:text="尊享私聊半价，奖励翻倍"
-                        android:textColor="#FFEEDA"
-                        android:textSize="13sp"
-                        android:textStyle="bold"
-                        app:layout_constraintBottom_toBottomOf="@+id/iv_vip_text"
-                        app:layout_constraintStart_toEndOf="@+id/v_line"
-                        app:layout_constraintTop_toTopOf="@+id/iv_vip_text" />
+                        android:textColor="#FFDCA9"
+                        android:textSize="10sp"
+                        app:layout_constraintStart_toStartOf="@id/tv_vip"
+                        app:layout_constraintTop_toBottomOf="@id/tv_vip" />
 
                     <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
                         android:id="@+id/btn_vip"
@@ -474,34 +486,31 @@
                         android:layout_marginEnd="12dp"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:paddingStart="10dp"
-                        android:paddingTop="6.5dp"
-                        android:paddingEnd="10dp"
-                        android:paddingBottom="6.5dp"
                         android:text="开通VIP"
-                        android:textColor="#3D3350"
+                        android:textColor="@color/black"
                         android:textSize="12sp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:stv_endColor="#F6AC2C"
+                        app:stv_endColor="#CDAF78"
                         app:stv_layoutRadius="8dp"
-                        app:stv_startColor="#FBE84C" />
+                        app:stv_startColor="#E5D0AB" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <com.mshy.VInterestSpeed.common.ui.view.ShapeConstraintLayout
                     android:id="@+id/sll_mine_vqu_sign_parent"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginTop="@dimen/dp_10"
-                    android:layout_marginRight="16dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="11dp"
+                    android:layout_marginRight="15dp"
                     android:clipChildren="false"
                     android:orientation="vertical"
+                    android:paddingBottom="@dimen/dp_size_12"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/bg_top"
-                    app:scl_layoutRadius="12dp"
+                    app:layout_constraintTop_toBottomOf="@id/cl_mine_vqu_vip_parent"
+                    app:scl_layoutRadius="7dp"
                     app:scl_solidColor="@color/color_FFFFFF">
 
                     <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
@@ -513,7 +522,7 @@
                         app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         app:stv_endColor="#FFB100"
-                        app:stv_layoutRadius="3dp"
+                        app:stv_layoutRadius="2dp"
                         app:stv_orientation="stv_vertical"
                         app:stv_startColor="#FEEE3C" />
 
@@ -522,29 +531,34 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
                         android:text="每日签到"
-                        android:textColor="@color/color_textMain"
-                        android:textSize="18sp"
+                        android:textColor="@color/black"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="@id/stv_mine_fragment_mine_sign_table"
                         app:layout_constraintLeft_toRightOf="@id/stv_mine_fragment_mine_sign_table"
                         app:layout_constraintTop_toTopOf="@id/stv_mine_fragment_mine_sign_table" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                    <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
+                        android:layout_width="64dp"
+                        android:layout_height="24dp"
+                        android:layout_marginRight="5dp"
+                        android:gravity="center"
                         android:text="去签到"
-                        android:textColor="@color/color_textDesc"
-                        android:textSize="14sp"
-                        android:layout_marginRight="12dp"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"
                         app:layout_constraintRight_toRightOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/stv_mine_fragment_mine_sign_table"
-                        app:layout_constraintTop_toTopOf="@id/stv_mine_fragment_mine_sign_table" />
+                        app:layout_constraintTop_toTopOf="@id/stv_mine_fragment_mine_sign_table"
+                        app:stv_endColor="@color/color_4CB6FF"
+                        app:stv_layoutRadius="8dp"
+                        app:stv_startColor="@color/color_6BBFFD" />
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/rv_mine_vqu_mine_sign_day"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="12dp"
-                        android:layout_marginTop="8.5dp"
+                        android:layout_marginTop="12dp"
                         android:layout_marginRight="12dp"
                         android:layout_marginBottom="12dp"
                         android:clipChildren="false"
@@ -563,73 +577,85 @@
                 android:id="@+id/ll_mine_money_parent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
+                android:layout_marginLeft="15dp"
                 android:layout_marginTop="12dp"
-                android:layout_marginRight="16dp"
+                android:layout_marginRight="15dp"
                 android:orientation="horizontal"
                 app:layout_constraintTop_toBottomOf="@id/cl_mine_user_info_top_parent">
 
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/cd_mine_my_earnings_parent"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cd_mine_my_recharge_parent"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="4.5dp"
-                    android:layout_weight="1"
-                    app:cardBackgroundColor="@color/color_FFFFFF"
-                    app:cardCornerRadius="10dp"
-                    app:cardElevation="0dp"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toLeftOf="@id/cd_mine_my_recharge_parent"
-                    app:layout_constraintTop_toBottomOf="@id/cl_mine_user_info_top_parent">
-
+                    android:layout_weight="1">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="0dp"
+                        android:background="@mipmap/ic_mine_my_earnings"
+                        app:layout_constraintDimensionRatio="161:61"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
 
                         <ImageView
                             android:id="@+id/iv_mine_my_earnings_icon"
                             android:layout_width="60dp"
                             android:layout_height="64dp"
                             android:src="@mipmap/ic_mine_my_earnings"
+                            android:visibility="gone"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintLeft_toLeftOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
 
                         <LinearLayout
-                            android:layout_width="0dp"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="2dp"
-                            android:layout_marginRight="7dp"
-                            android:orientation="vertical"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintLeft_toRightOf="@id/iv_mine_my_earnings_icon"
-                            app:layout_constraintRight_toLeftOf="@id/iv_mine_my_earnings_arrow"
+                            android:orientation="horizontal"
+                            app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent">
 
-                            <TextView
-                                android:layout_width="wrap_content"
+                            <View
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:text="@string/mine_my_earnings"
-                                android:textColor="@color/color_666666"
-                                android:textSize="12sp" />
+                                android:layout_weight="1" />
 
-                            <TextView
-                                android:id="@+id/tv_mine_my_earnings_num"
-                                android:layout_width="wrap_content"
+                            <LinearLayout
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="4dp"
-                                android:ellipsize="end"
-                                android:includeFontPadding="false"
-                                android:singleLine="true"
-                                android:textColor="@color/color_textMain"
-                                android:textSize="14sp"
-                                tools:text="1309.02" />
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="2"
+                                android:orientation="vertical"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintLeft_toRightOf="@id/iv_mine_my_earnings_icon"
+                                app:layout_constraintRight_toLeftOf="@id/iv_mine_my_earnings_arrow"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/mine_my_earnings"
+                                    android:textColor="@color/white"
+                                    android:textSize="12sp" />
+
+                                <TextView
+                                    android:id="@+id/tv_mine_my_earnings_num"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp"
+                                    android:ellipsize="end"
+                                    android:includeFontPadding="false"
+                                    android:singleLine="true"
+                                    android:textColor="@color/white"
+                                    android:textSize="20sp"
+                                    android:textStyle="bold"
+                                    tools:text="1309.02" />
+
+
+                            </LinearLayout>
 
 
                         </LinearLayout>
-
 
                         <ImageView
                             android:id="@+id/iv_mine_my_earnings_arrow"
@@ -637,71 +663,86 @@
                             android:layout_height="wrap_content"
                             android:layout_marginRight="10dp"
                             android:src="@mipmap/ic_arrow_small_right_grey"
+                            android:visibility="gone"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintRight_toRightOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
+
                     </androidx.constraintlayout.widget.ConstraintLayout>
-                </androidx.cardview.widget.CardView>
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/cd_mine_my_recharge_parent"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cd_mine_my_earnings_parent"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="4.5dp"
-                    android:layout_weight="1"
-                    app:cardBackgroundColor="@color/color_FFFFFF"
-                    app:cardCornerRadius="10dp"
-                    app:cardElevation="0dp"
-                    app:layout_constraintLeft_toRightOf="@id/cd_mine_my_earnings_parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/cl_mine_user_info_top_parent">
+                    android:layout_marginStart="@dimen/dp_size_8"
+                    android:layout_weight="1">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="0dp"
+                        android:background="@mipmap/ic_mine_my_recharge"
+                        app:layout_constraintDimensionRatio="161:61"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
 
                         <ImageView
                             android:id="@+id/iv_mine_my_recharge_icon"
                             android:layout_width="60dp"
                             android:layout_height="64dp"
                             android:src="@mipmap/ic_mine_my_recharge"
+                            android:visibility="gone"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintLeft_toLeftOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <LinearLayout
-                            android:layout_width="0dp"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="2dp"
-                            android:layout_marginRight="7dp"
-                            android:orientation="vertical"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintLeft_toRightOf="@id/iv_mine_my_recharge_icon"
-                            app:layout_constraintRight_toLeftOf="@id/iv_mine_my_recharge_arrow"
+                            android:orientation="horizontal"
+                            app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent">
 
-                            <TextView
-                                android:layout_width="wrap_content"
+                            <View
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:text="@string/mine_my_recharge"
-                                android:textColor="@color/color_666666"
-                                android:textSize="12sp" />
+                                android:layout_weight="1" />
 
-                            <TextView
-                                android:id="@+id/tv_mine_my_recharge_num"
-                                android:layout_width="wrap_content"
+                            <LinearLayout
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="4dp"
-                                android:ellipsize="end"
-                                android:includeFontPadding="false"
-                                android:singleLine="true"
-                                android:textColor="@color/color_textMain"
-                                android:textSize="14sp"
-                                tools:text="121312313" />
+                                android:layout_weight="2"
+                                android:orientation="vertical"
+                                android:layout_gravity="center"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintLeft_toRightOf="@id/iv_mine_my_recharge_icon"
+                                app:layout_constraintRight_toLeftOf="@id/iv_mine_my_recharge_arrow"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/mine_my_recharge"
+                                    android:textColor="@color/white"
+                                    android:textSize="12sp" />
+
+                                <TextView
+                                    android:id="@+id/tv_mine_my_recharge_num"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp"
+                                    android:ellipsize="end"
+                                    android:includeFontPadding="false"
+                                    android:singleLine="true"
+                                    android:textColor="@color/white"
+                                    android:textSize="20sp"
+                                    android:textStyle="bold"
+                                    tools:text="121312313" />
+
+                            </LinearLayout>
 
                         </LinearLayout>
-
 
                         <ImageView
                             android:id="@+id/iv_mine_my_recharge_arrow"
@@ -709,11 +750,13 @@
                             android:layout_height="wrap_content"
                             android:layout_marginRight="10dp"
                             android:src="@mipmap/ic_arrow_small_right_grey"
+                            android:visibility="gone"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintRight_toRightOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
+
                     </androidx.constraintlayout.widget.ConstraintLayout>
-                </androidx.cardview.widget.CardView>
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
             </LinearLayout>
 
@@ -722,9 +765,9 @@
                 android:id="@+id/br_mine_vqu_ad"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:layout_marginLeft="16dp"
+                android:layout_marginLeft="15dp"
                 android:layout_marginTop="12dp"
-                android:layout_marginRight="16dp"
+                android:layout_marginRight="15dp"
                 android:visibility="gone"
                 app:banner_indicator_normal_color="@color/color_26FFFFFF"
                 app:banner_indicator_normal_width="4dp"

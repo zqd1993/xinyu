@@ -13,7 +13,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="@dimen/bubble_time_layout_margin_top"
         android:layout_marginBottom="12dp"
-        android:textColor="@color/color_A3AABE"
+        android:textColor="@color/white"
         android:textSize="12sp"
         android:visibility="gone" />
 
@@ -21,18 +21,20 @@
         android:id="@+id/message_item_portrait_left"
         android:layout_width="40dp"
         android:layout_height="40dp"
+        android:layout_marginStart="9dp"
         android:layout_below="@id/message_item_time"
         android:layout_alignParentStart="true"
-        android:layout_marginEnd="8dp"
-        android:visibility="gone" />
+        android:layout_marginEnd="13dp"
+        android:visibility="gone"/>
 
     <com.mshy.VInterestSpeed.uikit.common.widget.NIMImageView
         android:id="@+id/message_item_portrait_right"
         android:layout_width="40dp"
         android:layout_height="40dp"
+        android:layout_marginEnd="9dp"
         android:layout_below="@id/message_item_time"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="13dp"
         android:visibility="gone" />
 
     <LinearLayout
@@ -116,11 +118,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:layout_marginRight="4dip"
+                android:layout_marginRight="8dip"
                 android:background="@color/transparent"
                 android:text="送达"
-                android:textColor="#FF7AC2"
-                android:textSize="10sp"
+                android:textColor="@color/color_5FBCFE"
+                android:textSize="12sp"
                 android:visibility="gone"
                 tools:visibility="gone" />
 
@@ -164,7 +166,7 @@
         android:drawablePadding="2dp"
         android:gravity="center"
         android:text="+0.012元"
-        android:textColor="@color/color_FE8A34"
+        android:textColor="#FFBB37"
         android:textSize="12sp"
         android:visibility="gone"
         tools:visibility="visible" />

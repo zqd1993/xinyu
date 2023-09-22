@@ -58,60 +58,64 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
-                    android:layout_marginStart="31dp"
-                    android:layout_marginEnd="31dp"
+                    android:layout_marginStart="36dp"
+                    android:layout_marginEnd="36dp"
                     android:gravity="center_horizontal"
                     android:orientation="vertical"
-                    app:sll_layoutRadius="12dp"
+                    app:sll_layoutRadius="19dp"
                     app:sll_solidColor="@color/color_FFFFFF">
 
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:layout_marginTop="32dp"
+                        android:layout_marginStart="18dp"
+                        android:layout_marginEnd="18dp"
                         android:src="@mipmap/bg_relation_vqu_visitor_lock_top" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
+                        android:layout_marginTop="25dp"
                         android:text="解锁访客记录"
-                        android:textColor="@color/color_222222"
+                        android:textColor="@color/black"
                         android:textSize="19sp"
                         android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="24dp"
                         android:text="开通VIP会员，不错过每一段缘分"
                         android:textColor="@color/color_999999"
                         android:textSize="15sp" />
 
                     <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
                         android:id="@+id/stv_open"
-                        android:layout_width="240dp"
-                        android:layout_height="49dp"
-                        android:layout_marginTop="30dp"
+                        android:layout_width="227dp"
+                        android:layout_height="46dp"
+                        android:layout_marginTop="22dp"
                         android:gravity="center"
                         android:text="立即开通"
-                        android:textColor="@color/color_652906"
-                        android:textSize="18sp"
+                        android:textColor="@color/color_FFEEDA"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintRight_toRightOf="parent"
-                        app:stv_endColor="@color/color_EEB090"
-                        app:stv_layoutRadius="12dp"
-                        app:stv_startColor="@color/color_FADCC0" />
+                        app:stv_endColor="@color/color_272727"
+                        app:stv_layoutRadius="8dp"
+                        app:stv_startColor="@color/color_505050" />
 
                     <TextView
                         android:id="@+id/tv_think"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
+                        android:layout_marginTop="18dp"
                         android:layout_marginBottom="30dp"
                         android:text="再想想"
                         android:textColor="@color/color_999999"
-                        android:textSize="15sp" />
+                        android:textSize="12sp" />
 
                 </com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout>
 
@@ -120,7 +124,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
-                    android:background="@color/color_FFFFFF"
+                    android:background="@color/transparent"
                     android:paddingTop="8dp"
                     android:visibility="gone"
                     app:layout_constraintBottom_toBottomOf="parent">
@@ -131,17 +135,17 @@
                         android:layout_height="49dp"
                         android:layout_marginLeft="47dp"
                         android:layout_marginRight="47dp"
-                        android:layout_marginBottom="29dp"
+                        android:layout_marginBottom="45dp"
                         android:gravity="center"
                         android:text="解锁全部访客"
-                        android:textColor="@color/color_FFFFFF"
+                        android:textColor="@color/color_textMain"
                         android:textSize="18sp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintRight_toRightOf="parent"
-                        app:stv_endColor="@color/color_EEB090"
-                        app:stv_layoutRadius="12dp"
-                        app:stv_startColor="@color/color_FADCC0" />
+                        app:stv_endColor="#CDAF78"
+                        app:stv_layoutRadius="8dp"
+                        app:stv_startColor="#E5D0AB" />
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
             </RelativeLayout>

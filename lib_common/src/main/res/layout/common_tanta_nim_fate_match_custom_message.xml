@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="66dp"
         android:layout_marginEnd="66dp"
-        android:background="@drawable/vqu_shape_fafafa_12_bg"
+        android:background="@drawable/vqu_bg_radius_black_alpha_12"
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:paddingStart="10dp"
@@ -23,11 +23,17 @@
             android:layout_height="wrap_content"
             android:src="@mipmap/resources_vqu_nim_bg_fate_bell" />
 
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="7dp"
+            android:background="@color/color_999999" />
+
         <LinearLayout
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="11dp"
+            android:layout_marginStart="7dp"
             android:orientation="vertical">
 
             <ImageView
@@ -41,7 +47,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="发现你和她很有缘，为你们牵线成功~赶紧聊聊吧，别错过缘分~"
-                android:textColor="@color/color_999999"
+                android:textColor="@color/color_E2E2E2"
                 android:textSize="12sp" />
         </LinearLayout>
         <ImageView

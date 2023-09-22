@@ -5,10 +5,10 @@
     android:id="@+id/cl_bill_vqu_item_withdrawal_options_root"
     android:layout_width="match_parent"
     android:layout_height="74dp"
-    android:layout_marginLeft="3dp"
-    android:layout_marginTop="3dp"
-    android:layout_marginRight="3dp"
-    android:layout_marginBottom="3dp"
+    android:layout_marginLeft="4dp"
+    android:layout_marginTop="4dp"
+    android:layout_marginRight="4dp"
+    android:layout_marginBottom="4dp"
     android:background="@drawable/vqu_selector_withdrawal_options"
     android:clickable="true">
 
@@ -25,7 +25,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:stv_bottomRightRadius="7.5dp"
-        app:stv_solidColor="@color/color_FE66A4"
+        app:stv_solidColor="@color/color_5FBCFE"
         app:stv_topLeftRadius="7.5dp"
         app:stv_topRightRadius="7.5dp" />
 
@@ -52,6 +52,7 @@
                 android:includeFontPadding="false"
                 android:textColor="@color/vqu_selector_text_options_price_color"
                 android:textSize="20sp"
+                android:textStyle="bold"
                 tools:text="420" />
 
             <ImageView

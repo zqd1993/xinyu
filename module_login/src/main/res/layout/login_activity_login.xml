@@ -36,18 +36,18 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/iv_login_logo"
-        app:stv_solidColor="@color/color_FF7AC2"
         app:stv_layoutRadius="12dp"
-        />
+        app:stv_endColor="@color/color_4CB6FF"
+        app:stv_startColor="@color/color_6BBFFD" />
 
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="25dp"
-        android:visibility="gone"
         android:gravity="center_vertical"
         android:orientation="horizontal"
+        android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@id/ll_login_other_parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent">
@@ -81,7 +81,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="42dp"
         android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -94,11 +94,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:drawableLeft="@drawable/login_agree_selector"
+            android:drawablePadding="9dp"
+            android:gravity="center_vertical"
             android:paddingLeft="15dp"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
-            android:drawablePadding="5dp"
-            android:gravity="center_vertical"
             android:text="我已阅读并同意"
             android:textColor="#A3AABE"
             android:textSize="12sp" />

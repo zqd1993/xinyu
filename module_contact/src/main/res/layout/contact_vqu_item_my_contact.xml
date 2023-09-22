@@ -5,8 +5,9 @@
     android:id="@+id/cl_contact_vqu_item_my_contact_parent"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginLeft="12dp"
-    android:layout_marginRight="12dp"
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="15dp"
+    android:layout_marginTop="@dimen/dp_size_8"
     android:elevation="0dp"
     app:cardBackgroundColor="@color/color_FFFFFF"
     app:cardCornerRadius="10dp"
@@ -27,9 +28,9 @@
 
             <ImageView
                 android:id="@+id/iv_contact_vqu_item_my_contact_avatar"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="12dp"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_marginLeft="15dp"
                 android:layout_marginTop="15dp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -38,10 +39,11 @@
                 android:id="@+id/tv_contact_vqu_item_my_contact_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
+                android:layout_marginLeft="16dp"
                 android:layout_marginTop="15dp"
-                android:textColor="@color/color_273145"
-                android:textSize="14sp"
+                android:textColor="#383838"
+                android:textSize="15sp"
+                android:textStyle="bold"
                 app:layout_constraintLeft_toRightOf="@id/iv_contact_vqu_item_my_contact_avatar"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="🪐娜宝BABY⭐️" />
@@ -71,12 +73,12 @@
                 android:id="@+id/tv_contact_vqu_item_my_contact_id"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="4dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="6dp"
                 android:drawableRight="@mipmap/ic_mine_copy"
                 android:drawablePadding="2dp"
                 android:includeFontPadding="false"
-                android:textColor="@color/color_A3AABE"
+                android:textColor="@color/color_999999"
                 android:textSize="12sp"
                 app:layout_constraintLeft_toRightOf="@id/iv_contact_vqu_item_my_contact_avatar"
                 app:layout_constraintTop_toBottomOf="@id/tv_contact_vqu_item_my_contact_name"
@@ -86,10 +88,10 @@
                 android:id="@+id/tv_contact_vqu_item_my_contact_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
+                android:layout_marginLeft="16dp"
                 android:layout_marginTop="6dp"
                 android:includeFontPadding="false"
-                android:textColor="@color/color_A3AABE"
+                android:textColor="@color/color_999999"
                 android:textSize="12sp"
                 app:layout_constraintLeft_toRightOf="@id/iv_contact_vqu_item_my_contact_avatar"
                 app:layout_constraintTop_toBottomOf="@id/tv_contact_vqu_item_my_contact_id"
@@ -100,9 +102,9 @@
                 android:id="@+id/tv_contact_vqu_item_my_contact_money"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="4dp"
+                android:layout_marginRight="15dp"
                 android:includeFontPadding="false"
-                android:textColor="@color/color_FF7AC2"
+                android:textColor="@color/color_5FBCFE"
                 android:textSize="15sp"
                 app:layout_constraintBottom_toBottomOf="@id/tv_contact_vqu_item_my_contact_yuan"
                 app:layout_constraintRight_toLeftOf="@id/tv_contact_vqu_item_my_contact_yuan"
@@ -114,9 +116,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="6dp"
-                android:layout_marginRight="12dp"
+                android:layout_marginRight="15dp"
                 android:text="元"
-                android:textColor="@color/color_textMain"
+                android:textColor="#383838"
                 android:textSize="12sp"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_contact_vqu_item_My_contact_desc"
@@ -127,11 +129,10 @@
                 android:id="@+id/tv_contact_vqu_item_My_contact_desc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginRight="12dp"
+                android:layout_marginRight="15dp"
                 android:includeFontPadding="false"
                 android:text="@string/contact_vqu_give_unit"
-                android:textColor="@color/color_273145"
+                android:textColor="#383838"
                 android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="@id/tv_contact_vqu_item_my_contact_name"
                 app:layout_constraintRight_toRightOf="parent"
@@ -143,9 +144,7 @@
             android:id="@+id/ll_contact_vqu_my_contact_more_parent_1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="7.5dp"
-            android:layout_marginTop="17.5dp"
-            android:layout_marginRight="7.5dp"
+            android:layout_marginTop="25dp"
             android:orientation="horizontal"
             android:visibility="gone"
             tools:visibility="visible">
@@ -163,13 +162,14 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="0"
+                    android:textStyle="bold"
                     android:textColor="@color/color_textMain"
-                    android:textSize="16sp" />
+                    android:textSize="14sp" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5.5dp"
+                    android:layout_marginTop="7dp"
                     android:gravity="center"
                     android:text="文字收益"
                     android:textColor="@color/color_textDesc"
@@ -189,12 +189,13 @@
                     android:gravity="center"
                     android:text="0"
                     android:textColor="@color/color_textMain"
-                    android:textSize="16sp" />
+                    android:textSize="14sp"
+                    android:textStyle="bold"/>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5.5dp"
+                    android:layout_marginTop="7dp"
                     android:gravity="center"
                     android:textColor="@color/color_textDesc"
                     android:text="视频收益"
@@ -214,12 +215,13 @@
                     android:gravity="center"
                     android:text="0"
                     android:textColor="@color/color_textMain"
-                    android:textSize="16sp" />
+                    android:textSize="14sp"
+                    android:textStyle="bold"/>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5.5dp"
+                    android:layout_marginTop="7dp"
                     android:gravity="center"
                     android:text="语音收益"
                     android:textColor="@color/color_textDesc"
@@ -239,12 +241,13 @@
                     android:gravity="center"
                     android:text="0"
                     android:textColor="@color/color_textMain"
-                    android:textSize="16sp" />
+                    android:textSize="14sp"
+                    android:textStyle="bold"/>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5.5dp"
+                    android:layout_marginTop="7dp"
                     android:gravity="center"
                     android:textColor="@color/color_textDesc"
                     android:text="礼物收益"
@@ -257,9 +260,7 @@
             android:id="@+id/ll_contact_vqu_my_contact_more_parent_2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="7.5dp"
-            android:layout_marginTop="23dp"
-            android:layout_marginRight="7.5dp"
+            android:layout_marginTop="21dp"
             android:orientation="horizontal"
             android:visibility="gone"
             tools:visibility="visible">
@@ -278,12 +279,13 @@
                     android:gravity="center"
                     android:text="0"
                     android:textColor="@color/color_textMain"
-                    android:textSize="16sp" />
+                    android:textSize="14sp"
+                    android:textStyle="bold"/>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5.5dp"
+                    android:layout_marginTop="7dp"
                     android:gravity="center"
                     android:textColor="@color/color_textDesc"
                     android:text="在线时长"
@@ -303,12 +305,13 @@
                     android:gravity="center"
                     android:text="0"
                     android:textColor="@color/color_textMain"
-                    android:textSize="16sp" />
+                    android:textSize="14sp"
+                    android:textStyle="bold"/>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5.5dp"
+                    android:layout_marginTop="7dp"
                     android:gravity="center"
                     android:text="心动次数"
                     android:textColor="@color/color_textDesc"
@@ -328,12 +331,13 @@
                     android:gravity="center"
                     android:text="0"
                     android:textColor="@color/color_textMain"
-                    android:textSize="16sp" />
+                    android:textSize="14sp"
+                    android:textStyle="bold"/>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5.5dp"
+                    android:layout_marginTop="7dp"
                     android:gravity="center"
                     android:textColor="@color/color_textDesc"
                     android:text="会话场数"
@@ -353,12 +357,13 @@
                     android:gravity="center"
                     android:text="0"
                     android:textColor="@color/color_textMain"
-                    android:textSize="16sp" />
+                    android:textSize="14sp"
+                    android:textStyle="bold"/>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5.5dp"
+                    android:layout_marginTop="7dp"
                     android:gravity="center"
                     android:textColor="@color/color_textDesc"
                     android:text="充值"
@@ -371,9 +376,7 @@
             android:id="@+id/ll_contact_vqu_my_contact_more_parent_3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="7.5dp"
-            android:layout_marginTop="23dp"
-            android:layout_marginRight="7.5dp"
+            android:layout_marginTop="21dp"
             android:orientation="horizontal"
             android:visibility="gone"
             tools:visibility="visible">
@@ -391,12 +394,13 @@
                     android:gravity="center"
                     android:text="0"
                     android:textColor="@color/color_textMain"
-                    android:textSize="16sp" />
+                    android:textSize="14sp"
+                    android:textStyle="bold"/>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5.5dp"
+                    android:layout_marginTop="7dp"
                     android:gravity="center"
                     android:text="最后登录"
                     android:textColor="@color/color_textDesc"
@@ -415,13 +419,14 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:textColor="@color/color_273145"
-                    android:textSize="16sp"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
                     tools:text="938" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5.5dp"
+                    android:layout_marginTop="7dp"
                     android:gravity="center"
                     android:textSize="12sp"
                     tools:text="文字收益" />
@@ -439,13 +444,14 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:textColor="@color/color_273145"
-                    android:textSize="16sp"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
                     tools:text="938" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5.5dp"
+                    android:layout_marginTop="7dp"
                     android:gravity="center"
                     android:textSize="12sp"
                     tools:text="文字收益" />
@@ -463,13 +469,14 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:textColor="@color/color_273145"
-                    android:textSize="16sp"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
                     tools:text="938" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5.5dp"
+                    android:layout_marginTop="7dp"
                     android:gravity="center"
 
                     android:textSize="12sp"
@@ -485,12 +492,12 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="10dp"
             android:drawableRight="@drawable/selector_small_purple_arrow_up_and_down"
-            android:drawablePadding="4dp"
+            android:drawablePadding="8dp"
             android:paddingLeft="20dp"
             android:paddingTop="10dp"
             android:paddingRight="20dp"
             android:text="展开"
-            android:textColor="@color/color_576990"
+            android:textColor="#335BB0"
             android:textSize="12sp"
             android:visibility="gone"
             tools:visibility="visible" />

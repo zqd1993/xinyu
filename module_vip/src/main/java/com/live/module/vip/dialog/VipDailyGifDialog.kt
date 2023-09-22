@@ -13,6 +13,7 @@ import com.live.vquonline.base.utils.toast
 import com.mshy.VInterestSpeed.common.constant.NetBaseUrlConstant
 import com.mshy.VInterestSpeed.common.ext.setViewClickListener
 import com.mshy.VInterestSpeed.common.ui.BaseDialogFragment
+import com.mshy.VInterestSpeed.common.utils.ResUtils
 import com.mshy.VInterestSpeed.uikit.common.util.log.LogUtil
 
 
@@ -35,10 +36,16 @@ class VipDailyGifDialog : BaseDialogFragment<VipTantaDialogDailyGifBinding>() {
 
         if (tantaVipInfoBean?.info?.gift?.is_reward == 0) {
             mBinding.btReceive.text = "立即领取"
-            mBinding.btReceive.setBackgroundResource(R.mipmap.ic_daily_gif_button)
+            mBinding.btReceive.setStartColor(
+                ResUtils.getColor(com.live.module.bill.R.color.color_505050),
+                ResUtils.getColor(com.live.module.bill.R.color.color_272727)
+            )
         } else {
             mBinding.btReceive.text = "今日已经领取"
-            mBinding.btReceive.background = resources.getDrawable(R.drawable.bg_cccccc_r12)
+            mBinding.btReceive.setStartColor(
+                ResUtils.getColor(com.live.module.bill.R.color.color_CCCCCC),
+                ResUtils.getColor(com.live.module.bill.R.color.color_CCCCCC)
+            )
 
         }
         mBinding.ivMineDialogDailyClose.setViewClickListener(200) {

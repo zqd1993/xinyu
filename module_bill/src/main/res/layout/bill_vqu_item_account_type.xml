@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:layout_height="49dp"
+    android:gravity="center"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/iv_payment_icon"
+        android:layout_width="17dp"
+        android:layout_height="17dp"
+        android:src="@mipmap/ic_common_vqu_pay_dialog_alipay_logo" />
 
     <TextView
         android:id="@+id/tv_bill_vqu_account_type_alipay"
-        android:layout_width="match_parent"
-        android:layout_height="49dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:gravity="center"
         android:text="支付宝"
-        android:textColor="@color/color_273145"
-        android:textSize="15sp" />
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:layout_marginLeft="12dp"
-        android:layout_marginRight="12dp"
-        android:background="@color/color_F5F4F7" />
+        android:textColor="#010101"
+        android:textSize="13sp" />
 </LinearLayout>

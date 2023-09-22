@@ -93,7 +93,7 @@ class ContactNewExportActivity :
     private fun setTextConfig(textView: TextView, isSelect: Boolean) {
         textView.apply {
             if (isSelect) {
-                context?.resources?.getColor(R.color.color_FF7AC2)?.let { setTextColor(it) }
+                context?.resources?.getColor(R.color.color_5FBCFE)?.let { setTextColor(it) }
                 background = context?.getDrawable(R.drawable.bg_stroke_ff7ac2)
             } else {
                 context?.resources?.getColor(R.color.color_black_273145)?.let { setTextColor(it) }

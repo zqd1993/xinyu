@@ -8,14 +8,14 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/vqu_shape_fafafa_12_bg"
+        android:background="@drawable/vqu_bg_radius_white_10"
         android:orientation="vertical"
         android:layout_marginStart="12dp"
         android:layout_marginEnd="12dp"
         android:paddingStart="12dp"
-        android:paddingTop="16dp"
+        android:paddingTop="19dp"
         android:paddingEnd="12dp"
-        android:paddingBottom="16dp">
+        android:paddingBottom="19dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -29,7 +29,7 @@
                 android:drawableStart="@mipmap/resources_tanta_nim_ic_msg_info_auth"
                 android:drawablePadding="8dp"
                 android:text="认证状态："
-                android:textColor="@color/color_273145"
+                android:textColor="@color/black"
                 android:textSize="14sp" />
 
             <ImageView
@@ -62,7 +62,7 @@
                 android:drawableStart="@mipmap/resources_tanta_nim_ic_msg_info_location"
                 android:drawablePadding="8dp"
                 android:text="所在城市："
-                android:textColor="@color/color_273145"
+                android:textColor="@color/black"
                 android:textSize="14sp" />
 
             <TextView
@@ -71,7 +71,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
                 tools:text="武汉市"
-                android:textColor="@color/color_273145"
+                android:textColor="@color/black"
                 android:textSize="14sp" />
         </LinearLayout>
 
@@ -88,7 +88,7 @@
                 android:drawableStart="@mipmap/resources_tanta_nim_ic_msg_info_base"
                 android:drawablePadding="8dp"
                 android:text="基本信息："
-                android:textColor="@color/color_273145"
+                android:textColor="@color/black"
                 android:textSize="14sp" />
 
             <TextView
@@ -97,7 +97,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
                 tools:text="21岁 · 行政人事 · 166cm · 金牛座"
-                android:textColor="@color/color_273145"
+                android:textColor="@color/black"
                 android:textSize="14sp" />
         </LinearLayout>
 
@@ -115,7 +115,7 @@
                 android:drawableStart="@mipmap/resources_tanta_nim_ic_msg_info_photo"
                 android:drawablePadding="2dp"
                 android:text="近期靓照："
-                android:textColor="@color/color_273145"
+                android:textColor="@color/black"
                 android:textSize="14sp" />
 
             <LinearLayout

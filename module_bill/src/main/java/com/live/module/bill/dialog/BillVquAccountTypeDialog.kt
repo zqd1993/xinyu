@@ -4,12 +4,15 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.view.Gravity
 import android.view.WindowManager
+import android.widget.ImageView
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.viewholder.BaseViewHolder
 import com.live.module.bill.R
 import com.live.module.bill.bean.TypeBean
 import com.live.module.bill.databinding.BillVquDialogAccountTypeBinding
+import com.mshy.VInterestSpeed.common.constant.NetBaseUrlConstant
 import com.mshy.VInterestSpeed.common.ext.setViewClickListener
+import com.mshy.VInterestSpeed.common.ext.vquLoadImage
 import com.mshy.VInterestSpeed.common.ui.BaseDialogFragment
 
 /**
@@ -67,6 +70,8 @@ class BillVquAccountTypeDialog : BaseDialogFragment<BillVquDialogAccountTypeBind
         BaseQuickAdapter<TypeBean, BaseViewHolder>(R.layout.bill_vqu_item_account_type) {
         override fun convert(holder: BaseViewHolder, item: TypeBean) {
             holder.setText(R.id.tv_bill_vqu_account_type_alipay, item.bank)
+            val paymentIcon = holder.getView<ImageView>(R.id.iv_payment_icon)
+            paymentIcon.vquLoadImage(NetBaseUrlConstant.IMAGE_URL + item.icon)
         }
 
     }

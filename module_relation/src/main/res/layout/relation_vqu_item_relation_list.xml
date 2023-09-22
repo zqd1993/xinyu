@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/cl_relation_item_root"
     android:layout_width="match_parent"
-    android:layout_height="70dp">
+    android:layout_height="75dp">
 
 
     <View
@@ -22,8 +22,8 @@
 
     <com.mshy.VInterestSpeed.common.ui.view.WaveView
         android:id="@+id/wv_relation_vqu_item_relation_list_wave"
-        android:layout_width="65dp"
-        android:layout_height="65dp"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
         android:layout_gravity="center"
         app:layout_constraintBottom_toBottomOf="@id/siv_relation_avatar"
         app:layout_constraintLeft_toLeftOf="@id/siv_relation_avatar"
@@ -34,7 +34,7 @@
         android:id="@+id/siv_relation_avatar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="12dp"
+        android:layout_marginLeft="15dp"
         app:anchorVSize="10dp"
         app:avatarSize="44dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -71,15 +71,17 @@
             android:includeFontPadding="false"
             android:textColor="@color/color_textMain"
             android:textSize="16sp"
+            android:textStyle="bold"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             tools:text="大姐大" />
 
         <include
             layout="@layout/common_vqu_include_gender"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:visibility="gone"
             android:layout_marginLeft="2dp"
+            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="@id/tv_nick_name"
             app:layout_constraintLeft_toRightOf="@id/tv_nick_name"
             app:layout_constraintTop_toTopOf="@id/tv_nick_name" />
@@ -88,7 +90,7 @@
             android:id="@+id/tv_relation_desc"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
+            android:layout_marginTop="5dp"
             android:layout_marginRight="12dp"
             android:singleLine="true"
             android:textColor="@color/color_textDesc"
@@ -103,8 +105,8 @@
 
     <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
         android:id="@+id/stv_relation_vqu_item_relation_list_focus"
-        android:layout_width="68dp"
-        android:layout_height="32dp"
+        android:layout_width="65dp"
+        android:layout_height="31dp"
         android:layout_marginRight="12dp"
         android:gravity="center"
         android:text="关注"
@@ -114,20 +116,18 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:stv_solidColor="@color/color_FF7AC2"
+        app:stv_solidColor="@color/color_6BBFFD"
         app:stv_layoutRadius="8dp"
         />
 
     <TextView
         android:id="@+id/stv_relation_vqu_item_relation_list_like"
-        android:layout_width="wrap_content"
-        android:layout_height="28dp"
-        android:layout_marginRight="12dp"
-        android:background="@drawable/bg_tanta_search_list_like_selector"
-        android:drawableLeft="@drawable/ic_tanta_search_list_like_selector"
-        android:gravity="center_vertical"
-        android:paddingLeft="8dp"
-        android:paddingRight="8dp"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/ic_tanta_search_list_like_selector"
+        android:gravity="center_horizontal|bottom"
+        android:paddingBottom="5dp"
         android:text="私信"
         android:textColor="@color/selector_text_tanta_search_list_like"
         android:textSize="12sp"
@@ -142,5 +142,6 @@
         android:background="@color/color_F5F4F7"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
+        app:layout_constraintRight_toRightOf="parent"
+        android:visibility="gone"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

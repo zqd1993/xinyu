@@ -69,17 +69,17 @@ class DynamicTantaAdapter(activity: Activity) :
             R.id.iv_beckoning,
             if (item.isBeckon) R.mipmap.resources_tanta_main_home_chat else R.mipmap.resources_tanta_home_like)
         if (item.isBeckon) {
-            tvBottom.setTextColor(ContextCompat.getColor(context, R.color.color_FF7AC2))
-            llBeckoning.setStartColor(ContextCompat.getColor(context, R.color.color_FFFFFF),
-                ContextCompat.getColor(context, R.color.color_FFFFFF))
+            tvBottom.setTextColor(ContextCompat.getColor(context, R.color.color_8EC0EA))
+//            llBeckoning.setStartColor(ContextCompat.getColor(context, R.color.color_FFFFFF),
+//                ContextCompat.getColor(context, R.color.color_FFFFFF))
             holder.setText(R.id.tv_bottom, context.getString(R.string.dynamic_chat))
-            llBeckoning.setStrokeWidthAndColor(ContextCompat.getColor(context,
-                R.color.color_FF7AC2), 1)
+//            llBeckoning.setStrokeWidthAndColor(ContextCompat.getColor(context,
+//                R.color.color_FF7AC2), 1)
 
         } else {
-            tvBottom.setTextColor(ContextCompat.getColor(context, R.color.color_FFFFFF))
-            llBeckoning.setStartColor(ContextCompat.getColor(context, R.color.color_FF7AC2),
-                ContextCompat.getColor(context, R.color.color_FF7AC2))
+            tvBottom.setTextColor(ContextCompat.getColor(context, R.color.color_FEC24F))
+//            llBeckoning.setStartColor(ContextCompat.getColor(context, R.color.color_FF7AC2),
+//                ContextCompat.getColor(context, R.color.color_FF7AC2))
             if (item.gender == 1) {
                 holder.setText(R.id.tv_bottom, context.getString(R.string.common_vqu_accost))
             } else {

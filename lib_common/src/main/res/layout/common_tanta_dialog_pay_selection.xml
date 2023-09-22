@@ -66,7 +66,7 @@
                 android:id="@+id/tv_common_vqu_pay_selection_tips"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="12dp"
+                android:layout_marginLeft="15dp"
                 android:text="请选择充值金币："
                 android:textColor="@color/color_999999"
                 android:textSize="12sp"
@@ -77,9 +77,9 @@
                 android:id="@+id/tv_common_vqu_pay_selection_diamonds"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="12dp"
+                android:layout_marginRight="15dp"
                 android:text="我的金币：0"
-                android:textColor="@color/color_222222"
+                android:textColor="@color/black"
                 android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="@id/tv_common_vqu_pay_selection_tips"
                 app:layout_constraintRight_toRightOf="parent"
@@ -89,8 +89,8 @@
                 android:id="@+id/rv_selection_list"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="9dp"
-                android:layout_marginTop="12dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="15dp"
                 android:layout_marginRight="9dp"
                 android:layout_marginBottom="12dp"
                 app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
@@ -102,7 +102,7 @@
                 android:id="@+id/tv_recharge_pay_type_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="12dp"
+                android:layout_marginLeft="15dp"
                 android:layout_marginTop="20dp"
                 android:text="请选择支付方式："
                 android:textColor="@color/color_999999"
@@ -114,9 +114,9 @@
                 android:id="@+id/sll_vqu_recharge_pay_type_parent"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="12dp"
-                android:layout_marginTop="12dp"
-                android:layout_marginRight="12dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginRight="15dp"
                 android:orientation="vertical"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
@@ -132,7 +132,7 @@
                     android:paddingLeft="12dp"
                     android:paddingRight="12dp"
                     app:sll_layoutRadius="6dp"
-                    app:sll_solidColor="@color/color_F7F8FA"
+                    app:sll_solidColor="@color/color_F5F5F5"
                     android:visibility="gone">
 
                     <TextView
@@ -140,10 +140,10 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:drawableLeft="@mipmap/ic_common_vqu_pay_dialog_wechat_logo"
-                        android:drawablePadding="7dp"
+                        android:drawablePadding="8dp"
                         android:gravity="center_vertical"
                         android:text="@string/common_vqu_wechat_pay"
-                        android:textColor="@color/color_222222"
+                        android:textColor="@color/black"
                         android:textSize="14sp" />
 
                     <CheckBox
@@ -233,10 +233,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_gravity="center_horizontal|bottom"
-                android:layout_marginLeft="40dp"
+                android:layout_marginLeft="36dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginRight="40dp"
-                android:layout_marginBottom="32dp"
+                android:layout_marginRight="36dp"
+                android:layout_marginBottom="40dp"
                 android:gravity="center"
                 android:text="@string/vqu_bill_recharge_now"
                 android:textColor="@color/color_FFFFFF"
@@ -244,7 +244,8 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/sll_vqu_recharge_pay_type_parent"
                 app:stv_layoutRadius="12dp"
-                app:stv_solidColor="@color/color_FF7AC2" />
+                app:stv_startColor="@color/color_6BBFFD"
+                app:stv_endColor="@color/color_4CB6FF"/>
 
         </com.mshy.VInterestSpeed.common.ui.view.ShapeConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>

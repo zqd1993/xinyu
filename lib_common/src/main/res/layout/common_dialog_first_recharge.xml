@@ -21,10 +21,9 @@
                 android:src="@mipmap/bg_light" />
 
             <com.mshy.VInterestSpeed.common.ui.view.ShapeConstraintLayout
-                android:layout_width="347dp"
-                android:layout_height="449.5dp"
+                android:layout_width="316dp"
+                android:layout_height="400dp"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="55dp"
                 android:clickable="true">
 
                 <ImageView
@@ -43,7 +42,7 @@
                     android:layout_width="0dp"
                     android:layout_height="25dp"
                     android:layout_marginLeft="52dp"
-                    android:layout_marginTop="190dp"
+                    android:layout_marginTop="155dp"
                     android:layout_marginRight="55dp"
                     android:gravity="center"
                     android:text="首充任意金额即可获得大礼包"
@@ -52,34 +51,36 @@
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:stv_layoutRadius="12.5dp"
-                    app:stv_solidColor="@color/color_FF6F47" />
+                    app:stv_layoutRadius="12.5dp" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_common_first_recharge_list"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_size_20"
                     app:layout_constraintBottom_toTopOf="@id/tv_common_first_recharge_submit"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tv_common_first_recharge_tips"
                     />
 
-                <TextView
+                <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
                     android:id="@+id/tv_common_first_recharge_submit"
-                    android:layout_width="250dp"
-                    android:layout_height="60dp"
-                    android:layout_marginBottom="20dp"
-                    android:background="@mipmap/bg_bill_first_recharge_button"
-                    android:gravity="center_horizontal"
-                    android:paddingTop="11dp"
+                    android:layout_width="216dp"
+                    android:layout_height="36dp"
+                    android:layout_marginBottom="28dp"
+                    android:gravity="center"
                     android:text="立即充值"
-                    android:textColor="@color/color_A50900"
-                    android:textSize="22sp"
+                    android:textColor="@color/color_6C2424"
+                    android:textSize="15sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent" />
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:stv_startColor="@color/color_FFF47D"
+                    app:stv_endColor="@color/color_FFBD3E"
+                    app:stv_orientation="stv_vertical"
+                    app:stv_layoutRadius="8dp"/>
 
             </com.mshy.VInterestSpeed.common.ui.view.ShapeConstraintLayout>
         </RelativeLayout>

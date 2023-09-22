@@ -107,7 +107,8 @@
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:stv_layoutRadius="8dp"
-                app:stv_solidColor="@color/color_FF7AC2" />
+                app:stv_startColor="@color/color_6BBFFD"
+                app:stv_endColor="@color/color_4CB6FF"/>
         </com.mshy.VInterestSpeed.common.ui.view.ShapeConstraintLayout>
 
 

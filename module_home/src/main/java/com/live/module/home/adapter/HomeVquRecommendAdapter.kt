@@ -86,23 +86,23 @@ class HomeVquRecommendAdapter :
         var flEnd = helper.getView<ShapeLinearLayout>(R.id.fl_end)
         if (item.isBeckon) {
             helper.setText(R.id.tv_chat, context.getString(R.string.dynamic_chat))
-            helper.setTextColor(R.id.tv_chat, ContextCompat.getColor(context, R.color.color_FF7AC2))
-            flEnd.setStartColor(
-                ContextCompat.getColor(context, R.color.color_FFFFFF),
-                ContextCompat.getColor(context, R.color.color_FFFFFF)
-            )
-            flEnd.setStrokeWidthAndColor(ContextCompat.getColor(context, R.color.color_FF7AC2),UIUtil.dip2px(context,1.0))
+            helper.setTextColor(R.id.tv_chat, ContextCompat.getColor(context, R.color.color_8EC0EA))
+//            flEnd.setStartColor(
+//                ContextCompat.getColor(context, R.color.color_FFFFFF),
+//                ContextCompat.getColor(context, R.color.color_FFFFFF)
+//            )
+//            flEnd.setStrokeWidthAndColor(ContextCompat.getColor(context, R.color.color_FF7AC2),UIUtil.dip2px(context,1.0))
         } else {
             if (gender == 1) {
                 helper.setText(R.id.tv_chat, context.getString(R.string.common_vqu_beckoning))
             } else {
                 helper.setText(R.id.tv_chat, context.getString(R.string.common_vqu_accost))
             }
-            flEnd.setStartColor(
-                ContextCompat.getColor(context, R.color.color_FF7AC2),
-                ContextCompat.getColor(context, R.color.color_FF7AC2)
-            )
-            helper.setTextColor(R.id.tv_chat, ContextCompat.getColor(context, R.color.color_FFFFFF))
+//            flEnd.setStartColor(
+//                ContextCompat.getColor(context, R.color.color_FF7AC2),
+//                ContextCompat.getColor(context, R.color.color_FF7AC2)
+//            )
+            helper.setTextColor(R.id.tv_chat, ContextCompat.getColor(context, R.color.color_FEC24F))
         }
         helper.setVisible(R.id.view_online, false)
         val online = item.isOnline

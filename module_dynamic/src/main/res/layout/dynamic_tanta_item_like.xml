@@ -4,45 +4,58 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:paddingBottom="19dp"
     android:background="@color/white"
     tools:ignore="ResourceName">
 
     <ImageView
         android:id="@+id/iv_head"
-        android:layout_width="49dp"
-        android:layout_height="49dp"
-        android:layout_marginLeft="12dp"
-        android:layout_marginTop="12dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="19dp"
         android:scaleType="centerCrop"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:src="@tools:sample/backgrounds/scenic" />
 
-
     <TextView
-        android:id="@+id/tv_like"
+        android:id="@+id/tv_head"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="6dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
         app:layout_constraintRight_toLeftOf="@+id/iv_img"
-        android:lines="2"
-        android:ellipsize="end"
         android:text="点赞了你的动态"
-        android:textColor="@color/color_273145"
+        android:textColor="@color/color_576990"
         android:textSize="14sp"
         app:layout_constraintLeft_toRightOf="@+id/iv_head"
         app:layout_constraintTop_toTopOf="@+id/iv_head" />
 
     <TextView
+        android:id="@+id/tv_like"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintRight_toLeftOf="@+id/iv_img"
+        android:maxLines="3"
+        android:ellipsize="end"
+        android:text="点赞了你的动态"
+        android:textColor="@color/color_273145"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toRightOf="@+id/iv_head"
+        app:layout_constraintTop_toBottomOf="@+id/tv_head" />
+
+    <TextView
         android:id="@+id/tv_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="8dp"
-        android:textColor="@color/color_A3AABE"
-        android:textSize="11sp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/color_999999"
+        android:textSize="12sp"
         app:layout_constraintLeft_toRightOf="@+id/iv_head"
         app:layout_constraintTop_toBottomOf="@+id/tv_like"
         tools:text="3分钟前" />
@@ -50,14 +63,13 @@
 
     <ImageView
         android:id="@+id/iv_img"
-        android:layout_width="49dp"
-        android:layout_height="49dp"
-        android:layout_marginLeft="12dp"
-        android:layout_marginRight="12dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
         android:scaleType="centerCrop"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="@id/iv_head"
         tools:src="@tools:sample/backgrounds/scenic" />
 
     <ImageView
@@ -70,14 +82,4 @@
         app:layout_constraintLeft_toLeftOf="@+id/iv_img"
         app:layout_constraintRight_toRightOf="@+id/iv_img"
         app:layout_constraintTop_toTopOf="@+id/iv_img" />
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:layout_marginLeft="12dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginRight="12dp"
-        android:background="@color/color_F5F4F7"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_time" />
 </androidx.constraintlayout.widget.ConstraintLayout>

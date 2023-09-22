@@ -25,6 +25,9 @@ class SettingVquAdapter(data: MutableList<SettingBean>) :
         var ivDisturb = holder.getView<ImageView>(R.id.iv_disturb)
         var ivArrow = holder.getView<ImageView>(R.id.iv_arrow)
         var tvValue = holder.getView<TextView>(R.id.tv_value)
+        if(holder.layoutPosition == data.size - 1){
+            tvTitle.setTextColor(context.resources.getColor(R.color.color_5FBCFE))
+        }
         tvTitle.text = item.title
         tvTip.text = item.tip
         if (item.isShowCheckBox) {

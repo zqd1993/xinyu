@@ -18,6 +18,8 @@ object NetBaseUrlConstant {
 
     var IMAGE_URL = "http://asset.zhenban.top/"
 
+    const val IMAGE_URL_2 = "http://asset.zhenban.top/"
+
     val MAIN_URL =
         if (BuildConfig.VERSION_TYPE == VersionStatus.RELEASE) BASE_URL + "api/" else DEBUG_BASE_URL + "api/"
 

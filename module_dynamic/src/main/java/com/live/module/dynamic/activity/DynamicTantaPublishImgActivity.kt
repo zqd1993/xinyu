@@ -87,6 +87,7 @@ class DynamicTantaPublishImgActivity :
             }
 
         }
+        mBinding.publishTipStv.setViewClickListener { showTipDialog() }
         rightBtn = mBinding.includeTitle.toolbar.findViewById(R.id.btn_right)
         rightBtn?.isClickable = false
         rightBtn?.text = "发布"

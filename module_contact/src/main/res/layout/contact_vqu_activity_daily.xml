@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/color_FAFAFC">
+    android:background="@color/color_F5F5F5">
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
@@ -48,14 +48,13 @@
                         android:id="@+id/stv_contact_vqu_my_contact_date"
                         android:layout_width="wrap_content"
                         android:layout_height="25dp"
-                        android:layout_marginBottom="10dp"
+                        android:layout_marginBottom="13dp"
                         android:drawableRight="@mipmap/ic_arrow_small_right_white"
-                        android:drawablePadding="3.5dp"
-                        android:gravity="center"
+                        android:drawablePadding="7dp"
                         android:paddingLeft="12dp"
                         android:paddingRight="12dp"
                         android:textColor="@color/color_FFFFFF"
-                        android:textSize="14sp"
+                        android:textSize="13sp"
                         app:layout_constraintBottom_toTopOf="@id/tv_contact_vqu_my_contact_total_money"
                         app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintRight_toRightOf="parent"
@@ -69,11 +68,12 @@
                         android:id="@+id/tv_contact_vqu_my_contact_total_money"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="133dp"
+                        android:layout_marginTop="98dp"
                         android:includeFontPadding="false"
                         android:text="0"
                         android:textColor="@color/color_FFFFFF"
-                        android:textSize="36sp"
+                        android:textSize="35sp"
+                        android:textStyle="bold"
                         app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintRight_toRightOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
@@ -88,7 +88,7 @@
                         android:includeFontPadding="false"
                         android:text="@string/contact_vqu_count_earnings_unit"
                         android:textColor="@color/color_FFFFFF"
-                        android:textSize="14sp"
+                        android:textSize="13sp"
                         app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintRight_toRightOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/tv_contact_vqu_my_contact_total_money" />
@@ -125,16 +125,16 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="12dp"
-                        android:layout_marginTop="26dp"
+                        android:layout_marginTop="-30dp"
                         android:layout_marginEnd="12dp"
                         android:orientation="vertical"
-                        android:paddingTop="19dp"
+                        android:paddingTop="18dp"
                         android:paddingBottom="20dp"
                         android:visibility="visible"
                         app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/label_value"
-                        app:sll_layoutRadius="10dp"
+                        app:layout_constraintTop_toBottomOf="@+id/sll_contact_vqu_my_contact_img_bg_parent"
+                        app:sll_layoutRadius="12dp"
                         app:sll_solidColor="@color/color_FFFFFF">
 
                         <androidx.appcompat.widget.LinearLayoutCompat
@@ -152,19 +152,19 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginTop="5dp"
                                     android:includeFontPadding="false"
                                     android:text="0"
                                     android:textColor="@color/color_black_273145"
-                                    android:textSize="16sp"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold"
                                     tools:text="323" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginTop="3dp"
+                                    android:layout_marginTop="6dp"
                                     android:text="文字收益"
-                                    android:textColor="@color/color_gray_8B96B5"
+                                    android:textColor="@color/color_999999"
                                     android:textSize="12sp" />
                             </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -178,19 +178,19 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginTop="5dp"
                                     android:includeFontPadding="false"
                                     android:text="0"
-                                    android:textColor="@color/color_black_273145"
-                                    android:textSize="16sp"
+                                    android:textColor="@color/color_textMain"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold"
                                     tools:text="323" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginTop="3dp"
+                                    android:layout_marginTop="6dp"
                                     android:text="音视频收益"
-                                    android:textColor="@color/color_gray_8B96B5"
+                                    android:textColor="@color/color_999999"
                                     android:textSize="12sp" />
                             </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -204,19 +204,19 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginTop="5dp"
                                     android:includeFontPadding="false"
                                     android:text="0"
-                                    android:textColor="@color/color_black_273145"
-                                    android:textSize="16sp"
+                                    android:textColor="@color/color_textMain"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold"
                                     tools:text="323" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginTop="3dp"
+                                    android:layout_marginTop="6dp"
                                     android:text="礼物收益"
-                                    android:textColor="@color/color_gray_8B96B5"
+                                    android:textColor="@color/color_999999"
                                     android:textSize="12sp" />
                             </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -230,19 +230,19 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginTop="5dp"
                                     android:includeFontPadding="false"
                                     android:text="0"
-                                    android:textColor="@color/color_black_273145"
-                                    android:textSize="16sp"
+                                    android:textColor="@color/color_textMain"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold"
                                     tools:text="323" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginTop="3dp"
+                                    android:layout_marginTop="6dp"
                                     android:text="充值"
-                                    android:textColor="@color/color_gray_8B96B5"
+                                    android:textColor="@color/color_999999"
                                     android:textSize="12sp" />
                             </androidx.appcompat.widget.LinearLayoutCompat>
                         </androidx.appcompat.widget.LinearLayoutCompat>
@@ -269,7 +269,6 @@
                                 android:layout_height="10dp"
                                 android:src="@mipmap/ic_arrow_small_right_grey" />
                         </androidx.appcompat.widget.LinearLayoutCompat>
-
 
                     </com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout>
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -324,16 +323,26 @@
                 android:paddingBottom="13dp"
                 android:visibility="visible">
 
+                <com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout
+                    android:id="@+id/label_daily_value_view"
+                    android:layout_width="5dp"
+                    android:layout_height="15dp"
+                    android:layout_marginStart="15dp"
+                    app:sll_solidColor="@color/color_5FBCFE"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+
                 <TextView
                     android:id="@+id/label_daily_value"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="12dp"
-                    android:textColor="@color/color_black_273145"
-                    android:textSize="16sp"
+                    android:layout_marginLeft="8dp"
+                    android:textColor="@color/color_textMain"
+                    android:textSize="17sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/label_daily_value_view"
                     app:layout_constraintTop_toTopOf="parent"
                     android:text="每日收益" />
 
@@ -341,9 +350,9 @@
                     android:id="@+id/tv_contact_vqu_my_contact_invited_record"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
+                    android:layout_marginLeft="9dp"
                     android:text="邀请记录"
-                    android:textColor="@color/color_FF7AC2"
+                    android:textColor="@color/color_576990"
                     android:textSize="12sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintLeft_toRightOf="@id/label_daily_value"
@@ -362,9 +371,9 @@
                     android:visibility="gone"
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:stv_endColor="@color/color_FF7AC2"
+                    app:stv_endColor="@color/color_4CB6FF"
                     app:stv_layoutRadius="8dp"
-                    app:stv_startColor="@color/color_FF7AC2" />
+                    app:stv_startColor="@color/color_6BBFFD" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </com.google.android.material.appbar.AppBarLayout>

@@ -3,19 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingLeft="31dp"
-    android:paddingRight="31dp">
+    android:layout_marginStart="36dp"
+    android:layout_marginEnd="36dp">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cl_top"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
         android:orientation="vertical">
 
         <ImageView
             android:id="@+id/iv_bg"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:src="@mipmap/bg_tanta_red_packet"
@@ -27,11 +28,11 @@
             android:id="@+id/iv_open"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="61dp"
+            android:layout_marginTop="14dp"
             android:src="@mipmap/ic_tanta_red_y"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@id/ll_red_pack_title" />
 
         <TextView
             android:id="@+id/tv_add"
@@ -39,9 +40,10 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="4dp"
             android:layout_marginBottom="8dp"
+            android:layout_marginEnd="11dp"
             android:text="+"
-            android:textColor="#FFF1B5"
-            android:textSize="30sp"
+            android:textColor="#FFF59E"
+            android:textSize="39sp"
             app:layout_constraintBottom_toBottomOf="@+id/tv_price"
             app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -51,10 +53,10 @@
             android:id="@+id/tv_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:text="0.0"
-            android:textColor="#FFF1B5"
-            android:textSize="60sp"
+            android:textColor="#FFF59E"
+            android:textSize="58sp"
             app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintLeft_toRightOf="@+id/tv_add"
             app:layout_constraintRight_toLeftOf="@+id/ic_y"
@@ -64,7 +66,7 @@
             android:id="@+id/ic_y"
             android:layout_width="24dp"
             android:layout_height="24dp"
-            android:layout_marginLeft="4dp"
+            android:layout_marginLeft="14dp"
             android:layout_marginBottom="15dp"
             android:src="@mipmap/resources_tanta_packet_gold"
             app:layout_constraintBottom_toBottomOf="@+id/tv_price"
@@ -84,16 +86,55 @@
             app:layout_constraintLeft_toRightOf="@+id/tv_price"
             app:layout_constraintRight_toRightOf="parent" />
 
+        <LinearLayout
+            android:id="@+id/ll_red_pack_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="38dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_tanta_red_packet_left" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:layout_marginEnd="14dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="完善资料"
+                android:textColor="#FFF59E"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_tanta_red_packet_right" />
+
+        </LinearLayout>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="45dp"
+            android:layout_marginBottom="53dp"
+            android:layout_weight="1"
+            android:gravity="center"
             android:text="奖励已存放至你的钱包"
             android:textColor="#FFFFFF"
             android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="@+id/iv_bg"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ImageView

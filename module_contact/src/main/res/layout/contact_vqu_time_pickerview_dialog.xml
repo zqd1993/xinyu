@@ -13,9 +13,9 @@
     <com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        app:sll_solidColor="@color/color_F5F4F7"
-        app:sll_topLeftRadius="16dp"
-        app:sll_topRightRadius="16dp">
+        app:sll_solidColor="@color/color_F5F5F5"
+        app:sll_topLeftRadius="19dp"
+        app:sll_topRightRadius="19dp">
 
         <LinearLayout
             android:id="@+id/ll_start"
@@ -31,7 +31,7 @@
                 android:layout_height="wrap_content"
                 android:text="开始时间"
                 android:textColor="@color/vqu_selector_text_options_title_color"
-                android:textSize="14sp" />
+                android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/tv_start_time"
@@ -40,7 +40,7 @@
                 android:layout_marginTop="6dp"
                 android:text="1994年03月10日"
                 android:textColor="@color/vqu_selector_text_options_title_color"
-                android:textSize="11sp" />
+                android:textSize="14sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -57,7 +57,7 @@
                 android:layout_height="wrap_content"
                 android:text="结束时间"
                 android:textColor="@color/vqu_selector_text_options_title_color"
-                android:textSize="14sp" />
+                android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/tv_end_time"
@@ -66,7 +66,7 @@
                 android:layout_marginTop="6dp"
                 android:text="1994年03月10日"
                 android:textColor="@color/vqu_selector_text_options_title_color"
-                android:textSize="11sp" />
+                android:textSize="14sp" />
         </LinearLayout>
     </com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout>
 
@@ -82,14 +82,14 @@
         android:layout_marginLeft="50dp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="50dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="40dp"
         android:gravity="center"
         android:text="确定"
         android:textColor="@color/white"
         android:textSize="18sp"
-        app:stv_endColor="@color/color_FF7AC2"
+        app:stv_endColor="@color/color_4CB6FF"
         app:stv_layoutRadius="12dp"
-        app:stv_startColor="@color/color_FF7AC2" />
+        app:stv_startColor="@color/color_6BBFFD" />
 
 
 </com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout>

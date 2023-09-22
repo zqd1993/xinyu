@@ -251,8 +251,8 @@ public class GiftFragment extends Fragment {
         if (mGiftManager.getmGiftView().size() > 0) {
 
             ScaleCircleNavigator scaleCircleNavigator = new ScaleCircleNavigator(getActivity());
-            scaleCircleNavigator.setNormalCircleColor(Color.parseColor("#FFD7EC"));
-            scaleCircleNavigator.setSelectedCircleColor(Color.parseColor("#FF7AC2"));
+            scaleCircleNavigator.setNormalCircleColor(Color.parseColor("#CFEBFF"));
+            scaleCircleNavigator.setSelectedCircleColor(Color.parseColor("#5FBCFE"));
             scaleCircleNavigator.setMaxRadius(UiUtils.dip2px(BaseApplication.application, 3f));
             scaleCircleNavigator.setMinRadius(UiUtils.dip2px(BaseApplication.application, 2f));
             scaleCircleNavigator.setCircleCount(mGiftManager.getmGiftView().size());

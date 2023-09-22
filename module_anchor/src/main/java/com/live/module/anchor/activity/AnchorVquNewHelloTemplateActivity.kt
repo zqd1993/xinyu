@@ -435,7 +435,7 @@ class AnchorVquNewHelloTemplateActivity :
         startTimer()
         mBinding.tvAgain.visibility = View.GONE
         mBinding.progressBar.visibility = View.VISIBLE
-        mBinding.ivRecord.setImageResource(R.mipmap.ic_info_record_finish)
+        mBinding.ivRecord.setImageResource(R.mipmap.ic_tanta_info_voice_record_stop)
         onStartAudioRecord()
     }
 
@@ -479,7 +479,7 @@ class AnchorVquNewHelloTemplateActivity :
         window?.setFlags(0, WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
         audioMessageHelper!!.completeRecord(cancel)
         mBinding.timer.stop()
-        refreshCommit()
+//        refreshCommit()
         mBinding.progressBar.visibility = View.INVISIBLE
     }
 

@@ -18,7 +18,7 @@ class DynamicTantaLikeHeadAdapter(data: MutableList<LikeBean>) :
     override fun convert(holder: BaseViewHolder, item: LikeBean) {
         holder.getView<ImageView>(R.id.iv_img)
             .vquLoadRoundImage(NetBaseUrlConstant.IMAGE_URL + item.avatar,
-                20,
+                50,
                 R.mipmap.ic_common_head_def)
     }
 }

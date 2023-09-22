@@ -19,7 +19,7 @@
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_centerVertical="true"
-            android:layout_marginStart="12dp"
+            android:layout_marginStart="15dp"
             android:src="@mipmap/ic_back_white" />
 
         <ImageView
@@ -28,7 +28,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
-            android:layout_marginEnd="14dp"
+            android:layout_marginEnd="15dp"
             android:src="@drawable/selector_mine_vqu_beauty_switch" />
 
 
@@ -39,23 +39,25 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="75dp"
-        android:layout_marginEnd="14dp"
-        android:paddingLeft="12dp"
-        android:paddingTop="5dp"
-        android:paddingRight="12dp"
-        android:paddingBottom="5dp"
+        android:layout_marginTop="95dp"
+        android:layout_marginEnd="15dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="8dp"
+        android:paddingRight="8dp"
+        android:paddingBottom="8dp"
         android:text="恢复默认"
         android:textColor="#FFFFFFFF"
         android:textSize="12sp"
+        android:drawableStart="@mipmap/icon_reset_beauty"
+        android:drawablePadding="8dp"
         app:stv_layoutRadius="30dp"
-        app:stv_solidColor="@color/color_22111111" />
+        app:stv_solidColor="@color/_30000000" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="63dp"
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
@@ -77,8 +79,8 @@
 
         <ImageView
             android:id="@+id/iv_beauty_switch"
-            android:layout_width="49dp"
-            android:layout_height="49dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:src="@mipmap/agora_vqu_video_photo" />
     </LinearLayout>

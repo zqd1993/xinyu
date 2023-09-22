@@ -193,12 +193,12 @@ class BillTantaDetailActivity :
                     )
                 indicator.roundRadius = dp2px(1.5f).toFloat()
                 indicator.mode = LinePagerIndicator.MODE_EXACTLY
-                indicator.lineWidth = dp2px(10f).toFloat()
-                indicator.lineHeight = dp2px(3f).toFloat()
+                indicator.lineWidth = dp2px(8f).toFloat()
+                indicator.lineHeight = dp2px(4f).toFloat()
                 indicator.yOffset = dp2px(6f).toFloat()
                 indicator.setColors(
-                    ResUtils.getColor(R.color.color_FF7AC2),
-                    ResUtils.getColor(R.color.color_FF7AC2)
+                    ResUtils.getColor(R.color.black),
+                    ResUtils.getColor(R.color.black)
                 )
                 return indicator
             }

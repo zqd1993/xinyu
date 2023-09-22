@@ -7,7 +7,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="108dp"
+        android:layout_height="88dp"
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="2dp"
         android:layout_marginRight="2dp"
@@ -20,7 +20,7 @@
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="22dp"
+            android:layout_marginLeft="15dp"
             android:contentDescription="ic_launcher"
             android:src="@mipmap/ic_launcher" />
 
@@ -28,7 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="17dp"
             android:layout_toRightOf="@+id/image_view"
             android:orientation="vertical">
 
@@ -53,8 +53,9 @@
                 android:id="@+id/vquNoCallZS"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
                 android:text="获得xx金币/分钟"
-                android:textColor="#FBE84C"
+                android:textColor="@color/color_FBE84C"
                 android:textSize="11sp" />
         </LinearLayout>
 
@@ -75,7 +76,7 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_gravity="center_vertical"
-            android:layout_marginRight="22dp"
+            android:layout_marginRight="15dp"
             android:src="@mipmap/item_notification_answer" />
     </RelativeLayout>
 

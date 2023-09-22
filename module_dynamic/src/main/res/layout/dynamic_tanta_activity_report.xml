@@ -49,7 +49,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/dynamic_report_optional"
                     android:textColor="@color/color_273145"
-                    android:textSize="11dp" />
+                    android:textSize="16dp" />
             </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView

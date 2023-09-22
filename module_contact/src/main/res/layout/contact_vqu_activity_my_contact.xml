@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/color_FAFAFC">
+    android:background="@color/color_F5F5F5">
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
@@ -21,7 +21,7 @@
                 android:id="@+id/ctl_vqu_activity_my_contact_bar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:contentScrim="@color/color_7C69FE"
+                app:contentScrim="@color/color_5FBCFE"
                 app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -47,22 +47,20 @@
                     <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
                         android:id="@+id/stv_contact_vqu_my_contact_date"
                         android:layout_width="wrap_content"
-                        android:layout_height="25dp"
-                        android:layout_marginBottom="10dp"
-                        android:drawableRight="@mipmap/ic_arrow_small_right_white"
-                        android:drawablePadding="3.5dp"
+                        android:layout_height="23dp"
+                        android:layout_marginBottom="13dp"
                         android:gravity="center"
-                        android:paddingLeft="12dp"
-                        android:paddingRight="12dp"
+                        android:paddingLeft="18dp"
+                        android:paddingRight="19dp"
                         android:textColor="@color/color_FFFFFF"
-                        android:textSize="14sp"
+                        android:textSize="13sp"
                         app:layout_constraintBottom_toTopOf="@id/tv_contact_vqu_my_contact_total_money"
                         app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintRight_toRightOf="parent"
                         app:stv_layoutRadius="25dp"
                         app:stv_strokeColor="@color/color_FFFFFF"
                         app:stv_strokeWidth="1dp"
-                        tools:text="2021/11/21至2021/11/21" />
+                        tools:text="2021/11/21~2021/11/21" />
 
 
                     <TextView
@@ -73,7 +71,8 @@
                         android:includeFontPadding="false"
                         android:text="0"
                         android:textColor="@color/color_FFFFFF"
-                        android:textSize="36sp"
+                        android:textSize="35sp"
+                        android:textStyle="bold"
                         app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintRight_toRightOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
@@ -87,7 +86,7 @@
                         android:includeFontPadding="false"
                         android:text="@string/contact_vqu_count_earnings_unit"
                         android:textColor="@color/color_FFFFFF"
-                        android:textSize="14sp"
+                        android:textSize="13sp"
                         app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintRight_toRightOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/tv_contact_vqu_my_contact_total_money" />
@@ -131,17 +130,20 @@
 
                         <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
                             android:id="@+id/tv_export"
-                            android:layout_width="64dp"
-                            android:layout_height="27dp"
-                            android:layout_alignParentRight="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="26dp"
+                            android:gravity="center_vertical"
                             android:layout_centerVertical="true"
-                            android:layout_marginRight="12dp"
-                            android:gravity="center"
+                            android:layout_alignParentEnd="true"
+                            android:paddingStart="22dp"
+                            android:paddingEnd="26dp"
                             android:text="导出"
-                            android:textColor="@color/color_FFFFFF"
-                            android:textSize="12sp"
                             android:visibility="gone"
-                            app:stv_layoutRadius="30dp" />
+                            android:textColor="@color/white"
+                            app:stv_solidColor="#10000000"
+                            android:textSize="13sp"
+                            app:stv_topLeftRadius="@dimen/dp_size_20"
+                            app:stv_bottomLeftRadius="@dimen/dp_size_20"/>
                     </RelativeLayout>
 
 
@@ -154,17 +156,30 @@
                 android:id="@+id/cl_contact_vqu_my_contact_invited_num_parent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
                 android:paddingTop="19dp"
                 android:paddingBottom="13dp"
                 android:visibility="visible">
+
+                <com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout
+                    android:id="@+id/label_daily_value_view"
+                    android:layout_width="5dp"
+                    android:layout_height="15dp"
+                    android:layout_marginStart="15dp"
+                    app:sll_solidColor="@color/color_5FBCFE"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
 
                 <TextView
                     android:id="@+id/tv_contact_vqu_my_contact_invited_num"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="12dp"
+                    android:layout_marginLeft="8dp"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/label_daily_value_view"
                     app:layout_constraintTop_toTopOf="parent"
                     tools:text="人脉收益(4人)" />
 
@@ -174,7 +189,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
                     android:text="邀请记录"
-                    android:textColor="@color/color_FF7AC2"
+                    android:textColor="@color/color_5FBCFE"
                     android:textSize="12sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintLeft_toRightOf="@id/tv_contact_vqu_my_contact_invited_num"
@@ -182,18 +197,18 @@
 
                 <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
                     android:id="@+id/stv_contact_vqu_my_contact_sort"
-                    android:layout_width="60dp"
-                    android:layout_height="29dp"
-                    android:layout_marginRight="12dp"
+                    android:layout_width="50dp"
+                    android:layout_height="27dp"
+                    android:layout_marginRight="15dp"
                     android:gravity="center"
                     android:text="@string/contact_vqu_sort"
                     android:textColor="@color/color_FFFFFF"
-                    android:textSize="12sp"
+                    android:textSize="13sp"
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:stv_endColor="@color/color_FF7AC2"
+                    app:stv_endColor="@color/color_4CB6FF"
                     app:stv_layoutRadius="8dp"
-                    app:stv_startColor="@color/color_FF7AC2" />
+                    app:stv_startColor="@color/color_6BBFFD" />
 
                 <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
                     android:id="@+id/stv_contact_vqu_my_contact_more"
@@ -224,6 +239,7 @@
                 android:id="@+id/fl_empty_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingTop="150dp"
                 android:visibility="gone"
                 app:layout_constraintTop_toTopOf="parent">
 
@@ -237,8 +253,8 @@
 
                     <ImageView
                         android:id="@+id/iv_loadsir_empty"
-                        android:layout_width="280dp"
-                        android:layout_height="160dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:background="@mipmap/ic_tanta_my_contact_empty" />
 
                     <TextView
@@ -247,7 +263,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
                         android:text="邀请好友，即享高额提成"
-                        android:textColor="@color/color_A3AABE"
+                        android:textColor="@color/color_999999"
                         android:textSize="14sp" />
 
                 </LinearLayout>
@@ -277,26 +293,27 @@
     <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
         android:id="@+id/stv_contact_vqu_my_contact_more_bottom"
         android:layout_width="0dp"
-        android:layout_height="49dp"
-        android:layout_marginLeft="47dp"
-        android:layout_marginRight="47dp"
-        android:layout_marginBottom="10dp"
+        android:layout_height="46dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginRight="36dp"
+        android:layout_marginBottom="20dp"
         android:gravity="center"
         android:text="马上去邀请"
         android:textColor="@color/color_FFFFFF"
-        android:textSize="18sp"
+        android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@id/tv_contact_vqu_my_contact_invited_record_bottom"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:stv_endColor="@color/color_FF7AC2"
-        app:stv_layoutRadius="12dp"
-        app:stv_startColor="@color/color_FF7AC2" />
+        app:stv_endColor="@color/color_4CB6FF"
+        app:stv_layoutRadius="8dp"
+        app:stv_startColor="@color/color_6BBFFD" />
 
     <TextView
         android:id="@+id/tv_contact_vqu_my_contact_invited_record_bottom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="34dp"
+        android:layout_marginBottom="31dp"
         android:paddingLeft="20dp"
         android:paddingTop="10dp"
         android:paddingRight="20dp"

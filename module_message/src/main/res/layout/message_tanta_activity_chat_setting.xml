@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:fitsSystemWindows="true"
-    android:background="@color/color_FAFAFC">
+    android:background="@color/color_F5F5F5">
 
     <include
         android:id="@+id/includeTitle"
@@ -17,21 +17,22 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:paddingStart="12dp"
+        android:layout_marginTop="8dp"
+        android:paddingStart="15dp"
         android:background="@color/white"
         android:paddingTop="9dp"
-        android:paddingEnd="12dp"
+        android:paddingEnd="25dp"
         android:paddingBottom="9dp">
 
         <ImageView
             android:id="@+id/sdv_head"
-            android:layout_width="63dp"
-            android:layout_height="63dp" />
+            android:layout_width="58dp"
+            android:layout_height="58dp" />
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="16dp"
             android:layout_marginEnd="8dp"
             android:layout_weight="1"
             android:orientation="vertical">
@@ -40,9 +41,8 @@
                 android:id="@+id/tv_nick_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/color_222222"
+                android:textColor="@color/black"
                 android:textSize="17sp"
-                android:textStyle="bold"
                 tools:text="cp.晨曦" />
 
             <TextView
@@ -50,7 +50,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:textColor="@color/color_666666"
+                android:textColor="@color/black"
                 android:textSize="12sp"
                 tools:text="武汉丨28岁丨166cm丨未知" />
 
@@ -72,17 +72,13 @@
             android:src="@mipmap/resources_tanta_message_ic_next" />
     </LinearLayout>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="8dp"
-        android:background="@color/color_FAFAFC" />
-
     <FrameLayout
         android:layout_width="match_parent"
         android:background="@color/white"
+        android:layout_marginTop="8dp"
         android:layout_height="54dp"
-        android:paddingStart="12dp"
-        android:paddingEnd="12dp">
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -112,8 +108,8 @@
         android:background="@color/white"
         android:layout_width="match_parent"
         android:layout_height="54dp"
-        android:paddingStart="12dp"
-        android:paddingEnd="12dp">
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -140,17 +136,13 @@
 
     </FrameLayout>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="8dp"
-        android:background="@color/color_FAFAFC" />
-
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="54dp"
-        android:paddingStart="12dp"
+        android:paddingStart="15dp"
+        android:layout_marginTop="8dp"
         android:background="@color/white"
-        android:paddingEnd="12dp">
+        android:paddingEnd="15dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -170,18 +162,14 @@
 
     </FrameLayout>
 
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="8dp"
-        android:background="@color/color_FAFAFC" />
     <FrameLayout
         android:id="@+id/fl_report"
         android:layout_width="match_parent"
         android:background="@color/white"
+        android:layout_marginTop="8dp"
         android:layout_height="54dp"
-        android:paddingStart="12dp"
-        android:paddingEnd="12dp">
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp">
 
         <TextView
             android:layout_width="wrap_content"

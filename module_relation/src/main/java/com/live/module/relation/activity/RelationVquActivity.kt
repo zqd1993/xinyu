@@ -221,7 +221,7 @@ class RelationVquActivity : BaseActivity<RelationActivityRelationBinding, Relati
     override fun initObserve() {
         mViewModel.relationList.observe(this) {
             if (mViewModel.mPage == 1 && it.isNullOrEmpty()) {
-                showEmpty()
+                showEmpty("暂无足迹", R.mipmap.no_footprint_icon)
             } else {
                 val iteratorServerAll: MutableIterator<VquRelationBean> = it.iterator()
                 while (iteratorServerAll.hasNext()) {

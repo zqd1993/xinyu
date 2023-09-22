@@ -3,8 +3,8 @@
 
 
     <style name="line_f5f4f7">
-        <item name="android:background">@color/color_F5F4F7</item>
-        <item name="android:layout_height">0.5dp</item>
+        <item name="android:background">@color/color_F5F5F5</item>
+        <item name="android:layout_height">1dp</item>
         <item name="android:layout_width">match_parent</item>
     </style>
 

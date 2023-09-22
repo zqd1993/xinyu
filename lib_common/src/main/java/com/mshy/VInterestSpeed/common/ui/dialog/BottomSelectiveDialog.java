@@ -41,7 +41,7 @@ public class BottomSelectiveDialog extends Dialog {
         TextView textView = new TextView(mContext);
         LinearLayout.LayoutParams params = new LinearLayout
                 .LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
-                  UiUtils.dip2px(mContext,48));
+                UiUtils.dip2px(mContext, 48));
         textView.setLayoutParams(params);
         textView.setText(buttonName);
         textView.setTextSize(15);
@@ -61,7 +61,7 @@ public class BottomSelectiveDialog extends Dialog {
         return this;
     }
 
-    public BottomSelectiveDialog addTopView(View view){
+    public BottomSelectiveDialog addTopView(View view) {
         mTopView = view;
         return this;
     }
@@ -100,28 +100,39 @@ public class BottomSelectiveDialog extends Dialog {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dialog_selector);
-        initView();
+//        initView();
+        mSelectiveLayout = findViewById(R.id.selector_layout);
         if (mTopView != null) {
             mSelectiveLayout.addView(mTopView);
             View line = new View(mContext);
             LinearLayout.LayoutParams params = new LinearLayout
-                    .LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, UiUtils.dip2px(mContext,1));
+                    .LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, UiUtils.dip2px(mContext, 1));
             line.setBackgroundColor(Color.parseColor("#FFFAFAFC"));
             line.setLayoutParams(params);
             mSelectiveLayout.addView(line);
         }
-        for (int i = 0; i < mButtonList.size(); i++) {
-            TextView textView = mButtonList.get(i);
-            mSelectiveLayout.addView(textView);
-            if (!(i == mButtonList.size() - 1) && isAddLine) {
-                View line = new View(mContext);
-                LinearLayout.LayoutParams params = new LinearLayout
-                        .LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, UiUtils.dip2px(mContext,1));
-                line.setBackgroundColor(Color.parseColor("#FFFAFAFC"));
-                line.setLayoutParams(params);
-                mSelectiveLayout.addView(line);
+        if (mButtonList.size() > 0) {
+            LinearLayout btnLl = new LinearLayout(mContext);
+            LinearLayout.LayoutParams btnLlParams = new LinearLayout
+                    .LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+            btnLl.setLayoutParams(btnLlParams);
+            btnLl.setOrientation(LinearLayout.VERTICAL);
+            btnLl.setBackgroundResource(R.drawable.vqu_shape_white_12_bg);
+            for (int i = 0; i < mButtonList.size(); i++) {
+                TextView textView = mButtonList.get(i);
+                btnLl.addView(textView);
+                if (!(i == mButtonList.size() - 1) && isAddLine) {
+                    View line = new View(mContext);
+                    LinearLayout.LayoutParams params = new LinearLayout
+                            .LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, UiUtils.dip2px(mContext, 1));
+                    line.setBackgroundColor(Color.parseColor("#FFFAFAFC"));
+                    line.setLayoutParams(params);
+                    btnLl.addView(line);
+                }
             }
+            mSelectiveLayout.addView(btnLl);
         }
+        addCancelBtn();
         Window window = this.getWindow();
         window.setGravity(Gravity.BOTTOM);
         WindowManager.LayoutParams params = window.getAttributes();
@@ -137,13 +148,14 @@ public class BottomSelectiveDialog extends Dialog {
             TextView textView = new TextView(mContext);
             LinearLayout.LayoutParams params = new LinearLayout
                     .LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
-                    UiUtils.dip2px(mContext,48));
+                    UiUtils.dip2px(mContext, 48));
+            params.topMargin = UiUtils.dip2px(mContext, 9);
             textView.setLayoutParams(params);
             textView.setText("取消");
             textView.setTextSize(15);
             textView.setTextColor(Color.parseColor("#FFA3AABE"));
             textView.setGravity(Gravity.CENTER);
-            textView.setBackgroundColor(Color.TRANSPARENT);
+            textView.setBackgroundColor(R.drawable.vqu_shape_white_12_bg);
             textView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -151,6 +163,30 @@ public class BottomSelectiveDialog extends Dialog {
                 }
             });
             mButtonList.add(textView);
+        }
+    }
+
+    private void addCancelBtn(){
+        if (isAddCancelButton) {
+            TextView textView = new TextView(mContext);
+            LinearLayout.LayoutParams params = new LinearLayout
+                    .LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+                    UiUtils.dip2px(mContext, 48));
+            params.topMargin = UiUtils.dip2px(mContext, 9);
+            params.bottomMargin = UiUtils.dip2px(mContext, 33);
+            textView.setLayoutParams(params);
+            textView.setText("取消");
+            textView.setTextSize(15);
+            textView.setTextColor(Color.parseColor("#FFA3AABE"));
+            textView.setGravity(Gravity.CENTER);
+            textView.setBackgroundResource(R.drawable.vqu_shape_white_12_bg);
+            textView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    dismiss();
+                }
+            });
+            mSelectiveLayout.addView(textView);
         }
     }
 }

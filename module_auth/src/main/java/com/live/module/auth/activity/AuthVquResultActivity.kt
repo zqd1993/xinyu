@@ -59,6 +59,7 @@ class AuthVquResultActivity :
         when (type) {
             1 -> {
                 mBinding.ivAuthVquResultImg.setImageResource(R.mipmap.ic_auth_success)
+                mBinding.tvAuthenticationStatus.text = "恭喜您认证成功"
                 if (pageType == 1) {
                     mBinding.tvAuthVquResultTips.text = "恭喜你通过了实名认证！"
                 } else {
@@ -70,11 +71,13 @@ class AuthVquResultActivity :
             2 -> {
                 mBinding.ivAuthVquResultImg.setImageResource(R.mipmap.ic_auth_cheking)
                 mBinding.tvAuthVquResultTips.text = "认证审核中，1小时内完成，认证结果会通过"
+                mBinding.tvAuthenticationStatus.text = "认证审核中"
                 mBinding.tbAuthVquResultBar.tvTitle.text = "审核中"
                 mBinding.stvAuthVquResultBtn.text = "好的"
             }
             3 -> {
                 mBinding.ivAuthVquResultImg.setImageResource(R.mipmap.ic_auth_failed)
+                mBinding.tvAuthenticationStatus.text = "认证失败"
                 if (pageType == 1) {
                     if (UserManager.userInfo?.gender == 1 || UserManager.userInfo?.isAnchor != 1) {
                         mBinding.tvAuthVquResultTips.text = "抱歉，你的实名资料审核失败，请重新提交"

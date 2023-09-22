@@ -124,7 +124,7 @@ public class CommonVquAddRankAndGradeViewHelper {
             sll_gender.setVisibility(View.VISIBLE);
         } else if (gender == 1) {
             tv_age.setText(String.valueOf(age));
-            sll_gender.setSolidColor(Color.parseColor("#FF7AC2"));
+            sll_gender.setSolidColor(Color.parseColor("#FF73A1"));
             tv_age.setTextColor(Color.parseColor("#FFFFFF"));
             ivGenderIncon.setImageResource(R.mipmap.resources_vqu_newgirl);
             sll_gender.setVisibility(View.VISIBLE);

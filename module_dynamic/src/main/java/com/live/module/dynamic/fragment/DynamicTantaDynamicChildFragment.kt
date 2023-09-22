@@ -196,7 +196,7 @@ class DynamicTantaDynamicChildFragment :
         mViewModel.dynamicLsit.observe(this) {
             if (page == 1) {
                 if (it.data.list.isNullOrEmpty()) {
-                    showEmpty("暂无动态")
+                    showEmpty("暂无动态", R.mipmap.dynamic_empty_icon)
                 } else {
                     mLoadService?.showSuccess()
                     dynamicVquAdapter?.setList(it.data.list)
@@ -230,7 +230,7 @@ class DynamicTantaDynamicChildFragment :
             dynamicVquAdapter?.data?.removeAt(curPos)
             dynamicVquAdapter?.notifyDataSetChanged()
             if (dynamicVquAdapter?.data.isNullOrEmpty()) {
-                showEmpty("暂无动态")
+                showEmpty("暂无动态", R.mipmap.dynamic_empty_icon)
             }
         })
         mViewModel.vquDelTextOrImgData.observe(this, Observer {

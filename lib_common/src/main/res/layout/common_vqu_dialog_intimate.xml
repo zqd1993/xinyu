@@ -12,11 +12,11 @@
         android:layout_height="263dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="35dp"
-        app:sll_solidColor="@color/white"
-        app:sll_layoutRadius="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:sll_layoutRadius="20dp"
+        app:sll_solidColor="@color/white" />
 
     <View
         android:id="@+id/view_white"
@@ -80,21 +80,21 @@
         <ImageView
             android:id="@+id/iv_level"
             android:layout_width="60dp"
-            android:layout_marginBottom="3dp"
             android:layout_height="20dp"
             android:layout_alignBottom="@+id/rl_left"
             android:layout_centerHorizontal="true"
-            />
+            android:layout_marginBottom="3dp" />
     </RelativeLayout>
 
     <TextView
         android:id="@+id/tv_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="恭喜你"
-        android:textStyle="bold"
-        android:textColor="@color/color_222222"
+        android:layout_marginTop="20dp"
+        android:text="恭喜你~"
+        android:textColor="@color/black"
         android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/ll_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -106,7 +106,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="15dp"
         android:gravity="center"
         android:orientation="horizontal"
@@ -130,7 +130,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:textColor="@color/color_FF7AC2"
+        android:textColor="@color/color_5FBCFE"
         android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/tv_confirm"
         app:layout_constraintEnd_toEndOf="@id/ll_content"
@@ -151,9 +151,9 @@
         app:layout_constraintBottom_toBottomOf="@id/iv_bg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-       app:stv_solidColor="@color/color_FF7AC2"
-        app:stv_layoutRadius="12dp"
-         />
+        app:stv_endColor="@color/color_4CB6FF"
+        app:stv_layoutRadius="8dp"
+        app:stv_startColor="@color/color_6BBFFD" />
 
     <ImageView
         android:id="@+id/iv_close"

@@ -2,6 +2,7 @@ package com.live.module.bill.fragment
 
 import androidx.fragment.app.viewModels
 import com.alibaba.android.arouter.facade.annotation.Route
+import com.live.module.bill.R
 import com.live.module.bill.adapter.BillVquWithdrawalListAdapter
 import com.live.module.bill.databinding.BillVquFragmentWithdrawalListBinding
 import com.live.module.bill.vm.BillVquWithdrawalListViewModel
@@ -32,7 +33,7 @@ class BillVquWithdrawalListFragment :
 
         mViewModel.emptyData.observe(this) {
             if (it) {
-                showEmpty()
+                showEmpty("暂无提现记录", R.mipmap.bill_detail_empty_icon)
             } else {
                 showContent()
             }

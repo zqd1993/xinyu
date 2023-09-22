@@ -3,20 +3,27 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:src="@mipmap/ic_tanta_common_update_bg_top"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="140dp"
         android:orientation="vertical"
         android:paddingBottom="30dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:visibility="gone">
 
             <ImageView
                 android:id="@+id/iv_top"
@@ -26,33 +33,6 @@
                 android:src="@mipmap/ic_tanta_common_update_bg_top"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
-                android:id="@+id/iv_new"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="57dp"
-                android:src="@mipmap/common_tanta_update_new"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
-                android:id="@+id/tv_version"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:paddingLeft="8dp"
-                android:paddingTop="3dp"
-                android:paddingRight="8dp"
-                android:paddingBottom="3dp"
-                android:tag="beta_upgrade_info"
-                android:text="V2.1.0"
-                android:textColor="@color/color_FF7AC2"
-                android:textSize="14sp"
-                app:layout_constraintLeft_toLeftOf="@+id/iv_new"
-                app:layout_constraintTop_toBottomOf="@+id/iv_new"
-                app:stv_layoutRadius="4dp"
-                app:stv_solidColor="@color/white" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
@@ -67,14 +47,53 @@
         <!--                android:layout_marginBottom="12dp"-->
         <!--                android:src="@mipmap/ic_dynamic_close" />-->
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/common_vqu_update_newversion"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_19"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
+                android:id="@+id/tv_version"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="7dp"
+                android:paddingLeft="8dp"
+                android:paddingTop="3dp"
+                android:paddingRight="8dp"
+                android:paddingBottom="3dp"
+                android:tag="beta_upgrade_info"
+                android:text="V2.1.0"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:layout_constraintLeft_toLeftOf="@+id/iv_new"
+                app:layout_constraintTop_toBottomOf="@+id/iv_new"
+                app:stv_bottomLeftRadius="3dp"
+                app:stv_bottomRightRadius="10dp"
+                app:stv_solidColor="#FFBB37"
+                app:stv_topLeftRadius="10dp"
+                app:stv_topRightRadius="10dp" />
+
+        </LinearLayout>
+
         <com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:orientation="vertical"
             android:paddingBottom="24dp"
-            app:sll_bottomLeftRadius="16dp"
-            app:sll_bottomRightRadius="16dp"
+            app:sll_bottomLeftRadius="19dp"
+            app:sll_bottomRightRadius="19dp"
             app:sll_solidColor="@color/white">
 
 
@@ -82,7 +101,7 @@
                 android:id="@+id/tv_content"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="28dp"
+                android:layout_marginLeft="18dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="28dp"
                 android:lineSpacingExtra="4dp"
@@ -97,20 +116,20 @@
                 android:layout_height="49dp"
                 android:layout_marginTop="30dp"
                 android:gravity="center"
-                android:textSize="17dp"
                 android:tag="beta_confirm_button"
                 android:text="@string/common_vqu_update_btn"
                 android:textColor="@color/white"
+                android:textSize="17dp"
                 app:stv_layoutRadius="12dp"
-                app:stv_solidColor="@color/color_FF7AC2" />
+                app:stv_startColor="@color/color_6BBFFD"
+                app:stv_endColor="@color/color_4CB6FF"/>
 
             <RelativeLayout
                 android:id="@+id/rl_progressbar"
                 android:layout_width="240dp"
                 android:layout_height="49dp"
                 android:layout_marginTop="30dp"
-                android:visibility="gone"
-                >
+                android:visibility="gone">
 
                 <ProgressBar
                     android:id="@+id/progressbar"
@@ -134,7 +153,7 @@
                 android:id="@+id/tv_after"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="19dp"
                 android:drawablePadding="6dp"
                 android:tag="beta_cancel_button"
                 android:text="@string/common_vqu_update_after"

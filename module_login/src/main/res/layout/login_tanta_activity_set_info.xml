@@ -197,11 +197,37 @@
                     android:textColorHint="@color/color_BBBBBB"
                     android:textSize="16sp"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintRight_toLeftOf="@id/iv_arrow_birthday"
                     app:layout_constraintTop_toTopOf="parent" />
 
+                <ImageView
+                    android:id="@+id/iv_arrow_birthday"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/dp_size_15"
+                    android:paddingRight="@dimen/dp_size_8"
+                    android:src="@mipmap/ic_arrow_small_right_grey"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
             </com.mshy.VInterestSpeed.common.ui.view.ShapeConstraintLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="32dp"
+                android:background="@color/color_EEEEEE"
+                app:layout_constraintTop_toBottomOf="@id/cl_login_tanta_set_info_birthday_parent" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="32dp"
+                android:background="@color/color_EEEEEE"
+                app:layout_constraintTop_toBottomOf="@id/cl_login_tanta_set_info_nickname_parent" />
 
             <RadioGroup
                 android:id="@+id/rg_login_tanta_set_info_gender_parent"
@@ -236,7 +262,7 @@
                     android:layout_height="60dp"
                     android:layout_marginLeft="10dp"
                     android:layout_weight="1"
-                    android:background="@drawable/vqu_login_selector_bg_set_info_girl"
+                    android:background="@drawable/vqu_login_selector_bg_set_info_boy"
                     android:button="@android:color/transparent"
                     android:clickable="true"
                     android:drawableLeft="@drawable/vqu_login_selector_ic_set_info_girl"
@@ -297,11 +323,29 @@
                     android:textColorHint="@color/color_BBBBBB"
                     android:textSize="16sp"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintRight_toLeftOf="@id/iv_arrow_invite_code"
                     app:layout_constraintTop_toTopOf="parent" />
 
+                <ImageView
+                    android:id="@+id/iv_arrow_invite_code"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/dp_size_15"
+                    android:paddingRight="@dimen/dp_size_8"
+                    android:src="@mipmap/ic_arrow_small_right_grey"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
             </com.mshy.VInterestSpeed.common.ui.view.ShapeConstraintLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="32dp"
+                android:background="@color/color_EEEEEE"
+                app:layout_constraintTop_toBottomOf="@id/cl_login_tanta_set_info_invite_code_parent" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/cl_login_tanta_set_info_city_parent"
@@ -377,8 +421,9 @@
         android:text="@string/vqu_login_start_friend"
         android:textColor="@color/color_FFFFFF"
         android:textSize="17sp"
+        app:stv_endColor="@color/color_4CB6FF"
         app:stv_layoutRadius="12dp"
-        app:stv_solidColor="@color/color_FF7AC2" />
+        app:stv_startColor="@color/color_6BBFFD" />
 
     <ImageView
         android:layout_width="wrap_content"

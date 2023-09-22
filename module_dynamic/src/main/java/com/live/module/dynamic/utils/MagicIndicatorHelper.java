@@ -34,9 +34,9 @@ public class MagicIndicatorHelper {
         LinePagerIndicator indicator = new LinePagerIndicator(context);
         indicator.setMode(LinePagerIndicator.MODE_EXACTLY);
         indicator.setLineHeight(UIUtil.dip2px(context, 4));
-        indicator.setLineWidth(UIUtil.dip2px(context, 8));
+        indicator.setLineWidth(UIUtil.dip2px(context, 14));
         indicator.setRoundRadius(UIUtil.dip2px(context, 3.5f));
-        indicator.setColors(context.getResources().getColor(R.color.color_FF7AC2));
+        indicator.setColors(context.getResources().getColor(R.color.black));
         indicator.setYOffset(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
                 8, context.getResources().getDisplayMetrics()));
         return indicator;

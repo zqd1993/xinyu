@@ -193,14 +193,14 @@ public class SwipeMessageNotification extends LinearLayout {
         LoaderBuilder builderConfig = new LoaderBuilder()
                 .round(UiUtils.dip2px(BaseApplication.context, 12f))
                 .circle(false)
-                .width(UiUtils.dip2px(BaseApplication.context, 64f))
-                .height(UiUtils.dip2px(BaseApplication.context, 64f))
+                .width(UiUtils.dip2px(BaseApplication.context, 42f))
+                .height(UiUtils.dip2px(BaseApplication.context, 42f))
                 .scaleType(ImageView.ScaleType.CENTER_CROP)
                 .round(new float[]{
-                        UiUtils.dip2px(BaseApplication.context, 12f),
-                        UiUtils.dip2px(BaseApplication.context, 12f),
-                        UiUtils.dip2px(BaseApplication.context, 12f),
-                        UiUtils.dip2px(BaseApplication.context, 12f)})
+                        UiUtils.dip2px(BaseApplication.context, 21f),
+                        UiUtils.dip2px(BaseApplication.context, 21f),
+                        UiUtils.dip2px(BaseApplication.context, 21f),
+                        UiUtils.dip2px(BaseApplication.context, 21f)})
                 .borderColor(ContextCompat.getColor(BaseApplication.context, R.color.color_FFFFFF))
                 .borderWidth(UiUtils.dip2px(BaseApplication.context, 0f))
                 .placeholder(R.mipmap.ic_common_head_def)

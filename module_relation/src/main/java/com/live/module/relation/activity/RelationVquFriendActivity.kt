@@ -131,8 +131,8 @@ class RelationVquFriendActivity :
                 indicator.lineHeight = dp2px(3f).toFloat()
                 indicator.yOffset = dp2px(6f).toFloat()
                 indicator.setColors(
-                    com.mshy.VInterestSpeed.common.utils.ResUtils.getColor(R.color.color_FF7AC2),
-                    com.mshy.VInterestSpeed.common.utils.ResUtils.getColor(R.color.color_FF7AC2)
+                    com.mshy.VInterestSpeed.common.utils.ResUtils.getColor(R.color.black),
+                    com.mshy.VInterestSpeed.common.utils.ResUtils.getColor(R.color.black)
                 )
                 return indicator
             }

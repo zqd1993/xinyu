@@ -107,16 +107,16 @@ class CommonVquCallDialog : BaseDialogFragment<CommonVquDialogCallBinding>(),
                                     mBinding.tvVideoVip.visible()
                                     if (response.body()?.data?.vip == 0) {
                                         mBinding.tvVideoVip.setStartColor(
-                                            ResUtils.getColor(R.color.color_FF7AC2),
-                                            ResUtils.getColor(R.color.color_FF7AC2)
+                                            ResUtils.getColor(R.color.color_6BBFFD),
+                                            ResUtils.getColor(R.color.color_4CB6FF)
                                         )
                                         mBinding.tvVideoVip.setTextColor(ResUtils.getColor(R.color.white))
                                     } else {
                                         mBinding.tvVideoVip.setStartColor(
-                                            ResUtils.getColor(R.color.color_FADCC0),
-                                            ResUtils.getColor(R.color.color_EEB090)
+                                            ResUtils.getColor(R.color.color_FFBF44),
+                                            ResUtils.getColor(R.color.color_F6AC1C)
                                         )
-                                        mBinding.tvVideoVip.setTextColor(ResUtils.getColor(R.color.color_652906))
+                                        mBinding.tvVideoVip.setTextColor(ResUtils.getColor(R.color.white))
                                     }
 
 
@@ -128,16 +128,16 @@ class CommonVquCallDialog : BaseDialogFragment<CommonVquDialogCallBinding>(),
                                     mBinding.tvVoiceVip.visible()
                                     if (response.body()?.data?.vip == 0) {
                                         mBinding.tvVoiceVip.setStartColor(
-                                            ResUtils.getColor(R.color.color_FF7AC2),
-                                            ResUtils.getColor(R.color.color_FF7AC2)
+                                            ResUtils.getColor(R.color.color_6BBFFD),
+                                            ResUtils.getColor(R.color.color_4CB6FF)
                                         )
                                         mBinding.tvVoiceVip.setTextColor(ResUtils.getColor(R.color.white))
                                     } else {
                                         mBinding.tvVoiceVip.setStartColor(
-                                            ResUtils.getColor(R.color.color_FADCC0),
-                                            ResUtils.getColor(R.color.color_EEB090)
+                                            ResUtils.getColor(R.color.color_FFBF44),
+                                            ResUtils.getColor(R.color.color_F6AC1C)
                                         )
-                                        mBinding.tvVoiceVip.setTextColor(ResUtils.getColor(R.color.color_652906))
+                                        mBinding.tvVoiceVip.setTextColor(ResUtils.getColor(R.color.white))
                                     }
 
                                 }

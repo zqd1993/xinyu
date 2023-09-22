@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="80dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_marginTop="5dp"
     android:layout_marginBottom="5dp"
     android:background="@drawable/nim_touch_bg"
@@ -17,11 +18,11 @@
 
         <com.mshy.VInterestSpeed.uikit.common.widget.NIMImageView
             android:id="@+id/img_head"
-            android:layout_width="52dp"
-            android:layout_height="52dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_centerVertical="true"
             android:layout_gravity="center_vertical"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="15dp"
             tools:src="@mipmap/ic_common_head_circle_def" />
 
         <View
@@ -54,7 +55,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_marginStart="14dp"
+            android:layout_marginStart="12dp"
             android:layout_toRightOf="@id/img_head"
             android:orientation="vertical"
             android:paddingRight="60dp">
@@ -75,7 +76,7 @@
                     android:gravity="center"
                     android:includeFontPadding="false"
                     android:singleLine="true"
-                    android:textColor="@color/color_222222"
+                    android:textColor="@color/black"
                     android:textSize="17sp"
                     android:textStyle="bold"
                     tools:text="一本正经" />
@@ -104,14 +105,22 @@
                     android:textSize="13sp"
                     android:visibility="gone" />
 
-                <ImageView
+                <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
                     android:id="@+id/img_msg_official"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:layout_marginEnd="4dp"
                     android:contentDescription="@string/empty"
-                    android:src="@mipmap/resources_vqu_message_official"
+                    app:stv_strokeWidth="1dp"
+                    app:stv_strokeColor="@color/color_5FBCFE"
+                    android:paddingTop="@dimen/dp_size_2"
+                    android:paddingBottom="@dimen/dp_size_2"
+                    android:paddingStart="@dimen/dp_size_3"
+                    android:paddingEnd="@dimen/dp_size_3"
+                    android:text="官方"
+                    android:textColor="@color/color_5FBCFE"
+                    app:stv_layoutRadius="@dimen/dp_4"
                     android:visibility="gone"
                     tools:visibility="visible" />
 
@@ -190,7 +199,7 @@
             android:drawableEnd="@mipmap/resources_tanta_message_intimate_icon"
             android:drawablePadding="2dp"
             android:gravity="center"
-            android:textColor="@color/color_FE66A4"
+            android:textColor="@color/color_F2B135"
             android:textSize="12sp"
             android:visibility="gone"
             tools:text="25.5"

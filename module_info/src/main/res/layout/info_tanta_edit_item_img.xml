@@ -28,7 +28,7 @@
         android:visibility="gone"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:stv_layoutRadius="18dp"
-        app:stv_solidColor="@color/color_A3AABE" />
+        app:stv_layoutRadius="4dp"
+        app:stv_solidColor="@color/_80000000" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

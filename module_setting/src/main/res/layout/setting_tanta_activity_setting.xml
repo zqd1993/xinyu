@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/color_FAFAFC"
+    android:background="@color/color_F5F5F5"
     android:fitsSystemWindows="true"
     tools:ignore="MissingDefaultResource,ResourceName">
 
@@ -16,7 +16,7 @@
         android:id="@+id/rv_setting"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="3dp"
         android:orientation="vertical"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toTopOf="@+id/tv_logout"
@@ -33,6 +33,7 @@
         android:text="退出登录"
         android:textColor="@color/color_273145"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:visibility="gone"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

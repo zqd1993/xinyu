@@ -289,7 +289,8 @@ open class AnchorVquHelloSettingActivity :
         mViewModel.helloListData.observe(this) {
 
             if (it.list.isNullOrEmpty()) {
-                showEmpty()
+                showEmpty("添加自定义打招呼\n" +
+                        "会优先推荐给男用户哦~", R.mipmap.setting_hello_empty_icon)
             } else {
                 mLoadService?.showSuccess()
             }

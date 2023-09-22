@@ -28,21 +28,23 @@
         <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
             android:id="@+id/stv_agora_vqu_warm"
             android:layout_width="match_parent"
-            android:layout_height="33dp"
-            android:layout_marginLeft="12dp"
-            android:layout_marginTop="34dp"
-            android:layout_marginRight="12dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="42dp"
+            android:layout_marginRight="15dp"
+            android:drawableStart="@mipmap/video_notice_icon"
+            android:drawablePadding="8dp"
             android:ellipsize="marquee"
             android:focusable="true"
             android:focusableInTouchMode="true"
-            android:gravity="center"
+            android:gravity="center_vertical"
             android:marqueeRepeatLimit="-1"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
             android:singleLine="true"
             android:text="正在智能监测色情违法内容，警觉交易转账均为诈骗"
-            android:textColor="#A3AABE"
-            android:textSize="14sp"
+            android:textColor="@color/color_999999"
+            android:textSize="13sp"
             app:stv_layoutRadius="@dimen/dp_size_8"
             app:stv_solidColor="#30000000" />
     </RelativeLayout>
@@ -59,8 +61,8 @@
         android:layout_width="32dp"
         android:layout_height="32dp"
         android:layout_gravity="center_vertical"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="17dp"
         android:src="@mipmap/ic_reduce"
         android:visibility="gone"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -72,33 +74,47 @@
         android:id="@+id/vqu_video_head_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="12dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="17dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/open_mini_window">
 
-        <com.mshy.VInterestSpeed.common.ui.view.RoundAngleImageView
-            android:id="@+id/vqu_iv_call_head"
+        <FrameLayout
+            android:id="@+id/vqu_fl_call_head"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/color_FFFFFF"
-            android:padding="1dp"
-            android:scaleType="centerCrop"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:raiv_angle="10dp"
-            tools:layout_height="52dp"
-            tools:layout_width="52dp" />
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.mshy.VInterestSpeed.common.ui.view.RoundAngleImageView
+                android:id="@+id/vqu_iv_call_head"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/color_FFFFFF"
+                android:padding="1dp"
+                android:scaleType="centerCrop"
+                app:raiv_angle="25dp"
+                tools:layout_height="50dp"
+                tools:layout_width="50dp" />
+
+            <com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:sll_strokeWidth="1dp"
+                app:sll_strokeColor="@color/white"
+                app:sll_layoutRadius="25dp" />
+
+        </FrameLayout>
 
         <LinearLayout
             android:id="@+id/panel_opposite_info"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
+            android:layout_marginStart="16dp"
             android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="@+id/vqu_iv_call_head"
-            app:layout_constraintLeft_toRightOf="@+id/vqu_iv_call_head"
-            app:layout_constraintTop_toTopOf="@+id/vqu_iv_call_head">
+            app:layout_constraintBottom_toBottomOf="@+id/vqu_fl_call_head"
+            app:layout_constraintLeft_toRightOf="@+id/vqu_fl_call_head"
+            app:layout_constraintTop_toTopOf="@+id/vqu_fl_call_head">
 
             <LinearLayout
                 android:id="@+id/layout_name_id"
@@ -112,8 +128,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
+                    android:layout_marginEnd="7dp"
                     android:textColor="@android:color/white"
                     android:textSize="16sp"
+                    android:textStyle="bold"
                     tools:text="名字" />
 
                 <include layout="@layout/common_vqu_include_gender" />
@@ -123,8 +141,8 @@
                 android:id="@+id/video_start_cost"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="3dp"
-                android:textColor="#ffffffff"
+                android:layout_marginTop="5dp"
+                android:textColor="#bbbbbb"
                 android:textSize="12sp"
                 tools:text="武汉市 | 自由职业" />
 
@@ -136,20 +154,20 @@
 
     <FrameLayout
         android:id="@+id/local_parent"
-        android:layout_width="100dp"
-        android:layout_height="133dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="12dp"
+        android:layout_width="96dp"
+        android:layout_height="129dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginRight="15dp"
         android:visibility="gone"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/rl_agora_vqu_warm_parent">
+        app:layout_constraintTop_toBottomOf="@id/open_mini_window">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/local_video_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:cardBackgroundColor="@android:color/transparent"
-            app:cardCornerRadius="8dp"
+            app:cardCornerRadius="12dp"
             app:cardElevation="0dp">
 
         </androidx.cardview.widget.CardView>
@@ -167,14 +185,14 @@
             android:layout_width="match_parent"
             android:layout_height="22dp"
             android:layout_gravity="bottom"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginBottom="6dp"
+            android:layout_marginLeft="7dp"
+            android:layout_marginRight="7dp"
+            android:layout_marginBottom="5dp"
             android:orientation="horizontal"
             android:paddingLeft="6dp"
-            android:paddingRight="6dp"
+            android:paddingRight="2dp"
             app:sll_layoutRadius="13dp"
-            app:sll_solidColor="@color/color_4d000000">
+            app:sll_solidColor="#30000000">
 
             <ImageView
                 android:id="@+id/iv_agora_vqu_video_close_camera_icon"
@@ -187,6 +205,7 @@
                 android:id="@+id/tv_agora_vqu_video_close_camera_txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
                 android:layout_gravity="center_vertical"
                 android:text="关闭摄像头"
                 android:textColor="@color/color_FFFFFF"
@@ -201,7 +220,7 @@
         android:id="@+id/rl_deal_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="36dp"
+        android:layout_marginBottom="63dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         tools:visibility="visible">
@@ -211,7 +230,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="14dp"
             android:layout_marginEnd="14dp"
-            android:layout_marginBottom="34dp"
+            android:layout_marginBottom="19dp"
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
@@ -306,9 +325,10 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="4dp"
-        android:layout_marginBottom="60dp"
         android:textColor="@android:color/white"
-        android:textSize="12sp"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="38dp"
         app:layout_constraintBottom_toTopOf="@+id/rl_deal_layout"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -322,24 +342,46 @@
         android:layout_marginStart="4dp"
         android:layout_marginTop="17dp"
         android:textColor="@android:color/white"
-        android:textSize="17dp"
+        android:textSize="16sp"
+        android:textStyle="bold"
         android:visibility="gone"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rl_agora_vqu_warm_parent"
         tools:text="28:26" />
 
-    <ImageView
+    <FrameLayout
         android:id="@+id/video_gift"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp_60"
         android:layout_alignParentEnd="true"
-        android:layout_marginRight="16dp"
+        android:layout_marginRight="15dp"
         android:layout_marginBottom="60dp"
-        android:src="@mipmap/agora_vqu_video_gift"
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/rl_deal_layout"
-        app:layout_constraintRight_toRightOf="parent" />
+        app:layout_constraintRight_toRightOf="parent">
+
+        <ImageView
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@mipmap/agora_vqu_video_gift"
+            android:visibility="visible" />
+
+        <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
+            android:layout_width="47dp"
+            android:layout_height="18dp"
+            android:layout_gravity="center|bottom"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:text="送礼物"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            app:stv_endColor="@color/color_F6AC1C"
+            app:stv_layoutRadius="9dp"
+            app:stv_startColor="@color/color_FFBF44" />
+
+    </FrameLayout>
 
 
     <!--    <com.faceunity.nama.ui.FaceUnityView-->

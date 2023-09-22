@@ -30,7 +30,7 @@ class PhoneLoginActivity : BaseActivity<LoginActivityPhoneLoginBinding, LoginVie
     private var mSendPhone = ""
 
     override fun LoginActivityPhoneLoginBinding.initView() {
-        mBinding.includeToolBar.toolbar.initClose(backImg = R.mipmap.ic_black_close) { finish() }
+        mBinding.includeToolBar.toolbar.initClose(backImg = R.mipmap.ic_back) { finish() }
 
         val phone = SpUtils.getString(SpKey.PHONE, "")
 

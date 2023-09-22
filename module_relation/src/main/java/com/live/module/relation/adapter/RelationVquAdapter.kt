@@ -231,7 +231,7 @@ class RelationVquAdapter :
                     stvFocus.setText(R.string.mine_vqu_focused)
                 }
             } else {
-                stvFocus.solidColor = ResUtils.getColor(R.color.color_FF7AC2)
+                stvFocus.solidColor = ResUtils.getColor(R.color.color_6BBFFD)
 //                stvFocus.setStartColor(
 //                    ResUtils.getColor(R.color.color_BFB6FF), ResUtils.getColor(R.color.color_7C69FE)
 //                )

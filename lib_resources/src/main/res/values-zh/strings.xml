@@ -58,7 +58,7 @@
     <string name="vqu_login_invite_code_input">请输入邀请码（选填）</string>
     <string name="vqu_girl">女生</string>
     <string name="vqu_boy">男生</string>
-    <string name="vqu_login_set_info_gender_tips">性别选择后，无法修改，请选择真实性别</string>
+    <string name="vqu_login_set_info_gender_tips">性别选择后不可修改</string>
     <string name="vqu_login_nickname">昵称</string>
     <string name="vqu_login_birthday">生日</string>
     <string name="vqu_login_age">年龄</string>
@@ -143,7 +143,7 @@
     <string name="reject">不同意</string>
     <string name="apply_and_go_on">已阅读并同意</string>
     <string name="login_agreement_text">
- &lt;font&gt;注册登录前需您阅读并同意&lt;a href=&quot;%1$s&quot;&gt;&lt;font color=&quot;#FF7AC2&quot;&gt;《用户协议》&lt;/font&gt;&lt;/a&gt;和&lt;a href=&quot;%2$s&quot;&gt;&lt;font color=&quot;#FF7AC2&quot;&gt;《隐私协议》&lt;/font&gt;&lt;/a&gt;
+ &lt;font&gt;注册登录前需您阅读并同意&lt;a href=&quot;%1$s&quot;&gt;&lt;font color=&quot;#576990&quot;&gt;《用户协议》&lt;/font&gt;&lt;/a&gt;和&lt;a href=&quot;%2$s&quot;&gt;&lt;font color=&quot;#576990&quot;&gt;《隐私协议》&lt;/font&gt;&lt;/a&gt;
     </string>
 
     <string name="vqu_bill_recharge_agreement">
@@ -201,7 +201,7 @@
     <string name="setting_clear_info">(清除所有资料)</string>
     <string name="setting_about">关于鹊娘</string>
     <string name="setting_mobile">手机号</string>
-    <string name="setting_mobile_hint">请输入手机号</string>
+    <string name="setting_mobile_hint">请输入手机号码</string>
     <string name="setting_code">验证码</string>
     <string name="setting_code_hint">请输入验证码</string>
     <string name="setting_code_get">获取验证码</string>
@@ -286,7 +286,7 @@
     <string name="contact_vqu_setting_link">缘分牵线说明</string>
 
     <string name="goddess_vqu_rates_setting_explain">
-                收费设置说明：\n 1、对方主动给你发文字消息或与你进行视频/语音通话，你的收费依据本页设置。\n 2、星级越高，可设置的价格越高，查看&lt;font color=&quot;#7C69FE&quot;&gt;&lt;a href=&quot;%s&quot;&gt;如何提高星级&lt;/a&gt;&lt;/font&gt;
+                收费设置说明：\n 1、对方主动给你发文字消息或与你进行视频/语音通话，你的收费依据本页设置。\n 2、星级越高，可设置的价格越高，查看&lt;font color=&quot;#576990&quot;&gt;&lt;a href=&quot;%s&quot;&gt;如何提高星级&lt;/a&gt;&lt;/font&gt;
     </string>
     <string name="anchor_vqu_use_this_template">使用此模板</string>
     <string name="anchor_vqu_template_mark_tips">请输入模板备注</string>

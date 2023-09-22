@@ -63,8 +63,8 @@
                         android:textSize="9sp"
                         app:stv_layoutRadius="4dp"
                         android:visibility="gone"
-                        app:stv_endColor="@color/color_FF7AC2"
-                        app:stv_startColor="@color/color_FF7AC2"
+                        app:stv_endColor="@color/color_4CB6FF"
+                        app:stv_startColor="@color/color_6BBFFD"
                        />
                 </LinearLayout>
 
@@ -146,8 +146,8 @@
                         android:textSize="9sp"
                         android:visibility="gone"
                         app:stv_layoutRadius="4dp"
-                        app:stv_endColor="@color/color_FF7AC2"
-                        app:stv_startColor="@color/color_FF7AC2"
+                        app:stv_endColor="@color/color_4CB6FF"
+                        app:stv_startColor="@color/color_6BBFFD"
                         />
                 </LinearLayout>
 

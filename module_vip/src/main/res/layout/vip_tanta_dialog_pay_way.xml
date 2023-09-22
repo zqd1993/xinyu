@@ -12,29 +12,30 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:orientation="vertical"
-        android:paddingBottom="29dp"
+        android:paddingBottom="51dp"
         app:scl_solidColor="@color/color_FFFFFF"
-        app:scl_topLeftRadius="16dp"
-        app:scl_topRightRadius="16dp">
+        app:scl_topLeftRadius="19dp"
+        app:scl_topRightRadius="19dp">
 
         <com.mshy.VInterestSpeed.common.ui.view.ShapeConstraintLayout
             android:id="@+id/scl_tanta_vip_dialog_pay_way_title_container"
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:gravity="center"
-            android:textColor="@color/color_273145"
+            android:textColor="@color/color_textMain"
             android:textSize="17sp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:scl_topLeftRadius="16dp"
-            app:scl_topRightRadius="16dp">
+            app:scl_topLeftRadius="19dp"
+            app:scl_topRightRadius="19dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="支付方式"
                 android:textColor="@color/color_textMain"
-                android:textSize="16sp"
+                android:textSize="15sp"
+                android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
@@ -49,6 +50,7 @@
                 android:paddingTop="10dp"
                 android:paddingRight="16dp"
                 android:paddingBottom="10dp"
+                android:layout_marginEnd="6dp"
                 android:src="@mipmap/ic_close_gray"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
@@ -66,8 +68,8 @@
                 android:id="@+id/ll_money"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:layout_marginBottom="40dp"
+                android:layout_marginTop="27dp"
+                android:layout_marginBottom="45dp"
                 android:gravity="center_horizontal"
                 android:orientation="vertical">
 
@@ -83,12 +85,13 @@
                         android:id="@+id/label_price_unit"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="4dp"
+                        android:layout_marginBottom="6dp"
                         android:gravity="center"
                         android:singleLine="true"
                         android:text="¥"
                         android:textColor="@color/color_textMain"
-                        android:textSize="17sp"
+                        android:textSize="21sp"
+                        android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="@+id/tv_price"
                         app:layout_constraintStart_toStartOf="parent" />
 
@@ -101,7 +104,8 @@
                         android:singleLine="true"
                         android:text="0"
                         android:textColor="@color/color_textMain"
-                        android:textSize="35sp"
+                        android:textSize="38sp"
+                        android:textStyle="bold"
                         app:layout_constraintStart_toEndOf="@+id/label_price_unit"
                         app:layout_constraintTop_toTopOf="parent"
                         tools:text="258" />
@@ -113,7 +117,7 @@
                 android:id="@+id/rv_recharge"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="47dp"
+                android:layout_marginTop="52dp"
                 android:visibility="gone"
                 app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                 app:spanCount="3"
@@ -134,8 +138,7 @@
                 android:id="@+id/tv_tip"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginStart="15dp"
                 android:text="请选择支付方式："
                 android:textColor="@color/color_999999"
                 android:textSize="12sp" />
@@ -157,22 +160,22 @@
                 android:id="@+id/ll_vqu_wechat_pay"
                 android:layout_width="match_parent"
                 android:layout_height="49dp"
-                android:layout_marginLeft="12dp"
+                android:layout_marginLeft="15dp"
                 android:layout_marginTop="15dp"
-                android:layout_marginRight="12dp"
+                android:layout_marginRight="15dp"
                 android:layout_marginBottom="8dp"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:paddingLeft="12dp"
-                android:paddingRight="12dp"
-                app:srl_layoutRadius="6dp"
-                app:srl_solidColor="@color/color_F7F8FA">
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                app:srl_layoutRadius="12dp"
+                app:srl_solidColor="@color/color_F5F5F5">
 
 
                 <ImageView
                     android:id="@+id/iv_wechat_type"
-                    android:layout_width="19dp"
-                    android:layout_height="19dp"
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
                     android:layout_centerVertical="true"
                     android:src="@mipmap/ic_common_vqu_pay_dialog_wechat_logo" />
 
@@ -180,11 +183,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:layout_marginStart="7dp"
+                    android:layout_marginStart="8dp"
                     android:layout_toEndOf="@+id/iv_wechat_type"
                     android:gravity="center_vertical"
                     android:text="@string/common_vqu_wechat_pay"
-                    android:textColor="@color/color_222222"
+                    android:textColor="@color/color_textMain"
                     android:textSize="14sp" />
 
                 <CheckBox
@@ -211,21 +214,21 @@
                 android:id="@+id/ll_vqu_ali_pay"
                 android:layout_width="match_parent"
                 android:layout_height="49dp"
-                android:layout_marginLeft="12dp"
-                android:layout_marginRight="12dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
                 android:layout_marginBottom="8dp"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:paddingLeft="12dp"
-                android:paddingRight="12dp"
-                app:srl_layoutRadius="6dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                app:srl_layoutRadius="12dp"
                 app:srl_solidColor="@color/color_F7F8FA">
 
 
                 <ImageView
                     android:id="@+id/iv_ali_type"
-                    android:layout_width="19dp"
-                    android:layout_height="19dp"
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
                     android:layout_centerVertical="true"
                     android:src="@mipmap/ic_common_vqu_pay_dialog_alipay_logo" />
 
@@ -233,7 +236,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:layout_marginStart="7dp"
+                    android:layout_marginStart="8dp"
                     android:layout_toEndOf="@+id/iv_ali_type"
                     android:gravity="center_vertical"
                     android:text="@string/common_vqu_alipay_pay"
@@ -265,26 +268,27 @@
         <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
             android:id="@+id/bt_pay"
             android:layout_width="0dp"
-            android:layout_height="49dp"
-            android:layout_marginLeft="37.5dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="37.5dp"
+            android:layout_height="46dp"
+            android:layout_marginLeft="36dp"
+            android:layout_marginTop="19dp"
+            android:layout_marginRight="36dp"
             android:gravity="center"
             android:text="确认支付"
-            android:textColor="@color/color_652906"
+            android:textColor="@color/color_FFEEDA"
             android:textSize="17sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ll_pay_way"
-            app:stv_endColor="@color/color_EEB090"
+            app:stv_endColor="@color/color_272727"
             app:stv_layoutRadius="12dp"
-            app:stv_startColor="@color/color_FADCC0" />
+            app:stv_startColor="@color/color_505050" />
 
         <TextView
             android:id="@+id/tv_agreement"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="36dp"
             android:text="开通即同意《鹊娘会员协议》"
             android:textColor="@color/color_999999"
             android:textSize="12sp"

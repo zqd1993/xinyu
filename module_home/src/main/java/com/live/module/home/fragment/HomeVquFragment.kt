@@ -363,7 +363,7 @@ class HomeVquFragment :
 
 
                     override fun updateDrawState(ds: TextPaint) {
-                        ds.setColor(resources.getColor(R.color.color_7C69FE)) //设置颜色
+                        ds.setColor(resources.getColor(R.color.color_5FBCFE)) //设置颜色
                         ds.setUnderlineText(false) //去掉下划线
                     }
 
@@ -387,7 +387,7 @@ class HomeVquFragment :
                     Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
                 )
                 CommonHintDialog()
-                    .setTitle("")
+                    .setTitle("温馨提示")
                     .setContent(builder)
                     .setSingleButton(true)
                     .setContentSize(15)

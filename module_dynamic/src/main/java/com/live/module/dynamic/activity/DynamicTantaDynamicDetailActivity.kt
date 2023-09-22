@@ -103,7 +103,8 @@ class DynamicTantaDynamicDetailActivity :
     var llBeckoning: ShapeLinearLayout? = null
     var llCommentCount: LinearLayout? = null
     var llComment: LinearLayout? = null
-    var clLike: ConstraintLayout? = null
+    var clLike: View? = null
+    var commentTopSll: View? = null
     var page: Int = 1
     var commentId: Int = 0
     var curPos: Int = 0
@@ -163,6 +164,7 @@ class DynamicTantaDynamicDetailActivity :
         llCommentCount = dynamicDetailView?.findViewById(R.id.ll_comment_count)
         llComment = dynamicDetailView?.findViewById(R.id.ll_comment)
         clLike = dynamicDetailView?.findViewById(R.id.cl_like)
+        commentTopSll = dynamicDetailView?.findViewById(R.id.comment_top_sll)
         if (!myAdapter.hasHeaderLayout()) {
             myAdapter.addHeaderView(dynamicDetailView!!)
         }
@@ -398,7 +400,7 @@ class DynamicTantaDynamicDetailActivity :
                 } else {
                     if (it.data.total > 0) {
                         commentCount = it.data.total
-                        llCommentCount?.visible()
+//                        llCommentCount?.visible()
                         tvCommentCount?.text = "评论(" + it.data.total.toString() + ")"
                     } else {
                         llCommentCount?.gone()
@@ -470,10 +472,7 @@ class DynamicTantaDynamicDetailActivity :
             when (it.code) {
                 0 -> {
                     isBeckon = 1
-                    tvBottom?.setTextColor(ContextCompat.getColor(context, R.color.color_7C69FE))
-                    llBeckoning?.setStartColor(ContextCompat.getColor(context,
-                        R.color.color_14BFB6FF),
-                        ContextCompat.getColor(context, R.color.color_147C69FE))
+                    tvBottom?.setTextColor(ContextCompat.getColor(context, R.color.color_8EC0EA))
                     tvBottom?.text = context.getString(R.string.dynamic_chat)
                     ivBeckoning?.setImageResource(R.mipmap.resources_tanta_main_home_chat)
                 }
@@ -500,6 +499,11 @@ class DynamicTantaDynamicDetailActivity :
             commentList.clear()
         }
         commentList.addAll(list)
+        if(commentList.size > 0){
+            commentTopSll?.visibility = View.VISIBLE
+        } else {
+            commentTopSll?.visibility = View.GONE
+        }
         myAdapter.setList(commentList)
     }
 
@@ -673,27 +677,14 @@ class DynamicTantaDynamicDetailActivity :
         ivBeckoning?.setImageResource(if (bean.isBeckon == 1) R.mipmap.resources_tanta_main_home_chat else R.mipmap.resources_tanta_home_like)
         if (bean.isBeckon == 1) {
             tvBottom?.text = ResUtils.getString(R.string.dynamic_chat)
-            tvBottom?.setTextColor(ResUtils.getColor(R.color.color_FF7AC2))
-            llBeckoning?.setStartColor(
-                ContextCompat.getColor(context, R.color.color_FFFFFF),
-                ContextCompat.getColor(context, R.color.color_FFFFFF)
-            )
-            llBeckoning?.setStrokeWidthAndColor(ContextCompat.getColor(context,
-                R.color.color_FF7AC2), UiUtils.dip2px(context,1.0f))
-
-
+            tvBottom?.setTextColor(ResUtils.getColor(R.color.color_8EC0EA))
         } else {
-            tvBottom?.setTextColor(ContextCompat.getColor(context, R.color.color_FF3826))
-            llBeckoning?.setStartColor(
-                ContextCompat.getColor(context, R.color.color_FF7AC2),
-                ContextCompat.getColor(context, R.color.color_FF7AC2)
-            )
             if (bean.user.gender == 1) {
                 tvBottom?.text = context.getString(R.string.common_vqu_accost)
             } else {
                 tvBottom?.text = context.getString(R.string.common_vqu_beckoning)
             }
-            tvBottom?.setTextColor(ContextCompat.getColor(context, R.color.color_FFFFFF))
+            tvBottom?.setTextColor(ContextCompat.getColor(context, R.color.color_FEC24F))
 
         }
 

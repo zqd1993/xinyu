@@ -377,7 +377,7 @@ class AgoraTantaVideo2Activity :
 
         mBinding.vquIvCallHead.vquLoadRoundImage(
             avatar,
-            dp2px(10f),
+            dp2px(25f),
             R.mipmap.ic_common_head_def
         )
 

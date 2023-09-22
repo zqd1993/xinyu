@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/color_FFFFFF"
+    android:background="@color/color_F5F5F5"
     android:fitsSystemWindows="true"
     android:orientation="vertical">
 
@@ -16,15 +16,17 @@
         android:id="@+id/cl_anchor_vqu_rate_setting_chat_price_parent"
         android:layout_width="match_parent"
         android:layout_height="54dp"
-        android:paddingLeft="12dp"
-        android:paddingRight="12dp">
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/white">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="消息价格"
-            android:textColor="@color/color_273145"
-            android:textSize="14sp"
+            android:textColor="@color/color_textMain"
+            android:textSize="15sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -34,11 +36,10 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:drawableRight="@mipmap/ic_arrow_small_right_grey"
-            android:drawablePadding="7.5dp"
+            android:drawablePadding="14dp"
             android:gravity="center_vertical"
-            android:paddingLeft="7.5dp"
-            android:textColor="@color/color_A3AABE"
-            android:textSize="12sp"
+            android:textColor="@color/color_999999"
+            android:textSize="13sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -46,8 +47,8 @@
 
         <View
             android:layout_width="0dp"
-            android:layout_height="0.5dp"
-            android:background="@color/color_F5F4F7"
+            android:layout_height="1dp"
+            android:background="@color/color_F5F5F5"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent" />
@@ -57,8 +58,9 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="54dp"
-        android:paddingLeft="12dp"
-        android:paddingRight="12dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:background="@color/white"
         android:visibility="gone">
 
 
@@ -67,7 +69,7 @@
             android:layout_height="wrap_content"
             android:text="视频接听"
             android:textColor="@color/color_273145"
-            android:textSize="14sp"
+            android:textSize="15sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -84,8 +86,8 @@
 
         <View
             android:layout_width="0dp"
-            android:layout_height="0.5dp"
-            android:background="@color/color_F5F4F7"
+            android:layout_height="1dp"
+            android:background="@color/color_F5F5F5"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent" />
@@ -95,15 +97,16 @@
         android:id="@+id/cl_anchor_vqu_rate_setting_voice_price_parent"
         android:layout_width="match_parent"
         android:layout_height="54dp"
-        android:paddingLeft="12dp"
-        android:paddingRight="12dp">
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:background="@color/white">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="语音价格设置"
-            android:textColor="@color/color_273145"
-            android:textSize="14sp"
+            android:textColor="@color/color_textMain"
+            android:textSize="15sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -113,11 +116,10 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:drawableRight="@mipmap/ic_arrow_small_right_grey"
-            android:drawablePadding="7.5dp"
+            android:drawablePadding="14dp"
             android:gravity="center_vertical"
-            android:paddingLeft="7.5dp"
-            android:textColor="@color/color_A3AABE"
-            android:textSize="12sp"
+            android:textColor="@color/color_999999"
+            android:textSize="13sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -125,8 +127,8 @@
 
         <View
             android:layout_width="0dp"
-            android:layout_height="0.5dp"
-            android:background="@color/color_F5F4F7"
+            android:layout_height="1dp"
+            android:background="@color/color_F5F5F5"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent" />
@@ -136,15 +138,16 @@
         android:id="@+id/cl_anchor_vqu_rate_setting_video_price_parent"
         android:layout_width="match_parent"
         android:layout_height="54dp"
-        android:paddingLeft="12dp"
-        android:paddingRight="12dp">
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:background="@color/white">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="视频价格设置"
-            android:textColor="@color/color_273145"
-            android:textSize="14sp"
+            android:textColor="@color/color_textMain"
+            android:textSize="15sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -154,11 +157,10 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:drawableRight="@mipmap/ic_arrow_small_right_grey"
-            android:drawablePadding="7.5dp"
+            android:drawablePadding="14dp"
             android:gravity="center_vertical"
-            android:paddingLeft="7.5dp"
-            android:textColor="@color/color_A3AABE"
-            android:textSize="12sp"
+            android:textColor="@color/color_999999"
+            android:textSize="13sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -166,27 +168,31 @@
 
         <View
             android:layout_width="0dp"
-            android:layout_height="0.5dp"
-            android:background="@color/color_F5F4F7"
+            android:layout_height="1dp"
+            android:background="@color/color_F5F5F5"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="6dp"
-        android:background="@color/color_F7F8FA" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="28dp"
+        android:textSize="14sp"
+        android:textColor="@color/color_textMain"
+        android:text="收费设置说明" />
 
     <TextView
         android:id="@+id/tv_skill_setting_rates_explain"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="14dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginRight="14dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="16dp"
         android:letterSpacing="0.1"
-        android:lineSpacingExtra="1dp"
+        android:lineSpacingExtra="1.3dp"
         android:textColor="@color/color_A3AABE"
         android:textSize="12sp" />
 </LinearLayout>

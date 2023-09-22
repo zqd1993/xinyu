@@ -37,7 +37,10 @@ class AuthVquCenterMenuAdapter :
         } else {
             tvStatus.text = "去认证"
             ivIcon.isSelected = false
-            tvStatus.solidColor = ResUtils.getColor(R.color.color_FF7AC2)
+            tvStatus.setStartColor(
+                ResUtils.getColor(R.color.color_6BBFFD),
+                ResUtils.getColor(R.color.color_4CB6FF)
+            )
         }
 
     }

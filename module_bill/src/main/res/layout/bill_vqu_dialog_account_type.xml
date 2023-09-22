@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="@color/transparent"
+    android:orientation="vertical">
 
 
     <com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="26dp"
+        android:layout_marginEnd="26dp"
         android:orientation="vertical"
         app:sll_solidColor="@color/color_FFFFFF"
-        app:sll_topLeftRadius="20dp"
-        app:sll_topRightRadius="20dp">
+        app:sll_layoutRadius="12dp">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_vqu_bill_account_type_list"
@@ -19,13 +22,21 @@
             android:layout_height="wrap_content"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
-        <TextView
-            android:id="@+id/tv_bill_vqu_account_type_cancel"
-            android:layout_width="match_parent"
-            android:layout_height="49dp"
-            android:gravity="center"
-            android:text="取消"
-            android:textColor="@color/color_A3AABE"
-            android:textSize="15sp" />
     </com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout>
-</RelativeLayout>
+
+    <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
+        android:id="@+id/tv_bill_vqu_account_type_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="47dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginEnd="26dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginBottom="33dp"
+        app:stv_layoutRadius="12dp"
+        android:gravity="center"
+        app:stv_solidColor="@color/color_FFFFFF"
+        android:text="取消"
+        android:textColor="@color/color_999999"
+        android:textStyle="bold"
+        android:textSize="14sp" />
+</LinearLayout>

@@ -55,21 +55,18 @@
                 android:layout_marginRight="12dp"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:paddingLeft="6.5dp"
-                android:paddingRight="10dp"
+                android:paddingLeft="2dp"
+                android:paddingRight="5dp"
                 app:layout_constraintBottom_toBottomOf="@+id/rv_small"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/rv_small"
-                app:sll_bottomLeftRadius="50dp"
-                app:sll_bottomRightRadius="50dp"
-                app:sll_solidColor="@color/color_FF7AC2"
-                app:sll_topLeftRadius="2dp"
-                app:sll_topRightRadius="50dp">
+                app:sll_layoutRadius="50dp"
+                app:sll_solidColor="@color/color_59BAFE">
 
                 <ImageView
                     android:id="@+id/iv_play"
-                    android:layout_width="18dp"
-                    android:layout_height="18dp"
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
                     android:src="@mipmap/ic_tanta_info_stop" />
 
                 <ImageView
@@ -157,8 +154,8 @@
 
                     <com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout
                         android:id="@+id/ll_state"
-                        android:layout_width="37dp"
-                        android:layout_height="15dp"
+                        android:layout_width="42dp"
+                        android:layout_height="17dp"
                         android:layout_marginLeft="8dp"
                         android:gravity="center"
                         app:layout_constraintBottom_toBottomOf="@+id/tv_name"
@@ -243,9 +240,11 @@
                         app:layout_constraintRight_toRightOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         app:sll_layoutRadius="8dp"
-                        app:sll_solidColor="@color/color_FF7AC2">
+                        app:sll_endColor="@color/color_6BBFFD"
+                        app:sll_startColor="@color/color_4CB6FF">
 
                         <ImageView
+                            android:id="@+id/icon_attention"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:src="@mipmap/info_tanta_attention" />
@@ -262,7 +261,7 @@
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
-                <RelativeLayout
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/rl_sign"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -278,6 +277,8 @@
                         android:layout_marginTop="6dp"
                         android:padding="12dp"
                         android:textColor="@color/color_666666"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
                         app:stv_layoutRadius="12dp"
                         app:stv_solidColor="@color/color_F5F5F5"
                         tools:text="在项目伊始时做一个用户研究的作用好过于在项目落地后再对50个用户进行测试~" />
@@ -285,9 +286,12 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginEnd="4dp"
                         android:layout_alignParentRight="true"
-                        android:src="@mipmap/info_tanta_img_sign" />
-                </RelativeLayout>
+                        android:src="@mipmap/info_tanta_img_sign"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/cl_dynamic"
@@ -314,8 +318,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="2dp"
                         android:text="(15)"
-                        android:textColor="@color/color_A3AABE"
-                        android:textSize="10sp"
+                        android:textColor="@color/color_363D50"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="@+id/tv1"
                         app:layout_constraintLeft_toRightOf="@+id/tv1"
                         app:layout_constraintTop_toTopOf="@+id/tv1" />
@@ -507,11 +512,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginLeft="16dp"
-                android:layout_marginRight="12dp"
+                android:layout_marginRight="24dp"
                 android:layout_weight="1"
                 android:gravity="center"
-                app:sll_layoutRadius="12dp"
-                app:sll_solidColor="@color/color_FF7AC2">
+                app:sll_layoutRadius="8dp"
+                app:sll_endColor="@color/color_6BBFFD"
+                app:sll_startColor="@color/color_4CB6FF">
 
                 <ImageView
                     android:id="@+id/iv_heart"
@@ -523,26 +529,58 @@
                     android:id="@+id/tv_heart_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="6dp"
+                    android:layout_marginLeft="10dp"
                     android:text="搭讪"
                     android:textColor="@color/white"
                     android:textSize="17sp" />
             </com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout>
 
-            <ImageView
-                android:id="@+id/iv_video"
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="12dp"
-                android:src="@mipmap/ic_tanta_info_video" />
+                android:layout_marginRight="34dp"
+                android:orientation="vertical"
+                android:gravity="center">
 
-            <ImageView
+                <ImageView
+                    android:id="@+id/iv_video"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/ic_tanta_info_video" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_size_2"
+                    android:text="通话"
+                    android:textSize="12sp"
+                    android:textColor="@color/black" />
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:id="@+id/iv_chat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="16dp"
-                android:src="@mipmap/ic_tanta_info_message"
-                android:visibility="gone" />
+                android:layout_marginRight="27dp"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/ic_tanta_info_message" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_size_2"
+                    android:text="私聊"
+                    android:textSize="12sp"
+                    android:textColor="@color/black" />
+
+            </LinearLayout>
 
             <!--            <ImageView-->
             <!--                android:id="@+id/iv_like"-->
@@ -570,7 +608,8 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="@+id/ll_bottom"
             app:stv_layoutRadius="12dp"
-            app:stv_solidColor="@color/color_FF7AC2" />
+            app:sll_endColor="@color/color_6BBFFD"
+            app:sll_startColor="@color/color_4CB6FF" />
     </FrameLayout>
 
 
@@ -702,7 +741,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/white"
-        >
+        android:visibility="gone">
 
         <ImageView
             android:layout_width="wrap_content"

@@ -93,13 +93,13 @@ open class InfoVquPersonalInfoActivity :
         mBinding.viewBg.alpha = 0f
         mBinding.nes.setOnScrollChangeListener { v, scrollX, scrollY, oldScrollX, oldScrollY ->
             mBinding.viewBg.alpha = scrollY / 600f
-            if (scrollY > 300) {
-                mBinding.ivBack.setImageResource(R.mipmap.ic_vqu_info_back_black)
-                mBinding.ivMore.setImageResource(R.mipmap.ic_vqu_info_more_black)
-            } else {
-                mBinding.ivBack.setImageResource(R.mipmap.ic_vqu_info_back_white)
-                mBinding.ivMore.setImageResource(R.mipmap.ic_vqu_info_more_white)
-            }
+//            if (scrollY > 300) {
+//                mBinding.ivBack.setImageResource(R.mipmap.ic_vqu_info_back_black)
+//                mBinding.ivMore.setImageResource(R.mipmap.ic_vqu_info_more_black)
+//            } else {
+//                mBinding.ivBack.setImageResource(R.mipmap.ic_vqu_info_back_white)
+//                mBinding.ivMore.setImageResource(R.mipmap.ic_vqu_info_more_white)
+//            }
         }
         mBinding.ivBack.setViewClickListener { finish() }
         mBinding.ivBackBlocked.setViewClickListener { finish() }
@@ -274,7 +274,7 @@ open class InfoVquPersonalInfoActivity :
                         CommonHintDialog()
                             .setContentSize(15)
                             .setContentGravity(Gravity.CENTER)
-                            .setTitle("提示")
+                            .setTitle("拉黑提示")
                             .setContent("拉黑后，你将不再收到对方的消息，并且你们互相看不到对方的动态更新。可以在“设置-黑名单”中解除。")
                             .setLeftText("取消")
                             .setRightText("确定")
@@ -321,10 +321,12 @@ open class InfoVquPersonalInfoActivity :
             if ("add" == it.data.action) {//关注
                 "关注成功".toast()
                 mBinding.llAttention.solidColor = Color.parseColor("#CCCCCC")
+                mBinding.iconAttention.visibility = View.GONE
                 mBinding.tvAttention.text = "已关"
             } else {
                 "已取消关注".toast()
                 mBinding.llAttention.solidColor = Color.parseColor("#FF7AC2")
+                mBinding.iconAttention.visibility = View.VISIBLE
                 mBinding.tvAttention.text = "关注"
             }
         })
@@ -504,9 +506,11 @@ open class InfoVquPersonalInfoActivity :
             mBinding.llAttention.visible()
             if (info.isFollow == 1) {
                 mBinding.llAttention.solidColor = Color.parseColor("#CCCCCC")
+                mBinding.iconAttention.visibility = View.GONE
                 mBinding.tvAttention.text = "已关"
             } else {
                 mBinding.llAttention.solidColor = Color.parseColor("#FF7AC2")
+                mBinding.iconAttention.visibility = View.VISIBLE
                 mBinding.tvAttention.text = "关注"
             }
             mBinding.llAttention.setViewClickListener { vquLike() }

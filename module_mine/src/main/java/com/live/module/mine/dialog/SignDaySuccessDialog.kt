@@ -49,7 +49,7 @@ class SignDaySuccessDialog :
             mBinding.tvMineDialogSignDayAward.text = data.title
 
 
-            val count = "已连续签到 <font color=\'#FE8A34\'>${data.number}</font> 天奖励"
+            val count = "已连续签到 <font color=\'#FFEE31\'>${data.number}</font> 天奖励"
 
             val fromHtml = Html.fromHtml(count)
 

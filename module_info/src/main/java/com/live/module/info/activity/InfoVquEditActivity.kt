@@ -1297,7 +1297,7 @@ class InfoVquEditActivity : BaseActivity<InfoTantaActivityEditBinding, InfoEditV
         vquPicker?.getDialogContainerLayout()?.setLayoutParams(layoutParams)
         val parentLayout = vquPicker?.getDialogContainerLayout()?.getParent() as FrameLayout
         val parentParams = parentLayout.layoutParams as FrameLayout.LayoutParams
-        parentLayout.setBackgroundResource(R.drawable.shape_white_top_8_bg)
+        parentLayout.setBackgroundResource(R.drawable.bg_radius_white_19)
         parentParams.leftMargin = 0
         parentParams.rightMargin = 0
         parentParams.bottomMargin = 0

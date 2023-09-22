@@ -109,27 +109,29 @@ class BillTantaRechargeActivity :
             this@BillTantaRechargeActivity,
             UmUtils.ENTERRECHARGEPAGE
         )
-        mBinding.tbTantaBillBar.toolbar.initClose(
-            getString(R.string.vqu_bill_balance),
-            getString(R.string.vqu_bill_detail),
-            onBack = {
-                finish()
-            },
-            backImg = R.mipmap.ic_back_white,
-            onClickRight = {
-                ARouter.getInstance().build(RouteUrl.Bill.BillTantaDetailActivity).navigation()
-            },
-            backgroundColor = R.color.transparent,
-            rightColor = R.color.white,
-        )
-        mBinding.tbTantaBillBar.toolbar.findViewById<ShapeTextView>(R.id.tv_right).solidColor =
-            ResUtils.getColor(R.color.transparent)
-        mBinding.tbTantaBillBar.tvTitle.setTextColor(ResUtils.getColor(R.color.white))
-        val height = BarUtils.getStatusBarHeight()
-        val layoutParams =
-            mBinding.tbTantaBillBar.toolbar.layoutParams as ViewGroup.MarginLayoutParams
-        layoutParams.topMargin += height
-
+//        mBinding.tbTantaBillBar.toolbar.initClose(
+//            getString(R.string.vqu_bill_balance),
+//            getString(R.string.vqu_bill_detail),
+//            onBack = {
+//                finish()
+//            },
+//            backImg = R.mipmap.ic_back_white,
+//            onClickRight = {
+//                ARouter.getInstance().build(RouteUrl.Bill.BillTantaDetailActivity).navigation()
+//            },
+//            backgroundColor = R.color.transparent,
+//            rightColor = R.color.white,
+//        )
+//        mBinding.tbTantaBillBar.toolbar.findViewById<ShapeTextView>(R.id.tv_right).solidColor =
+//            ResUtils.getColor(R.color.transparent)
+//        mBinding.tbTantaBillBar.tvTitle.setTextColor(ResUtils.getColor(R.color.white))
+//        val height = BarUtils.getStatusBarHeight()
+//        val layoutParams =
+//            mBinding.tbTantaBillBar.toolbar.layoutParams as ViewGroup.MarginLayoutParams
+//        layoutParams.topMargin += height
+        mBinding.tvRight.clickDelay{
+            ARouter.getInstance().build(RouteUrl.Bill.BillTantaDetailActivity).navigation()
+        }
         mBinding.stvBillTantaRechargePay.clickDelay {
 
             clickPay()

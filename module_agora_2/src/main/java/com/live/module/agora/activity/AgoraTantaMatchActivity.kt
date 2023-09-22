@@ -11,6 +11,9 @@ import android.view.KeyEvent
 import android.view.MotionEvent
 import android.view.View
 import android.view.animation.AccelerateDecelerateInterpolator
+import android.view.animation.Animation
+import android.view.animation.LinearInterpolator
+import android.view.animation.RotateAnimation
 import android.widget.ImageView
 import androidx.activity.viewModels
 import androidx.core.content.ContextCompat
@@ -51,7 +54,11 @@ import io.reactivex.Flowable
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
-import kotlinx.coroutines.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import java.util.concurrent.TimeUnit
@@ -491,6 +498,12 @@ class AgoraTantaMatchActivity :
         })
         tantaRvMatchRecord.layoutManager = layoutManager
 
+        val rotateAnimation = RotateAnimation(0f, 359f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f)
+        rotateAnimation.duration = 2000
+        rotateAnimation.repeatCount = Animation.INFINITE
+        rotateAnimation.fillAfter = true
+        rotateAnimation.interpolator = LinearInterpolator()
+        tantaMatchAnimBg.startAnimation(rotateAnimation)
 
         tantaSetAnimation()
     }

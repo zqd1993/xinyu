@@ -22,6 +22,7 @@
         android:singleLine="true"
         android:textColor="@android:color/black"
         android:textSize="19sp"
+        android:textStyle="bold"
         tools:text="居中显示居中显示" />
 
     <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
@@ -37,7 +38,8 @@
         android:paddingRight="12dp"
         android:textColor="@color/white"
         android:textSize="14sp"
-        app:stv_solidColor="@color/color_FF7AC2"
+        app:stv_startColor="@color/color_6BBFFD"
+        app:stv_endColor="@color/color_4CB6FF"
         tools:text="右边" />
 
 </androidx.appcompat.widget.Toolbar>

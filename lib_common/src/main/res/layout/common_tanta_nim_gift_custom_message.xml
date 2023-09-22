@@ -9,10 +9,10 @@
         android:id="@+id/ll_left"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:sll_solidColor="@color/color_F5F5F5"
+        app:sll_solidColor="@color/white"
         app:sll_bottomLeftRadius="12dp"
         app:sll_bottomRightRadius="12dp"
-        android:paddingLeft="14dp"
+        android:paddingLeft="12dp"
         app:sll_topRightRadius="12dp"
         android:visibility="gone"
         android:gravity="center_vertical"
@@ -21,14 +21,13 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="收到礼物"
-                android:textColor="@color/color_222222"
+                android:textColor="@color/black"
                 android:textSize="16sp" />
 
             <TextView
@@ -36,19 +35,19 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:textColor="#FF7AC2"
-                android:textSize="13sp"
+                android:textColor="@color/color_5FBCFE"
+                android:textSize="12sp"
                 tool:text="一见钟情x1" />
         </LinearLayout>
 
 
         <FrameLayout
-            android:layout_width="88dp"
-            android:layout_height="77dp"
-            android:paddingStart="21dp"
-            android:paddingTop="10dp"
-            android:paddingEnd="10dp"
-            android:paddingBottom="10dp">
+            android:layout_width="61dp"
+            android:layout_height="61dp"
+            android:paddingStart="12dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="12dp"
+            android:paddingBottom="8dp">
 
 
             <ImageView
@@ -66,22 +65,22 @@
         android:id="@+id/ll_right"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:sll_solidColor="@color/color_FF7AC2"
+        app:sll_solidColor="@color/color_5FBCFE"
         app:sll_bottomLeftRadius="12dp"
-        app:sll_topRightRadius="12dp"
+        app:sll_topLeftRadius="12dp"
         android:visibility="gone"
-        android:paddingRight="14dp"
+        android:paddingRight="12dp"
         app:sll_bottomRightRadius="12dp"
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
         <FrameLayout
-            android:layout_width="88dp"
-            android:layout_height="77dp"
+            android:layout_width="61dp"
+            android:layout_height="61dp"
             android:paddingStart="10dp"
-            android:paddingTop="10dp"
-            android:paddingEnd="21dp"
-            android:paddingBottom="10dp">
+            android:paddingTop="8dp"
+            android:paddingEnd="14dp"
+            android:paddingBottom="8dp">
 
             <ImageView
                 android:id="@+id/sv_gift_logo"
@@ -94,7 +93,6 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
             android:orientation="vertical">
 
             <TextView
@@ -102,7 +100,7 @@
                 android:layout_height="wrap_content"
                 android:text="送出礼物"
                 android:textColor="@color/white"
-                android:textSize="14sp" />
+                android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/tv_gift_name"
@@ -110,7 +108,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:textColor="#FBE84C"
-                android:textSize="11sp"
+                android:textSize="12sp"
                 tool:text="一见钟情x1" />
         </LinearLayout>
 

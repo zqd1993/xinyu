@@ -4,8 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginLeft="12dp"
-    android:layout_marginRight="12dp"
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="15dp"
+    android:layout_marginBottom="7dp"
     android:background="@color/color_FFFFFF"
     app:cardCornerRadius="10dp"
     app:cardElevation="1dp"
@@ -14,8 +15,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="12dp"
-        android:paddingRight="12dp">
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -31,10 +32,10 @@
                 android:id="@+id/tv_hello_template_name"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="12dp"
+                android:layout_marginRight="17dp"
                 android:ellipsize="end"
                 android:singleLine="true"
-                android:textColor="@color/color_273145"
+                android:textColor="@color/color_textMain"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
@@ -47,7 +48,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:drawableLeft="@drawable/vqu_selector_tick"
-                android:drawablePadding="4dp"
+                android:drawablePadding="9dp"
+                android:textColor="@color/color_textMain"
+                android:textSize="@dimen/text_size_13"
                 android:text="@string/anchor_vqu_use_this_template"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
@@ -55,9 +58,9 @@
 
             <ImageView
                 android:id="@+id/iv_hello_template_delete"
-                android:layout_width="14dp"
-                android:layout_height="14dp"
-                android:layout_marginRight="12dp"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_marginRight="14dp"
                 android:src="@mipmap/ic_vqu_delete_bin"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintRight_toLeftOf="@id/cb_hello_template_use"
@@ -65,8 +68,8 @@
 
             <ImageView
                 android:id="@+id/iv_hello_template_edit"
-                android:layout_width="14dp"
-                android:layout_height="14dp"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
                 android:layout_marginRight="12dp"
                 android:src="@mipmap/ic_vqu_eidt_pan"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -77,8 +80,8 @@
         <View
             android:id="@+id/v_line"
             android:layout_width="0dp"
-            android:layout_height="0.5dp"
-            android:background="#F5F4F7"
+            android:layout_height="1dp"
+            android:background="@color/color_F5F5F5"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/cl_hello_template_title_parent" />
@@ -87,9 +90,9 @@
             android:id="@+id/tv_hello_template_desc"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:textColor="@color/color_273145"
-            android:textSize="12sp"
+            android:layout_marginTop="15dp"
+            android:textColor="@color/color_textMain"
+            android:textSize="13sp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/v_line"
@@ -100,7 +103,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:paddingBottom="20dp"
+            android:paddingBottom="19dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_hello_template_desc">
@@ -145,7 +148,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toRightOf="@id/fl_hello_template_video_parent"
                 app:sll_layoutRadius="11dp"
-                app:sll_solidColor="@color/color_FF7AC2">
+                app:sll_solidColor="@color/color_5FBCFE">
 
                 <ImageView
                     android:layout_width="18dp"
@@ -159,7 +162,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="6dp"
+                    android:layout_marginLeft="7dp"
                     android:src="@mipmap/ic_tanta_achor_voice_wave" />
 
                 <TextView
@@ -167,7 +170,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right|center_vertical"
-                    android:layout_marginLeft="6dp"
+                    android:layout_marginLeft="7dp"
                     android:layout_marginRight="8dp"
                     android:gravity="center"
                     android:textColor="@color/white"
@@ -179,6 +182,7 @@
                 android:id="@+id/iv_hello_template_status"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dp_15"
                 android:src="@mipmap/ic_vqu_anchor_hello_status_checking"
                 android:visibility="gone"
                 app:layout_constraintBottom_toBottomOf="parent"

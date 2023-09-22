@@ -34,17 +34,17 @@
 
     <com.mshy.VInterestSpeed.common.ui.view.ShapeConstraintLayout
         android:id="@+id/scl_auth_vqu_avatar_img_parent"
-        android:layout_width="160dp"
-        android:layout_height="160dp"
+        android:layout_width="154dp"
+        android:layout_height="154dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="85dp"
+        android:layout_marginTop="58dp"
         app:scl_layoutRadius="12dp"
         app:scl_solidColor="@color/color_F5F5F5">
 
         <ImageView
             android:id="@+id/iv_auth_vqu_avatar_add_icon"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             android:src="@mipmap/ic_img_add"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -80,48 +80,50 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         android:gravity="center_horizontal"
         android:text="请上传本人露脸照片\n非本人头像不能通过认证哦~"
         android:textColor="@color/color_999999"
-        android:textSize="16sp" />
+        android:textSize="13sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="66dp"
+        android:layout_weight="1"
+        android:gravity="bottom"
+        android:layout_marginBottom="40dp"
         android:orientation="vertical">
 
         <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
             android:id="@+id/stv_auth_vqu_avatar_change_avatar"
             android:layout_width="match_parent"
-            android:layout_height="49dp"
-            android:layout_marginLeft="47.5dp"
-            android:layout_marginRight="47.5dp"
-            android:layout_marginBottom="15dp"
+            android:layout_height="46dp"
+            android:layout_marginLeft="36dp"
+            android:layout_marginRight="36dp"
+            android:layout_marginBottom="12dp"
             android:gravity="center"
             android:text="更换头像"
-            android:textColor="@color/color_222222"
-            android:textSize="18sp"
+            android:textColor="@color/color_textMain"
+            android:textSize="17sp"
             android:visibility="gone"
             tools:visibility="visible"
-            app:stv_endColor="@color/color_F5F5F5"
-            app:stv_layoutRadius="12dp"
-            app:stv_startColor="@color/color_F5F5F5" />
+            app:stv_endColor="@color/color_F1F1F1"
+            app:stv_layoutRadius="8dp"
+            app:stv_startColor="@color/color_F1F1F1" />
 
         <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
             android:id="@+id/stv_auth_vqu_avatar_commit"
             android:layout_width="match_parent"
-            android:layout_height="49dp"
-            android:layout_marginLeft="47.5dp"
-            android:layout_marginRight="47.5dp"
+            android:layout_height="46dp"
+            android:layout_marginLeft="36dp"
+            android:layout_marginRight="36dp"
             android:gravity="center"
             android:text="刷脸认证"
             android:textColor="@color/color_FFFFFF"
-            android:textSize="18sp"
-            app:stv_endColor="@color/color_FF7AC2"
-            app:stv_layoutRadius="12dp"
-            app:stv_startColor="@color/color_FF7AC2" />
+            android:textSize="17sp"
+            app:stv_endColor="@color/color_4CB6FF"
+            app:stv_layoutRadius="8dp"
+            app:stv_startColor="@color/color_6BBFFD" />
     </LinearLayout>
 
 

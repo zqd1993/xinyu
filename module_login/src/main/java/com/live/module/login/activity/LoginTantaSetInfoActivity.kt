@@ -103,7 +103,7 @@ class LoginTantaSetInfoActivity :
             this@LoginTantaSetInfoActivity,
             com.mshy.VInterestSpeed.common.utils.UmUtils.ENTERREGISTRATION
         )
-        mBinding.tbTantaSetInfoBar.toolbar.initClose(backImg = R.mipmap.ic_black_close) {
+        mBinding.tbTantaSetInfoBar.toolbar.initClose(backImg = R.mipmap.ic_back) {
 //            finish()
             clickClose()
         }
@@ -622,8 +622,8 @@ class LoginTantaSetInfoActivity :
 
             if (!nickname.isNullOrBlank() && avatar.isNotEmpty()) {
                 mBinding.stvLoginTantaSetInfoNext.setStartColor(
-                    ResUtils.getColor(R.color.color_FF7AC2),
-                    ResUtils.getColor(R.color.color_FF7AC2)
+                    ResUtils.getColor(R.color.color_6BBFFD),
+                    ResUtils.getColor(R.color.color_4CB6FF)
                 )
             } else {
                 mBinding.stvLoginTantaSetInfoNext.setStartColor(

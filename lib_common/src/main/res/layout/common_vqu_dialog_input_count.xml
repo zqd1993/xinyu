@@ -20,21 +20,21 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginLeft="14dp"
-            android:layout_marginTop="14dp"
+            android:layout_marginTop="21dp"
             android:layout_marginRight="20dp"
-            android:textColor="@color/color_273145"
+            android:textColor="@color/black"
             android:textSize="19sp"
             android:textStyle="bold"
             tools:text="自定义常用语" />
 
         <com.mshy.VInterestSpeed.common.ui.view.ShapeRelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="82dp"
+            android:layout_height="115dp"
             android:layout_marginLeft="14dp"
             android:layout_marginTop="20dp"
             android:layout_marginRight="14dp"
             app:srl_layoutRadius="6dp"
-            app:srl_solidColor="@color/color_FAFAFC">
+            app:srl_solidColor="@color/color_F5F5F5">
 
             <EditText
                 android:id="@+id/tv_common_dialog_message_content"
@@ -46,13 +46,13 @@
                 android:lineSpacingExtra="2dp"
                 android:maxHeight="280dp"
                 android:maxLength="50"
-                android:paddingLeft="12dp"
+                android:paddingLeft="15dp"
                 android:paddingTop="15dp"
-                android:paddingRight="12dp"
+                android:paddingRight="15dp"
                 android:paddingBottom="15dp"
                 android:singleLine="true"
-                android:textColor="@color/color_273145"
-                android:textColorHint="@color/color_A3AABE"
+                android:textColor="@color/black"
+                android:textColorHint="@color/color_BBBBBB"
                 android:textSize="15sp"
                 tools:hint="自定义常用语" />
 
@@ -63,10 +63,10 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginRight="6dp"
+                android:layout_marginRight="17dp"
                 android:layout_marginBottom="10dp"
                 android:text="0/50"
-                android:textColor="@color/color_A3AABE"
+                android:textColor="@color/color_BBBBBB"
                 android:textSize="12sp" />
 
         </com.mshy.VInterestSpeed.common.ui.view.ShapeRelativeLayout>
@@ -88,10 +88,10 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/cancel"
-                android:textColor="@color/color_222222"
+                android:textColor="@color/black"
                 android:textSize="16sp"
                 app:stv_layoutRadius="12dp"
-                app:stv_solidColor="@color/color_F5F5F5" />
+                app:stv_solidColor="@color/color_F1F1F1" />
 
             <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
                 android:id="@+id/stv_common_dialog_message_btn_right"
@@ -105,7 +105,8 @@
                 android:text="@string/confirm"
                 android:textSize="16sp"
                 app:stv_layoutRadius="12dp"
-                app:stv_solidColor="@color/color_FF7AC2"
+                app:stv_startColor="@color/color_6BBFFD"
+                app:stv_endColor="@color/color_4CB6FF"
                 />
         </LinearLayout>
 

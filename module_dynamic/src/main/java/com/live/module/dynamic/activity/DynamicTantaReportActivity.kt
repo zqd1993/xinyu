@@ -74,8 +74,8 @@ class DynamicTantaReportActivity :
             mBinding.tvCommit.isEnabled = true
             mBinding.tvCommit.isClickable = true
             mBinding.tvCommit.setStartColor(
-                resources.getColor(R.color.color_FF7AC2),
-                resources.getColor(R.color.color_FF7AC2)
+                resources.getColor(R.color.color_6BBFFD),
+                resources.getColor(R.color.color_4CB6FF)
             )
         }
         initImg()

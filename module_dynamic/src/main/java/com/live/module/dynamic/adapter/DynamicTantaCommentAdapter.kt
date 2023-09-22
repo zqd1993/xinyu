@@ -1,6 +1,7 @@
 package com.live.module.dynamic.adapter
 
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 import com.alibaba.android.arouter.launcher.ARouter
 import com.chad.library.adapter.base.BaseQuickAdapter
@@ -27,10 +28,18 @@ class DynamicTantaCommentAdapter :
     BaseQuickAdapter<DynamicTantaCommentBean, BaseViewHolder>(R.layout.dynamic_tanta_layout_dynamic_comment_item) {
     override fun convert(holder: BaseViewHolder, item: DynamicTantaCommentBean) {
         var isLongClick: Boolean = false
-        holder.getView<ImageView>(R.id.iv_head).vquLoadCircleImage(IMAGE_URL + item.avatar,
-            R.mipmap.ic_common_head_circle_def)
+        holder.getView<ImageView>(R.id.iv_head).vquLoadCircleImage(
+            IMAGE_URL + item.avatar,
+            R.mipmap.ic_common_head_circle_def
+        )
         holder.getView<TextView>(R.id.tv_name).text = item.nickname
         holder.getView<TextView>(R.id.tv_time).text = item.createTime
+        val llRoot = holder.getView<LinearLayout>(R.id.ll_root)
+        if (holder.layoutPosition == data.size) {
+            llRoot.setBackgroundResource(R.drawable.vqu_shape_f5f5f5_bottom_r12)
+        } else {
+            llRoot.setBackgroundColor(BaseApplication.context.resources.getColor(R.color.color_F5F5F5))
+        }
         var tvContent: TextView = holder.getView<TextView>(R.id.tv_content)
         if (item.commentNickname.isNullOrEmpty()) {
             tvContent.text = item.content
@@ -43,7 +52,8 @@ class DynamicTantaCommentAdapter :
 //            tvContent.text = Html.fromHtml(content)
             val spanUtils = SpanUtils.with(tvContent)
             spanUtils.append("回复").append(item.commentNickname)
-                .setClickSpan(BaseApplication.context.resources.getColor(R.color.color_576990),
+                .setClickSpan(
+                    BaseApplication.context.resources.getColor(R.color.color_576990),
                     false
                 ) {
                     if (!isLongClick) {
@@ -57,8 +67,10 @@ class DynamicTantaCommentAdapter :
                     }
                     isLongClick = false
                 }.append(":" + item.content)
-                .setClickSpan(BaseApplication.context.resources.getColor(R.color.color_273145),
-                    false) {
+                .setClickSpan(
+                    BaseApplication.context.resources.getColor(R.color.black),
+                    false
+                ) {
                     EventBus.getDefault()
                         .post(CommentPositionEvent(item, false, holder.layoutPosition - 1))
                 }

@@ -112,15 +112,15 @@ class VipTantaCenterActivity : BaseActivity<VipTantaActivityCenterBinding, VipTa
                     mBinding.btDailyGif.text = "领取"
                     mBinding.btDailyGif.setTextColor(ResUtils.getColor(R.color.color_934800))
                     mBinding.btDailyGif.setStartColor(
-                        ResUtils.getColor(R.color.color_FDF4E9),
-                        ResUtils.getColor(R.color.color_FED288)
+                        ResUtils.getColor(R.color.color_E5D0AB),
+                        ResUtils.getColor(R.color.color_CDAF78)
                     )
                 } else {
                     mBinding.btDailyGif.text = "已领取"
                     mBinding.btDailyGif.setTextColor(resources.getColor(R.color.color_FFFFFF))
                     mBinding.btDailyGif.setStartColor(
-                        ResUtils.getColor(R.color.color_313231),
-                        ResUtils.getColor(R.color.color_313231)
+                        ResUtils.getColor(R.color.color_CCCCCC),
+                        ResUtils.getColor(R.color.color_CCCCCC)
                     )
 
                 }

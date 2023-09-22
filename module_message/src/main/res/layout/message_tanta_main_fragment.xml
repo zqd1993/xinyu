@@ -17,8 +17,8 @@
             android:layout_width="match_parent"
             android:layout_height="54dp"
             android:orientation="horizontal"
-            android:paddingStart="12dp"
-            android:paddingEnd="12dp">
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp">
 
             <com.mshy.VInterestSpeed.common.ui.view.magicindicator.MagicIndicator
                 android:id="@+id/vqu_magic_indicator"
@@ -29,18 +29,18 @@
 
             <ImageView
                 android:id="@+id/vqu_iv_friend"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_gravity="end|center_vertical"
-                android:layout_marginRight="12dp"
+                android:layout_marginRight="13dp"
                 android:layout_toLeftOf="@+id/vqu_iv_more"
                 android:src="@mipmap/resources_tanta_message_friend" />
 
             <ImageView
                 android:id="@+id/vqu_iv_more"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:layout_gravity="end|center_vertical"
@@ -54,7 +54,7 @@
         android:id="@+id/cl_notice"
         android:layout_width="match_parent"
         android:layout_height="36dp"
-        android:background="@color/color_FFF1F8">
+        android:background="@color/color_FFF8EC">
 
         <TextView
             android:id="@+id/tv_notice"
@@ -62,25 +62,26 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="12dp"
             android:text="开启系统通知权限，及时收取消息"
-            android:textColor="@color/color_222222"
+            android:textColor="@color/black"
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
         <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
-            android:layout_width="48dp"
-            android:layout_height="28dp"
+            android:layout_width="46dp"
+            android:layout_height="27dp"
             android:layout_marginLeft="12dp"
             android:text="前往"
             android:gravity="center"
-            app:stv_solidColor="@color/color_FF7AC2"
             android:textColor="@color/color_FFFFFF"
             android:textSize="12sp"
             app:stv_layoutRadius="8dp"
-            android:layout_marginRight="8dp"
+            android:layout_marginRight="12dp"
             app:layout_constraintRight_toLeftOf="@+id/iv_close"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:stv_startColor="@color/color_FFBF44"
+            app:stv_endColor="@color/color_F6AC1C"/>
 
         <ImageView
             android:id="@+id/iv_close"
@@ -88,7 +89,7 @@
             android:layout_height="wrap_content"
             android:src="@mipmap/ic_tanta_message_notice_close"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:paddingRight="12dp"
+            android:paddingRight="15dp"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
         <ImageView

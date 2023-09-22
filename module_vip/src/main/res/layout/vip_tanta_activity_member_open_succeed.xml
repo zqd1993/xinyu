@@ -21,17 +21,18 @@
             android:orientation="vertical">
 
             <ImageView
-                android:layout_width="140dp"
-                android:layout_height="140dp"
-                android:layout_marginTop="80dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="142dp"
                 android:src="@mipmap/vip_vqu_crown_yellow_big" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:text="开通成功"
-                android:textSize="20sp"
-                android:layout_marginTop="20dp"
-                android:textColor="@color/color_222222"
+                android:textSize="19sp"
+                android:layout_marginTop="21dp"
+                android:textStyle="bold"
+                android:textColor="@color/color_textMain"
                 android:layout_height="wrap_content"/>
 
             <TextView
@@ -41,23 +42,26 @@
                 android:layout_marginTop="16dp"
                 android:text="续费VIP会员成功！"
                 android:textColor="@color/color_999999"
-                android:textSize="17sp" />
+                android:textSize="13sp" />
 
             <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
                 android:id="@+id/bt_jump"
-                android:layout_width="280dp"
-                android:layout_height="49dp"
-                android:layout_marginTop="150dp"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginTop="61dp"
+                android:layout_marginStart="36dp"
+                android:layout_marginEnd="36dp"
                 android:gravity="center"
                 android:text="开启真爱之旅"
-                android:textColor="@color/color_652906"
-                android:textSize="17sp"
+                android:textColor="@color/color_FFEEDA"
+                android:textSize="16sp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/ll_pay_way"
-                app:stv_endColor="@color/color_EEB090"
-                app:stv_layoutRadius="12dp"
-                app:stv_startColor="@color/color_FADCC0" />
+                app:stv_endColor="@color/color_272727"
+                app:stv_layoutRadius="8dp"
+                app:stv_startColor="@color/color_505050" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
     </androidx.core.widget.NestedScrollView>

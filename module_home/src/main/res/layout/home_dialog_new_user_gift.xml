@@ -7,39 +7,38 @@
     android:clipChildren="false">
 
 
-    <ImageView
-        android:id="@+id/iv_mine_dialog_sign_day_bg_light"
-        android:layout_width="368dp"
-        android:layout_height="296dp"
-        android:layout_marginTop="110dp"
-        android:clickable="true"
-        android:src="@mipmap/bg_sign_day_star"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+<!--    <ImageView-->
+<!--        android:id="@+id/iv_mine_dialog_sign_day_bg_light"-->
+<!--        android:layout_width="368dp"-->
+<!--        android:layout_height="296dp"-->
+<!--        android:layout_marginTop="110dp"-->
+<!--        android:clickable="true"-->
+<!--        android:src="@mipmap/bg_sign_day_star"-->
+<!--        app:layout_constraintLeft_toLeftOf="parent"-->
+<!--        app:layout_constraintRight_toRightOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
 
 
-    <ImageView
-        android:layout_width="208dp"
-        android:layout_height="141dp"
-        android:layout_marginTop="-43.5dp"
-        android:layout_marginRight="-15.5dp"
-        android:clickable="true"
-        android:src="@mipmap/ic_home_user_gift_gift"
-        app:layout_constraintRight_toRightOf="@id/cl_mine_dialog_sign_day_parent"
-        app:layout_constraintTop_toTopOf="@id/cl_mine_dialog_sign_day_parent" />
+<!--    <ImageView-->
+<!--        android:layout_width="208dp"-->
+<!--        android:layout_height="141dp"-->
+<!--        android:layout_marginTop="-43.5dp"-->
+<!--        android:layout_marginRight="-15.5dp"-->
+<!--        android:clickable="true"-->
+<!--        android:src="@mipmap/ic_home_user_gift_gift"-->
+<!--        app:layout_constraintRight_toRightOf="@id/cl_mine_dialog_sign_day_parent"-->
+<!--        app:layout_constraintTop_toTopOf="@id/cl_mine_dialog_sign_day_parent" />-->
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cl_mine_dialog_sign_day_parent"
-        android:layout_width="344dp"
-        android:layout_height="417.5dp"
-        android:layout_marginTop="82dp"
+        android:layout_width="349dp"
+        android:layout_height="450dp"
         android:clickable="true"
         android:clipChildren="false"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@id/iv_mine_dialog_sign_day_bg_light">
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:layout_width="match_parent"
@@ -52,7 +51,7 @@
             android:layout_width="wrap_content"
             android:layout_height="121dp"
             android:layout_marginLeft="56dp"
-            android:layout_marginTop="118dp"
+            android:layout_marginTop="152dp"
             android:layout_marginRight="56dp"
             android:layout_marginBottom="20dp"
             android:clipChildren="false"
@@ -91,15 +90,22 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/stv_mine_dialog_sign_day_submit"
             tools:itemCount="5" />
-
-        <ImageView
-            android:layout_width="233dp"
-            android:layout_height="47.5dp"
-            android:layout_marginBottom="22.5dp"
-            android:src="@mipmap/ic_home_new_user_gift_submit"
+        
+        <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
+            android:layout_width="216dp"
+            android:layout_height="36dp"
+            android:text="收下新人大礼"
+            app:stv_startColor="@color/color_FFBF44"
+            app:stv_endColor="@color/color_F6AC1C"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_15"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="35dp"
+            app:stv_layoutRadius="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -110,7 +116,6 @@
         android:layout_height="27dp"
         android:layout_marginTop="15dp"
         android:src="@mipmap/ic_dialog_close"
-        android:visibility="gone"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/cl_mine_dialog_sign_day_parent" />

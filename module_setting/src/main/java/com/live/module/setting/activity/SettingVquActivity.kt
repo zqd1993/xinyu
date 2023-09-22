@@ -138,6 +138,7 @@ class SettingVquActivity : BaseActivity<SettingTantaActivitySettingBinding, Sett
             )
         )
         settingList.add(SettingBean(getString(R.string.setting_about), "", "", false, true))
+        settingList.add(SettingBean("退出登录", "", "", false, true))
         settingVquAdapter = SettingVquAdapter(settingList)
         mBinding.rvSetting.adapter = settingVquAdapter
         settingVquAdapter?.setNbOnItemClickListener { adapter, view, position ->
@@ -240,6 +241,9 @@ class SettingVquActivity : BaseActivity<SettingTantaActivitySettingBinding, Sett
                         ARouter.getInstance().build(RouteUrl.Anchor.AnchorTantaRateSettingActivity)
                             .navigation()
                     }
+                }
+                "退出登录" -> {
+                    showLogOutDialog()
                 }
             }
 

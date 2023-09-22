@@ -46,7 +46,9 @@
             android:text="@string/message_vqu_intimate_go_chat"
             android:textColor="@color/white"
             android:textSize="16sp"
-            app:stv_layoutRadius="12dp"
-            app:stv_solidColor="@color/color_FF7AC2" />
+            app:stv_layoutRadius="8dp"
+            android:textStyle="bold"
+            app:stv_startColor="@color/color_6BBFFD"
+            app:stv_endColor="@color/color_4CB6FF"/>
     </LinearLayout>
 </FrameLayout>

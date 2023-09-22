@@ -159,10 +159,40 @@
 
 
 
-    <color name="color_textMain">@color/color_222222</color>
+    <color name="color_textMain">#000000</color>
     <color name="color_textDesc">@color/color_999999</color>
 
     <color name="color_textLight">@color/color_FFFFFF</color>
 
     <color name="color_FEF6EF">#FEF6EF</color>
+
+    <color name="color_6BBFFD">#6BBFFD</color>
+    <color name="color_4CB6FF">#4CB6FF</color>
+    <color name="color_00D8FF">#00D8FF</color>
+    <color name="color_37AEFF">#37AEFF</color>
+    <color name="color_FFF8EC">#FFF8EC</color>
+    <color name="color_FA7E10">#FA7E10</color>
+    <color name="color_FFBF44">#FFBF44</color>
+    <color name="color_F6AC1C">#F6AC1C</color>
+    <color name="color_F1F9FF">#F1F9FF</color>
+    <color name="color_2B9DEC">#2B9DEC</color>
+    <color name="color_007EFF">#007EFF</color>
+    <color name="color_F6AC1E">#F6AC1E</color>
+    <color name="color_59BAFE">#59BAFE</color>
+    <color name="color_FEC24F">#FEC24F</color>
+    <color name="color_8EC0EA">#8EC0EA</color>
+    <color name="color_6C2424">#6C2424</color>
+    <color name="color_FFF47D">#FFF47D</color>
+    <color name="color_FFBD3E">#FFBD3E</color>
+    <color name="color_5FBCFE">#5FBCFE</color>
+    <color name="color_F2B135">#F2B135</color>
+    <color name="color_E2E2E2">#E2E2E2</color>
+    <color name="color_505050">#505050</color>
+    <color name="color_272727">#272727</color>
+    <color name="color_FFF9EC">#FFF9EC</color>
+    <color name="color_FFBB37">#FFBB37</color>
+    <color name="color_F6E8CB">#F6E8CB</color>
+    <color name="color_CDAF78">#CDAF78</color>
+    <color name="color_BFA786">#BFA786</color>
+    <color name="color_E5D0AB">#E5D0AB</color>
 </resources>

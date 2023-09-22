@@ -5,8 +5,9 @@
     android:layout_width="match_parent"
     app:scl_solidColor="@color/color_F5F5F5"
     app:scl_layoutRadius="12dp"
-    android:layout_marginLeft="16dp"
-    android:layout_marginRight="16dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="15dp"
     android:layout_height="70dp">
 
     <ImageView

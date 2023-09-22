@@ -44,7 +44,7 @@ class LoginTantaAuthCodeActivity :
     override val mViewModel: LoginViewModel by viewModels()
 
     override fun LoginActivityAuthCodeBinding.initView() {
-        mBinding.includeToolBar.toolbar.initClose(backImg = R.mipmap.ic_black_close) {
+        mBinding.includeToolBar.toolbar.initClose(backImg = R.mipmap.ic_back) {
             finish()
         }
         mBinding.btnTantaLoginAuthCodeSendCode.isEnabled = false

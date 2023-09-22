@@ -18,6 +18,7 @@ import com.live.module.bill.databinding.BillVquActivityEarningsBinding
 import com.live.module.bill.fragment.BillVquExchangeFragment
 import com.live.module.bill.fragment.BillVquWithdrawFragment
 import com.live.module.bill.vm.TantaEarningsViewModel
+import com.live.vquonline.base.ktx.clickDelay
 import com.live.vquonline.base.utils.BarUtils
 import com.live.vquonline.base.utils.EventBusRegister
 import com.mshy.VInterestSpeed.common.bean.TantaWalletBean
@@ -69,24 +70,27 @@ class BillTantaEarningsActivity :
 
         mBinding.tvVquBillEarningsBalanceNum.typeface = FontsFamily.tfDDinExpBold
 
-        mBinding.tbTantaBillBar.toolbar.initClose(
-            getString(R.string.mine_my_earnings),
-            onBack = {
-                finish()
-            },
-            backImg = R.mipmap.ic_back_white,
-            onClickRight = {
-                ARouter.getInstance().build(RouteUrl.Bill.BillTantaDetailActivity).navigation()
-            },
-            rightStr = getString(R.string.vqu_bill_detail),
-            backgroundColor = R.color.transparent,
-            rightColor = R.color.white
-        )
-        mBinding.tbTantaBillBar.tvTitle.setTextColor(ResUtils.getColor(R.color.white))
-        val height = BarUtils.getStatusBarHeight()
-        val layoutParams = mBinding.tbTantaBillBar.toolbar.layoutParams as ViewGroup.MarginLayoutParams
-        layoutParams.topMargin += height
+//        mBinding.tbTantaBillBar.toolbar.initClose(
+//            getString(R.string.mine_my_earnings),
+//            onBack = {
+//                finish()
+//            },
+//            backImg = R.mipmap.ic_back_white,
+//            onClickRight = {
+//                ARouter.getInstance().build(RouteUrl.Bill.BillTantaDetailActivity).navigation()
+//            },
+//            rightStr = getString(R.string.vqu_bill_detail),
+//            backgroundColor = R.color.transparent,
+//            rightColor = R.color.white
+//        )
+//        mBinding.tbTantaBillBar.tvTitle.setTextColor(ResUtils.getColor(R.color.white))
+//        val height = BarUtils.getStatusBarHeight()
+//        val layoutParams = mBinding.tbTantaBillBar.toolbar.layoutParams as ViewGroup.MarginLayoutParams
+//        layoutParams.topMargin += height
 
+        mBinding.tvRight.clickDelay{
+            ARouter.getInstance().build(RouteUrl.Bill.BillTantaDetailActivity).navigation()
+        }
 
         mFragments.add(BillVquWithdrawFragment.newInstance())
         mFragments.add(BillVquExchangeFragment.newInstance(2))
@@ -122,23 +126,27 @@ class BillTantaEarningsActivity :
                 context: Context?,
                 index: Int
             ): IPagerTitleView? {
-                val simplePagerTitleView = SimplePagerTitleView(context)
-                simplePagerTitleView.selectedColor = ResUtils.getColor(R.color.color_222222)
-                simplePagerTitleView.normalColor = ResUtils.getColor(R.color.color_999999)
-                simplePagerTitleView.textSize = 16f
-                simplePagerTitleView.typeface = Typeface.defaultFromStyle(Typeface.BOLD) //加粗
-                simplePagerTitleView.text = mTitles[index]
-//                val simplePagerTitleView: SimplePagerTitleView =
-//                    MagicIndicatorHelper.getDefaultTitleView(
-//                        context,
-//                        mTitles[index]
-//                    )
+                val simplePagerTitleView = MagicIndicatorHelper.getDefaultTitleView(
+                    context,
+                    mTitles[index]
+                )
+//                val simplePagerTitleView = SimplePagerTitleView(context)
+//                simplePagerTitleView.selectedColor = ResUtils.getColor(R.color.black)
+//                simplePagerTitleView.normalColor = ResUtils.getColor(R.color.color_999999)
+//                simplePagerTitleView.textSize = 23f
+//                simplePagerTitleView.typeface = Typeface.defaultFromStyle(Typeface.BOLD) //加粗
+//                simplePagerTitleView.text = mTitles[index]
+////                val simplePagerTitleView: SimplePagerTitleView =
+////                    MagicIndicatorHelper.getDefaultTitleView(
+////                        context,
+////                        mTitles[index]
+////                    )
                 simplePagerTitleView.setOnClickListener { mBinding.viewPager!!.currentItem = index }
                 return simplePagerTitleView
             }
 
             override fun getIndicator(context: Context?): com.mshy.VInterestSpeed.common.ui.view.magicindicator.buildins.commonnavigator.abs.IPagerIndicator? {
-                return MagicIndicatorHelper.getDefaultIndicator(context, R.color.color_FE66A4)
+                return MagicIndicatorHelper.getDefaultIndicator(context, R.color.black)
             }
         }
         mBinding.magicIndicator.navigator = commonNavigator

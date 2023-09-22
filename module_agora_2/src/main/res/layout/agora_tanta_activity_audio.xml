@@ -28,21 +28,23 @@
         <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
             android:id="@+id/stv_agora_vqu_warm"
             android:layout_width="match_parent"
-            android:layout_height="33dp"
-            android:layout_marginLeft="12dp"
-            android:layout_marginTop="34dp"
-            android:layout_marginRight="12dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="42dp"
+            android:layout_marginRight="15dp"
+            android:drawableStart="@mipmap/video_notice_icon"
+            android:drawablePadding="8dp"
             android:ellipsize="marquee"
             android:focusable="true"
             android:focusableInTouchMode="true"
-            android:gravity="center"
+            android:gravity="center_vertical"
             android:marqueeRepeatLimit="-1"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
             android:singleLine="true"
             android:text="正在智能监测色情违法内容，警觉交易转账均为诈骗"
-            android:textColor="#A3AABE"
-            android:textSize="14sp"
+            android:textColor="@color/color_999999"
+            android:textSize="13sp"
             app:stv_layoutRadius="@dimen/dp_size_8"
             app:stv_solidColor="#30000000" />
     </RelativeLayout>
@@ -53,30 +55,51 @@
         android:layout_height="32dp"
         android:layout_below="@+id/rl_agora_vqu_warm_parent"
         android:layout_gravity="center_vertical"
-        android:layout_marginLeft="12dp"
-        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="17dp"
         android:src="@mipmap/ic_reduce"
         android:visibility="gone"
         tools:visibility="visible" />
 
 
-    <ImageView
+    <FrameLayout
         android:id="@+id/video_gift"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp_60"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="160dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="220dp"
-        android:src="@mipmap/agora_vqu_video_gift"
-        android:visibility="gone" />
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@mipmap/agora_vqu_video_gift"
+            android:visibility="visible" />
+
+        <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
+            android:layout_width="47dp"
+            android:layout_height="18dp"
+            android:layout_gravity="center|bottom"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:text="送礼物"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            app:stv_endColor="@color/color_F6AC1C"
+            app:stv_layoutRadius="9dp"
+            app:stv_startColor="@color/color_FFBF44" />
+
+    </FrameLayout>
 
     <RelativeLayout
         android:id="@+id/rl_deal_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="36dp"
+        android:layout_marginBottom="63dp"
         tools:visibility="visible">
 
         <LinearLayout
@@ -154,6 +177,7 @@
         android:layout_marginStart="4dp"
         android:layout_marginTop="17dp"
         android:layout_marginBottom="60dp"
+        android:textStyle="bold"
         android:textColor="@android:color/white"
         android:textSize="17dp"
         tools:text="28:26" />
@@ -166,14 +190,14 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="148dp"
+        android:layout_marginTop="155dp"
         android:gravity="center_horizontal"
         android:orientation="vertical">
 
         <ImageView
             android:id="@+id/vqu_iv_call_head"
-            android:layout_width="101dp"
-            android:layout_height="101dp"
+            android:layout_width="115dp"
+            android:layout_height="115dp"
             android:scaleType="centerCrop"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -182,19 +206,20 @@
             android:id="@+id/vqu_voice_start_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="15dp"
             android:gravity="center"
             android:textColor="@android:color/white"
             android:textSize="21sp"
+            android:textStyle="bold"
             tools:text="名字" />
 
         <TextView
             android:id="@+id/vqu_voice_status_des"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:text="正在连接中"
-            android:textColor="@color/color_FFFFFF"
+            android:textColor="@color/color_BBBBBB"
             android:textSize="14sp" />
 
         <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView

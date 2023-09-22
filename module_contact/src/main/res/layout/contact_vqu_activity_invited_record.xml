@@ -29,13 +29,14 @@
     <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
         android:id="@+id/tv_contact_vqu_invited_record_num"
         android:layout_width="match_parent"
-        android:layout_height="36dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="8dp"
         android:gravity="center"
         android:textColor="@color/color_textMain"
-        android:textSize="14sp"
-        app:stv_solidColor="#FFF1F8"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
+        android:textSize="12sp"
+        app:stv_solidColor="@color/color_FFF8EC"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
         app:stv_layoutRadius="12dp"
         app:layout_constraintTop_toBottomOf="@id/tb_contact_vqu_invited_record_bar"
         tools:text="已邀请4人" />
@@ -52,6 +53,7 @@
             android:id="@+id/rv_contact_vqu_invited_record_list"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginTop="4dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
     </com.scwang.smart.refresh.layout.SmartRefreshLayout>
 

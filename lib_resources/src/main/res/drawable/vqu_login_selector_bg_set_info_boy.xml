@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:drawable="@drawable/tanta_shape_line_4e9efe" android:state_checked="true" />
-    <item android:drawable="@drawable/tanta_shape_line_eeeeee"  />
+    <item android:drawable="@drawable/tanta_shape_gender_check_bg" android:state_checked="true" />
+    <item android:drawable="@drawable/tanta_shape_gender_uncheck_bg"  />
 
 </selector>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/color_000201">
+    android:background="@color/black">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -22,18 +22,18 @@
 
                 <com.mshy.VInterestSpeed.common.ui.view.RoundAngleImageView
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:scaleType="fitXY"
+                    android:layout_height="240dp"
                     android:src="@mipmap/bg_vip_center_top"
-                    app:raiv_ratio="0.512" />
+                    app:layout_constraintTop_toTopOf="parent"/>
 
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="12dp"
-                    android:layout_marginRight="12dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="96dp"
+                    app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent">
 
@@ -43,7 +43,7 @@
                         android:scaleType="fitXY"
                         android:src="@mipmap/bg_vip"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintDimensionRatio="343:100" />
+                        app:layout_constraintDimensionRatio="329:96" />
 
 
                     <com.mshy.VInterestSpeed.common.ui.view.RoundAngleImageView
@@ -57,12 +57,12 @@
 
                     <com.mshy.VInterestSpeed.common.ui.view.ShapeRelativeLayout
                         android:id="@+id/sll_avatar"
-                        android:layout_width="44dp"
-                        android:layout_height="44dp"
+                        android:layout_width="42dp"
+                        android:layout_height="42dp"
                         android:layout_marginStart="12dp"
-                        app:layout_constraintBottom_toTopOf="@id/stv_vip_tanta_vip_center_tips"
                         app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
+                        android:layout_marginTop="15dp"
                         app:srl_layoutRadius="10dp"
                         app:srl_strokeColor="@color/color_FFFFFF"
                         app:srl_strokeWidth="2dp"
@@ -71,8 +71,8 @@
 
                         <ImageView
                             android:id="@+id/iv_avatar"
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
+                            android:layout_width="42dp"
+                            android:layout_height="42dp"
                             android:layout_centerInParent="true"
                             android:scaleType="centerCrop"
                             tools:src="@mipmap/ic_launcher" />
@@ -83,10 +83,9 @@
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
+                        android:layout_marginLeft="12dp"
                         android:layout_marginRight="12dp"
                         android:orientation="vertical"
-                        app:layout_constraintBottom_toBottomOf="@id/sll_avatar"
                         app:layout_constraintLeft_toRightOf="@id/sll_avatar"
                         app:layout_constraintRight_toRightOf="parent"
                         app:layout_constraintTop_toTopOf="@id/sll_avatar">
@@ -97,46 +96,42 @@
                             android:layout_height="wrap_content"
                             android:singleLine="true"
                             android:text="Eddie Richards"
-                            android:textColor="@color/color_934800"
-                            android:textSize="17sp"
+                            android:textColor="@color/color_textMain"
+                            android:textSize="16sp"
                             android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/tv_vip_sub_text"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
                             android:singleLine="true"
                             android:text="未开通VIP会员"
-                            android:textColor="@color/color_934800"
+                            android:textColor="#705628"
                             android:textSize="12sp" />
+
+                        <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
+                            android:id="@+id/stv_vip_tanta_vip_center_tips"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:gravity="center_vertical"
+                            android:text="9大特权，提升个性化体验"
+                            android:textColor="#705628"
+                            android:textSize="11sp"
+                            app:stv_bottomLeftRadius="20dp"
+                            app:stv_bottomRightRadius="20dp" />
                     </LinearLayout>
 
-                    <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
-                        android:id="@+id/stv_vip_tanta_vip_center_tips"
-                        android:layout_width="0dp"
-                        android:layout_height="24dp"
-                        android:gravity="center_vertical"
-                        android:paddingLeft="20dp"
-                        android:text="9大特权，提升个性化体验"
-                        android:textColor="#934800"
-                        android:textSize="11sp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintRight_toRightOf="parent"
-                        app:stv_bottomLeftRadius="20dp"
-                        app:stv_bottomRightRadius="20dp"
-                        app:stv_solidColor="#40F2CEB6" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
-
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_recharge"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="12dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginRight="12dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
                 app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                 app:spanCount="3"
                 tools:itemCount="3"
@@ -148,9 +143,9 @@
                 android:layout_height="48dp"
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
-                android:layout_marginLeft="12dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="12dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="15dp"
                 android:textSize="17sp"
                 android:visibility="gone"
                 app:srl_layoutRadius="12dp"
@@ -159,10 +154,10 @@
 
                 <ImageView
                     android:id="@+id/iv_daily_gif"
-                    android:layout_width="28dp"
-                    android:layout_height="28dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:layout_marginStart="12dp"
+                    android:layout_marginStart="13dp"
                     android:src="@mipmap/ic_vip_daily_gif" />
 
                 <ImageView
@@ -171,49 +166,67 @@
                     android:layout_centerInParent="true"
                     android:layout_marginStart="8dp"
                     android:layout_toEndOf="@+id/iv_daily_gif"
-                    android:src="@mipmap/ic_vip_daily_gift_desc" />
+                    android:src="@mipmap/ic_vip_daily_gift_desc"
+                    android:visibility="gone"/>
 
                 <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
                     android:id="@+id/bt_daily_gif"
-                    android:layout_width="68dp"
-                    android:layout_height="28dp"
+                    android:layout_width="65dp"
+                    android:layout_height="27dp"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginEnd="12dp"
+                    android:layout_marginEnd="11dp"
                     android:gravity="center"
                     android:text="领取"
-                    android:textColor="@color/color_934800"
+                    android:textColor="@color/color_textMain"
                     android:textSize="13sp"
-                    app:stv_endColor="#FED288"
+                    android:textStyle="bold"
+                    app:stv_endColor="@color/color_CDAF78"
                     app:stv_layoutRadius="8dp"
-                    app:stv_startColor="#FDF5E9" />
+                    app:stv_startColor="@color/color_E5D0AB" />
             </com.mshy.VInterestSpeed.common.ui.view.ShapeRelativeLayout>
 
             <com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="16dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="15dp"
                 android:orientation="vertical"
-                app:sll_layoutRadius="20dp"
+                app:sll_layoutRadius="19dp"
                 app:sll_solidColor="#19FFFFFF"
                 app:sll_strokeColor="#19FFFFFF"
                 app:sll_strokeWidth="0.5dp">
 
-                <ImageView
+                <FrameLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="30dp"
                     android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="24dp"
-                    android:src="@mipmap/ic_vip_interests" />
+                    android:layout_marginTop="20dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:src="@mipmap/ic_vip_interests" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textSize="@dimen/text_size_15"
+                        android:textStyle="bold"
+                        android:textColor="#BFA786"
+                        android:text="VIP权益" />
+
+                </FrameLayout>
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_privilege"
                     android:layout_marginBottom="24dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="30dp"
                     app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                     app:layout_behavior="@string/appbar_scrolling_view_behavior"
                     app:spanCount="3"
@@ -261,17 +274,20 @@
 
     <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
         android:id="@+id/bt_pay"
-        android:layout_width="300dp"
-        android:layout_height="48dp"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="29dp"
+        android:layout_marginBottom="40dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginEnd="36dp"
         android:gravity="center"
         android:text="立即开通"
-        android:textColor="@color/color_652906"
-        android:textSize="17sp"
-        app:stv_endColor="@color/color_EEB090"
-        app:stv_layoutRadius="12dp"
-        app:stv_startColor="@color/color_FADCC0" />
+        android:textColor="@color/color_textMain"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:stv_endColor="@color/color_CDAF78"
+        app:stv_layoutRadius="8dp"
+        app:stv_startColor="#E5D0AB" />
 
 </RelativeLayout>

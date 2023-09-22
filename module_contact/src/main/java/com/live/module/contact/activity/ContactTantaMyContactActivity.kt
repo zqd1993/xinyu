@@ -57,7 +57,7 @@ class ContactTantaMyContactActivity :
             ContactVquTimeDialog.OnSelectListener {
             override fun setSelect(startTime: String, endTime: String) {
 
-                mBinding.stvContactVquMyContactDate.text = "${startTime}至${endTime}"
+                mBinding.stvContactVquMyContactDate.text = "${startTime}~${endTime}"
 
                 mVquAfterKey = 0
                 mVquBeginTime = startTime

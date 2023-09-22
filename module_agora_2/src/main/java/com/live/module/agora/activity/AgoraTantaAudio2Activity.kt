@@ -548,7 +548,7 @@ class AgoraTantaAudio2Activity : BaseActivity<AgoraTantaActivityAudioBinding, Ag
 
         mBinding.vquIvCallHead.vquLoadRoundImage(
             avatar,
-            dp2px(10f),
+            dp2px(60f),
             R.mipmap.ic_common_head_def
         )
 

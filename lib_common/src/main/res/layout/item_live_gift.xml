@@ -32,8 +32,8 @@
 
                 <ImageView
                     android:id="@+id/gift_photo"
-                    android:layout_width="51dp"
-                    android:layout_height="51dp"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
                     tools:src="@mipmap/gift_empty_icon" />
 
                 <TextView
@@ -42,7 +42,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="3dp"
                     android:text="惊喜礼盒"
-                    android:textColor="#222222"
+                    android:textColor="@color/black"
                     android:textSize="12sp" />
 
                 <TextView
@@ -67,7 +67,7 @@
             android:layout_height="wrap_content"
             android:paddingLeft="3dp"
             android:paddingRight="3dp"
-            android:textColor="#FF41A4"
+            android:textColor="@color/color_5FBCFE"
             android:textSize="9sp"
             tools:text="x1" />
 
@@ -80,6 +80,8 @@
             android:gravity="center"
             android:paddingLeft="8dp"
             android:paddingRight="8dp"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
             android:textColor="#FFFFFF"
             android:textSize="9sp"
             tools:text="x1" />

@@ -26,31 +26,31 @@
         android:layout_marginTop="-16dp"
         android:orientation="vertical"
         app:sll_solidColor="@color/color_FFFFFF"
-        app:sll_topLeftRadius="16dp"
-        app:sll_topRightRadius="16dp">
+        app:sll_topLeftRadius="19dp"
+        app:sll_topRightRadius="19dp">
 
         <com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="24dp"
+            android:layout_marginLeft="15dp"
             android:layout_marginTop="24dp"
-            android:layout_marginRight="24dp"
+            android:layout_marginRight="15dp"
             app:sll_layoutRadius="6dp"
-            app:sll_solidColor="@color/color_FFF1F8">
+            app:sll_solidColor="@color/color_FFF8EC">
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginLeft="17dp"
+                android:layout_marginTop="14dp"
                 android:src="@mipmap/ic_auth_warn" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="2dp"
+                android:layout_marginLeft="4dp"
                 android:layout_marginTop="@dimen/dp_10"
-                android:layout_marginRight="10dp"
+                android:layout_marginRight="16dp"
                 android:layout_marginBottom="@dimen/dp_10"
                 android:text="实名仅用验证您是否为真人用户，不会对信息做任何采集与保留，请放心认证。"
                 android:textColor="@color/color_222222"
@@ -59,10 +59,10 @@
 
         <com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout
             android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="50dp"
-            android:layout_marginRight="16dp"
+            android:layout_height="46dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="38dp"
+            android:layout_marginRight="15dp"
             android:orientation="horizontal"
             app:sll_layoutRadius="12dp"
             app:sll_solidColor="@color/color_F5F5F5">
@@ -72,21 +72,22 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
                 android:text="真实姓名："
-                android:textColor="@color/color_222222"
-                android:textSize="14sp" />
+                android:textColor="@color/color_textMain"
+                android:textSize="13sp" />
 
             <EditText
                 android:id="@+id/set_auth_vqu_real_auth_name"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginRight="16dp"
+                android:layout_marginStart="9dp"
                 android:background="@android:color/transparent"
                 android:gravity="center_vertical"
                 android:hint="请输入真实姓名"
                 android:singleLine="true"
-                android:textColor="@color/color_222222"
+                android:textColor="@color/color_textMain"
                 android:textColorHint="@color/color_BBBBBB"
-                android:textSize="14sp" />
+                android:textSize="13sp" />
 
         </com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout>
 
@@ -105,23 +106,24 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
                 android:text="身份证号："
-                android:textColor="@color/color_222222"
-                android:textSize="14sp" />
+                android:textColor="@color/color_textMain"
+                android:textSize="13sp" />
 
             <EditText
                 android:id="@+id/set_auth_vqu_real_auth_id"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginRight="16dp"
+                android:layout_marginStart="9dp"
                 android:background="@drawable/vqu_shape_f7f8fa_r25"
                 android:digits="0123456789xX"
                 android:gravity="center_vertical"
                 android:hint="请输入身份证号码"
                 android:maxLength="18"
                 android:singleLine="true"
-                android:textColor="@color/color_273145"
+                android:textColor="@color/color_textMain"
                 android:textColorHint="@color/color_D3D1D7"
-                android:textSize="14sp" />
+                android:textSize="13sp" />
         </com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout>
 
     </com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout>
@@ -150,18 +152,20 @@
     <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
         android:id="@+id/stv_auth_vqu_real_auth_commit"
         android:layout_width="match_parent"
-        android:layout_height="49dp"
+        android:layout_height="46dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginLeft="47.5dp"
-        android:layout_marginRight="47.5dp"
-        android:layout_marginBottom="54dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginRight="36dp"
+        android:layout_marginBottom="40dp"
         android:gravity="center"
         android:text="马上认证"
         android:textColor="@color/color_FFFFFF"
-        android:textSize="18sp"
-        app:stv_solidColor="@color/color_FF7AC2"
-        app:stv_layoutRadius="12dp"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:stv_layoutRadius="8dp"
         app:stv_openSelector="true"
         app:stv_solidTouchColor="@color/color_D3D1D7"
+        app:stv_startColor="@color/color_6BBFFD"
+        app:stv_endColor="@color/color_4CB6FF"
          />
 </RelativeLayout>

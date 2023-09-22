@@ -5,8 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="14dp"
-    android:background="@color/white"
+    android:paddingBottom="22dp"
+    android:background="@color/transparent"
     android:orientation="horizontal"
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
@@ -23,7 +23,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
+        android:layout_marginLeft="12dp"
         android:orientation="vertical">
 
         <TextView
@@ -32,6 +32,7 @@
             android:layout_height="wrap_content"
             android:textColor="@color/color_576990"
             android:textSize="14sp"
+            android:textStyle="bold"
             tools:text="章鱼哥🐙" />
 
         <ImageView
@@ -50,7 +51,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:textColor="@color/color_8B96B5"
+            android:textColor="@color/color_999999"
             android:textSize="11sp"
             tools:text="6月7日 13:28" />
 
@@ -58,6 +59,7 @@
             android:id="@+id/tv_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_size_12"
             android:layout_below="@+id/tv_name"
             android:textColor="@color/color_222222"
             android:textSize="14sp"

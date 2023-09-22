@@ -88,6 +88,7 @@ class DynamicTantaPublishVideoActivity :
                 mBinding.tvHint.text = content?.length.toString() + "/100"
             }
         })
+        mBinding.publishTipStv.setViewClickListener { showTipDialog() }
         mBinding.tvPublish.setViewClickListener { vquPublishVideo() }
         rightBtn?.setViewClickListener { vquPublishVideo() }
         mBinding.etContent.addTextChangedListener(object : TextWatcher {

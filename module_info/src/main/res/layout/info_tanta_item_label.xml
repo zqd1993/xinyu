@@ -5,14 +5,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/fl_parent"
     android:layout_width="wrap_content"
-    android:layout_height="25dp"
-    android:layout_margin="5dp"
+    android:layout_height="30dp"
+    android:layout_marginEnd="4dp"
+    android:layout_marginStart="4dp"
+    android:layout_marginBottom="12dp"
     tools:ignore="MissingDefaultResource">
 
     <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
         android:id="@+id/tv_tag"
         android:layout_width="match_parent"
-        android:layout_height="25dp"
+        android:layout_height="30dp"
         android:layout_gravity="center_horizontal|bottom"
         android:gravity="center"
         android:paddingLeft="12dp"

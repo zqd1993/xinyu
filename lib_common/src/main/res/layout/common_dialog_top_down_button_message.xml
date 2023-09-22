@@ -8,11 +8,11 @@
     <com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginRight="36dp"
         android:orientation="vertical"
-        android:paddingBottom="20dp"
-        app:sll_layoutRadius="12dp"
+        android:paddingBottom="16dp"
+        app:sll_layoutRadius="19dp"
         app:sll_solidColor="@color/color_FFFFFF">
 
         <TextView
@@ -20,10 +20,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginLeft="14dp"
-            android:layout_marginTop="14dp"
-            android:layout_marginRight="20dp"
-            android:textColor="@color/color_273145"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="15dp"
+            android:textColor="@color/color_textMain"
             android:textSize="19sp"
             android:textStyle="bold"
             tools:text="确定删除全部消息" />
@@ -33,13 +33,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginLeft="14dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="14dp"
-            android:lineSpacingExtra="2dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginRight="25dp"
+            android:lineSpacingMultiplier="1.1"
             android:maxHeight="280dp"
-            android:textColor="@color/color_273145"
-            android:textSize="15sp"
+            android:textColor="@color/color_textMain"
+            android:textSize="13sp"
             tools:text="我们已接收到您的举报内容，非常重视您的举报。每一条举报都会被认真核实，并依据国家法律法规及本平台条款积极处理，感谢您的配合。" />
 
 
@@ -47,35 +47,42 @@
             android:id="@+id/ll_common_dialog_message_doulbe_btn_parent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:orientation="vertical">
+            android:layout_marginTop="37dp"
+            android:layout_marginStart="17dp"
+            android:layout_marginEnd="17dp"
+            android:orientation="horizontal">
+
+            <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
+                android:id="@+id/stv_common_dialog_message_btn_bottom"
+                android:layout_width="0dp"
+                android:layout_height="41dp"
+                android:layout_weight="1"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:text="@string/cancel"
+                android:textColor="@color/color_textMain"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:stv_endColor="@color/color_F1F1F1"
+                app:stv_layoutRadius="8dp"
+                app:stv_startColor="@color/color_F1F1F1" />
 
             <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
                 android:id="@+id/stv_common_dialog_message_btn_top"
-                android:layout_width="240dp"
-                android:layout_height="49dp"
+                android:layout_width="0dp"
+                android:layout_height="41dp"
+                android:layout_weight="1"
+                android:layout_marginStart="14dp"
                 android:layout_gravity="center_horizontal"
                 android:gravity="center"
                 android:text="@string/apply_and_go_on"
                 android:textColor="@color/color_FFFFFF"
+                android:textStyle="bold"
                 android:textSize="16sp"
-                app:stv_endColor="@color/color_7C69FE"
-                app:stv_layoutRadius="24.5dp"
-                app:stv_startColor="@color/color_BFB6FF" />
+                app:stv_endColor="@color/color_4CB6FF"
+                app:stv_layoutRadius="8dp"
+                app:stv_startColor="@color/color_6BBFFD" />
 
-            <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
-                android:id="@+id/stv_common_dialog_message_btn_bottom"
-                android:layout_width="240dp"
-                android:layout_height="49dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="10dp"
-                android:gravity="center"
-                android:text="@string/cancel"
-                android:textColor="@color/color_273145"
-                android:textSize="16sp"
-                app:stv_endColor="@color/color_F5F4F7"
-                app:stv_layoutRadius="24.5dp"
-                app:stv_startColor="@color/color_F5F4F7" />
         </LinearLayout>
 
 

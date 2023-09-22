@@ -77,7 +77,8 @@
                 android:text="@string/confirm"
                 android:textColor="@color/color_FFFFFF"
                 android:textSize="17sp"
-                app:stv_solidColor="@color/color_FF7AC2"
+                app:stv_endColor="@color/color_4CB6FF"
+                app:stv_startColor="@color/color_6BBFFD"
                 app:stv_layoutRadius="12dp"
                 />
         </LinearLayout>
@@ -96,6 +97,7 @@
             android:textSize="16sp"
             android:visibility="gone"
             app:stv_layoutRadius="12dp"
-            app:stv_solidColor="@color/color_FF7AC2" />
+            app:stv_endColor="@color/color_4CB6FF"
+            app:stv_startColor="@color/color_6BBFFD" />
     </com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

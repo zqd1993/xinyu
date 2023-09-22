@@ -23,7 +23,7 @@ public class MagicIndicatorHelper {
     public static SimplePagerTitleView getDefaultTitleView(Context context, String text) {
         SimplePagerTitleView simplePagerTitleView = new ScaleTransitionPagerTitleView(context);
         simplePagerTitleView.setText(text);
-        simplePagerTitleView.setTextSize(21);
+        simplePagerTitleView.setTextSize(23);
         simplePagerTitleView.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));//加粗
         simplePagerTitleView.setNormalColor(context.getResources().getColor(R.color.color_999999));
         simplePagerTitleView.setSelectedColor(context.getResources().getColor(R.color.color_222222));
@@ -31,14 +31,14 @@ public class MagicIndicatorHelper {
     }
 
     public static IPagerIndicator getDefaultIndicator(Context context) {
-        return getDefaultIndicator(context, R.color.color_FF7AC2);
+        return getDefaultIndicator(context, R.color.color_222222);
     }
 
     public static IPagerIndicator getDefaultIndicator(Context context, int color) {
         LinePagerIndicator indicator = new LinePagerIndicator(context);
         indicator.setMode(LinePagerIndicator.MODE_EXACTLY);
         indicator.setLineHeight(UIUtil.dip2px(context, 4));
-        indicator.setLineWidth(UIUtil.dip2px(context, 8));
+        indicator.setLineWidth(UIUtil.dip2px(context, 14));
         indicator.setRoundRadius(UIUtil.dip2px(context, 3.5f));
         indicator.setColors(context.getResources().getColor(color));
         indicator.setYOffset(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,

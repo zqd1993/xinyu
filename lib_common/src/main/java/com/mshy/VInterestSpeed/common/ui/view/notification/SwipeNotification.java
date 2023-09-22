@@ -161,14 +161,14 @@ public class SwipeNotification extends LinearLayout {
         LoaderBuilder builderConfig = new LoaderBuilder()
                 .round(UiUtils.dip2px(BaseApplication.context, 12f))
                 .circle(false)
-                .width(UiUtils.dip2px(BaseApplication.context, 64f))
-                .height(UiUtils.dip2px(BaseApplication.context, 64f))
+                .width(UiUtils.dip2px(BaseApplication.context, 58f))
+                .height(UiUtils.dip2px(BaseApplication.context, 58f))
                 .scaleType(ImageView.ScaleType.CENTER_CROP)
                 .round(new float[]{
-                        UiUtils.dip2px(BaseApplication.context, 12f),
-                        UiUtils.dip2px(BaseApplication.context, 12f),
-                        UiUtils.dip2px(BaseApplication.context, 12f),
-                        UiUtils.dip2px(BaseApplication.context, 12f)})
+                        UiUtils.dip2px(BaseApplication.context, 29f),
+                        UiUtils.dip2px(BaseApplication.context, 29f),
+                        UiUtils.dip2px(BaseApplication.context, 29f),
+                        UiUtils.dip2px(BaseApplication.context, 29f)})
                 .borderColor(ContextCompat.getColor(BaseApplication.context, R.color.color_FFFFFF))
                 .borderWidth(UiUtils.dip2px(BaseApplication.context, 0f))
                 .load(NetBaseUrlConstant.INSTANCE.getIMAGE_URL() + matchData.getAvatar());

@@ -64,7 +64,7 @@ class DynamicTantaLikeListActivity :
         mViewModel.dynamicLikeLsit.observe(this) {
             if (page == 1) {
                 if (it.data.list.isNullOrEmpty()) {
-                    showEmpty("暂无动态消息")
+                    showEmpty("暂无动态消息", R.mipmap.dynamic_empty_icon)
                 } else {
                     mLoadService?.showSuccess()
                     likeAdapter?.setList(it.data.list)

@@ -5,13 +5,13 @@
     <item>
         <shape android:shape="rectangle">
 
-            <solid android:color="@color/color_14FE8A34" />
+            <solid android:color="@color/color_FFF9EC" />
 
             <corners android:radius="12dp" />
 
             <stroke
                 android:width="2dp"
-                android:color="@color/color_FE8A34" />
+                android:color="@color/color_FFBB37" />
         </shape>
 
     </item>

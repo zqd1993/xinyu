@@ -60,7 +60,7 @@ abstract class RecentViewHolder {
     protected lateinit var tvIntimateValue: TextView
 
     //官方图标
-    protected lateinit var ivOfficial: ImageView
+    protected lateinit var ivOfficial: View
 
     //在线绿点
     protected lateinit var onlineView: View

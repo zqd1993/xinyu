@@ -93,14 +93,14 @@ class InfoVquLabelEditActivity : BaseActivity<InfoTantaActivityLabelBinding, Inf
                 tv.text = bean.name
                 var colorList = bean.color.split(",")
                 if (bean.isSelect) {
-                    tv.solidColor = Color.parseColor("#14FF7AC2")
-                    tv.setTextColor(Color.parseColor("#222222"))
-                    tv.setStrokeWidth(UiUtils.dip2px(applicationContext, 1.5f))
-                    tv.setStrokeColor(Color.parseColor("#FF7AC2"))
+                    tv.solidColor = Color.parseColor("#ffffff")
+                    tv.setTextColor(Color.parseColor("#000000"))
+                    tv.setStrokeWidth(UiUtils.dip2px(applicationContext, 1f))
+                    tv.setStrokeColor(Color.parseColor("#5FBCFE"))
                 } else {
                     tv.solidColor = Color.parseColor("#F5F5F5")
-                    tv.setTextColor(Color.parseColor("#222222"))
-                    tv.setStrokeColor(Color.parseColor("#FF7AC2"))
+                    tv.setTextColor(Color.parseColor("#000000"))
+                    tv.setStrokeColor(Color.parseColor("#00000000"))
                     tv.setStrokeWidth(0)
 
                 }

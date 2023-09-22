@@ -150,8 +150,8 @@ class BillVquWithdrawFragment :
             mCurrentPosition = 0
             mVquCurrentOptions = it.options[0]
             mBinding.stvWithdrawBtn.setStartColor(
-                ResUtils.getColor(R.color.color_FF7AC2),
-                ResUtils.getColor(R.color.color_FF7AC2)
+                ResUtils.getColor(R.color.color_6BBFFD),
+                ResUtils.getColor(R.color.color_4CB6FF)
             )
         }
 
@@ -253,8 +253,8 @@ class BillVquWithdrawFragment :
         messageDialog.setContentGravity(Gravity.CENTER)
 
         messageDialog.setRightButtonColor(
-            ResUtils.getColor(R.color.color_FFB5DB),
-            ResUtils.getColor(R.color.color_FE66A4)
+            ResUtils.getColor(R.color.color_6BBFFD),
+            ResUtils.getColor(R.color.color_4CB6FF)
         )
 
         messageDialog.setRightText(R.string.common_vqu_submit)

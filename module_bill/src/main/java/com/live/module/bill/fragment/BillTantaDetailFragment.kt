@@ -6,6 +6,7 @@ import androidx.fragment.app.viewModels
 import com.alibaba.android.arouter.facade.annotation.Autowired
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.alibaba.android.arouter.launcher.ARouter
+import com.live.module.bill.R
 import com.live.module.bill.adapter.BillVquDetailAdapter
 import com.live.module.bill.adapter.BillVquDetailItemDecoration
 import com.live.module.bill.bean.BillVquTimeSelectEvent
@@ -112,7 +113,7 @@ class BillTantaDetailFragment :
 
                 if (it.isNullOrEmpty()) {
 //                    mLoadService?.
-                    showEmpty()
+                    showEmpty("暂无收支记录", R.mipmap.bill_detail_empty_icon)
                 } else {
                     mLoadService?.showSuccess()
                 }

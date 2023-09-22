@@ -24,29 +24,35 @@ class DynamicTantaLikeAdapter :
     BaseQuickAdapter<DynamicLikeBean, BaseViewHolder>(R.layout.dynamic_tanta_item_like) {
     override fun convert(holder: BaseViewHolder, item: DynamicLikeBean) {
         holder.getView<ImageView>(R.id.iv_head)
-            .vquLoadRoundImage(NetBaseUrlConstant.IMAGE_URL + item.fromUserAvatar,
-                20,
-                R.mipmap.ic_common_head_def)
+            .vquLoadRoundImage(
+                NetBaseUrlConstant.IMAGE_URL + item.fromUserAvatar,
+                50,
+                R.mipmap.ic_common_head_def
+            )
         holder.getView<TextView>(R.id.tv_time).text = item.createTime
+        holder.getView<TextView>(R.id.tv_head).text = item.fromUserNickname
         var tvLike = holder.getView<TextView>(R.id.tv_like)
         if (item.isDelete == 1) {
             holder.getView<TextView>(R.id.tv_like).text = "评论已被删除"
         } else {
             when (item.isType) {
-                    1 -> {
-                        tvLike.text = item.content
-                    }
-                    2 -> {
-                        val content = "<font color='#7C69FE'>" + item.fromUserNickname + "</font> "+"回复了你: "+item.content.replace(" ","&#160")
-                        tvLike.text = Html.fromHtml(content)
-
-                    }
-                    3 -> {
-                        val content = "<font color='#7C69FE'>" + item.fromUserNickname + "</font> "+"评论了你: "+item.content.replace(" ","&#160")
-                        tvLike.text = Html.fromHtml(content)
-                    }
-                    else -> ""
+                1 -> {
+                    tvLike.text = item.content
                 }
+
+                2 -> {
+                    val content = "回复了你: " + item.content.replace(" ", "&#160")
+                    tvLike.text = Html.fromHtml(content)
+
+                }
+
+                3 -> {
+                    val content = "评论了你: " + item.content.replace(" ", "&#160")
+                    tvLike.text = Html.fromHtml(content)
+                }
+
+                else -> ""
+            }
 
         }
 //            tvLike.movementMethod = LinkMovementMethod.getInstance()
@@ -116,22 +122,22 @@ class DynamicTantaLikeAdapter :
 //                .ssb)
 //        }
         holder.getView<ImageView>(R.id.iv_head).setOnClickListener {
-                ARouter.getInstance()
-                    .build(RouteUrl.Info.InfoVquPersonalInfoActivity)
-                    .withInt(
-                        RouteKey.USERID,
-                        item.fromUserId
-                    )
-                    .navigation()
+            ARouter.getInstance()
+                .build(RouteUrl.Info.InfoVquPersonalInfoActivity)
+                .withInt(
+                    RouteKey.USERID,
+                    item.fromUserId
+                )
+                .navigation()
 
         }
 
         if (item.dynamicType == 1) {
-            holder.getView<ImageView>(R.id.iv_img).vquLoadRoundImage(item.videoUrl, 20)
+            holder.getView<ImageView>(R.id.iv_img).vquLoadRoundImage(item.videoUrl, 13)
             holder.getView<ImageView>(R.id.iv_video).visible()
         } else {
             holder.getView<ImageView>(R.id.iv_img)
-                .vquLoadRoundImage(NetBaseUrlConstant.IMAGE_URL + item.imageUrl, 20)
+                .vquLoadRoundImage(NetBaseUrlConstant.IMAGE_URL + item.imageUrl, 13)
             holder.getView<ImageView>(R.id.iv_video).gone()
         }
 

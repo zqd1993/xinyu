@@ -40,6 +40,7 @@ import com.michael.easydialog.EasyDialog
 import com.mshy.VInterestSpeed.common.event.IsShowGuideEvent
 import com.mshy.VInterestSpeed.common.helper.MagicIndicatorHelper
 import com.mshy.VInterestSpeed.common.ui.adapter.CommonVquMainPageAdapter
+import com.mshy.VInterestSpeed.common.ui.dialog.BottomSelectiveDialog
 import com.mshy.VInterestSpeed.common.ui.dialog.CommonHintDialog
 import com.mshy.VInterestSpeed.common.ui.view.magicindicator.ViewPagerHelper
 import com.mshy.VInterestSpeed.common.ui.view.magicindicator.buildins.commonnavigator.CommonNavigator
@@ -76,6 +77,7 @@ class MessageVquMainFragment :
     private val vquTitles = arrayListOf<String>()
     private var easyDialog: EasyDialog? = null
     private var isOverlays: Boolean = false
+    private var mSelectiveDialog: BottomSelectiveDialog? = null
 
     var vquFragments: MutableList<Fragment> = mutableListOf()
     private var isImFail: Boolean = false
@@ -108,15 +110,21 @@ class MessageVquMainFragment :
                 localIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                 if (Build.VERSION.SDK_INT >= 9) {
                     localIntent.action = "android.settings.APPLICATION_DETAILS_SETTINGS"
-                    localIntent.data = Uri.fromParts("package",
+                    localIntent.data = Uri.fromParts(
+                        "package",
                         activity?.packageName,
-                        null)
+                        null
+                    )
                 } else if (Build.VERSION.SDK_INT <= 8) {
                     localIntent.action = Intent.ACTION_VIEW
-                    localIntent.setClassName("com.android.settings",
-                        "com.android.settings.InstalledAppDetails")
-                    localIntent.putExtra("com.android.settings.ApplicationPkgName",
-                        activity?.packageName)
+                    localIntent.setClassName(
+                        "com.android.settings",
+                        "com.android.settings.InstalledAppDetails"
+                    )
+                    localIntent.putExtra(
+                        "com.android.settings.ApplicationPkgName",
+                        activity?.packageName
+                    )
                 }
                 startActivity(localIntent)
             }
@@ -249,6 +257,25 @@ class MessageVquMainFragment :
             .setOutsideColor(resources.getColor(R.color.transparent))
     }
 
+    private fun initMoreDialog() {
+        mSelectiveDialog =
+            BottomSelectiveDialog(
+                activity!!,
+                R.style.SelectiveDialog
+            )
+        mSelectiveDialog?.addSelectButton(
+            "一键已读"
+        ) { _, _ ->
+            readAllMsg()
+        }
+        mSelectiveDialog?.addSelectButton(
+            "清除消息"
+        ) { _, _ ->
+            deleteAllMsg()
+        }
+        mSelectiveDialog?.show()
+    }
+
     /**
      * 初始化MagicIndicator
      */
@@ -258,7 +285,8 @@ class MessageVquMainFragment :
         vquTitles.add(getString(R.string.message_vqu_main_fragment_call_record))
         val commonNavigator =
             CommonNavigator(
-                activity)
+                activity
+            )
         commonNavigator.adapter = object : CommonNavigatorAdapter() {
             override fun getCount(): Int {
                 return vquTitles.size
@@ -306,7 +334,8 @@ class MessageVquMainFragment :
     private fun addOnClickListener() {
         mBinding.vquIvMore.setViewClickListener {
             if (easyDialog == null) {
-                vquInitMoreDialog()
+//                vquInitMoreDialog()
+                initMoreDialog()
             }
             easyDialog?.show()
         }

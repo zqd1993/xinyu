@@ -7,23 +7,23 @@
     android:background="@color/white"
     android:gravity="center"
     android:orientation="vertical"
-    android:paddingTop="5dp"
-    android:paddingBottom="5dp"
+    android:paddingTop="6dp"
+    android:paddingBottom="6dp"
     tools:ignore="ResourceName">
 
     <ImageView
         android:id="@+id/iv_gift"
-        android:layout_width="63dp"
-        android:layout_height="63dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:src="@color/color_273145" />
 
     <TextView
         android:id="@+id/tv_gift"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="12dp"
         android:text="天使之翼"
-        android:textColor="@color/color_A3AABE"
+        android:textColor="@color/black"
         android:textSize="10sp" />
 
     <TextView
@@ -32,7 +32,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:text="x2"
-        android:textColor="@color/color_273145"
+        android:textColor="@color/color_999999"
         android:textSize="12sp" />
 
 </LinearLayout>

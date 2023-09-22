@@ -1,6 +1,7 @@
 package com.live.module.home.adapter;
 
 import android.graphics.Color;
+import android.graphics.Paint;
 import android.os.CountDownTimer;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -80,8 +81,8 @@ public class TVNumAdapter extends BannerAdapter<HomeVquOnTvBean, TVNumAdapter.Ba
             vquStartCountDown(data,position,holder);
         }else {
             holder.vqu_bt_know_url.setText("如何上电视");
-            holder.vqu_bt_know_url.setTextColor(Color.parseColor("#222222"));
-            holder.vqu_bt_know_url.setStrokeColor(Color.parseColor("#222222"));
+            holder.vqu_bt_know_url.setTextColor(Color.parseColor("#ffffff"));
+            holder.vqu_bt_know_url.setPaintFlags(Paint.UNDERLINE_TEXT_FLAG); //下划线
             holder.vqu_bt_know_url.setClickable(true);
             holder.vqu_bt_know_url.setEnabled(true);
         }
@@ -113,8 +114,8 @@ public class TVNumAdapter extends BannerAdapter<HomeVquOnTvBean, TVNumAdapter.Ba
             public void onTick(long l) {
                 String vquValue = (l / 1000)+"";
                 holder.vqu_bt_know_url.setText("锁屏中" + vquValue + "秒");
-                holder.vqu_bt_know_url.setTextColor(Color.parseColor("#A3AABE"));
-                holder.vqu_bt_know_url.setStrokeColor(Color.parseColor("#A3AABE"));
+                holder.vqu_bt_know_url.setTextColor(Color.parseColor("#ffffff"));
+                holder.vqu_bt_know_url.setPaintFlags(Paint.UNDERLINE_TEXT_FLAG); //下划线
                 holder.vqu_bt_know_url.setClickable(false);
                 holder.vqu_bt_know_url.setEnabled(false);
             }
@@ -123,8 +124,8 @@ public class TVNumAdapter extends BannerAdapter<HomeVquOnTvBean, TVNumAdapter.Ba
             public void onFinish() {
                 data.setLock_time(0);
                 holder.vqu_bt_know_url.setText("如何上电视");
-                holder.vqu_bt_know_url.setTextColor(Color.parseColor("#222222"));
-                holder.vqu_bt_know_url.setStrokeColor(Color.parseColor("#222222"));
+                holder.vqu_bt_know_url.setTextColor(Color.parseColor("#ffffff"));
+                holder.vqu_bt_know_url.setPaintFlags(Paint.UNDERLINE_TEXT_FLAG); //下划线
                 holder.vqu_bt_know_url.setClickable(true);
                 holder.vqu_bt_know_url.setEnabled(true);
             }
@@ -142,7 +143,7 @@ public class TVNumAdapter extends BannerAdapter<HomeVquOnTvBean, TVNumAdapter.Ba
         TextView vqu_tv_to_name;
         TextView vqu_gift_count;
         TextView vqu_gift_name;
-        ShapeTextView vqu_bt_know_url;
+        TextView vqu_bt_know_url;
         ImageView iv_right;
         public BannerViewHolder(@NonNull View view) {
             super(view);

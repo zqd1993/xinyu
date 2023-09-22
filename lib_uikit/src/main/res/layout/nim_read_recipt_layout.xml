@@ -5,10 +5,10 @@
     android:layout_height="wrap_content"
     android:layout_gravity="center_vertical"
     android:background="@color/transparent"
-    android:layout_marginRight="4dip"
+    android:layout_marginRight="8dip"
     android:text="@string/readed"
-    android:textColor="#A3AABE"
-    android:textSize="10sp"
+    android:textColor="@color/color_999999"
+    android:textSize="12sp"
     xmlns:tools="http://schemas.android.com/tools"
     tools:visibility="visible"
     android:visibility="gone"/>

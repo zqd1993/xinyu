@@ -37,6 +37,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="54dp"
+            android:layout_marginBottom="10dp"
             android:orientation="horizontal">
 
             <RelativeLayout
@@ -49,12 +50,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:layout_marginLeft="14dp"
+                    android:layout_marginLeft="15dp"
                     android:drawableLeft="@mipmap/agora_tanta_video_diamonds"
-                    android:drawablePadding="5dp"
+                    android:drawablePadding="8dp"
                     android:textColor="@color/color_222222"
                     android:textSize="14sp"
-                    android:textStyle="bold"
                     tools:text="16400" />
 
                 <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
@@ -66,10 +66,11 @@
                     android:layout_toRightOf="@+id/gift_shell_number"
                     android:gravity="center"
                     android:text="充值"
-                    android:textColor="@color/color_FF7AC2"
+                    android:textColor="@color/color_5FBCFE"
                     android:textSize="14sp"
+                    android:textStyle="bold"
                     app:stv_layoutRadius="8dp"
-                    app:stv_strokeColor="@color/color_FF7AC2"
+                    app:stv_strokeColor="@color/color_5FBCFE"
                     app:stv_strokeWidth="1dp" />
 
             </RelativeLayout>
@@ -96,7 +97,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="悄悄送礼"
-                    android:textColor="@color/color_FF7AC2"
+                    android:textColor="@color/color_5FBCFE"
                     android:textSize="14sp" />
             </LinearLayout>
 
@@ -121,7 +122,8 @@
                     android:textColor="#fff"
                     android:textSize="14sp"
                     app:stv_layoutRadius="8dp"
-                    app:stv_solidColor="@color/color_FF7AC2" />
+                    app:stv_startColor="@color/color_6BBFFD"
+                    app:stv_endColor="@color/color_4CB6FF"/>
 
                 <LinearLayout
                     android:id="@+id/ll_give_gift"

@@ -7,15 +7,15 @@
     android:id="@+id/ll_vqu_pay_pay"
     android:layout_width="match_parent"
     android:layout_height="49dp"
-    android:layout_marginLeft="12dp"
-    android:layout_marginRight="12dp"
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="15dp"
     android:layout_marginBottom="8dp"
     android:gravity="center_vertical"
     android:orientation="horizontal"
-    android:paddingLeft="12dp"
-    android:paddingRight="12dp"
-    app:srl_layoutRadius="6dp"
-    app:srl_solidColor="@color/color_F7F8FA">
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
+    app:srl_layoutRadius="12dp"
+    app:srl_solidColor="@color/color_F5F5F5">
 
 
     <ImageView
@@ -30,12 +30,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:layout_marginStart="7dp"
+        android:layout_marginStart="8dp"
         android:layout_toEndOf="@+id/iv_type"
         android:gravity="center_vertical"
         android:text="@string/common_vqu_wechat_pay"
-        android:textColor="@color/color_222222"
-        android:textSize="14sp" />
+        android:textColor="@color/color_textMain"
+        android:textSize="13sp" />
 
     <CheckBox
         android:id="@+id/cb_type"

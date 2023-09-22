@@ -60,8 +60,8 @@ class BillVquExchangeFragment :
 
             if (money > 0) {
                 mBinding.stvExchange.setStartColor(
-                    ResUtils.getColor(R.color.color_FF7AC2),
-                    ResUtils.getColor(R.color.color_FF7AC2)
+                    ResUtils.getColor(R.color.color_6BBFFD),
+                    ResUtils.getColor(R.color.color_4CB6FF)
                 )
             } else {
                 mBinding.stvExchange.setStartColor(
@@ -144,8 +144,8 @@ class BillVquExchangeFragment :
         messageDialog.setContentGravity(Gravity.CENTER)
 
         messageDialog.setRightButtonColor(
-            ResUtils.getColor(R.color.color_FFB5DB),
-            ResUtils.getColor(R.color.color_FE66A4)
+            ResUtils.getColor(R.color.color_6BBFFD),
+            ResUtils.getColor(R.color.color_4CB6FF)
         )
 
         messageDialog.setOnButtonClickListener(object : MessageDialog.OnButtonClickListener {

@@ -9,14 +9,15 @@
 
     <ImageView
         android:id="@+id/iv_mine_dialog_sign_day_bg_light"
-        android:layout_width="368dp"
-        android:layout_height="296dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="-76.5dp"
         android:clickable="true"
         android:src="@mipmap/bg_sign_day_star"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@id/cl_parent" />
+        app:layout_constraintTop_toTopOf="@id/cl_parent"
+        android:visibility="gone"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cl_parent"
@@ -30,28 +31,27 @@
 
         <com.mshy.VInterestSpeed.common.ui.view.ShapeConstraintLayout
             android:id="@+id/cl_mine_dialog_sign_day_parent"
-            android:layout_width="320dp"
-            android:layout_height="300dp"
-            android:layout_marginTop="-23dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:clickable="true"
             android:clipChildren="false"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
+            android:paddingBottom="24dp"
+            app:layout_constraintLeft_toLeftOf="@id/cl_mine_dialog_sign_day_top_parent"
+            app:layout_constraintRight_toRightOf="@id/cl_mine_dialog_sign_day_top_parent"
             app:layout_constraintTop_toBottomOf="@id/cl_mine_dialog_sign_day_top_parent"
-            app:scl_bottomLeftRadius="20dp"
-            app:scl_bottomRightRadius="20dp"
+            app:scl_bottomLeftRadius="19dp"
+            app:scl_bottomRightRadius="19dp"
             app:scl_solidColor="@color/color_FFFFFF">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_mine_dialog_sign_day_list"
                 android:layout_width="0dp"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="11dp"
-                android:layout_marginTop="23dp"
+                android:layout_marginTop="13dp"
                 android:layout_marginRight="11dp"
                 android:layout_marginBottom="20dp"
                 android:clipChildren="false"
-                app:layout_constraintBottom_toTopOf="@id/stv_mine_dialog_sign_day_submit"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -59,19 +59,21 @@
 
             <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
                 android:id="@+id/stv_mine_dialog_sign_day_submit"
-                android:layout_width="240dp"
-                android:layout_height="49dp"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
                 android:layout_marginBottom="20dp"
+                android:layout_marginTop="23dp"
+                android:layout_marginStart="33dp"
+                android:layout_marginEnd="33dp"
                 android:gravity="center"
                 android:text="签到"
                 android:textColor="@color/color_FFFFFF"
-                android:textSize="17sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:stv_layoutRadius="12dp"
-                app:stv_startColor="@color/color_FE8A34"
-                app:stv_endColor="@color/color_FE8A34"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/rv_mine_dialog_sign_day_list"
+                app:stv_layoutRadius="8dp"
+                app:stv_startColor="@color/color_FFBF44"
+                app:stv_endColor="@color/color_F6AC1C"
                 />
         </com.mshy.VInterestSpeed.common.ui.view.ShapeConstraintLayout>
 
@@ -84,8 +86,8 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
-                android:layout_width="320dp"
-                android:layout_height="190dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:clickable="true"
                 android:src="@mipmap/ic_sign_day_gift"
                 app:layout_constraintLeft_toLeftOf="parent"
@@ -100,7 +102,8 @@
                 android:src="@mipmap/ic_sign_day_icon"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                android:visibility="gone"/>
 
 
             <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
@@ -109,16 +112,17 @@
                 android:layout_height="28dp"
                 android:layout_marginTop="12.5dp"
                 android:gravity="center"
-                android:paddingLeft="12dp"
-                android:paddingRight="12dp"
+                android:paddingLeft="29dp"
+                android:paddingRight="29dp"
+                android:layout_marginBottom="9dp"
                 android:text="已连续签到3天奖励"
                 android:textColor="@color/color_FFFFFF"
                 android:textSize="12sp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/iv_mine_dialog_sign_day_sign_icon"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:stv_layoutRadius="14dp"
-                app:stv_solidColor="@color/color_222222" />
+                app:stv_solidColor="#7AC3670C" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,9 +2,9 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:fitsSystemWindows="true"
+    android:layout_height="match_parent"
     android:background="@color/color_FFFFFF"
-    android:layout_height="match_parent">
+    android:fitsSystemWindows="true">
 
     <include
         android:id="@+id/tb_auth_vqu_result_bar"
@@ -14,17 +14,29 @@
         android:id="@+id/iv_auth_vqu_result_img"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="96dp"
+        android:layout_marginTop="74dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tb_auth_vqu_result_bar" />
+
+    <TextView
+        android:id="@+id/tv_authentication_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="恭喜您认证成功"
+        android:textColor="@color/color_textMain"
+        android:textSize="19sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/iv_auth_vqu_result_img"
+        app:layout_constraintStart_toStartOf="@id/iv_auth_vqu_result_img"
+        app:layout_constraintTop_toBottomOf="@id/iv_auth_vqu_result_img" />
 
     <TextView
         android:id="@+id/tv_auth_vqu_result_tips"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="35dp"
-        android:layout_marginTop="2.5dp"
+        android:layout_marginTop="19dp"
         android:layout_marginRight="35dp"
         android:gravity="center"
         android:text="恭喜您已通过真人认证，请开启您的鹊娘交友之旅吧~"
@@ -32,24 +44,25 @@
         android:textSize="13sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/iv_auth_vqu_result_img" />
+        app:layout_constraintTop_toBottomOf="@id/tv_authentication_status" />
 
 
     <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
         android:id="@+id/stv_auth_vqu_result_btn"
         android:layout_width="0dp"
         android:layout_height="49dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginRight="36dp"
+        android:layout_marginBottom="8dp"
         android:gravity="center"
-        android:layout_marginLeft="47.5dp"
-        android:layout_marginTop="67dp"
-        android:layout_marginRight="47.5dp"
         android:text="重新填写"
         android:textColor="@color/color_FFFFFF"
-        android:textSize="18sp"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_auth_vqu_result_tips"
-        app:stv_endColor="@color/color_FF7AC2"
-        app:stv_layoutRadius="12dp"
-        app:stv_startColor="@color/color_FF7AC2" />
+        app:stv_endColor="@color/color_4CB6FF"
+        app:stv_layoutRadius="8dp"
+        app:stv_startColor="@color/color_6BBFFD" />
 </androidx.constraintlayout.widget.ConstraintLayout>
