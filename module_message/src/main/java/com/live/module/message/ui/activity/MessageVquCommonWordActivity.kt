@@ -1,6 +1,7 @@
 package com.live.module.message.ui.activity
 
 import android.annotation.SuppressLint
+import android.view.View
 import androidx.activity.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.alibaba.android.arouter.facade.annotation.Route
@@ -45,8 +46,11 @@ class MessageVquCommonWordActivity :
             mData.clear()
             mData.addAll(it.data)
             mAdapter.notifyDataSetChanged()
-            EventBus.getDefault().post(NotifyCommonWordEvent(
-                mData))
+            EventBus.getDefault().post(
+                NotifyCommonWordEvent(
+                    mData
+                )
+            )
         }
 
         mAdapter.setOnItemLongClickListener { _, _, position ->
@@ -110,7 +114,7 @@ class MessageVquCommonWordActivity :
                 })
                 dialog.show(supportFragmentManager, "")
             })
-
+        includeTitle.tvRight.visibility = View.GONE
         tvReplace.setViewClickListener {
             mViewModel.vquGetCommonWordData()
         }
