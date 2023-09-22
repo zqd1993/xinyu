@@ -30,7 +30,7 @@ class GlobalHeaderInterceptor : Interceptor {
             .header("network-status", DeviceManager.getInstance().apnType)
             .header("theme","vqu-white")
             .header("oaid",DeviceManager.getInstance().oaid?:"")
-        HeaderUtil.setHeader(requestBuilder)
+        HeaderUtil.setHeader(requestBuilder, original.url.toString())
         val request: Request = requestBuilder.build()
         return chain.proceed(request)
     }
