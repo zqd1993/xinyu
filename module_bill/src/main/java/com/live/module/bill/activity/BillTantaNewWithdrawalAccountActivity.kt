@@ -14,6 +14,7 @@ import com.live.module.bill.bean.TypeBean
 import com.live.module.bill.databinding.BillVquActivityNewWithdrawalAccountBinding
 import com.live.module.bill.dialog.BillVquAccountTypeDialog
 import com.live.module.bill.vm.BillTantaNewWithdrawalAccountViewModel
+import com.live.vquonline.base.utils.ToastUtils
 import com.live.vquonline.base.utils.toast
 import com.mshy.VInterestSpeed.common.constant.NetBaseUrlConstant
 import com.mshy.VInterestSpeed.common.constant.RouteKey
@@ -26,6 +27,7 @@ import com.mshy.VInterestSpeed.common.ui.BaseActivity
 import com.mshy.VInterestSpeed.common.ui.dialog.MessageDialog
 import com.mshy.VInterestSpeed.common.utils.ResUtils
 import dagger.hilt.android.AndroidEntryPoint
+import java.util.regex.Pattern
 
 /**
  * author: Lau
@@ -225,7 +227,12 @@ class BillTantaNewWithdrawalAccountActivity :
         val phoneCode = mBinding.etBillVquNewWithdrawalAccountAuthCode.text.toString().trim()
         val idCard = mBinding.etBillVquNewWithdrawalAccountIdCard.text.toString().trim()
         val realName = mBinding.etBillVquNewWithdrawalAccountRealName.text.toString().trim()
-
+        val emailRegex = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}\$"
+        val phoneRegex = "^[1][3,4,5,7,8,9][0-9]{9}\$"
+        if(!Pattern.matches(phoneRegex, account) && !Pattern.matches(emailRegex, account)){
+            ToastUtils.showShort("请输入正确的支付宝账号")
+            return
+        }
         mViewModel.vquAccountSave(
             account,
             mCarType,

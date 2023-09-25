@@ -129,6 +129,9 @@ class BillTantaRechargeActivity :
 //        val layoutParams =
 //            mBinding.tbTantaBillBar.toolbar.layoutParams as ViewGroup.MarginLayoutParams
 //        layoutParams.topMargin += height
+        mBinding.ivBack.clickDelay{
+            finish()
+        }
         mBinding.tvRight.clickDelay{
             ARouter.getInstance().build(RouteUrl.Bill.BillTantaDetailActivity).navigation()
         }
