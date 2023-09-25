@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.live.vquonline.base.constant.VersionStatus;
+import com.mshy.VInterestSpeed.common.constant.NetBaseUrlConstant;
 import com.mshy.VInterestSpeed.uikit.business.ait.AitManager;
 import com.mshy.VInterestSpeed.uikit.business.chatroom.helper.ChatRoomHelper;
 import com.mshy.VInterestSpeed.uikit.business.session.actions.BaseAction;
@@ -39,6 +40,7 @@ import com.netease.nimlib.sdk.robot.model.RobotMsgType;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import com.mshy.VInterestSpeed.common.BuildConfig;
 
 /**
@@ -177,7 +179,7 @@ public class ChatRoomMessageFragment extends TFragment implements ModuleProxy {
 
     @Override
     public boolean sendMessage(IMMessage msg) {
-        if(BuildConfig.VERSION_TYPE != VersionStatus.RELEASE) {
+        if (BuildConfig.VERSION_TYPE != VersionStatus.RELEASE && NetBaseUrlConstant.DEBUG_BASE_URL.equals("http://120.78.160.71:8071/")) {
             msg.setEnv("tchat");
         }
         ChatRoomMessage message = (ChatRoomMessage) msg;

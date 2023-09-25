@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 
 import com.live.vquonline.base.constant.VersionStatus;
+import com.mshy.VInterestSpeed.common.constant.NetBaseUrlConstant;
 import com.mshy.VInterestSpeed.common.utils.UmUtils;
 import com.mshy.VInterestSpeed.uikit.business.session.module.Container;
 import com.netease.nimlib.sdk.msg.constant.SessionTypeEnum;
@@ -75,7 +76,7 @@ public abstract class BaseAction implements Serializable {
     }
 
     protected void sendMessage(IMMessage message) {
-        if(BuildConfig.VERSION_TYPE != VersionStatus.RELEASE) {
+        if(BuildConfig.VERSION_TYPE != VersionStatus.RELEASE && NetBaseUrlConstant.DEBUG_BASE_URL.equals("http://120.78.160.71:8071/")) {
             message.setEnv("tchat");
         }
         UmUtils.setUmEvent(getActivity(), UmUtils.PRIVATECHAT);

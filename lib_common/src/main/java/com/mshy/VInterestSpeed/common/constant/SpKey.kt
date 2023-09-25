@@ -104,4 +104,6 @@ object SpKey {
     const val GIFT_DIALOG_BEAN_JSON="giftDialogBeanJson"
 
     const val NEW_VISITOR_COUNT = "newVisitorCount"
+
+    const val LOGIN_DATE = "loginDate"
 }
