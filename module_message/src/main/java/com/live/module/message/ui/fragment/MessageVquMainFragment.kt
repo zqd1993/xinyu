@@ -22,8 +22,10 @@ import com.live.module.message.databinding.MessageTantaMainFragmentBinding
 import com.live.module.message.vm.MessageVquMainFragmentViewModel
 import com.live.vquonline.base.ktx.gone
 import com.live.vquonline.base.ktx.visible
+import com.live.vquonline.base.utils.DateUtils
 import com.live.vquonline.base.utils.EventBusRegister
 import com.live.vquonline.base.utils.SpUtils
+import com.live.vquonline.base.utils.ToastUtils
 import com.mshy.VInterestSpeed.common.constant.RouteKey
 import com.mshy.VInterestSpeed.common.constant.RouteUrl
 import com.mshy.VInterestSpeed.common.constant.SpKey
@@ -37,6 +39,7 @@ import com.mshy.VInterestSpeed.common.utils.UserManager
 import com.mshy.VInterestSpeed.common.utils.UserSpUtils
 import com.mshy.VInterestSpeed.uikit.util.UIKitUtils
 import com.michael.easydialog.EasyDialog
+import com.mshy.VInterestSpeed.common.bean.VquUserInfo
 import com.mshy.VInterestSpeed.common.event.IsShowGuideEvent
 import com.mshy.VInterestSpeed.common.helper.MagicIndicatorHelper
 import com.mshy.VInterestSpeed.common.ui.adapter.CommonVquMainPageAdapter
@@ -81,6 +84,8 @@ class MessageVquMainFragment :
     private var isImFail: Boolean = false
     override val mViewModel: MessageVquMainFragmentViewModel by viewModels()
 
+    private var vquUserInfo: VquUserInfo? = null
+
     override fun MessageTantaMainFragmentBinding.initView() {
         ImmersionBar.with(this@MessageVquMainFragment).titleBar(vquLlPaddingTop).init()
         vquInitMagicIndicator()
@@ -108,15 +113,21 @@ class MessageVquMainFragment :
                 localIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                 if (Build.VERSION.SDK_INT >= 9) {
                     localIntent.action = "android.settings.APPLICATION_DETAILS_SETTINGS"
-                    localIntent.data = Uri.fromParts("package",
+                    localIntent.data = Uri.fromParts(
+                        "package",
                         activity?.packageName,
-                        null)
+                        null
+                    )
                 } else if (Build.VERSION.SDK_INT <= 8) {
                     localIntent.action = Intent.ACTION_VIEW
-                    localIntent.setClassName("com.android.settings",
-                        "com.android.settings.InstalledAppDetails")
-                    localIntent.putExtra("com.android.settings.ApplicationPkgName",
-                        activity?.packageName)
+                    localIntent.setClassName(
+                        "com.android.settings",
+                        "com.android.settings.InstalledAppDetails"
+                    )
+                    localIntent.putExtra(
+                        "com.android.settings.ApplicationPkgName",
+                        activity?.packageName
+                    )
                 }
                 startActivity(localIntent)
             }
@@ -216,8 +227,8 @@ class MessageVquMainFragment :
 
     override fun onResume() {
         super.onResume()
-        val vquUserInfo = UserSpUtils.getUserBean()
-        if (vquUserInfo?.gender == 1 && vquUserInfo.isRpAuth != 1) {
+        vquUserInfo = UserSpUtils.getUserBean()
+        if (vquUserInfo?.gender == 1 && vquUserInfo?.isRpAuth != 1) {
             mBinding.vquIvPrivilege.gone()
         } else {
             mBinding.vquIvPrivilege.gone()
@@ -258,7 +269,8 @@ class MessageVquMainFragment :
         vquTitles.add(getString(R.string.message_vqu_main_fragment_call_record))
         val commonNavigator =
             CommonNavigator(
-                activity)
+                activity
+            )
         commonNavigator.adapter = object : CommonNavigatorAdapter() {
             override fun getCount(): Int {
                 return vquTitles.size
@@ -397,10 +409,21 @@ class MessageVquMainFragment :
         if (SpUtils.getBoolean(SpKey.KEY_NOTICE, false) != true) {
             notificationRun()
         }
-        if (SpUtils.getBoolean(SpKey.KEY_BEWARE, false) != true) {
-            var bewareDialog = CommonVquBewareDialog()
-            bewareDialog.show(childFragmentManager, "bewareDialog")
-            SpUtils.putBoolean(SpKey.KEY_BEWARE, true)
+        val dateStr = DateUtils.getDateFormatString(System.currentTimeMillis(), "yyyy-MM-dd")
+        if (vquUserInfo != null) {
+            if (vquUserInfo?.gender == 2) {
+                if (SpUtils.getString(SpKey.LOGIN_DATE) != null) {
+                    if (SpUtils.getString(SpKey.LOGIN_DATE)!! == dateStr) {
+                        return
+                    }
+                }
+            }
+            if (SpUtils.getBoolean(SpKey.KEY_BEWARE, false) != true || vquUserInfo?.gender == 2) {
+                var bewareDialog = CommonVquBewareDialog()
+                bewareDialog.show(childFragmentManager, "bewareDialog")
+                SpUtils.putBoolean(SpKey.KEY_BEWARE, true)
+                SpUtils.putString(SpKey.LOGIN_DATE, dateStr)
+            }
         }
     }
 

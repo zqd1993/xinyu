@@ -80,7 +80,7 @@ public class HeaderUtil {
                 Charset charset = contentType.charset(StandardCharsets.UTF_8);
                 String data = buffer.readString(charset);
                 Log.i("header parametersStr", data);
-                if (url.contains("sendIm")) {
+                if (url.contains("sendIm") || (data.startsWith("{") && data.endsWith("}"))) {
                     Gson gson = new Gson();
                     Map<String, String> map = gson.fromJson(data, new TypeToken<Map<String, String>>() {
                     }.getType());
