@@ -22,6 +22,7 @@ import com.live.vquonline.base.utils.UtilsKt;
 import com.mshy.VInterestSpeed.common.CommonApplication;
 import com.mshy.VInterestSpeed.common.R;
 import com.mshy.VInterestSpeed.common.bean.gift.DialogGiftBean;
+import com.mshy.VInterestSpeed.common.constant.NetBaseUrlConstant;
 import com.mshy.VInterestSpeed.common.constant.SpKey;
 import com.mshy.VInterestSpeed.common.livedata.AppViewModel;
 import com.mshy.VInterestSpeed.common.utils.UserSpUtils;
@@ -68,6 +69,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 import com.mshy.VInterestSpeed.common.BuildConfig;
 
 /**
@@ -181,7 +183,7 @@ public class MessageFragment extends TFragment implements ModuleProxy {
         Log.i("tyy", "清除消息");
         long startTime = 0;
 //        long endTime=System.currentTimeMillis()-60*60*1000*24*30;//30天前的删掉
-        long endTime = System.currentTimeMillis() - 60 * 1000*2;//2分钟前的删掉
+        long endTime = System.currentTimeMillis() - 60 * 1000 * 2;//2分钟前的删掉
         NIMClient.getService(MsgService.class).deleteRangeHistory(sessionId, sessionType, startTime, endTime);
         searchMessage(sessionId);
     }
@@ -385,7 +387,7 @@ public class MessageFragment extends TFragment implements ModuleProxy {
      */
     @Override
     public boolean sendMessage(IMMessage message) {
-        if(BuildConfig.VERSION_TYPE != VersionStatus.RELEASE) {
+        if (BuildConfig.VERSION_TYPE != VersionStatus.RELEASE && NetBaseUrlConstant.DEBUG_BASE_URL.equals("http://120.78.160.71:8071/")) {
             message.setEnv("tchat");
         }
         sendMsg(message);
