@@ -8,17 +8,17 @@ package com.live.module.message.constant
  */
 object NIMVquConfig {
     //小米推送
-    const val XM_MIX_PUSH_NAME = "yjsqXiaomi"
-    const val XM_MIX_PUSH_APP_ID = "2882303761520207731"
-    const val XM_MIX_PUSH_APP_KEY = "5122020777731"
+    const val XM_MIX_PUSH_NAME = "b4bea660717814b4a258f68e5743098a"
+    const val XM_MIX_PUSH_APP_ID = "2882303761520264613"
+    const val XM_MIX_PUSH_APP_KEY = "5822026471613"
     //华为
     const val HW_MIX_PUSH_NAME = "yjsqHuawei"
     const val HW_MIX_PUSH_APP_ID = "107460895"
     //vivo
-    const val VIVO_MIX_PUSH_NAME = "yjsqVIVO"
+    const val VIVO_MIX_PUSH_NAME = "b2b7a12f1615fd759797d072ee1fd1e1"
 
-    const val OPPO_MIX_PUSH_NAME = "yjsqOppo"
-    const val OPPO_MIX_APP_ID = "30927477"
-    const val OPPO_MIX_APP_KEY= "696f31e8c6f14b918229c2d17c58ce57"
-    const val OPPO_MIX_APP_SERCET= "542490533ca248fd9425965ccd4cdbfe"
+    const val OPPO_MIX_PUSH_NAME = "a7a14303af347173889c8c8baf43922b"
+    const val OPPO_MIX_APP_ID = "31286237"
+    const val OPPO_MIX_APP_KEY= "be4ef1a5ce7c4b67b84f510ff4d84796"
+    const val OPPO_MIX_APP_SERCET= "cbf270912839440db12dc80ffcb447a4"
 }
