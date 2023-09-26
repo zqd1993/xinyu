@@ -34,6 +34,7 @@ import com.live.module.agora.VideoManager
 import com.live.module.agora.activity.AgoraTantaVideo2Activity
 import com.live.module.agora.bean.AgoraVquChatShootBean
 import com.live.module.agora.bean.AgoraVquNoticeBean
+import com.live.module.agora.bean.VquCountdownBean
 import com.live.module.agora.bean.VquHangUpBean
 import com.live.module.agora.framework.PreprocessorFaceUnity
 import com.live.module.agora.framework.RtcVideoConsumer
@@ -277,6 +278,10 @@ class VideoCall : SensorEventListener, RtcEngineEventHandler {
     var hangupType = 0
 
     var roomId = 0
+
+    var isHangup = false
+
+    var isShowCanCallTimeToast = false
 
     /**
      * WebSocket
@@ -652,7 +657,7 @@ class VideoCall : SensorEventListener, RtcEngineEventHandler {
             if (!mHeartTimerTaskIsRunning) {
                 //开启心跳计时器
                 mHeartTimerTaskIsRunning = true
-                mTimerPool.scheduleAtFixedRate(mHeartTimerTask, 0, 30, TimeUnit.SECONDS)
+                mTimerPool.scheduleAtFixedRate(mHeartTimerTask, 0, 3, TimeUnit.SECONDS)
             }
         }
 
@@ -727,6 +732,25 @@ class VideoCall : SensorEventListener, RtcEngineEventHandler {
 
                     HEARTBEAT -> {    //心跳检测
                         heartBeatAfterSocket()
+                    }
+
+                    CANCALLTIME -> {
+                        if(isShowCanCallTimeToast){
+                            return
+                        }
+                        val countdownBean: com.mshy.VInterestSpeed.common.bean.websocket.WebSocketResultBean<VquCountdownBean> =
+                            Gson().fromJson(
+                                json,
+                                object :
+                                    TypeToken<com.mshy.VInterestSpeed.common.bean.websocket.WebSocketResultBean<VquCountdownBean?>?>() {}.type
+                            )
+                        Log.d("video countdownBean", "countdownBean.data?.tip = ${countdownBean.data?.tip}")
+                        if(countdownBean.data?.tip == 1){
+                            Handler().postDelayed({
+                                toast("费用不足已断开")
+                                isShowCanCallTimeToast = true
+                            }, 1000)
+                        }
                     }
                 }
             }
@@ -832,7 +856,10 @@ class VideoCall : SensorEventListener, RtcEngineEventHandler {
     /**
      * 挂断操作
      */
-    private fun hangUpAfterSocket(json: String) {
+    fun hangUpAfterSocket(json: String) {
+        if(isHangup){
+            return
+        }
         synchronized(VideoCall::class.java) {
             hangupAfterSocketSync(json)
         }
@@ -853,6 +880,7 @@ class VideoCall : SensorEventListener, RtcEngineEventHandler {
         hangupType = hangUpBean.data?.type!!
         roomId = hangUpBean.data?.roomId!!
         if (hangUpBean.data?.type != 10 && hangUpBean.data?.type != 11) {
+            isHangup = true
             mWebSocketStateListeners?.onHangUp(json)
             VideoCallManager.isStarted = false
 
@@ -913,7 +941,11 @@ class VideoCall : SensorEventListener, RtcEngineEventHandler {
             }
 
             6 -> {
+                if(isShowCanCallTimeToast){
+                    return
+                }
                 toast("费用不足已断开")
+                isShowCanCallTimeToast = true
             }
 
             7 -> {}

@@ -813,6 +813,7 @@ class AgoraTantaVideo2Activity :
         requestBean.data.room_id = mVquRoomId
         requestBean.method = HANGUP
         VideoCallManager.sendObjectMessage(requestBean)
+        VideoCallManager.hangup(mVquRoomId)
     }
 
     private var activityIsShow = true
