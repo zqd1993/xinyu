@@ -103,6 +103,11 @@ object VideoCallManager {
         videoCall?.removeRoomStateListener(listener)
     }
 
+    fun hangup(mVquRoomId: Int){
+        val hangupStr = "{\"code\":0,\"method\":\"hangup\",\"message\":\"您已挂断\",\"data\":{\"roomid\":$mVquRoomId,\"type\":5}}"
+        videoCall?.hangUpAfterSocket(hangupStr)
+    }
+
     interface RoomStateListener {
         fun onJoinChannelSuccess(channel: String?, uid: Int, elapsed: Int)
 
