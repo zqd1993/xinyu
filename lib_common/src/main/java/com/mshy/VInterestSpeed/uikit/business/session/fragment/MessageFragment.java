@@ -16,9 +16,13 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.ellison.glide.translibrary.ImageUtils;
+import com.ellison.glide.translibrary.base.LoaderBuilder;
+import com.live.vquonline.base.BaseApplication;
 import com.live.vquonline.base.constant.VersionStatus;
 import com.live.vquonline.base.utils.SpUtils;
 import com.live.vquonline.base.utils.UtilsKt;
@@ -30,6 +34,7 @@ import com.mshy.VInterestSpeed.common.constant.RouteKey;
 import com.mshy.VInterestSpeed.common.constant.RouteUrl;
 import com.mshy.VInterestSpeed.common.constant.SpKey;
 import com.mshy.VInterestSpeed.common.livedata.AppViewModel;
+import com.mshy.VInterestSpeed.common.utils.UiUtils;
 import com.mshy.VInterestSpeed.common.utils.UserSpUtils;
 import com.mshy.VInterestSpeed.uikit.api.NimUIKit;
 import com.mshy.VInterestSpeed.common.bean.UserInCallEvent;
@@ -47,6 +52,7 @@ import com.mshy.VInterestSpeed.uikit.api.model.main.CustomPushContentProvider;
 import com.mshy.VInterestSpeed.uikit.api.model.session.SessionCustomization;
 import com.mshy.VInterestSpeed.uikit.business.session.constant.Extras;
 import com.mshy.VInterestSpeed.uikit.common.CommonUtil;
+import com.mshy.VInterestSpeed.uikit.common.util.sys.ScreenUtil;
 import com.mshy.VInterestSpeed.uikit.impl.NimUIKitImpl;
 import com.netease.nimlib.sdk.NIMClient;
 import com.netease.nimlib.sdk.Observer;
@@ -163,9 +169,16 @@ public class MessageFragment extends TFragment implements ModuleProxy {
         });
         UserInfo userInfo = NimUIKit.getUserInfoProvider().getUserInfo(sessionId);
         if (userInfo != null && !TextUtils.isEmpty(userInfo.getAvatar())) {
-            Glide.with(this)
-                    .load(NetBaseUrlConstant.IMAGE_URL_2 + userInfo.getAvatar() + "?x-oss-process=image/blur,r_25,s_25/quality,q_100")
-                    .into(messageActivityBackground);
+            LoaderBuilder builderConfig =new LoaderBuilder()
+                    .width(UiUtils.dip2px(BaseApplication.context, ScreenUtil.getDisplayWidth()))
+                    .height(UiUtils.dip2px(BaseApplication.context, ScreenUtil.getDisplayHeight()))
+                    .blur(100, 3)
+                    .scaleType(ImageView.ScaleType.CENTER_CROP)
+                    .load(NetBaseUrlConstant.IMAGE_URL_2 + userInfo.getAvatar());
+            ImageUtils.getInstance().bind(messageActivityBackground, builderConfig);
+//            Glide.with(this)
+//                    .load(NetBaseUrlConstant.IMAGE_URL_2 + userInfo.getAvatar() + "?x-oss-process=image/blur,r_25,s_25/quality,q_100")
+//                    .into(messageActivityBackground);
         }
 
         if(userInfo != null && !TextUtils.isEmpty(userInfo.getName())){

@@ -90,7 +90,7 @@
 
         <meta-data
             android:name="com.openinstall.APP_KEY"
-            android:value="co99c5" />
+            android:value="k4sqw3" />
 
 
         <!--  腾讯TBS X5内核初始化 dex2oat优化方案 -->
@@ -461,12 +461,12 @@
             android:theme="@style/DialogActBgStyle" />
 
         <activity
-            android:name="xinyu.love.wxapi.WXEntryActivity"
+            android:name="com.queniang.zhenban.android.wxapi.WXEntryActivity"
             android:exported="true"
             android:launchMode="singleTop" />
 
         <activity
-            android:name="xinyu.love.wxapi.WXPayEntryActivity"
+            android:name="com.queniang.zhenban.android.wxapi.WXPayEntryActivity"
             android:exported="true"
             android:launchMode="singleTop" />
         <activity

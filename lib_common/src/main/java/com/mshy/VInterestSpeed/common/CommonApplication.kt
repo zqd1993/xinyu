@@ -200,7 +200,7 @@ class CommonApplication : ApplicationLifecycle, ViewModelStoreOwner {
         Tencent.setIsPermissionGranted(true)
         UMConfigure.init(
             BaseApplication.context,
-            "6254172f0059ce2bad305358",
+            "651165b8b2f6fa00ba591163",
             DeviceManager.getInstance().getChannel(),
             UMConfigure.DEVICE_TYPE_PHONE,
             ""
@@ -211,8 +211,8 @@ class CommonApplication : ApplicationLifecycle, ViewModelStoreOwner {
             "WvtHEdQDDmfJ4wWh"
         )
         ShareManager.getInstance().configWeixin(
-            "wx883d933ee9703624",
-            "20db3cb80e7439a5c23564d45f236e72"
+            "wx61b5a6be779642f4",
+            "7fb6f124d5bd968850dd2e317c9cc19b"
         )
         return "Umeng"
     }

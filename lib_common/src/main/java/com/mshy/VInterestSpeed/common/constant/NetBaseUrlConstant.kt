@@ -13,8 +13,8 @@ import com.mshy.VInterestSpeed.common.BuildConfig
 object NetBaseUrlConstant {
     var BASE_URL = "http://api.zhenban.top/"//正式环境
 
-    const val DEBUG_BASE_URL = "http://api.zhenban.top/"//测试环境
-//    const val DEBUG_BASE_URL = "http://120.78.160.71:8071/"//测试环境
+//    const val DEBUG_BASE_URL = "http://api.zhenban.top/"//测试环境
+    const val DEBUG_BASE_URL = "http://120.78.160.71:8071/"//测试环境
 
     var IMAGE_URL = "http://asset.zhenban.top/"
 
@@ -36,12 +36,12 @@ object NetBaseUrlConstant {
     const val HELP_URL_BOY = "/index/about/help_boy.html"
     const val HELP_URL_GIRL = "/index/about/help_girl.html"
     const val HELP_URL_SPECIAL = "/index/about/help_audit.html"
-    const val AGREEMENT_URL = "/index/about/agreement_qy.html" //用户协议
+    const val AGREEMENT_URL = "/queniang/about/agreement_qy.html" //用户协议
     const val RULE_URL = "/index/about/invite_help.html" //规则详情
 
-    const val USER_PRIVACY_URL = "/index/about/privacy_qy.html" //用户隐私协议
+    const val USER_PRIVACY_URL = "/queniang/about/privacy_qy.html" //用户隐私协议
 
-    const val USER_permission_URL = "/index/about/permission_qy.html" //权限隐私
+    const val USER_permission_URL = "/queniang/about/permission_qy.html" //权限隐私
 
     const val USER_thirdparty_sdk_URL = "/index/about/thirdparty_sdk_qy.html" //第三方sdk目录
 

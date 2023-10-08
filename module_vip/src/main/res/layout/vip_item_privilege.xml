@@ -32,6 +32,7 @@
         android:layout_marginTop="6dp"
         android:gravity="center"
         android:text="专属勋章，彰显\n尊贵身份"
+        android:lineSpacingExtra="1.2dp"
         android:textColor="@color/color_999999"
         android:textSize="11sp" />
 

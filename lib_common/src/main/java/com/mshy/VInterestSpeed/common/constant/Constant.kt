@@ -8,7 +8,7 @@ package com.mshy.VInterestSpeed.common.constant
 const val LIMIT: Int = 16  //分页
 
 //微信Id
-const val WECHAT_APP_ID = "wx883d933ee9703624"
+const val WECHAT_APP_ID = "wx61b5a6be779642f4"
 
 //-----------------------------支付类型-----------------------------
 const val PAY_RECHARGE_COIN_SUCCESS = "pay_recharge_coin_success";

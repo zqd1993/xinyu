@@ -1,4 +1,4 @@
-package xinyu.love.wxapi;
+package com.queniang.zhenban.android.wxapi;
 
 
 import android.app.ActivityManager;
