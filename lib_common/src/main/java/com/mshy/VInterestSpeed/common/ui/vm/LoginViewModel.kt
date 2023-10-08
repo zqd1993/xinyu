@@ -101,7 +101,7 @@ class LoginViewModel @Inject constructor(private val mRepo: LoginRepository) :
                 .catch { }
                 .collect {
                     launch(Dispatchers.Main) {
-                        vquLoginCheck(it.data.userinfo)
+                        vquLoginCheck(it.data.userinfo, true)
                     }
                 }
         }
@@ -124,14 +124,14 @@ class LoginViewModel @Inject constructor(private val mRepo: LoginRepository) :
                 .collect {
                     launch(Dispatchers.Main) {
                         timer.cancel()
-                        vquLoginCheck(it.data.userinfo)
+                        vquLoginCheck(it.data.userinfo, false)
                     }
                 }
         }
     }
 
-    private fun vquLoginCheck(userinfo: VquUserInfo) {
-        LoginUtils.checkLoginStatus(userinfo, finish = {
+    private fun vquLoginCheck(userinfo: VquUserInfo, oneKeyLogin: Boolean) {
+        LoginUtils.checkLoginStatus(userinfo, false, oneKeyLogin, finish = {
             changeStateView(hide = true)
         })
     }
@@ -139,25 +139,33 @@ class LoginViewModel @Inject constructor(private val mRepo: LoginRepository) :
     fun loginThird(activity: Activity, type: Int) {
 
 
-        com.mshy.VInterestSpeed.common.utils.ShareManager.getInstance().verify(object : com.mshy.VInterestSpeed.common.utils.ShareManager.iAuthStatus {
-            override fun success(map: MutableMap<String, String>) {
+        com.mshy.VInterestSpeed.common.utils.ShareManager.getInstance()
+            .verify(object : com.mshy.VInterestSpeed.common.utils.ShareManager.iAuthStatus {
+                override fun success(map: MutableMap<String, String>) {
 
-                when (type) {
-                    com.mshy.VInterestSpeed.common.utils.ShareManager.TYPE_WEIXIN -> thirdLogin(map, "wechat")
-                    com.mshy.VInterestSpeed.common.utils.ShareManager.TYPE_QQ -> thirdLogin(map, "qq")
+                    when (type) {
+                        com.mshy.VInterestSpeed.common.utils.ShareManager.TYPE_WEIXIN -> thirdLogin(
+                            map,
+                            "wechat"
+                        )
+
+                        com.mshy.VInterestSpeed.common.utils.ShareManager.TYPE_QQ -> thirdLogin(
+                            map,
+                            "qq"
+                        )
+                    }
+
                 }
 
-            }
+                override fun error() {
+                    EventBus.getDefault().post(com.mshy.VInterestSpeed.common.bean.OnFinishEvent())
+                }
 
-            override fun error() {
-                EventBus.getDefault().post(com.mshy.VInterestSpeed.common.bean.OnFinishEvent())
-            }
+                override fun cancel() {
+                    EventBus.getDefault().post(com.mshy.VInterestSpeed.common.bean.OnFinishEvent())
+                }
 
-            override fun cancel() {
-                EventBus.getDefault().post(com.mshy.VInterestSpeed.common.bean.OnFinishEvent())
-            }
-
-        }, activity, type)
+            }, activity, type)
 
 
     }
@@ -188,7 +196,7 @@ class LoginViewModel @Inject constructor(private val mRepo: LoginRepository) :
                         UserManager.inviteResult = true
                     }
                     launch(Dispatchers.Main) {
-                        vquLoginCheck(it.data.userinfo)
+                        vquLoginCheck(it.data.userinfo, false)
                     }
                 }
         }

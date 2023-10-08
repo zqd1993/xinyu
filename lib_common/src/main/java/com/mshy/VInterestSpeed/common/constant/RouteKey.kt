@@ -40,6 +40,8 @@ object RouteKey {
     const val START_TIME = "startTime"
     const val END_TIME = "endTime"
 
+    const val SET_INFO_IS_ONE_KEY_PASS = "set_info_is_one_key_pass"
+
     object RelationType {
         const val FOCUS = 0
         const val FANS = 1

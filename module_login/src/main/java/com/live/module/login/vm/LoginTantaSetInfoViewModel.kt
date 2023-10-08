@@ -65,6 +65,8 @@ class LoginTantaSetInfoViewModel @Inject constructor(private val repository: Log
 
     private var bindData: String? = null
 
+    var mSetInfoIsOneKeyPass: Boolean = false
+
 
     fun tantaNickname() {
         launchIO {
@@ -298,7 +300,7 @@ class LoginTantaSetInfoViewModel @Inject constructor(private val repository: Log
                     UserManager.userInfo = it.data.userinfo
 
                     launch(Dispatchers.Main) {
-                        LoginUtils.checkLoginStatus(it.data.userinfo, finish = { isFinish ->
+                        LoginUtils.checkLoginStatus(it.data.userinfo, true, mSetInfoIsOneKeyPass, finish = { isFinish ->
                             if (isFinish) {
                                 changeStateView(hide = true)
                             }

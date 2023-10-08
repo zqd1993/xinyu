@@ -99,7 +99,7 @@ class SplashActivity : BaseActivity<CommonActivitySplashBinding, SplashViewModel
         val isLogin = UserSpUtils.getBoolean(SpKey.isLogin)
         UserManager.userInfo = UserSpUtils.getUserBean()
         if (isLogin == true && UserManager.userInfo != null) {
-            LoginUtils.checkLoginStatus(UserManager.userInfo!!, true, true) {
+            LoginUtils.checkLoginStatus(UserManager.userInfo!!,  false, false, true, true) {
                 if (it) {
                     finish()
                 } else {
@@ -138,7 +138,9 @@ class SplashActivity : BaseActivity<CommonActivitySplashBinding, SplashViewModel
     }
 
     private fun onClickQQ() {
-        if (!ShareManager.getInstance().isInstalled(this, com.mshy.VInterestSpeed.common.utils.ShareManager.TYPE_QQ)) {
+        if (!ShareManager.getInstance()
+                .isInstalled(this, com.mshy.VInterestSpeed.common.utils.ShareManager.TYPE_QQ)
+        ) {
             toast(R.string.common_qq_not_install)
             return
         }
@@ -249,18 +251,22 @@ class SplashActivity : BaseActivity<CommonActivitySplashBinding, SplashViewModel
 
                         onClickQQ()
                     }
+
                     ShareManager.TYPE_WEIXIN -> {
                         onClickWechat()
                     }
+
                     com.mshy.VInterestSpeed.common.utils.ShareManager.TYPE_OTHER_PHONE -> {
                         ARouter.getInstance().build(RouteUrl.Login.LoginTantaPhoneLoginActivity)
                             .navigation()
                     }
+
                     com.mshy.VInterestSpeed.common.utils.ShareManager.TYPE_CURRENT_PHONE -> {
 
                     }
                 }
             }
+
             0 -> {
                 phoneAuthLogin?.quit()
                 finish()

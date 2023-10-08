@@ -339,4 +339,8 @@ interface GlobalApiService {
         @Field("id") id: String
     ): BaseResponse<PayOrderInfoBean>
 
+    @POST("user/check_event")
+    @FormUrlEncoded
+    fun checkEvent(@FieldMap params: MutableMap<String, Any>): Call<BaseResponse<CommonCallPriceBean>>
+
 }
