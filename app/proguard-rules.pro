@@ -348,3 +348,5 @@
 -keepclassmembers,allowobfuscation class * {
      @com.alibaba.fastjson.annotation.JSONField <fields>;
 }
+
+-keep class com.ishumei.** {*;}

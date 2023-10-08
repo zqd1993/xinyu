@@ -10,6 +10,7 @@ import android.widget.ImageView
 import androidx.activity.viewModels
 import androidx.core.content.ContextCompat
 import androidx.core.widget.addTextChangedListener
+import com.alibaba.android.arouter.facade.annotation.Autowired
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.bigkoo.pickerview.builder.OptionsPickerBuilder
 import com.bigkoo.pickerview.view.OptionsPickerView
@@ -37,6 +38,7 @@ import com.luck.picture.lib.utils.DateUtils
 import com.luck.picture.lib.utils.SandboxTransformUtils
 import com.mshy.VInterestSpeed.common.bean.LoginEvent
 import com.mshy.VInterestSpeed.common.constant.NetBaseUrlConstant
+import com.mshy.VInterestSpeed.common.constant.RouteKey
 import com.mshy.VInterestSpeed.common.constant.RouteUrl
 import com.mshy.VInterestSpeed.common.ext.initClose
 import com.mshy.VInterestSpeed.common.ext.setViewClickListener
@@ -88,6 +90,9 @@ class LoginTantaSetInfoActivity :
     private var mBoyName = ""
     private var mGirlName = ""
 
+    @Autowired(name = RouteKey.SET_INFO_IS_ONE_KEY_PASS)
+    @JvmField
+    var mSetInfoIsOneKeyPass = false
 
     private val mLoadDialog: com.mshy.VInterestSpeed.common.ui.dialog.LoadingDialog by lazy {
         com.mshy.VInterestSpeed.common.ui.dialog.LoadingDialog(this, "提交中")
@@ -519,6 +524,8 @@ class LoginTantaSetInfoActivity :
     }
 
     override fun initObserve() {
+        mViewModel.mSetInfoIsOneKeyPass = mSetInfoIsOneKeyPass
+
         mViewModel.loginTantaNicknameData.observe(this) {
             mLoginTantaNicknameBean = it
 

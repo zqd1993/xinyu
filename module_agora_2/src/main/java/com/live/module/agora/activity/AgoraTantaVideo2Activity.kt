@@ -889,9 +889,13 @@ class AgoraTantaVideo2Activity :
     }
 
     override fun onRemoteVideoStateChanged(uid: Int, state: Int, reason: Int, elapsed: Int) {
-        Log.d(TAG, "onRemoteVideoStateChanged: ")
-        runOnUiThread {
-            changedCamera(reason)
+        Log.d(TAG, "onRemoteVideoStateChanged: state = $state--> reason = $reason")
+        if (reason == 7) {
+            VideoCallManager.hangup(mVquRoomId)
+        } else {
+            runOnUiThread {
+                changedCamera(reason)
+            }
         }
     }
 

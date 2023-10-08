@@ -29,7 +29,7 @@
     <!--    <uses-permission android:name="android.permission.READ_PHONE_STATE" />-->
     <uses-permission
         android:name="android.permission.READ_PHONE_STATE"
-        tools:node="remove" />//移除
+        tools:node="remove" />
     <!--允许获取网络状态，用于网络定位（无gps情况下的定位），若需网络定位功能则必选-->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
