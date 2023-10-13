@@ -1,6 +1,10 @@
 package com.mshy.VInterestSpeed.common.ui.vm
 
+import android.os.Handler
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
+import com.ishumei.smantifraud.SmAntiFraud
+import com.live.vquonline.base.BaseApplication
 import com.live.vquonline.base.ktx.launchIO
 import com.live.vquonline.base.mvvm.vm.BaseViewModel
 import com.live.vquonline.base.utils.SpUtils
@@ -10,6 +14,7 @@ import com.mshy.VInterestSpeed.common.bean.CommonVquAuthBean
 import com.mshy.VInterestSpeed.common.bean.CommonVquStatusBean
 import com.mshy.VInterestSpeed.common.constant.SpKey
 import com.mshy.VInterestSpeed.common.ui.repo.SplashActivityRepo
+import com.mshy.VInterestSpeed.common.utils.LoginUtils
 import com.mshy.VInterestSpeed.uikit.bean.UpdateOnlineBean
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.catch
@@ -30,7 +35,8 @@ class CommonVquMainViewModel @Inject constructor(private val mRepo: SplashActivi
     val vquGetTeenModeData = MutableLiveData<BaseResponse<CommonVquStatusBean>>()
     val vquOnlineUpdateData = MutableLiveData<BaseResponse<UpdateOnlineBean>>()
 
-    val videoVquCallBean = MutableLiveData<com.mshy.VInterestSpeed.common.bean.video.VideoVquCallBean>()
+    val videoVquCallBean =
+        MutableLiveData<com.mshy.VInterestSpeed.common.bean.video.VideoVquCallBean>()
 
     val isAuthData = MutableLiveData<CommonVquAuthBean>()
 
@@ -77,7 +83,8 @@ class CommonVquMainViewModel @Inject constructor(private val mRepo: SplashActivi
                 .catch { toast(it.message ?: "") }
                 .collect {
                     //  ToastUtils.showToast(it.data.appurl,1000)
-                    com.mshy.VInterestSpeed.common.helper.CommonVquWebUrlHelper.getInstance().saveUrl(it.data.webUrl)
+                    com.mshy.VInterestSpeed.common.helper.CommonVquWebUrlHelper.getInstance()
+                        .saveUrl(it.data.webUrl)
                     val serviceId = StringBuilder()
                     for (i in 0 until it.data.config.serviceId.size) {
                         serviceId.append(it.data.config.serviceId[i])
@@ -98,7 +105,7 @@ class CommonVquMainViewModel @Inject constructor(private val mRepo: SplashActivi
                     SpUtils.putBoolean(
                         SpKey.is_audio_video_mini, is_audio_video_mini_open
                     )
-                  var  is_audio_video_mini = SpUtils.getBoolean(SpKey.is_audio_video_mini, false)
+                    var is_audio_video_mini = SpUtils.getBoolean(SpKey.is_audio_video_mini, false)
 
                     com.mshy.VInterestSpeed.uikit.common.util.log.LogUtil.e("is_audio_video_mini=$is_audio_video_mini")
                 }
@@ -169,6 +176,7 @@ class CommonVquMainViewModel @Inject constructor(private val mRepo: SplashActivi
                 }
         }
     }
+
     fun vquCloseInfoFinishTip() {
         launchIO {
             mRepo.vquCloseInfoFinishTip()
@@ -176,6 +184,15 @@ class CommonVquMainViewModel @Inject constructor(private val mRepo: SplashActivi
                 .collect {
 
                 }
+        }
+    }
+
+    fun initSm() {
+        val deviceId = SpUtils.getString(SpKey.DEVICE_ID, "")
+        val smEventId = "login"
+        val smType = "phoneMessage"
+        if(deviceId!!.isEmpty()) {
+            LoginUtils.initSm(smType, smEventId)
         }
     }
 }

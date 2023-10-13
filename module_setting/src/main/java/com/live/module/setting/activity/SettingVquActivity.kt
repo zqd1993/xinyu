@@ -306,6 +306,7 @@ class SettingVquActivity : BaseActivity<SettingTantaActivitySettingBinding, Sett
                 NIMClient.getService(AuthService::class.java).logout()
                 UserSpUtils.clear()
                 SpUtils.putInt(SpKey.NEW_VISITOR_COUNT, 0)
+                SpUtils.putString(SpKey.DEVICE_ID, "")
                 EventBus.getDefault().post("mainFinish")
                 com.mshy.VInterestSpeed.uikit.util.IntimateUtils.getInstance().clearData()
                 if (Settings.canDrawOverlays(BaseApplication.context)) {

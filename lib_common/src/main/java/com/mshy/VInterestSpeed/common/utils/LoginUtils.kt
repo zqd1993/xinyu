@@ -1,5 +1,6 @@
 package com.mshy.VInterestSpeed.common.utils
 
+import android.os.Handler
 import android.util.Log
 import com.alibaba.android.arouter.launcher.ARouter
 import com.ishumei.smantifraud.SmAntiFraud
@@ -7,6 +8,7 @@ import com.live.vquonline.base.BaseApplication
 import com.live.vquonline.base.ktx.gone
 import com.live.vquonline.base.ktx.visible
 import com.live.vquonline.base.utils.DeviceManager
+import com.live.vquonline.base.utils.SpUtils
 import com.live.vquonline.base.utils.ToastUtils
 import com.mshy.VInterestSpeed.common.R
 import com.mshy.VInterestSpeed.common.bean.BaseResponse
@@ -81,7 +83,7 @@ object LoginUtils {
                         smType = "phoneMessage"
                     }
                 }
-                checkEvent(smType, smEventId)
+                initSm(smType, smEventId)
                 UIKitUtils.loginNIM(userinfo.userId, userinfo.imToken) {
                     object : RequestCallback<LoginInfo> {
                         override fun onSuccess(param: LoginInfo?) {
@@ -103,7 +105,8 @@ object LoginUtils {
 //                                startARouterActivity(RouteUrl.Login.LoginVquLoginActivity)
                                     finish(false)
                                 }
-                                EventBus.getDefault().post(com.mshy.VInterestSpeed.common.bean.OnFinishEvent())
+                                EventBus.getDefault()
+                                    .post(com.mshy.VInterestSpeed.common.bean.OnFinishEvent())
                             }
                         }
 
@@ -134,7 +137,7 @@ object LoginUtils {
     }
 
     //初始化数美
-    fun initSm(): String {
+    fun initSm(smType: String, smEventId: String) {
         val option = SmAntiFraud.SmOption()
         option.setOrganization("63yWJFP7kEPMBTWZE5Dg")
         option.setAppId("default")
@@ -152,13 +155,14 @@ object LoginUtils {
         })
         var isOk = SmAntiFraud.create(BaseApplication.context, option)
         Log.i("initSM", "isOk = $isOk")
-        val deviceId = SmAntiFraud.getDeviceId()
-        Log.i("initSM", "deviceId = $deviceId")
-        return deviceId
+        if (isOk) {
+            Handler().postDelayed({ checkEvent(smType, smEventId) }, 2000)
+        }
     }
 
     fun checkEvent(smType: String, smEventId: String) {
-        val deviceId = initSm()
+        val deviceId = SmAntiFraud.getDeviceId()
+        Log.i("initSM", "deviceId = $deviceId")
         if (deviceId.isEmpty()) {
             return
         }
@@ -169,17 +173,16 @@ object LoginUtils {
         params["event_id"] = smEventId
         params["device_id"] = deviceId
         globalApiService.checkEvent(params)
-            .enqueue(object : Callback<BaseResponse<CommonCallPriceBean>> {
+            .enqueue(object : Callback<BaseResponse<Any>> {
                 override fun onResponse(
-                    call: Call<BaseResponse<CommonCallPriceBean>>,
-                    response: Response<BaseResponse<CommonCallPriceBean>>,
+                    call: Call<BaseResponse<Any>>,
+                    response: Response<BaseResponse<Any>>,
                 ) {
-                    if (response.body()?.code == 0) {
-                    }
+                    SpUtils.putString(SpKey.DEVICE_ID, deviceId)
                 }
 
                 override fun onFailure(
-                    call: Call<BaseResponse<CommonCallPriceBean>>,
+                    call: Call<BaseResponse<Any>>,
                     t: Throwable,
                 ) {
                 }

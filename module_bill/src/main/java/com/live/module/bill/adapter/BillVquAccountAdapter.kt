@@ -27,8 +27,10 @@ class BillVquAccountAdapter :
         val tvAccount = holder.getView<TextView>(R.id.tv_bill_vqu_item_account_id)
         val tvPhone = holder.getView<TextView>(R.id.tv_bill_vqu_item_account_phone)
         val ivIcon = holder.getView<ImageView>(R.id.iv_bill_vqu_item_account_type)
+        val tvBankName = holder.getView<TextView>(R.id.tv_bill_vqu_item_bank_name)
         tvAccount.text = "提现账号：${item.cardAccount}"
         tvPhone.text = "手机号：${item.mobile}"
+        tvBankName.text = "账户类型: ${item.bank}"
         ivIcon.vquLoadImage(NetBaseUrlConstant.IMAGE_URL + item.icon)
         if (item.isMonthLimit == 1) {
             ivIcon.alpha = 0.3f

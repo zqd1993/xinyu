@@ -212,6 +212,7 @@ class CommonVquMainActivity : BaseActivity<CommonVquActivityMainBinding, CommonV
                         }
                         UmUtils.setUmEvent(this@CommonVquMainActivity, UmUtils.FRONTPAGE)
                     }
+
                     1 -> {
                         isHome = false
                         mBinding.bannerConversation.gone()
@@ -220,16 +221,19 @@ class CommonVquMainActivity : BaseActivity<CommonVquActivityMainBinding, CommonV
                         mBinding.vquLlBottom.gone()
                         mBinding.ivTop.gone()
                     }
+
                     2 -> {
                         isHome = false
                         mBinding.bannerConversation.gone()
-                        EventBus.getDefault().post(com.mshy.VInterestSpeed.common.event.IsShowGuideEvent())
+                        EventBus.getDefault()
+                            .post(com.mshy.VInterestSpeed.common.event.IsShowGuideEvent())
                         EventBus.getDefault().post("CallRecordRefresh")
                         EventBus.getDefault().post("MsgSelect")
                         UmUtils.setUmEvent(this@CommonVquMainActivity, UmUtils.ENTERMESSAGELIST)
                         mBinding.vquLlBottom.gone()
                         mBinding.ivTop.gone()
                     }
+
                     3 -> {
                         isHome = false
                         mBinding.bannerConversation.gone()
@@ -237,6 +241,7 @@ class CommonVquMainActivity : BaseActivity<CommonVquActivityMainBinding, CommonV
                         mBinding.vquLlBottom.gone()
                         mBinding.ivTop.gone()
                     }
+
                     else -> {
 //                        ImmersionBar.with(this@CommonVquMainActivity)
 //                            .statusBarColor(R.color.color_FFFFFF).fitsSystemWindows(true).init()
@@ -263,8 +268,10 @@ class CommonVquMainActivity : BaseActivity<CommonVquActivityMainBinding, CommonV
         }
         mViewModel.isAuth()
         //用户正在通话中，初始化false
-        SpUtils.putBean(SpKey.user_in_call,
-            UserInCallEvent(false, false))
+        SpUtils.putBean(
+            SpKey.user_in_call,
+            UserInCallEvent(false, false)
+        )
 
         vquIvDelete.setViewClickListener {
             if (mBinding.vquLlBottom != null) {
@@ -276,7 +283,10 @@ class CommonVquMainActivity : BaseActivity<CommonVquActivityMainBinding, CommonV
         vquBtnEdit.setViewClickListener {
             ARouter.getInstance().build(RouteUrl.Info.InfoVquEditActivity).navigation()
         }
+
+        Handler().postDelayed({ mViewModel.initSm() }, 20000)
     }
+
     //监听是否回到顶部按钮
     @Subscribe
     fun onEventMainThread(event: ShowToTopEvent) {
@@ -289,6 +299,7 @@ class CommonVquMainActivity : BaseActivity<CommonVquActivityMainBinding, CommonV
             mBinding.ivTop.gone()
         }
     }
+
     private fun startOnLineTask(onlineTime: Long?) {
         if (onlineTime == null) {
             return

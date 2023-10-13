@@ -54,6 +54,17 @@
         app:layout_constraintTop_toBottomOf="@id/tv_bill_vqu_item_account_id"
         tools:text="手机号：138****8000" />
 
+    <TextView
+        android:id="@+id/tv_bill_vqu_item_bank_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:textColor="@color/color_222222"
+        android:textSize="12sp"
+        app:layout_constraintLeft_toLeftOf="@id/tv_bill_vqu_item_account_phone"
+        app:layout_constraintTop_toBottomOf="@id/tv_bill_vqu_item_account_phone"
+        tools:text="账户类型：支付宝" />
+
     <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
         android:id="@+id/stv_bill_vqu_item_account_edit"
         android:layout_width="60dp"

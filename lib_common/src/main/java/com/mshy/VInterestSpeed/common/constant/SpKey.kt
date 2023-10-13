@@ -106,4 +106,6 @@ object SpKey {
     const val NEW_VISITOR_COUNT = "newVisitorCount"
 
     const val LOGIN_DATE = "loginDate"
+
+    const val DEVICE_ID = "deviceId"
 }
