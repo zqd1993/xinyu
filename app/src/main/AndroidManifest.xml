@@ -50,7 +50,7 @@
 
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="com.queniang.zhenban.android.fileProvider"
+            android:authorities="queniang.love.fileProvider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data

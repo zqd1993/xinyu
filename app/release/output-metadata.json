@@ -4,7 +4,7 @@
     "type": "APK",
     "kind": "Directory"
   },
-  "applicationId": "com.queniang.zhenban.android",
+  "applicationId": "queniang.love",
   "variantName": "release",
   "elements": [
     {
@@ -12,7 +12,7 @@
       "filters": [],
       "versionCode": 1,
       "versionName": "1.0.0",
-      "outputFile": "com.queniang.zhenban.android_1(1.0.0)_release.apk"
+      "outputFile": "queniang.love_1(1.0.0)_release.apk"
     }
   ]
 }

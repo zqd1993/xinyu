@@ -200,19 +200,19 @@ class CommonApplication : ApplicationLifecycle, ViewModelStoreOwner {
         Tencent.setIsPermissionGranted(true)
         UMConfigure.init(
             BaseApplication.context,
-            "651165b8b2f6fa00ba591163",
+            "6527a72358a9eb5b0aecc1aa",
             DeviceManager.getInstance().getChannel(),
             UMConfigure.DEVICE_TYPE_PHONE,
             ""
         );
-        PlatformConfig.setWXFileProvider("com.queniang.zhenban.android.fileProvider")
+        PlatformConfig.setWXFileProvider("queniang.love.fileProvider")
         ShareManager.getInstance().configQQ(
             "1112111172",
             "WvtHEdQDDmfJ4wWh"
         )
         ShareManager.getInstance().configWeixin(
             "wx61b5a6be779642f4",
-            "7fb6f124d5bd968850dd2e317c9cc19b"
+            "ca310c154e431eebdfc5a0ca1c1ca9eb"
         )
         return "Umeng"
     }

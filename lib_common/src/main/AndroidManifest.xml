@@ -8,11 +8,11 @@
     <!-- SDK 权限申明, 第三方 APP 接入时，请将 com.netease.nim.demo 替换为自己的包名 -->
     <!-- 和下面的 uses-permission 一起加入到你的 AndroidManifest 文件中。 -->
     <permission
-        android:name="com.queniang.zhenban.android.permission.RECEIVE_MSG"
+        android:name="queniang.love.permission.RECEIVE_MSG"
         android:protectionLevel="signature" />
     <!-- 接收 SDK 消息广播权限， 第三方 APP 接入时，请将 com.netease.nim.demo 替换为自己的包名 -->
     <uses-permission android:name="android.permission.REORDER_TASKS" />
-    <uses-permission android:name="com.queniang.zhenban.android.permission.RECEIVE_MSG" />
+    <uses-permission android:name="queniang.love.permission.RECEIVE_MSG" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <!-- 云信配置end -->
 
@@ -223,7 +223,7 @@
         <!-- android:authorities="{包名}.ipc.provider", 请将com.netease.nim.demo替换为自己的包名 -->
         <provider
             android:name="com.netease.nimlib.ipc.NIMContentProvider"
-            android:authorities="com.queniang.zhenban.android.ipc.provider"
+            android:authorities="queniang.love.ipc.provider"
             android:exported="false"
             android:process=":core" />
 
@@ -461,12 +461,12 @@
             android:theme="@style/DialogActBgStyle" />
 
         <activity
-            android:name="com.queniang.zhenban.android.wxapi.WXEntryActivity"
+            android:name="queniang.love.WXEntryActivity"
             android:exported="true"
             android:launchMode="singleTop" />
 
         <activity
-            android:name="com.queniang.zhenban.android.wxapi.WXPayEntryActivity"
+            android:name="queniang.love.wxapi.WXPayEntryActivity"
             android:exported="true"
             android:launchMode="singleTop" />
         <activity
@@ -477,7 +477,7 @@
             android:name="com.mshy.VInterestSpeed.wxapi.WXEntryActivity"
             android:exported="true"
             android:launchMode="singleTask"
-            android:taskAffinity="com.queniang.zhenban.android"
+            android:taskAffinity="queniang.love"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
 
         <activity

@@ -516,7 +516,7 @@ public class MyJavascriptInterface_ extends BaseLifecycleJavascriptInterface {
 //                            }
 //                        } else if ("wechat".equals(mSelectedPayMethod)) {
 //                            if (null != result.getWechatpayinfo()) {
-//                                IWXAPI com.queniang.zhenban.android.wxapi = WXAPIFactory.createWXAPI(getActivity(), Constant.WECHAT_APP_ID, false);
+//                                IWXAPI queniang.love.wxapi = WXAPIFactory.createWXAPI(getActivity(), Constant.WECHAT_APP_ID, false);
 //                                WeChatPayInfoBean wechatpayinfo = result.getWechatpayinfo();
 //                                //TODO：调起微信支付
 //                                PayReq req = new PayReq();
@@ -529,10 +529,10 @@ public class MyJavascriptInterface_ extends BaseLifecycleJavascriptInterface {
 //                                req.sign = wechatpayinfo.getPaySign();
 //                                req.extData = Constant.PAY_H5_SUCCESS;
 //                                //先检测是否安装了微信
-//                                boolean isWXAppInstalledAndSupported = com.queniang.zhenban.android.wxapi.isWXAppInstalled();
+//                                boolean isWXAppInstalledAndSupported = queniang.love.wxapi.isWXAppInstalled();
 //                                if (isWXAppInstalledAndSupported) {
-//                                    com.queniang.zhenban.android.wxapi.registerApp(Constant.WECHAT_APP_ID);
-//                                    com.queniang.zhenban.android.wxapi.sendReq(req);
+//                                    queniang.love.wxapi.registerApp(Constant.WECHAT_APP_ID);
+//                                    queniang.love.wxapi.sendReq(req);
 //                                } else {
 //                                    MaleToast.showMessage(getActivity(), "未安装微信，不能支付");
 //                                }
