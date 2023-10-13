@@ -25,6 +25,7 @@ import com.mshy.VInterestSpeed.common.ext.setViewClickListener
 import com.mshy.VInterestSpeed.common.ext.vquLoadImage
 import com.mshy.VInterestSpeed.common.ui.BaseActivity
 import com.mshy.VInterestSpeed.common.ui.dialog.MessageDialog
+import com.mshy.VInterestSpeed.common.utils.CommonStringUtil
 import com.mshy.VInterestSpeed.common.utils.ResUtils
 import dagger.hilt.android.AndroidEntryPoint
 import java.util.regex.Pattern
@@ -75,7 +76,15 @@ class BillTantaNewWithdrawalAccountActivity :
 
 
             if (!it.cardTypes.isNullOrEmpty()) {
-                changeType(it.cardTypes[0])
+                if (type == 0) {
+                    changeType(it.cardTypes[0])
+                } else {
+                    for (typeBean in it.cardTypes) {
+                        if (typeBean.type == it.cardType) {
+                            changeType(typeBean)
+                        }
+                    }
+                }
                 mVquAccountTypeDialog.setTypes(it.cardTypes)
             }
 
@@ -227,12 +236,19 @@ class BillTantaNewWithdrawalAccountActivity :
         val phoneCode = mBinding.etBillVquNewWithdrawalAccountAuthCode.text.toString().trim()
         val idCard = mBinding.etBillVquNewWithdrawalAccountIdCard.text.toString().trim()
         val realName = mBinding.etBillVquNewWithdrawalAccountRealName.text.toString().trim()
-        val emailRegex = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}\$"
-        val phoneRegex = "^[1][3,4,5,7,8,9][0-9]{9}\$"
-        if(!Pattern.matches(phoneRegex, account) && !Pattern.matches(emailRegex, account)){
-            ToastUtils.showShort("请输入正确的支付宝账号")
-            return
-        }
+//        if (mCarType == 1) {
+//            val emailRegex = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}\$"
+//            val phoneRegex = "^[1][3,4,5,7,8,9][0-9]{9}\$"
+//            if (!Pattern.matches(phoneRegex, account) && !Pattern.matches(emailRegex, account)) {
+//                ToastUtils.showShort("请输入正确的支付宝账号")
+//                return
+//            }
+//        } else if(mCarType == 3){
+//            if (!CommonStringUtil.checkBankCard(account)) {
+//                ToastUtils.showShort("请输入正确的银行卡账号")
+//                return
+//            }
+//        }
         mViewModel.vquAccountSave(
             account,
             mCarType,
@@ -262,17 +278,17 @@ class BillTantaNewWithdrawalAccountActivity :
         return onTouchEvent(ev)
     }
 
-    private fun isShouldHideInput(v: View?, event: MotionEvent) :Boolean{
+    private fun isShouldHideInput(v: View?, event: MotionEvent): Boolean {
         if (v != null && (v is EditText)) {
             val leftTop = intArrayOf(0, 0)
             //获取输入框当前的location位置
             v.getLocationInWindow(leftTop)
             val left = leftTop[0]
             val top = leftTop[1]
-            val bottom = top +v.getHeight();
-            val right = left +v.getWidth();
+            val bottom = top + v.getHeight();
+            val right = left + v.getWidth();
 
-            return !(event.x >left&& event.x <right && event.y>top&& event.y<bottom)
+            return !(event.x > left && event.x < right && event.y > top && event.y < bottom)
         }
         return false
     }

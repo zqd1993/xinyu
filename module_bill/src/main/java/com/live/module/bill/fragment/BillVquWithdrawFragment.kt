@@ -12,6 +12,7 @@ import com.live.module.bill.databinding.BillVquFragmentWithdrawBinding
 import com.live.module.bill.vm.TantaEarningsViewModel
 import com.live.vquonline.base.ktx.clickDelay
 import com.live.vquonline.base.utils.EventBusRegister
+import com.live.vquonline.base.utils.ToastUtils
 import com.live.vquonline.base.utils.toast
 import com.mshy.VInterestSpeed.common.bean.TantaWalletBean
 import com.mshy.VInterestSpeed.common.constant.NetBaseUrlConstant
@@ -45,6 +46,7 @@ class BillVquWithdrawFragment :
     private var mVquBillVquEarningData: BillVquEarningData? = null
     private var mCurrentPosition = -1
     private var mVquCurrentOptions: BillTantaWithdrawOptions? = null
+    private var mAlipayType: Int? = null
     override val mViewModel: TantaEarningsViewModel by viewModels()
     override fun BillVquFragmentWithdrawBinding.initView() {
 
@@ -156,6 +158,7 @@ class BillVquWithdrawFragment :
         }
 
         mAlipayAccount = it.alipayAccount ?: ""
+        mAlipayType = it.cardType
         if (mAlipayAccount.isNotEmpty()) {
             mBinding.tvPersonalAccount.text = it.alipayName + "(" + mAlipayAccount + ")"
         }
@@ -214,6 +217,10 @@ class BillVquWithdrawFragment :
     }
 
     private fun jumpBindAccountPage() {
+        if(mAlipayType == null){
+            ToastUtils.showShort("不能提现")
+            return
+        }
         if (UserManager.userInfo?.isAuth != 1) {
             showAuthDialog()
         } else {

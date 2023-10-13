@@ -341,6 +341,6 @@ interface GlobalApiService {
 
     @POST("user/check_event")
     @FormUrlEncoded
-    fun checkEvent(@FieldMap params: MutableMap<String, Any>): Call<BaseResponse<CommonCallPriceBean>>
+    fun checkEvent(@FieldMap params: MutableMap<String, Any>): Call<BaseResponse<Any>>
 
 }
