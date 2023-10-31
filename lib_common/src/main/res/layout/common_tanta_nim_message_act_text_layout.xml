@@ -98,6 +98,13 @@
             android:src="@mipmap/resources_tanta_nim_ic_click_image" />
 
         <ImageView
+            android:id="@+id/edit_ai_head"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@mipmap/resources_tanta_nim_ic_click_ai_head" />
+
+        <ImageView
             android:id="@+id/edit_video"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

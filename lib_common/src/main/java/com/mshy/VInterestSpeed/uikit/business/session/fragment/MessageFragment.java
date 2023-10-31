@@ -296,6 +296,10 @@ public class MessageFragment extends TFragment implements ModuleProxy {
                     UtilsKt.toast("消息不能为空", Toast.LENGTH_SHORT);
                 }
 
+                @Override
+                public void onClickAiHead() {
+                    getAiHead();
+                }
             });
         } else {
             inputPanel.reload(container, customization);
@@ -705,6 +709,13 @@ public class MessageFragment extends TFragment implements ModuleProxy {
      * 获取礼物
      */
     protected void getGiftData() {
+
+    }
+
+    /**
+     * 获取Ai头像
+     */
+    protected void getAiHead() {
 
     }
 

@@ -3,7 +3,9 @@ package com.live.module.message.ui.fragment
 import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Bundle
+import android.provider.Settings
 import android.text.TextUtils
+import android.util.Log
 import android.view.Gravity
 import android.view.View
 import android.widget.FrameLayout
@@ -25,6 +27,7 @@ import com.live.vquonline.base.ktx.gone
 import com.live.vquonline.base.ktx.visible
 import com.live.vquonline.base.utils.EventBusUtils
 import com.live.vquonline.base.utils.SpUtils
+import com.live.vquonline.base.utils.ToastUtils
 import com.live.vquonline.base.utils.toast
 import com.luck.picture.lib.basic.PictureSelector
 import com.luck.picture.lib.config.SelectMimeType
@@ -33,13 +36,16 @@ import com.luck.picture.lib.entity.LocalMedia
 import com.luck.picture.lib.interfaces.OnCallbackIndexListener
 import com.luck.picture.lib.interfaces.OnResultCallbackListener
 import com.luck.picture.lib.utils.SandboxTransformUtils
+import com.mshy.VInterestSpeed.common.BuildConfig
 import com.mshy.VInterestSpeed.common.bean.BaseResponse
+import com.mshy.VInterestSpeed.common.bean.ExitAgoraEvent
 import com.mshy.VInterestSpeed.common.bean.gift.DialogGiftBean
 import com.mshy.VInterestSpeed.common.bean.gift.GiftListBean
 import com.mshy.VInterestSpeed.common.bean.video.VideoVquCallBean
 import com.mshy.VInterestSpeed.common.constant.NetBaseUrlConstant
 import com.mshy.VInterestSpeed.common.constant.RouteKey
 import com.mshy.VInterestSpeed.common.constant.RouteUrl
+import com.mshy.VInterestSpeed.common.constant.SpKey
 import com.mshy.VInterestSpeed.common.ext.setViewClickListener
 import com.mshy.VInterestSpeed.common.ext.toast
 import com.mshy.VInterestSpeed.common.ui.dialog.*
@@ -48,19 +54,24 @@ import com.mshy.VInterestSpeed.common.utils.GlideEngine
 import com.mshy.VInterestSpeed.common.utils.UserManager
 import com.mshy.VInterestSpeed.common.utils.UserSpUtils
 import com.mshy.VInterestSpeed.uikit.attchment.MessageVquGiftAttachment
+import com.mshy.VInterestSpeed.uikit.bean.AiHeadConfigBean
 import com.mshy.VInterestSpeed.uikit.bean.ChatIntimateBean
 import com.mshy.VInterestSpeed.uikit.bean.IMCostBean
 import com.mshy.VInterestSpeed.uikit.bean.NIMCommonWordBean
 import com.mshy.VInterestSpeed.uikit.business.session.fragment.MessageFragment
 import com.mshy.VInterestSpeed.uikit.common.adapter.MsgCommonWordAdapter
 import com.mshy.VInterestSpeed.uikit.common.http.CommonCallBack
+import com.mshy.VInterestSpeed.uikit.common.util.file.FileUtil
 import com.mshy.VInterestSpeed.uikit.event.NotificationIntimateChangeEvent
 import com.mshy.VInterestSpeed.uikit.event.NotifyCommonWordEvent
+import com.netease.nimlib.sdk.NIMClient
+import com.netease.nimlib.sdk.auth.AuthService
 import com.netease.nimlib.sdk.msg.MessageBuilder
 import com.netease.nimlib.sdk.msg.constant.SessionTypeEnum
 import com.netease.nimlib.sdk.msg.model.IMMessage
 import com.opensource.svgaplayer.*
 import com.opensource.svgaplayer.SVGAParser.Companion.shareParser
+import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
 import retrofit2.Call
@@ -71,7 +82,6 @@ import top.zibin.luban.OnCompressListener
 import java.io.File
 import java.net.MalformedURLException
 import java.net.URL
-import com.mshy.VInterestSpeed.common.BuildConfig
 
 
 /**
@@ -162,14 +172,16 @@ class MessageVquMsgFragment : MessageFragment() {
             }
         }
     }
-    var recyclerView: RecyclerView ?=null
+
+    var recyclerView: RecyclerView? = null
+
     /**
      * 初始化常用语模块
      */
     private fun initCommonWordRecyclerView() {
         mMsgAdapter =
             MsgCommonWordAdapter(mData)
-        recyclerView= rootView.findViewById(R.id.rv_common_word)
+        recyclerView = rootView.findViewById(R.id.rv_common_word)
         recyclerView?.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         recyclerView?.adapter = mMsgAdapter
@@ -292,6 +304,54 @@ class MessageVquMsgFragment : MessageFragment() {
             }
         })
         bottomGiftFragmentDialog.show(childFragmentManager)
+    }
+
+    override fun getAiHead() {
+        mApi.vquGetAiHeadConfig()
+            .enqueue(object : CommonCallBack<AiHeadConfigBean>() {
+                override fun onSuccess(data: AiHeadConfigBean) {
+                    showMsgDialog("Ai头像消耗金币：${data.amount}", 1)
+                }
+
+                override fun showSuccessToast(): Boolean {
+                    return false
+                }
+            })
+    }
+
+    private fun showMsgDialog(msg: String, type: Int) {
+        val messageDialog = MessageDialog()
+        messageDialog.setTitle(R.string.setting_tip)
+        messageDialog.setContent(msg)
+        messageDialog.setOnButtonClickListener(object : MessageDialog.OnButtonClickListener {
+            override fun onLeftClick(): Boolean {
+                messageDialog.dismiss()
+                return true
+            }
+
+            override fun onRightClick(): Boolean {
+                if (type == 1) {
+                    createHead()
+                }
+                messageDialog.dismiss()
+                return true
+            }
+
+        })
+        messageDialog.show(activity!!.supportFragmentManager, "")
+    }
+
+    private fun createHead() {
+        mApi.vquGetCreateAvatar(sessionId)
+            .enqueue(object : CommonCallBack<Any>() {
+                override fun onSuccess(data: Any) {
+
+                }
+
+                override fun showSuccessToast(): Boolean {
+                    return false
+                }
+            })
     }
 
     override fun onMessageIncomingSvg(messages: MutableList<IMMessage>?) {
@@ -445,7 +505,10 @@ class MessageVquMsgFragment : MessageFragment() {
         /**
          * 测试环境回调
          */
-        if (BuildConfig.VERSION_TYPE != VersionStatus.RELEASE && NetBaseUrlConstant.DEBUG_BASE_URL.equals("http://120.78.160.71:8071/")) {
+        if (BuildConfig.VERSION_TYPE != VersionStatus.RELEASE && NetBaseUrlConstant.DEBUG_BASE_URL.equals(
+                "http://120.78.160.71:8071/"
+            )
+        ) {
             message.env = "tchat"
         }
         if (NetBaseUrlConstant.BASE_URL == "http://appta.pre.vqu.show/") {
@@ -528,7 +591,13 @@ class MessageVquMsgFragment : MessageFragment() {
                         } else {
                             File(path!!.realPath)
                         }
-
+                        Log.d(
+                            "chooseImg",
+                            "file length = " + file.length() + "--->" + FileUtil.formatFileSize(
+                                file.length(),
+                                FileUtil.SizeUnit.MB
+                            )
+                        )
                         if (sessionType == SessionTypeEnum.P2P) {
                             sendMessage(
                                 MessageBuilder.createImageMessage(
@@ -580,10 +649,12 @@ class MessageVquMsgFragment : MessageFragment() {
                             }
 
                         }
+
                         1003, 1002 -> {
                             "余额不足，请先充值".toast()
                             CommonRechargeDialog().show(childFragmentManager, "充值")
                         }
+
                         1004 -> {
                             CommonHintDialog()
                                 .setContentSize(15)
@@ -603,6 +674,7 @@ class MessageVquMsgFragment : MessageFragment() {
                                 })
                                 .show(childFragmentManager)
                         }
+
                         else -> {
                             response.body()?.message?.toast()
                         }

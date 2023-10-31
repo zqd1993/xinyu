@@ -120,6 +120,7 @@ public class InputPanel implements IEmoticonSelectedListener, IAudioRecordCallba
     private TextWatcher aitTextWatcher;
     private View mEditImage;
     private View mEditGift;
+    private View mEditAiHead;
     private View mEditVideo;
     private View mEditCommonMsg;
     private ImageView mEditAudio;
@@ -235,6 +236,7 @@ public class InputPanel implements IEmoticonSelectedListener, IAudioRecordCallba
         tvSend = view.findViewById(R.id.tv_send);
         mEditImage = view.findViewById(R.id.edit_image);
         mEditGift = view.findViewById(R.id.edit_gift);
+        mEditAiHead = view.findViewById(R.id.edit_ai_head);
         mEditVideo = view.findViewById(R.id.edit_video);
         mEditCommonMsg = view.findViewById(R.id.edit_common_msg);
 
@@ -264,6 +266,7 @@ public class InputPanel implements IEmoticonSelectedListener, IAudioRecordCallba
         emojiButtonInInputBar.setOnClickListener(clickListener);
         mEditImage.setOnClickListener(clickListener);
         mEditGift.setOnClickListener(clickListener);
+        mEditAiHead.setOnClickListener(clickListener);
         mEditVideo.setOnClickListener(clickListener);
         mEditAudio.setOnClickListener(clickListener);
         mEditCommonMsg.setOnClickListener(clickListener);
@@ -385,6 +388,10 @@ public class InputPanel implements IEmoticonSelectedListener, IAudioRecordCallba
                 if (null != mOnClickImage) {
                     mOnClickImage.onClickGift();
                 }
+            } else if (v == mEditAiHead) {
+                if (null != mOnClickImage) {
+                    mOnClickImage.onClickAiHead();
+                }
             } else if (v == mEditVideo) {  //点击视频
                 if (null != mOnClickImage) {
                     mOnClickImage.onClickVideo();
@@ -433,6 +440,8 @@ public class InputPanel implements IEmoticonSelectedListener, IAudioRecordCallba
         void onClickImage();
 
         void onClickGift();
+
+        void onClickAiHead();
 
         void onClickVideo();
 

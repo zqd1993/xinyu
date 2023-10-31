@@ -8,6 +8,7 @@ import com.mshy.VInterestSpeed.common.bean.CommonVquGlobalConfigBean
 import com.mshy.VInterestSpeed.common.bean.VquRelationListBean
 import com.mshy.VInterestSpeed.common.bean.gift.GiftListBean
 import com.mshy.VInterestSpeed.common.bean.video.VideoVquCallBean
+import com.mshy.VInterestSpeed.uikit.bean.AiHeadConfigBean
 import com.mshy.VInterestSpeed.uikit.bean.ChatIntimateBean
 import com.mshy.VInterestSpeed.uikit.bean.IMCostBean
 import com.mshy.VInterestSpeed.uikit.bean.NIMCommonWordBean
@@ -132,5 +133,20 @@ interface MessageVquApiService {
     @POST("user/visitor_list")
     @FormUrlEncoded
     suspend fun vquVisitorList(@Field("page") page: Int): BaseResponse<VquRelationListBean>
+
+    /**
+     *  获取ai头像配置
+     * @return
+     */
+    @POST("blindbox.user_avatar/createNeedCoins")
+    fun vquGetAiHeadConfig(): Call<BaseResponse<AiHeadConfigBean>>
+
+    /**
+     *  创建ai头像
+     * @return
+     */
+    @POST("blindbox.user_avatar/createAvatar")
+    @FormUrlEncoded
+    fun vquGetCreateAvatar(@Field("userId") userId: String): Call<BaseResponse<Any>>
 
 }
