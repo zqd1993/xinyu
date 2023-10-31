@@ -507,16 +507,6 @@ class MineFragment : BaseLazyFrameFragment<MineFragmentMineBinding, MineViewMode
 
         mVquListMenuData.add(//暂时去掉
             CommonVquMenuBean(
-                R.mipmap.ic_mine_list_menu_invite,
-                getString(R.string.mine_vqu_menu_invite),
-                type = 5,
-                desc = "邀请好友，最多奖励8888金币",
-                descIcon = R.mipmap.ic_mine_list_menu_desc_red_pack
-            )
-        )
-
-        mVquListMenuData.add(//暂时去掉
-            CommonVquMenuBean(
                 R.mipmap.ic_mine_list_menu_task,
                 getString(R.string.mine_vqu_menu_task),
                 type = 7,
@@ -850,6 +840,19 @@ class MineFragment : BaseLazyFrameFragment<MineFragmentMineBinding, MineViewMode
         }
 
         setCustomerInfo(it)
+        if (it.isShowInvite == 1 && mVquListMenuData[0].type != 5) {
+            mVquListMenuData.add(//暂时去掉
+                0,
+                CommonVquMenuBean(
+                    R.mipmap.ic_mine_list_menu_invite,
+                    getString(R.string.mine_vqu_menu_invite),
+                    type = 5,
+                    desc = "邀请好友，最多奖励8888金币",
+                    descIcon = R.mipmap.ic_mine_list_menu_desc_red_pack
+                )
+            )
+            mVquListMenuAdapter.notifyDataSetChanged()
+        }
     }
 
     /**

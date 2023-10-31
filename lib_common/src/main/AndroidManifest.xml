@@ -461,7 +461,7 @@
             android:theme="@style/DialogActBgStyle" />
 
         <activity
-            android:name="queniang.love.WXEntryActivity"
+            android:name="queniang.love.wxapi.WXEntryActivity"
             android:exported="true"
             android:launchMode="singleTop" />
 

@@ -33,7 +33,9 @@ data class VquUserHomeBean(
     @SerializedName("webUrl")
     val webUrl: WebUrl,
     @SerializedName("show_location")
-    val showLocation: Int
+    val showLocation: Int,
+    @SerializedName("is_show_invite")
+    val isShowInvite: Int
 )
 
 data class Anchor(

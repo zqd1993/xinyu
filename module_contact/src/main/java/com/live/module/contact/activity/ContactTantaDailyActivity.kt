@@ -31,7 +31,7 @@ import dagger.hilt.android.AndroidEntryPoint
 /**
  * author: Lau
  * date: 2022/4/22
- * description:
+ * description: 废弃了
  */
 @AndroidEntryPoint
 @Route(path = RouteUrl.Contact.ContactTantaDailyActivity)
@@ -205,18 +205,22 @@ class ContactTantaDailyActivity :
 
             mBinding.srlContactVquMyContactRefresh.setEnableLoadMore(it.list.isNotEmpty())
 
-            if (mAdapter.itemCount > 0) {
-                mBinding.clContactVquMyContactInvitedNumParent.visibility = View.VISIBLE
+            if(it.isAuditChannel == 1){
                 mBinding.stvContactVquMyContactMoreBottom.visibility = View.GONE
                 mBinding.tvContactVquMyContactInvitedRecordBottom.visibility = View.GONE
+            } else {
+                mBinding.stvContactVquMyContactMoreBottom.visibility = View.VISIBLE
+                mBinding.tvContactVquMyContactInvitedRecordBottom.visibility = View.VISIBLE
+            }
+
+            if (mAdapter.itemCount > 0) {
+                mBinding.clContactVquMyContactInvitedNumParent.visibility = View.VISIBLE
 //                showContent()
                 mBinding.flEmptyView.gone()
 
             } else {
                 mBinding.clContactVquMyContactInvitedNumParent.visibility = View.GONE
 //                mBinding.clContactVquMyContactInvitedNumParent.visibility = View.VISIBLE
-                mBinding.stvContactVquMyContactMoreBottom.visibility = View.VISIBLE
-                mBinding.tvContactVquMyContactInvitedRecordBottom.visibility = View.VISIBLE
                 mBinding.flEmptyView.visible()
 //                showEmpty("邀请好友，即享高额提成")
             }

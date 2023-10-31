@@ -179,7 +179,7 @@ public class ChatRoomMessageFragment extends TFragment implements ModuleProxy {
 
     @Override
     public boolean sendMessage(IMMessage msg) {
-        if (BuildConfig.VERSION_TYPE != VersionStatus.RELEASE && NetBaseUrlConstant.DEBUG_BASE_URL.equals("http://120.78.160.71:8071/")) {
+        if (NetBaseUrlConstant.DEBUG_BASE_URL.equals("http://120.78.160.71:8071/")) {
             msg.setEnv("tchat");
         }
         ChatRoomMessage message = (ChatRoomMessage) msg;

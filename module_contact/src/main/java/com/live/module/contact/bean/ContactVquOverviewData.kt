@@ -18,7 +18,9 @@ data class ContactVquOverviewData(
     @SerializedName("total_page")
     val totalPage: Int,
     @SerializedName("total_people")
-    val totalPeople: String
+    val totalPeople: String,
+    @SerializedName("is_audit_channel")
+    val isAuditChannel: Int = 0
 )
 
 data class ContactVquOverviewBean(

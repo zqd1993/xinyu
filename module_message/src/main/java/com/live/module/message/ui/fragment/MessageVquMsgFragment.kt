@@ -445,7 +445,7 @@ class MessageVquMsgFragment : MessageFragment() {
         /**
          * 测试环境回调
          */
-        if (BuildConfig.VERSION_TYPE != VersionStatus.RELEASE && NetBaseUrlConstant.DEBUG_BASE_URL.equals("http://120.78.160.71:8071/")) {
+        if (NetBaseUrlConstant.DEBUG_BASE_URL == "http://120.78.160.71:8071/") {
             message.env = "tchat"
         }
         if (NetBaseUrlConstant.BASE_URL == "http://appta.pre.vqu.show/") {

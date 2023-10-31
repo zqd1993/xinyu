@@ -151,6 +151,7 @@ class RelationVquAdapter :
 
                 holder.setText(R.id.tv_relation_desc, desc.toString())
             }
+
             RouteKey.RelationType.VISTOR -> {
 
                 //随机文案
@@ -195,6 +196,7 @@ class RelationVquAdapter :
 //                stvLike.setTextColor(ResUtils.getColor(R.color.color_7C69FE))
 //
 //                stvLike.setCompoundDrawables(null, chatDrawable, null, null)
+                stvLike.setBackgroundResource(R.mipmap.resources_tanta_main_home_chat)
                 stvLike.isSelected = true
             } else {
 
@@ -212,7 +214,7 @@ class RelationVquAdapter :
 //                stvLike.setTextColor(ResUtils.getColor(R.color.color_FF3826))
 //
 //                stvLike.setCompoundDrawables(null, likeDrawable, null, null)
-
+                stvLike.setBackgroundResource(R.mipmap.resources_tanta_home_like)
             }
 
         } else {

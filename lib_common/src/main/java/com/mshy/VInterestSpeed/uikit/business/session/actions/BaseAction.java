@@ -76,7 +76,7 @@ public abstract class BaseAction implements Serializable {
     }
 
     protected void sendMessage(IMMessage message) {
-        if(BuildConfig.VERSION_TYPE != VersionStatus.RELEASE && NetBaseUrlConstant.DEBUG_BASE_URL.equals("http://120.78.160.71:8071/")) {
+        if(NetBaseUrlConstant.DEBUG_BASE_URL.equals("http://120.78.160.71:8071/")) {
             message.setEnv("tchat");
         }
         UmUtils.setUmEvent(getActivity(), UmUtils.PRIVATECHAT);

@@ -101,6 +101,7 @@
                 android:id="@+id/tv_content"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:minHeight="70dp"
                 android:layout_marginLeft="18dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="28dp"
@@ -108,7 +109,7 @@
                 android:tag="beta_upgrade_feature"
                 android:textColor="@color/color_666666"
                 android:textSize="14sp"
-                tools:text="1、更新内容更新内容更新内更新内；\n2、更新内容更新内容更新容更新内； \n3、更新内容更新内新内容更新内容； \n4、更新内容更新内新内容更新内容；" />
+                tools:text="1、更新内容更新内容更新内更新内；" />
 
             <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
                 android:id="@+id/tv_update"

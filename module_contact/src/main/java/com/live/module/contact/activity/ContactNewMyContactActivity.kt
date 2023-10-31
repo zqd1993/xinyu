@@ -225,10 +225,16 @@ class ContactNewMyContactActivity :
 
             mBinding.srlContactVquMyContactRefresh.setEnableLoadMore(it.list.isNotEmpty())
 
-            if (mAdapter.itemCount > 0) {
-                mBinding.clContactVquMyContactInvitedNumParent.visibility = View.VISIBLE
+            if(it.isAuditChannel == 1){
                 mBinding.stvContactVquMyContactMoreBottom.visibility = View.GONE
                 mBinding.tvContactVquMyContactInvitedRecordBottom.visibility = View.GONE
+            } else {
+                mBinding.stvContactVquMyContactMoreBottom.visibility = View.VISIBLE
+                mBinding.tvContactVquMyContactInvitedRecordBottom.visibility = View.VISIBLE
+            }
+
+            if (mAdapter.itemCount > 0) {
+                mBinding.clContactVquMyContactInvitedNumParent.visibility = View.VISIBLE
 //                showContent()
                 mBinding.flEmptyView.gone()
                 //工会模式或者星推官，可导出
@@ -241,8 +247,6 @@ class ContactNewMyContactActivity :
             } else {
                 mBinding.clContactVquMyContactInvitedNumParent.visibility = View.GONE
 //                mBinding.clContactVquMyContactInvitedNumParent.visibility = View.VISIBLE
-                mBinding.stvContactVquMyContactMoreBottom.visibility = View.VISIBLE
-                mBinding.tvContactVquMyContactInvitedRecordBottom.visibility = View.VISIBLE
                 mBinding.flEmptyView.visible()
 //                showEmpty("邀请好友，即享高额提成")
             }

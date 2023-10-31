@@ -1,4 +1,4 @@
-package queniang.love;
+package queniang.love.wxapi;
 
 
 import android.app.ActivityManager;

@@ -38,6 +38,7 @@ import com.mshy.VInterestSpeed.common.utils.UiUtils;
 import com.mshy.VInterestSpeed.common.utils.UserSpUtils;
 import com.mshy.VInterestSpeed.uikit.api.NimUIKit;
 import com.mshy.VInterestSpeed.common.bean.UserInCallEvent;
+import com.mshy.VInterestSpeed.uikit.api.model.SimpleCallback;
 import com.mshy.VInterestSpeed.uikit.business.ait.AitManager;
 import com.mshy.VInterestSpeed.uikit.business.session.actions.BaseAction;
 import com.mshy.VInterestSpeed.uikit.business.session.actions.ImageAction;
@@ -82,6 +83,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.mshy.VInterestSpeed.common.BuildConfig;
+import com.netease.nimlib.sdk.uinfo.model.NimUserInfo;
 import com.netease.nimlib.sdk.uinfo.model.UserInfo;
 
 /**
@@ -167,23 +169,24 @@ public class MessageFragment extends TFragment implements ModuleProxy {
         ivBack.setOnClickListener((view) -> {
             getActivity().finish();
         });
-        UserInfo userInfo = NimUIKit.getUserInfoProvider().getUserInfo(sessionId);
-        if (userInfo != null && !TextUtils.isEmpty(userInfo.getAvatar())) {
-            LoaderBuilder builderConfig =new LoaderBuilder()
-                    .width(UiUtils.dip2px(BaseApplication.context, ScreenUtil.getDisplayWidth()))
-                    .height(UiUtils.dip2px(BaseApplication.context, ScreenUtil.getDisplayHeight()))
-                    .blur(100, 3)
-                    .scaleType(ImageView.ScaleType.CENTER_CROP)
-                    .load(NetBaseUrlConstant.IMAGE_URL_2 + userInfo.getAvatar());
-            ImageUtils.getInstance().bind(messageActivityBackground, builderConfig);
-//            Glide.with(this)
-//                    .load(NetBaseUrlConstant.IMAGE_URL_2 + userInfo.getAvatar() + "?x-oss-process=image/blur,r_25,s_25/quality,q_100")
-//                    .into(messageActivityBackground);
-        }
-
-        if(userInfo != null && !TextUtils.isEmpty(userInfo.getName())){
-            tvUsername.setText(userInfo.getName());
-        }
+        NimUIKit.getUserInfoProvider().getUserInfoAsync(sessionId, (success, result, code) -> {
+            NimUserInfo nimUserInfo = (NimUserInfo) result;
+//                LoaderBuilder builderConfig = new LoaderBuilder()
+//                        .width(UiUtils.dip2px(BaseApplication.context, ScreenUtil.getDisplayWidth()))
+//                        .height(UiUtils.dip2px(BaseApplication.context, ScreenUtil.getDisplayHeight()))
+//                        .blur(100, 3)
+//                        .scaleType(ImageView.ScaleType.CENTER_CROP)
+//                        .load(NetBaseUrlConstant.IMAGE_URL_2 + userInfo.getAvatar());
+//                ImageUtils.getInstance().bind(messageActivityBackground, builderConfig);
+            if (!TextUtils.isEmpty(nimUserInfo.getName())) {
+                Glide.with(getActivity())
+                        .load(NetBaseUrlConstant.IMAGE_URL_2 + nimUserInfo.getAvatar())
+                        .into(messageActivityBackground);
+            }
+            if (!TextUtils.isEmpty(nimUserInfo.getName())) {
+                tvUsername.setText(nimUserInfo.getName());
+            }
+        });
 
         if (appViewModel.getUnreadConversationList().getValue() != null) {
             if (appViewModel.getUnreadConversationList().getValue().size() > 0) {
@@ -298,7 +301,6 @@ public class MessageFragment extends TFragment implements ModuleProxy {
         IMMessage anchor = (IMMessage) arguments.getSerializable(Extras.EXTRA_ANCHOR);
         customization = (SessionCustomization) arguments.getSerializable(Extras.EXTRA_CUSTOMIZATION);
         container = new Container(getActivity(), sessionId, sessionType, this, true);
-
         if (messageListPanel == null) {
             messageListPanel = new MessageListPanelEx(container, rootView, anchor, false, false);
         } else {
@@ -366,7 +368,7 @@ public class MessageFragment extends TFragment implements ModuleProxy {
         registerObservers(true);
 
         if (customization != null) {
-            messageListPanel.setChattingBackground(customization.backgroundUri, customization.backgroundColor);
+//            messageListPanel.setChattingBackground(customization.backgroundUri, customization.backgroundColor);
         }
 
     }
@@ -439,7 +441,7 @@ public class MessageFragment extends TFragment implements ModuleProxy {
      */
     @Override
     public boolean sendMessage(IMMessage message) {
-        if (BuildConfig.VERSION_TYPE != VersionStatus.RELEASE && NetBaseUrlConstant.DEBUG_BASE_URL.equals("http://120.78.160.71:8071/")) {
+        if (NetBaseUrlConstant.DEBUG_BASE_URL.equals("http://120.78.160.71:8071/")) {
             message.setEnv("tchat");
         }
         sendMsg(message);

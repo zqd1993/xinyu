@@ -122,6 +122,9 @@ public class DeviceManager {
         //获取抖音分包渠道号
         String channel = HumeSDK.getChannel(mContext);
         Log.d("channel", "douyin channel = " + channel);
+        if(channel == null){
+            channel = "";
+        }
         if (channel.equals("")) {
             //获取快手分包渠道号
             channel = TurboHelper.getChannel(mContext);
