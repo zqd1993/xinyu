@@ -1,3 +1,4 @@
+
 package com.live.module.home.fragment
 
 import android.content.Context
@@ -25,6 +26,7 @@ import com.live.vquonline.base.utils.*
 import com.live.vquonline.view.main.bean.HomeVquOnTvBean
 import com.mshy.VInterestSpeed.common.bean.notification.NotificationEvent
 import com.mshy.VInterestSpeed.common.bean.video.VideoRequestBean
+import com.mshy.VInterestSpeed.common.constant.NetBaseUrlConstant
 import com.mshy.VInterestSpeed.common.constant.PermissionDescribe
 import com.mshy.VInterestSpeed.common.constant.RouteKey
 import com.mshy.VInterestSpeed.common.constant.RouteUrl
@@ -92,6 +94,11 @@ class HomeNewFragment :
         )
         vquViewPagerAdapter?.setData(vquFragments)
         vquViewPager.adapter = vquViewPagerAdapter
+        if (NetBaseUrlConstant.IS_MATCH_MAKER) {
+            mBinding.tvVideo.text = "即刻恋爱"
+        } else {
+            mBinding.tvVideo.text = "邂逅有缘人"
+        }
     }
 
     private fun initMagicIndicator() {

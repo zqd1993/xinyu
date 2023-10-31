@@ -13,8 +13,8 @@ import com.mshy.VInterestSpeed.common.BuildConfig
 object NetBaseUrlConstant {
     var BASE_URL = "http://api.zhenban.top/"//正式环境
 
-    const val DEBUG_BASE_URL = "http://api.zhenban.top/"//测试环境
-//    const val DEBUG_BASE_URL = "http://120.78.160.71:8071/"//测试环境
+//    const val DEBUG_BASE_URL = "http://api.zhenban.top/"//测试环境
+    const val DEBUG_BASE_URL = "http://120.78.160.71:8071/"//测试环境
 
     var IMAGE_URL = "http://asset.zhenban.top/"
 
@@ -47,4 +47,7 @@ object NetBaseUrlConstant {
     const val JUVENILE_PROTECTION = "/index/about/juvenile_protection_qy.html"    //未成年保护计划
 
     val AGREEMENT_BASE_URL = "http://asset.zhenban.top"
+
+    //是否有红娘
+    const val IS_MATCH_MAKER = false
 }

@@ -96,7 +96,11 @@ class HomeVquRecommendAdapter :
             if (gender == 1) {
                 helper.setText(R.id.tv_chat, context.getString(R.string.common_vqu_beckoning))
             } else {
-                helper.setText(R.id.tv_chat, context.getString(R.string.common_vqu_accost))
+                if(NetBaseUrlConstant.IS_MATCH_MAKER){
+                    helper.setText(R.id.tv_chat, "恋爱")
+                } else {
+                    helper.setText(R.id.tv_chat, context.getString(R.string.common_vqu_accost))
+                }
             }
             flEnd.setStartColor(
                 ContextCompat.getColor(context, R.color.color_FF7AC2),

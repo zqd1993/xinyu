@@ -271,6 +271,15 @@ class MineFragment : BaseLazyFrameFragment<MineFragmentMineBinding, MineViewMode
                         )//此处有H5
                         .navigation()
                 }
+
+                11 -> {
+                    ARouter.getInstance().build(RouteUrl.Common.WebViewActivity)
+                        .withString(
+                            RouteKey.URL,
+                            "https://hn.zhenban.top/"
+                        )//此处有H5
+                        .navigation()
+                }
             }
         }
     }
@@ -571,6 +580,15 @@ class MineFragment : BaseLazyFrameFragment<MineFragmentMineBinding, MineViewMode
 //                type = 3
 //            )
 //        )
+        if (NetBaseUrlConstant.IS_MATCH_MAKER) {
+            mVquListMenuData.add(
+                CommonVquMenuBean(
+                    R.mipmap.ic_mine_list_menu_matchmaker,
+                    "红娘服务",
+                    type = 11
+                )
+            )
+        }
         mVquListMenuData.add(
             CommonVquMenuBean(
                 R.mipmap.ic_mine_list_menu_system,
