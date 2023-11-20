@@ -400,7 +400,7 @@
                     app:layout_constraintRight_toLeftOf="@+id/tv_record"
                     app:layout_constraintTop_toTopOf="parent"
                     app:sll_layoutRadius="40dp"
-                    app:sll_solidColor="@color/color_5FBCFE">
+                    app:sll_solidColor="@color/color_B4A3FD">
 
                     <ImageView
                         android:id="@+id/iv_play_voice"

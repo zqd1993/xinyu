@@ -42,6 +42,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="3dp"
                     android:text="惊喜礼盒"
+                    android:textStyle="bold"
                     android:textColor="@color/black"
                     android:textSize="12sp" />
 
@@ -67,7 +68,7 @@
             android:layout_height="wrap_content"
             android:paddingLeft="3dp"
             android:paddingRight="3dp"
-            android:textColor="@color/color_5FBCFE"
+            android:textColor="@color/color_B4A3FD"
             android:textSize="9sp"
             tools:text="x1" />
 

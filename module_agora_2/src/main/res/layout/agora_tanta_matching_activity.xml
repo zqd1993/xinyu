@@ -92,6 +92,16 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tanta_title_bar" />
 
+    <ImageView
+        android:id="@+id/tanta_match_scan"
+        android:layout_width="149dp"
+        android:layout_height="175dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginRight="22dp"
+        android:src="@mipmap/match_scan"
+        app:layout_constraintTop_toTopOf="@id/tanta_match_anim_bg"
+        app:layout_constraintRight_toRightOf="@id/tanta_match_anim_bg" />
+
     <TextView
         android:id="@+id/tanta_match_shuoming"
         android:layout_width="wrap_content"
@@ -179,9 +189,8 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tanta_match_shuoming"
-        app:sll_layoutRadius="12dp"
-        app:sll_startColor="@color/color_6BBFFD"
-        app:sll_endColor="@color/color_4CB6FF"
+        app:sll_layoutRadius="24dp"
+        app:sll_solidColor="@color/color_B4A3FD"
         tools:visibility="visible">
 
         <LinearLayout

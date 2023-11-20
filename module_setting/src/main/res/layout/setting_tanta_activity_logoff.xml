@@ -85,7 +85,7 @@
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:stv_layoutRadius="12dp"
+                app:stv_layoutRadius="24dp"
                 app:stv_solidColor="@color/color_cccccc"
                 />
         </LinearLayout>

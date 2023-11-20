@@ -81,7 +81,7 @@ public class TVNumAdapter extends BannerAdapter<HomeVquOnTvBean, TVNumAdapter.Ba
             vquStartCountDown(data,position,holder);
         }else {
             holder.vqu_bt_know_url.setText("如何上电视");
-            holder.vqu_bt_know_url.setTextColor(Color.parseColor("#ffffff"));
+            holder.vqu_bt_know_url.setTextColor(Color.parseColor("#7A65DA"));
             holder.vqu_bt_know_url.setPaintFlags(Paint.UNDERLINE_TEXT_FLAG); //下划线
             holder.vqu_bt_know_url.setClickable(true);
             holder.vqu_bt_know_url.setEnabled(true);
@@ -114,7 +114,7 @@ public class TVNumAdapter extends BannerAdapter<HomeVquOnTvBean, TVNumAdapter.Ba
             public void onTick(long l) {
                 String vquValue = (l / 1000)+"";
                 holder.vqu_bt_know_url.setText("锁屏中" + vquValue + "秒");
-                holder.vqu_bt_know_url.setTextColor(Color.parseColor("#ffffff"));
+                holder.vqu_bt_know_url.setTextColor(Color.parseColor("#7A65DA"));
                 holder.vqu_bt_know_url.setPaintFlags(Paint.UNDERLINE_TEXT_FLAG); //下划线
                 holder.vqu_bt_know_url.setClickable(false);
                 holder.vqu_bt_know_url.setEnabled(false);
@@ -124,7 +124,7 @@ public class TVNumAdapter extends BannerAdapter<HomeVquOnTvBean, TVNumAdapter.Ba
             public void onFinish() {
                 data.setLock_time(0);
                 holder.vqu_bt_know_url.setText("如何上电视");
-                holder.vqu_bt_know_url.setTextColor(Color.parseColor("#ffffff"));
+                holder.vqu_bt_know_url.setTextColor(Color.parseColor("#7A65DA"));
                 holder.vqu_bt_know_url.setPaintFlags(Paint.UNDERLINE_TEXT_FLAG); //下划线
                 holder.vqu_bt_know_url.setClickable(true);
                 holder.vqu_bt_know_url.setEnabled(true);

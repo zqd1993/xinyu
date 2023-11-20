@@ -61,10 +61,9 @@
                         android:text="VIP 8.5折中"
                         android:textColor="@color/white"
                         android:textSize="9sp"
-                        app:stv_layoutRadius="4dp"
                         android:visibility="gone"
-                        app:stv_endColor="@color/color_4CB6FF"
-                        app:stv_startColor="@color/color_6BBFFD"
+                        app:stv_layoutRadius="3dp"
+                        app:stv_solidColor="@color/color_B4A3FD"
                        />
                 </LinearLayout>
 
@@ -146,8 +145,7 @@
                         android:textSize="9sp"
                         android:visibility="gone"
                         app:stv_layoutRadius="4dp"
-                        app:stv_endColor="@color/color_4CB6FF"
-                        app:stv_startColor="@color/color_6BBFFD"
+                        app:stv_solidColor="@color/color_B4A3FD"
                         />
                 </LinearLayout>
 

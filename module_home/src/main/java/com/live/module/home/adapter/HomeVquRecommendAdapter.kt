@@ -86,7 +86,7 @@ class HomeVquRecommendAdapter :
         var flEnd = helper.getView<ShapeLinearLayout>(R.id.fl_end)
         if (item.isBeckon) {
             helper.setText(R.id.tv_chat, context.getString(R.string.dynamic_chat))
-            helper.setTextColor(R.id.tv_chat, ContextCompat.getColor(context, R.color.color_8EC0EA))
+            helper.setTextColor(R.id.tv_chat, ContextCompat.getColor(context, R.color.white))
 //            flEnd.setStartColor(
 //                ContextCompat.getColor(context, R.color.color_FFFFFF),
 //                ContextCompat.getColor(context, R.color.color_FFFFFF)
@@ -102,7 +102,7 @@ class HomeVquRecommendAdapter :
 //                ContextCompat.getColor(context, R.color.color_FF7AC2),
 //                ContextCompat.getColor(context, R.color.color_FF7AC2)
 //            )
-            helper.setTextColor(R.id.tv_chat, ContextCompat.getColor(context, R.color.color_FEC24F))
+            helper.setTextColor(R.id.tv_chat, ContextCompat.getColor(context, R.color.color_B4A3FD))
         }
         helper.setVisible(R.id.view_online, false)
         val online = item.isOnline

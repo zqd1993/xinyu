@@ -13,7 +13,7 @@
         android:id="@+id/cl_mine_item_sign_day_info_parent"
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:background="@drawable/selector_vqu_bg_dialog_sign_day"
+        android:background="@drawable/selector_vqu_bg_dialog_sign_day_temp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 

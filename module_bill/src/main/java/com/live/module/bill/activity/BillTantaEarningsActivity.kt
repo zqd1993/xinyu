@@ -148,7 +148,7 @@ class BillTantaEarningsActivity :
             }
 
             override fun getIndicator(context: Context?): com.mshy.VInterestSpeed.common.ui.view.magicindicator.buildins.commonnavigator.abs.IPagerIndicator? {
-                return MagicIndicatorHelper.getDefaultIndicator(context, R.color.black)
+                return MagicIndicatorHelper.getDefaultIndicator(context, R.color.color_B4A3FD)
             }
         }
         mBinding.magicIndicator.navigator = commonNavigator

@@ -87,7 +87,8 @@
                 android:text="@string/cancel"
                 android:textColor="@color/color_273145"
                 android:textSize="16sp"
-                app:stv_layoutRadius="24.5dp"
+                app:stv_layoutRadius="24dp"
+                android:textStyle="bold"
                 app:stv_solidColor="@color/color_F5F4F7" />
 
             <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
@@ -101,9 +102,9 @@
                 android:text="@string/confirm"
                 android:textColor="@color/color_FFFFFF"
                 android:textSize="16sp"
-                app:stv_endColor="@color/color_7C69FE"
-                app:stv_layoutRadius="24.5dp"
-                app:stv_startColor="@color/color_BFB6FF" />
+                android:textStyle="bold"
+                app:stv_solidColor="@color/color_B4A3FD"
+                app:stv_layoutRadius="24dp" />
         </LinearLayout>
 
 

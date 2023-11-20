@@ -58,7 +58,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
+        android:layout_marginLeft="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toRightOf="@id/siv_relation_item_relation_list_avatar"
         app:layout_constraintRight_toLeftOf="@id/stv_relation_vqu_item_relation_list_focus"
@@ -71,7 +71,8 @@
             android:layout_marginLeft="12dp"
             android:includeFontPadding="false"
             android:textColor="@color/color_222222"
-            android:textSize="16sp"
+            android:textSize="17sp"
+            android:textStyle="bold"
             app:layout_constraintLeft_toRightOf="@id/siv_relation_item_relation_list_avatar"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="大姐大" />
@@ -80,7 +81,7 @@
             layout="@layout/common_vqu_include_gender"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="2dp"
+            android:layout_marginLeft="12dp"
             app:layout_constraintBottom_toBottomOf="@id/tv_relation_item_relation_list_name"
             app:layout_constraintLeft_toRightOf="@id/tv_relation_item_relation_list_name"
             app:layout_constraintTop_toTopOf="@id/tv_relation_item_relation_list_name" />
@@ -121,12 +122,12 @@
 
     <TextView
         android:id="@+id/stv_relation_vqu_item_relation_list_like"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_width="64dp"
+        android:layout_height="28dp"
         android:layout_marginRight="12dp"
         android:background="@drawable/ic_tanta_search_list_like_selector"
-        android:gravity="bottom|center_horizontal"
-        android:paddingBottom="5dp"
+        android:gravity="center_vertical|right"
+        android:paddingRight="8dp"
         android:text="私信"
         android:textColor="@color/selector_text_tanta_search_list_like"
         android:textSize="12sp"

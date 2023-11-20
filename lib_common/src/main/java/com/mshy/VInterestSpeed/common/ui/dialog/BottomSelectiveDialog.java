@@ -3,6 +3,7 @@ package com.mshy.VInterestSpeed.common.ui.dialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
@@ -120,6 +121,8 @@ public class BottomSelectiveDialog extends Dialog {
             btnLl.setBackgroundResource(R.drawable.vqu_shape_white_12_bg);
             for (int i = 0; i < mButtonList.size(); i++) {
                 TextView textView = mButtonList.get(i);
+                textView.setTypeface(null, Typeface.BOLD);
+                textView.setTextColor(Color.parseColor("#000000"));
                 btnLl.addView(textView);
                 if (!(i == mButtonList.size() - 1) && isAddLine) {
                     View line = new View(mContext);
@@ -152,6 +155,7 @@ public class BottomSelectiveDialog extends Dialog {
             params.topMargin = UiUtils.dip2px(mContext, 9);
             textView.setLayoutParams(params);
             textView.setText("取消");
+            textView.setTypeface(null, Typeface.BOLD);
             textView.setTextSize(15);
             textView.setTextColor(Color.parseColor("#FFA3AABE"));
             textView.setGravity(Gravity.CENTER);
@@ -177,7 +181,8 @@ public class BottomSelectiveDialog extends Dialog {
             textView.setLayoutParams(params);
             textView.setText("取消");
             textView.setTextSize(15);
-            textView.setTextColor(Color.parseColor("#FFA3AABE"));
+            textView.setTypeface(null, Typeface.BOLD);
+            textView.setTextColor(Color.parseColor("#999999"));
             textView.setGravity(Gravity.CENTER);
             textView.setBackgroundResource(R.drawable.vqu_shape_white_12_bg);
             textView.setOnClickListener(new View.OnClickListener() {

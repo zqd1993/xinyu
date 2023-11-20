@@ -38,7 +38,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="15dp"
-                android:layout_marginBottom="12dp"
+                android:layout_marginBottom="10dp"
                 android:orientation="horizontal"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintBottom_toTopOf="@+id/tv_bottom"
@@ -49,7 +49,7 @@
 
             <com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout
                 android:id="@+id/ll_voice"
-                android:layout_width="82dp"
+                android:layout_width="71dp"
                 android:layout_height="22dp"
                 android:layout_marginTop="6dp"
                 android:layout_marginRight="12dp"
@@ -61,12 +61,12 @@
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/rv_small"
                 app:sll_layoutRadius="50dp"
-                app:sll_solidColor="@color/color_59BAFE">
+                app:sll_solidColor="@color/color_B4A3FD">
 
                 <ImageView
                     android:id="@+id/iv_play"
-                    android:layout_width="17dp"
-                    android:layout_height="17dp"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
                     android:src="@mipmap/ic_tanta_info_stop" />
 
                 <ImageView
@@ -93,7 +93,7 @@
                     android:layout_marginLeft="5dp"
                     android:text="15”"
                     android:textColor="@color/white"
-                    android:textSize="12sp" />
+                    android:textSize="11sp" />
             </com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout>
 
             <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
@@ -102,8 +102,8 @@
                 android:layout_height="12dp"
                 app:layout_constraintBottom_toBottomOf="@+id/banner"
                 app:stv_solidColor="@color/white"
-                app:stv_topLeftRadius="16dp"
-                app:stv_topRightRadius="16dp" />
+                app:stv_topLeftRadius="20dp"
+                app:stv_topRightRadius="20dp" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_img"
@@ -127,13 +127,13 @@
                     android:layout_height="50dp"
                     android:layout_marginLeft="16dp"
                     android:layout_marginRight="16dp"
-                    android:layout_marginBottom="12dp">
+                    android:layout_marginBottom="25dp">
 
                     <TextView
                         android:id="@+id/tv_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/color_273145"
+                        android:textColor="@color/black"
                         android:textSize="20sp"
                         android:textStyle="bold"
                         app:layout_constraintLeft_toLeftOf="parent"
@@ -154,28 +154,28 @@
 
                     <com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout
                         android:id="@+id/ll_state"
-                        android:layout_width="42dp"
-                        android:layout_height="17dp"
+                        android:layout_width="44dp"
+                        android:layout_height="18dp"
                         android:layout_marginLeft="8dp"
                         android:gravity="center"
                         app:layout_constraintBottom_toBottomOf="@+id/tv_name"
                         app:layout_constraintLeft_toRightOf="@+id/tv_remark"
                         app:layout_constraintTop_toTopOf="@+id/tv_name"
-                        app:sll_layoutRadius="20dp"
+                        app:sll_layoutRadius="9dp"
                         app:sll_solidColor="@color/color_F5F5F5">
 
                         <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
                             android:layout_width="4dp"
                             android:layout_height="4dp"
                             app:stv_layoutRadius="20dp"
-                            app:stv_solidColor="@color/color_00DFCA" />
+                            app:stv_solidColor="@color/color_45DA45" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="2dp"
+                            android:layout_marginLeft="7dp"
                             android:text="在线"
-                            android:textColor="@color/color_222222"
+                            android:textColor="@color/black"
                             android:textSize="10sp" />
                     </com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout>
 
@@ -231,23 +231,27 @@
                         android:visibility="gone"
                         app:layout_constraintBottom_toBottomOf="parent" />
 
-                    <com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout
+                    <LinearLayout
                         android:id="@+id/ll_attention"
                         android:layout_width="70dp"
                         android:layout_height="32dp"
+                        android:background="@mipmap/resourcrs_vqu_info_follow"
                         android:gravity="center"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:sll_layoutRadius="8dp"
-                        app:sll_endColor="@color/color_6BBFFD"
-                        app:sll_startColor="@color/color_4CB6FF">
+                        app:layout_constraintTop_toTopOf="parent">
 
                         <ImageView
                             android:id="@+id/icon_attention"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:src="@mipmap/info_tanta_attention" />
+                            android:src="@mipmap/info_tanta_attention"
+                            android:visibility="gone" />
+
+                        <View
+                            android:id="@+id/attention_view"
+                            android:layout_width="12dp"
+                            android:layout_height="wrap_content" />
 
                         <TextView
                             android:id="@+id/tv_attention"
@@ -257,7 +261,7 @@
                             android:text="关注"
                             android:textColor="@color/white"
                             android:textSize="14sp" />
-                    </com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout>
+                    </LinearLayout>
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -267,14 +271,13 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="16dp"
                     android:layout_marginRight="16dp"
-                    android:layout_marginBottom="20dp">
+                    android:layout_marginBottom="30dp">
 
 
                     <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
                         android:id="@+id/tv_sign_content"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="6dp"
                         android:padding="12dp"
                         android:textColor="@color/color_666666"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -286,8 +289,8 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="4dp"
                         android:layout_alignParentRight="true"
+                        android:layout_marginEnd="4dp"
                         android:src="@mipmap/info_tanta_img_sign"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent" />
@@ -297,16 +300,15 @@
                     android:id="@+id/cl_dynamic"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="15dp">
+                    android:layout_marginBottom="30dp">
 
                     <TextView
                         android:id="@+id/tv1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="16dp"
-                        android:layout_marginTop="5dp"
                         android:text="最新动态"
-                        android:textColor="@color/color_363D50"
+                        android:textColor="@color/black"
                         android:textSize="16sp"
                         android:textStyle="bold"
                         app:layout_constraintLeft_toLeftOf="parent"
@@ -318,7 +320,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="2dp"
                         android:text="(15)"
-                        android:textColor="@color/color_363D50"
+                        android:textColor="@color/black"
                         android:textSize="16sp"
                         android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="@+id/tv1"
@@ -341,7 +343,7 @@
                         android:layout_marginLeft="2dp"
                         android:layout_marginRight="2dp"
                         android:text="查看更多"
-                        android:textColor="@color/color_A3AABE"
+                        android:textColor="@color/color_999999"
                         android:textSize="13sp"
                         app:layout_constraintBottom_toBottomOf="@+id/tv1"
                         app:layout_constraintRight_toLeftOf="@+id/iv_right_dynamic"
@@ -352,7 +354,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="11dp"
-                        android:layout_marginTop="15dp"
+                        android:layout_marginTop="19dp"
                         android:orientation="horizontal"
                         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                         app:layout_constraintLeft_toLeftOf="parent"
@@ -371,9 +373,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="16dp"
-                        android:layout_marginTop="5dp"
                         android:text="个人信息"
-                        android:textColor="@color/color_363D50"
+                        android:textColor="@color/black"
                         android:textSize="16sp"
                         android:textStyle="bold"
                         app:layout_constraintLeft_toLeftOf="parent"
@@ -408,7 +409,7 @@
                         android:layout_marginLeft="16dp"
                         android:layout_marginTop="5dp"
                         android:text="个性标签"
-                        android:textColor="@color/color_363D50"
+                        android:textColor="@color/black"
                         android:textSize="16sp"
                         android:textStyle="bold"
                         app:layout_constraintLeft_toLeftOf="parent"
@@ -439,7 +440,7 @@
                         android:layout_marginLeft="16dp"
                         android:layout_marginTop="5dp"
                         android:text="礼物墙"
-                        android:textColor="@color/color_363D50"
+                        android:textColor="@color/black"
                         android:textSize="16sp"
                         android:textStyle="bold"
                         app:layout_constraintLeft_toLeftOf="parent"
@@ -493,6 +494,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/white"
+        android:paddingBottom="34dp"
         app:layout_constraintBottom_toBottomOf="parent">
 
         <LinearLayout
@@ -515,9 +517,8 @@
                 android:layout_marginRight="24dp"
                 android:layout_weight="1"
                 android:gravity="center"
-                app:sll_layoutRadius="8dp"
-                app:sll_endColor="@color/color_6BBFFD"
-                app:sll_startColor="@color/color_4CB6FF">
+                app:sll_layoutRadius="24dp"
+                app:sll_solidColor="@color/color_B4A3FD">
 
                 <ImageView
                     android:id="@+id/iv_heart"
@@ -532,15 +533,16 @@
                     android:layout_marginLeft="10dp"
                     android:text="搭讪"
                     android:textColor="@color/white"
-                    android:textSize="17sp" />
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
             </com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="34dp"
-                android:orientation="vertical"
-                android:gravity="center">
+                android:gravity="center"
+                android:orientation="vertical">
 
                 <ImageView
                     android:id="@+id/iv_video"
@@ -553,8 +555,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/dp_size_2"
                     android:text="通话"
-                    android:textSize="12sp"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:textSize="12sp" />
 
             </LinearLayout>
 
@@ -563,9 +565,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="27dp"
+                android:gravity="center"
                 android:orientation="vertical"
-                android:visibility="gone"
-                android:gravity="center">
+                android:visibility="gone">
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -577,8 +579,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/dp_size_2"
                     android:text="私聊"
-                    android:textSize="12sp"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:textSize="12sp" />
 
             </LinearLayout>
 
@@ -607,9 +609,9 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="@+id/ll_bottom"
-            app:stv_layoutRadius="12dp"
             app:sll_endColor="@color/color_6BBFFD"
-            app:sll_startColor="@color/color_4CB6FF" />
+            app:sll_startColor="@color/color_4CB6FF"
+            app:stv_layoutRadius="12dp" />
     </FrameLayout>
 
 

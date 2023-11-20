@@ -77,6 +77,6 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:stv_layoutRadius="8dp"
+        app:stv_layoutRadius="24dp"
         app:stv_solidColor="@color/color_CCCCCC" />
 </androidx.constraintlayout.widget.ConstraintLayout>

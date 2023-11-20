@@ -45,7 +45,7 @@
                 android:ellipsize="end"
                 android:maxEms="4"
                 android:maxLines="1"
-                android:textColor="@color/color_2B9DEC"
+                android:textColor="@color/color_7A65DA"
                 android:textSize="12sp"
                 tools:text="Au.痞/程" />
 
@@ -67,7 +67,7 @@
                 android:ellipsize="end"
                 android:maxEms="4"
                 android:maxLines="1"
-                android:textColor="@color/color_007EFF"
+                android:textColor="@color/color_7A65DA"
                 android:textSize="12sp"
                 tools:text="佐佐" />
 
@@ -89,7 +89,7 @@
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
                 android:maxLines="1"
-                android:textColor="@color/color_F6AC1E"
+                android:textColor="@color/color_FE4040"
                 android:textSize="12sp"
                 tools:text="佐佐佐佐佐" />
 
@@ -123,15 +123,22 @@
 
     </LinearLayout>
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/resources_tanta_home_tv_right_bottom_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
     <TextView
         android:id="@+id/vqu_bt_know_url"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="7dp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginBottom="2dp"
         android:gravity="center"
         android:text="如何上电视"
-        android:textColor="@color/white"
+        android:textColor="@color/color_7A65DA"
         android:textSize="11sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -141,6 +148,7 @@
         android:id="@+id/iv_right"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="3dp"
         android:src="@mipmap/resources_tanta_home_tv_more"
         app:layout_constraintBottom_toBottomOf="@id/vqu_bt_know_url"
         app:layout_constraintRight_toLeftOf="@+id/vqu_bt_know_url"

@@ -40,8 +40,8 @@
 
         <com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout
             android:id="@+id/ll_beckoning"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+            android:layout_width="64dp"
+            android:layout_height="28dp"
             android:layout_gravity="center"
             android:layout_marginRight="15dp"
             android:gravity="center"
@@ -58,17 +58,17 @@
 
                 <ImageView
                     android:id="@+id/iv_beckoning"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
+                    android:layout_width="64dp"
+                    android:layout_height="28dp"
                     android:src="@mipmap/resources_tanta_main_home_chat" />
 
                 <TextView
                     android:id="@+id/tv_bottom"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="6dp"
-                    android:layout_gravity="center_horizontal|bottom"
-                    android:textColor="@color/color_8EC0EA"
+                    android:layout_marginRight="9dp"
+                    android:layout_gravity="center_vertical|right"
+                    android:textColor="@color/color_FFFFFF"
                     android:textSize="12sp"
                     tools:text="心动" />
             </FrameLayout>

@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:background="@color/green_4DC0A4"
     tools:ignore="MissingDefaultResource">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -66,7 +65,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/ll_pay_way"
                 app:stv_endColor="@color/color_272727"
-                app:stv_layoutRadius="8dp"
+                app:stv_layoutRadius="24dp"
                 app:stv_startColor="@color/color_505050" />
 
             <TextView
@@ -98,10 +97,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="-2dp"
                 android:text="会员每日礼物"
                 android:textStyle="bold"
-                android:textSize="17sp" />
+                android:textSize="18sp"
+                android:textColor="#653C1B"/>
 
         </FrameLayout>
 

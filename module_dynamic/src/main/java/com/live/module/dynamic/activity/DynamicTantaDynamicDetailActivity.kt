@@ -472,7 +472,7 @@ class DynamicTantaDynamicDetailActivity :
             when (it.code) {
                 0 -> {
                     isBeckon = 1
-                    tvBottom?.setTextColor(ContextCompat.getColor(context, R.color.color_8EC0EA))
+                    tvBottom?.setTextColor(ContextCompat.getColor(context, R.color.white))
                     tvBottom?.text = context.getString(R.string.dynamic_chat)
                     ivBeckoning?.setImageResource(R.mipmap.resources_tanta_main_home_chat)
                 }
@@ -677,14 +677,14 @@ class DynamicTantaDynamicDetailActivity :
         ivBeckoning?.setImageResource(if (bean.isBeckon == 1) R.mipmap.resources_tanta_main_home_chat else R.mipmap.resources_tanta_home_like)
         if (bean.isBeckon == 1) {
             tvBottom?.text = ResUtils.getString(R.string.dynamic_chat)
-            tvBottom?.setTextColor(ResUtils.getColor(R.color.color_8EC0EA))
+            tvBottom?.setTextColor(ResUtils.getColor(R.color.white))
         } else {
             if (bean.user.gender == 1) {
                 tvBottom?.text = context.getString(R.string.common_vqu_accost)
             } else {
                 tvBottom?.text = context.getString(R.string.common_vqu_beckoning)
             }
-            tvBottom?.setTextColor(ContextCompat.getColor(context, R.color.color_FEC24F))
+            tvBottom?.setTextColor(ContextCompat.getColor(context, R.color.color_B4A3FD))
 
         }
 

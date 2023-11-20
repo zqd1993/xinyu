@@ -56,8 +56,7 @@
         android:textStyle="bold"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:stv_layoutRadius="8dp"
-        app:stv_startColor="@color/color_6BBFFD"
-        app:stv_endColor="@color/color_4CB6FF"/>
+        app:stv_layoutRadius="24dp"
+        app:stv_solidColor="@color/color_B4A3FD"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -13,8 +13,8 @@
 
     <ImageView
         android:id="@+id/iv_gift"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="62dp"
+        android:layout_height="62dp"
         android:src="@color/color_273145" />
 
     <TextView

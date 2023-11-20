@@ -350,8 +350,8 @@ class CommonVquMainActivity : BaseActivity<CommonVquActivityMainBinding, CommonV
     private fun vquNewItem(drawable: Int, checkedDrawable: Int, text: String): MyBaseTabItem? {
         val normalItemView = MyBaseTabItem(this)
         normalItemView.initialize(drawable, checkedDrawable, text)
-        normalItemView.setTextDefaultColor(ContextCompat.getColor(this, R.color.color_999999))
-        normalItemView.setTextCheckedColor(ContextCompat.getColor(this, R.color.color_222222))
+        normalItemView.setTextDefaultColor(ContextCompat.getColor(this, R.color.color_BBBBBB))
+        normalItemView.setTextCheckedColor(ContextCompat.getColor(this, R.color.color_B4A3FD))
         normalItemView.onRepeat()
         return normalItemView
     }

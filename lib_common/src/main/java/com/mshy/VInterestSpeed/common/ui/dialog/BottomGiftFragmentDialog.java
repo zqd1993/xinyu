@@ -457,10 +457,10 @@ public class BottomGiftFragmentDialog extends BaseDialogFragment {
             public IPagerTitleView getTitleView(Context context, final int index) {
                 SimplePagerTitleView simplePagerTitleView = new ColorTransitionPagerTitleView(context);
                 simplePagerTitleView.setText(mDataList.get(index));
-                simplePagerTitleView.setTextSize(17);
+                simplePagerTitleView.setTextSize(14);
                 simplePagerTitleView.showRedPoint(true);
                 simplePagerTitleView.setNormalColor(Color.parseColor("#999999"));
-                simplePagerTitleView.setSelectedColor(Color.parseColor("#000000"));
+                simplePagerTitleView.setSelectedColor(Color.parseColor("#B4A3FD"));
                 simplePagerTitleView.setOnClickListener(v -> mViewPage.setCurrentItem(index));
 
                 BadgePagerTitleView badgePagerTitleView = new BadgePagerTitleView(context);
@@ -494,8 +494,8 @@ public class BottomGiftFragmentDialog extends BaseDialogFragment {
                 indicator.setMode(LinePagerIndicator.MODE_EXACTLY);
                 indicator.setLineHeight(UIUtil.dip2px(context, 4));
                 indicator.setLineWidth(UIUtil.dip2px(context, 8));
-                indicator.setRoundRadius(UiUtils.dip2px(context, 3.5f));
-                indicator.setColors(Color.parseColor("#000000"));
+                indicator.setRoundRadius(UiUtils.dip2px(context, 2f));
+                indicator.setColors(Color.parseColor("#B4A3FD"));
                 indicator.setYOffset(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
                         6, getResources().getDisplayMetrics()));
                 return indicator;

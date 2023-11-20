@@ -28,7 +28,7 @@
             android:id="@+id/iv_open"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="14dp"
+            android:layout_marginTop="50dp"
             android:src="@mipmap/ic_tanta_red_y"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"

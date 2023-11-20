@@ -22,12 +22,12 @@
         android:layout_gravity="center_horizontal"
         android:gravity="center"
         app:stv_strokeColor="@color/color_FFFFFF"
-        app:stv_strokeWidth="0.5dp"
-        app:stv_layoutRadius="12dp"
+        app:stv_strokeWidth="1dp"
+        app:stv_layoutRadius="24dp"
         app:stv_solidColor="#25FFFFFF"
         android:text="其他手机号登录"
         android:textColor="@color/color_FFFFFF"
-        android:textSize="17sp" />
+        android:textSize="18sp" />
 
 
     <LinearLayout

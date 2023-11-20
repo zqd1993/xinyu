@@ -307,7 +307,7 @@ class HomeNewFragment :
 
 
                     override fun updateDrawState(ds: TextPaint) {
-                        ds.setColor(resources.getColor(R.color.color_5FBCFE)) //设置颜色
+                        ds.setColor(resources.getColor(R.color.color_B4A3FD)) //设置颜色
                         ds.setUnderlineText(false) //去掉下划线
                     }
 

@@ -25,7 +25,7 @@
             android:id="@+id/iv_vqu_search_toolbar_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="7.dp"
+            android:layout_marginLeft="12dp"
             android:src="@mipmap/ic_back"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -35,6 +35,7 @@
             android:layout_width="0dp"
             android:layout_height="40dp"
             android:layout_marginRight="16dp"
+            android:layout_marginLeft="12dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toRightOf="@id/iv_vqu_search_toolbar_back"
             app:layout_constraintRight_toRightOf="parent"
@@ -46,7 +47,7 @@
             <com.mshy.VInterestSpeed.common.ui.view.ShapeConstraintLayout
                 android:layout_width="0dp"
                 android:layout_height="38dp"
-                android:layout_marginLeft="12dp"
+                android:layout_marginLeft="10dp"
                 android:layout_marginRight="14dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
@@ -71,7 +72,7 @@
                     android:imeActionLabel="搜索"
                     android:imeOptions="actionSearch"
                     android:singleLine="true"
-                    android:textColor="@color/color_222222"
+                    android:textColor="@color/black"
                     android:textColorHint="@color/color_BBBBBB"
                     android:textSize="14sp"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -98,7 +99,7 @@
 
             <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
                 android:id="@+id/stv_vqu_search_bar_search"
-                android:layout_width="64dp"
+                android:layout_width="60dp"
                 android:layout_height="32dp"
                 android:layout_marginRight="4dp"
                 android:gravity="center"
@@ -106,9 +107,10 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:stv_layoutRadius="8dp"
-                app:stv_startColor="@color/color_6BBFFD"
-                app:stv_endColor="@color/color_4CB6FF"/>
+                app:stv_layoutRadius="24dp"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                app:stv_solidColor="@color/color_B4A3FD"/>
         </com.mshy.VInterestSpeed.common.ui.view.ShapeConstraintLayout>
 
 

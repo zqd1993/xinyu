@@ -121,7 +121,7 @@
                 android:layout_marginRight="8dip"
                 android:background="@color/transparent"
                 android:text="送达"
-                android:textColor="@color/color_5FBCFE"
+                android:textColor="@color/color_B4A3FD"
                 android:textSize="12sp"
                 android:visibility="gone"
                 tools:visibility="gone" />
@@ -163,10 +163,10 @@
         android:layout_marginLeft="6dp"
         android:layout_marginTop="6dp"
         android:drawableStart="@mipmap/resources_tanta_nim_ic_msg_earn"
-        android:drawablePadding="2dp"
+        android:drawablePadding="4dp"
         android:gravity="center"
         android:text="+0.012元"
-        android:textColor="#FFBB37"
+        android:textColor="@color/color_B4A3FD"
         android:textSize="12sp"
         android:visibility="gone"
         tools:visibility="visible" />

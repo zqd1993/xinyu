@@ -119,12 +119,12 @@ public class CommonVquAddRankAndGradeViewHelper {
         if (gender == 2) {
             tv_age.setText(String.valueOf(age));
             tv_age.setTextColor(Color.parseColor("#FFFFFF"));
-            sll_gender.setSolidColor(Color.parseColor("#4E9EFE"));
+            sll_gender.setSolidColor(Color.parseColor("#63A9FF"));
             ivGenderIncon.setImageResource(R.mipmap.resources_vqu_newboy);
             sll_gender.setVisibility(View.VISIBLE);
         } else if (gender == 1) {
             tv_age.setText(String.valueOf(age));
-            sll_gender.setSolidColor(Color.parseColor("#FF73A1"));
+            sll_gender.setSolidColor(Color.parseColor("#FF6868"));
             tv_age.setTextColor(Color.parseColor("#FFFFFF"));
             ivGenderIncon.setImageResource(R.mipmap.resources_vqu_newgirl);
             sll_gender.setVisibility(View.VISIBLE);

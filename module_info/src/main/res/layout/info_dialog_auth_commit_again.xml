@@ -43,8 +43,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_content"
-        app:stv_layoutRadius="12dp"
-        app:stv_solidColor="@color/color_FF7AC2" />
+        app:stv_layoutRadius="24dp"
+        app:stv_solidColor="@color/color_B4A3FD" />
 
     <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
         android:id="@+id/tv_again"
@@ -61,8 +61,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_commit"
-        app:stv_layoutRadius="12dp"
-        app:stv_solidColor="@color/color_FF7AC2" />
+        app:stv_layoutRadius="24dp"
+        app:stv_solidColor="@color/color_B4A3FD" />
 
     <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
         android:id="@+id/tv_cancel"

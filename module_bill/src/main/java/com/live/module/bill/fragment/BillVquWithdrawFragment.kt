@@ -152,8 +152,8 @@ class BillVquWithdrawFragment :
             mCurrentPosition = 0
             mVquCurrentOptions = it.options[0]
             mBinding.stvWithdrawBtn.setStartColor(
-                ResUtils.getColor(R.color.color_6BBFFD),
-                ResUtils.getColor(R.color.color_4CB6FF)
+                ResUtils.getColor(R.color.color_B4A3FD),
+                ResUtils.getColor(R.color.color_B4A3FD)
             )
         }
 

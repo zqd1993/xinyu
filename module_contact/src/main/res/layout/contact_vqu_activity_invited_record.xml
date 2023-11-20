@@ -34,7 +34,7 @@
         android:gravity="center"
         android:textColor="@color/color_textMain"
         android:textSize="12sp"
-        app:stv_solidColor="@color/color_FFF8EC"
+        app:stv_solidColor="@color/color_FEEDF1"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         app:stv_layoutRadius="12dp"

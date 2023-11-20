@@ -32,6 +32,7 @@ import com.live.module.agora.databinding.AgoraTantaMatchingActivityBinding
 import com.live.module.agora.vm.AgoraTantaMatchingViewModel
 import com.live.module_agora.adapter.tantaMatchRecordAdapter
 import com.live.vquonline.base.BaseApplication
+import com.live.vquonline.base.ktx.dp2px
 import com.live.vquonline.base.utils.EventBusRegister
 import com.live.vquonline.base.utils.toast
 import com.mshy.VInterestSpeed.common.bean.AgoraMtachCallBean
@@ -498,12 +499,12 @@ class AgoraTantaMatchActivity :
         })
         tantaRvMatchRecord.layoutManager = layoutManager
 
-        val rotateAnimation = RotateAnimation(0f, 359f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f)
+        val rotateAnimation = RotateAnimation(0f, -360f, 0f, dp2px(150f).toFloat())
         rotateAnimation.duration = 2000
         rotateAnimation.repeatCount = Animation.INFINITE
         rotateAnimation.fillAfter = true
         rotateAnimation.interpolator = LinearInterpolator()
-        tantaMatchAnimBg.startAnimation(rotateAnimation)
+        tantaMatchScan.startAnimation(rotateAnimation)
 
         tantaSetAnimation()
     }

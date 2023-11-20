@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/shape_vqu_bg_dialog_sign_day_selected_temp" android:state_selected="true" />
+    <item android:drawable="@drawable/shape_vqu_bg_dialog_sign_day_unselected" />
+</selector>

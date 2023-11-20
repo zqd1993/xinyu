@@ -74,7 +74,7 @@ class SignDayDialog : BaseVMDialogFragment<MineDialogSignDayBinding, MineSignDay
                 )
             }
 
-            val count = "已连续签到 <font color=\'#FFEE31\'>${it.todayCount}</font> 天"
+            val count = "已连续签到 <font color=\'#B17943\'>${it.todayCount}</font> 天"
 
             val fromHtml = Html.fromHtml(count)
 

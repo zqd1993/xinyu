@@ -26,19 +26,18 @@
         android:layout_width="0dp"
         android:layout_height="48dp"
         android:layout_gravity="center_vertical"
-        android:layout_marginLeft="27dp"
+        android:layout_marginLeft="37dp"
         android:layout_marginTop="186dp"
-        android:layout_marginRight="27dp"
+        android:layout_marginRight="37dp"
         android:gravity="center"
         android:text="手机号登录"
         android:textColor="@color/color_FFFFFF"
-        android:textSize="17sp"
+        android:textSize="18sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/iv_login_logo"
-        app:stv_layoutRadius="12dp"
-        app:stv_endColor="@color/color_4CB6FF"
-        app:stv_startColor="@color/color_6BBFFD" />
+        app:stv_layoutRadius="24dp"
+        app:stv_solidColor="@color/color_B4A3FD" />
 
 
     <LinearLayout
@@ -100,7 +99,7 @@
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
             android:text="我已阅读并同意"
-            android:textColor="#A3AABE"
+            android:textColor="#BBBBBB"
             android:textSize="12sp" />
 
         <TextView
@@ -117,7 +116,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="和"
-            android:textColor="#A3AABE"
+            android:textColor="#BBBBBB"
             android:textSize="12sp" />
 
         <TextView

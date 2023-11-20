@@ -42,15 +42,11 @@ public abstract class UI extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //设置共同沉浸式样式
-//        ImmersionBar.with(this)
-//                .transparentStatusBar()
-//                .fitsSystemWindows(false)
-//                .statusBarDarkFont(true)
-//                .navigationBarColor(R.color.base_colorPrimary)
-//                .init();
         ImmersionBar.with(this)
-                .transparentStatusBar()
-                .fitsSystemWindows(false)
+                .statusBarColor(R.color.base_colorPrimary)
+                .fitsSystemWindows(true)
+                .statusBarDarkFont(true)
+                .navigationBarColor(R.color.base_colorPrimary)
                 .init();
         LogUtil.ui("activity: " + getClass().getSimpleName() + " onCreate()");
     }
@@ -91,7 +87,6 @@ public abstract class UI extends AppCompatActivity {
 
     public void setToolBar(int toolBarId, ToolBarOptions options) {
         toolbar = findViewById(toolBarId);
-        toolbar.setVisibility(View.GONE);
         if (options.titleId != 0) {
             toolbar.setTitle(options.titleId);
         }

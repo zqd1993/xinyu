@@ -104,7 +104,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="15dp"
                 android:includeFontPadding="false"
-                android:textColor="@color/color_5FBCFE"
+                android:textColor="@color/color_B4A3FD"
                 android:textSize="15sp"
                 app:layout_constraintBottom_toBottomOf="@id/tv_contact_vqu_item_my_contact_yuan"
                 app:layout_constraintRight_toLeftOf="@id/tv_contact_vqu_item_my_contact_yuan"

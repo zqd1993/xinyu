@@ -104,7 +104,7 @@
                         app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintRight_toRightOf="parent"
                         app:stv_endColor="@color/color_272727"
-                        app:stv_layoutRadius="8dp"
+                        app:stv_layoutRadius="24dp"
                         app:stv_startColor="@color/color_505050" />
 
                     <TextView
@@ -126,26 +126,27 @@
                     android:layout_alignParentBottom="true"
                     android:background="@color/transparent"
                     android:paddingTop="8dp"
-                    android:visibility="gone"
                     app:layout_constraintBottom_toBottomOf="parent">
 
                     <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
                         android:id="@+id/stv_open_all"
                         android:layout_width="match_parent"
                         android:layout_height="49dp"
-                        android:layout_marginLeft="47dp"
-                        android:layout_marginRight="47dp"
+                        android:layout_marginLeft="37dp"
+                        android:layout_marginRight="37dp"
+                        android:visibility="gone"
                         android:layout_marginBottom="45dp"
                         android:gravity="center"
                         android:text="解锁全部访客"
                         android:textColor="@color/color_textMain"
                         android:textSize="18sp"
+                        android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintRight_toRightOf="parent"
-                        app:stv_endColor="#CDAF78"
-                        app:stv_layoutRadius="8dp"
-                        app:stv_startColor="#E5D0AB" />
+                        app:stv_endColor="#FFCB8A"
+                        app:stv_layoutRadius="24dp"
+                        app:stv_startColor="#FFF9DA" />
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
             </RelativeLayout>

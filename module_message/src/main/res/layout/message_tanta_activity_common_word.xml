@@ -38,10 +38,10 @@
             android:layout_marginBottom="20dp"
             android:gravity="center"
             android:text="@string/message_vqu_common_word_replace"
-            android:textColor="@color/color_5FBCFE"
+            android:textColor="@color/color_B4A3FD"
             android:textSize="18sp"
-            app:stv_layoutRadius="8dp"
-            app:stv_strokeColor="@color/color_5FBCFE"
+            app:stv_layoutRadius="24dp"
+            app:stv_strokeColor="@color/color_B4A3FD"
             app:stv_strokeWidth="1dp"
             />
     </LinearLayout>

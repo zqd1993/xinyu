@@ -57,11 +57,10 @@
             android:gravity="center"
             android:text="@string/anchor_vqu_new_template"
             android:textColor="@color/color_FFFFFF"
-            android:textSize="16sp"
+            android:textSize="17sp"
             android:textStyle="bold"
-            app:stv_layoutRadius="8dp"
-            app:stv_startColor="@color/color_6BBFFD"
-            app:stv_endColor="@color/color_4CB6FF"/>
+            app:stv_layoutRadius="24dp"
+            app:stv_solidColor="@color/color_B4A3FD"/>
 
     </FrameLayout>
 

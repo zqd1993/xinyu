@@ -60,7 +60,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/ll_pay_way"
                 app:stv_endColor="@color/color_272727"
-                app:stv_layoutRadius="8dp"
+                app:stv_layoutRadius="24dp"
                 app:stv_startColor="@color/color_505050" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>

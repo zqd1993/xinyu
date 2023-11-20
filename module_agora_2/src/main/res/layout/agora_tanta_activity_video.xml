@@ -58,11 +58,11 @@
 
     <ImageView
         android:id="@+id/open_mini_window"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
         android:layout_gravity="center_vertical"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="17dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="18dp"
         android:src="@mipmap/ic_reduce"
         android:visibility="gone"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -74,8 +74,8 @@
         android:id="@+id/vqu_video_head_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="17dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="18dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/open_mini_window">
 
@@ -88,18 +88,18 @@
 
             <com.mshy.VInterestSpeed.common.ui.view.RoundAngleImageView
                 android:id="@+id/vqu_iv_call_head"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="52dp"
+                android:layout_height="52dp"
                 android:background="@color/color_FFFFFF"
                 android:padding="1dp"
                 android:scaleType="centerCrop"
                 app:raiv_angle="25dp"
-                tools:layout_height="50dp"
-                tools:layout_width="50dp" />
+                tools:layout_height="52dp"
+                tools:layout_width="52dp" />
 
             <com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="52dp"
+                android:layout_height="52dp"
                 app:sll_strokeWidth="1dp"
                 app:sll_strokeColor="@color/white"
                 app:sll_layoutRadius="25dp" />
@@ -128,9 +128,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:layout_marginEnd="7dp"
+                    android:layout_marginEnd="10dp"
                     android:textColor="@android:color/white"
-                    android:textSize="16sp"
+                    android:textSize="17sp"
                     android:textStyle="bold"
                     tools:text="名字" />
 
@@ -141,7 +141,7 @@
                 android:id="@+id/video_start_cost"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="7dp"
                 android:textColor="#bbbbbb"
                 android:textSize="12sp"
                 tools:text="武汉市 | 自由职业" />
@@ -154,10 +154,10 @@
 
     <FrameLayout
         android:id="@+id/local_parent"
-        android:layout_width="96dp"
-        android:layout_height="129dp"
+        android:layout_width="100dp"
+        android:layout_height="134dp"
         android:layout_marginTop="17dp"
-        android:layout_marginRight="15dp"
+        android:layout_marginRight="16dp"
         android:visibility="gone"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/open_mini_window">
@@ -325,7 +325,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="4dp"
-        android:textColor="@android:color/white"
+        android:textColor="@color/color_BBBBBB"
         android:textSize="16sp"
         android:textStyle="bold"
         android:layout_marginBottom="38dp"
@@ -375,11 +375,10 @@
             android:layout_marginBottom="10dp"
             android:gravity="center"
             android:text="送礼物"
-            android:textColor="@color/white"
-            android:textSize="12sp"
-            app:stv_endColor="@color/color_F6AC1C"
-            app:stv_layoutRadius="9dp"
-            app:stv_startColor="@color/color_FFBF44" />
+            android:textColor="@color/black"
+            android:textSize="11sp"
+            app:stv_solidColor="@color/white"
+            app:stv_layoutRadius="9dp" />
 
     </FrameLayout>
 

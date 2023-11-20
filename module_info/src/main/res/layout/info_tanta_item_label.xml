@@ -21,8 +21,8 @@
         android:paddingRight="12dp"
         android:text="萌萌哒"
         android:textColor="@color/white"
-        android:textSize="12sp"
+        android:textSize="13sp"
         app:layout_constraintTop_toTopOf="parent"
         app:stv_layoutRadius="8dp"
-        app:stv_solidColor="@color/color_7C69FE" />
+        app:stv_solidColor="@color/color_B4A3FD" />
 </androidx.constraintlayout.widget.ConstraintLayout>

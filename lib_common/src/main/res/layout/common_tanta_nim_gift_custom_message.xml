@@ -10,10 +10,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:sll_solidColor="@color/white"
-        app:sll_bottomLeftRadius="12dp"
-        app:sll_bottomRightRadius="12dp"
+        app:sll_layoutRadius="10dp"
         android:paddingLeft="12dp"
-        app:sll_topRightRadius="12dp"
         android:visibility="gone"
         android:gravity="center_vertical"
         android:orientation="horizontal">
@@ -35,7 +33,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:textColor="@color/color_5FBCFE"
+                android:textColor="@color/color_B4A3FD"
                 android:textSize="12sp"
                 tool:text="一见钟情x1" />
         </LinearLayout>
@@ -65,12 +63,10 @@
         android:id="@+id/ll_right"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:sll_solidColor="@color/color_5FBCFE"
-        app:sll_bottomLeftRadius="12dp"
-        app:sll_topLeftRadius="12dp"
+        app:sll_solidColor="@color/color_B4A3FD"
+        app:sll_layoutRadius="10dp"
         android:visibility="gone"
         android:paddingRight="12dp"
-        app:sll_bottomRightRadius="12dp"
         android:gravity="center_vertical"
         android:orientation="horizontal">
 

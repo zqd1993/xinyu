@@ -36,7 +36,7 @@
             android:layout_marginTop="24dp"
             android:layout_marginRight="15dp"
             app:sll_layoutRadius="6dp"
-            app:sll_solidColor="@color/color_FFF8EC">
+            app:sll_solidColor="@color/color_FEEDF1">
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -160,12 +160,11 @@
         android:gravity="center"
         android:text="马上认证"
         android:textColor="@color/color_FFFFFF"
-        android:textSize="17sp"
+        android:textSize="18sp"
         android:textStyle="bold"
-        app:stv_layoutRadius="8dp"
+        app:stv_layoutRadius="24dp"
         app:stv_openSelector="true"
         app:stv_solidTouchColor="@color/color_D3D1D7"
-        app:stv_startColor="@color/color_6BBFFD"
-        app:stv_endColor="@color/color_4CB6FF"
+        app:stv_solidColor="@color/color_B4A3FD"
          />
 </RelativeLayout>

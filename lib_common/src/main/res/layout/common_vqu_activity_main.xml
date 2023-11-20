@@ -16,24 +16,43 @@
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
             app:layout_constraintBottom_toTopOf="@id/common_vqu_bottom_tab"
             app:layout_constraintTop_toTopOf="parent" />
-        <ImageView
+
+        <RelativeLayout
             android:id="@+id/iv_top"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_marginRight="16dp"
-            android:visibility="gone"
             android:layout_marginBottom="20dp"
-            android:src="@mipmap/ic_common_totop"
+            android:visibility="gone"
             app:layout_constraintBottom_toTopOf="@+id/banner_conversation"
-            app:layout_constraintRight_toRightOf="parent" />
+            app:layout_constraintRight_toRightOf="parent">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@mipmap/ic_common_totop" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="顶部"
+                android:textColor="@color/color_B4A3FD"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="15dp" />
+
+        </RelativeLayout>
+
         <com.youth.banner.Banner
             android:id="@+id/banner_conversation"
-            android:layout_width="142dp"
+            android:layout_width="150dp"
             android:layout_height="44dp"
             android:layout_marginRight="16dp"
             android:layout_marginBottom="70dp"
             android:visibility="gone"
-            android:background="@drawable/shape_vqu_bg_home_message"
+            android:background="@mipmap/shape_vqu_home_message_bg"
             app:layout_constraintBottom_toTopOf="@+id/common_vqu_bottom_tab"
             app:layout_constraintRight_toRightOf="parent" />
 
@@ -42,19 +61,18 @@
             android:layout_width="match_parent"
             android:layout_height="39dp"
             android:layout_gravity="bottom"
-            android:layout_marginBottom="13dp"
             android:gravity="center_vertical"
-            app:layout_constraintBottom_toTopOf="@+id/common_vqu_bottom_tab"
             android:orientation="horizontal"
-            android:paddingStart="12dp"
-            android:paddingEnd="10dp"
-            app:sll_solidColor="@color/color_FFF8EC">
+            android:paddingStart="28dp"
+            android:paddingEnd="31dp"
+            app:layout_constraintBottom_toTopOf="@+id/common_vqu_bottom_tab"
+            app:sll_solidColor="@color/color_FEEDF1">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/home_vqu_main_perfect_data"
-                android:textColor="@color/color_222222"
+                android:textColor="@color/black"
                 android:textSize="12sp" />
 
             <TextView
@@ -62,57 +80,59 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/home_vqu_main_send_diamonds"
-                android:textColor="@color/color_FA7E10"
+                android:textColor="@color/color_FE4040"
                 android:textSize="12sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="，你有"
-                android:textColor="@color/color_222222"
+                android:textColor="@color/black"
                 android:textSize="12sp" />
+
             <TextView
                 android:id="@+id/vqu_get_diamond"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="金币"
-                android:textColor="@color/color_FA7E10"
+                android:textColor="@color/color_FE4040"
                 android:textSize="12sp" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="待领取"
-                android:textColor="@color/color_222222"
+                android:textColor="@color/black"
                 android:textSize="12sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="end|center_vertical"
-                >
+                android:gravity="end|center_vertical">
 
                 <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
                     android:id="@+id/vqu_btn_edit"
                     android:layout_width="48dp"
                     android:layout_height="25dp"
-                    android:textColor="@color/white"
-                    app:stv_startColor="@color/color_FFBF44"
-                    app:stv_endColor="@color/color_F6AC1C"
-                    app:stv_layoutRadius="8dp"
                     android:gravity="center"
                     android:text="@string/home_vqu_main_goto"
-                    android:textSize="12sp" />
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:stv_solidColor="@color/color_FCA2B7"
+                    app:stv_layoutRadius="7dp" />
 
                 <ImageView
                     android:id="@+id/vqu_iv_delete"
                     android:layout_width="29dp"
-                    android:layout_marginLeft="8dp"
                     android:layout_height="29dp"
+                    android:layout_marginLeft="8dp"
                     android:scaleType="center"
                     android:src="@mipmap/resources_tanta_main_delete" />
             </LinearLayout>
 
         </com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout>
+
         <me.majiajie.pagerbottomtabstrip.PageNavigationView
             android:id="@+id/common_vqu_bottom_tab"
             android:layout_width="match_parent"

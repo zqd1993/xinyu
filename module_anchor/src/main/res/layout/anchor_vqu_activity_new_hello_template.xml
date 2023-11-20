@@ -261,14 +261,13 @@
                         app:circleColor="@color/white"
                         app:radiusCom="36dp"
                         app:ringBgColor="@color/white"
-                        app:ringColor="#FE9B4B"
+                        app:ringColor="@color/color_FCA2B7"
                         app:strokeWidth="2dp" />
 
                     <com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout
                         android:layout_width="64dp"
                         android:layout_height="64dp"
-                        app:sll_startColor="@color/color_6BBFFD"
-                        app:sll_endColor="@color/color_4CB6FF"
+                        app:sll_solidColor="@color/color_B4A3FD"
                         android:layout_centerHorizontal="true"
                         android:layout_centerVertical="true"
                         android:gravity="center"
@@ -309,8 +308,8 @@
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tv_tip"
-                    app:stv_layoutRadius="12dp"
-                    app:stv_strokeColor="@color/color_5FBCFE"
+                    app:stv_layoutRadius="15dp"
+                    app:stv_strokeColor="@color/color_B4A3FD"
                     app:stv_strokeWidth="1dp" />
 
 

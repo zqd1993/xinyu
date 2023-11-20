@@ -11,8 +11,8 @@
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
         android:orientation="vertical"
-        android:paddingBottom="20dp"
-        app:sll_layoutRadius="12dp"
+        android:paddingBottom="29dp"
+        app:sll_layoutRadius="20dp"
         app:sll_solidColor="@color/color_FFFFFF">
 
 
@@ -34,12 +34,13 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginLeft="14dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="25dp"
             android:layout_marginRight="14dp"
             android:lineSpacingExtra="2dp"
             android:maxHeight="280dp"
             android:text="绑定手机号"
-            android:textColor="@color/color_222222"
+            android:textStyle="bold"
+            android:textColor="@color/black"
             android:textSize="20sp" />
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -48,11 +49,11 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginLeft="14dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="24dp"
             android:layout_marginRight="14dp"
             android:lineSpacingExtra="2dp"
             android:maxHeight="280dp"
-            android:text="绑定手机后才可以进鹊娘"
+            android:text="绑定手机号后才可以进都市恋人"
             android:textColor="@color/color_999999"
             android:textSize="14sp" />
 
@@ -66,9 +67,10 @@
             android:gravity="center"
             android:text="立即绑定"
             android:textColor="@color/color_FFFFFF"
-            android:textSize="16sp"
-            app:stv_solidColor="@color/color_FF7AC2"
-            app:stv_layoutRadius="12dp"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            app:stv_solidColor="@color/color_B4A3FD"
+            app:stv_layoutRadius="24dp"
              />
 
         <TextView
@@ -79,7 +81,7 @@
             android:drawableRight="@mipmap/ic_arrow_small_right_grey"
             android:drawablePadding="6dp"
             android:paddingLeft="30dp"
-            android:paddingTop="16dp"
+            android:paddingTop="18dp"
             android:paddingRight="30dp"
             android:text="切换账号"
             android:textColor="@color/color_999999"

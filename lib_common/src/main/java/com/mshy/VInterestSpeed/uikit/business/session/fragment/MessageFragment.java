@@ -1,7 +1,5 @@
 package com.mshy.VInterestSpeed.uikit.business.session.fragment;
 
-import static com.mshy.VInterestSpeed.common.helper.ARouterHelperKt.startARouterActivity;
-
 import android.content.Intent;
 import android.media.AudioManager;
 import android.os.Bundle;
@@ -16,29 +14,21 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
-import com.ellison.glide.translibrary.ImageUtils;
-import com.ellison.glide.translibrary.base.LoaderBuilder;
-import com.live.vquonline.base.BaseApplication;
 import com.live.vquonline.base.constant.VersionStatus;
 import com.live.vquonline.base.utils.SpUtils;
 import com.live.vquonline.base.utils.UtilsKt;
+import com.mshy.VInterestSpeed.common.BuildConfig;
 import com.mshy.VInterestSpeed.common.CommonApplication;
 import com.mshy.VInterestSpeed.common.R;
 import com.mshy.VInterestSpeed.common.bean.gift.DialogGiftBean;
 import com.mshy.VInterestSpeed.common.constant.NetBaseUrlConstant;
-import com.mshy.VInterestSpeed.common.constant.RouteKey;
-import com.mshy.VInterestSpeed.common.constant.RouteUrl;
 import com.mshy.VInterestSpeed.common.constant.SpKey;
 import com.mshy.VInterestSpeed.common.livedata.AppViewModel;
-import com.mshy.VInterestSpeed.common.utils.UiUtils;
 import com.mshy.VInterestSpeed.common.utils.UserSpUtils;
 import com.mshy.VInterestSpeed.uikit.api.NimUIKit;
 import com.mshy.VInterestSpeed.common.bean.UserInCallEvent;
-import com.mshy.VInterestSpeed.uikit.api.model.SimpleCallback;
 import com.mshy.VInterestSpeed.uikit.business.ait.AitManager;
 import com.mshy.VInterestSpeed.uikit.business.session.actions.BaseAction;
 import com.mshy.VInterestSpeed.uikit.business.session.actions.ImageAction;
@@ -53,7 +43,6 @@ import com.mshy.VInterestSpeed.uikit.api.model.main.CustomPushContentProvider;
 import com.mshy.VInterestSpeed.uikit.api.model.session.SessionCustomization;
 import com.mshy.VInterestSpeed.uikit.business.session.constant.Extras;
 import com.mshy.VInterestSpeed.uikit.common.CommonUtil;
-import com.mshy.VInterestSpeed.uikit.common.util.sys.ScreenUtil;
 import com.mshy.VInterestSpeed.uikit.impl.NimUIKitImpl;
 import com.netease.nimlib.sdk.NIMClient;
 import com.netease.nimlib.sdk.Observer;
@@ -81,10 +70,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import com.mshy.VInterestSpeed.common.BuildConfig;
-import com.netease.nimlib.sdk.uinfo.model.NimUserInfo;
-import com.netease.nimlib.sdk.uinfo.model.UserInfo;
 
 /**
  * 聊天界面基类
@@ -120,13 +105,6 @@ public class MessageFragment extends TFragment implements ModuleProxy {
     protected RecyclerView messageListView;
     protected TextView tvTip;
     protected ImageView ivNext;
-    protected ImageView messageActivityBackground;
-
-    protected ImageView ivBack;
-
-    protected TextView tvUsername;
-
-    protected ImageView ivMore;
     AppViewModel appViewModel = CommonApplication.mCommonApplication.getAppViewModelProvider().get(AppViewModel.class);
 
     @Override
@@ -145,11 +123,7 @@ public class MessageFragment extends TFragment implements ModuleProxy {
     private void initView() {
         tvTip = rootView.findViewById(R.id.tv_tip);
         ivNext = rootView.findViewById(R.id.iv_next);
-        messageActivityBackground = rootView.findViewById(R.id.message_activity_background);
         messageListView = rootView.findViewById(R.id.messageListView);
-        ivMore = rootView.findViewById(R.id.iv_more);
-        ivBack = rootView.findViewById(R.id.iv_back);
-        tvUsername = rootView.findViewById(R.id.tv_username);
         messageListView.setItemAnimator(null);
         messageListView.setOnTouchListener((view, motionEvent) -> {
             if (inputPanel != null) {
@@ -157,37 +131,6 @@ public class MessageFragment extends TFragment implements ModuleProxy {
             }
             return false;
         });
-
-        ivMore.setOnClickListener((view) -> {
-            startARouterActivity(
-                    RouteUrl.Message.MessageVquChatSettingActivity,
-                    RouteKey.USERID,
-                    Integer.valueOf(sessionId)
-            );
-        });
-
-        ivBack.setOnClickListener((view) -> {
-            getActivity().finish();
-        });
-        NimUIKit.getUserInfoProvider().getUserInfoAsync(sessionId, (success, result, code) -> {
-            NimUserInfo nimUserInfo = (NimUserInfo) result;
-//                LoaderBuilder builderConfig = new LoaderBuilder()
-//                        .width(UiUtils.dip2px(BaseApplication.context, ScreenUtil.getDisplayWidth()))
-//                        .height(UiUtils.dip2px(BaseApplication.context, ScreenUtil.getDisplayHeight()))
-//                        .blur(100, 3)
-//                        .scaleType(ImageView.ScaleType.CENTER_CROP)
-//                        .load(NetBaseUrlConstant.IMAGE_URL_2 + userInfo.getAvatar());
-//                ImageUtils.getInstance().bind(messageActivityBackground, builderConfig);
-            if (!TextUtils.isEmpty(nimUserInfo.getName())) {
-                Glide.with(getActivity())
-                        .load(NetBaseUrlConstant.IMAGE_URL_2 + nimUserInfo.getAvatar())
-                        .into(messageActivityBackground);
-            }
-            if (!TextUtils.isEmpty(nimUserInfo.getName())) {
-                tvUsername.setText(nimUserInfo.getName());
-            }
-        });
-
         if (appViewModel.getUnreadConversationList().getValue() != null) {
             if (appViewModel.getUnreadConversationList().getValue().size() > 0) {
                 ivNext.setVisibility(View.VISIBLE);
@@ -239,7 +182,7 @@ public class MessageFragment extends TFragment implements ModuleProxy {
         Log.i("tyy", "清除消息");
         long startTime = 0;
 //        long endTime=System.currentTimeMillis()-60*60*1000*24*30;//30天前的删掉
-        long endTime = System.currentTimeMillis() - 60 * 1000 * 2;//2分钟前的删掉
+        long endTime = System.currentTimeMillis() - 60 * 1000*2;//2分钟前的删掉
         NIMClient.getService(MsgService.class).deleteRangeHistory(sessionId, sessionType, startTime, endTime);
         searchMessage(sessionId);
     }
@@ -299,8 +242,10 @@ public class MessageFragment extends TFragment implements ModuleProxy {
         sessionId = arguments.getString(Extras.EXTRA_ACCOUNT);
         sessionType = (SessionTypeEnum) arguments.getSerializable(Extras.EXTRA_TYPE);
         IMMessage anchor = (IMMessage) arguments.getSerializable(Extras.EXTRA_ANCHOR);
+
         customization = (SessionCustomization) arguments.getSerializable(Extras.EXTRA_CUSTOMIZATION);
         container = new Container(getActivity(), sessionId, sessionType, this, true);
+
         if (messageListPanel == null) {
             messageListPanel = new MessageListPanelEx(container, rootView, anchor, false, false);
         } else {
@@ -441,7 +386,7 @@ public class MessageFragment extends TFragment implements ModuleProxy {
      */
     @Override
     public boolean sendMessage(IMMessage message) {
-        if (NetBaseUrlConstant.DEBUG_BASE_URL.equals("http://120.78.160.71:8071/")) {
+        if (BuildConfig.VERSION_TYPE != VersionStatus.RELEASE && NetBaseUrlConstant.DEBUG_BASE_URL.equals("http://120.78.160.71:8071/")) {
             message.setEnv("tchat");
         }
         sendMsg(message);

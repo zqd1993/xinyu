@@ -39,7 +39,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
+            android:layout_marginLeft="45dp"
             android:src="@mipmap/ic_tanta_red_packet_left"
             app:layout_constraintBottom_toBottomOf="@+id/tv_title"
             app:layout_constraintStart_toStartOf="parent"
@@ -48,7 +48,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="16dp"
+            android:layout_marginRight="45dp"
             android:src="@mipmap/ic_tanta_red_packet_right"
             app:layout_constraintBottom_toBottomOf="@+id/tv_title"
             app:layout_constraintRight_toRightOf="parent"
@@ -57,7 +57,7 @@
         <ImageView
             android:id="@+id/iv_open"
             android:layout_width="wrap_content"
-            android:layout_marginTop="14dp"
+            android:layout_marginTop="60dp"
             android:layout_height="wrap_content"
             android:src="@mipmap/ic_red_packet_open"
             app:layout_constraintLeft_toLeftOf="parent"

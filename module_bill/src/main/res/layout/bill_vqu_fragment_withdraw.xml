@@ -213,9 +213,8 @@
             android:text="@string/vqu_bill_withdrawal_now"
             android:textColor="@color/color_FFFFFF"
             android:textSize="18sp"
-            app:stv_layoutRadius="8dp"
-            app:stv_startColor="@color/color_6BBFFD"
-            app:stv_endColor="@color/color_4CB6FF"/>
+            app:stv_layoutRadius="24dp"
+            app:stv_solidColor="@color/color_B4A3FD"/>
     </androidx.appcompat.widget.LinearLayoutCompat>
 
 </RelativeLayout>

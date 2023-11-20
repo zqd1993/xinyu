@@ -148,7 +148,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toRightOf="@id/fl_hello_template_video_parent"
                 app:sll_layoutRadius="11dp"
-                app:sll_solidColor="@color/color_5FBCFE">
+                app:sll_solidColor="@color/color_B4A3FD">
 
                 <ImageView
                     android:layout_width="18dp"

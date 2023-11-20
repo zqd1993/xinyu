@@ -92,14 +92,14 @@ open class InfoVquPersonalInfoActivity :
             .fitsSystemWindows(false).init()
         mBinding.viewBg.alpha = 0f
         mBinding.nes.setOnScrollChangeListener { v, scrollX, scrollY, oldScrollX, oldScrollY ->
-            mBinding.viewBg.alpha = scrollY / 600f
-//            if (scrollY > 300) {
-//                mBinding.ivBack.setImageResource(R.mipmap.ic_vqu_info_back_black)
-//                mBinding.ivMore.setImageResource(R.mipmap.ic_vqu_info_more_black)
-//            } else {
-//                mBinding.ivBack.setImageResource(R.mipmap.ic_vqu_info_back_white)
-//                mBinding.ivMore.setImageResource(R.mipmap.ic_vqu_info_more_white)
-//            }
+//            mBinding.viewBg.alpha = scrollY / 600f
+            if (scrollY > 300) {
+                mBinding.ivBack.setImageResource(R.mipmap.ic_vqu_info_back_black)
+                mBinding.ivMore.setImageResource(R.mipmap.ic_vqu_info_more_black)
+            } else {
+                mBinding.ivBack.setImageResource(R.mipmap.ic_vqu_info_back_white)
+                mBinding.ivMore.setImageResource(R.mipmap.ic_vqu_info_more_white)
+            }
         }
         mBinding.ivBack.setViewClickListener { finish() }
         mBinding.ivBackBlocked.setViewClickListener { finish() }
@@ -320,14 +320,18 @@ open class InfoVquPersonalInfoActivity :
         mViewModel.vquFollowData.observe(this, Observer {
             if ("add" == it.data.action) {//关注
                 "关注成功".toast()
-                mBinding.llAttention.solidColor = Color.parseColor("#CCCCCC")
+//                mBinding.llAttention.solidColor = Color.parseColor("#CCCCCC")
                 mBinding.iconAttention.visibility = View.GONE
-                mBinding.tvAttention.text = "已关"
+                mBinding.tvAttention.text = "已关注"
+                mBinding.attentionView.visibility = View.GONE
+                mBinding.llAttention.setBackgroundResource(R.mipmap.resourcrs_vqu_info_unfollow)
             } else {
                 "已取消关注".toast()
-                mBinding.llAttention.solidColor = Color.parseColor("#FF7AC2")
-                mBinding.iconAttention.visibility = View.VISIBLE
+//                mBinding.llAttention.solidColor = Color.parseColor("#FF7AC2")
+                mBinding.iconAttention.visibility = View.GONE
                 mBinding.tvAttention.text = "关注"
+                mBinding.attentionView.visibility = View.VISIBLE
+                mBinding.llAttention.setBackgroundResource(R.mipmap.resourcrs_vqu_info_follow)
             }
         })
         mViewModel.vquBlackData.observe(this, Observer {
@@ -505,13 +509,17 @@ open class InfoVquPersonalInfoActivity :
         } else {
             mBinding.llAttention.visible()
             if (info.isFollow == 1) {
-                mBinding.llAttention.solidColor = Color.parseColor("#CCCCCC")
+//                mBinding.llAttention.solidColor = Color.parseColor("#CCCCCC")
                 mBinding.iconAttention.visibility = View.GONE
-                mBinding.tvAttention.text = "已关"
+                mBinding.tvAttention.text = "已关注"
+                mBinding.attentionView.visibility = View.GONE
+                mBinding.llAttention.setBackgroundResource(R.mipmap.resourcrs_vqu_info_unfollow)
             } else {
-                mBinding.llAttention.solidColor = Color.parseColor("#FF7AC2")
-                mBinding.iconAttention.visibility = View.VISIBLE
+//                mBinding.llAttention.solidColor = Color.parseColor("#FF7AC2")
+                mBinding.iconAttention.visibility = View.GONE
                 mBinding.tvAttention.text = "关注"
+                mBinding.attentionView.visibility = View.VISIBLE
+                mBinding.llAttention.setBackgroundResource(R.mipmap.resourcrs_vqu_info_follow)
             }
             mBinding.llAttention.setViewClickListener { vquLike() }
         }
@@ -638,7 +646,7 @@ open class InfoVquPersonalInfoActivity :
                 tv.text = bean.name
                 var colorList = bean.color.split(",")
                 tv.solidColor = Color.parseColor("#F5F5F5")
-                tv.setTextColor(Color.parseColor("#222222"))
+                tv.setTextColor(Color.parseColor("#000000"))
                 return view
             }
 

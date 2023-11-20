@@ -123,7 +123,7 @@
             android:background="@drawable/bg_stroke_ff7ac2"
             android:gravity="center"
             android:text="全部"
-            android:textColor="@color/color_5FBCFE"
+            android:textColor="@color/color_B4A3FD"
             android:textSize="13sp"
             app:layout_constraintBottom_toBottomOf="@+id/label_sex"
             app:layout_constraintStart_toEndOf="@+id/label_sex"
@@ -176,9 +176,8 @@
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:stv_endColor="@color/color_4CB6FF"
-        app:stv_layoutRadius="12dp"
-        app:stv_startColor="@color/color_6BBFFD" />
+        app:stv_solidColor="@color/color_B4A3FD"
+        app:stv_layoutRadius="24dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

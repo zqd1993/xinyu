@@ -69,7 +69,7 @@ class DynamicTantaAdapter(activity: Activity) :
             R.id.iv_beckoning,
             if (item.isBeckon) R.mipmap.resources_tanta_main_home_chat else R.mipmap.resources_tanta_home_like)
         if (item.isBeckon) {
-            tvBottom.setTextColor(ContextCompat.getColor(context, R.color.color_8EC0EA))
+            tvBottom.setTextColor(ContextCompat.getColor(context, R.color.white))
 //            llBeckoning.setStartColor(ContextCompat.getColor(context, R.color.color_FFFFFF),
 //                ContextCompat.getColor(context, R.color.color_FFFFFF))
             holder.setText(R.id.tv_bottom, context.getString(R.string.dynamic_chat))
@@ -77,7 +77,7 @@ class DynamicTantaAdapter(activity: Activity) :
 //                R.color.color_FF7AC2), 1)
 
         } else {
-            tvBottom.setTextColor(ContextCompat.getColor(context, R.color.color_FEC24F))
+            tvBottom.setTextColor(ContextCompat.getColor(context, R.color.color_B4A3FD))
 //            llBeckoning.setStartColor(ContextCompat.getColor(context, R.color.color_FF7AC2),
 //                ContextCompat.getColor(context, R.color.color_FF7AC2))
             if (item.gender == 1) {

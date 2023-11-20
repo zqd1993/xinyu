@@ -61,9 +61,9 @@
             android:paddingEnd="12dp"
             android:paddingBottom="6dp"
             android:text="@string/dynamic_publish_tip_title"
-            android:textColor="@color/color_5FBCFE"
+            android:textColor="@color/color_B4A3FD"
+            app:stv_strokeColor="@color/color_B4A3FD"
             app:stv_layoutRadius="@dimen/dp_size_8"
-            app:stv_strokeColor="@color/color_5FBCFE"
             app:stv_strokeWidth="1dp" />
 
         <TextView

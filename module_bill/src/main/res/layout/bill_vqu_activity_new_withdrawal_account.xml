@@ -294,7 +294,7 @@
                         android:layout_marginRight="15dp"
                         android:gravity="center"
                         android:text="@string/login_send_auth_code"
-                        android:textColor="@color/color_5FBCFE"
+                        android:textColor="@color/color_B4A3FD"
                         android:textSize="13sp"
                         app:layout_constraintBottom_toBottomOf="@id/tv_bill_vqu_new_withdrawal_account_phone_code_txt"
                         app:layout_constraintRight_toRightOf="parent"
@@ -337,10 +337,9 @@
                 android:text="保存"
                 android:textStyle="bold"
                 android:textColor="@color/color_FFFFFF"
-                android:textSize="17sp"
-                app:stv_endColor="@color/color_4CB6FF"
-                app:stv_layoutRadius="12dp"
-                app:stv_startColor="@color/color_6BBFFD" />
+                android:textSize="18sp"
+                app:stv_solidColor="@color/color_B4A3FD"
+                app:stv_layoutRadius="24dp" />
         </LinearLayout>
     </ScrollView>
 

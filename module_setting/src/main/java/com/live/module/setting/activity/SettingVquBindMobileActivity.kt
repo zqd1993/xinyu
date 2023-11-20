@@ -80,8 +80,8 @@ class SettingVquBindMobileActivity :
                 mBinding.tvBind.isEnabled = true
                 mBinding.tvBind.isClickable = true
                 mBinding.tvBind.setStartColor(
-                    resources.getColor(R.color.color_6BBFFD),
-                    resources.getColor(R.color.color_4CB6FF)
+                    resources.getColor(R.color.color_B4A3FD),
+                    resources.getColor(R.color.color_B4A3FD)
                 )
             } else {
                 mBinding.tvBind.isEnabled = false

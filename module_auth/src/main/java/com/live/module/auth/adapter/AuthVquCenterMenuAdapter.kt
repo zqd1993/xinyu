@@ -38,8 +38,8 @@ class AuthVquCenterMenuAdapter :
             tvStatus.text = "去认证"
             ivIcon.isSelected = false
             tvStatus.setStartColor(
-                ResUtils.getColor(R.color.color_6BBFFD),
-                ResUtils.getColor(R.color.color_4CB6FF)
+                ResUtils.getColor(R.color.color_B4A3FD),
+                ResUtils.getColor(R.color.color_B4A3FD)
             )
         }
 

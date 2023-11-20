@@ -34,11 +34,11 @@
                 android:layout_marginRight="6dp"
                 android:gravity="center"
                 android:text="自定义"
-                android:textColor="@color/color_5FBCFE"
+                android:textColor="@color/color_B4A3FD"
                 android:textSize="9sp"
                 android:visibility="gone"
                 app:stv_layoutRadius="3dp"
-                app:stv_strokeColor="@color/color_5FBCFE"
+                app:stv_strokeColor="@color/color_B4A3FD"
                 app:stv_strokeWidth="1dp" />
 
             <TextView

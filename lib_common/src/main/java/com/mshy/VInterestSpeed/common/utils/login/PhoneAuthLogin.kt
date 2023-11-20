@@ -210,14 +210,14 @@ class PhoneAuthLogin(val context: Context) {
             .setLogoOffsetY(55)
             //手机号码
             .setNumberColor(ResUtils.getColor(R.color.color_FFFFFF))
-            .setNumberSizeDp(25)
+            .setNumberSizeDp(26)
             .setNumFieldOffsetY(mNumFieldMarginTop.toInt())
             //SLogan，就是那行中国移动提供服务之类的标语
-            .setSloganTextSizeDp(11)
+            .setSloganTextSizeDp(15)
             .setSloganOffsetY(mSLoganMarginTop.toInt())
             //登录按钮
             .setLogBtnText("本机号码一键登录")
-            .setLogBtnTextSizeDp(16)
+            .setLogBtnTextSizeDp(18)
             .setLogBtnHeight(mLoginButtonHeight.toInt())
             .setLogBtnWidth(300)
             .setLogBtnOffsetY(mLoginButtonMarginTop.toInt())
@@ -236,7 +236,7 @@ class PhoneAuthLogin(val context: Context) {
             .setPackageName("queniang.love")
             .setPrivacyOffsetY_B(43)
             .setAppPrivacyOne(
-                "《鹊娘用户协议》",
+                "《甜桃用户协议》",
                 NetBaseUrlConstant.AGREEMENT_BASE_URL + NetBaseUrlConstant.AGREEMENT_URL
             )
             .setAppPrivacyTwo(

@@ -62,10 +62,10 @@
             android:layout_marginRight="15dp"
             android:gravity="center"
             android:text="回复"
-            android:textColor="@color/color_5FBCFE"
+            android:textColor="@color/color_7A65DA"
             android:textSize="12sp"
             app:stv_solidColor="@color/white"
-            app:stv_layoutRadius="8dp"
+            app:stv_layoutRadius="16dp"
             />
     </RelativeLayout>
 

@@ -99,7 +99,7 @@
             android:gravity="center"
             app:stv_solidColor="@color/white"
             android:text="@string/setting_code_get"
-            android:textColor="@color/color_5FBCFE"
+            android:textColor="@color/color_B4A3FD"
             android:textSize="15sp"
             app:stv_layoutRadius="20dp" />
     </com.mshy.VInterestSpeed.common.ui.view.ShapeRelativeLayout>
@@ -136,7 +136,7 @@
         android:textColor="@color/white"
         android:textSize="17sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:stv_layoutRadius="12dp"
+        app:stv_layoutRadius="24dp"
         app:stv_solidColor="@color/color_CCCCCC" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

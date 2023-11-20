@@ -51,13 +51,12 @@
         android:gravity="center"
         android:text="去认证"
         android:textColor="@color/color_FFFFFF"
-        android:textSize="12sp"
+        android:textSize="13sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:stv_layoutRadius="8dp"
-        app:stv_startColor="@color/color_6BBFFD"
-        app:stv_endColor="@color/color_4CB6FF"/>
+        app:stv_layoutRadius="24dp"
+        app:stv_solidColor="@color/color_B4A3FD"/>
 
 
 </com.mshy.VInterestSpeed.common.ui.view.ShapeConstraintLayout>
