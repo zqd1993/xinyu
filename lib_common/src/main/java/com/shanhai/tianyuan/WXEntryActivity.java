@@ -1,4 +1,4 @@
-package queniang.love.wxapi;
+package com.shanhai.tianyuan;
 
 
 import android.app.ActivityManager;

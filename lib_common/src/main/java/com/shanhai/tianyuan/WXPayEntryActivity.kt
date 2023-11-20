@@ -1,4 +1,4 @@
-package queniang.love.wxapi
+package com.shanhai.tianyuan.wxapi
 
 import android.app.Activity
 import android.content.Intent

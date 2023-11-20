@@ -205,7 +205,7 @@ class CommonApplication : ApplicationLifecycle, ViewModelStoreOwner {
             UMConfigure.DEVICE_TYPE_PHONE,
             ""
         );
-        PlatformConfig.setWXFileProvider("queniang.love.fileProvider")
+        PlatformConfig.setWXFileProvider("com.shanhai.tianyuan.fileProvider")
         ShareManager.getInstance().configQQ(
             "1112111172",
             "WvtHEdQDDmfJ4wWh"

@@ -4,7 +4,7 @@
     "type": "APK",
     "kind": "Directory"
   },
-  "applicationId": "queniang.love",
+  "applicationId": "com.shanhai.tianyuan",
   "variantName": "release",
   "elements": [
     {
@@ -12,7 +12,7 @@
       "filters": [],
       "versionCode": 1,
       "versionName": "1.0.0",
-      "outputFile": "queniang.love_1(1.0.0)_release.apk"
+      "outputFile": "com.shanhai.tianyuan_1(1.0.0)_release.apk"
     }
   ]
 }
