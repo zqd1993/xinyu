@@ -12,8 +12,8 @@ object ProjectBuildConfig {
     const val applicationId = "xinyu.love"
     const val minSdkVersion = 21
     const val targetSdkVersion = 30
-    const val versionCode = 6
-    const val versionName = "1.0.5"
+    const val versionCode = 10
+    const val versionName = "1.0.9"
     const val isAppMode = false
 
     /**
