@@ -21,6 +21,7 @@ import com.live.vquonline.base.utils.SpUtils
 import com.live.vquonline.base.utils.toast
 import com.mshy.VInterestSpeed.common.bean.ExitAgoraEvent
 import com.mshy.VInterestSpeed.common.bean.LoginEvent
+import com.mshy.VInterestSpeed.common.constant.NetBaseUrlConstant
 import com.mshy.VInterestSpeed.common.constant.RouteUrl
 import com.mshy.VInterestSpeed.common.constant.SpKey
 import com.mshy.VInterestSpeed.common.ext.initClose
@@ -65,7 +66,11 @@ class SettingVquActivity : BaseActivity<SettingTantaActivitySettingBinding, Sett
     var isSelect: Boolean = false
     var isBind: Boolean = false
     override fun SettingTantaActivitySettingBinding.initView() {
-        mBinding.includeTitle.toolbar.initClose(getString(R.string.setting_setting)) {
+        var settingTitle = getString(R.string.setting_setting)
+        if(NetBaseUrlConstant.MAIN_URL.contains("120.78.160.71:8071")){
+            settingTitle += "debug"
+        }
+        mBinding.includeTitle.toolbar.initClose(settingTitle) {
             finish()
         }
 

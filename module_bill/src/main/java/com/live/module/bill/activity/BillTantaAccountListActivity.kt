@@ -104,15 +104,15 @@ class BillTantaAccountListActivity :
     private fun initEvent() {
         mAdapter.setOnItemClickListener { _, view, position ->
 
-//            val billVquAccountInfo =
-//                mAdapter.getItemOrNull(position) ?: return@setOnItemClickListener
-//
-//            if (billVquAccountInfo.isMonthLimit == 1) {
-//                toast("此账号本月已提现超额")
-//                return@setOnItemClickListener
-//            }
+            val billVquAccountInfo =
+                mAdapter.getItemOrNull(position) ?: return@setOnItemClickListener
 
-//            mViewModel.vquAccountUser(billVquAccountInfo.id)
+            if (billVquAccountInfo.isMonthLimit == 1) {
+                toast("此账号本月已提现超额")
+                return@setOnItemClickListener
+            }
+
+            mViewModel.vquAccountUser(billVquAccountInfo.id)
         }
 
 
