@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">鹊娘</string>
+    <string name="app_name">甜缘</string>
     <string name="login_desc">手机号登录</string>
 
     <string name="vqu_operation_success">操作成功</string>
@@ -139,19 +139,19 @@
     <string name="info_nickname_length">昵称长度不能超过10</string>
     <!-- bill  -->
     <string name="agreement_text">
- &lt;font&gt;欢迎您使用“鹊娘”！鹊娘非常重视保护用户（以下简称“您”）的个人信息和隐私，我们根据监管要求更新了&lt;a href=&quot;http://asset.zhenban.top/index/about/agreement_qy.html&quot;&gt;&lt;font color=&quot;#576990&quot;&gt;《用户服务协议》&lt;/font&gt;&lt;/a&gt;和&lt;a href=&quot;http://asset.zhenban.top/index/about/privacy_qy.html&quot;&gt;&lt;font color=&quot;#576990&quot;&gt;《鹊娘隐私政策》&lt;/font&gt;&lt;/a&gt;；并希望通过以下《鹊娘隐私政策（摘要）》帮助您直观、简洁地了解我们在必要范围内收集和使用您的个人信息类型和业务场景，以及我们处理您个人信息的基本规则。
-&lt;br&gt;                      鹊娘隐私政策（摘要）
+ &lt;font&gt;欢迎您使用“甜缘”！甜缘非常重视保护用户（以下简称“您”）的个人信息和隐私，我们根据监管要求更新了&lt;a href=&quot;http://asset.zhenban.top/index/about/agreement_qy.html&quot;&gt;&lt;font color=&quot;#576990&quot;&gt;《用户服务协议》&lt;/font&gt;&lt;/a&gt;和&lt;a href=&quot;http://asset.zhenban.top/index/about/privacy_qy.html&quot;&gt;&lt;font color=&quot;#576990&quot;&gt;《甜缘隐私政策》&lt;/font&gt;&lt;/a&gt;；并希望通过以下《甜缘隐私政策（摘要）》帮助您直观、简洁地了解我们在必要范围内收集和使用您的个人信息类型和业务场景，以及我们处理您个人信息的基本规则。
+&lt;br&gt;                      甜缘隐私政策（摘要）
 &lt;br&gt;一、我们如何收集和使用个人信息
 &lt;br&gt;1．帮助您完成注册、登录及认证
-&lt;br&gt;注册鹊娘帐号时，您需要提供手机号码、验证码匹配结果、昵称、头像、生日，如果您使用第三方帐号进行登录，需要您提供第三方帐号的昵称、头像、性别。在注册、登录或后续的使用过程中，您也可以向我们补充额外信息（如您的性别、星座、所在地、职业、学历、身高、体重、年收入、交友宣言、兴趣爱好、您本人的真实头像），有助于我们提供更好的服务，同时增进您与其他用户之间的互动、了解。如果您不提供这些信息，并不会影响您使用鹊娘的基本功能。
-依据相关法律法规的规定，或为了满足实名认证的需要，保障用户帐号安全，在您使用鹊娘实名认证、身份认证、兑换积分功能时，我们需要对您进行身份验证，并收集您的以下身份认证信息：姓名、身份证号码、电话号码、面部特征值（静态或动态）、与实名认证一致的收款帐号以及兑换积分记录信息。如果您拒绝向我们提供上述信息，我们将无法向您提供相关的功能及服务。
+&lt;br&gt;注册甜缘帐号时，您需要提供手机号码、验证码匹配结果、昵称、头像、生日，如果您使用第三方帐号进行登录，需要您提供第三方帐号的昵称、头像、性别。在注册、登录或后续的使用过程中，您也可以向我们补充额外信息（如您的性别、星座、所在地、职业、学历、身高、体重、年收入、交友宣言、兴趣爱好、您本人的真实头像），有助于我们提供更好的服务，同时增进您与其他用户之间的互动、了解。如果您不提供这些信息，并不会影响您使用甜缘的基本功能。
+依据相关法律法规的规定，或为了满足实名认证的需要，保障用户帐号安全，在您使用甜缘实名认证、身份认证、兑换积分功能时，我们需要对您进行身份验证，并收集您的以下身份认证信息：姓名、身份证号码、电话号码、面部特征值（静态或动态）、与实名认证一致的收款帐号以及兑换积分记录信息。如果您拒绝向我们提供上述信息，我们将无法向您提供相关的功能及服务。
 &lt;br&gt;2．为您提供信息发布与互动服务
-&lt;br&gt;在您使用鹊娘进行上传/发布信息以及进行相关行为（即上传发布音视频、图文内容、点赞、评论、关注、收藏、送礼时）时，我们将收集您上传、发布及形成的信息并有权展示您的昵称、头像和发布内容。当您使用鹊娘向其他用户打赏、送礼时，我们将收集您的头像、昵称及送礼数据，并向其他用户进行展示。当您使用上传头像、进行真人认证、发布语音个性签名、发布动态（包括图文与视频内容）时，我们还会根据您所发布的内容请求您授权相机、照片、麦克风以及存储权限；请你知悉，权限的开启或授权是您使用上述功能的前提，如您关闭或拒绝授权将无法使用上述功能，但不会影响您使用其他功能与服务。
+&lt;br&gt;在您使用甜缘进行上传/发布信息以及进行相关行为（即上传发布音视频、图文内容、点赞、评论、关注、收藏、送礼时）时，我们将收集您上传、发布及形成的信息并有权展示您的昵称、头像和发布内容。当您使用甜缘向其他用户打赏、送礼时，我们将收集您的头像、昵称及送礼数据，并向其他用户进行展示。当您使用上传头像、进行真人认证、发布语音个性签名、发布动态（包括图文与视频内容）时，我们还会根据您所发布的内容请求您授权相机、照片、麦克风以及存储权限；请你知悉，权限的开启或授权是您使用上述功能的前提，如您关闭或拒绝授权将无法使用上述功能，但不会影响您使用其他功能与服务。
 &lt;br&gt;  请您注意，您在使用我们提供的服务时所提供的所有个人信息，除非您删除或通过系统设置拒绝我们收集，否则将在您使用我们的服务期间持续授权我们使用。在您注销帐号时，我们将停止使用并删除您的个人信息，或采取匿名化处理，使其不再与您关联到一起。
 &lt;br&gt;二、我们如何共享您的个人信息
-&lt;br&gt;我们会委托第三方服务提供商处理我们收集的您的个人信息，以便其为我们提供基础设施技术、数据分析、广告投放、营销决策等产品或技术支持，上述委托处理行为受《鹊娘隐私政策》中所声明目的约束，并且我们会以合同方式对上述的第三方进行监督，以确保您的个人信息安全。
+&lt;br&gt;我们会委托第三方服务提供商处理我们收集的您的个人信息，以便其为我们提供基础设施技术、数据分析、广告投放、营销决策等产品或技术支持，上述委托处理行为受《甜缘隐私政策》中所声明目的约束，并且我们会以合同方式对上述的第三方进行监督，以确保您的个人信息安全。
 &lt;br&gt;三、您的权利
-&lt;br&gt;在您使用鹊娘期间，您可以通过相应页面提示或《鹊娘隐私政策》载明的方式联系我们，以访问、更正、删除您的个人信息，以及行使改变授权同意的范围与注销帐号的权利，我们将及时响应您的请求。如果您需要您的个人信息副本，您可以通过我们提供的方式联系我们，在核实您的身份后，我们将向您提供您在我们服务中的个人信息副本（包括基本资料、身份信息），但法律法规另有规定的或《鹊娘隐私政策》另有约定的除外。
+&lt;br&gt;在您使用甜缘期间，您可以通过相应页面提示或《甜缘隐私政策》载明的方式联系我们，以访问、更正、删除您的个人信息，以及行使改变授权同意的范围与注销帐号的权利，我们将及时响应您的请求。如果您需要您的个人信息副本，您可以通过我们提供的方式联系我们，在核实您的身份后，我们将向您提供您在我们服务中的个人信息副本（包括基本资料、身份信息），但法律法规另有规定的或《甜缘隐私政策》另有约定的除外。
 &lt;br&gt;四、未成年人保护
 &lt;br&gt;我们的产品和服务仅面向18周岁以上的成年人，任何不满18周岁的未成年人不得创建自己的用户帐号及/或使用我们的服务。如我们发现或审核出任何未成年人注册或使用我们的产品，我们将采取注销帐号、删除信息等措施禁止、限制未成年人使用。
 &lt;br&gt;五、如何联系我们
@@ -164,9 +164,9 @@
     </string>
 
     <string name="vqu_bill_recharge_agreement">
-        1、充值即代表已阅读并同意&lt;a href=&quot;#vqu_recharge_agreement#&quot;&gt;&lt;font color=&quot;#576990&quot;&gt;《鹊娘充值服务协议》&lt;/font&gt;&lt;/a&gt;
+        1、充值即代表已阅读并同意&lt;a href=&quot;#vqu_recharge_agreement#&quot;&gt;&lt;font color=&quot;#576990&quot;&gt;《甜缘充值服务协议》&lt;/font&gt;&lt;/a&gt;
         &lt;br&gt;2、前往收支记录，可查询充值订单详情和消费详情
-        &lt;br&gt;3、禁止未成年人进行充值，点击详见&lt;a href=&quot;#vqu_juvenile_protection#&quot;&gt;&lt;font color=&quot;#576990&quot;&gt; 《鹊娘未成年人保护计划》&lt;/font&gt;&lt;/a&gt;
+        &lt;br&gt;3、禁止未成年人进行充值，点击详见&lt;a href=&quot;#vqu_juvenile_protection#&quot;&gt;&lt;font color=&quot;#576990&quot;&gt; 《甜缘未成年人保护计划》&lt;/font&gt;&lt;/a&gt;
         &lt;br&gt;4、在充值过程中如遇任何问题，可联系官方客服
     </string>
 
@@ -224,7 +224,7 @@
     <string name="setting_score">去评分</string>
     <string name="setting_logoff">注销账号</string>
     <string name="setting_clear_info">(清除所有资料)</string>
-    <string name="setting_about">关于鹊娘</string>
+    <string name="setting_about">关于甜缘</string>
     <string name="setting_mobile">手机号</string>
     <string name="setting_mobile_hint">请输入手机号码</string>
     <string name="setting_code">验证码</string>
@@ -235,11 +235,11 @@
     <string name="setting_notice_open">去开启</string>
     <string name="setting_fate">缘分牵线</string>
     <string name="setting_recommended">个性化推荐</string>
-    <string name="setting_fate_tip">开启后，鹊娘将用大数据为您匹配有缘人，牵线成功会发送缘分消息，关闭后，将不会收到缘分牵线。</string>
+    <string name="setting_fate_tip">开启后，甜缘将用大数据为您匹配有缘人，牵线成功会发送缘分消息，关闭后，将不会收到缘分牵线。</string>
     <string name="setting_recommended_tip">关闭后，将无法使用缘分页的推荐以及动态页的推荐和关注功能</string>
     <string name="setting_chat_notice">私信通知</string>
     <string name="setting_like_notice">点赞通知</string>
-    <string name="setting_chat_notice_tip">您已在系统设置中关闭了鹊娘的通知，请在系统设置-通知中，允许鹊娘获得权限，以便及时收到新消息提醒。</string>
+    <string name="setting_chat_notice_tip">您已在系统设置中关闭了甜缘的通知，请在系统设置-通知中，允许甜缘获得权限，以便及时收到新消息提醒。</string>
     <string name="setting_voice">声音</string>
     <string name="setting_vibration">震动</string>
     <string name="setting_scree_notice">飘屏通知</string>
@@ -253,18 +253,18 @@
     <string name="setting_setpwd">设置密码</string>
     <string name="setting_confirm_pwd">确认密码</string>
     <string name="setting_tip">提示</string>
-    <string name="setting_clean_tip">是否删除鹊娘数据？</string>
+    <string name="setting_clean_tip">是否删除甜缘数据？</string>
     <string name="setting_cancel_tip">您确定要注销账号吗？</string>
     <string name="setting_logout_tip">您确定要退出登录吗？</string>
-    <string name="setting_cancle_account_tip">提交注销申请后，系统将注销鹊娘账号并清除所有相关数据。
-注销鹊娘账号是不可恢复的操作，你应自行备份相关的信息和数据，操作之前，请确认与鹊娘账号相关的所有服务均已妥善处理。
-请谨记：注销鹊娘账号，你将无法再使用鹊娘账号或找回你添加或绑定的任何内容或信息（即使你使用相同的手机号码再次注册并使用鹊娘），包括但不限于：
-\n1. 你将无法登录、使用本鹊娘账号，你的朋友（包括喜欢、好友等）将无法通过本鹊娘账号联系你；
-\n2. 你鹊娘账号中的个人资料和历史信息（包括但不限于昵称、头像、财富值、收藏等）都将被永久全部清除，无法找回；
-\n3. 你鹊娘账号绑定的手机号、第三方账号、实名信息都将被解绑，解绑后可重新注册新账号；
+    <string name="setting_cancle_account_tip">提交注销申请后，系统将注销甜缘账号并清除所有相关数据。
+注销甜缘账号是不可恢复的操作，你应自行备份相关的信息和数据，操作之前，请确认与甜缘账号相关的所有服务均已妥善处理。
+请谨记：注销甜缘账号，你将无法再使用甜缘账号或找回你添加或绑定的任何内容或信息（即使你使用相同的手机号码再次注册并使用甜缘），包括但不限于：
+\n1. 你将无法登录、使用本甜缘账号，你的朋友（包括喜欢、好友等）将无法通过本甜缘账号联系你；
+\n2. 你甜缘账号中的个人资料和历史信息（包括但不限于昵称、头像、财富值、收藏等）都将被永久全部清除，无法找回；
+\n3. 你甜缘账号绑定的手机号、第三方账号、实名信息都将被解绑，解绑后可重新注册新账号；
 \n4. 靓号将会被系统收回，并对平台其他用户开放申请；
-\n5 注销账号前，务必确认所有在鹊娘内的收益已经提现，（相关无法提现的虚拟物品，你可以进行消费后再注销，或者直接舍弃），账号注销后，账户内的金币，购买的会员权益视为自动放弃。
-\n6. 请注意，注销你的鹊娘账号并不代表本鹊娘账号注销前的账号行为和相关责任得到豁免或减轻。
+\n5 注销账号前，务必确认所有在甜缘内的收益已经提现，（相关无法提现的虚拟物品，你可以进行消费后再注销，或者直接舍弃），账号注销后，账户内的金币，购买的会员权益视为自动放弃。
+\n6. 请注意，注销你的甜缘账号并不代表本甜缘账号注销前的账号行为和相关责任得到豁免或减轻。
 \n7、用户自申请注销操作日起，给予7天的注销冷静期，期间可正常登录恢复使用，如申请注销后7天内未登录，则完成注销，所有数据不可恢复。</string>
 
 
@@ -290,8 +290,8 @@
 
     <string name="common_vqu_beckoning">心动</string>
     <string name="common_vqu_accost">搭讪</string>
-    <string name="common_vqu_auth">鹊娘提倡真实交友，通过【真人认证】后才可以心动交友哦~</string>
-    <string name="common_vqu_notification">鹊娘系统通知</string>
+    <string name="common_vqu_auth">甜缘提倡真实交友，通过【真人认证】后才可以心动交友哦~</string>
+    <string name="common_vqu_notification">甜缘系统通知</string>
 
     <string name="common_vqu_select_recharge_tips">请选择充值数量</string>
     <string name="common_vqu_select_recharge_data_error_tips">充值数据错误</string>
@@ -307,7 +307,7 @@
     <string name="common_vqu_go_to_auth">去认证</string>
     <string name="common_vqu_go_to_no_auth">暂不认证</string>
     <string name="common_vqu_go_to_real_auth">真人认证</string>
-    <string name="common_vqu_content_auth">鹊娘提倡真实交友，通过【真人认证】后才可以心动交友哦~</string>
+    <string name="common_vqu_content_auth">甜缘提倡真实交友，通过【真人认证】后才可以心动交友哦~</string>
     <string name="common_vqu_teenmode_close_tip">您已开启未成年模式\n所有功能关闭</string>
     <string name="common_vqu_teenmode_tip">为呵护未成年人健康成长\n我们已推出青少年</string>
     <string name="common_vqu_teenmode_close">关闭未成年模式</string>
@@ -326,7 +326,7 @@
     <string name="common_vqu_share_qqzone">QQ空间</string>
     <string name="common_vqu_share_copy">复制链接</string>
 
-    <string name="agora_app_id">fa2b713e581a47b7a9cbc03877c53904</string>
+    <string name="agora_app_id">d4f0c2105af744529e0e0edc23bb89eb</string>
     <string name="agora_vqu_dialog_content_txt">您的金币数量不足，请先充值</string>
     <string name="agora_vqu_dialog_left_txt">放弃缘分</string>
     <string name="agora_vqu_dialog_right_txt">立即充值</string>
@@ -384,7 +384,7 @@
     <string name="nim_vqu_intimate_str">
         1、在你们私信聊天当中，每产生消耗金币的行为即可增加亲密度（消息、私聊送礼、音视频通话都包括在内）；
         \n2、1亲密度=10金币，不同等级可解锁不同特权奖励；
-        \n3、奖励最终解释权归鹊娘所有。</string>
+        \n3、奖励最终解释权归甜缘所有。</string>
 
     <string name="customactivityoncrash_error_activity_restart_app">重启</string>
     <string name="customactivityoncrash_error_activity_error_occurred_explanation">小糖出错了</string>

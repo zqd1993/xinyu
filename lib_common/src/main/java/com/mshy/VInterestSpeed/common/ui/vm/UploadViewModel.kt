@@ -53,7 +53,7 @@ open class UploadViewModel @Inject constructor(private val mVquRepo: UploadRepos
                 }
                 .collect {
                     var result = it.data
-                    val endpoint = "http://oss-cn-hangzhou.aliyuncs.com"
+                    val endpoint = result.endpoint
                     //该配置类如果不设置，会有默认配置，具体可看该类
                     //该配置类如果不设置，会有默认配置，具体可看该类
                     val conf = ClientConfiguration()
@@ -126,7 +126,7 @@ open class UploadViewModel @Inject constructor(private val mVquRepo: UploadRepos
                 }
                 .collect {
                     var result = it.data
-                    val endpoint = "http://oss-cn-hangzhou.aliyuncs.com"
+                    val endpoint = "http://oss-cn-shenzhen.aliyuncs.com"
                     //该配置类如果不设置，会有默认配置，具体可看该类
                     //该配置类如果不设置，会有默认配置，具体可看该类
                     val conf = ClientConfiguration()

@@ -206,7 +206,7 @@ class LoginTantaSetInfoViewModel @Inject constructor(private val repository: Log
         stsInfoBean: com.mshy.VInterestSpeed.common.bean.StsInfoBean
     ) {
         val result = stsInfoBean
-        val endpoint = "http://oss-cn-hangzhou.aliyuncs.com"
+        val endpoint = result.endpoint
         //该配置类如果不设置，会有默认配置，具体可看该类
         val conf = ClientConfiguration()
         conf.connectionTimeout = 15 * 1000 // 连接超时，默认15秒

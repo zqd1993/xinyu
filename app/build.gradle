@@ -48,10 +48,10 @@ android {
     signingConfigs {
         release {
 
-            storeFile file("quenianglove.jks")
-            storePassword 'quenianglove123'
-            keyAlias 'quenianglove'
-            keyPassword 'quenianglove123'
+            storeFile file("tianyuanlove.jks")
+            storePassword 'tianyuanlove123'
+            keyAlias 'tianyuanlove'
+            keyPassword 'tianyuanlove123'
 
             //【重要】下面这两句必须要加，要不然会crash
             v1SigningEnabled true
@@ -59,10 +59,10 @@ android {
         }
         debug {
             //TODO 修改为你的release签名文件信息
-            storeFile file("quenianglove.jks")
-            storePassword 'quenianglove123'
-            keyAlias 'quenianglove'
-            keyPassword 'quenianglove123'
+            storeFile file("tianyuanlove.jks")
+            storePassword 'tianyuanlove123'
+            keyAlias 'tianyuanlove'
+            keyPassword 'tianyuanlove123'
             //TODO 你的debug签名文件信息
 
             //【重要】下面这两句必须要加，要不然会crash

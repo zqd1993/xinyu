@@ -388,12 +388,12 @@ class MessageVquRecentIntimateFragment :
             }
             items.add(r)
         }
+        refreshMessages()
         Log.e("onRecentContactChanged", "循环耗时${System.currentTimeMillis() - currentTime}")
         when (refreshStatus) {
             1 -> {
                 //更改状态为刷新界面中
                 refreshStatus = 2
-                refreshMessages()
                 if (refreshStatus == 3) {
                     //先变为空闲然后进行再次刷新
                     refreshStatus = 1

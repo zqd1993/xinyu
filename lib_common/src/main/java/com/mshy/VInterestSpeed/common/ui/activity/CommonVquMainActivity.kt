@@ -153,7 +153,6 @@ class CommonVquMainActivity : BaseActivity<CommonVquActivityMainBinding, CommonV
                     getString(R.string.common_vqu_main_my)
                 )
             )
-            .enableAnimateLayoutChanges()
             .build()
         vqu_adapter = CommonVquMainPageAdapter(
             supportFragmentManager,

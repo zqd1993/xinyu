@@ -569,7 +569,7 @@ class BillTantaRechargeActivity :
                     cm.setPrimaryClip(
                         ClipData.newPlainText(
                             null,
-                            mTantaWebUrl?.wxOfficial ?: "鹊娘交友"
+                            mTantaWebUrl?.wxOfficial ?: "甜缘交友"
                         )
                     )
                     ToastUtils.showLong(R.string.vqu_bill_copy_success)

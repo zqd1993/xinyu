@@ -417,7 +417,7 @@ class DynamicTantaPublishImgActivity :
         mViewModel.vquStsData.observe(this) {
             STS = it.data
 
-            val endpoint = "http://oss-cn-hangzhou.aliyuncs.com"
+            val endpoint = STS?.endpoint
             //该配置类如果不设置，会有默认配置，具体可看该类
             //该配置类如果不设置，会有默认配置，具体可看该类
             val conf = ClientConfiguration()

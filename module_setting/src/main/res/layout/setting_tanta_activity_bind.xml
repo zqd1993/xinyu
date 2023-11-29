@@ -117,7 +117,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:text="根据监管规定，需要绑定手机后才可以使用鹊娘"
+        android:text="根据监管规定，需要绑定手机后才可以使用甜缘"
         android:textColor="@color/color_A3AABE"
         android:visibility="gone"
         app:layout_constraintLeft_toLeftOf="parent"

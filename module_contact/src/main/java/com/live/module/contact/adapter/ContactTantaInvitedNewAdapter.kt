@@ -37,7 +37,7 @@ class ContactTantaInvitedNewAdapter :
         holder.setGone(R.id.label_value, hideTotalValue)
 
         holder.setText(R.id.tv_name, item.nickname)
-        holder.setText(R.id.tv_user_id, "鹊娘号：" + item.usercode)
+        holder.setText(R.id.tv_user_id, "甜缘号：" + item.usercode)
         holder.setText(R.id.tv_sign_time, "注册时间: " + item.addTime)
     }
 }
