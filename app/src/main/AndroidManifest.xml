@@ -23,6 +23,22 @@
         <package android:name="com.tencent.mobileqq" />
     </queries>
 <!--        android:hardwareAccelerated="true"-->
+
+    <!--适配Android R包可见性 开始-->
+    <queries package="${applicationId}">
+        <intent>
+            <action android:name="android.media.action.IMAGE_CAPTURE">
+
+            </action>
+        </intent>
+        <intent>
+            <action android:name="android.media.action.ACTION_VIDEO_CAPTURE">
+
+            </action>
+        </intent>
+    </queries>
+    <!--适配Android R包可见性 结束-->
+
     <application
         android:name=".app.AppApplication"
         android:allowBackup="false"
@@ -38,7 +54,7 @@
         <!--爱加密渠道id标识-->
         <meta-data
             android:name="channel_id"
-            android:value="22" />
+            android:value="1000" />
         <!--适配华为（huawei）刘海屏-->
         <!-- 屏幕适配基准DP -->
         <meta-data
