@@ -522,7 +522,7 @@ public class WatchMessagePictureActivity extends UI {
             @Override
             public void onImageGestureLongPress() {
                 //TODO 去除图片长按
-//                showWatchPictureAction();
+                showWatchPictureAction();
             }
 
             @Override

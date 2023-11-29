@@ -85,7 +85,7 @@ object PermissionUtils {
                             val permissionx =
                                 PermissionX.init(fragment).permissions(permissions)
 
-                            shouldShowReasonOrForwardDialog(permissionx, reason, forward)
+//                            shouldShowReasonOrForwardDialog(permissionx, reason, forward)
 
                             permissionx.request(requestCallback)
 //                            }, 1000)
@@ -106,7 +106,7 @@ object PermissionUtils {
             val permissionx =
                 PermissionX.init(fragment).permissions(permissions)
 
-            shouldShowReasonOrForwardDialog(permissionx, reason, forward)
+//            shouldShowReasonOrForwardDialog(permissionx, reason, forward)
 
             permissionx.request(requestCallback)
         }
@@ -144,7 +144,7 @@ object PermissionUtils {
                             val permissionx =
                                 PermissionX.init(activity).permissions(permissions)
 
-                            shouldShowReasonOrForwardDialog(permissionx, reason, forward)
+//                            shouldShowReasonOrForwardDialog(permissionx, reason, forward)
 
                             permissionx.request(requestCallback)
 
@@ -163,7 +163,7 @@ object PermissionUtils {
             val permissionx =
                 PermissionX.init(activity).permissions(permissions)
 
-            shouldShowReasonOrForwardDialog(permissionx, reason, forward)
+//            shouldShowReasonOrForwardDialog(permissionx, reason, forward)
 
             permissionx.request(requestCallback)
 //            }

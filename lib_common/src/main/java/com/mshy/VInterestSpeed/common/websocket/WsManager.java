@@ -165,6 +165,7 @@ public class WsManager implements IWsManager {
           .build();
     }
     if (mRequest == null) {
+//      wsUrl = wsUrl.replace("ws.zhenban.top", "112.124.23.70:29000");
       mRequest = new Request.Builder()
           .url(wsUrl)
           .build();
