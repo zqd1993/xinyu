@@ -254,6 +254,10 @@ class BillTantaRechargeActivity :
                     "xinyu://xinyu.recharge"
                 )
             }
+
+            "yun_pay" -> {
+                mViewModel.rechargeWarning(true)
+            }
         }
 
         RiskControlUtil.getToken(this@BillTantaRechargeActivity, 5)
@@ -266,7 +270,7 @@ class BillTantaRechargeActivity :
             UmUtils.RECHARGECLICK
         )
 
-        if (mPayType == ALIPAY) {
+        if (mPayType == ALIPAY || mPayType == YUN_PAY) {
             mViewModel.createRechargeOrder(mPayType, itemRecharge!!.id, -1)
         } else if (mPayType == WECHAT) {
             mViewModel.getWechatPayType(1)
@@ -371,6 +375,8 @@ class BillTantaRechargeActivity :
                 PayUtils.wechatPay(this, it)
             } else if (mPayType == PayDialog.ALIPAY) {
                 PayUtils.aliPay(this, it.payinfo)
+            } else if (mPayType == PayDialog.YUN_PAY) {
+                ToastUtils.showShort(it.payinfo)
             } else if (mPayType == wechatPayType?.payChannel.toString()) {
                 jumpToWechatApplet(it)
             }
