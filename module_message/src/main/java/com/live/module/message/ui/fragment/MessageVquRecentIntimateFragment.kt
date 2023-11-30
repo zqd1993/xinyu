@@ -34,6 +34,7 @@ import com.mshy.VInterestSpeed.uikit.api.model.contact.ContactChangedObserver
 import com.mshy.VInterestSpeed.uikit.api.model.user.UserInfoObserver
 import com.mshy.VInterestSpeed.uikit.business.recent.RecentContactsFragment.RECENT_TAG_STICKY
 import com.mshy.VInterestSpeed.uikit.business.uinfo.UserInfoHelper
+import com.mshy.VInterestSpeed.uikit.common.util.sys.TimeUtil
 import com.mshy.VInterestSpeed.uikit.event.MessageVquCurrentItemEvent
 import com.mshy.VInterestSpeed.uikit.event.NotificationIntimateChangeEvent
 import com.mshy.VInterestSpeed.uikit.util.IntimateUtils
@@ -48,6 +49,7 @@ import com.netease.nimlib.sdk.msg.constant.MsgTypeEnum
 import com.netease.nimlib.sdk.msg.constant.SessionTypeEnum
 import com.netease.nimlib.sdk.msg.model.IMMessage
 import com.netease.nimlib.sdk.msg.model.RecentContact
+import com.netease.nimlib.sdk.msg.model.RecentSessionList
 import dagger.hilt.android.AndroidEntryPoint
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
@@ -225,26 +227,28 @@ class MessageVquRecentIntimateFragment :
             if (msgLoaded) {
                 return@Runnable
             }
-            // 查询最近联系人列表数据
-            NIMClient.getService(MsgService::class.java).queryRecentContacts(MsgTypeEnum.tip)
-                .setCallback(object : RequestCallbackWrapper<List<RecentContact>?>() {
+            NIMClient.getService(MsgService::class.java).queryMySessionList(0, TimeUtil.currentTimeMillis(), 1, 100, 0)
+                .setCallback(object : RequestCallbackWrapper<RecentSessionList>() {
                     override fun onResult(
                         code: Int,
-                        recents: List<RecentContact>?,
-                        exception: Throwable?,
+                        result: RecentSessionList?,
+                        exception: Throwable?
                     ) {
-                        Log.e("onRecentContactChanged", "onResult: $code--->${recents?.size}")
-                        if (code != ResponseCode.RES_SUCCESS.toInt() || recents == null) {
+                        Log.e("onRecentContactChanged", "onResult: $code=code -->result=${result}")
+                        if (code != ResponseCode.RES_SUCCESS.toInt() || result == null) {
                             return
                         }
-                        recents.forEach {
-                            if (IntimateUtils.getInstance().isNeedShow(it.contactId.toInt())) {
+                        if(result.sessionList.size == 0){
+                            return
+                        }
+                        result.sessionList.forEach {
+                            if (IntimateUtils.getInstance().isNeedShow(it.toRecentContact().contactId.toInt())) {
                                 if (SpUtils.getInt(SpKey.openGreen, 0) == 1) {
-                                    if (it.contactId.toInt() == 4) {
-                                        loadedRecent.add(it)
+                                    if (it.toRecentContact().contactId.toInt() == 4) {
+                                        loadedRecent.add(it.toRecentContact())
                                     }
                                 } else {
-                                    loadedRecent.add(it)
+                                    loadedRecent.add(it.toRecentContact())
                                 }
 
                             }
@@ -256,6 +260,37 @@ class MessageVquRecentIntimateFragment :
                         }
                     }
                 })
+            // 查询最近联系人列表数据
+//            NIMClient.getService(MsgService::class.java).queryRecentContacts(MsgTypeEnum.tip)
+//                .setCallback(object : RequestCallbackWrapper<List<RecentContact>?>() {
+//                    override fun onResult(
+//                        code: Int,
+//                        recents: List<RecentContact>?,
+//                        exception: Throwable?,
+//                    ) {
+//                        Log.e("onRecentContactChanged", "onResult: $code--->${recents?.size}")
+//                        if (code != ResponseCode.RES_SUCCESS.toInt() || recents == null) {
+//                            return
+//                        }
+//                        recents.forEach {
+//                            if (IntimateUtils.getInstance().isNeedShow(it.contactId.toInt())) {
+//                                if (SpUtils.getInt(SpKey.openGreen, 0) == 1) {
+//                                    if (it.contactId.toInt() == 4) {
+//                                        loadedRecent.add(it)
+//                                    }
+//                                } else {
+//                                    loadedRecent.add(it)
+//                                }
+//
+//                            }
+//                        }
+//                        // 此处如果是界面刚初始化，为了防止界面卡顿，可先在后台把需要显示的用户资料和群组资料在后台加载好，然后再刷新界面
+//                        msgLoaded = true
+//                        if (isAdded) {
+//                            onRecentContactsLoaded()
+//                        }
+//                    }
+//                })
         }, if (delay) 250 else 0)
     }
 
@@ -353,12 +388,12 @@ class MessageVquRecentIntimateFragment :
             }
             items.add(r)
         }
+        refreshMessages()
         Log.e("onRecentContactChanged", "循环耗时${System.currentTimeMillis() - currentTime}")
         when (refreshStatus) {
             1 -> {
                 //更改状态为刷新界面中
                 refreshStatus = 2
-                refreshMessages()
                 if (refreshStatus == 3) {
                     //先变为空闲然后进行再次刷新
                     refreshStatus = 1

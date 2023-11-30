@@ -139,11 +139,11 @@ public class MessageFragment extends TFragment implements ModuleProxy {
                     @Override
                     public void onClick(View v) {
                         if (appViewModel.getUnreadConversationList().getValue() != null && appViewModel.getUnreadConversationList().getValue().size() > 0) {
+                            getActivity().finish();
                             NimUIKit.startP2PSession(
                                     getActivity(),
                                     appViewModel.getUnreadConversationList().getValue().get(0).getContactId()
                             );
-                            getActivity().finish();
                         }
                     }
                 });
@@ -161,11 +161,11 @@ public class MessageFragment extends TFragment implements ModuleProxy {
                     ivNext.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
+                            getActivity().finish();
                             NimUIKit.startP2PSession(
                                     getActivity(),
                                     recentContacts.get(0).getContactId()
                             );
-                            getActivity().finish();
                         }
                     });
                 } else {
