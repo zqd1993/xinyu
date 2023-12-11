@@ -1,6 +1,7 @@
 package com.live.module.vip.activity
 
 import android.content.Intent
+import android.net.Uri
 import android.util.Log
 import android.view.View
 import androidx.activity.viewModels
@@ -141,6 +142,16 @@ class VipTantaCenterActivity : BaseActivity<VipTantaActivityCenterBinding, VipTa
                 PayDialog.WECHAT_APPLET -> {
                     jumpToWechatApplet(it)
                 }
+
+                PayDialog.LE_SHUA_PAY -> {
+                    if (it.payUrl.isNotEmpty()) {
+                        val intent = Intent()
+                        intent.action = Intent.ACTION_VIEW
+                        val targetUrl = Uri.parse(it.payUrl)
+                        intent.data = targetUrl
+                        startActivity(intent)
+                    }
+                }
             }
         }
 
@@ -221,7 +232,7 @@ class VipTantaCenterActivity : BaseActivity<VipTantaActivityCenterBinding, VipTa
                 vipPayInfoBean = it
                 payCode = it.pay_type
                 when (it.pay_type) {
-                    PayDialog.WECHAT, PayDialog.ALIPAY -> {
+                    PayDialog.WECHAT, PayDialog.ALIPAY, PayDialog.LE_SHUA_PAY -> {
                         mViewModel.createRechargeOrder(
                             it.vip_id, it.pay_type,
                             it.type, it.vip_goods_id

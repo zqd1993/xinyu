@@ -16,7 +16,9 @@ data class TantaPayBean(
     @SerializedName("wechatpayinfo")
     val wechatpayinfo: WechatPayInfo,
     @SerializedName("applet")
-    val applet: Applet
+    val applet: Applet,
+    @SerializedName("pay_url")
+    val payUrl: String
 )
 
 data class Applet(

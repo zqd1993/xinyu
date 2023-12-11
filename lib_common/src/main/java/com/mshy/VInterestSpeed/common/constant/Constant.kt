@@ -66,3 +66,5 @@ const val WECHAT = "wechat"
 const val YUN_PAY = "yun_pay"
 
 const val ADAPAY_WECHAT_APPLET = "adapay_wechat_applet"
+
+const val LE_SHUA_PAY = "LeshuaPay"

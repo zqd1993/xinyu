@@ -1,8 +1,10 @@
 package com.mshy.VInterestSpeed.common.ui.dialog
 
 import android.app.Activity
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
+import android.net.Uri
 import android.view.Gravity
 import android.view.View
 import android.view.WindowManager
@@ -204,6 +206,10 @@ class CommonRechargeDialog :
                         getScheme()
                     )
                 }
+
+                "LeshuaPay" -> {
+                    mViewModel.recharge(mPayType, item.id.toString())
+                }
             }
 
 //            val vquPayDialog = PayDialog()
@@ -265,6 +271,14 @@ class CommonRechargeDialog :
         mViewModel.payData.observe(this) {
             if (mPayType == PayDialog.WECHAT) {
                 PayUtils.wechatPay(requireActivity(), it)
+            } else if (mPayType == PayDialog.LE_SHUA_PAY) {
+                if (it.payUrl.isNotEmpty()) {
+                    val intent = Intent()
+                    intent.action = Intent.ACTION_VIEW
+                    val targetUrl = Uri.parse(it.payUrl)
+                    intent.data = targetUrl
+                    startActivity(intent)
+                }
             } else if (mPayType == PayDialog.ALIPAY) {
                 PayUtils.aliPay(requireActivity(), it.payinfo)
             }

@@ -49,6 +49,9 @@ class PayDialog : BaseVMDialogFragment<CommonVquDialogPayBinding, CommonPayViewM
         val YUN_PAY = "yun_pay"
 
         @JvmStatic
+        val LE_SHUA_PAY = "LeshuaPay"
+
+        @JvmStatic
         val WECHAT_APPLET = "wechat_applet"
     }
 

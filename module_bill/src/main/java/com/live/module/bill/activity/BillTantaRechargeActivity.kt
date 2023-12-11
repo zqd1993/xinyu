@@ -4,6 +4,7 @@ import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import android.text.TextPaint
 import android.text.method.LinkMovementMethod
 import android.util.Log
@@ -258,6 +259,10 @@ class BillTantaRechargeActivity :
             "yun_pay" -> {
                 mViewModel.rechargeWarning(true)
             }
+
+            "LeshuaPay" -> {
+                mViewModel.rechargeWarning(true)
+            }
         }
 
         RiskControlUtil.getToken(this@BillTantaRechargeActivity, 5)
@@ -270,7 +275,7 @@ class BillTantaRechargeActivity :
             UmUtils.RECHARGECLICK
         )
 
-        if (mPayType == ALIPAY || mPayType == YUN_PAY) {
+        if (mPayType == ALIPAY || mPayType == YUN_PAY || mPayType == LE_SHUA_PAY) {
             mViewModel.createRechargeOrder(mPayType, itemRecharge!!.id, -1)
         } else if (mPayType == WECHAT) {
             mViewModel.getWechatPayType(1)
@@ -377,6 +382,14 @@ class BillTantaRechargeActivity :
                 PayUtils.aliPay(this, it.payinfo)
             } else if (mPayType == PayDialog.YUN_PAY) {
                 ToastUtils.showShort(it.payinfo)
+            } else if (mPayType == PayDialog.LE_SHUA_PAY) {
+                if (it.payUrl.isNotEmpty()) {
+                    val intent = Intent()
+                    intent.action = Intent.ACTION_VIEW
+                    val targetUrl = Uri.parse(it.payUrl)
+                    intent.data = targetUrl
+                    startActivity(intent)
+                }
             } else if (mPayType == wechatPayType?.payChannel.toString()) {
                 jumpToWechatApplet(it)
             }
