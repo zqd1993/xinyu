@@ -11,14 +11,14 @@ import com.mshy.VInterestSpeed.common.BuildConfig
  * @since 4/17/21 3:27 PM
  */
 object NetBaseUrlConstant {
-    var BASE_URL = "http://api.whzhenban.top/"//正式环境
+    var BASE_URL = "https://api.whzhenban.top/"//正式环境
 
-    const val DEBUG_BASE_URL = "http://api.whzhenban.top/"//测试环境
+    const val DEBUG_BASE_URL = "https://api.whzhenban.top/"//测试环境
 //    const val DEBUG_BASE_URL = "http://120.78.160.71:8071/"//测试环境
 
-    var IMAGE_URL = "http://asset.whzhenban.top/"
+    var IMAGE_URL = "https://asset.whzhenban.top/"
 
-    const val IMAGE_URL_2 = "http://asset.whzhenban.top/"
+    const val IMAGE_URL_2 = "https://asset.whzhenban.top/"
 
     val MAIN_URL =
         if (BuildConfig.VERSION_TYPE == VersionStatus.RELEASE) BASE_URL + "api/" else DEBUG_BASE_URL + "api/"
@@ -48,5 +48,5 @@ object NetBaseUrlConstant {
     const val RECHARGE_AGREEMENT = "/index/about/recharge_agreement_qy.html"    //充值协议
     const val JUVENILE_PROTECTION = "/index/about/juvenile_protection_qy.html"    //未成年保护计划
 
-    val AGREEMENT_BASE_URL = "http://asset.whzhenban.top"
+    val AGREEMENT_BASE_URL = "https://asset.whzhenban.top"
 }

@@ -236,19 +236,19 @@ class BillTantaNewWithdrawalAccountActivity :
         val phoneCode = mBinding.etBillVquNewWithdrawalAccountAuthCode.text.toString().trim()
         val idCard = mBinding.etBillVquNewWithdrawalAccountIdCard.text.toString().trim()
         val realName = mBinding.etBillVquNewWithdrawalAccountRealName.text.toString().trim()
-//        if (mCarType == 1) {
-//            val emailRegex = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}\$"
-//            val phoneRegex = "^[1][3,4,5,7,8,9][0-9]{9}\$"
-//            if (!Pattern.matches(phoneRegex, account) && !Pattern.matches(emailRegex, account)) {
-//                ToastUtils.showShort("请输入正确的支付宝账号")
-//                return
-//            }
-//        } else if(mCarType == 3){
-//            if (!CommonStringUtil.checkBankCard(account)) {
-//                ToastUtils.showShort("请输入正确的银行卡账号")
-//                return
-//            }
-//        }
+        if (mCarType == 1) {
+            val emailRegex = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}\$"
+            val phoneRegex = "^[1][3,4,5,6,7,8,9][0-9]{9}\$"
+            if (!Pattern.matches(phoneRegex, account) && !Pattern.matches(emailRegex, account)) {
+                ToastUtils.showShort("请输入正确的支付宝账号")
+                return
+            }
+        } else if(mCarType == 3){
+            if (!CommonStringUtil.checkBankCard(account)) {
+                ToastUtils.showShort("请输入正确的银行卡账号")
+                return
+            }
+        }
         mViewModel.vquAccountSave(
             account,
             mCarType,

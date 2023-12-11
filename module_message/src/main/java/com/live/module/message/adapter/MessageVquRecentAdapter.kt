@@ -73,7 +73,7 @@ class MessageVquRecentAdapter(
                 var map = HashMap<String, Any>()
                 map.put("online", event.eventValue)
                 data[j].extension = map
-                notifyDataSetChanged()
+                notifyItemRangeChanged(j, data.size)
                 break
             }
         }
@@ -81,8 +81,10 @@ class MessageVquRecentAdapter(
 
     fun update(recentContact: RecentContact?) {
         var des = descOfMsg(recentContact!!)
-        if (des?.contains("无法获得该奖励", true) == true || des?.contains("提示消息",
-                true) == true || recentContact.msgType == MsgTypeEnum.tip
+        if (des?.contains("无法获得该奖励", true) == true || des?.contains(
+                "提示消息",
+                true
+            ) == true || recentContact.msgType == MsgTypeEnum.tip
         ) {
 
         } else {
@@ -107,11 +109,11 @@ class MessageVquRecentAdapter(
             data.removeAt(removeIndex)
             val insertIndex = searchComparatorIndex(recentContact)
             data.add(insertIndex, recentContact!!)
-            notifyDataSetChanged()
+            notifyItemRangeChanged(insertIndex, data.size)
         } else {
             val insertIndex = searchComparatorIndex(recentContact)
             data.add(insertIndex, recentContact!!)
-            notifyDataSetChanged()
+            notifyItemRangeChanged(insertIndex, data.size)
         }
 
     }
@@ -123,8 +125,10 @@ class MessageVquRecentAdapter(
             return 0
         }
         for (i in data.indices) {
-            if (dataComparator != null && dataComparator!!.compare(recentContact,
-                    data.get(i)) < 1
+            if (dataComparator != null && dataComparator!!.compare(
+                    recentContact,
+                    data.get(i)
+                ) < 1
             ) {
                 index = i
                 break

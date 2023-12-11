@@ -8,9 +8,17 @@ import com.mshy.VInterestSpeed.common.converter.JsonConverterFactory
 import com.mshy.VInterestSpeed.common.interceptor.CommonVquHttpLoggingInterceptor
 import com.mshy.VInterestSpeed.common.interceptor.CommonVquPublicInterceptor
 import com.mshy.VInterestSpeed.common.interceptor.GlobalHeaderInterceptor
+import com.mshy.VInterestSpeed.common.ssl.MyTrustManager
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
+import java.security.SecureRandom
+import java.security.cert.CertificateException
+import java.security.cert.X509Certificate
 import java.util.concurrent.TimeUnit
+import javax.net.ssl.SSLContext
+import javax.net.ssl.SSLSocketFactory
+import javax.net.ssl.TrustManager
+import javax.net.ssl.X509TrustManager
 
 /**
  * FileName: com.live.module.message.net
@@ -26,14 +34,18 @@ object GlobalServiceManage {
             if (BuildConfig.VERSION_TYPE != VersionStatus.RELEASE) CommonVquHttpLoggingInterceptor.Level.BODY else CommonVquHttpLoggingInterceptor.Level.NONE
         val logInterceptor = CommonVquHttpLoggingInterceptor().setLevel(level)
 
-        return OkHttpClient.Builder()
+        var okHttpClient = OkHttpClient.Builder()
+        okHttpClient
             .connectTimeout(15L * 1000L, TimeUnit.MILLISECONDS)
             .readTimeout(20L * 1000L, TimeUnit.MILLISECONDS)
             .addInterceptor(GlobalHeaderInterceptor())
             .addInterceptor(CommonVquPublicInterceptor())
             .addInterceptor(logInterceptor)
             .retryOnConnectionFailure(true)
-            .build()
+        if (createSSLSocketFactory() != null) {
+            okHttpClient.sslSocketFactory(createSSLSocketFactory()!!, MyTrustManager())
+        }
+        return okHttpClient.build()
     }
 
     var globalRetrofit:Retrofit? = null
@@ -51,5 +63,16 @@ object GlobalServiceManage {
         return globalRetrofit!!
     }
 
+    private fun createSSLSocketFactory(): SSLSocketFactory? {
+        var ssfFactory: SSLSocketFactory? = null
+        try {
+            val sc = SSLContext.getInstance("TLS")
+            sc.init(null, arrayOf<TrustManager>(MyTrustManager()), SecureRandom())
+            ssfFactory = sc.socketFactory
+        } catch (ignored: Exception) {
+            ignored.printStackTrace()
+        }
+        return ssfFactory
+    }
 
 }

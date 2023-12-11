@@ -531,15 +531,6 @@ class MineFragment : BaseLazyFrameFragment<MineFragmentMineBinding, MineViewMode
             )
         )
 
-        mVquListMenuData.add(
-            CommonVquMenuBean(
-                R.mipmap.ic_mine_list_menu_contacts,
-                getString(R.string.mine_vqu_menu_contacts),
-                type = 9
-            )
-        )
-
-
 //        mVquListMenuData.add(
 //            CommonVquMenuBean(
 //                R.mipmap.ic_mine_list_menu_face,
@@ -851,6 +842,32 @@ class MineFragment : BaseLazyFrameFragment<MineFragmentMineBinding, MineViewMode
                     descIcon = R.mipmap.ic_mine_list_menu_desc_red_pack
                 )
             )
+            mVquListMenuAdapter.notifyDataSetChanged()
+        }
+        if (it.isShowMyNetwork == 1) {
+            var hasContacts = false
+            for (bean in mVquListMenuData) {
+                if (bean.type == 9) {
+                    hasContacts = true
+                }
+            }
+            if (!hasContacts) {
+                mVquListMenuData.add(
+                    CommonVquMenuBean(
+                        R.mipmap.ic_mine_list_menu_contacts,
+                        getString(R.string.mine_vqu_menu_contacts),
+                        type = 9
+                    )
+                )
+                mVquListMenuAdapter.notifyDataSetChanged()
+            }
+        } else {
+            val iterator = mVquListMenuData.iterator()
+            while (iterator.hasNext()){
+                if(iterator.next().type == 9){
+                    iterator.remove()
+                }
+            }
             mVquListMenuAdapter.notifyDataSetChanged()
         }
     }

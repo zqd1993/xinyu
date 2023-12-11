@@ -453,7 +453,7 @@
 
         <meta-data
             android:name="UMENG_APPKEY"
-            android:value="6254172f0059ce2bad305358" />
+            android:value="6576d3f0a7208a5af182c8c9" />
 
         <activity
             android:name=".ui.activity.LoginEmptyActivity"

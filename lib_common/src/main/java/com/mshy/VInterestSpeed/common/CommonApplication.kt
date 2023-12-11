@@ -200,7 +200,7 @@ class CommonApplication : ApplicationLifecycle, ViewModelStoreOwner {
         Tencent.setIsPermissionGranted(true)
         UMConfigure.init(
             BaseApplication.context,
-            "6527a72358a9eb5b0aecc1aa",
+            "6576d3f0a7208a5af182c8c9",
             DeviceManager.getInstance().getChannel(),
             UMConfigure.DEVICE_TYPE_PHONE,
             ""
