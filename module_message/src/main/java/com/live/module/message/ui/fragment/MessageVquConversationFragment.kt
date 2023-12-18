@@ -1,5 +1,7 @@
 package com.live.module.message.ui.fragment
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Handler
 import android.os.Looper
 import android.text.TextUtils
@@ -7,6 +9,7 @@ import android.util.Log
 import android.view.Gravity
 import android.view.View
 import android.widget.ImageView
+import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.viewModels
@@ -108,6 +111,11 @@ class MessageVquConversationFragment :
     override val mViewModel: MessageVquRecentFragmentViewModel by viewModels()
     private var userInfoObserver: UserInfoObserver? = null
     private var hasHeader: Boolean = false
+    private var lookAtMeRl: RelativeLayout? = null
+    private var readOnceMsgRl: RelativeLayout? = null
+    private var ivMsgHead: ImageView? = null
+    private var tvMsg: TextView? = null
+    private var tvMsgContent: TextView? = null
     override fun MessageTantaRecentFragmentBinding.initView() {
         loadingDialog = LoadingDialog(
             requireContext(),
@@ -130,20 +138,38 @@ class MessageVquConversationFragment :
         empty.findViewById<ImageView>(R.id.iv_empty)
             .setImageResource(R.mipmap.resources_tanta_message_empty)
         adapter.setEmptyView(empty)
-        headView = layoutInflater.inflate(R.layout.message_tanta_include_banner, null, false)
-        banner = headView?.findViewById(R.id.vqu_banner_ad)
-        headView?.let {
-            adapter.addHeaderView(it)
-        }
+//        headView = layoutInflater.inflate(R.layout.message_tanta_include_banner, null, false)
+//        banner = headView?.findViewById(R.id.vqu_banner_ad)
+//        headView?.let {
+//            adapter.addHeaderView(it)
+//        }
         visitorsHeadView =
             layoutInflater.inflate(R.layout.message_tanta_include_visitors, null, false)
         ivHead = visitorsHeadView?.findViewById(R.id.iv_head)
         tvCount = visitorsHeadView?.findViewById(R.id.tv_count)
         tvContent = visitorsHeadView?.findViewById(R.id.tv_content)
-        visitorsHeadView?.setOnClickListener {
+        lookAtMeRl = visitorsHeadView?.findViewById(R.id.look_at_me_rl)
+        readOnceMsgRl = visitorsHeadView?.findViewById(R.id.read_once_msg_rl)
+        ivMsgHead = visitorsHeadView?.findViewById(R.id.iv_msg_head)
+        tvMsg = visitorsHeadView?.findViewById(R.id.tv_msg)
+        tvMsgContent = visitorsHeadView?.findViewById(R.id.tv_msg_content)
+        banner = visitorsHeadView?.findViewById(R.id.vqu_banner_ad)
+        visitorsHeadView?.let {
+            adapter.addHeaderView(it)
+        }
+        lookAtMeRl?.setOnClickListener {
             ARouter.getInstance().build(RouteUrl.Relation.RelationVquActivity)
                 .withInt(RouteKey.TYPE, RouteKey.RelationType.VISTOR)
                 .withString(RouteKey.TITLE, getString(R.string.mine_vqu_my_visitor)).navigation()
+        }
+        readOnceMsgRl?.setOnClickListener {
+            if(tvMsgContent?.text!!.startsWith("http")){
+                val intent = Intent()
+                intent.action = Intent.ACTION_VIEW
+                val targetUrl = Uri.parse(tvMsgContent?.text.toString())
+                intent.data = targetUrl
+                startActivity(intent)
+            }
         }
         var linearLayoutManager = LinearLayoutManager(activity)
         mBinding.recyclerView.layoutManager = linearLayoutManager
@@ -236,6 +262,7 @@ class MessageVquConversationFragment :
         mViewModel.banners.observe(this) {
             images.clear()
             if (it.data.banner.isNotEmpty()) {
+                banner?.visibility = View.VISIBLE
                 it.data.banner.forEach { bean ->
                     images.add(NetBaseUrlConstant.IMAGE_URL + bean.image)
                 }
@@ -263,24 +290,26 @@ class MessageVquConversationFragment :
                         )
                     }
             } else {
-                headView?.let { head ->
-                    adapter.removeHeaderView(head)
-                }
+//                headView?.let { head ->
+//                    adapter.removeHeaderView(head)
+//                }
+                banner?.visibility = View.GONE
             }
         }
         mViewModel.visitorsData.observe(this, androidx.lifecycle.Observer {
             if (it.data.lookMeInfo != null) {
                 var lookMeInfo = it.data.lookMeInfo
                 if (lookMeInfo.newVisitorCount > 0) {
-                    if (!hasHeader) {
-                        visitorsHeadView?.let {
-                            if (SpUtils.getInt(SpKey.openGreen, 0) == 1) {
-                            } else {
-                                adapter.addHeaderView(it)
-                                hasHeader = true
-                            }
-                        }
-                    }
+//                    if (!hasHeader) {
+//                        visitorsHeadView?.let {
+//                            if (SpUtils.getInt(SpKey.openGreen, 0) == 1) {
+//                            } else {
+//                                adapter.addHeaderView(it)
+//                                hasHeader = true
+//                            }
+//                        }
+//                    }
+                    lookAtMeRl?.visibility = View.VISIBLE
                     ivHead?.vquLoadCircleImage(
                         IMAGE_URL + lookMeInfo.avatar + "?x-oss-process=image/blur,r_50,s_30",
                         R.mipmap.ic_common_head_circle_def
@@ -294,21 +323,24 @@ class MessageVquConversationFragment :
                     SpUtils.putInt(SpKey.NEW_VISITOR_COUNT, lookMeInfo.newVisitorCount)
                 } else {
                     SpUtils.putInt(SpKey.NEW_VISITOR_COUNT, 0)
-                    if (hasHeader) {
-                        visitorsHeadView?.let {
-                            adapter.removeHeaderView(it)
-                            hasHeader = false
-                        }
-                    }
+//                    if (hasHeader) {
+//                        visitorsHeadView?.let {
+//                            adapter.removeHeaderView(it)
+//                            hasHeader = false
+//                        }
+//                    }
+                    lookAtMeRl?.visibility = View.GONE
                 }
             } else {
-                if (hasHeader) {
-                    visitorsHeadView?.let {
-                        SpUtils.putInt(SpKey.NEW_VISITOR_COUNT, 0)
-                        adapter.removeHeaderView(it)
-                        hasHeader = false
-                    }
-                }
+//                if (hasHeader) {
+//                    visitorsHeadView?.let {
+//                        SpUtils.putInt(SpKey.NEW_VISITOR_COUNT, 0)
+//                        adapter.removeHeaderView(it)
+//                        hasHeader = false
+//                    }
+//                }
+                SpUtils.putInt(SpKey.NEW_VISITOR_COUNT, 0)
+                lookAtMeRl?.visibility = View.GONE
             }
             val unreadNum = NIMClient.getService(MsgService::class.java).totalUnreadCount
             EventBus.getDefault().post(
@@ -325,6 +357,7 @@ class MessageVquConversationFragment :
             if (it) {
                 mViewModel.resetClearStatue()
                 mViewModel.getVisitorsData()
+                mViewModel.getNotifyMsg()
                 SpUtils.putInt(SpKey.NEW_VISITOR_COUNT, 0)
                 EventBus.getDefault().post(
                     UnReadCountEvent(
@@ -333,11 +366,25 @@ class MessageVquConversationFragment :
                 )
             }
         }
+        mViewModel.notifyMsgData.observe(this){
+            if (it.data != null) {
+                readOnceMsgRl?.visibility = View.VISIBLE
+                ivMsgHead?.vquLoadCircleImage(
+                    IMAGE_URL + it.data.avatar + "?x-oss-process=image/blur,r_50,s_30",
+                    R.mipmap.ic_common_head_circle_def
+                )
+                tvMsg?.text = it.data.nickname
+                tvMsgContent?.text = it.data.content
+            } else {
+                readOnceMsgRl?.visibility = View.GONE
+            }
+        }
     }
 
     override fun initRequestData() {
         mViewModel.getBannerData()
         mViewModel.getVisitorsData()
+        mViewModel.getNotifyMsg()
         getConversationList()
     }
 
@@ -643,6 +690,7 @@ class MessageVquConversationFragment :
         lastRecentContact = null
         mViewModel.getBannerData()
         mViewModel.getVisitorsData()
+        mViewModel.getNotifyMsg()
         getConversationList()
     }
 
@@ -674,6 +722,7 @@ class MessageVquConversationFragment :
     @Subscribe(threadMode = ThreadMode.MAIN)
     fun onEventMainThread(event: IsShowGuideEvent) {
         mViewModel.getVisitorsData()
+        mViewModel.getNotifyMsg()
         getConversationList()
 
     }
