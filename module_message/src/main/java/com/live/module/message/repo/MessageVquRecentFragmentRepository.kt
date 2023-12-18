@@ -5,6 +5,7 @@ import com.live.vquonline.base.mvvm.m.BaseRepository
 import com.mshy.VInterestSpeed.common.bean.BaseResponse
 import com.mshy.VInterestSpeed.common.bean.CommonVquMainBannerBean
 import com.mshy.VInterestSpeed.common.bean.MessageVisitorBean
+import com.mshy.VInterestSpeed.common.bean.NotifyMsgBean
 import com.mshy.VInterestSpeed.common.bean.VquRelationListBean
 import com.mshy.VInterestSpeed.common.helper.responseCodeExceptionHandler
 import com.mshy.VInterestSpeed.common.net.GlobalApiService
@@ -75,4 +76,12 @@ class MessageVquRecentFragmentRepository @Inject constructor() : BaseRepository(
             }
         }
     }
+
+    suspend fun getNotifyMsg() = request<BaseResponse<NotifyMsgBean>>(requestBlock = {
+        mApi.getNotifyMsg().run {
+            responseCodeExceptionHandler(code, message) {
+                emit(this)
+            }
+        }
+    })
 }

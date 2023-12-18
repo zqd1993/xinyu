@@ -1,69 +1,143 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="65dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
     android:background="@color/white">
 
-    <ImageView
-        android:id="@+id/iv_head"
-        android:layout_width="52dp"
-        android:layout_height="52dp"
-        android:layout_centerVertical="true"
-        android:layout_gravity="center_vertical"
-        android:layout_marginStart="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:src="@mipmap/ic_common_head_circle_def" />
-
-    <com.mshy.VInterestSpeed.uikit.common.ui.drop.DropFake
-        android:id="@+id/tv_count"
-        android:layout_width="16dp"
-        android:layout_height="16dp"
-        android:layout_alignEnd="@+id/iv_head"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="-5dp"
-        android:gravity="center"
-        android:singleLine="true"
-        android:textColor="@android:color/white"
-        android:textSize="10sp"
-        android:visibility="visible" />
-    <LinearLayout
+    <com.youth.banner.Banner
+        android:id="@+id/vqu_banner_ad"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_marginLeft="14dp"
-        android:layout_marginRight="16dp"
-        android:layout_toRightOf="@+id/iv_head"
-        android:orientation="vertical">
+        android:layout_height="86dp"
+        app:banner_indicator_marginTop="12dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="12dp"
+        android:visibility="gone"/>
 
-        <TextView
-            android:id="@+id/tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="谁看过我"
-            android:textColor="@color/color_273145"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/tv_content"
-            app:layout_constraintLeft_toRightOf="@+id/iv_head"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_chainStyle="packed" />
+    <RelativeLayout
+        android:id="@+id/look_at_me_rl"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:visibility="gone">
 
-        <TextView
-            android:id="@+id/tv_content"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:textColor="@color/color_8B96B5"
-            android:textSize="13sp"
+        <ImageView
+            android:id="@+id/iv_head"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toRightOf="@+id/iv_head"
-            app:layout_constraintTop_toBottomOf="@+id/tv"
-            tools:text="描述文案描述文案描述文案" />
-    </LinearLayout>
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@mipmap/ic_common_head_circle_def" />
+
+        <com.mshy.VInterestSpeed.uikit.common.ui.drop.DropFake
+            android:id="@+id/tv_count"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_alignEnd="@+id/iv_head"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="-5dp"
+            android:gravity="center"
+            android:singleLine="true"
+            android:textColor="@android:color/white"
+            android:textSize="10sp"
+            android:visibility="visible" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="14dp"
+            android:layout_marginRight="16dp"
+            android:layout_toRightOf="@+id/iv_head"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="谁看过我"
+                android:textColor="@color/color_273145"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/tv_content"
+                app:layout_constraintLeft_toRightOf="@+id/iv_head"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <TextView
+                android:id="@+id/tv_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/color_8B96B5"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/iv_head"
+                app:layout_constraintTop_toBottomOf="@+id/tv"
+                tools:text="描述文案描述文案描述文案" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/read_once_msg_rl"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/iv_msg_head"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@mipmap/ic_common_head_circle_def" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="14dp"
+            android:layout_marginRight="16dp"
+            android:layout_toRightOf="@+id/iv_msg_head"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_msg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/color_273145"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/tv_content"
+                app:layout_constraintLeft_toRightOf="@+id/iv_msg_head"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <TextView
+                android:id="@+id/tv_msg_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/color_8B96B5"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/iv_msg_head"
+                app:layout_constraintTop_toBottomOf="@+id/tv" />
+        </LinearLayout>
 
 
-</RelativeLayout>
+    </RelativeLayout>
+
+</LinearLayout>

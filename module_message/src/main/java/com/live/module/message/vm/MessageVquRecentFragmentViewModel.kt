@@ -8,6 +8,7 @@ import com.live.vquonline.base.utils.toast
 import com.mshy.VInterestSpeed.common.bean.BaseResponse
 import com.mshy.VInterestSpeed.common.bean.CommonVquMainBannerBean
 import com.mshy.VInterestSpeed.common.bean.MessageVisitorBean
+import com.mshy.VInterestSpeed.common.bean.NotifyMsgBean
 import com.mshy.VInterestSpeed.uikit.business.recent.RecentContactsFragment
 import com.mshy.VInterestSpeed.uikit.common.CommonUtil
 import com.mshy.VInterestSpeed.uikit.util.IntimateUtils
@@ -37,6 +38,8 @@ class MessageVquRecentFragmentViewModel @Inject constructor(private val mRepo: M
     val vquSaveRemarkNameBean = MutableLiveData<BaseResponse<Any>>()
 
     val isClearMsg = MutableLiveData<Boolean>()
+
+    val notifyMsgData = MutableLiveData<BaseResponse<NotifyMsgBean>>()
 
     fun getBannerData() {
         launchIO {
@@ -110,6 +113,17 @@ class MessageVquRecentFragmentViewModel @Inject constructor(private val mRepo: M
 
     fun resetClearStatue() {
         isClearMsg.postValue(false)
+    }
+
+    fun getNotifyMsg() {
+        launchIO {
+            mRepo.getNotifyMsg()
+                .catch { }
+                .collect {
+                    notifyMsgData.postValue(it)
+                }
+        }
+
     }
 
 }

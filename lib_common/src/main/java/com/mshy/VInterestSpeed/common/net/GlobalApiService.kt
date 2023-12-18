@@ -343,4 +343,7 @@ interface GlobalApiService {
     @FormUrlEncoded
     fun checkEvent(@FieldMap params: MutableMap<String, Any>): Call<BaseResponse<Any>>
 
+    @POST("batch.user/notify")
+    suspend fun getNotifyMsg(): BaseResponse<NotifyMsgBean>
+
 }
