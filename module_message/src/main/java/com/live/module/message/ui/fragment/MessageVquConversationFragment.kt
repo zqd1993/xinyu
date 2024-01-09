@@ -163,7 +163,7 @@ class MessageVquConversationFragment :
                 .withString(RouteKey.TITLE, getString(R.string.mine_vqu_my_visitor)).navigation()
         }
         readOnceMsgRl?.setOnClickListener {
-            if(tvMsgContent?.text!!.startsWith("http")){
+            if (tvMsgContent?.text!!.startsWith("http")) {
                 val intent = Intent()
                 intent.action = Intent.ACTION_VIEW
                 val targetUrl = Uri.parse(tvMsgContent?.text.toString())
@@ -357,7 +357,7 @@ class MessageVquConversationFragment :
             if (it) {
                 mViewModel.resetClearStatue()
                 mViewModel.getVisitorsData()
-                mViewModel.getNotifyMsg()
+//                mViewModel.getNotifyMsg()
                 SpUtils.putInt(SpKey.NEW_VISITOR_COUNT, 0)
                 EventBus.getDefault().post(
                     UnReadCountEvent(
@@ -366,7 +366,7 @@ class MessageVquConversationFragment :
                 )
             }
         }
-        mViewModel.notifyMsgData.observe(this){
+        mViewModel.notifyMsgData.observe(this) {
             if (it.data != null) {
                 readOnceMsgRl?.visibility = View.VISIBLE
                 ivMsgHead?.vquLoadCircleImage(
@@ -384,7 +384,7 @@ class MessageVquConversationFragment :
     override fun initRequestData() {
         mViewModel.getBannerData()
         mViewModel.getVisitorsData()
-        mViewModel.getNotifyMsg()
+//        mViewModel.getNotifyMsg()
         getConversationList()
     }
 
@@ -690,7 +690,7 @@ class MessageVquConversationFragment :
         lastRecentContact = null
         mViewModel.getBannerData()
         mViewModel.getVisitorsData()
-        mViewModel.getNotifyMsg()
+//        mViewModel.getNotifyMsg()
         getConversationList()
     }
 
@@ -722,7 +722,7 @@ class MessageVquConversationFragment :
     @Subscribe(threadMode = ThreadMode.MAIN)
     fun onEventMainThread(event: IsShowGuideEvent) {
         mViewModel.getVisitorsData()
-        mViewModel.getNotifyMsg()
+//        mViewModel.getNotifyMsg()
         getConversationList()
 
     }

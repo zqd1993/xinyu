@@ -73,7 +73,7 @@ class MessageVquRecentAdapter(
                 var map = HashMap<String, Any>()
                 map.put("online", event.eventValue)
                 data[j].extension = map
-                notifyItemRangeChanged(j, data.size)
+                notifyDataSetChanged()
                 break
             }
         }
@@ -109,11 +109,11 @@ class MessageVquRecentAdapter(
             data.removeAt(removeIndex)
             val insertIndex = searchComparatorIndex(recentContact)
             data.add(insertIndex, recentContact!!)
-            notifyItemRangeChanged(insertIndex, data.size)
+            notifyDataSetChanged()
         } else {
             val insertIndex = searchComparatorIndex(recentContact)
             data.add(insertIndex, recentContact!!)
-            notifyItemRangeChanged(insertIndex, data.size)
+            notifyDataSetChanged()
         }
 
     }

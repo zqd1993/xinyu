@@ -53,6 +53,9 @@ class PayDialog : BaseVMDialogFragment<CommonVquDialogPayBinding, CommonPayViewM
 
         @JvmStatic
         val WECHAT_APPLET = "wechat_applet"
+
+        @JvmStatic
+        val WECHAT_H5_PAY = "wechat_h5_pay"
     }
 
     private val loadingDialog by lazy {

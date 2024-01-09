@@ -90,10 +90,10 @@
 
         <meta-data
             android:name="com.vivo.push.api_key"
-            android:value="a8820128d00613b7ef365a14799cf910" />
+            android:value="ee1768e7dc59b1c33a57ce1ac49d1fed" />
         <meta-data
             android:name="com.vivo.push.app_id"
-            android:value="105612212" />
+            android:value="105703722" />
 
         <service
             android:name="com.vivo.push.sdk.service.CommandClientService"

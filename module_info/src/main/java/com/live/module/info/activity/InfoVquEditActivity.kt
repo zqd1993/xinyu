@@ -77,6 +77,7 @@ import com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
 import com.mshy.VInterestSpeed.common.ui.view.dragrecyclerview.MyItemTouchCallback
 import com.mshy.VInterestSpeed.common.ui.view.dragrecyclerview.OnRecyclerItemClickListener
 import com.mshy.VInterestSpeed.common.utils.GlideEngine
+import com.mshy.VInterestSpeed.common.utils.PermissionUtils
 import com.mshy.VInterestSpeed.uikit.common.util.sys.ScreenUtil
 import com.yalantis.ucrop.UCrop
 import com.yalantis.ucrop.UCropImageEngine
@@ -150,7 +151,7 @@ class InfoVquEditActivity : BaseActivity<InfoTantaActivityEditBinding, InfoEditV
     var loadingDialog: LoadingDialog? = null
     var clickAuth = false
     var isEdit: Boolean = false
-    var screenshotUrl:String="?x-oss-process=video/snapshot,t_0,f_jpg,w_0,h_0,m_fast,ar_auto"
+    var screenshotUrl: String = "?x-oss-process=video/snapshot,t_0,f_jpg,w_0,h_0,m_fast,ar_auto"
 
 
     private val mCompressDialog: LoadingDialog by lazy {
@@ -205,7 +206,8 @@ class InfoVquEditActivity : BaseActivity<InfoTantaActivityEditBinding, InfoEditV
         if (isSelectImg()) {//如果选择了图片 则调用上传图片
             loadingDialog = LoadingDialog(
                 this@InfoVquEditActivity,
-                "上传中...")
+                "上传中..."
+            )
             loadingDialog?.show()
             mViewModel.vquUploadImg(selectPicList!!, "album")
         } else {
@@ -338,8 +340,11 @@ class InfoVquEditActivity : BaseActivity<InfoTantaActivityEditBinding, InfoEditV
             }
         })
         var itemTouchHelper =
-            ItemTouchHelper(MyItemTouchCallback(
-                imgAdapter).setOnDragListener(this))
+            ItemTouchHelper(
+                MyItemTouchCallback(
+                    imgAdapter
+                ).setOnDragListener(this)
+            )
         itemTouchHelper.attachToRecyclerView(mBinding.rvPhoto)
         mBinding.rvPhoto.addOnItemTouchListener(object :
             OnRecyclerItemClickListener(mBinding.rvPhoto) {
@@ -470,6 +475,7 @@ class InfoVquEditActivity : BaseActivity<InfoTantaActivityEditBinding, InfoEditV
                 0 -> {//成功
                     avatar = ""//比对通过不用上传给服务器审核
                 }
+
                 1007 -> {//未认证
                     mBinding.ivHead.loadAvatar(startAvatar)
                     avatar = ""
@@ -493,6 +499,7 @@ class InfoVquEditActivity : BaseActivity<InfoTantaActivityEditBinding, InfoEditV
                             }
                         }).show(supportFragmentManager)
                 }
+
                 1006 -> {//比对失败
 //                    mBinding.ivHead.loadAvatar(startAvatar)
                     var authCommitAgainDialog = AuthCommitAgainDialog()
@@ -514,6 +521,7 @@ class InfoVquEditActivity : BaseActivity<InfoTantaActivityEditBinding, InfoEditV
                     })
                     authCommitAgainDialog.show(supportFragmentManager)
                 }
+
                 else -> {
                 }
             }
@@ -560,7 +568,7 @@ class InfoVquEditActivity : BaseActivity<InfoTantaActivityEditBinding, InfoEditV
         } else {
             info.basicInfoDetail.weight
         }
-        mBinding.tvLocation.text=info.location+""
+        mBinding.tvLocation.text = info.location + ""
         mBinding.tvWeight.text = weight
         job = info.basicInfoDetail.occupation
         mBinding.tvJob.text = job
@@ -787,10 +795,16 @@ class InfoVquEditActivity : BaseActivity<InfoTantaActivityEditBinding, InfoEditV
         object : InfoEditImgAdapter.OnAddPicClickListener {
             override fun onAddPicClick() {
                 isEdit = true
-                PictureSelector.create(this@InfoVquEditActivity)
-                    .openGallery(ofImage())
-                    .isDisplayCamera(!UserManager.isVideo)
-                    .setImageEngine(GlideEngine.createGlideEngine())
+                PermissionUtils.storageUpdatePermission(
+                    this@InfoVquEditActivity,
+                    "设置相册需要访问你本地图片文件，需要申请文件储存和媒体权限",
+                    "设置相册需要访问你本地图片文件，需要申请文件储存和媒体权限",
+                    requestCallback = { allGranted, grantedList, deniedList ->
+                        if (allGranted) {
+                            PictureSelector.create(this@InfoVquEditActivity)
+                                .openGallery(ofImage())
+                                .isDisplayCamera(!UserManager.isVideo)
+                                .setImageEngine(GlideEngine.createGlideEngine())
 //                    .setSandboxFileEngine(object : SandboxFileEngine {
 //                        override fun onStartSandboxFileTransform(
 //                            context: Context?,
@@ -809,41 +823,51 @@ class InfoVquEditActivity : BaseActivity<InfoTantaActivityEditBinding, InfoEditV
 //                            }
 //                        }
 //                    })
-                    .setCompressEngine { _, list, listener ->
-                        if (!list.isNullOrEmpty()) {
-                            list.map {
-                                if (PictureMimeType.isHasHttp(it?.path)) {
-                                } else {
-                                    Luban.with(this@InfoVquEditActivity).load(it.realPath)
-                                        .ignoreBy(200)
-                                        .setCompressListener(object : OnCompressListener {
-                                            override fun onStart() {
-                                                mCompressDialog.show()
-                                            }
+                                .setCompressEngine { _, list, listener ->
+                                    if (!list.isNullOrEmpty()) {
+                                        list.map {
+                                            if (PictureMimeType.isHasHttp(it?.path)) {
+                                            } else {
+                                                Luban.with(this@InfoVquEditActivity)
+                                                    .load(it.realPath)
+                                                    .ignoreBy(200)
+                                                    .setCompressListener(object :
+                                                        OnCompressListener {
+                                                        override fun onStart() {
+                                                            mCompressDialog.show()
+                                                        }
 
-                                            override fun onSuccess(
-                                                index: Int,
-                                                compressFile: File?,
-                                            ) {
-                                                mCompressDialog.dismiss()
-                                                it.compressPath = compressFile?.absolutePath
-                                                listener?.onCall(list)
-                                            }
+                                                        override fun onSuccess(
+                                                            index: Int,
+                                                            compressFile: File?,
+                                                        ) {
+                                                            mCompressDialog.dismiss()
+                                                            it.compressPath =
+                                                                compressFile?.absolutePath
+                                                            listener?.onCall(list)
+                                                        }
 
-                                            override fun onError(index: Int, e: Throwable?) {
-                                                mCompressDialog.dismiss()
+                                                        override fun onError(
+                                                            index: Int,
+                                                            e: Throwable?
+                                                        ) {
+                                                            mCompressDialog.dismiss()
+                                                        }
+                                                    }).launch()
                                             }
-                                        }).launch()
+                                        }
+
+                                    }
                                 }
-                            }
-
+                                .setSelectionMode(SelectModeConfig.MULTIPLE)
+                                .isPageStrategy(true, 20, true)
+                                .setMaxSelectNum(6)
+                                .setSelectedData(imgAdapter?.getData())
+                                .forResult(PictureConfig.CHOOSE_REQUEST)
+                        } else {
+                            toast("无法获取储存权限")
                         }
-                    }
-                    .setSelectionMode(SelectModeConfig.MULTIPLE)
-                    .isPageStrategy(true, 20, true)
-                    .setMaxSelectNum(6)
-                    .setSelectedData(imgAdapter?.getData())
-                    .forResult(PictureConfig.CHOOSE_REQUEST)
+                    })
             }
         }
 
@@ -860,6 +884,7 @@ class InfoVquEditActivity : BaseActivity<InfoTantaActivityEditBinding, InfoEditV
                     imgAdapter?.setList(selectPicList!!)
                     imgAdapter?.notifyDataSetChanged()
                 }
+
                 TantaCitySelector.REQUEST_CODE -> {
                     val city = data?.getParcelableExtra<City>(TantaCitySelector.CITY_RESULT)
                     if (city != null) {
@@ -867,6 +892,7 @@ class InfoVquEditActivity : BaseActivity<InfoTantaActivityEditBinding, InfoEditV
                         mBinding.tvCity.text = city.name
                     }
                 }
+
                 EDIT_VIDEO_CODE -> {
                     val videoPathParent =
                         data?.getStringExtra(CommonVquVideoCropActivity.KEY_CROP_SAVE_VIDEO_PATH)
@@ -894,8 +920,10 @@ class InfoVquEditActivity : BaseActivity<InfoTantaActivityEditBinding, InfoEditV
                 .navigation()
         }
         loadingDialog =
-            LoadingDialog(this@InfoVquEditActivity,
-                "上传中")
+            LoadingDialog(
+                this@InfoVquEditActivity,
+                "上传中"
+            )
         loadingDialog?.show()
         mViewModel.vquUploadVideo(videoPath, "video")
     }
@@ -903,14 +931,26 @@ class InfoVquEditActivity : BaseActivity<InfoTantaActivityEditBinding, InfoEditV
     override fun onClick(v: View?) {
         when (v?.id) {
             R.id.cl_head -> {//换头像
-                    isEdit = true
-                    changeHead()
+                isEdit = true
+                PermissionUtils.storageUpdatePermission(
+                    this@InfoVquEditActivity,
+                    "设置头像需要访问你本地图片文件，需要申请文件储存和媒体权限",
+                    "设置头像需要访问你本地图片文件，需要申请文件储存和媒体权限",
+                    requestCallback = { allGranted, grantedList, deniedList ->
+                        if (allGranted) {
+                            changeHead()
+                        } else {
+                            toast("无法获取储存权限")
+                        }
+                    })
             }
+
             R.id.cl_voice -> {//声音展示
                 isEdit = true
                 var intent = Intent(this@InfoVquEditActivity, InfoVquVoiceEditActivity::class.java)
                 intentActivityResultLauncher?.launch(intent)
             }
+
             R.id.cl_name -> {//昵称
                 isEdit = true
                 var intent = Intent(this@InfoVquEditActivity, InfoVquNicknameActivity::class.java)
@@ -918,6 +958,7 @@ class InfoVquEditActivity : BaseActivity<InfoTantaActivityEditBinding, InfoEditV
                 intentActivityResultLauncher?.launch(intent)
 
             }
+
             R.id.cl_age -> {//生日
                 isEdit = true
                 type = 6
@@ -929,6 +970,7 @@ class InfoVquEditActivity : BaseActivity<InfoTantaActivityEditBinding, InfoEditV
                 vquPicker?.setSelectOptions(ageList!!.indexOf("35岁"))
                 vquPicker?.show()
             }
+
             R.id.cl_height -> {//身高
                 isEdit = true
                 type = 0
@@ -936,6 +978,7 @@ class InfoVquEditActivity : BaseActivity<InfoTantaActivityEditBinding, InfoEditV
                 vquPicker?.setSelectOptions(heightList!!.indexOf("170cm"))
                 vquPicker?.show()
             }
+
             R.id.cl_income -> {//收入
                 isEdit = true
                 type = 1
@@ -943,6 +986,7 @@ class InfoVquEditActivity : BaseActivity<InfoTantaActivityEditBinding, InfoEditV
                 vquPicker?.setSelectOptions(0)
                 vquPicker?.show()
             }
+
             R.id.cl_education -> {//学历
                 isEdit = true
                 type = 2
@@ -950,6 +994,7 @@ class InfoVquEditActivity : BaseActivity<InfoTantaActivityEditBinding, InfoEditV
                 vquPicker?.setSelectOptions(0)
                 vquPicker?.show()
             }
+
             R.id.cl_marriage -> {//婚姻状态
                 isEdit = true
                 type = 3
@@ -957,6 +1002,7 @@ class InfoVquEditActivity : BaseActivity<InfoTantaActivityEditBinding, InfoEditV
                 vquPicker?.setSelectOptions(0)
                 vquPicker?.show()
             }
+
             R.id.cl_weight -> {//体重
                 isEdit = true
                 type = 4
@@ -964,6 +1010,7 @@ class InfoVquEditActivity : BaseActivity<InfoTantaActivityEditBinding, InfoEditV
                 vquPicker?.setSelectOptions(weightList!!.indexOf("50kg"))
                 vquPicker?.show()
             }
+
             R.id.cl_job -> {//职业
                 isEdit = true
                 type = 5
@@ -971,12 +1018,14 @@ class InfoVquEditActivity : BaseActivity<InfoTantaActivityEditBinding, InfoEditV
                 vquPicker?.setPicker(occupation1, occupation2)
                 vquPicker?.show()
             }
+
             R.id.cl_sign -> {//自我介绍
                 isEdit = true
                 var intent = Intent(this@InfoVquEditActivity, InfoVquIntroduceActivity::class.java)
                 intent.putExtra("sign", mBinding.tvSign.text.toString())
                 intentActivityResultLauncher?.launch(intent)
             }
+
             R.id.cl_city -> {//所在地
                 if (provinceList.isNullOrEmpty()) {
                     return
@@ -992,6 +1041,7 @@ class InfoVquEditActivity : BaseActivity<InfoTantaActivityEditBinding, InfoEditV
 
 //                VquCitySelector.start(this)
             }
+
             R.id.rl_video -> {//选择视频
                 isEdit = true
                 PictureSelector.create(this@InfoVquEditActivity)//进页面就进行选择
@@ -1025,7 +1075,7 @@ class InfoVquEditActivity : BaseActivity<InfoTantaActivityEditBinding, InfoEditV
                                 ) + File.separator
                                 val videoFileName =
                                     videoPath?.substring(videoPath.lastIndexOf("/") + 1)
-                                if (video.duration/1000 > 15 ) {
+                                if (video.duration / 1000 > 15) {
                                     CommonVquVideoCropActivity.startActivityForResult(
                                         this@InfoVquEditActivity,
                                         videoPathParent,
@@ -1045,6 +1095,7 @@ class InfoVquEditActivity : BaseActivity<InfoTantaActivityEditBinding, InfoEditV
                         }
                     })
             }
+
             R.id.cl_tag -> {//我的标签
                 isEdit = true
                 var intent = Intent(this@InfoVquEditActivity, InfoVquLabelEditActivity::class.java)
@@ -1144,8 +1195,10 @@ class InfoVquEditActivity : BaseActivity<InfoTantaActivityEditBinding, InfoEditV
                     var avatarPath = result!![0]?.cutPath
                     mBinding.ivHead.loadAvatar(avatarPath, true)
                     loadingDialog =
-                        LoadingDialog(this@InfoVquEditActivity,
-                            "上传中...")
+                        LoadingDialog(
+                            this@InfoVquEditActivity,
+                            "上传中..."
+                        )
                     loadingDialog?.show()
                     mViewModel.vquUploadAvatar(result!![0])
 
@@ -1248,30 +1301,37 @@ class InfoVquEditActivity : BaseActivity<InfoTantaActivityEditBinding, InfoEditV
                         height = heightList!![options1]
                         mBinding.tvHeight.text = height
                     }
+
                     1 -> {
                         income = incomeList!![options1]
                         mBinding.tvIncome.text = income
                     }
+
                     2 -> {
                         education = educationList!![options1]
                         mBinding.tvEducation.text = education
                     }
+
                     3 -> {
                         marriage = marriageList!![options1]
                         mBinding.tvMarriage.text = marriage
                     }
+
                     4 -> {
                         weight = weightList!![options1]
                         mBinding.tvWeight.text = weight
                     }
+
                     5 -> {
                         job = occupation2!![options1][options2]
                         mBinding.tvJob.text = job
                     }
+
                     6 -> {
                         age = ageList!![options1]
                         mBinding.tvAge.text = age
                     }
+
                     7 -> {
                         vquCity = cityList!![options1][options2]
                         mBinding.tvCity.text = vquCity

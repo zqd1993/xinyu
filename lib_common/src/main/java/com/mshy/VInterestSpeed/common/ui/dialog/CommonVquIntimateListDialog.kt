@@ -31,7 +31,7 @@ class CommonVquIntimateListDialog : BaseDialogFragment(),
     private var tvIntimate: TextView? = null
     private var tvNext: TextView? = null
     private var rvIntimate: RecyclerView? = null
-    var IMAGE_URL = "http://asset.zhenban.top/"
+    var IMAGE_URL = "https://asset.whzhenban.top/"
     var globalApiService: GlobalApiService? = null
     var toId: String = ""
 

@@ -130,10 +130,10 @@ class BillTantaRechargeActivity :
 //        val layoutParams =
 //            mBinding.tbTantaBillBar.toolbar.layoutParams as ViewGroup.MarginLayoutParams
 //        layoutParams.topMargin += height
-        mBinding.ivBack.clickDelay{
+        mBinding.ivBack.clickDelay {
             finish()
         }
-        mBinding.tvRight.clickDelay{
+        mBinding.tvRight.clickDelay {
             ARouter.getInstance().build(RouteUrl.Bill.BillTantaDetailActivity).navigation()
         }
         mBinding.stvBillTantaRechargePay.clickDelay {
@@ -260,7 +260,7 @@ class BillTantaRechargeActivity :
                 mViewModel.rechargeWarning(true)
             }
 
-            "LeshuaPay" -> {
+            "LeshuaPay", "wechat_h5_pay" -> {
                 mViewModel.rechargeWarning(true)
             }
         }
@@ -275,7 +275,7 @@ class BillTantaRechargeActivity :
             UmUtils.RECHARGECLICK
         )
 
-        if (mPayType == ALIPAY || mPayType == YUN_PAY || mPayType == LE_SHUA_PAY) {
+        if (mPayType == ALIPAY || mPayType == YUN_PAY || mPayType == LE_SHUA_PAY || mPayType == WECHAT_H5_PAY) {
             mViewModel.createRechargeOrder(mPayType, itemRecharge!!.id, -1)
         } else if (mPayType == WECHAT) {
             mViewModel.getWechatPayType(1)
@@ -382,7 +382,7 @@ class BillTantaRechargeActivity :
                 PayUtils.aliPay(this, it.payinfo)
             } else if (mPayType == PayDialog.YUN_PAY) {
                 ToastUtils.showShort(it.payinfo)
-            } else if (mPayType == PayDialog.LE_SHUA_PAY) {
+            } else if (mPayType == PayDialog.LE_SHUA_PAY || mPayType == PayDialog.WECHAT_H5_PAY) {
                 if (it.payUrl.isNotEmpty()) {
                     val intent = Intent()
                     intent.action = Intent.ACTION_VIEW

@@ -32,6 +32,7 @@ import com.mshy.VInterestSpeed.common.ui.BaseActivity
 import com.mshy.VInterestSpeed.common.ui.dialog.MessageDialog
 import com.mshy.VInterestSpeed.common.ui.vm.LoginViewModel
 import com.mshy.VInterestSpeed.common.utils.DataCleanUtil
+import com.mshy.VInterestSpeed.common.utils.PermissionUtils
 import com.mshy.VInterestSpeed.common.utils.UserManager
 import com.mshy.VInterestSpeed.common.utils.UserSpUtils
 import com.mshy.VInterestSpeed.common.utils.login.PhoneAuthLogin
@@ -67,7 +68,7 @@ class SettingVquActivity : BaseActivity<SettingTantaActivitySettingBinding, Sett
     var isBind: Boolean = false
     override fun SettingTantaActivitySettingBinding.initView() {
         var settingTitle = getString(R.string.setting_setting)
-        if(NetBaseUrlConstant.MAIN_URL.contains("120.78.160.71:8071")){
+        if (NetBaseUrlConstant.MAIN_URL.contains("120.78.160.71:8071")) {
             settingTitle += "debug"
         }
         mBinding.includeTitle.toolbar.initClose(settingTitle) {
@@ -172,17 +173,19 @@ class SettingVquActivity : BaseActivity<SettingTantaActivitySettingBinding, Sett
                         toast("正在" + typeAudio + "通话中，请稍后再试...")
                         return@setNbOnItemClickListener
                     }
-                    PermissionX.init(this@SettingVquActivity).permissions(
-                        Manifest.permission.CAMERA
-                    ).request { allGranted, grantedList, deniedList ->
-                        if (allGranted) {
-                            ARouter.getInstance()
-                                .build(RouteUrl.Agora2.AgoraTantaBeautySettingActivity)
-                                .navigation()
-                        } else {
-                            toast("缺少摄像头权限")
-                        }
-                    }
+                    PermissionUtils.cameraPermission(
+                        this@SettingVquActivity,
+                        "设置美颜需要申请文件储存和媒体权限",
+                        "设置美颜需要申请文件储存和媒体权限",
+                        requestCallback = { allGranted, grantedList, deniedList ->
+                            if (allGranted) {
+                                ARouter.getInstance()
+                                    .build(RouteUrl.Agora2.AgoraTantaBeautySettingActivity)
+                                    .navigation()
+                            } else {
+                                toast("美颜功能缺少摄像头相关权限")
+                            }
+                        })
                 }
 
                 getString(R.string.setting_msg) -> {//消息通知
@@ -247,6 +250,7 @@ class SettingVquActivity : BaseActivity<SettingTantaActivitySettingBinding, Sett
                             .navigation()
                     }
                 }
+
                 "退出登录" -> {
                     showLogOutDialog()
                 }

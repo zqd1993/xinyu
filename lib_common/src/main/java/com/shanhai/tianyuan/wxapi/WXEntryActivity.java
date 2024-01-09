@@ -1,4 +1,4 @@
-package com.shanhai.tianyuan;
+package com.shanhai.tianyuan.wxapi;
 
 
 import android.app.ActivityManager;

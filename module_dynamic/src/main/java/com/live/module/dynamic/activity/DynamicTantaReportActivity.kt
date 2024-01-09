@@ -17,6 +17,7 @@ import com.live.module.dynamic.R
 import com.live.module.dynamic.adapter.DynamicTantaAddImgAdapter
 import com.live.module.dynamic.adapter.DynamicTantaReportAdapter
 import com.live.module.dynamic.databinding.DynamicTantaActivityReportBinding
+import com.live.vquonline.base.utils.toast
 import com.mshy.VInterestSpeed.common.constant.RouteKey
 import com.mshy.VInterestSpeed.common.constant.RouteUrl
 import com.mshy.VInterestSpeed.common.ext.*
@@ -34,6 +35,7 @@ import com.luck.picture.lib.interfaces.OnCallbackIndexListener
 import com.luck.picture.lib.utils.SandboxTransformUtils
 import com.mshy.VInterestSpeed.common.ui.dialog.LoadingDialog
 import com.mshy.VInterestSpeed.common.utils.GlideEngine
+import com.mshy.VInterestSpeed.common.utils.PermissionUtils
 import com.mshy.VInterestSpeed.uikit.api.NimUIKit
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -154,30 +156,40 @@ class DynamicTantaReportActivity :
     private val onAddPicClickListener =
         object : DynamicTantaAddImgAdapter.OnAddPicClickListener {
             override fun onAddPicClick() {
-                PictureSelector.create(this@DynamicTantaReportActivity)
-                    .openGallery(SelectMimeType.ofImage())
-                    .setImageEngine(GlideEngine.createGlideEngine())
-                    .isDisplayCamera(!UserManager.isVideo)
-                    .setSelectionMode(SelectModeConfig.MULTIPLE)
-                    .setSandboxFileEngine(object : SandboxFileEngine {
-                        override fun onStartSandboxFileTransform(
-                            context: Context?,
-                            isOriginalImage: Boolean,
-                            index: Int,
-                            media: LocalMedia?,
-                            listener: OnCallbackIndexListener<LocalMedia>?
-                        ) {
-                            SandboxTransformUtils.copyPathToSandbox(
-                                context,
-                                media?.realPath,
-                                media?.mimeType
-                            )
+                PermissionUtils.storageUpdatePermission(
+                    this@DynamicTantaReportActivity,
+                    "上传图片需要访问你本地图片文件，需要申请文件储存和媒体权限",
+                    "上传图片需要访问你本地图片文件，需要申请文件储存和媒体权限",
+                    requestCallback = { allGranted, grantedList, deniedList ->
+                        if (allGranted) {
+                            PictureSelector.create(this@DynamicTantaReportActivity)
+                                .openGallery(SelectMimeType.ofImage())
+                                .setImageEngine(GlideEngine.createGlideEngine())
+                                .isDisplayCamera(!UserManager.isVideo)
+                                .setSelectionMode(SelectModeConfig.MULTIPLE)
+                                .setSandboxFileEngine(object : SandboxFileEngine {
+                                    override fun onStartSandboxFileTransform(
+                                        context: Context?,
+                                        isOriginalImage: Boolean,
+                                        index: Int,
+                                        media: LocalMedia?,
+                                        listener: OnCallbackIndexListener<LocalMedia>?
+                                    ) {
+                                        SandboxTransformUtils.copyPathToSandbox(
+                                            context,
+                                            media?.realPath,
+                                            media?.mimeType
+                                        )
+                                    }
+                                })
+                                .isPageStrategy(true, 20, true)
+                                .setMaxSelectNum(9)
+                                .setSelectedData(imgAdapter?.getData())
+                                .forResult(PictureConfig.CHOOSE_REQUEST)
+                        } else {
+                            toast("缺少摄像头权限")
                         }
                     })
-                    .isPageStrategy(true, 20, true)
-                    .setMaxSelectNum(9)
-                    .setSelectedData(imgAdapter?.getData())
-                    .forResult(PictureConfig.CHOOSE_REQUEST)
             }
         }
 

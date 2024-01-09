@@ -211,8 +211,8 @@ class CommonApplication : ApplicationLifecycle, ViewModelStoreOwner {
             "WvtHEdQDDmfJ4wWh"
         )
         ShareManager.getInstance().configWeixin(
-            "wx61b5a6be779642f4",
-            "ca310c154e431eebdfc5a0ca1c1ca9eb"
+            "wx452e1318fe9fcdb5",
+            "50254dadae2cba83a17ee75f565b4b8e"
         )
         return "Umeng"
     }

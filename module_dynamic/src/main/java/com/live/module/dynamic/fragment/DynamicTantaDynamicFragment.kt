@@ -15,6 +15,7 @@ import com.live.module.dynamic.vm.DynamicPublishViewModel
 import com.live.vquonline.base.ktx.gone
 import com.live.vquonline.base.ktx.visible
 import com.live.vquonline.base.utils.EventBusRegister
+import com.live.vquonline.base.utils.toast
 import com.mshy.VInterestSpeed.common.constant.RouteUrl
 import com.mshy.VInterestSpeed.common.event.DynamicLikeEvent
 import com.mshy.VInterestSpeed.common.ui.BaseFragment
@@ -37,6 +38,7 @@ import com.mshy.VInterestSpeed.common.ui.view.magicindicator.buildins.commonnavi
 import com.mshy.VInterestSpeed.common.ui.view.magicindicator.buildins.commonnavigator.abs.IPagerTitleView
 import com.mshy.VInterestSpeed.common.ui.view.magicindicator.buildins.commonnavigator.titles.SimplePagerTitleView
 import com.mshy.VInterestSpeed.common.utils.GlideEngine
+import com.mshy.VInterestSpeed.common.utils.PermissionUtils
 import java.io.File
 
 
@@ -76,7 +78,17 @@ class DynamicTantaDynamicFragment :
             } else {
 //                var dialog = DynamicVquPublishDialog()
 //                dialog.show(parentFragmentManager, "Dynamic")
-                publishDynamic()
+                PermissionUtils.storagePermission(
+                    this@DynamicTantaDynamicFragment,
+                    "此功能需要访问你本地图片文件，需要申请文件储存和媒体权限。",
+                    "此功能需要访问你本地图片文件，需要申请文件储存和媒体权限。",
+                    requestCallback = { allGranted, grantedList, deniedList ->
+                        if (allGranted) {
+                            publishDynamic()
+                        } else {
+                            toast("用户拒绝授权")
+                        }
+                    })
             }
 
         }

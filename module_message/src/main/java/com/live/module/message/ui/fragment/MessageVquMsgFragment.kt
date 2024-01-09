@@ -72,6 +72,7 @@ import java.io.File
 import java.net.MalformedURLException
 import java.net.URL
 import com.mshy.VInterestSpeed.common.BuildConfig
+import com.mshy.VInterestSpeed.common.utils.PermissionUtils
 
 
 /**
@@ -478,71 +479,81 @@ class MessageVquMsgFragment : MessageFragment() {
     }
 
     override fun selectImage() {
-        PictureSelector.create(this)//进页面就进行选择
-            .openGallery(SelectMimeType.ofImage())
-            .isDisplayCamera(!UserManager.isVideo)
-            .setMaxSelectNum(1)
-            .setSandboxFileEngine(object : SandboxFileEngine {
-                override fun onStartSandboxFileTransform(
-                    context: Context?,
-                    isOriginalImage: Boolean,
-                    index: Int,
-                    media: LocalMedia?,
-                    listener: OnCallbackIndexListener<LocalMedia>?,
-                ) {
-                    SandboxTransformUtils.copyPathToSandbox(
-                        context,
-                        media?.realPath,
-                        media?.mimeType
-                    )
-                }
-            })
-            .setCompressEngine { _, list, listener ->
-                if (!list.isNullOrEmpty()) {
-                    val localMedia = list[0]
-                    Luban.with(BaseApplication.application).load(localMedia.realPath)
-                        .ignoreBy(200)
-                        .setCompressListener(object : OnCompressListener {
-                            override fun onStart() {
-                            }
-
-                            override fun onSuccess(index: Int, compressFile: File?) {
-                                localMedia.compressPath = compressFile?.absolutePath
-                                listener?.onCall(list)
-                            }
-
-                            override fun onError(index: Int, e: Throwable?) {
-                                e?.printStackTrace()
-                                toast("图片压缩失败")
-                            }
-                        }).launch()
-                }
-            }
-            .setImageEngine(GlideEngine.createGlideEngine())
-            .forResult(object : OnResultCallbackListener<LocalMedia?> {
-                override fun onResult(result: ArrayList<LocalMedia?>?) {
-                    if (!result.isNullOrEmpty()) {
-                        val path = result[0]
-                        val file = if (!path?.compressPath.isNullOrEmpty()) {
-                            File(path!!.compressPath)
-                        } else {
-                            File(path!!.realPath)
-                        }
-
-                        if (sessionType == SessionTypeEnum.P2P) {
-                            sendMessage(
-                                MessageBuilder.createImageMessage(
-                                    sessionId,
-                                    sessionType,
-                                    file,
-                                    file.name
+        PermissionUtils.videoPermission(
+            this,
+            "相册，拍照功能需要申请文件权限和媒体权限",
+            "相册，拍照功能需要申请文件权限和媒体权限",
+            requestCallback = { allGranted, grantedList, deniedList ->
+                if (allGranted) {
+                    PictureSelector.create(this)//进页面就进行选择
+                        .openGallery(SelectMimeType.ofImage())
+                        .isDisplayCamera(!UserManager.isVideo)
+                        .setMaxSelectNum(1)
+                        .setSandboxFileEngine(object : SandboxFileEngine {
+                            override fun onStartSandboxFileTransform(
+                                context: Context?,
+                                isOriginalImage: Boolean,
+                                index: Int,
+                                media: LocalMedia?,
+                                listener: OnCallbackIndexListener<LocalMedia>?,
+                            ) {
+                                SandboxTransformUtils.copyPathToSandbox(
+                                    context,
+                                    media?.realPath,
+                                    media?.mimeType
                                 )
-                            )
-                        }
-                    }
-                }
+                            }
+                        })
+                        .setCompressEngine { _, list, listener ->
+                            if (!list.isNullOrEmpty()) {
+                                val localMedia = list[0]
+                                Luban.with(BaseApplication.application).load(localMedia.realPath)
+                                    .ignoreBy(200)
+                                    .setCompressListener(object : OnCompressListener {
+                                        override fun onStart() {
+                                        }
 
-                override fun onCancel() {
+                                        override fun onSuccess(index: Int, compressFile: File?) {
+                                            localMedia.compressPath = compressFile?.absolutePath
+                                            listener?.onCall(list)
+                                        }
+
+                                        override fun onError(index: Int, e: Throwable?) {
+                                            e?.printStackTrace()
+                                            toast("图片压缩失败")
+                                        }
+                                    }).launch()
+                            }
+                        }
+                        .setImageEngine(GlideEngine.createGlideEngine())
+                        .forResult(object : OnResultCallbackListener<LocalMedia?> {
+                            override fun onResult(result: ArrayList<LocalMedia?>?) {
+                                if (!result.isNullOrEmpty()) {
+                                    val path = result[0]
+                                    val file = if (!path?.compressPath.isNullOrEmpty()) {
+                                        File(path!!.compressPath)
+                                    } else {
+                                        File(path!!.realPath)
+                                    }
+
+                                    if (sessionType == SessionTypeEnum.P2P) {
+                                        sendMessage(
+                                            MessageBuilder.createImageMessage(
+                                                sessionId,
+                                                sessionType,
+                                                file,
+                                                file.name
+                                            )
+                                        )
+                                    }
+                                }
+                            }
+
+                            override fun onCancel() {
+                            }
+                        })
+                } else {
+                    toast("缺少摄像头权限")
                 }
             })
     }

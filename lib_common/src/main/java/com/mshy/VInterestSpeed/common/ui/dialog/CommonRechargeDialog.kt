@@ -210,6 +210,10 @@ class CommonRechargeDialog :
                 "LeshuaPay" -> {
                     mViewModel.recharge(mPayType, item.id.toString())
                 }
+
+                "wechat_h5_pay" -> {
+                    mViewModel.recharge(mPayType, item.id.toString())
+                }
             }
 
 //            val vquPayDialog = PayDialog()
@@ -271,7 +275,7 @@ class CommonRechargeDialog :
         mViewModel.payData.observe(this) {
             if (mPayType == PayDialog.WECHAT) {
                 PayUtils.wechatPay(requireActivity(), it)
-            } else if (mPayType == PayDialog.LE_SHUA_PAY) {
+            } else if (mPayType == PayDialog.LE_SHUA_PAY || mPayType == PayDialog.WECHAT_H5_PAY) {
                 if (it.payUrl.isNotEmpty()) {
                     val intent = Intent()
                     intent.action = Intent.ACTION_VIEW

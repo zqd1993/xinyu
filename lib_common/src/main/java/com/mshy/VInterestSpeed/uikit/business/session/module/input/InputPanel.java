@@ -34,6 +34,8 @@ import com.mshy.VInterestSpeed.common.bean.UserInCallEvent;
 import com.mshy.VInterestSpeed.common.constant.RouteUrl;
 import com.mshy.VInterestSpeed.common.constant.SpKey;
 import com.mshy.VInterestSpeed.common.helper.ARouterHelperKt;
+import com.mshy.VInterestSpeed.common.ui.dialog.MessageDialog;
+import com.mshy.VInterestSpeed.common.utils.PermissionUtils;
 import com.mshy.VInterestSpeed.common.utils.UserManager;
 import com.mshy.VInterestSpeed.uikit.api.NimUIKit;
 import com.mshy.VInterestSpeed.uikit.api.UIKitOptions;
@@ -64,6 +66,7 @@ import com.netease.nimlib.sdk.msg.model.IMMessage;
 import com.permissionx.guolindev.PermissionX;
 
 import java.io.File;
+import java.security.Permission;
 import java.util.List;
 
 /**
@@ -396,9 +399,39 @@ public class InputPanel implements IEmoticonSelectedListener, IAudioRecordCallba
                         ToastHelper.showToast(mContext, "正在" + typeAudio + "通话中，请稍后再试...");
                         return;
                     }
-                    //权限允许
+                    String[] voicePermission = new String[]{Manifest.permission.RECORD_AUDIO, Manifest.permission.MODIFY_AUDIO_SETTINGS};
+                    for (String permission : voicePermission) {
+                        if (!PermissionX.isGranted((FragmentActivity) mContext, permission)) {
+                            MessageDialog dialog = new MessageDialog();
+                            dialog.setTitle("权限申请通知");
+                            dialog.setContent("发送语音需要获取录音权限");
+                            dialog.setCancelAble(false);
+                            dialog.setOnButtonClickListener(new MessageDialog.OnButtonClickListener() {
+                                @Override
+                                public boolean onLeftClick() {
+                                    dialog.dismiss();
+                                    return false;
+                                }
+
+                                @Override
+                                public boolean onRightClick() {
+                                    //权限允许
+                                    PermissionX.init((FragmentActivity) mContext)
+                                            .permissions(permission)
+                                            .request((allGranted, grantedList, deniedList) -> {
+                                                if (allGranted) {
+                                                    toggleRecordAudioLayout();
+                                                }
+                                            });
+                                    return false;
+                                }
+                            });
+                            dialog.show(((FragmentActivity) mContext).getSupportFragmentManager(), "");
+                            return;
+                        }
+                    }
                     PermissionX.init((FragmentActivity) mContext)
-                            .permissions(new String[]{Manifest.permission.RECORD_AUDIO, Manifest.permission.MODIFY_AUDIO_SETTINGS})
+                            .permissions(voicePermission)
                             .request((allGranted, grantedList, deniedList) -> {
                                 if (allGranted) {
                                     toggleRecordAudioLayout();
