@@ -175,15 +175,15 @@ class SettingVquActivity : BaseActivity<SettingTantaActivitySettingBinding, Sett
                     }
                     PermissionUtils.cameraPermission(
                         this@SettingVquActivity,
-                        "设置美颜需要申请文件储存和媒体权限",
-                        "设置美颜需要申请文件储存和媒体权限",
+                        "需要开启储存及相机权限以便使用相机正常使用美颜设置功能。",
+                        "需要开启储存及相机权限以便使用相机正常使用美颜设置功能。",
                         requestCallback = { allGranted, grantedList, deniedList ->
                             if (allGranted) {
                                 ARouter.getInstance()
                                     .build(RouteUrl.Agora2.AgoraTantaBeautySettingActivity)
                                     .navigation()
                             } else {
-                                toast("美颜功能缺少摄像头相关权限")
+                                toast("美颜功能缺少相关权限")
                             }
                         })
                 }

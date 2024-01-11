@@ -158,8 +158,8 @@ class DynamicTantaReportActivity :
             override fun onAddPicClick() {
                 PermissionUtils.storageUpdatePermission(
                     this@DynamicTantaReportActivity,
-                    "上传图片需要访问你本地图片文件，需要申请文件储存和媒体权限",
-                    "上传图片需要访问你本地图片文件，需要申请文件储存和媒体权限",
+                    "需要开启储存权限以便使用聊天、动态、投诉、相册、等功能中图片、视频的选择和保存功能。",
+                    "需要开启储存权限以便使用聊天、动态、投诉、相册、等功能中图片、视频的选择和保存功能。",
                     requestCallback = { allGranted, grantedList, deniedList ->
                         if (allGranted) {
                             PictureSelector.create(this@DynamicTantaReportActivity)

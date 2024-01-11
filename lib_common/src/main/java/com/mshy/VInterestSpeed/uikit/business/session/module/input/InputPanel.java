@@ -404,7 +404,7 @@ public class InputPanel implements IEmoticonSelectedListener, IAudioRecordCallba
                         if (!PermissionX.isGranted((FragmentActivity) mContext, permission)) {
                             MessageDialog dialog = new MessageDialog();
                             dialog.setTitle("权限申请通知");
-                            dialog.setContent("发送语音需要获取录音权限");
+                            dialog.setContent("要使用麦克风录音权限，以正常使用上传录音、发送语音、音视频聊天等功能。");
                             dialog.setCancelAble(false);
                             dialog.setOnButtonClickListener(new MessageDialog.OnButtonClickListener() {
                                 @Override

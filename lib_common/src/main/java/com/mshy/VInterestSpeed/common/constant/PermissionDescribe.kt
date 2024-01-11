@@ -8,6 +8,6 @@ package com.mshy.VInterestSpeed.common.constant
  *
  */
 object PermissionDescribe {
-    val vquVideoPermissionTxt = "使用麦克风、摄像头等权限用于帮助您完成接通视频通话时需要的相关功能权限"
-    val vquVoicePermissionTxt = "使用麦克风权限用于帮助您完成接通语音通话时需要的相关功能权限"
+    val vquVideoPermissionTxt = "需要开启相机和录音权限、以正常的使用语音、视频、拍照上传、美颜设置等功能。"
+    val vquVoicePermissionTxt = "要使用麦克风录音权限，以正常使用上传录音、发送语音、音视频聊天等功能。"
 }
