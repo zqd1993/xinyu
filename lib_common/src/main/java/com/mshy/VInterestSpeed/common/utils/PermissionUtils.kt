@@ -31,7 +31,8 @@ object PermissionUtils {
     }
 
     private val storagePermission = arrayListOf(
-        Manifest.permission.WRITE_EXTERNAL_STORAGE
+        Manifest.permission.WRITE_EXTERNAL_STORAGE,
+        Manifest.permission.READ_EXTERNAL_STORAGE,
     )
 
     private val cameraPermission = arrayListOf(
@@ -42,9 +43,6 @@ object PermissionUtils {
     private val videoPermission = arrayListOf(
         Manifest.permission.CAMERA,
         Manifest.permission.RECORD_AUDIO,
-        Manifest.permission.WRITE_EXTERNAL_STORAGE,
-        Manifest.permission.READ_EXTERNAL_STORAGE,
-
     )
 
     private val voicePermission = arrayListOf(
