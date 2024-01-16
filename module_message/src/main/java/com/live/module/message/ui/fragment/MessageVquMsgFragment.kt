@@ -479,7 +479,7 @@ class MessageVquMsgFragment : MessageFragment() {
     }
 
     override fun selectImage() {
-        PermissionUtils.videoPermission(
+        PermissionUtils.storagePermission(
             this,
             "需要开启储存权限以便使用聊天、动态、投诉、相册、等功能中图片、视频的选择和保存功能。",
             "需要开启储存权限以便使用聊天、动态、投诉、相册、等功能中图片、视频的选择和保存功能。",
