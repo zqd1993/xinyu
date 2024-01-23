@@ -9,6 +9,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'com.alibaba.arouter'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'dagger.hilt.android.plugin'
+apply plugin: 'com.huawei.agconnect'//华为
 
 android {
     compileSdkVersion ProjectBuildConfig.compileSdkVersion
@@ -162,7 +163,7 @@ dependencies {
         implementation project(path: ':lib_common')
     }
     implementation DependencyConfig.JetPack.HiltCore
-
+    implementation 'com.huawei.hms:push:6.3.0.302'//华为
     kapt DependencyConfig.GitHub.AutoServiceAnnotations
     kapt DependencyConfig.JetPack.HiltApt
     kapt DependencyConfig.JetPack.HiltAndroidx

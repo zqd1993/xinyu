@@ -13,7 +13,6 @@ import com.apkfuns.logutils.LogUtils
 import com.google.auto.service.AutoService
 import com.google.gson.Gson
 import com.heytap.msp.push.HeytapPushManager
-import com.huawei.hms.support.common.ActivityMgr
 //import com.huawei.hms.support.common.ActivityMgr/华为
 import com.live.module.message.constant.NIMVquConfig
 import com.live.module.message.mixpush.DemoMixPushMessageHandler
@@ -589,8 +588,6 @@ class MessageVquApplication : NiMUIKitVquApplication() {
 
 
     override fun vquPushInit() {
-        //华为推送初始化
-        ActivityMgr.INST.init(BaseApplication.application)//华为
         //oppo推送初始化
         HeytapPushManager.init(BaseApplication.application, true)
     }
@@ -614,7 +611,6 @@ class MessageVquApplication : NiMUIKitVquApplication() {
         config.oppoAppKey = NIMVquConfig.OPPO_MIX_APP_KEY
         config.oppoAppSercet = NIMVquConfig.OPPO_MIX_APP_SERCET
         config.oppoCertificateName = NIMVquConfig.OPPO_MIX_PUSH_NAME
-
         return config
     }
 

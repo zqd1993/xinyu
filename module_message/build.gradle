@@ -3,12 +3,10 @@
 //****************************************
 
 apply from: '../base_module.gradle'
-apply plugin: 'com.huawei.agconnect'//华为
 
 android {
     resourcePrefix "message_vqu_"
 }
 dependencies {
-    implementation 'com.huawei.hms:push:6.3.0.302'//华为
     implementation 'commons-codec:commons-codec:1.14'
 }

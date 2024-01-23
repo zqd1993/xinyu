@@ -12,8 +12,8 @@ object NIMVquConfig {
     const val XM_MIX_PUSH_APP_ID = "2882303761520284704"
     const val XM_MIX_PUSH_APP_KEY = "5232028465704"
     //华为
-    const val HW_MIX_PUSH_NAME = "yjsqHuawei"
-    const val HW_MIX_PUSH_APP_ID = "107460895"
+    const val HW_MIX_PUSH_NAME = "a4a5e14c81a713bcec5628988a9814fe"
+    const val HW_MIX_PUSH_APP_ID = "110002749"
     //vivo
     const val VIVO_MIX_PUSH_NAME = "8a1a06721e1ddbcd600d1d81a6b5f6b0"
 

@@ -26,22 +26,22 @@
 		"SG_back":"connect-ws-dra.hispace.dbankcloud.com"
 	},
 	"client":{
-		"cp_id":"30086000635645376",
-		"product_id":"99536292102836219",
-		"client_id":"1045583091105549632",
-		"client_secret":"E9389E37441C5610BE8428B5B63D45535778F9C7E16A4A6940B09C29811EE6F9",
-		"project_id":"99536292102836219",
-		"app_id":"107460895",
-		"api_key":"DAEDAIWKAwYTcMk5qIDffmuiykVO+brMUaXWgVShCZi25jJ/BAXpM/ziJ51zCWwPL5lbZPKSKdtgbH6s2hbd24JJSn0I8+ZWvFUj9g==",
-		"package_name":"com.mshy.VInterestSpeed"
+		"cp_id":"30086000707481152",
+		"product_id":"388421841221914017",
+		"client_id":"1334865162259162816",
+		"client_secret":"48142487D8FE953E8780BCF97BE0C7F674FC52AC3C49BF0C9598331489B43797",
+		"project_id":"388421841221914017",
+		"app_id":"110002749",
+		"api_key":"DAEDAMZ0aply/O6/zlcyVVEgIIopOhPpR0LYaB7VqDWYjrSFLvkhrdEP7V/Yz70LvMlbAUAjWXIBZhO0FAVauJBuc8tB00u2KGv7kg==",
+		"package_name":"com.shanhai.tianyuan"
 	},
 	"oauth_client":{
-		"client_id":"107460895",
+		"client_id":"110002749",
 		"client_type":1
 	},
 	"app_info":{
-		"app_id":"107460895",
-		"package_name":"com.mshy.VInterestSpeed"
+		"app_id":"110002749",
+		"package_name":"com.shanhai.tianyuan"
 	},
 	"service":{
 		"analytics":{
@@ -52,6 +52,10 @@
 			"collector_url_cn":"datacollector-drcn.dt.hicloud.com,datacollector-drcn.dt.dbankcloud.cn",
 			"resource_id":"p1",
 			"channel_id":""
+		},
+		"edukit":{
+			"edu_url":"edukit.cloud.huawei.com.cn",
+			"dh_url":"edukit.cloud.huawei.com.cn"
 		},
 		"search":{
 			"url":"https://search-drcn.cloud.huawei.com"
@@ -75,17 +79,17 @@
 	"configuration_version":"3.0",
 	"appInfos":[
 		{
-			"package_name":"com.mshy.VInterestSpeed",
+			"package_name":"com.shanhai.tianyuan",
 			"client":{
-				"app_id":"107460895"
+				"app_id":"110002749"
 			},
 			"app_info":{
-				"package_name":"com.mshy.VInterestSpeed",
-				"app_id":"107460895"
+				"package_name":"com.shanhai.tianyuan",
+				"app_id":"110002749"
 			},
 			"oauth_client":{
 				"client_type":1,
-				"client_id":"107460895"
+				"client_id":"110002749"
 			}
 		}
 	]
