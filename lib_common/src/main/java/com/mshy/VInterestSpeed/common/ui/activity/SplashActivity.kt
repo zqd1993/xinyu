@@ -201,7 +201,7 @@ class SplashActivity : BaseActivity<CommonActivitySplashBinding, SplashViewModel
                 //获取渠道数据
                 channelCode = appData.getChannel()
                 if (!channelCode.isNullOrEmpty()) {
-                    if ("22" == DeviceManager.getInstance().channel || "30" == DeviceManager.getInstance().channel) {
+                    if ("3400" == DeviceManager.getInstance().channel) {
                         SpUtils.put("channelCode_cover", channelCode ?: "")
                         DeviceManager.getInstance().setChannelName(channelCode)
                     } else {

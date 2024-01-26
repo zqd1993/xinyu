@@ -2,6 +2,7 @@ package com.live.module.home.fragment
 
 import android.content.Context
 import android.content.Intent
+import android.os.Handler
 import android.provider.Settings
 import android.text.SpannableStringBuilder
 import android.text.Spanned
@@ -68,8 +69,9 @@ class HomeNewFragment :
     private var vquPage: Int = 1
     private var vquType: Int = 0
     private val mPayViewModel: CommonPayViewModel by viewModels()
-    private val vquTitles = arrayOf("推荐", "在线")
+    private val vquTitles: ArrayList<String> = ArrayList()
     private val vquFragments: ArrayList<Fragment> = ArrayList()
+    private var vquViewPagerAdapter: CommonVquMainPageAdapter? = null
     override fun HomeVquMainFragmentNewBinding.initView() {
         ImmersionBar.with(this@HomeNewFragment).statusBarView(R.id.view).init()
         initSearch()
@@ -81,12 +83,13 @@ class HomeNewFragment :
                 }
             })
         }
+        vquTitles.add("推荐")
         initMagicIndicator()
         vquFragments.add(HomeNewRecommendFragment())
-        vquFragments.add(HomeOnLineFragment())
+//        vquFragments.add(HomeOnLineFragment())
 //        vquFragments.add(HomeVquRecommendFragment.newInstance(1))
 
-        var vquViewPagerAdapter = CommonVquMainPageAdapter(
+        vquViewPagerAdapter = CommonVquMainPageAdapter(
             childFragmentManager,
             FragmentPagerAdapter.BEHAVIOR_SET_USER_VISIBLE_HINT
         )
@@ -356,6 +359,18 @@ class HomeNewFragment :
         }
         mViewModel.vquOnTvBeanList.observe(this) {//首页电视墙
             vquInitTvList(it)
+        }
+
+        mViewModel.userInfoData.observe(this) {
+            if (it != null) {
+                if (it.isShowInvite == 1 && !vquTitles.contains("在线")) {
+                    vquTitles.add("在线")
+                    initMagicIndicator()
+                    var vquFragment: ArrayList<Fragment> = ArrayList()
+                    vquFragment.add(HomeOnLineFragment())
+                    vquViewPagerAdapter?.setData(vquFragment)
+                }
+            }
         }
     }
 

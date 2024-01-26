@@ -16,6 +16,7 @@ import com.mshy.VInterestSpeed.common.utils.UserManager
 import com.mshy.VInterestSpeed.common.utils.UserSpUtils
 import com.live.vquonline.view.main.bean.HomeVquOnTvBean
 import com.mshy.VInterestSpeed.common.bean.CommonVquAdBean
+import com.mshy.VInterestSpeed.common.bean.VquUserHomeBean
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.*
@@ -58,6 +59,8 @@ class HomeVquFragmentViewModel @Inject constructor() :
     val vquNoDiamond = MutableLiveData<Boolean>()
     val vquNewRecommendData = MutableLiveData<HomeNewDataBean>()
     val vquAccostStrBean = MutableLiveData<HomeAccostBean>()
+
+    val userInfoData = MutableLiveData<VquUserHomeBean>()
     /**
      * 获取数据
      */
@@ -232,6 +235,7 @@ class HomeVquFragmentViewModel @Inject constructor() :
                     UserManager.userInfo?.isRpAuth = it?.data?.userinfo?.isRpAuth
                     UserManager.webUrl = it?.data?.webUrl
                     UserSpUtils.putUserBean(it?.data?.userinfo)
+                    userInfoData.postValue(it.data!!)
                 }
         }
     }
