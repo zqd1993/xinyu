@@ -139,6 +139,10 @@ class VipTantaCenterActivity : BaseActivity<VipTantaActivityCenterBinding, VipTa
                     PayUtils.aliPay(this, it.payinfo)
                 }
 
+                PayDialog.TAI_SHAN_PAY -> {
+                    PayUtils.aliPay(this, it.payUrl)
+                }
+
                 PayDialog.WECHAT_APPLET -> {
                     jumpToWechatApplet(it)
                 }
@@ -232,7 +236,7 @@ class VipTantaCenterActivity : BaseActivity<VipTantaActivityCenterBinding, VipTa
                 vipPayInfoBean = it
                 payCode = it.pay_type
                 when (it.pay_type) {
-                    PayDialog.WECHAT, PayDialog.ALIPAY, PayDialog.LE_SHUA_PAY, PayDialog.WECHAT_H5_PAY -> {
+                    PayDialog.WECHAT, PayDialog.ALIPAY, PayDialog.LE_SHUA_PAY, PayDialog.WECHAT_H5_PAY, PayDialog.TAI_SHAN_PAY -> {
                         mViewModel.createRechargeOrder(
                             it.vip_id, it.pay_type,
                             it.type, it.vip_goods_id

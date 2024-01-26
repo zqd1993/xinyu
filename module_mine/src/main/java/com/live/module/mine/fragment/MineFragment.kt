@@ -832,35 +832,35 @@ class MineFragment : BaseLazyFrameFragment<MineFragmentMineBinding, MineViewMode
 
         setCustomerInfo(it)
         if (it.isShowInvite == 1 && mVquListMenuData[0].type != 5) {
-//            mVquListMenuData.add(//暂时去掉
-//                0,
-//                CommonVquMenuBean(
-//                    R.mipmap.ic_mine_list_menu_invite,
-//                    getString(R.string.mine_vqu_menu_invite),
-//                    type = 5,
-//                    desc = "邀请好友，最多奖励8888金币",
-//                    descIcon = R.mipmap.ic_mine_list_menu_desc_red_pack
-//                )
-//            )
-//            mVquListMenuAdapter.notifyDataSetChanged()
+            mVquListMenuData.add(//暂时去掉
+                0,
+                CommonVquMenuBean(
+                    R.mipmap.ic_mine_list_menu_invite,
+                    getString(R.string.mine_vqu_menu_invite),
+                    type = 5,
+                    desc = "邀请好友，最多奖励8888金币",
+                    descIcon = R.mipmap.ic_mine_list_menu_desc_red_pack
+                )
+            )
+            mVquListMenuAdapter.notifyDataSetChanged()
         }
         if (it.isShowMyNetwork == 1) {
-//            var hasContacts = false
-//            for (bean in mVquListMenuData) {
-//                if (bean.type == 9) {
-//                    hasContacts = true
-//                }
-//            }
-//            if (!hasContacts) {
-//                mVquListMenuData.add(
-//                    CommonVquMenuBean(
-//                        R.mipmap.ic_mine_list_menu_contacts,
-//                        getString(R.string.mine_vqu_menu_contacts),
-//                        type = 9
-//                    )
-//                )
-//                mVquListMenuAdapter.notifyDataSetChanged()
-//            }
+            var hasContacts = false
+            for (bean in mVquListMenuData) {
+                if (bean.type == 9) {
+                    hasContacts = true
+                }
+            }
+            if (!hasContacts) {
+                mVquListMenuData.add(
+                    CommonVquMenuBean(
+                        R.mipmap.ic_mine_list_menu_contacts,
+                        getString(R.string.mine_vqu_menu_contacts),
+                        type = 9
+                    )
+                )
+                mVquListMenuAdapter.notifyDataSetChanged()
+            }
         } else {
             val iterator = mVquListMenuData.iterator()
             while (iterator.hasNext()){
