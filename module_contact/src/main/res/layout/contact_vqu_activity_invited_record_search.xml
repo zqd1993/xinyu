@@ -25,7 +25,7 @@
 <!--            android:background="@drawable/bg_edit"-->
 <!--            android:drawableLeft="@mipmap/ic_common_vqu_search"-->
 <!--            android:drawablePadding="4dp"-->
-<!--            android:hint="搜索甜缘号或昵称"-->
+<!--            android:hint="搜索甜缘交友号或昵称"-->
 <!--            android:imeActionLabel="搜索"-->
 <!--            android:imeOptions="actionSearch"-->
 <!--            android:paddingLeft="12dp"-->

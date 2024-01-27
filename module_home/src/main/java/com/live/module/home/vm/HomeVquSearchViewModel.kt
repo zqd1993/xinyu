@@ -28,7 +28,7 @@ class HomeVquSearchViewModel @Inject constructor(private val repo: HomeVquSearch
 
     fun vquGetUserInfoByUserCode(keyword: String?) {
         if (keyword.isNullOrEmpty()) {
-            toast("请输入甜缘号")
+            toast("请输入甜缘交友号")
             return
         }
 

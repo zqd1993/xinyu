@@ -12,8 +12,8 @@ object ProjectBuildConfig {
     const val applicationId = "com.shanhai.tianyuan"
     const val minSdkVersion = 21
     const val targetSdkVersion = 30
-    const val versionCode = 12
-    const val versionName = "1.1.1"
+    const val versionCode = 13
+    const val versionName = "1.1.2"
     const val isAppMode = false
 
     /**
