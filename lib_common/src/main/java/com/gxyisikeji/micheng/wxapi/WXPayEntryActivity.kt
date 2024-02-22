@@ -1,4 +1,4 @@
-package com.shanhai.tianyuan.wxapi
+package com.gxyisikeji.micheng.wxapi
 
 import android.app.Activity
 import android.content.Intent

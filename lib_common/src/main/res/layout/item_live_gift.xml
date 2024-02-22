@@ -68,7 +68,7 @@
             android:layout_height="wrap_content"
             android:paddingLeft="3dp"
             android:paddingRight="3dp"
-            android:textColor="@color/color_B4A3FD"
+            android:textColor="@color/color_FF8859"
             android:textSize="9sp"
             tools:text="x1" />
 

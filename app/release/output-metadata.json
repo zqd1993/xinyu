@@ -4,15 +4,15 @@
     "type": "APK",
     "kind": "Directory"
   },
-  "applicationId": "com.shanhai.tianyuan",
+  "applicationId": "com.gxyisikeji.micheng",
   "variantName": "release",
   "elements": [
     {
       "type": "SINGLE",
       "filters": [],
-      "versionCode": 5,
-      "versionName": "1.0.4",
-      "outputFile": "com.shanhai.tianyuan_5(1.0.4)_release.apk"
+      "versionCode": 1,
+      "versionName": "1.0.0",
+      "outputFile": "com.gxyisikeji.micheng_1(1.0.0)_release.apk"
     }
   ]
 }

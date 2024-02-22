@@ -137,7 +137,7 @@ class ContactNewInvitedRecordSearchActivity :
             val keyword = mBinding.setContactVquInvitedRecordSearchKeyword.text.toString()
 
             if (keyword.isEmpty()) {
-                toast("请输入用户甜缘号或昵称")
+                toast("请输入用户蜜橙号或昵称")
                 return@setOnClickListener
             }
 
@@ -157,7 +157,7 @@ class ContactNewInvitedRecordSearchActivity :
                 val keyword = mBinding.setContactVquInvitedRecordSearchKeyword.text.toString()
 
                 if (keyword.isEmpty()) {
-                    toast("请输入用户甜缘号或昵称")
+                    toast("请输入用户蜜橙号或昵称")
                     return@setOnEditorActionListener false
                 }
 

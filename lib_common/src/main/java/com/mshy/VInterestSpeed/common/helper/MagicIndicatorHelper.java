@@ -26,12 +26,12 @@ public class MagicIndicatorHelper {
         simplePagerTitleView.setTextSize(21);
         simplePagerTitleView.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));//加粗
         simplePagerTitleView.setNormalColor(context.getResources().getColor(R.color.color_999999));
-        simplePagerTitleView.setSelectedColor(context.getResources().getColor(R.color.color_B4A3FD));
+        simplePagerTitleView.setSelectedColor(context.getResources().getColor(R.color.black));
         return simplePagerTitleView;
     }
 
     public static IPagerIndicator getDefaultIndicator(Context context) {
-        return getDefaultIndicator(context, R.color.color_B4A3FD);
+        return getDefaultIndicator(context, R.color.color_FF8859);
     }
 
     public static IPagerIndicator getDefaultIndicator(Context context, int color) {

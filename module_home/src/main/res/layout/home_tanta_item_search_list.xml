@@ -116,9 +116,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:stv_endColor="@color/color_7C69FE"
-        app:stv_layoutRadius="15dp"
-        app:stv_startColor="@color/color_BFB6FF" />
+        app:stv_endColor="@color/color_FFB058"
+        app:stv_layoutRadius="10dp"
+        app:stv_startColor="@color/color_FF7459" />
 
     <TextView
         android:id="@+id/stv_relation_vqu_item_relation_list_like"

@@ -41,7 +41,8 @@
             android:text="@string/common_vqu_teenmode_close"
             android:textColor="@color/white"
             app:stv_layoutRadius="12dp"
-            app:stv_solidColor="@color/color_FF7AC2" />
+            app:stv_startColor="@color/color_FF7459"
+            app:stv_endColor="@color/color_FFB058"/>
 
         <TextView
             android:id="@+id/tv_pwd"

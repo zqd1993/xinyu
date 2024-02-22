@@ -66,11 +66,11 @@
                     android:layout_toRightOf="@+id/gift_shell_number"
                     android:gravity="center"
                     android:text="充值"
-                    android:textColor="@color/color_B4A3FD"
+                    android:textColor="@color/color_FF8859"
                     android:textSize="14sp"
                     android:textStyle="bold"
                     app:stv_layoutRadius="8dp"
-                    app:stv_strokeColor="@color/color_B4A3FD"
+                    app:stv_strokeColor="@color/color_FF8859"
                     app:stv_strokeWidth="1dp" />
 
             </RelativeLayout>
@@ -97,7 +97,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="悄悄送礼"
-                    android:textColor="@color/color_B4A3FD"
+                    android:textColor="@color/color_FF8859"
                     android:textSize="14sp" />
             </LinearLayout>
 
@@ -121,8 +121,9 @@
                     android:text="赠送"
                     android:textColor="#fff"
                     android:textSize="14sp"
-                    app:stv_layoutRadius="24dp"
-                    app:stv_solidColor="@color/color_B4A3FD"/>
+                    app:stv_layoutRadius="10dp"
+                    app:stv_startColor="@color/color_FF7459"
+                    app:stv_endColor="@color/color_FFB058"/>
 
                 <LinearLayout
                     android:id="@+id/ll_give_gift"

@@ -24,16 +24,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:src="@mipmap/bg_vip_center_top"
-                    app:layout_constraintTop_toTopOf="parent"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="96dp"
-                    app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent">
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
 
                     <ImageView
                         android:layout_width="match_parent"
@@ -41,8 +41,7 @@
                         android:scaleType="fitXY"
                         android:src="@mipmap/bg_vip"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintDimensionRatio="329:96"
-                        android:visibility="gone"/>
+                        app:layout_constraintDimensionRatio="329:96" />
 
 
                     <com.mshy.VInterestSpeed.common.ui.view.RoundAngleImageView
@@ -59,9 +58,9 @@
                         android:layout_width="42dp"
                         android:layout_height="42dp"
                         android:layout_marginStart="40dp"
+                        android:layout_marginTop="15dp"
                         app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        android:layout_marginTop="15dp"
                         app:srl_layoutRadius="10dp"
                         app:srl_strokeColor="@color/color_FFFFFF"
                         app:srl_strokeWidth="2dp"
@@ -114,16 +113,16 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="6dp"
-                            android:paddingStart="8dp"
-                            android:paddingEnd="18dp"
-                            android:paddingTop="3dp"
-                            android:paddingBottom="3dp"
                             android:gravity="center_vertical"
+                            android:paddingStart="8dp"
+                            android:paddingTop="3dp"
+                            android:paddingEnd="18dp"
+                            android:paddingBottom="3dp"
                             android:text="9大特权，提升个性化体验"
                             android:textColor="@color/white"
                             android:textSize="11sp"
                             app:stv_layoutRadius="24dp"
-                            app:stv_solidColor="#8D6E46"/>
+                            app:stv_solidColor="#8D6E46" />
                     </LinearLayout>
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -134,8 +133,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
                 android:layout_marginTop="-20dp"
+                android:layout_marginRight="15dp"
                 app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                 app:spanCount="3"
                 tools:itemCount="3"
@@ -171,7 +170,7 @@
                     android:layout_marginStart="8dp"
                     android:layout_toEndOf="@+id/iv_daily_gif"
                     android:src="@mipmap/ic_vip_daily_gift_desc"
-                    android:visibility="gone"/>
+                    android:visibility="gone" />
 
                 <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
                     android:id="@+id/bt_daily_gif"
@@ -218,19 +217,19 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:textSize="@dimen/text_size_16"
-                        android:textStyle="bold"
+                        android:text="VIP权益"
                         android:textColor="#BFA786"
-                        android:text="VIP权益" />
+                        android:textSize="@dimen/text_size_16"
+                        android:textStyle="bold" />
 
                 </FrameLayout>
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_privilege"
-                    android:layout_marginBottom="24dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginTop="30dp"
+                    android:layout_marginBottom="24dp"
                     app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                     app:layout_behavior="@string/appbar_scrolling_view_behavior"
                     app:spanCount="3"
@@ -282,16 +281,16 @@
         android:layout_height="46dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="40dp"
         android:layout_marginStart="36dp"
         android:layout_marginEnd="36dp"
+        android:layout_marginBottom="40dp"
         android:gravity="center"
         android:text="立即开通"
         android:textColor="@color/color_textMain"
         android:textSize="16sp"
         android:textStyle="bold"
         app:stv_endColor="#FFCB8A"
-        app:stv_layoutRadius="24dp"
+        app:stv_layoutRadius="15dp"
         app:stv_startColor="#FFF9DA" />
 
 </RelativeLayout>

@@ -494,7 +494,7 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         app:stv_endColor="#FFF3A2"
-                        app:stv_layoutRadius="24dp"
+                        app:stv_layoutRadius="10dp"
                         app:stv_startColor="#DABD63" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 

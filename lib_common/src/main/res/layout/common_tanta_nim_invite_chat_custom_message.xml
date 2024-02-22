@@ -69,8 +69,9 @@
             android:text="拨打视频"
             android:textColor="@color/white"
             android:textSize="12sp"
-            app:stv_layoutRadius="14dp"
-            app:stv_solidColor="@color/color_B4A3FD"/>
+            app:stv_layoutRadius="10dp"
+            app:stv_startColor="@color/color_FF7459"
+            app:stv_endColor="@color/color_FFB058"/>
 
     </LinearLayout>
 </FrameLayout>

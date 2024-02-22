@@ -27,7 +27,7 @@ public class WXPayEntryActivity extends Activity implements IWXAPIEventHandler {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mCompositeDisposable = new CompositeDisposable();
-        api = WXAPIFactory.createWXAPI(this, "wx452e1318fe9fcdb5");
+        api = WXAPIFactory.createWXAPI(this, "wx15206361414add1f");
         api.handleIntent(getIntent(), this);
     }
 

@@ -130,7 +130,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:textColor="@color/color_B4A3FD"
+        android:textColor="@color/color_FF8859"
         android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/tv_confirm"
         app:layout_constraintEnd_toEndOf="@id/ll_content"
@@ -151,8 +151,9 @@
         app:layout_constraintBottom_toBottomOf="@id/iv_bg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:stv_solidColor="@color/color_B4A3FD"
-        app:stv_layoutRadius="24dp" />
+        app:stv_startColor="@color/color_FF7459"
+        app:stv_endColor="@color/color_FFB058"
+        app:stv_layoutRadius="15dp" />
 
     <ImageView
         android:id="@+id/iv_close"

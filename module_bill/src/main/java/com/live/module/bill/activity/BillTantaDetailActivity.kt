@@ -178,7 +178,7 @@ class BillTantaDetailActivity :
                 simplePagerTitleView.text = mTabs[index]
                 simplePagerTitleView.textSize = 16f
                 simplePagerTitleView.normalColor = ResUtils.getColor(R.color.color_textDesc)
-                simplePagerTitleView.selectedColor = ResUtils.getColor(R.color.color_B4A3FD)
+                simplePagerTitleView.selectedColor = ResUtils.getColor(R.color.black)
                 simplePagerTitleView.setOnClickListener {
                     mBinding.vpVquBillDetailPage.currentItem = index
 //                    mViewPage.setCurrentItem(index);
@@ -197,8 +197,8 @@ class BillTantaDetailActivity :
                 indicator.lineHeight = dp2px(4f).toFloat()
                 indicator.yOffset = dp2px(6f).toFloat()
                 indicator.setColors(
-                    ResUtils.getColor(R.color.color_B4A3FD),
-                    ResUtils.getColor(R.color.color_B4A3FD)
+                    ResUtils.getColor(R.color.color_FF8859),
+                    ResUtils.getColor(R.color.color_FF8859)
                 )
                 return indicator
             }

@@ -113,7 +113,7 @@ class RelationVquFriendActivity :
                         R.color.color_textDesc
                     )
                 simplePagerTitleView.selectedColor =
-                    com.mshy.VInterestSpeed.common.utils.ResUtils.getColor(R.color.color_B4A3FD)
+                    com.mshy.VInterestSpeed.common.utils.ResUtils.getColor(R.color.black)
                 simplePagerTitleView.setOnClickListener {
                     mBinding.vpVquRelationFriendPage.currentItem = index
                 }
@@ -131,8 +131,8 @@ class RelationVquFriendActivity :
                 indicator.lineHeight = dp2px(3f).toFloat()
                 indicator.yOffset = dp2px(6f).toFloat()
                 indicator.setColors(
-                    com.mshy.VInterestSpeed.common.utils.ResUtils.getColor(R.color.color_B4A3FD),
-                    com.mshy.VInterestSpeed.common.utils.ResUtils.getColor(R.color.color_B4A3FD)
+                    com.mshy.VInterestSpeed.common.utils.ResUtils.getColor(R.color.color_FF8859),
+                    com.mshy.VInterestSpeed.common.utils.ResUtils.getColor(R.color.color_FF8859)
                 )
                 return indicator
             }

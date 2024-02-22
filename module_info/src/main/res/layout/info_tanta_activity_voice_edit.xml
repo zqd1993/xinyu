@@ -99,7 +99,7 @@
             tc:circleColor="@color/white"
             tc:radiusCom="36dp"
             tc:ringBgColor="@color/white"
-            tc:ringColor="@color/color_FCA2B7"
+            tc:ringColor="#3FD58C"
             tc:strokeWidth="2dp" />
 
         <ImageView

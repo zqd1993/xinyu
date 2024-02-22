@@ -62,7 +62,7 @@
             android:layout_marginRight="15dp"
             android:gravity="center"
             android:text="回复"
-            android:textColor="@color/color_7A65DA"
+            android:textColor="@color/color_FF7459"
             android:textSize="12sp"
             app:stv_solidColor="@color/white"
             app:stv_layoutRadius="16dp"

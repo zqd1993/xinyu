@@ -21,7 +21,7 @@
                 android:id="@+id/ctl_vqu_activity_my_contact_bar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:contentScrim="@color/color_B4A3FD"
+                app:contentScrim="@color/color_FF8859"
                 app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -166,7 +166,7 @@
                     android:layout_width="5dp"
                     android:layout_height="15dp"
                     android:layout_marginStart="15dp"
-                    app:sll_solidColor="@color/color_B4A3FD"
+                    app:sll_solidColor="@color/color_FF8859"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent" />
@@ -189,7 +189,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
                     android:text="邀请记录"
-                    android:textColor="@color/color_B4A3FD"
+                    android:textColor="@color/color_FF8859"
                     android:textSize="12sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintLeft_toRightOf="@id/tv_contact_vqu_my_contact_invited_num"
@@ -206,8 +206,9 @@
                     android:textSize="13sp"
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:stv_layoutRadius="24dp"
-                    app:stv_solidColor="@color/color_B4A3FD"/>
+                    app:stv_layoutRadius="10dp"
+                    app:stv_startColor="@color/color_FF7459"
+                    app:stv_endColor="@color/color_FFB058"/>
 
                 <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
                     android:id="@+id/stv_contact_vqu_my_contact_more"
@@ -221,9 +222,9 @@
                     android:visibility="gone"
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:stv_endColor="@color/color_7C69FE"
-                    app:stv_layoutRadius="15dp"
-                    app:stv_startColor="@color/color_BFB6FF" />
+                    app:stv_endColor="@color/color_FFB058"
+                    app:stv_layoutRadius="10dp"
+                    app:stv_startColor="@color/color_FF7459" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </com.google.android.material.appbar.AppBarLayout>
@@ -304,8 +305,9 @@
         app:layout_constraintBottom_toTopOf="@id/tv_contact_vqu_my_contact_invited_record_bottom"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:stv_layoutRadius="24dp"
-        app:stv_solidColor="@color/color_B4A3FD"/>
+        app:stv_layoutRadius="15dp"
+        app:stv_startColor="@color/color_FF7459"
+        app:stv_endColor="@color/color_FFB058"/>
 
     <TextView
         android:id="@+id/tv_contact_vqu_my_contact_invited_record_bottom"

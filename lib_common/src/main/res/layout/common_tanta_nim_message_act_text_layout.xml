@@ -56,8 +56,9 @@
                 android:text="@string/send"
                 android:textColor="@color/white"
                 android:textSize="14sp"
-                app:stv_layoutRadius="24dp"
-                app:stv_solidColor="@color/color_B4A3FD"
+                app:stv_layoutRadius="10dp"
+                app:stv_startColor="@color/color_FF7459"
+                app:stv_endColor="@color/color_FFB058"
                 />
 
             <Button

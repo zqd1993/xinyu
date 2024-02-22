@@ -21,7 +21,7 @@
                 android:id="@+id/ctl_vqu_activity_my_contact_bar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:contentScrim="@color/color_B4A3FD"
+                app:contentScrim="@color/color_FF8859"
                 app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -311,8 +311,9 @@
                     android:textSize="12sp"
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:stv_layoutRadius="24dp"
-                    app:stv_solidColor="@color/color_B4A3FD"/>
+                    app:stv_layoutRadius="10dp"
+                    app:stv_startColor="@color/color_FF7459"
+                    app:stv_endColor="@color/color_FFB058"/>
 
                 <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
                     android:id="@+id/stv_contact_vqu_my_contact_more"
@@ -326,8 +327,9 @@
                     android:visibility="gone"
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:stv_solidColor="@color/color_B4A3FD"
-                    app:stv_layoutRadius="15dp" />
+                    app:stv_startColor="@color/color_FF7459"
+                    app:stv_endColor="@color/color_FFB058"
+                    app:stv_layoutRadius="10dp" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </com.google.android.material.appbar.AppBarLayout>
@@ -408,8 +410,9 @@
         app:layout_constraintBottom_toTopOf="@id/tv_contact_vqu_my_contact_invited_record_bottom"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-       app:stv_solidColor="@color/color_B4A3FD"
-        app:stv_layoutRadius="24dp"
+        app:stv_startColor="@color/color_FF7459"
+        app:stv_endColor="@color/color_FFB058"
+        app:stv_layoutRadius="15dp"
        />
 
     <TextView

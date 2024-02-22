@@ -61,7 +61,7 @@
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/rv_small"
                 app:sll_layoutRadius="50dp"
-                app:sll_solidColor="@color/color_B4A3FD">
+                app:sll_solidColor="@color/color_FF8859">
 
                 <ImageView
                     android:id="@+id/iv_play"
@@ -517,8 +517,9 @@
                 android:layout_marginRight="24dp"
                 android:layout_weight="1"
                 android:gravity="center"
-                app:sll_layoutRadius="24dp"
-                app:sll_solidColor="@color/color_B4A3FD">
+                app:sll_layoutRadius="15dp"
+                app:sll_startColor="@color/color_FF7459"
+                app:sll_endColor="@color/color_FFB058">
 
                 <ImageView
                     android:id="@+id/iv_heart"
@@ -609,8 +610,8 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="@+id/ll_bottom"
-            app:sll_endColor="@color/color_6BBFFD"
-            app:sll_startColor="@color/color_4CB6FF"
+            app:sll_endColor="@color/color_FFB058"
+            app:sll_startColor="@color/color_FF7459"
             app:stv_layoutRadius="12dp" />
     </FrameLayout>
 

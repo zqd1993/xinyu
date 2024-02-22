@@ -59,8 +59,9 @@
             android:textColor="@color/color_FFFFFF"
             android:textSize="17sp"
             android:textStyle="bold"
-            app:stv_layoutRadius="24dp"
-            app:stv_solidColor="@color/color_B4A3FD"/>
+            app:stv_layoutRadius="15dp"
+            app:stv_startColor="@color/color_FF7459"
+            app:stv_endColor="@color/color_FFB058"/>
 
     </FrameLayout>
 

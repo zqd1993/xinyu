@@ -33,12 +33,13 @@
         android:layout_marginRight="16dp"
         android:gravity="center"
         android:visibility="gone"
-        app:stv_layoutRadius="24dp"
+        app:stv_layoutRadius="10dp"
         android:paddingLeft="12dp"
         android:paddingRight="12dp"
         android:textColor="@color/white"
         android:textSize="14sp"
-        app:stv_solidColor="@color/color_B4A3FD"
+        app:stv_startColor="@color/color_FF7459"
+        app:stv_endColor="@color/color_FFB058"
         tools:text="右边" />
 
 </androidx.appcompat.widget.Toolbar>

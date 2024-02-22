@@ -87,7 +87,7 @@
                 android:text="@string/cancel"
                 android:textColor="@color/color_273145"
                 android:textSize="16sp"
-                app:stv_layoutRadius="24dp"
+                app:stv_layoutRadius="15dp"
                 android:textStyle="bold"
                 app:stv_solidColor="@color/color_F5F4F7" />
 
@@ -103,8 +103,9 @@
                 android:textColor="@color/color_FFFFFF"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                app:stv_solidColor="@color/color_B4A3FD"
-                app:stv_layoutRadius="24dp" />
+                app:stv_startColor="@color/color_FF7459"
+                app:stv_endColor="@color/color_FFB058"
+                app:stv_layoutRadius="15dp" />
         </LinearLayout>
 
 
@@ -122,8 +123,8 @@
             android:textColor="@color/color_FFFFFF"
             android:textSize="16sp"
             android:visibility="gone"
-            app:stv_endColor="@color/color_7C69FE"
-            app:stv_layoutRadius="24.5dp"
-            app:stv_startColor="@color/color_BFB6FF" />
+            app:stv_endColor="@color/color_FFB058"
+            app:stv_layoutRadius="15dp"
+            app:stv_startColor="@color/color_FF7459" />
     </com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout>
 </FrameLayout>

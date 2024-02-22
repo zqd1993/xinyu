@@ -26,7 +26,7 @@ public class MagicIndicatorHelper {
         simplePagerTitleView.setTextSize(21);
         simplePagerTitleView.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));//加粗
         simplePagerTitleView.setNormalColor(context.getResources().getColor(R.color.color_999999));
-        simplePagerTitleView.setSelectedColor(context.getResources().getColor(R.color.color_B4A3FD));
+        simplePagerTitleView.setSelectedColor(context.getResources().getColor(R.color.black));
         return simplePagerTitleView;
     }
 
@@ -36,7 +36,7 @@ public class MagicIndicatorHelper {
         indicator.setLineHeight(UIUtil.dip2px(context, 4));
         indicator.setLineWidth(UIUtil.dip2px(context, 16));
         indicator.setRoundRadius(UIUtil.dip2px(context, 2f));
-        indicator.setColors(context.getResources().getColor(R.color.color_B4A3FD));
+        indicator.setColors(context.getResources().getColor(R.color.color_FF8859));
         indicator.setYOffset(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
                 8, context.getResources().getDisplayMetrics()));
         return indicator;

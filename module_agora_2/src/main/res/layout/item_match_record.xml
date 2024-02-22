@@ -24,7 +24,7 @@
             android:maxEms="4"
             android:maxLines="1"
             android:text="Au.痞sasdadadasd/程"
-            android:textColor="@color/color_B4A3FD"
+            android:textColor="@color/color_FF8859"
             android:textSize="12sp" />
 
         <TextView
@@ -42,7 +42,7 @@
             android:maxEms="4"
             android:maxLines="1"
             android:text="小可爱"
-            android:textColor="@color/color_B4A3FD"
+            android:textColor="@color/color_FF8859"
             android:textSize="12sp" />
 
         <TextView

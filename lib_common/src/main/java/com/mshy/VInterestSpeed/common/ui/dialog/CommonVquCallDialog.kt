@@ -107,8 +107,8 @@ class CommonVquCallDialog : BaseDialogFragment<CommonVquDialogCallBinding>(),
                                     mBinding.tvVideoVip.visible()
                                     if (response.body()?.data?.vip == 0) {
                                         mBinding.tvVideoVip.setStartColor(
-                                            ResUtils.getColor(R.color.color_B4A3FD),
-                                            ResUtils.getColor(R.color.color_B4A3FD)
+                                            ResUtils.getColor(R.color.color_FF7459),
+                                            ResUtils.getColor(R.color.color_FFB058)
                                         )
                                         mBinding.tvVideoVip.setTextColor(ResUtils.getColor(R.color.white))
                                     } else {
@@ -128,8 +128,8 @@ class CommonVquCallDialog : BaseDialogFragment<CommonVquDialogCallBinding>(),
                                     mBinding.tvVoiceVip.visible()
                                     if (response.body()?.data?.vip == 0) {
                                         mBinding.tvVoiceVip.setStartColor(
-                                            ResUtils.getColor(R.color.color_B4A3FD),
-                                            ResUtils.getColor(R.color.color_B4A3FD)
+                                            ResUtils.getColor(R.color.color_FF7459),
+                                            ResUtils.getColor(R.color.color_FFB058)
                                         )
                                         mBinding.tvVoiceVip.setTextColor(ResUtils.getColor(R.color.white))
                                     } else {

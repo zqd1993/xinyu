@@ -107,10 +107,11 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:stv_layoutRadius="24dp"
+                app:stv_layoutRadius="10dp"
                 android:textStyle="bold"
                 android:textSize="14sp"
-                app:stv_solidColor="@color/color_B4A3FD"/>
+                app:stv_startColor="@color/color_FF7459"
+                app:stv_endColor="@color/color_FFB058"/>
         </com.mshy.VInterestSpeed.common.ui.view.ShapeConstraintLayout>
 
 

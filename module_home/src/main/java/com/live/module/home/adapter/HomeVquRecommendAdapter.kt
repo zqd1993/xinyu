@@ -102,7 +102,7 @@ class HomeVquRecommendAdapter :
 //                ContextCompat.getColor(context, R.color.color_FF7AC2),
 //                ContextCompat.getColor(context, R.color.color_FF7AC2)
 //            )
-            helper.setTextColor(R.id.tv_chat, ContextCompat.getColor(context, R.color.color_B4A3FD))
+            helper.setTextColor(R.id.tv_chat, ContextCompat.getColor(context, R.color.black))
         }
         helper.setVisible(R.id.view_online, false)
         val online = item.isOnline

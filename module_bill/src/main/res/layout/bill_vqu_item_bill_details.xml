@@ -65,7 +65,7 @@
         android:layout_height="wrap_content"
         android:layout_marginRight="5dp"
         android:includeFontPadding="false"
-        android:textColor="@color/color_B4A3FD"
+        android:textColor="@color/color_FF8859"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="@id/tv_vqu_item_bill_details_diamond_txt"
         app:layout_constraintRight_toLeftOf="@id/tv_vqu_item_bill_details_diamond_txt"

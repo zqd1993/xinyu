@@ -189,8 +189,9 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tanta_match_shuoming"
-        app:sll_layoutRadius="24dp"
-        app:sll_solidColor="@color/color_B4A3FD"
+        app:sll_layoutRadius="15dp"
+        app:sll_startColor="@color/color_FF7459"
+        app:sll_endColor="@color/color_FFB058"
         tools:visibility="visible">
 
         <LinearLayout

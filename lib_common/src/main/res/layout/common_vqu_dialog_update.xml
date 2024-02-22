@@ -65,7 +65,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/common_vqu_update_newversion"
-                        android:textColor="@color/color_B4A3FD"
+                        android:textColor="@color/color_FF8859"
                         android:textSize="@dimen/text_size_19"
                         android:textStyle="bold"
                         app:layout_constraintLeft_toLeftOf="parent"
@@ -88,7 +88,7 @@
                         app:layout_constraintTop_toBottomOf="@+id/iv_new"
                         app:stv_bottomLeftRadius="3dp"
                         app:stv_bottomRightRadius="10dp"
-                        app:stv_solidColor="@color/color_B4A3FD"
+                        app:stv_solidColor="@color/color_FF8859"
                         app:stv_topLeftRadius="10dp"
                         app:stv_topRightRadius="10dp" />
 
@@ -118,8 +118,9 @@
                     android:text="@string/common_vqu_update_btn"
                     android:textColor="@color/white"
                     android:textSize="17dp"
-                    app:stv_solidColor="@color/color_B4A3FD"
-                    app:stv_layoutRadius="24dp" />
+                    app:stv_startColor="@color/color_FF7459"
+                    app:stv_endColor="@color/color_FFB058"
+                    app:stv_layoutRadius="15dp" />
 
                 <RelativeLayout
                     android:id="@+id/rl_progressbar"

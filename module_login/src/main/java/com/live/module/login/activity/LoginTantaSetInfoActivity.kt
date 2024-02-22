@@ -629,8 +629,8 @@ class LoginTantaSetInfoActivity :
 
             if (!nickname.isNullOrBlank() && avatar.isNotEmpty()) {
                 mBinding.stvLoginTantaSetInfoNext.setStartColor(
-                    ResUtils.getColor(R.color.color_B4A3FD),
-                    ResUtils.getColor(R.color.color_B4A3FD)
+                    ResUtils.getColor(R.color.color_FF7459),
+                    ResUtils.getColor(R.color.color_FFB058)
                 )
             } else {
                 mBinding.stvLoginTantaSetInfoNext.setStartColor(

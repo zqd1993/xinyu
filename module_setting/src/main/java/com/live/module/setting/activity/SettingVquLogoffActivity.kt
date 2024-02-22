@@ -38,8 +38,8 @@ class SettingVquLogoffActivity :
                 mBinding.cancelButton.isEnabled = true
                 mBinding.cancelButton.isClickable = true
                 mBinding.cancelButton.setStartColor(
-                    resources.getColor(R.color.color_B4A3FD),
-                    resources.getColor(R.color.color_B4A3FD)
+                    resources.getColor(R.color.color_FF7459),
+                    resources.getColor(R.color.color_FFB058)
                 )
             } else {
                 mBinding.cancelButton.isEnabled = false

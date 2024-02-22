@@ -61,8 +61,8 @@
             android:paddingEnd="12dp"
             android:paddingBottom="6dp"
             android:text="@string/dynamic_publish_tip_title"
-            android:textColor="@color/color_B4A3FD"
-            app:stv_strokeColor="@color/color_B4A3FD"
+            android:textColor="@color/color_FF8859"
+            app:stv_strokeColor="@color/color_FF8859"
             app:stv_layoutRadius="@dimen/dp_size_8"
             app:stv_strokeWidth="1dp" />
 
@@ -109,7 +109,7 @@
         android:textSize="18sp"
         android:visibility="gone"
         app:layout_constraintTop_toBottomOf="@+id/rl_content"
-        app:stv_endColor="@color/color_7C69FE"
+        app:stv_endColor="@color/color_FFB058"
         app:stv_layoutRadius="40dp"
-        app:stv_startColor="@color/color_BFB6FF" />
+        app:stv_startColor="@color/color_FF7459" />
 </androidx.constraintlayout.widget.ConstraintLayout>

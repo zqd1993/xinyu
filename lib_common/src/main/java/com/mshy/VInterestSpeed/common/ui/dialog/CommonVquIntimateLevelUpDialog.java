@@ -27,7 +27,7 @@ public class CommonVquIntimateLevelUpDialog extends BaseDialogFragment implement
     private ImageView ivLeft;
     private ImageView ivRight;
     private NIMVquIntimateLeveUpBean.DataBean mData;
-    String IMAGE_URL = "https://asset.whzhenban.top/";
+    String IMAGE_URL = "https://asset.guangxiyisi.com/";
 
     @Override
     protected void initView(View view) {

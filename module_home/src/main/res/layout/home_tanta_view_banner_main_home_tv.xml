@@ -14,7 +14,7 @@
         android:layout_height="40dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginBottom="12dp"
+        android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -45,7 +45,7 @@
                 android:ellipsize="end"
                 android:maxEms="4"
                 android:maxLines="1"
-                android:textColor="@color/color_7A65DA"
+                android:textColor="@color/color_1663FF"
                 android:textSize="12sp"
                 tools:text="Au.痞/程" />
 
@@ -67,7 +67,7 @@
                 android:ellipsize="end"
                 android:maxEms="4"
                 android:maxLines="1"
-                android:textColor="@color/color_7A65DA"
+                android:textColor="@color/color_1663FF"
                 android:textSize="12sp"
                 tools:text="佐佐" />
 
@@ -89,7 +89,7 @@
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
                 android:maxLines="1"
-                android:textColor="@color/color_FE4040"
+                android:textColor="@color/color_FF1313"
                 android:textSize="12sp"
                 tools:text="佐佐佐佐佐" />
 
@@ -126,6 +126,7 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="18dp"
         android:src="@mipmap/resources_tanta_home_tv_right_bottom_bg"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -134,11 +135,10 @@
         android:id="@+id/vqu_bt_know_url"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="7dp"
-        android:layout_marginBottom="2dp"
+        android:layout_marginEnd="24dp"
         android:gravity="center"
         android:text="如何上电视"
-        android:textColor="@color/color_7A65DA"
+        android:textColor="@color/color_FF8859"
         android:textSize="11sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"

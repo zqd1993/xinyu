@@ -105,7 +105,7 @@
             android:drawableEnd="@mipmap/resources_tanta_message_intimate_icon"
             android:drawablePadding="2dp"
             android:gravity="center"
-            android:textColor="@color/color_B4A3FD"
+            android:textColor="@color/color_FF8859"
             android:textSize="12sp"
             android:visibility="gone"
             tools:text="25.5"

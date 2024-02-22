@@ -479,10 +479,10 @@ class MessageVquMsgFragment : MessageFragment() {
     }
 
     override fun selectImage() {
-        PermissionUtils.videoPermission(
+        PermissionUtils.storagePermission(
             this,
-            "相册，拍照功能需要申请文件权限和媒体权限",
-            "相册，拍照功能需要申请文件权限和媒体权限",
+            "需要开启储存权限以便使用聊天、动态、投诉、相册、等功能中图片、视频的选择和保存功能。",
+            "需要开启储存权限以便使用聊天、动态、投诉、相册、等功能中图片、视频的选择和保存功能。",
             requestCallback = { allGranted, grantedList, deniedList ->
                 if (allGranted) {
                     PictureSelector.create(this)//进页面就进行选择

@@ -684,7 +684,7 @@ class DynamicTantaDynamicDetailActivity :
             } else {
                 tvBottom?.text = context.getString(R.string.common_vqu_beckoning)
             }
-            tvBottom?.setTextColor(ContextCompat.getColor(context, R.color.color_B4A3FD))
+            tvBottom?.setTextColor(ContextCompat.getColor(context, R.color.black))
 
         }
 

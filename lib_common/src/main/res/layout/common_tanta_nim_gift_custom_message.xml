@@ -33,7 +33,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:textColor="@color/color_B4A3FD"
+                android:textColor="@color/color_FF8859"
                 android:textSize="12sp"
                 tool:text="一见钟情x1" />
         </LinearLayout>
@@ -63,7 +63,7 @@
         android:id="@+id/ll_right"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:sll_solidColor="@color/color_B4A3FD"
+        app:sll_solidColor="@color/color_FF8859"
         app:sll_layoutRadius="10dp"
         android:visibility="gone"
         android:paddingRight="12dp"

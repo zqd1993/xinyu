@@ -281,7 +281,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ll_pay_way"
             app:stv_endColor="@color/color_272727"
-            app:stv_layoutRadius="24dp"
+            app:stv_layoutRadius="15dp"
             app:stv_startColor="@color/color_505050" />
 
         <TextView
@@ -289,7 +289,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="开通即同意《甜缘会员协议》"
+            android:text="开通即同意《蜜橙会员协议》"
             android:textColor="@color/color_999999"
             android:textSize="12sp"
             app:layout_constraintLeft_toLeftOf="parent"

@@ -70,8 +70,8 @@
                 android:textColor="@color/color_222222"
                 android:textSize="12sp"
                 android:visibility="gone"
-                app:stv_layoutRadius="6dp"
-                app:stv_solidColor="@color/color_FEEDF1"
+                app:stv_layoutRadius="12dp"
+                app:stv_solidColor="@color/color_FFF5DB"
                 tools:visibility="visible" />
 
             <TextView

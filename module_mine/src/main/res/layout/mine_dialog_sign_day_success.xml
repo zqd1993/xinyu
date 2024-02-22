@@ -71,7 +71,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="+"
-                    android:textColor="@color/color_FFBB37"
+                    android:textColor="@color/color_FF8859"
                     android:textSize="34sp"
                     android:textStyle="bold" />
 
@@ -80,7 +80,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:textColor="@color/color_FFBB37"
+                    android:textColor="@color/color_FF8859"
                     android:textSize="48sp"
                     android:textStyle="bold"
                     tools:text="120" />
@@ -121,8 +121,9 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:stv_solidColor="#FFAE2F"
-                app:stv_layoutRadius="24dp" />
+                app:stv_startColor="@color/color_FF7459"
+                app:stv_endColor="@color/color_FFB058"
+                app:stv_layoutRadius="15dp" />
         </com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout>
 
         <ImageView

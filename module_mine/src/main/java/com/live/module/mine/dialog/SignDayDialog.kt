@@ -69,12 +69,12 @@ class SignDayDialog : BaseVMDialogFragment<MineDialogSignDayBinding, MineSignDay
             } else {
                 mBinding.stvMineDialogSignDaySubmit.text = "签到"
                 mBinding.stvMineDialogSignDaySubmit.setStartColor(
-                    ResUtils.getColor(R.color.color_FFBF44),
-                    ResUtils.getColor(R.color.color_F6AC1C)
+                    ResUtils.getColor(R.color.color_FF7459),
+                    ResUtils.getColor(R.color.color_FFB058)
                 )
             }
 
-            val count = "已连续签到 <font color=\'#B17943\'>${it.todayCount}</font> 天"
+            val count = "已连续签到 <font color=\'#FF8859\'>${it.todayCount}</font> 天"
 
             val fromHtml = Html.fromHtml(count)
 

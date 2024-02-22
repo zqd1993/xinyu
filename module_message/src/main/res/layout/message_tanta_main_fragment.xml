@@ -54,7 +54,7 @@
         android:id="@+id/cl_notice"
         android:layout_width="match_parent"
         android:layout_height="36dp"
-        android:background="@color/color_FEEDF1">
+        android:background="@color/color_FFF5DB">
 
         <TextView
             android:id="@+id/tv_notice"
@@ -80,7 +80,8 @@
             app:layout_constraintRight_toLeftOf="@+id/iv_close"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:stv_solidColor="@color/color_FCA2B7"/>
+            app:stv_startColor="@color/color_FF7459"
+            app:stv_endColor="@color/color_FFB058"/>
 
         <ImageView
             android:id="@+id/iv_close"

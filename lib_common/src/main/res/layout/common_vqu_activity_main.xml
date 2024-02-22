@@ -36,7 +36,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="顶部"
-                android:textColor="@color/color_B4A3FD"
+                android:textColor="@color/color_FF8859"
                 android:textSize="10sp"
                 android:textStyle="bold"
                 android:layout_alignParentBottom="true"
@@ -66,7 +66,8 @@
             android:paddingStart="28dp"
             android:paddingEnd="31dp"
             app:layout_constraintBottom_toTopOf="@+id/common_vqu_bottom_tab"
-            app:sll_solidColor="@color/color_FEEDF1">
+            app:sll_solidColor="@color/color_FFF5DB"
+            app:sll_layoutRadius="12dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -80,7 +81,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/home_vqu_main_send_diamonds"
-                android:textColor="@color/color_FE4040"
+                android:textColor="@color/color_FF8859"
                 android:textSize="12sp" />
 
             <TextView
@@ -95,7 +96,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="金币"
-                android:textColor="@color/color_FE4040"
+                android:textColor="@color/color_FF8859"
                 android:textSize="12sp" />
 
             <TextView
@@ -119,7 +120,8 @@
                     android:textColor="@color/white"
                     android:textSize="12sp"
                     android:textStyle="bold"
-                    app:stv_solidColor="@color/color_FCA2B7"
+                    app:stv_startColor="@color/color_FF7459"
+                    app:stv_endColor="@color/color_FFB058"
                     app:stv_layoutRadius="7dp" />
 
                 <ImageView

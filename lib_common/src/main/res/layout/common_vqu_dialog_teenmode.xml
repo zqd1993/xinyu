@@ -50,8 +50,9 @@
             android:text="@string/common_vqu_teenmode_not"
             android:textSize="16sp"
             android:textColor="@color/white"
-            app:stv_layoutRadius="24dp"
-            app:stv_solidColor="@color/color_B4A3FD"/>
+            app:stv_layoutRadius="15dp"
+            app:stv_startColor="@color/color_FF7459"
+            app:stv_endColor="@color/color_FFB058"/>
 
         <TextView
             android:id="@+id/tv_enter"

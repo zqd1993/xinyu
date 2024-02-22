@@ -23,9 +23,9 @@
         app:layout_constraintBottom_toBottomOf="@id/tb_contact_vqu_invited_record_bar"
         app:layout_constraintEnd_toStartOf="@id/iv_search"
         app:layout_constraintTop_toTopOf="@id/tb_contact_vqu_invited_record_bar"
-        app:stv_endColor="@color/color_FF7AC2"
-        app:stv_layoutRadius="8dp"
-        app:stv_startColor="@color/color_FF7AC2" />
+        app:stv_endColor="@color/color_FFB058"
+        app:stv_layoutRadius="10dp"
+        app:stv_startColor="@color/color_FF7459" />
 
     <ImageView
         android:id="@+id/iv_search"
@@ -45,10 +45,11 @@
         android:id="@+id/tv_contact_vqu_invited_record_num"
         android:layout_width="match_parent"
         android:layout_height="36dp"
+        android:layout_marginTop="8dp"
         android:gravity="center"
         android:textColor="@color/color_textMain"
         android:textSize="14sp"
-        app:stv_solidColor="#FFF1F8"
+        app:stv_solidColor="#FFF5DB"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         app:stv_layoutRadius="12dp"

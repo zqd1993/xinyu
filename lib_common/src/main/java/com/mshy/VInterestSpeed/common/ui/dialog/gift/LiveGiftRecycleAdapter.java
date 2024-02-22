@@ -23,7 +23,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class LiveGiftRecycleAdapter extends RecyclerView.Adapter {
-    public final static String IMAGE_URL = "https://asset.whzhenban.top/";
+    public final static String IMAGE_URL = "https://asset.guangxiyisi.com/";
     private List<DialogGiftBean> mGiftBeanList = new ArrayList<>();
     private final Context mContext;
     private OnGiftClickListener mListener;

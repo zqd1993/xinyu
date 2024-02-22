@@ -45,7 +45,7 @@
                     android:layout_gravity="center_horizontal|bottom"
                     android:layout_marginBottom="12dp"
                     android:text="顶部"
-                    android:textColor="@color/color_B4A3FD"
+                    android:textColor="@color/color_FF8859"
                     android:textSize="10sp" />
 
             </FrameLayout>

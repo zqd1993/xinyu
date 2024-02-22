@@ -36,7 +36,7 @@
             android:layout_marginTop="24dp"
             android:layout_marginRight="15dp"
             app:sll_layoutRadius="6dp"
-            app:sll_solidColor="@color/color_FEEDF1">
+            app:sll_solidColor="@color/color_FFF5DB">
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -64,7 +64,7 @@
             android:layout_marginTop="38dp"
             android:layout_marginRight="15dp"
             android:orientation="horizontal"
-            app:sll_layoutRadius="12dp"
+            app:sll_layoutRadius="8dp"
             app:sll_solidColor="@color/color_F5F5F5">
 
             <TextView
@@ -98,7 +98,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginRight="16dp"
             android:orientation="horizontal"
-            app:sll_layoutRadius="12dp"
+            app:sll_layoutRadius="8dp"
             app:sll_solidColor="@color/color_F5F5F5">
 
             <TextView
@@ -162,9 +162,10 @@
         android:textColor="@color/color_FFFFFF"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:stv_layoutRadius="24dp"
+        app:stv_layoutRadius="15dp"
         app:stv_openSelector="true"
         app:stv_solidTouchColor="@color/color_D3D1D7"
-        app:stv_solidColor="@color/color_B4A3FD"
+        app:stv_startColor="@color/color_FF7459"
+        app:stv_endColor="@color/color_FFB058"
          />
 </RelativeLayout>

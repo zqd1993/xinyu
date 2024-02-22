@@ -87,8 +87,9 @@
         android:text="确定"
         android:textColor="@color/white"
         android:textSize="18sp"
-        app:stv_solidColor="@color/color_B4A3FD"
-        app:stv_layoutRadius="24dp" />
+        app:stv_startColor="@color/color_FF7459"
+        app:stv_endColor="@color/color_FFB058"
+        app:stv_layoutRadius="15dp" />
 
 
 </com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout>

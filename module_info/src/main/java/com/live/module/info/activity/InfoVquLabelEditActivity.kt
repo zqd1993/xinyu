@@ -96,7 +96,7 @@ class InfoVquLabelEditActivity : BaseActivity<InfoTantaActivityLabelBinding, Inf
                     tv.solidColor = Color.parseColor("#ffffff")
                     tv.setTextColor(Color.parseColor("#000000"))
                     tv.setStrokeWidth(UiUtils.dip2px(applicationContext, 1f))
-                    tv.setStrokeColor(Color.parseColor("#B4A3FD"))
+                    tv.setStrokeColor(Color.parseColor("#FF8859"))
                 } else {
                     tv.solidColor = Color.parseColor("#F5F5F5")
                     tv.setTextColor(Color.parseColor("#000000"))

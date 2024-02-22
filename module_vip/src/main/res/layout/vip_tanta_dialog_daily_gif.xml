@@ -47,6 +47,7 @@
                 android:layout_marginTop="17dp"
                 android:textColor="@color/color_934800"
                 android:textSize="14sp"
+                android:textStyle="bold"
                 tools:text="鼓掌翻天 X3" />
 
             <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
@@ -65,7 +66,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/ll_pay_way"
                 app:stv_endColor="@color/color_272727"
-                app:stv_layoutRadius="24dp"
+                app:stv_layoutRadius="15dp"
                 app:stv_startColor="@color/color_505050" />
 
             <TextView

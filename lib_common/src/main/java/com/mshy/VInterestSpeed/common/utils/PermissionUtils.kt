@@ -31,7 +31,8 @@ object PermissionUtils {
     }
 
     private val storagePermission = arrayListOf(
-        Manifest.permission.WRITE_EXTERNAL_STORAGE
+        Manifest.permission.WRITE_EXTERNAL_STORAGE,
+        Manifest.permission.READ_EXTERNAL_STORAGE,
     )
 
     private val cameraPermission = arrayListOf(
@@ -42,15 +43,12 @@ object PermissionUtils {
     private val videoPermission = arrayListOf(
         Manifest.permission.CAMERA,
         Manifest.permission.RECORD_AUDIO,
-        Manifest.permission.WRITE_EXTERNAL_STORAGE,
-        Manifest.permission.READ_EXTERNAL_STORAGE,
-
     )
 
     private val voicePermission = arrayListOf(
         Manifest.permission.RECORD_AUDIO,
 
-    )
+        )
 
     /**
      * 权限请求，杂七杂八的权限
@@ -319,8 +317,8 @@ object PermissionUtils {
      */
     fun record(
         activity: FragmentActivity,
-        reason: String? = "用于帮助您完成音视频信息发布等需要使用该权限的相关功能；",
-        forward: String? = "用于帮助您完成音视频信息发布等需要使用该权限的相关功能；",
+        reason: String? = "要使用麦克风录音权限，以正常使用上传录音、发送语音、音视频聊天等功能。",
+        forward: String? = "要使用麦克风录音权限，以正常使用上传录音、发送语音、音视频聊天等功能。",
         requestCallback: RequestCallback,
         dismissCallback: (() -> Boolean)? = null
     ) {

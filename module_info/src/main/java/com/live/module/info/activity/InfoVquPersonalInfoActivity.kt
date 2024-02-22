@@ -91,16 +91,16 @@ open class InfoVquPersonalInfoActivity :
         ImmersionBar.with(this@InfoVquPersonalInfoActivity).transparentStatusBar()
             .fitsSystemWindows(false).init()
         mBinding.viewBg.alpha = 0f
-        mBinding.nes.setOnScrollChangeListener { v, scrollX, scrollY, oldScrollX, oldScrollY ->
-//            mBinding.viewBg.alpha = scrollY / 600f
-            if (scrollY > 300) {
-                mBinding.ivBack.setImageResource(R.mipmap.ic_vqu_info_back_black)
-                mBinding.ivMore.setImageResource(R.mipmap.ic_vqu_info_more_black)
-            } else {
-                mBinding.ivBack.setImageResource(R.mipmap.ic_vqu_info_back_white)
-                mBinding.ivMore.setImageResource(R.mipmap.ic_vqu_info_more_white)
-            }
-        }
+//        mBinding.nes.setOnScrollChangeListener { v, scrollX, scrollY, oldScrollX, oldScrollY ->
+////            mBinding.viewBg.alpha = scrollY / 600f
+//            if (scrollY > 300) {
+//                mBinding.ivBack.setImageResource(R.mipmap.ic_vqu_info_back_black)
+//                mBinding.ivMore.setImageResource(R.mipmap.ic_vqu_info_more_black)
+//            } else {
+//                mBinding.ivBack.setImageResource(R.mipmap.ic_vqu_info_back_white)
+//                mBinding.ivMore.setImageResource(R.mipmap.ic_vqu_info_more_white)
+//            }
+//        }
         mBinding.ivBack.setViewClickListener { finish() }
         mBinding.ivBackBlocked.setViewClickListener { finish() }
         mBinding.ivMore.setViewClickListener { showMenu() }
@@ -274,8 +274,8 @@ open class InfoVquPersonalInfoActivity :
                         CommonHintDialog()
                             .setContentSize(15)
                             .setContentGravity(Gravity.CENTER)
-                            .setTitle("拉黑提示")
-                            .setContent("拉黑后，你将不再收到对方的消息，并且你们互相看不到对方的动态更新。可以在“设置-黑名单”中解除。")
+                            .setTitle("拉黑确认")
+                            .setContent("拉黑后，你将不再收到对方的消息，并且你们互相看不到对方的动态更新。可以在“个人主页-黑名单”中解除。")
                             .setLeftText("取消")
                             .setRightText("确定")
                             .setOnClickListener(object :

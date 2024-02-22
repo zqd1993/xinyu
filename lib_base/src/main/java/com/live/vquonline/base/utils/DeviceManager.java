@@ -113,7 +113,7 @@ public class DeviceManager {
 
     public String getChannel() {
         if (TextUtils.isEmpty(channelName)) {
-            channelName = "22"; //默认官方包 1
+            channelName = "5000"; //默认官方包 1
         }
         return channelName;
     }

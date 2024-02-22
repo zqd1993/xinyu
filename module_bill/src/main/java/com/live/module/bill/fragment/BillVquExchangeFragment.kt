@@ -60,8 +60,8 @@ class BillVquExchangeFragment :
 
             if (money > 0) {
                 mBinding.stvExchange.setStartColor(
-                    ResUtils.getColor(R.color.color_B4A3FD),
-                    ResUtils.getColor(R.color.color_B4A3FD)
+                    ResUtils.getColor(R.color.color_FF7459),
+                    ResUtils.getColor(R.color.color_FFB058)
                 )
             } else {
                 mBinding.stvExchange.setStartColor(

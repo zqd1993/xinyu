@@ -77,7 +77,7 @@ class DynamicTantaAdapter(activity: Activity) :
 //                R.color.color_FF7AC2), 1)
 
         } else {
-            tvBottom.setTextColor(ContextCompat.getColor(context, R.color.color_B4A3FD))
+            tvBottom.setTextColor(ContextCompat.getColor(context, R.color.black))
 //            llBeckoning.setStartColor(ContextCompat.getColor(context, R.color.color_FF7AC2),
 //                ContextCompat.getColor(context, R.color.color_FF7AC2))
             if (item.gender == 1) {

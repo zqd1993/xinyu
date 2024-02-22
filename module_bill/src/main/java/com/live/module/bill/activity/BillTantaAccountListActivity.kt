@@ -73,7 +73,7 @@ class BillTantaAccountListActivity :
 
             mBinding.tbBillVquAccountListBar.toolbar.initClose(
                 "提现账号", rightStr = "新增账号", rightColor =
-                R.color.color_B4A3FD,
+                R.color.color_FF8859,
                 onClickRight = {
                     ARouter.getInstance().build(RouteUrl.Bill.BillTantaNewWithdrawalAccountActivity)
                         .withInt(RouteKey.TYPE, 1)

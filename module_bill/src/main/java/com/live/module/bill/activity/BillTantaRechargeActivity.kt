@@ -588,7 +588,7 @@ class BillTantaRechargeActivity :
                     cm.setPrimaryClip(
                         ClipData.newPlainText(
                             null,
-                            mTantaWebUrl?.wxOfficial ?: "甜缘交友"
+                            mTantaWebUrl?.wxOfficial ?: "蜜橙交友"
                         )
                     )
                     ToastUtils.showLong(R.string.vqu_bill_copy_success)
