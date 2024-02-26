@@ -17,11 +17,13 @@ import com.mshy.VInterestSpeed.common.constant.WECHAT_APP_ID
 import com.pay.paytypelibrary.base.OnPayResultListener
 import com.pay.paytypelibrary.base.OrderInfo
 import com.pay.paytypelibrary.base.PayUtil
+import com.sand.qzf.paytypesdk.base.PayTypeSdk
 import com.tencent.mm.opensdk.modelbiz.WXLaunchMiniProgram
 import com.tencent.mm.opensdk.modelpay.PayReq
 import com.tencent.mm.opensdk.openapi.WXAPIFactory
 import org.greenrobot.eventbus.EventBus
 import org.json.JSONObject
+import com.sand.qzf.paytypesdk.base.CallBack
 
 /**
  * author: Lau
@@ -167,5 +169,22 @@ object PayUtils {
         } else {
             toast("未安装微信，不能支付")
         }
+    }
+
+    fun sandWechat(activity: Activity, cashierUrl: String){
+        PayTypeSdk.getInstance().cashierPay(activity, cashierUrl, object : CallBack{
+            override fun onFinish(p0: String?) {
+                ToastUtils.showShort("支付完成")
+            }
+
+            override fun onSuccess(p0: String?) {
+                ToastUtils.showShort("支付成功")
+            }
+
+            override fun onError(p0: String?, p1: String?, p2: String?) {
+                ToastUtils.showShort("支付失败")
+            }
+
+        })
     }
 }

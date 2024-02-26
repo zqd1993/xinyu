@@ -13,7 +13,7 @@ import com.mshy.VInterestSpeed.common.BuildConfig
 object NetBaseUrlConstant {
     var BASE_URL = "https://api.guangxiyisi.com/"//正式环境
 
-    const val DEBUG_BASE_URL = "https://api.guangxiyisi.com/"//测试环境
+    const val DEBUG_BASE_URL = "https://develop.shanhaihulian.cn/"//测试环境
 //    const val DEBUG_BASE_URL = "http://120.78.160.71:8071/"//测试环境
 
     var IMAGE_URL = "https://asset.guangxiyisi.com/"
