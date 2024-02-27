@@ -118,15 +118,6 @@ class DynamicVquPublishActivityRepo @Inject constructor() : BaseRepository() {
         }
     }
 
-    suspend fun vquDynamicLikeList(params: HashMap<String, Any>) =
-        request<BaseResponse<DynamicLikesBean>> {
-            mVquDynamicApi.vquDynamicLikeList(params).run {
-                responseCodeExceptionHandler(code, message) {
-                    emit(this)
-                }
-            }
-        }
-
     suspend fun vquDynamicLikeCount(params: HashMap<String, Any>) = request<BaseResponse<Int>> {
         mVquDynamicApi.vquDynamicLikeCount(params).run {
             responseCodeExceptionHandler(code, message) {

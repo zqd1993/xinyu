@@ -3,7 +3,6 @@ package com.live.module.mine.fragment
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
-import android.content.DialogInterface
 import android.content.pm.PackageInfo
 import android.content.pm.PackageManager
 import android.graphics.Typeface
@@ -18,11 +17,7 @@ import com.alibaba.android.arouter.launcher.ARouter
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.viewholder.BaseViewHolder
 import com.live.module.mine.R
-import com.live.module.mine.adapter.MineVquSignDayAdapter
 import com.live.module.mine.databinding.MineFragmentMineBinding
-import com.live.module.mine.dialog.SignDayDialog
-import com.live.module.mine.dialog.SignDaySuccessDialog
-import com.live.module.mine.vm.MineSignDayViewModel
 import com.live.module.mine.vm.MineViewModel
 import com.live.vquonline.base.BaseApplication
 import com.live.vquonline.base.ktx.dp2px
@@ -34,6 +29,7 @@ import com.mshy.VInterestSpeed.common.constant.NetBaseUrlConstant
 import com.mshy.VInterestSpeed.common.constant.RouteKey
 import com.mshy.VInterestSpeed.common.constant.RouteUrl
 import com.mshy.VInterestSpeed.common.constant.SpKey
+import com.mshy.VInterestSpeed.common.event.CommonNotificationEvent
 import com.mshy.VInterestSpeed.common.ext.setViewClickListener
 import com.mshy.VInterestSpeed.common.ext.vquLoadRoundImage
 import com.mshy.VInterestSpeed.common.ui.BaseLazyFrameFragment
@@ -62,8 +58,6 @@ class MineFragment : BaseLazyFrameFragment<MineFragmentMineBinding, MineViewMode
 
     override val mViewModel: MineViewModel by viewModels()
 
-    val mSignDayViewModel: MineSignDayViewModel by viewModels()
-
     /**
      * 网格菜单数据
      * 在[initVquGridMenuData]中初始化数据
@@ -87,8 +81,6 @@ class MineFragment : BaseLazyFrameFragment<MineFragmentMineBinding, MineViewMode
      * 列表菜单的适配器
      */
     private val mVquListMenuAdapter = ListMenuAdapter()
-
-    private val mVquSignDayAdapter = MineVquSignDayAdapter()
 
     private var mVquUserHomeBean: VquUserHomeBean? = null
 
@@ -285,7 +277,6 @@ class MineFragment : BaseLazyFrameFragment<MineFragmentMineBinding, MineViewMode
         if (isVisible) {
             mViewModel.vquGetUserInfo()
             mViewModel.vquWalletIndex()
-            mSignDayViewModel.vquTodayActivityIndex()
         }
     }
 
@@ -311,9 +302,6 @@ class MineFragment : BaseLazyFrameFragment<MineFragmentMineBinding, MineViewMode
          * 初始化列表菜单适配器
          */
         initVquListMenuAdapter()
-
-
-        initVquSignDay()
 
         mBinding.rvMineVquUserListMenu.adapter = mVquListMenuAdapter
         mVquListMenuAdapter.setNewInstance(mVquListMenuData)
@@ -367,25 +355,6 @@ class MineFragment : BaseLazyFrameFragment<MineFragmentMineBinding, MineViewMode
         }
         mBinding.ivMineVquUserImproveData.setViewClickListener(200) {
             ARouter.getInstance().build(RouteUrl.Info.InfoVquEditActivity).navigation()
-        }
-    }
-
-    private fun initVquSignDay() {
-        mBinding.rvMineVquMineSignDay.adapter = mVquSignDayAdapter
-
-        mVquSignDayAdapter.setOnItemClickListener { _, _, position ->
-
-//            val item =
-//                mVquSignDayAdapter.getItemOrNull(position) ?: return@setOnItemClickListener
-
-//            if (item.nowDay && !item.status) {
-//                mViewModel.vquTodayActivity()
-//            } else if (position >= mVquSignDayAdapter.todayCount) {
-//                toast("今天已经签到过，明天才能签到了哦")
-//            }
-
-            val signDayDialog = SignDayDialog()
-            signDayDialog.show(childFragmentManager, "")
         }
     }
 
@@ -632,11 +601,6 @@ class MineFragment : BaseLazyFrameFragment<MineFragmentMineBinding, MineViewMode
         mViewModel.bannerListData.observe(this) {
             initBanner(it)
         }
-
-        mSignDayViewModel.todayLiveData.observe(this) {
-            mVquSignDayAdapter.todayCount = it.todayCount
-            mVquSignDayAdapter.setNewInstance(it.today)
-        }
     }
 
 
@@ -863,8 +827,8 @@ class MineFragment : BaseLazyFrameFragment<MineFragmentMineBinding, MineViewMode
             }
         } else {
             val iterator = mVquListMenuData.iterator()
-            while (iterator.hasNext()){
-                if(iterator.next().type == 9){
+            while (iterator.hasNext()) {
+                if (iterator.next().type == 9) {
                     iterator.remove()
                 }
             }
@@ -978,12 +942,6 @@ class MineFragment : BaseLazyFrameFragment<MineFragmentMineBinding, MineViewMode
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)
-    fun onSignDayEvent(successData: SignDaySuccessData) {
-        mSignDayViewModel.vquTodayActivityIndex()
-        mViewModel.vquWalletIndex()
-        val dialog = SignDaySuccessDialog()
-
-        dialog.setData(successData)
-        dialog.show(childFragmentManager, "")
+    fun onSignDayEvent(event: CommonNotificationEvent) {
     }
 }

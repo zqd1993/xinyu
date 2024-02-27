@@ -83,14 +83,6 @@ interface DynamicVquApiService {
     @POST("beckon/send")
     suspend fun vquSendBeckon(@Body map:HashMap<String,Any>): BaseResponse<Any>
 
-
-    /**
-     * 获取动态消息列表
-     *
-     * @return
-     */
-    @POST("dynamic/record")
-    suspend fun vquDynamicLikeList(@Body map:HashMap<String,Any>): BaseResponse<DynamicLikesBean>
     /**
      * 动态消息点赞数
      *

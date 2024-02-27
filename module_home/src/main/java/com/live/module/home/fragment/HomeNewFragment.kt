@@ -17,12 +17,10 @@ import com.google.android.material.appbar.AppBarLayout
 import com.gyf.immersionbar.ImmersionBar
 import com.live.module.home.R
 import com.live.module.home.adapter.HomeVquRecommendAdapter
-import com.live.module.home.adapter.TVNumAdapter
 import com.live.module.home.databinding.HomeVquMainFragmentNewBinding
 import com.live.vquonline.base.ktx.gone
 import com.live.vquonline.base.ktx.visible
 import com.live.vquonline.base.utils.*
-import com.live.vquonline.view.main.bean.HomeVquOnTvBean
 import com.mshy.VInterestSpeed.common.bean.notification.NotificationEvent
 import com.mshy.VInterestSpeed.common.bean.video.VideoRequestBean
 import com.mshy.VInterestSpeed.common.constant.PermissionDescribe
@@ -119,6 +117,10 @@ class HomeNewFragment :
         }
         mBinding.vquMagicIndicator.navigator = commonNavigator
         ViewPagerHelper.bind(mBinding.vquMagicIndicator, mBinding.vquViewPager)
+    }
+
+    override fun initRequestData() {
+
     }
 
     private fun initTopClick() {
@@ -354,102 +356,9 @@ class HomeNewFragment :
                 toast(it.message + "")
             }
         }
-        mViewModel.vquOnTvBeanList.observe(this) {//首页电视墙
-            vquInitTvList(it)
-        }
-    }
-
-    override fun initRequestData() {
-        mViewModel.vquGetOnTvlList()
     }
 
     override val mViewModel: HomeVquFragmentViewModel by viewModels<HomeVquFragmentViewModel>()
-    var tvListHomeVqu = ArrayList<HomeVquOnTvBean>()
-    private fun vquInitTvList(vquTvListHomeVqu: ArrayList<HomeVquOnTvBean>) {
-        if (vquTvListHomeVqu != null && vquTvListHomeVqu.size > 0) {
-            //添加tv
-            tvListHomeVqu.addAll(vquTvListHomeVqu)
-            mBinding.includedHeadAd.vquYouthBanner.apply {
-                addBannerLifecycleObserver(this@HomeNewFragment)
-                setOrientation(Banner.VERTICAL)
-                setUserInputEnabled(false)
-                // .setIndicator(null, false)
-                setLoopTime(3000)
-                setScrollTime(400)
-                setAdapter(TVNumAdapter(tvListHomeVqu))
-                addOnPageChangeListener(object : OnPageChangeListener {
-                    override fun onPageScrolled(
-                        position: Int,
-                        positionOffset: Float,
-                        positionOffsetPixels: Int,
-                    ) {
-
-                    }
-
-                    override fun onPageSelected(position: Int) {
-                        if ((mBinding.includedHeadAd.vquYouthBanner.adapter.getData(position) as HomeVquOnTvBean).lock_time > 0) {
-
-                            setLoopTime(
-                                ((mBinding.includedHeadAd.vquYouthBanner.adapter.getData(
-                                    position
-                                ) as HomeVquOnTvBean).lock_time * 1000).toLong()
-                            )
-                            mBinding.includedHeadAd.vquYouthBanner.adapter.notifyItemChanged(
-                                position
-                            )
-                            // (mBinding.includedHeadAd.vquYouthBanner.adapter.getData(position) as HomeVquOnTvBean).lock_time = 0
-                        } else {
-                            setLoopTime((3 * 1000).toLong())
-                        }
-                    }
-
-                    override fun onPageScrollStateChanged(state: Int) {
-
-                    }
-                })
-            }
-        }
-    }
-
-
-    @Subscribe
-    fun vquOnTVNotification(vquEvent: NotificationEvent) {
-        val videoRequestBean: VideoRequestBean = vquEvent.getCustomNotification()
-        if (null != videoRequestBean) {
-            if (16 == videoRequestBean.id) {
-                if (mBinding.includedHeadAd.vquYouthBanner != null) {
-                    var vquTvBean = HomeVquOnTvBean(
-                        0,
-                        videoRequestBean.data.from_avatar ?: "",
-                        videoRequestBean.data.from_nickname ?: "",
-                        0,
-                        0,
-                        0,
-                        if (videoRequestBean.data.gift_count == null) 0 else videoRequestBean.data.gift_count.toInt(),
-                        0,
-                        videoRequestBean.data.gift_img ?: "",
-                        videoRequestBean.data.gift_name ?: "",
-                        videoRequestBean.data.id,
-                        videoRequestBean.data.lock_time,
-                        videoRequestBean.data.lock_time,
-                        videoRequestBean.data.to_avatar ?: "",
-                        videoRequestBean.data.to_nickname ?: "",
-                        0,
-                        videoRequestBean.data.toid
-                    )
-                    if (mBinding.includedHeadAd.vquYouthBanner!!.currentItem < tvListHomeVqu.size) {
-                        tvListHomeVqu.set(
-                            mBinding.includedHeadAd.vquYouthBanner.currentItem,
-                            vquTvBean
-                        )
-                    } else {
-                        tvListHomeVqu.add(vquTvBean)
-                    }
-                }
-            }
-        }
-    }
-
 
     var vquEvent: CommonBackstageEvent? = null
 

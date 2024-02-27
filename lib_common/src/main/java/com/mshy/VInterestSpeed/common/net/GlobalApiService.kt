@@ -292,19 +292,6 @@ interface GlobalApiService {
     suspend fun getFirstRechargeInfo(): BaseResponse<IndexActivityBean>
 
 
-    /**
-     * 今日签到首页
-     */
-    @POST("talk.Activity/todayActivityIndex")
-    suspend fun tantaTodayActivityIndex(): BaseResponse<TodayBean>
-
-
-    /**
-     * 今日签到领取
-     */
-    @POST("talk.Activity/todayActivity")
-    suspend fun tantaTodayActivity(): BaseResponse<SignDaySuccessData>
-
     //
     @POST("IndexActivity/sendGift")
     fun vquIndexActivitySendGift(): Call<BaseResponse<Any>>

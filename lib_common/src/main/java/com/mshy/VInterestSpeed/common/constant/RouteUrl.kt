@@ -43,10 +43,6 @@ object RouteUrl {
 
     //动态模块
     object Dynamic {
-        /**
-         * 动态fragment
-         */
-        const val DynamicVquDynamicFragment = "/module_dynamic/DynamicVquDynamicFragment"
 
         /**
          * 动态activity

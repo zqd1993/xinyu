@@ -134,13 +134,6 @@ class CommonVquMainActivity : BaseActivity<CommonVquActivityMainBinding, CommonV
             )
             .addItem(
                 vquNewItem(
-                    R.mipmap.resources_tanta_dynamic_un_selelct,
-                    R.mipmap.resources_tanta_dynamic_selelct,
-                    getString(R.string.common_vqu_main_dynamic)
-                )
-            )
-            .addItem(
-                vquNewItem(
                     R.mipmap.resources_tanta_msg_un_selelct,
                     R.mipmap.resources_tanta_msg_selelct,
                     getString(R.string.common_vqu_main_msg)
@@ -165,10 +158,6 @@ class CommonVquMainActivity : BaseActivity<CommonVquActivityMainBinding, CommonV
         //通过ARouter 获取其他组件提供的fragment
         vqu_fragments.add(
             ARouter.getInstance().build(RouteUrl.VquMainFragment.VquMainFragment)
-                .navigation() as Fragment
-        )
-        vqu_fragments.add(
-            ARouter.getInstance().build(RouteUrl.Dynamic.DynamicVquDynamicFragment)
                 .navigation() as Fragment
         )
         vqu_fragments.add(
@@ -215,15 +204,6 @@ class CommonVquMainActivity : BaseActivity<CommonVquActivityMainBinding, CommonV
                     1 -> {
                         isHome = false
                         mBinding.bannerConversation.gone()
-                        ViewClickTime = System.currentTimeMillis()
-                        UmUtils.setUmEvent(this@CommonVquMainActivity, UmUtils.ENTERDYNAMICPAGE)
-                        mBinding.vquLlBottom.gone()
-                        mBinding.ivTop.gone()
-                    }
-
-                    2 -> {
-                        isHome = false
-                        mBinding.bannerConversation.gone()
                         EventBus.getDefault()
                             .post(com.mshy.VInterestSpeed.common.event.IsShowGuideEvent())
                         EventBus.getDefault().post("CallRecordRefresh")
@@ -233,7 +213,7 @@ class CommonVquMainActivity : BaseActivity<CommonVquActivityMainBinding, CommonV
                         mBinding.ivTop.gone()
                     }
 
-                    3 -> {
+                    2 -> {
                         isHome = false
                         mBinding.bannerConversation.gone()
                         UmUtils.setUmEvent(this@CommonVquMainActivity, UmUtils.ENTERMYPAGE)

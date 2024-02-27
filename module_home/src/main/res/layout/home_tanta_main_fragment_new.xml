@@ -195,34 +195,6 @@
 
                     </LinearLayout>
 
-                    <com.mshy.VInterestSpeed.common.ui.view.ShapeRelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="64dp"
-                        android:layout_alignParentBottom="true"
-                        android:paddingLeft="12dp"
-                        android:paddingRight="12dp"
-                        app:srl_bottomLeftRadius="0dp"
-                        app:srl_bottomRightRadius="0dp"
-                        app:srl_solidColor="@color/color_FFFFFF"
-                        app:srl_topLeftRadius="16dp"
-                        app:srl_topRightRadius="16dp">
-
-                        <com.mshy.VInterestSpeed.common.ui.view.ShapeRelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentBottom="true"
-                            app:srl_bottomLeftRadius="0dp"
-                            app:srl_bottomRightRadius="0dp"
-                            app:srl_solidColor="@color/color_FFFFFF"
-                            app:srl_topLeftRadius="16dp"
-                            app:srl_topRightRadius="16dp">
-
-                            <include
-                                android:id="@+id/included_head_ad"
-                                layout="@layout/home_tanta_layout_tv_head" />
-                        </com.mshy.VInterestSpeed.common.ui.view.ShapeRelativeLayout>
-                    </com.mshy.VInterestSpeed.common.ui.view.ShapeRelativeLayout>
-
                 </RelativeLayout>
 
             </FrameLayout>

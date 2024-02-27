@@ -25,7 +25,6 @@ import com.github.penfeizhou.animation.apng.APNGDrawable
 import com.google.android.material.appbar.AppBarLayout
 import com.gyf.immersionbar.ImmersionBar
 import com.live.module.home.R
-import com.live.module.home.adapter.TVNumAdapter
 import com.live.module.home.databinding.HomeTantaMainFragmentBinding
 import com.live.vquonline.base.ktx.dp2px
 import com.live.vquonline.base.ktx.gone
@@ -40,7 +39,6 @@ import com.mshy.VInterestSpeed.common.ui.BaseLazyFrameFragment
 import com.mshy.VInterestSpeed.common.ui.dialog.CommonRechargeDialog
 import com.mshy.VInterestSpeed.common.ui.dialog.MessageDialog
 import com.mshy.VInterestSpeed.common.utils.*
-import com.live.vquonline.view.main.bean.HomeVquOnTvBean
 import com.mshy.VInterestSpeed.common.bean.CommonVquAdBean
 import com.mshy.VInterestSpeed.common.bean.notification.NotificationEvent
 import com.mshy.VInterestSpeed.common.bean.video.VideoRequestBean
@@ -82,7 +80,6 @@ class HomeVquFragment :
     private val vquTitles = arrayOf("推荐")
     private val vquFragments: ArrayList<Fragment> = ArrayList()
     private var vquViewPagerAdapter: CommonVquMainPageAdapter? = null
-    var banner: Banner<HomeVquOnTvBean, TVNumAdapter>? = null
 
 //    var vquVoiceApngDrawable: APNGDrawable? = null
     var vquVideoApngDrawable: APNGDrawable? = null
@@ -439,60 +436,9 @@ class HomeVquFragment :
                 }
             }
         }
-        mViewModel.vquOnTvBeanList.observe(this) {
-            vquInitTvList(it)
-        }
-
     }
 
-
-    var tvListHomeVqu = ArrayList<HomeVquOnTvBean>()
     var vqu_bt_know: ShapeTextView? = null
-    private fun vquInitTvList(vquTvListHomeVqu: ArrayList<HomeVquOnTvBean>) {
-        if (vquTvListHomeVqu != null && vquTvListHomeVqu.size > 0) {
-            //添加tv
-            tvListHomeVqu.addAll(vquTvListHomeVqu)
-            mBinding.includedHeadAd.vquYouthBanner.apply {
-                addBannerLifecycleObserver(this@HomeVquFragment)
-                setOrientation(Banner.VERTICAL)
-                setUserInputEnabled(false)
-                // .setIndicator(null, false)
-                setLoopTime(3000)
-                setScrollTime(400)
-                setAdapter(TVNumAdapter(tvListHomeVqu))
-                addOnPageChangeListener(object : OnPageChangeListener {
-                    override fun onPageScrolled(
-                        position: Int,
-                        positionOffset: Float,
-                        positionOffsetPixels: Int,
-                    ) {
-
-                    }
-
-                    override fun onPageSelected(position: Int) {
-                        if ((mBinding.includedHeadAd.vquYouthBanner.adapter.getData(position) as HomeVquOnTvBean).lock_time > 0) {
-
-                            setLoopTime(
-                                ((mBinding.includedHeadAd.vquYouthBanner.adapter.getData(
-                                    position
-                                ) as HomeVquOnTvBean).lock_time * 1000).toLong()
-                            )
-                            mBinding.includedHeadAd.vquYouthBanner.adapter.notifyItemChanged(
-                                position
-                            )
-                            // (mBinding.includedHeadAd.vquYouthBanner.adapter.getData(position) as HomeVquOnTvBean).lock_time = 0
-                        } else {
-                            setLoopTime((3 * 1000).toLong())
-                        }
-                    }
-
-                    override fun onPageScrollStateChanged(state: Int) {
-
-                    }
-                })
-            }
-        }
-    }
 
     //加载圆形网络图片
     fun vquSetCircleImageUrl(vquUrl: String?, vquImageView: ImageView?) {
@@ -596,45 +542,6 @@ class HomeVquFragment :
         }
     }
 
-    @Subscribe
-    fun vquOnTVNotification(vquEvent: NotificationEvent) {
-        val videoRequestBean: VideoRequestBean = vquEvent.getCustomNotification()
-        if (null != videoRequestBean) {
-            if (16 == videoRequestBean.id) {
-                if (mBinding.includedHeadAd.vquYouthBanner != null) {
-                    var vquTvBean = HomeVquOnTvBean(
-                        0,
-                        videoRequestBean.data.from_avatar ?: "",
-                        videoRequestBean.data.from_nickname ?: "",
-                        0,
-                        0,
-                        0,
-                        if (videoRequestBean.data.gift_count == null) 0 else videoRequestBean.data.gift_count.toInt(),
-                        0,
-                        videoRequestBean.data.gift_img ?: "",
-                        videoRequestBean.data.gift_name ?: "",
-                        videoRequestBean.data.id,
-                        videoRequestBean.data.lock_time,
-                        videoRequestBean.data.lock_time,
-                        videoRequestBean.data.to_avatar ?: "",
-                        videoRequestBean.data.to_nickname ?: "",
-                        0,
-                        videoRequestBean.data.toid
-                    )
-                    if (mBinding.includedHeadAd.vquYouthBanner!!.currentItem < tvListHomeVqu.size) {
-                        tvListHomeVqu.set(
-                            mBinding.includedHeadAd.vquYouthBanner.currentItem,
-                            vquTvBean
-                        )
-                    } else {
-                        tvListHomeVqu.add(vquTvBean)
-                    }
-                    //                   mBinding.includedHeadAd.vquYouthBanner!!.adapter.notifyDataSetChanged()
-                }
-            }
-        }
-    }
-
     //加载圆形网络图片
     fun setCircleImageUrl(url: String?, imageView: ImageView?) {
         if (url == null) {
@@ -666,7 +573,6 @@ class HomeVquFragment :
     override fun initRequestData() {
 //        mViewModel.vquGetAdvert("2")
 //        mViewModel.vquGetAdvert("6")
-        mViewModel.vquGetOnTvlList()
     }
 
     fun refreshRecommended() {

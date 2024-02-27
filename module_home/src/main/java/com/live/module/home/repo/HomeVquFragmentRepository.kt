@@ -8,7 +8,6 @@ import com.live.vquonline.base.mvvm.m.BaseRepository
 import com.mshy.VInterestSpeed.common.bean.BaseResponse
 import com.mshy.VInterestSpeed.common.bean.VquUserHomeBean
 import com.mshy.VInterestSpeed.common.helper.responseCodeExceptionHandler
-import com.live.vquonline.view.main.bean.HomeVquOnTvBean
 import com.mshy.VInterestSpeed.common.bean.CommonVquAdBean
 import javax.inject.Inject
 
@@ -23,14 +22,6 @@ class HomeVquFragmentRepository @Inject constructor() : BaseRepository() {
 
     suspend fun vquGetAdvert(vquType:String = "2") = request<BaseResponse<CommonVquAdBean>> {
         vquHomeService.vquGetAdvert(vquType).run {
-            responseCodeExceptionHandler(code, message, {
-                emit(this)
-            })
-        }
-    }
-
-    suspend fun vquGetOnTvlList() = request<BaseResponse<ArrayList<HomeVquOnTvBean>>> {
-        vquHomeService.vquGetOntvList().run {
             responseCodeExceptionHandler(code, message, {
                 emit(this)
             })

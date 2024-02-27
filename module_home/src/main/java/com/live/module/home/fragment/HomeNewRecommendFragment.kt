@@ -19,7 +19,6 @@ import com.live.module.home.databinding.HomeVquMainRecommendFragmentNewBinding
 import com.live.vquonline.base.ktx.gone
 import com.live.vquonline.base.ktx.visible
 import com.live.vquonline.base.utils.*
-import com.live.vquonline.view.main.bean.HomeVquOnTvBean
 import com.mshy.VInterestSpeed.common.constant.RouteKey
 import com.mshy.VInterestSpeed.common.constant.RouteUrl
 import com.mshy.VInterestSpeed.common.constant.SpKey
@@ -273,8 +272,6 @@ class HomeNewRecommendFragment :
 
     private var mediaPlayer: MediaPlayer? = null
     override val mViewModel: HomeVquFragmentViewModel by viewModels<HomeVquFragmentViewModel>()
-    var tvListHomeVqu = ArrayList<HomeVquOnTvBean>()
-
 
     override fun onRefresh(refreshLayout: RefreshLayout) {
         vquPage = 1

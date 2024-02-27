@@ -18,7 +18,7 @@
     <com.google.android.material.appbar.CollapsingToolbarLayout
         android:id="@+id/toolbar_layout"
         android:layout_width="match_parent"
-        android:layout_height="208dp"
+        android:layout_height="158dp"
         android:background="@color/color_FFFFFF"
         app:contentScrim="@android:color/white"
         app:layout_scrollFlags="scroll|exitUntilCollapsed">
@@ -290,29 +290,6 @@
                     </com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout>
 
                 </LinearLayout>
-
-                <com.mshy.VInterestSpeed.common.ui.view.ShapeRelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginTop="12dp"
-                    android:paddingLeft="16dp"
-                    android:paddingRight="16dp">
-
-                    <com.mshy.VInterestSpeed.common.ui.view.ShapeRelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentBottom="true"
-                        app:srl_bottomLeftRadius="0dp"
-                        app:srl_bottomRightRadius="0dp"
-                        app:srl_topLeftRadius="16dp"
-                        app:srl_topRightRadius="16dp">
-
-                        <include
-                            android:id="@+id/included_head_ad"
-                            layout="@layout/home_tanta_layout_tv_head" />
-                    </com.mshy.VInterestSpeed.common.ui.view.ShapeRelativeLayout>
-                </com.mshy.VInterestSpeed.common.ui.view.ShapeRelativeLayout>
 
             </LinearLayout>
 

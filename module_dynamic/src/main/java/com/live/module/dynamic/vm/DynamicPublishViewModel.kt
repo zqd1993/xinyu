@@ -28,7 +28,6 @@ class DynamicPublishViewModel @Inject constructor(private val mVquRepo: DynamicV
     BaseViewModel() {
     val dynamicLsit = MutableLiveData<BaseResponse<DynamicVquBean>>()
     val nyDynamicLsit = MutableLiveData<BaseResponse<DynamicVquBean>>()
-    val dynamicLikeLsit = MutableLiveData<BaseResponse<DynamicLikesBean>>()
     val dynamicLikeCount = MutableLiveData<BaseResponse<Int>>()
     val dynamicDetail = MutableLiveData<BaseResponse<DynamicVquDetailBean>>()
     val dynamicDetailCommentListData = MutableLiveData<BaseResponse<DynamicTantaCommentsBean>>()
@@ -262,20 +261,6 @@ class DynamicPublishViewModel @Inject constructor(private val mVquRepo: DynamicV
                 .catch { toast(it.message ?: "") }
                 .collect {
                     vquSendBeckoningData.postValue(it)
-                }
-        }
-    }
-
-    fun vquDynamicLikeList(page: Int) {
-        launchIO {
-            val params = hashMapOf<String, Any>()
-            params["page"] = page
-            params["limit"] = LIMIT
-
-            mVquRepo.vquDynamicLikeList(params)
-                .catch { toast(it.message ?: "") }
-                .collect {
-                    dynamicLikeLsit.postValue(it)
                 }
         }
     }

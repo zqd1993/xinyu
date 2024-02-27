@@ -8,14 +8,6 @@ import com.google.gson.annotations.SerializedName
  * date: 2022/6/23
  * description:
  */
-data class TodayBean(
-    @SerializedName("today")
-    val today: MutableList<Today>,
-    @SerializedName("today_count")
-    val todayCount: Int,
-    @SerializedName("today_status")
-    val todayStatus: Boolean
-)
 
 data class Today(
     @SerializedName("list")

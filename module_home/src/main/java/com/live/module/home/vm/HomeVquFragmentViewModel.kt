@@ -14,7 +14,6 @@ import com.live.vquonline.base.utils.toast
 import com.mshy.VInterestSpeed.common.ext.toast
 import com.mshy.VInterestSpeed.common.utils.UserManager
 import com.mshy.VInterestSpeed.common.utils.UserSpUtils
-import com.live.vquonline.view.main.bean.HomeVquOnTvBean
 import com.mshy.VInterestSpeed.common.bean.CommonVquAdBean
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
@@ -46,8 +45,6 @@ class HomeVquFragmentViewModel @Inject constructor() :
      * 首个数据
      */
     val vquAdBean6 = MutableLiveData<CommonVquAdBean>()
-
-    val vquOnTvBeanList = MutableLiveData<ArrayList<HomeVquOnTvBean>>()
 
     val vquGetRecommendAnchors = MutableLiveData<HomeVquChannelAnchorBean>()
 
@@ -96,24 +93,6 @@ class HomeVquFragmentViewModel @Inject constructor() :
                 }
         }
 
-    }
-
-
-    /**
-     * 获取数据
-     */
-    fun vquGetOnTvlList() {
-        viewModelScope.launch(Dispatchers.IO) {
-            vquRepository.vquGetOnTvlList()
-                .catch {
-
-                }
-                .collect {
-                    if (it.data != null) {
-                        vquOnTvBeanList.postValue(it.data!!)
-                    }
-                }
-        }
     }
 
     fun vquSendBeckon(vquUserId: String, vquPosition: Int, isContinue: Int, isTip: Int) {

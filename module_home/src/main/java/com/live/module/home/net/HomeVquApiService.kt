@@ -6,7 +6,6 @@ import com.live.module.home.bean.HomeVquChannelAnchorBean
 import com.live.module.home.bean.HomeVquUserInfo
 import com.mshy.VInterestSpeed.common.bean.BaseResponse
 import com.mshy.VInterestSpeed.common.bean.VquUserHomeBean
-import com.live.vquonline.view.main.bean.HomeVquOnTvBean
 import retrofit2.http.Body
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
@@ -27,14 +26,6 @@ interface HomeVquApiService{
     @POST("user/getAdvert")
     @FormUrlEncoded
     suspend fun vquGetAdvert(@Field("position") position: String): BaseResponse<com.mshy.VInterestSpeed.common.bean.CommonVquAdBean>
-
-    /**
-     * 获取上电视数据
-     *
-     * @return
-     */
-    @POST("user/getOntvList")
-    suspend fun vquGetOntvList(): BaseResponse<ArrayList<HomeVquOnTvBean>>
 
     /**
      * 推荐
