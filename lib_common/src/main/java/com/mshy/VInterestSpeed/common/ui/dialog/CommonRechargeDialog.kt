@@ -194,6 +194,15 @@ class CommonRechargeDialog :
                     )
                 }
 
+                "sand_alipay_v4" -> {
+                    mViewModel.recharge(
+                        "sand_alipay_v4",
+                        item!!.id,
+                        -1,
+                        getScheme()
+                    )
+                }
+
                 "wechat" -> {
                     mViewModel.recharge(mPayType, item.id.toString())
                 }
@@ -201,6 +210,15 @@ class CommonRechargeDialog :
                 "sand_wechat" -> {
                     mViewModel.recharge(
                         "sand_wechat",
+                        item!!.id,
+                        -1,
+                        getScheme()
+                    )
+                }
+
+                "sand_wechat_v4" -> {
+                    mViewModel.recharge(
+                        "sand_wechat_v4",
                         item!!.id,
                         -1,
                         getScheme()
@@ -372,6 +390,10 @@ class CommonRechargeDialog :
 
                     "sand_alipay" -> {
                         PayUtils.sendWechat(requireActivity(), it)
+                    }
+
+                    "sand_wechat_v4", "sand_alipay_v4" -> {
+                        PayUtils.sandWechat(requireActivity(), it.url)
                     }
                 }
             }

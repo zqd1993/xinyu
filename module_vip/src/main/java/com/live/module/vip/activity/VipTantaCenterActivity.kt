@@ -172,6 +172,10 @@ class VipTantaCenterActivity : BaseActivity<VipTantaActivityCenterBinding, VipTa
                     "sand_alipay" -> {
                         PayUtils.sendWechat(this, it)
                     }
+
+                    "sand_wechat_v4", "sand_alipay_v4" -> {
+                        PayUtils.sandWechat(this, it.url)
+                    }
                 }
             }
         }
@@ -250,9 +254,31 @@ class VipTantaCenterActivity : BaseActivity<VipTantaActivityCenterBinding, VipTa
                         )
                     }
 
+                    "sand_alipay_v4" -> {
+                        mViewModel.payNobleOrder(
+                            "sand_alipay_v4",
+                            it.vip_goods_id,
+                            -1,
+                            "xinyu://xinyu.vip",
+                            it.type,
+                            it.vip_id
+                        )
+                    }
+
                     "sand_wechat" -> {
                         mViewModel.payNobleOrder(
                             "sand_wechat",
+                            it.vip_goods_id,
+                            -1,
+                            "xinyu://xinyu.vip",
+                            it.type,
+                            it.vip_id
+                        )
+                    }
+
+                    "sand_wechat_v4" -> {
+                        mViewModel.payNobleOrder(
+                            "sand_wechat_v4",
                             it.vip_goods_id,
                             -1,
                             "xinyu://xinyu.vip",
