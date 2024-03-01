@@ -39,7 +39,7 @@
         android:layout_marginTop="19dp"
         android:layout_marginRight="35dp"
         android:gravity="center"
-        android:text="恭喜您已通过真人认证，请开启您的甜缘交友交友之旅吧~"
+        android:text="恭喜您已通过真人认证，请开启您的山海甜缘之旅吧~"
         android:textColor="@color/color_999999"
         android:textSize="13sp"
         app:layout_constraintLeft_toLeftOf="parent"

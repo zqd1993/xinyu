@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">甜缘交友</string>
+    <string name="app_name">山海甜缘</string>
     <string name="login_desc">手机号登录</string>
     <string name="vqu_operation_success">操作成功</string>
     <string name="vqu_operation_failure">操作失败</string>
@@ -122,19 +122,19 @@
 
 
     <string name="agreement_text">
- &lt;font&gt;欢迎您使用“甜缘交友”！甜缘交友非常重视保护用户（以下简称“您”）的个人信息和隐私，我们根据监管要求更新了&lt;a href=&quot;https://asset.whzhenban.top/tianyuan/about/agreement_qy_op.html&quot;&gt;&lt;font color=&quot;#576990&quot;&gt;《用户服务协议》&lt;/font&gt;&lt;/a&gt;和&lt;a href=&quot;https://asset.whzhenban.top/tianyuan/about/privacy_qy_op.html&quot;&gt;&lt;font color=&quot;#576990&quot;&gt;《甜缘交友隐私政策》&lt;/font&gt;&lt;/a&gt;；并希望通过以下《甜缘交友隐私政策（摘要）》帮助您直观、简洁地了解我们在必要范围内收集和使用您的个人信息类型和业务场景，以及我们处理您个人信息的基本规则。
-&lt;br&gt;                      甜缘交友隐私政策（摘要）
+ &lt;font&gt;欢迎您使用“山海甜缘”！山海甜缘非常重视保护用户（以下简称“您”）的个人信息和隐私，我们根据监管要求更新了&lt;a href=&quot;https://asset.whzhenban.top/tianyuan/about/agreement_qy_op.html&quot;&gt;&lt;font color=&quot;#576990&quot;&gt;《用户服务协议》&lt;/font&gt;&lt;/a&gt;和&lt;a href=&quot;https://asset.whzhenban.top/tianyuan/about/privacy_qy_op.html&quot;&gt;&lt;font color=&quot;#576990&quot;&gt;《山海甜缘隐私政策》&lt;/font&gt;&lt;/a&gt;；并希望通过以下《山海甜缘隐私政策（摘要）》帮助您直观、简洁地了解我们在必要范围内收集和使用您的个人信息类型和业务场景，以及我们处理您个人信息的基本规则。
+&lt;br&gt;                      山海甜缘隐私政策（摘要）
 &lt;br&gt;一、我们如何收集和使用个人信息
 &lt;br&gt;1．帮助您完成注册、登录及认证
-&lt;br&gt;注册甜缘交友帐号时，您需要提供手机号码、验证码匹配结果、昵称、头像、生日，如果您使用第三方帐号进行登录，需要您提供第三方帐号的昵称、头像、性别。在注册、登录或后续的使用过程中，您也可以向我们补充额外信息（如您的性别、星座、所在地、职业、学历、身高、体重、年收入、交友宣言、兴趣爱好、您本人的真实头像），有助于我们提供更好的服务，同时增进您与其他用户之间的互动、了解。如果您不提供这些信息，并不会影响您使用甜缘交友的基本功能。
-依据相关法律法规的规定，或为了满足实名认证的需要，保障用户帐号安全，在您使用甜缘交友实名认证、身份认证、兑换积分功能时，我们需要对您进行身份验证，并收集您的以下身份认证信息：姓名、身份证号码、电话号码、面部特征值（静态或动态）、与实名认证一致的收款帐号以及兑换积分记录信息。如果您拒绝向我们提供上述信息，我们将无法向您提供相关的功能及服务。
+&lt;br&gt;注册山海甜缘帐号时，您需要提供手机号码、验证码匹配结果、昵称、头像、生日，如果您使用第三方帐号进行登录，需要您提供第三方帐号的昵称、头像、性别。在注册、登录或后续的使用过程中，您也可以向我们补充额外信息（如您的性别、星座、所在地、职业、学历、身高、体重、年收入、交友宣言、兴趣爱好、您本人的真实头像），有助于我们提供更好的服务，同时增进您与其他用户之间的互动、了解。如果您不提供这些信息，并不会影响您使用山海甜缘的基本功能。
+依据相关法律法规的规定，或为了满足实名认证的需要，保障用户帐号安全，在您使用山海甜缘实名认证、身份认证、兑换积分功能时，我们需要对您进行身份验证，并收集您的以下身份认证信息：姓名、身份证号码、电话号码、面部特征值（静态或动态）、与实名认证一致的收款帐号以及兑换积分记录信息。如果您拒绝向我们提供上述信息，我们将无法向您提供相关的功能及服务。
 &lt;br&gt;2．为您提供信息发布与互动服务
-&lt;br&gt;在您使用甜缘交友进行上传/发布信息以及进行相关行为（即上传发布音视频、图文内容、点赞、评论、关注、收藏、送礼时）时，我们将收集您上传、发布及形成的信息并有权展示您的昵称、头像和发布内容。当您使用甜缘交友向其他用户打赏、送礼时，我们将收集您的头像、昵称及送礼数据，并向其他用户进行展示。当您使用上传头像、进行真人认证、发布语音个性签名、发布动态（包括图文与视频内容）时，我们还会根据您所发布的内容请求您授权相机、照片、麦克风以及存储权限；请你知悉，权限的开启或授权是您使用上述功能的前提，如您关闭或拒绝授权将无法使用上述功能，但不会影响您使用其他功能与服务。
+&lt;br&gt;在您使用山海甜缘进行上传/发布信息以及进行相关行为（即上传发布音视频、图文内容、点赞、评论、关注、收藏、送礼时）时，我们将收集您上传、发布及形成的信息并有权展示您的昵称、头像和发布内容。当您使用山海甜缘向其他用户打赏、送礼时，我们将收集您的头像、昵称及送礼数据，并向其他用户进行展示。当您使用上传头像、进行真人认证、发布语音个性签名、发布动态（包括图文与视频内容）时，我们还会根据您所发布的内容请求您授权相机、照片、麦克风以及存储权限；请你知悉，权限的开启或授权是您使用上述功能的前提，如您关闭或拒绝授权将无法使用上述功能，但不会影响您使用其他功能与服务。
 &lt;br&gt;  请您注意，您在使用我们提供的服务时所提供的所有个人信息，除非您删除或通过系统设置拒绝我们收集，否则将在您使用我们的服务期间持续授权我们使用。在您注销帐号时，我们将停止使用并删除您的个人信息，或采取匿名化处理，使其不再与您关联到一起。
 &lt;br&gt;二、我们如何共享您的个人信息
-&lt;br&gt;我们会委托第三方服务提供商处理我们收集的您的个人信息，以便其为我们提供基础设施技术、数据分析、广告投放、营销决策等产品或技术支持，上述委托处理行为受《甜缘交友隐私政策》中所声明目的约束，并且我们会以合同方式对上述的第三方进行监督，以确保您的个人信息安全。
+&lt;br&gt;我们会委托第三方服务提供商处理我们收集的您的个人信息，以便其为我们提供基础设施技术、数据分析、广告投放、营销决策等产品或技术支持，上述委托处理行为受《山海甜缘隐私政策》中所声明目的约束，并且我们会以合同方式对上述的第三方进行监督，以确保您的个人信息安全。
 &lt;br&gt;三、您的权利
-&lt;br&gt;在您使用甜缘交友期间，您可以通过相应页面提示或《甜缘交友隐私政策》载明的方式联系我们，以访问、更正、删除您的个人信息，以及行使改变授权同意的范围与注销帐号的权利，我们将及时响应您的请求。如果您需要您的个人信息副本，您可以通过我们提供的方式联系我们，在核实您的身份后，我们将向您提供您在我们服务中的个人信息副本（包括基本资料、身份信息），但法律法规另有规定的或《甜缘交友隐私政策》另有约定的除外。
+&lt;br&gt;在您使用山海甜缘期间，您可以通过相应页面提示或《山海甜缘隐私政策》载明的方式联系我们，以访问、更正、删除您的个人信息，以及行使改变授权同意的范围与注销帐号的权利，我们将及时响应您的请求。如果您需要您的个人信息副本，您可以通过我们提供的方式联系我们，在核实您的身份后，我们将向您提供您在我们服务中的个人信息副本（包括基本资料、身份信息），但法律法规另有规定的或《山海甜缘隐私政策》另有约定的除外。
 &lt;br&gt;四、未成年人保护
 &lt;br&gt;我们的产品和服务仅面向18周岁以上的成年人，任何不满18周岁的未成年人不得创建自己的用户帐号及/或使用我们的服务。如我们发现或审核出任何未成年人注册或使用我们的产品，我们将采取注销帐号、删除信息等措施禁止、限制未成年人使用。
 &lt;br&gt;五、如何联系我们
@@ -147,9 +147,9 @@
     </string>
 
     <string name="vqu_bill_recharge_agreement">
-        1、充值即代表已阅读并同意&lt;a href=&quot;#vqu_recharge_agreement#&quot;&gt;&lt;font color=&quot;#576990&quot;&gt;《甜缘交友充值服务协议》&lt;/font&gt;&lt;/a&gt;
+        1、充值即代表已阅读并同意&lt;a href=&quot;#vqu_recharge_agreement#&quot;&gt;&lt;font color=&quot;#576990&quot;&gt;《山海甜缘充值服务协议》&lt;/font&gt;&lt;/a&gt;
         &lt;br&gt;2、前往收支记录，可查询充值订单详情和消费详情
-        &lt;br&gt;3、禁止未成年人进行充值，点击详见&lt;a href=&quot;#vqu_juvenile_protection#&quot;&gt;&lt;font color=&quot;#576990&quot;&gt; 《甜缘交友未成年人保护计划》&lt;/font&gt;&lt;/a&gt;
+        &lt;br&gt;3、禁止未成年人进行充值，点击详见&lt;a href=&quot;#vqu_juvenile_protection#&quot;&gt;&lt;font color=&quot;#576990&quot;&gt; 《山海甜缘未成年人保护计划》&lt;/font&gt;&lt;/a&gt;
         &lt;br&gt;4、在充值过程中如遇任何问题，可联系官方客服
     </string>
 
@@ -199,7 +199,7 @@
     <string name="setting_score">去评分</string>
     <string name="setting_logoff">注销账号</string>
     <string name="setting_clear_info">(清除所有资料)</string>
-    <string name="setting_about">关于甜缘交友</string>
+    <string name="setting_about">关于山海甜缘</string>
     <string name="setting_mobile">手机号</string>
     <string name="setting_mobile_hint">请输入手机号码</string>
     <string name="setting_code">验证码</string>
@@ -209,9 +209,9 @@
     <string name="setting_message_notice">你未开启通知权限，请在系统权限中开启</string>
     <string name="setting_notice_open">去开启</string>
     <string name="setting_fate">缘分牵线</string>
-    <string name="setting_fate_tip">开启后，甜缘交友将用大数据为您匹配有缘人，牵线成功会发送缘分消息，关闭后，将不会收到缘分牵线。</string>
+    <string name="setting_fate_tip">开启后，山海甜缘将用大数据为您匹配有缘人，牵线成功会发送缘分消息，关闭后，将不会收到缘分牵线。</string>
     <string name="setting_chat_notice">私信通知</string>
-    <string name="setting_chat_notice_tip">您已在系统设置中关闭了甜缘交友的通知，请在系统设置-通知中，允许甜缘交友获得权限，以便及时收到新消息提醒。</string>
+    <string name="setting_chat_notice_tip">您已在系统设置中关闭了山海甜缘的通知，请在系统设置-通知中，允许山海甜缘获得权限，以便及时收到新消息提醒。</string>
     <string name="setting_voice">声音</string>
     <string name="setting_vibration">震动</string>
     <string name="setting_scree_notice">飘屏通知</string>
@@ -221,7 +221,7 @@
     <string name="setting_teen_mode">青少年模式</string>
     <string name="setting_setpwd">设置密码</string>
     <string name="setting_tip">提示</string>
-    <string name="setting_clean_tip">是否删除甜缘交友数据？</string>
+    <string name="setting_clean_tip">是否删除山海甜缘数据？</string>
 
     <string name="home_vqu_main_goto">前往</string>
     <string name="common_vqu_relocate">重新定位</string>
@@ -244,7 +244,7 @@
     <string name="common_vqu_go_to_auth">去认证</string>
     <string name="common_vqu_go_to_no_auth">暂不认证</string>
     <string name="common_vqu_go_to_real_auth">真人认证</string>
-    <string name="common_vqu_content_auth">甜缘交友提倡真实交友，通过【真人认证】后才可以心动交友哦~</string>
+    <string name="common_vqu_content_auth">山海甜缘提倡真实交友，通过【真人认证】后才可以心动交友哦~</string>
     <string name="common_vqu_teenmode_close_tip">您已开启未成年模式\n所有功能关闭</string>
     <string name="common_vqu_teenmode_tip">为呵护未成年人健康成长\n我们已推出青少年</string>
     <string name="common_vqu_teenmode_close">关闭未成年模式</string>
@@ -321,5 +321,5 @@
     <string name="nim_vqu_intimate_str">
         1、在你们私信聊天当中，每产生消耗金币的行为即可增加亲密度（消息、私聊送礼、音视频通话都包括在内）；
         \n2、1亲密度=10金币，不同等级可解锁不同特权奖励；
-        \n3、奖励最终解释权归甜缘交友所有。</string>
+        \n3、奖励最终解释权归山海甜缘所有。</string>
 </resources>

@@ -99,11 +99,11 @@ class ContactTantaInvitedRecordSearchActivity :
 
         })
 
-        mBinding.tbContactVquInvitedRecordSearchBar.toolbar.initSearch("搜索甜缘交友号或昵称", onSearch = {
+        mBinding.tbContactVquInvitedRecordSearchBar.toolbar.initSearch("搜索山海甜缘号或昵称", onSearch = {
             val keyword = it
 
             if (keyword.isEmpty()) {
-                toast("请输入用户甜缘交友号或昵称")
+                toast("请输入用户山海甜缘号或昵称")
                 return@initSearch
             }
 

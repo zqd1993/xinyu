@@ -25,7 +25,7 @@
             android:padding="16dp"
             android:textColor="@color/white"
             android:textSize="16sp"
-            tool:text="欢迎来到甜缘交友" />
+            tool:text="欢迎来到山海甜缘" />
 
     </RelativeLayout>
 

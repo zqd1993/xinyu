@@ -26,7 +26,7 @@ class ContactTantaInvitedAdapter :
             )
 
         holder.setText(R.id.tv_contact_vqu_item_invited_record_list_name, item.nickname)
-        holder.setText(R.id.tv_contact_vqu_item_invited_record_list_id, "甜缘交友号：" + item.usercode)
+        holder.setText(R.id.tv_contact_vqu_item_invited_record_list_id, "山海甜缘号：" + item.usercode)
         holder.setText(R.id.tv_contact_vqu_item_invited_record_list_time, item.addTime)
     }
 }

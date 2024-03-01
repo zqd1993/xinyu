@@ -87,7 +87,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_name"
-            tools:text="甜缘交友号: 2256668" />
+            tools:text="山海甜缘号: 2256668" />
 
         <TextView
             android:id="@+id/tv_sign_time"

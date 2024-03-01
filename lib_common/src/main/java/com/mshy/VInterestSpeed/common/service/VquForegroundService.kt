@@ -102,7 +102,7 @@ class VquForegroundService : Service() {
         //通知小图标
         builder.setSmallIcon(R.mipmap.ic_launcher)
         //通知标题
-        builder.setContentTitle("甜缘交友APP")
+        builder.setContentTitle("山海甜缘APP")
         //通知内容
         builder.setContentText("正在视频/音频通话中...")
         //设置通知显示的时间

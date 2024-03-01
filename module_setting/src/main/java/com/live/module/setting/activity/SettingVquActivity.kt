@@ -214,7 +214,7 @@ class SettingVquActivity : BaseActivity<SettingTantaActivitySettingBinding, Sett
                     deleteAllMsg()
                 }
 
-                getString(R.string.setting_about) -> {//关于甜缘交友
+                getString(R.string.setting_about) -> {//关于山海甜缘
                     ARouter.getInstance()
                         .build(RouteUrl.Setting.SettingVquAboutActivity)
                         .navigation()
