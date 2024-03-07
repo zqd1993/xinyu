@@ -37,6 +37,7 @@ import com.mshy.VInterestSpeed.uikit.business.uinfo.UserInfoHelper
 import com.mshy.VInterestSpeed.uikit.common.util.sys.TimeUtil
 import com.mshy.VInterestSpeed.uikit.event.MessageVquCurrentItemEvent
 import com.mshy.VInterestSpeed.uikit.event.NotificationIntimateChangeEvent
+import com.mshy.VInterestSpeed.uikit.event.NotificationProtectionStatusEvent
 import com.mshy.VInterestSpeed.uikit.util.IntimateUtils
 import com.netease.nimlib.sdk.NIMClient
 import com.netease.nimlib.sdk.Observer
@@ -45,7 +46,6 @@ import com.netease.nimlib.sdk.ResponseCode
 import com.netease.nimlib.sdk.msg.MsgService
 import com.netease.nimlib.sdk.msg.MsgServiceObserve
 import com.netease.nimlib.sdk.msg.attachment.MsgAttachment
-import com.netease.nimlib.sdk.msg.constant.MsgTypeEnum
 import com.netease.nimlib.sdk.msg.constant.SessionTypeEnum
 import com.netease.nimlib.sdk.msg.model.IMMessage
 import com.netease.nimlib.sdk.msg.model.RecentContact
@@ -547,6 +547,11 @@ class MessageVquRecentIntimateFragment :
                 event.data.data.score, event.data.data.grade.toInt()
             )
         }
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    fun onEventMainThread(event: NotificationProtectionStatusEvent?) {
+        refreshMessages()
     }
 
 }

@@ -56,5 +56,7 @@ data class VquUserInfo(
     var scoutModel: Int,//1是工会，0不是
     @SerializedName("invite_code")
     var inviteCode: String?,
-    var isShowCommonWord: Boolean
+    var isShowCommonWord: Boolean,
+    @SerializedName("guardian_num")
+    var guardianNum: Int
 ) : Parcelable

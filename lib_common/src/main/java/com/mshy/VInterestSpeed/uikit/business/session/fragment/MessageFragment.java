@@ -43,6 +43,7 @@ import com.mshy.VInterestSpeed.uikit.api.model.main.CustomPushContentProvider;
 import com.mshy.VInterestSpeed.uikit.api.model.session.SessionCustomization;
 import com.mshy.VInterestSpeed.uikit.business.session.constant.Extras;
 import com.mshy.VInterestSpeed.uikit.common.CommonUtil;
+import com.mshy.VInterestSpeed.uikit.event.NotificationProtectionStatusEvent;
 import com.mshy.VInterestSpeed.uikit.impl.NimUIKitImpl;
 import com.netease.nimlib.sdk.NIMClient;
 import com.netease.nimlib.sdk.Observer;
@@ -65,6 +66,7 @@ import com.netease.nimlib.sdk.robot.model.RobotAttachment;
 import com.netease.nimlib.sdk.robot.model.RobotMsgType;
 
 import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -447,6 +449,11 @@ public class MessageFragment extends TFragment implements ModuleProxy {
             tip.setConfig(config);
             NIMClient.getService(MsgService.class).saveMessageToLocal(tip, true);
         }
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onEventMainThread(NotificationProtectionStatusEvent event) {
+        messageListPanel.refreshMessageList();
     }
 
     private void appendTeamMemberPush(IMMessage message) {

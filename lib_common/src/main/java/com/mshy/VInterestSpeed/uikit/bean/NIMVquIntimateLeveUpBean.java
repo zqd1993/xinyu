@@ -43,6 +43,8 @@ public class NIMVquIntimateLeveUpBean {
         private String avatar;
         @SerializedName("to_avatar")
         private String toAvatar;
+        @SerializedName("user_id")
+        private int userId;
 
         public String getMsg() {
             return msg;
@@ -171,6 +173,14 @@ public class NIMVquIntimateLeveUpBean {
         public void setDes(String des) {
             this.des = des;
         }
+
+        public int getUserId() {
+            return userId;
+        }
+
+        public void setUserId(int userId) {
+            this.userId = userId;
+        }
     }
 
     public int getId() {
@@ -188,4 +198,6 @@ public class NIMVquIntimateLeveUpBean {
     public void setData(DataBean data) {
         this.data = data;
     }
+
+
 }

@@ -237,7 +237,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="4dp"
-                            android:text="@string/mine_vqu_focus"
+                            android:text="好友"
                             android:textColor="@color/white"
                             android:textSize="12sp"
                             app:layout_constraintLeft_toLeftOf="@id/tv_mine_vqu_focus_num"
@@ -249,6 +249,7 @@
                         android:id="@+id/cl_mine_vqu_fans_parent"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:visibility="gone"
                         android:layout_weight="1">
 
                         <TextView
@@ -294,6 +295,55 @@
                             app:layout_constraintTop_toBottomOf="@id/tv_mine_vqu_fans_num" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cl_mine_vqu_visitor_parent"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:id="@+id/tv_mine_vqu_visitor_num"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:includeFontPadding="false"
+                            android:textColor="@color/white"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:typeface="sans"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:text="323" />
+
+                        <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
+                            android:id="@+id/stv_mine_vqu_visitor_new_num"
+                            android:layout_width="wrap_content"
+                            android:layout_height="15dp"
+                            android:minWidth="15dp"
+                            android:paddingLeft="5dp"
+                            android:paddingRight="5dp"
+                            android:text="1"
+                            android:textColor="@color/color_FFFFFF"
+                            android:textSize="11sp"
+                            android:visibility="gone"
+                            app:layout_constraintLeft_toRightOf="@id/tv_mine_vqu_visitor_num"
+                            app:layout_constraintRight_toRightOf="@id/tv_mine_vqu_visitor_num"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:stv_layoutRadius="7.5dp"
+                            app:stv_solidColor="@color/color_FF3B30" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="@string/mine_vqu_visitor"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
+                            app:layout_constraintLeft_toLeftOf="@id/tv_mine_vqu_visitor_num"
+                            app:layout_constraintRight_toRightOf="@id/tv_mine_vqu_visitor_num"
+                            app:layout_constraintTop_toBottomOf="@id/tv_mine_vqu_visitor_num" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/cl_mine_vqu_track_parent"
@@ -345,15 +395,14 @@
                             app:layout_constraintTop_toBottomOf="@id/tv_mine_vqu_track_num" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
-
                     <androidx.constraintlayout.widget.ConstraintLayout
-                        android:id="@+id/cl_mine_vqu_visitor_parent"
+                        android:id="@+id/cl_mine_vqu_my_protection"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1">
 
                         <TextView
-                            android:id="@+id/tv_mine_vqu_visitor_num"
+                            android:id="@+id/tv_mine_my_protection_num"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
@@ -368,7 +417,6 @@
                             tools:text="323" />
 
                         <com.mshy.VInterestSpeed.common.ui.view.ShapeTextView
-                            android:id="@+id/stv_mine_vqu_visitor_new_num"
                             android:layout_width="wrap_content"
                             android:layout_height="15dp"
                             android:minWidth="15dp"
@@ -378,23 +426,25 @@
                             android:textColor="@color/color_FFFFFF"
                             android:textSize="11sp"
                             android:visibility="gone"
-                            app:layout_constraintLeft_toRightOf="@id/tv_mine_vqu_visitor_num"
-                            app:layout_constraintRight_toRightOf="@id/tv_mine_vqu_visitor_num"
+                            app:layout_constraintLeft_toRightOf="@id/tv_mine_my_protection_num"
+                            app:layout_constraintRight_toRightOf="@id/tv_mine_my_protection_num"
                             app:layout_constraintTop_toTopOf="parent"
                             app:stv_layoutRadius="7.5dp"
                             app:stv_solidColor="@color/color_FF3B30" />
 
                         <TextView
+                            android:id="@+id/tv_mine_my_protection_txt"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="4dp"
-                            android:text="@string/mine_vqu_visitor"
+                            android:text="我的守护"
                             android:textColor="@color/white"
                             android:textSize="12sp"
-                            app:layout_constraintLeft_toLeftOf="@id/tv_mine_vqu_visitor_num"
-                            app:layout_constraintRight_toRightOf="@id/tv_mine_vqu_visitor_num"
-                            app:layout_constraintTop_toBottomOf="@id/tv_mine_vqu_visitor_num" />
+                            app:layout_constraintLeft_toLeftOf="@id/tv_mine_my_protection_num"
+                            app:layout_constraintRight_toRightOf="@id/tv_mine_my_protection_num"
+                            app:layout_constraintTop_toBottomOf="@id/tv_mine_my_protection_num" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
+
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
                 <androidx.constraintlayout.widget.ConstraintLayout

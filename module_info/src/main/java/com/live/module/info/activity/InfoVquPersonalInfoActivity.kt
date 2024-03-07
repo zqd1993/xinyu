@@ -21,6 +21,7 @@ import com.live.module.info.R
 import com.live.module.info.adapter.*
 import com.live.module.info.bean.*
 import com.live.module.info.databinding.InfoTantaActivityInfoBinding
+import com.live.module.info.ui.dialog.ProtectionPayDialog
 import com.live.module.info.vm.InfoVquViewModel
 import com.live.vquonline.base.ktx.gone
 import com.live.vquonline.base.ktx.visible
@@ -86,8 +87,10 @@ open class InfoVquPersonalInfoActivity :
 
     @SuppressLint("NewApi")
     override fun InfoTantaActivityInfoBinding.initView() {
-        UmUtils.setUmEvent(this@InfoVquPersonalInfoActivity,
-            UmUtils.ENTERPERSONALCENTER)
+        UmUtils.setUmEvent(
+            this@InfoVquPersonalInfoActivity,
+            UmUtils.ENTERPERSONALCENTER
+        )
         ImmersionBar.with(this@InfoVquPersonalInfoActivity).transparentStatusBar()
             .fitsSystemWindows(false).init()
         mBinding.viewBg.alpha = 0f
@@ -119,8 +122,10 @@ open class InfoVquPersonalInfoActivity :
                 .navigation()
         }
         mBinding.ivChat.setViewClickListener {
-            UmUtils.setUmEvent(this@InfoVquPersonalInfoActivity,
-                UmUtils.INITIATEPRIVATECHAT)
+            UmUtils.setUmEvent(
+                this@InfoVquPersonalInfoActivity,
+                UmUtils.INITIATEPRIVATECHAT
+            )
             if (UserManager.userInfo?.gender == 1) {
                 isChat = true
                 mViewModel.vquIsAuth()
@@ -128,6 +133,13 @@ open class InfoVquPersonalInfoActivity :
                 vquChat()
             }
 
+        }
+        mBinding.imProtectionStatus.setViewClickListener {
+            var protectionPayDialog = ProtectionPayDialog()
+            val args = Bundle()
+            args.putInt("userId", userId)
+            protectionPayDialog.arguments = args
+            protectionPayDialog.show(supportFragmentManager, "call")
         }
 
         if (userId.toString() == UserManager.userInfo?.userId) {//是自己
@@ -150,7 +162,8 @@ open class InfoVquPersonalInfoActivity :
             mBinding.banner.getGlobalVisibleRect(bounds)
             val userViewInfo =
                 UserViewInfo(
-                    NetBaseUrlConstant.IMAGE_URL + it.url)
+                    NetBaseUrlConstant.IMAGE_URL + it.url
+                )
             userViewInfo.bounds = bounds
             list.add(userViewInfo)
         }
@@ -174,10 +187,12 @@ open class InfoVquPersonalInfoActivity :
             val userViewInfo = if (it.isVideo == 1) {
                 UserViewInfo(
                     NetBaseUrlConstant.IMAGE_URL + it.url,
-                    NetBaseUrlConstant.IMAGE_URL + it.url)
+                    NetBaseUrlConstant.IMAGE_URL + it.url
+                )
             } else {
                 UserViewInfo(
-                    NetBaseUrlConstant.IMAGE_URL + it.url)
+                    NetBaseUrlConstant.IMAGE_URL + it.url
+                )
             }
             userViewInfo.bounds = bounds
             list.add(userViewInfo)
@@ -195,8 +210,10 @@ open class InfoVquPersonalInfoActivity :
         if (isFromChat) {
             finish()
         } else {
-            NimUIKit.startP2PSessionFromInfo(this@InfoVquPersonalInfoActivity,
-                userId.toString())
+            NimUIKit.startP2PSessionFromInfo(
+                this@InfoVquPersonalInfoActivity,
+                userId.toString()
+            )
         }
     }
 
@@ -218,8 +235,10 @@ open class InfoVquPersonalInfoActivity :
 
     private fun showMenu() {
         mSelectiveDialog =
-            BottomSelectiveDialog(this@InfoVquPersonalInfoActivity,
-                R.style.SelectiveDialog)
+            BottomSelectiveDialog(
+                this@InfoVquPersonalInfoActivity,
+                R.style.SelectiveDialog
+            )
         if (userId.toString() == UserManager.userInfo?.userId) {//是自己显示  编辑资料
             mSelectiveDialog?.addSelectButton("编辑资料",
                 OnButtonSelectListener { view, index ->
@@ -228,7 +247,7 @@ open class InfoVquPersonalInfoActivity :
         } else {
             mSelectiveDialog?.addSelectButton("修改备注名",
                 OnButtonSelectListener { view, index ->
-                   SetReMarkNameDialog()
+                    SetReMarkNameDialog()
                         .setTitle("设置备注名")
                         .setContent(
                             if (remarkName.isNullOrEmpty()) {
@@ -238,7 +257,7 @@ open class InfoVquPersonalInfoActivity :
                             }
                         )
                         .setOnClickListener(object :
-                           SetReMarkNameDialog.OnClickListener {
+                            SetReMarkNameDialog.OnClickListener {
                             override fun onCancel() {}
                             override fun onConfirm(content: String) {
                                 remarkName = content
@@ -306,10 +325,12 @@ open class InfoVquPersonalInfoActivity :
                     vquInitInfo(it.data)
                     mBinding.clBlocked.gone()
                 }
+
                 3001 -> {
                     mBinding.clBlocked.visible()
                     mBinding.clLoad.gone()
                 }
+
                 else -> {
                     it.message.toast()
                     mBinding.clBlocked.gone()
@@ -349,8 +370,10 @@ open class InfoVquPersonalInfoActivity :
                 mBinding.tvHeartText.text = "私聊"
                 mBinding.ivHeart.setImageResource(R.mipmap.ic_tanta_info_chat_white)
                 mBinding.llHeart.setViewClickListener {
-                    UmUtils.setUmEvent(this@InfoVquPersonalInfoActivity,
-                        UmUtils.INITIATEPRIVATECHAT)
+                    UmUtils.setUmEvent(
+                        this@InfoVquPersonalInfoActivity,
+                        UmUtils.INITIATEPRIVATECHAT
+                    )
                     if (UserManager.userInfo?.gender == 1) {
                         isChat = true
                         mViewModel.vquIsAuth()
@@ -377,6 +400,7 @@ open class InfoVquPersonalInfoActivity :
                         .withParcelable("CallBean", it.data)
                         .navigation()
                 }
+
                 1003, 1002 -> {
                     CommonHintDialog()
                         .setTitle("提示")
@@ -395,6 +419,7 @@ open class InfoVquPersonalInfoActivity :
                         })
                         .show(supportFragmentManager)
                 }
+
                 else -> {
                     it.message.toast()
                 }
@@ -412,7 +437,7 @@ open class InfoVquPersonalInfoActivity :
                 }
 
             } else {
-              CommonHintDialog()
+                CommonHintDialog()
                     .setTitle("真人认证")
                     .setContent(resources.getString(R.string.common_vqu_auth))
                     .setLeftText("暂不认证")
@@ -447,6 +472,18 @@ open class InfoVquPersonalInfoActivity :
                 mBinding.tvRemark.text = "备注:$remarkName"
             }
         })
+        mViewModel.vquProtectionStatusBean.observe(this) {
+            if (it.code == 0) {
+                if(it.data != null){
+                    mBinding.imProtectionStatus.visibility = View.VISIBLE
+                    if(it.data.guardianOptionsSnapshotList != null){
+                        mBinding.imProtectionStatus.setBackgroundResource(R.mipmap.resources_vqu_personal_info_protection)
+                    } else {
+                        mBinding.imProtectionStatus.setBackgroundResource(R.mipmap.resources_vqu_personal_info_not_protection)
+                    }
+                }
+            }
+        }
     }
 
     private fun vquInitInfo(info: InfoVquInfoBean) {
@@ -586,8 +623,10 @@ open class InfoVquPersonalInfoActivity :
             mBinding.tvHeartText.text = "私聊"
             mBinding.ivHeart.setImageResource(R.mipmap.ic_tanta_info_chat_white)
             mBinding.llHeart.setViewClickListener {
-                UmUtils.setUmEvent(this@InfoVquPersonalInfoActivity,
-                    UmUtils.INITIATEPRIVATECHAT)
+                UmUtils.setUmEvent(
+                    this@InfoVquPersonalInfoActivity,
+                    UmUtils.INITIATEPRIVATECHAT
+                )
                 if (UserManager.userInfo?.gender == 1) {
                     isChat = true
                     mViewModel.vquIsAuth()
@@ -609,8 +648,10 @@ open class InfoVquPersonalInfoActivity :
             }
             mBinding.ivHeart.setImageResource(R.mipmap.ic_tanta_info_heart)
             mBinding.llHeart.setViewClickListener {
-                UmUtils.setUmEvent(this@InfoVquPersonalInfoActivity,
-                    UmUtils.CLICKTOCHAT)
+                UmUtils.setUmEvent(
+                    this@InfoVquPersonalInfoActivity,
+                    UmUtils.CLICKTOCHAT
+                )
                 if (UserManager.userInfo?.gender == 1) {
                     isChat = false
                     mViewModel.vquIsAuth()
@@ -696,8 +737,10 @@ open class InfoVquPersonalInfoActivity :
                     position: Int,
                     size: Int,
                 ) {
-                    holder?.imageView?.vquLoadImage(NetBaseUrlConstant.IMAGE_URL + data?.url,
-                        R.mipmap.bg_detail_default)
+                    holder?.imageView?.vquLoadImage(
+                        NetBaseUrlConstant.IMAGE_URL + data?.url,
+                        R.mipmap.bg_detail_default
+                    )
                 }
 
             })
@@ -814,6 +857,9 @@ open class InfoVquPersonalInfoActivity :
     override fun onResume() {
         super.onResume()
         mViewModel.vquGetUserInfo(userId)
+        if(userId.toString() != UserManager.userInfo?.userId){
+            mViewModel.vquGuardianStatus(userId)
+        }
         bannerImageViewAdapter?.getPlayer()?.startPlayLogic()
 
     }

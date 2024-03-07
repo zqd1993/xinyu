@@ -66,12 +66,14 @@ interface GlobalApiService {
     @POST("system/report")
     @FormUrlEncoded
     fun vquSystemReport(@Field("log") log: String): Call<BaseResponse<Any>>
+
     /**
      * 上传错误日志
      */
     @POST("v2/antian/index")
     @FormUrlEncoded
     fun vquRiskControl(@Field("token") token: String): Call<BaseResponse<Any>>
+
     /**
      *  速配测试
      *
@@ -126,7 +128,6 @@ interface GlobalApiService {
 
     @POST("wallet/index")
     suspend fun walletIndex(): BaseResponse<TantaWalletBean>
-
 
 
     @POST("wallet/recharge")
@@ -249,6 +250,7 @@ interface GlobalApiService {
 
     @POST("index/closeInfoFinishTip")
     suspend fun vquCloseInfoFinishTip(): BaseResponse<Any>
+
     /**
      * 发送验证码
      *
@@ -317,7 +319,7 @@ interface GlobalApiService {
     ): Call<BaseResponse<VideoVquCallBean>>
 
     @GET("pay/config")
-    suspend fun getPayConfig():BaseResponse<MutableList<BillPaymentData>>
+    suspend fun getPayConfig(): BaseResponse<MutableList<BillPaymentData>>
 
     @POST("wallet/recharge")
     @FormUrlEncoded
@@ -345,5 +347,36 @@ interface GlobalApiService {
 
     @POST("batch.user/notify")
     suspend fun getNotifyMsg(): BaseResponse<NotifyMsgBean>
+
+    @POST("guardian/guardian_status")
+    @FormUrlEncoded
+    fun vquGuardianStatus(@Field("other_user_id") otherUserId: Int): Call<BaseResponse<ProtectionStatusBean>>
+
+    @POST("guardian/get_guardian_options")
+    fun vquGetGuardianOptions(@Query("size") size: Int): Call<BaseResponse<MutableList<ProtectionOptionBean>>>
+
+    @POST("pay/config")
+    fun vquGetProtectionPayConfig(): Call<BaseResponse<MutableList<BillPaymentData>>>
+
+    @POST("wallet/recharge")
+    @FormUrlEncoded
+    fun vquSandProtectionRecharge(
+        @Field("channel") channel: String,
+        @Field("goods_id") goodsId: Int,
+        @Field("polling") polling: Int,
+        @Field("scheme") scheme: String,
+        @Field("to_user_id") toUserId: Int,
+        @Field("type") type: Int,
+    ): Call<BaseResponse<PayOrderInfoBean>>
+
+    @POST("wallet/recharge")
+    @FormUrlEncoded
+    fun vquProtectionRecharge(
+        @Field("channel") payType: String,
+        @Field("goods_id") id: String,
+        @Field("polling") polling: Int,
+        @Field("to_user_id") toUserId: Int,
+        @Field("type") type: Int,
+    ): Call<BaseResponse<TantaPayBean>>
 
 }
