@@ -162,6 +162,11 @@ object RouteUrl {
          * 礼物墙
          */
         const val InfoVquGiftListActivity = "/module_info/InfoVquGiftListActivity"
+
+        /**
+         * 守护等级
+         */
+        const val ProtectionDetailsActivity = "/module_info/ProtectionDetailsActivity"
     }
 
     /**
@@ -172,6 +177,8 @@ object RouteUrl {
         const val RelationVquFriendActivity = "/module_relation/RelationFriendActivity"
         const val RelationVquFriendFragment = "/module_relation/RelationFriendFragment"
         const val RelationVquPraiseListActivity = "/module_relation/RelationVquPraiseListActivity"
+        const val MyProtectionActivity = "/module_relation/MyProtectionActivity"
+        const val MyProtectionFragment = "/module_relation/MyProtectionFragment"
     }
 
     /**

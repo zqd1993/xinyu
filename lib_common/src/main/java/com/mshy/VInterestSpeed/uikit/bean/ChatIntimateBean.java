@@ -20,6 +20,8 @@ public class ChatIntimateBean {
         private String time;
         private int is_hide;
         private int grade;
+        //1 已守护
+        private int is_guardian;
 
         public int getGrade() {
             return grade;
@@ -91,6 +93,14 @@ public class ChatIntimateBean {
 
         public void setIs_hide(int is_hide) {
             this.is_hide = is_hide;
+        }
+
+        public int getIsGuardian() {
+            return is_guardian;
+        }
+
+        public void setIsGuardian(int is_guardian) {
+            this.is_guardian = is_guardian;
         }
     }
 

@@ -4,9 +4,12 @@ package com.live.module.info.net
 import com.live.module.info.bean.*
 import com.mshy.VInterestSpeed.common.bean.BaseResponse
 import com.mshy.VInterestSpeed.common.bean.CommonAuthBean
+import com.mshy.VInterestSpeed.common.bean.ProtectionOptionBean
+import com.mshy.VInterestSpeed.common.bean.ProtectionStatusBean
 import com.mshy.VInterestSpeed.common.bean.StsInfoBean
 import com.mshy.VInterestSpeed.common.bean.VquInfoAddressBean
 import com.mshy.VInterestSpeed.common.bean.video.VideoVquCallBean
+import retrofit2.Call
 import retrofit2.http.*
 
 /**
@@ -102,5 +105,12 @@ interface InfoVquApiService {
         @Field("user_id") userId: String,
         @Field("remark") remarkName: String
     ): BaseResponse<Any>
+
+    @POST("guardian/guardian_status")
+    @FormUrlEncoded
+    suspend fun vquGuardianStatus(@Field("other_user_id") otherUserId : Int): BaseResponse<ProtectionStatusBean>
+
+    @POST("guardian/get_guardian_options")
+    suspend fun vquGetGuardianOptions(@Query("size") size: Int): BaseResponse<MutableList<ProtectionOptionBean>>
 
 }

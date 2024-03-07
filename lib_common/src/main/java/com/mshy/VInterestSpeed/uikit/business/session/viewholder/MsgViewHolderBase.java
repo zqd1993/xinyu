@@ -24,6 +24,7 @@ import com.mshy.VInterestSpeed.uikit.common.ui.recyclerview.holder.RecyclerViewH
 import com.mshy.VInterestSpeed.uikit.common.util.sys.TimeUtil;
 import com.mshy.VInterestSpeed.uikit.common.widget.NIMImageView;
 import com.mshy.VInterestSpeed.uikit.impl.NimUIKitImpl;
+import com.mshy.VInterestSpeed.uikit.util.IntimateUtils;
 import com.netease.nimlib.sdk.NIMClient;
 import com.netease.nimlib.sdk.NIMSDK;
 import com.netease.nimlib.sdk.msg.MsgService;
@@ -69,6 +70,10 @@ public abstract class MsgViewHolderBase extends RecyclerViewHolder<BaseMultiItem
 
     private NIMImageView avatarLeft;
     private NIMImageView avatarRight;
+    private RelativeLayout avatarLeftFl;
+    private RelativeLayout avatarRightFl;
+    private ImageView avatarLeftHead;
+    private ImageView avatarRightHead;
 
     public ImageView nameIconView;
 
@@ -203,6 +208,10 @@ public abstract class MsgViewHolderBase extends RecyclerViewHolder<BaseMultiItem
         timeTextView = findViewById(R.id.message_item_time);
         avatarLeft = findViewById(R.id.message_item_portrait_left);
         avatarRight = findViewById(R.id.message_item_portrait_right);
+        avatarLeftFl = findViewById(R.id.message_item_portrait_left_head);
+        avatarRightFl = findViewById(R.id.message_item_portrait_right_head);
+        avatarLeftHead = findViewById(R.id.protection_left_head);
+        avatarRightHead = findViewById(R.id.protection_right_head);
         alertButton = findViewById(R.id.message_item_alert);
         successButton = findViewById(R.id.message_item_success);
         progressBar = findViewById(R.id.message_item_progress);
@@ -248,7 +257,7 @@ public abstract class MsgViewHolderBase extends RecyclerViewHolder<BaseMultiItem
             if (null != remoteExtension) {
                 if (null != remoteExtension.get("is_cut")) {
                     int data = (int) remoteExtension.get("is_cut");
-                    Log.i("tyy",data+"----is_cut");
+                    Log.i("tyy", data + "----is_cut");
                     if (data == 1) {
                         String money = (String) remoteExtension.get("money");
                         if (!TextUtils.isEmpty(money)) {
@@ -266,14 +275,14 @@ public abstract class MsgViewHolderBase extends RecyclerViewHolder<BaseMultiItem
                     } else {
                         if (null != remoteExtension.get("is_free")) {
                             int isFree = (int) remoteExtension.get("is_free");
-                            Log.i("tyy",isFree+"----isFree");
+                            Log.i("tyy", isFree + "----isFree");
                             if (isFree == 1) {
                                 mImageView.setVisibility(View.VISIBLE);
                                 Drawable dra = context.getResources().getDrawable(R.mipmap.ic_free_chat);
                                 dra.setBounds(0, 0, dra.getMinimumWidth(), dra.getMinimumHeight());
                                 mImageView.setCompoundDrawables(dra, null, null, null);
                                 mImageView.setText("聊天卡免费消息");
-                            }else{
+                            } else {
                                 if (null != remoteExtension.get("vip")) {
                                     int vip = (int) remoteExtension.get("vip");
                                     if (vip == 0) {
@@ -344,7 +353,7 @@ public abstract class MsgViewHolderBase extends RecyclerViewHolder<BaseMultiItem
      * 设置消息发送状态
      */
     private void setStatus() {
-        if (isReceivedMessage() || !shouldDisplayStatus()||message.getMsgType()==MsgTypeEnum.tip) {
+        if (isReceivedMessage() || !shouldDisplayStatus() || message.getMsgType() == MsgTypeEnum.tip) {
             progressBar.setVisibility(View.GONE);
             alertButton.setVisibility(View.GONE);
             successButton.setVisibility(View.GONE);
@@ -377,16 +386,25 @@ public abstract class MsgViewHolderBase extends RecyclerViewHolder<BaseMultiItem
     private void setHeadImageView() {
         NIMImageView show = isReceivedMessage() ? avatarLeft : avatarRight;
         NIMImageView hide = isReceivedMessage() ? avatarRight : avatarLeft;
-        hide.setVisibility(View.GONE);
+        RelativeLayout showFl = isReceivedMessage() ? avatarLeftFl : avatarRightFl;
+        RelativeLayout hideFl = isReceivedMessage() ? avatarRightFl : avatarLeftFl;
+        ImageView showHead = isReceivedMessage() ? avatarLeftHead : avatarRightHead;
+        hideFl.setVisibility(View.GONE);
+        showHead.setVisibility(View.GONE);
         if (!isShowHeadImage()) {
-            show.setVisibility(View.GONE);
+            showFl.setVisibility(View.GONE);
             return;
         }
         if (isMiddleItem()) {
-            show.setVisibility(View.GONE);
+            showFl.setVisibility(View.GONE);
         } else {
-            show.setVisibility(View.VISIBLE);
+            showFl.setVisibility(View.VISIBLE);
             show.loadBuddyAvatar(message);
+            if (IntimateUtils.getInstance().findData(Integer.parseInt(message.getFromAccount())) != null) {
+                if (IntimateUtils.getInstance().findData(Integer.parseInt(message.getFromAccount())).getIsGuardian() == 1) {
+                    showHead.setVisibility(View.VISIBLE);
+                }
+            }
             if (isMiddleAvatarItem()) {
                 RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams) show.getLayoutParams();
                 layoutParams.addRule(RelativeLayout.CENTER_IN_PARENT);

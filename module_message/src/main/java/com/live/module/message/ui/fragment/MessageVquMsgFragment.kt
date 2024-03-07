@@ -19,7 +19,6 @@ import com.live.module.message.R
 import com.live.module.message.net.MessageVquApiService
 import com.live.module.message.net.MsgServiceManage
 import com.live.vquonline.base.BaseApplication
-import com.live.vquonline.base.constant.VersionStatus
 import com.live.vquonline.base.ktx.dp2px
 import com.live.vquonline.base.ktx.gone
 import com.live.vquonline.base.ktx.visible
@@ -45,6 +44,7 @@ import com.mshy.VInterestSpeed.common.ext.toast
 import com.mshy.VInterestSpeed.common.ui.dialog.*
 import com.mshy.VInterestSpeed.common.ui.vm.CommonPayViewModel
 import com.mshy.VInterestSpeed.common.utils.GlideEngine
+import com.mshy.VInterestSpeed.common.utils.PermissionUtils
 import com.mshy.VInterestSpeed.common.utils.UserManager
 import com.mshy.VInterestSpeed.common.utils.UserSpUtils
 import com.mshy.VInterestSpeed.uikit.attchment.MessageVquGiftAttachment
@@ -55,12 +55,15 @@ import com.mshy.VInterestSpeed.uikit.business.session.fragment.MessageFragment
 import com.mshy.VInterestSpeed.uikit.common.adapter.MsgCommonWordAdapter
 import com.mshy.VInterestSpeed.uikit.common.http.CommonCallBack
 import com.mshy.VInterestSpeed.uikit.event.NotificationIntimateChangeEvent
+import com.mshy.VInterestSpeed.uikit.event.NotificationProtectionStatusEvent
 import com.mshy.VInterestSpeed.uikit.event.NotifyCommonWordEvent
+import com.mshy.VInterestSpeed.uikit.util.IntimateUtils
 import com.netease.nimlib.sdk.msg.MessageBuilder
 import com.netease.nimlib.sdk.msg.constant.SessionTypeEnum
 import com.netease.nimlib.sdk.msg.model.IMMessage
 import com.opensource.svgaplayer.*
 import com.opensource.svgaplayer.SVGAParser.Companion.shareParser
+import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
 import retrofit2.Call
@@ -71,8 +74,6 @@ import top.zibin.luban.OnCompressListener
 import java.io.File
 import java.net.MalformedURLException
 import java.net.URL
-import com.mshy.VInterestSpeed.common.BuildConfig
-import com.mshy.VInterestSpeed.common.utils.PermissionUtils
 
 
 /**
@@ -163,14 +164,16 @@ class MessageVquMsgFragment : MessageFragment() {
             }
         }
     }
-    var recyclerView: RecyclerView ?=null
+
+    var recyclerView: RecyclerView? = null
+
     /**
      * 初始化常用语模块
      */
     private fun initCommonWordRecyclerView() {
         mMsgAdapter =
             MsgCommonWordAdapter(mData)
-        recyclerView= rootView.findViewById(R.id.rv_common_word)
+        recyclerView = rootView.findViewById(R.id.rv_common_word)
         recyclerView?.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         recyclerView?.adapter = mMsgAdapter
@@ -591,10 +594,12 @@ class MessageVquMsgFragment : MessageFragment() {
                             }
 
                         }
+
                         1003, 1002 -> {
                             "余额不足，请先充值".toast()
                             CommonRechargeDialog().show(childFragmentManager, "充值")
                         }
+
                         1004 -> {
                             CommonHintDialog()
                                 .setContentSize(15)
@@ -614,6 +619,7 @@ class MessageVquMsgFragment : MessageFragment() {
                                 })
                                 .show(childFragmentManager)
                         }
+
                         else -> {
                             response.body()?.message?.toast()
                         }

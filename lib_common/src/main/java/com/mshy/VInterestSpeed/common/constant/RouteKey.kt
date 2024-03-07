@@ -48,5 +48,7 @@ object RouteKey {
         const val VISTOR = 2
         const val TRACK = 3
         const val PRAISE = 4
+        const val PROTECTION_ME = 5
+        const val MY_PROTECTION = 6
     }
 }
