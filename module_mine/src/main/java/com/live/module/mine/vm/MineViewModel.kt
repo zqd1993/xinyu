@@ -51,6 +51,7 @@ class MineViewModel @Inject constructor(private val repository: MineRepository) 
                     bean.isRpAuth = it.data.userinfo.isRpAuth
                     bean.isStarScout = it.data.userinfo.isStarScout
                     bean.scoutModel = it.data.userinfo.scoutModel
+                    bean.guardianNum = it.data.userinfo.guardianNum
                     UserManager.userInfo = bean
                     UserSpUtils.putUserBean(bean)
                 }

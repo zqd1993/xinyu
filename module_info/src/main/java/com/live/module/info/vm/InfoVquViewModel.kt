@@ -8,6 +8,8 @@ import com.live.vquonline.base.mvvm.vm.BaseViewModel
 import com.live.vquonline.base.utils.toast
 import com.mshy.VInterestSpeed.common.bean.BaseResponse
 import com.mshy.VInterestSpeed.common.bean.CommonAuthBean
+import com.mshy.VInterestSpeed.common.bean.ProtectionOptionBean
+import com.mshy.VInterestSpeed.common.bean.ProtectionStatusBean
 import com.mshy.VInterestSpeed.common.bean.video.VideoVquCallBean
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.catch
@@ -28,6 +30,8 @@ class InfoVquViewModel @Inject constructor(private val mVquRepo: InfoVquActivity
     val vquCallData = MutableLiveData<BaseResponse<VideoVquCallBean>>()
     val vquAuthData = MutableLiveData<BaseResponse<CommonAuthBean>>()
     val vquSaveRemarkNameData = MutableLiveData<BaseResponse<Any>>()
+    val vquProtectionStatusBean = MutableLiveData<BaseResponse<ProtectionStatusBean>>()
+    val vquProtectionOptionBeanList = MutableLiveData<BaseResponse<MutableList<ProtectionOptionBean>>>()
     fun vquGetUserInfo(userId: Int) {
         launchIO {
             val params = hashMapOf<String, Any>()
@@ -122,6 +126,26 @@ class InfoVquViewModel @Inject constructor(private val mVquRepo: InfoVquActivity
                 .catch { toast(it.message ?: "") }
                 .collect {
                     vquSaveRemarkNameData.postValue(it)
+                }
+        }
+    }
+
+    fun vquGuardianStatus(userId: Int) {
+        launchIO {
+            mVquRepo.vquGuardianStatus(userId)
+                .catch { toast(it.message ?: "") }
+                .collect {
+                    vquProtectionStatusBean.postValue(it)
+                }
+        }
+    }
+
+    fun vquGetGuardianOptions() {
+        launchIO {
+            mVquRepo.vquGetGuardianOptions()
+                .catch { toast(it.message ?: "") }
+                .collect {
+                    vquProtectionOptionBeanList.postValue(it)
                 }
         }
     }

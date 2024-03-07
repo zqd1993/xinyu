@@ -25,5 +25,9 @@
         <activity
             android:name=".activity.RelationVquFriendActivity"
             android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.MyProtectionActivity"
+            android:screenOrientation="portrait" />
     </application>
 </manifest>

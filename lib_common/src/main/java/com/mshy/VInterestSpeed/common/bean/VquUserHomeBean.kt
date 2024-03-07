@@ -164,7 +164,9 @@ data class Userinfo(
     @SerializedName("voice_status")
     val voiceStatus: Int,
     @SerializedName("voice_time")
-    val voiceTime: Int
+    val voiceTime: Int,
+    @SerializedName("guardian_num")
+    val guardianNum: Int
 )
 
 data class WebUrl(

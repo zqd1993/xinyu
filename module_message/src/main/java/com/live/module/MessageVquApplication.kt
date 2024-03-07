@@ -47,6 +47,7 @@ import com.mshy.VInterestSpeed.uikit.business.session.module.MsgRevokeFilter
 import com.mshy.VInterestSpeed.uikit.business.session.viewholder.*
 import com.mshy.VInterestSpeed.uikit.event.NotificationIntimateChangeEvent
 import com.mshy.VInterestSpeed.uikit.event.NotificationIntimateUpEvent
+import com.mshy.VInterestSpeed.uikit.event.NotificationProtectionStatusEvent
 import com.mshy.VInterestSpeed.uikit.impl.customization.DefaultRecentCustomization
 import com.mshy.VInterestSpeed.uikit.util.IntimateUtils
 import com.netease.nimlib.sdk.NIMClient
@@ -376,6 +377,19 @@ class MessageVquApplication : NiMUIKitVquApplication() {
                                     DynamicLikeBean::class.java
                                 )
                             )
+                        )
+                    }
+                    73 -> {
+                        val upBean = gson.fromJson(
+                            content,
+                            NIMVquIntimateLeveUpBean::class.java
+                        )
+                        IntimateUtils.getInstance().putProtectionData(
+                            upBean.data.userId,
+                            1,
+                        )
+                        EventBus.getDefault().post(
+                            NotificationProtectionStatusEvent()
                         )
                     }
                     else -> {

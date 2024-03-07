@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_FFFFFF"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:ignore="MissingDefaultResource,ResourceName">
+
+    <include
+        android:id="@+id/includeTitle"
+        layout="@layout/include_toolbar" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="40dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_size_20"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="16dp">
+
+                <com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout
+                    android:layout_width="5dp"
+                    android:layout_height="16dp"
+                    android:layout_marginTop="1dp"
+                    app:sll_layoutRadius="3dp"
+                    app:sll_solidColor="#FF8859" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="9dp"
+                    android:text="守护介绍"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_18" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:text="在对方的个人主页，您也可以守护多人，同时也可以被多人守护。守护者是一个身份象征，开通守护后，在聊天列表与聊天详情页的头像会有守护标识，守护的等级越高，表明两个人的关系越亲密。"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_14" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_size_20"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="16dp">
+
+                <com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout
+                    android:layout_width="5dp"
+                    android:layout_height="16dp"
+                    android:layout_marginTop="1dp"
+                    app:sll_layoutRadius="3dp"
+                    app:sll_solidColor="#FF8859" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="9dp"
+                    android:text="守护问题答疑"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_18" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:text="1.怎样查看谁守护了我\n
+您好，点击账号昵称，进入个人主页，头像右下侧可以查看相关的守护信息哦~\n
+2.成为守护后能免费聊天吗？\n
+亲，守护是一种身份象征，并无特权，成为守护后无论是文字聊天还是音视频通话都是要收费的。\n
+3.守护一个人几天有效？\n
+亲，守护的有效期是根据您开通的时间来计算的，如果您开通的是7天，那么有效期为7天；如果您开通的是15天，则有效期为15天；如果开通的是30天，则有效期为30天。多次开通，天数将会累积计算。\n
+4.守护可以隐藏吗？\n
+为了保护用户隐私安全，平台内的守护是私密展示，对方守护了你，只有对方可以看到，暂不支持隐藏。\n
+5.守护等级须知"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_14" />
+
+            <com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginStart="33dp"
+                android:layout_marginEnd="33dp"
+                android:orientation="vertical"
+                app:sll_layoutRadius="8dp"
+                app:sll_strokeWidth="1dp"
+                app:sll_strokeColor="@color/color_F5F5F5">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:paddingTop="27dp"
+                        android:paddingBottom="27dp"
+                        android:text="守护称号"
+                        android:textSize="@dimen/text_size_14"
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:paddingTop="27dp"
+                        android:paddingBottom="27dp"
+                        android:text="守护值（天数）"
+                        android:textSize="@dimen/text_size_14"
+                        android:textColor="@color/black" />
+
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/protection_level_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/adatper_protection_level_item"/>
+
+            </com.mshy.VInterestSpeed.common.ui.view.ShapeLinearLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

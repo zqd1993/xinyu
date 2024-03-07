@@ -17,33 +17,65 @@
         android:textSize="12sp"
         android:visibility="gone" />
 
-    <com.mshy.VInterestSpeed.uikit.common.widget.NIMImageView
-        android:id="@+id/message_item_portrait_left"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="9dp"
+    <RelativeLayout
+        android:id="@+id/message_item_portrait_left_head"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@id/message_item_time"
         android:layout_alignParentStart="true"
-        android:layout_marginEnd="13dp"
-        android:visibility="gone"/>
+        android:layout_marginStart="9dp"
+        android:layout_marginEnd="13dp">
 
-    <com.mshy.VInterestSpeed.uikit.common.widget.NIMImageView
-        android:id="@+id/message_item_portrait_right"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginEnd="9dp"
+        <com.mshy.VInterestSpeed.uikit.common.widget.NIMImageView
+            android:id="@+id/message_item_portrait_left"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerInParent="true" />
+
+        <ImageView
+            android:id="@+id/protection_left_head"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_centerInParent="true"
+            android:visibility="gone"
+            android:src="@mipmap/resources_vqu_protection_head" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/message_item_portrait_right_head"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@id/message_item_time"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="13dp"
-        android:visibility="gone" />
+        android:layout_marginEnd="9dp"
+        android:visibility="gone">
+
+        <com.mshy.VInterestSpeed.uikit.common.widget.NIMImageView
+            android:id="@+id/message_item_portrait_right"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerInParent="true" />
+
+        <ImageView
+            android:id="@+id/protection_right_head"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_centerInParent="true"
+            android:src="@mipmap/resources_vqu_protection_head"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
 
     <LinearLayout
         android:id="@+id/message_item_name_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/message_item_time"
-        android:layout_toLeftOf="@id/message_item_portrait_right"
-        android:layout_toRightOf="@id/message_item_portrait_left"
+        android:layout_toLeftOf="@id/message_item_portrait_right_head"
+        android:layout_toRightOf="@id/message_item_portrait_left_head"
         android:orientation="horizontal">
 
         <ImageView
@@ -77,8 +109,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/message_item_name_layout"
-        android:layout_toStartOf="@id/message_item_portrait_right"
-        android:layout_toEndOf="@id/message_item_portrait_left">
+        android:layout_toStartOf="@id/message_item_portrait_right_head"
+        android:layout_toEndOf="@id/message_item_portrait_left_head">
 
         <LinearLayout
             android:id="@+id/message_item_body"
