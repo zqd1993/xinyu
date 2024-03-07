@@ -1,5 +1,6 @@
 package com.live.module.relation.net
 
+import com.live.module.relation.bean.MyProtectionListBean
 import com.mshy.VInterestSpeed.common.bean.VquFollowBean
 import com.mshy.VInterestSpeed.common.bean.VquRelationListBean
 import com.live.module.relation.bean.VquRelationPraiseListBean
@@ -46,4 +47,18 @@ interface RelationVquApiService {
     @POST("beckon/send")
     @FormUrlEncoded
     suspend fun vquSendBeckon(@Field("user_ids") vquUserIds: String): BaseResponse<Any>
+
+    /**
+     * 守护我的
+     */
+    @POST("guardian/guardian_my_list")
+    @FormUrlEncoded
+    suspend fun vquGuardianMyList(@Field("page") page: Int): BaseResponse<MutableList<MyProtectionListBean>>
+
+    /**
+     * 我的守护
+     */
+    @POST("guardian/my_guardian_list")
+    @FormUrlEncoded
+    suspend fun vquMyGuardianList(@Field("page") page: Int): BaseResponse<MutableList<MyProtectionListBean>>
 }

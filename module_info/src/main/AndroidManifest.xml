@@ -45,6 +45,9 @@
         <activity
             android:name=".activity.InfoVquPreviewPicAndVideoActivity"
             android:screenOrientation="portrait" />
+
+        <activity android:name=".activity.ProtectionDetailsActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

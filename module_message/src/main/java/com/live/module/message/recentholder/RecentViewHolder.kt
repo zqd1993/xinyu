@@ -88,6 +88,8 @@ abstract class RecentViewHolder {
 
     protected var callback: RecentContactsCallback? = null
 
+    private lateinit var protectionHead: ImageView
+
 
     public fun convert(context: Context, holder: BaseViewHolder, recent: RecentContact) {
         this.context = context
@@ -110,6 +112,7 @@ abstract class RecentViewHolder {
         ivOfficial = holder.getView(R.id.img_msg_official)
         onlineView = holder.getView(R.id.view_online)
         tvIntimateValue = holder.getView(R.id.tv_intimate_value)
+        protectionHead = holder.getView(R.id.protection_head)
 
         if (recent.extension != null) {
             if (recent.extension["online"] != null && (recent.extension["online"] == 1 || recent.extension["online"] == 10001)) {
@@ -267,10 +270,12 @@ abstract class RecentViewHolder {
                 imgMsgStatus.setImageResource(R.drawable.nim_g_ic_failed_small)
                 imgMsgStatus.visible()
             }
+
             MsgStatusEnum.sending -> {
                 imgMsgStatus.setImageResource(R.drawable.nim_recent_contact_ic_sending)
                 imgMsgStatus.visible()
             }
+
             else -> imgMsgStatus.gone()
         }
         val timeString = TimeUtil.getTimeShowString(recent.time, true)
@@ -317,6 +322,16 @@ abstract class RecentViewHolder {
         } else {
             tvIntimateValue.visible()
             tvIntimateValue.text = IntimateUtils.getInstance().findData(id.toInt()).score
+        }
+
+        if (IntimateUtils.getInstance().findData(id.toInt()) != null) {
+            if (IntimateUtils.getInstance().findData(id.toInt()).isGuardian == 1) {
+                protectionHead.visibility = View.VISIBLE
+            } else {
+                protectionHead.visibility = View.GONE
+            }
+        } else {
+            protectionHead.visibility = View.GONE
         }
         tvNickname.text = nick
     }

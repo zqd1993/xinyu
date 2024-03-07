@@ -38,6 +38,7 @@ import com.mshy.VInterestSpeed.common.ext.setViewClickListener
 import com.mshy.VInterestSpeed.common.ext.vquLoadRoundImage
 import com.mshy.VInterestSpeed.common.ui.BaseLazyFrameFragment
 import com.mshy.VInterestSpeed.common.utils.*
+import com.mshy.VInterestSpeed.uikit.event.NotificationProtectionStatusEvent
 import com.qiyukf.unicorn.api.UICustomization
 import com.qiyukf.unicorn.api.Unicorn
 import com.qiyukf.unicorn.api.YSFUserInfo
@@ -367,6 +368,9 @@ class MineFragment : BaseLazyFrameFragment<MineFragmentMineBinding, MineViewMode
         }
         mBinding.ivMineVquUserImproveData.setViewClickListener(200) {
             ARouter.getInstance().build(RouteUrl.Info.InfoVquEditActivity).navigation()
+        }
+        mBinding.clMineVquMyProtection.setViewClickListener(200) {
+            ARouter.getInstance().build(RouteUrl.Relation.MyProtectionActivity).navigation()
         }
     }
 
@@ -727,15 +731,19 @@ class MineFragment : BaseLazyFrameFragment<MineFragmentMineBinding, MineViewMode
         mBinding.cafvMineVquUserAvatar.showAnchorView(it.userinfo.isLive == 0)
 
 
+        //我的守护
+        mBinding.tvMineVquFocusNum.text =
+            " " + (it.usercount.fansCount + it.usercount.followCount).toString() + " "
         //关注
-        mBinding.tvMineVquFocusNum.text = " " + it.usercount.followCount.toString() + " "
+//        mBinding.tvMineVquFocusNum.text = " " + it.usercount.followCount.toString() + " "
         //粉丝
         mBinding.tvMineVquFansNum.text = " " + it.usercount.fansCount.toString() + " "
         //访客
         mBinding.tvMineVquVisitorNum.text = " " + it.usercount.visitorCount.toString() + " "
         //足迹
         mBinding.tvMineVquTrackNum.text = " " + it.usercount.viewerCount.toString() + " "
-
+        //我的守护
+        mBinding.tvMineMyProtectionNum.text = " " + it.userinfo.guardianNum.toString() + " "
         var pos = 1
         if (mVquListMenuData[0].type == 5) {
             if (mVquUserHomeBean?.userinfo?.gender != 1) {
@@ -863,8 +871,8 @@ class MineFragment : BaseLazyFrameFragment<MineFragmentMineBinding, MineViewMode
             }
         } else {
             val iterator = mVquListMenuData.iterator()
-            while (iterator.hasNext()){
-                if(iterator.next().type == 9){
+            while (iterator.hasNext()) {
+                if (iterator.next().type == 9) {
                     iterator.remove()
                 }
             }
@@ -985,5 +993,12 @@ class MineFragment : BaseLazyFrameFragment<MineFragmentMineBinding, MineViewMode
 
         dialog.setData(successData)
         dialog.show(childFragmentManager, "")
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    fun onEventMainThread(event: NotificationProtectionStatusEvent?) {
+        var guardianNum = mBinding.tvMineVquFocusNum.text.toString().toInt()
+        mBinding.tvMineVquFocusNum.text =
+            " " + (guardianNum + 1) + " "
     }
 }

@@ -56,6 +56,20 @@ public class IntimateUtils {
     }
 
     /**
+     * 添加一条数据
+     */
+    public void putProtectionData(int userId, int status) {
+        ChatIntimateBean.ListData data;
+        if (findData(userId) != null) {
+            data = findData(userId);
+        } else {
+            data = new ChatIntimateBean.ListData();
+        }
+        data.setIsGuardian(status);
+        scoreDataMap.put(userId, data);
+    }
+
+    /**
      * 查询一条数据
      */
     public ChatIntimateBean.ListData findData(int userId) {
