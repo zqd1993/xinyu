@@ -114,6 +114,15 @@ class ProtectionPayDialog : BaseDialogFragment<DialogProtectionPayBinding>(),
                     )
                 }
 
+                "sand_alipay_v4" -> {
+                    sandRecharge(
+                        "sand_alipay_v4",
+                        item!!.id,
+                        -1,
+                        getScheme(), id!!
+                    )
+                }
+
                 "wechat" -> {
                     recharge(mPayType, item.id.toString(), id!!)
                 }
@@ -121,6 +130,15 @@ class ProtectionPayDialog : BaseDialogFragment<DialogProtectionPayBinding>(),
                 "sand_wechat" -> {
                     sandRecharge(
                         "sand_wechat",
+                        item!!.id,
+                        -1,
+                        getScheme(), id!!
+                    )
+                }
+
+                "sand_wechat_v4" -> {
+                    sandRecharge(
+                        "sand_wechat_v4",
                         item!!.id,
                         -1,
                         getScheme(), id!!
@@ -420,6 +438,10 @@ class ProtectionPayDialog : BaseDialogFragment<DialogProtectionPayBinding>(),
 
                                 "sand_alipay" -> {
                                     PayUtils.sendWechat(requireActivity(), response.body()?.data!!)
+                                }
+
+                                "sand_wechat_v4", "sand_alipay_v4" -> {
+                                    PayUtils.sandWechat(requireActivity(), response.body()?.data!!.url)
                                 }
                             }
                             dismiss()
