@@ -20,5 +20,6 @@ data class PayOrderInfoBean(
     val meta_option: String,
     val sign_type: String,
     val sign: String,
-    val order_status: Int
+    val order_status: Int,
+    val url: String
 )

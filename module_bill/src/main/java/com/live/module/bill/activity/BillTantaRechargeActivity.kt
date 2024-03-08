@@ -243,6 +243,15 @@ class BillTantaRechargeActivity :
                 )
             }
 
+            "sand_alipay_v4" -> {
+                mViewModel.recharge(
+                    "sand_alipay_v4",
+                    itemRecharge!!.id,
+                    -1,
+                    "xinyu://xinyu.recharge"
+                )
+            }
+
             "wechat" -> {
                 mViewModel.rechargeWarning(true)
             }
@@ -250,6 +259,15 @@ class BillTantaRechargeActivity :
             "sand_wechat" -> {
                 mViewModel.recharge(
                     "sand_wechat",
+                    itemRecharge!!.id,
+                    -1,
+                    "xinyu://xinyu.recharge"
+                )
+            }
+
+            "sand_wechat_v4" -> {
+                mViewModel.recharge(
+                    "sand_wechat_v4",
                     itemRecharge!!.id,
                     -1,
                     "xinyu://xinyu.recharge"
@@ -539,6 +557,10 @@ class BillTantaRechargeActivity :
 
                     "sand_alipay" -> {
                         PayUtils.sendWechat(this, it)
+                    }
+
+                    "sand_wechat_v4", "sand_alipay_v4" -> {
+                        PayUtils.sandWechat(this, it.url)
                     }
                 }
             }
