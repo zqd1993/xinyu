@@ -278,7 +278,7 @@ class BillTantaRechargeActivity :
                 mViewModel.rechargeWarning(true)
             }
 
-            "LeshuaPay", "wechat_h5_pay" -> {
+            "LeshuaPay", "wechat_h5_pay", "TaishanPay" -> {
                 mViewModel.rechargeWarning(true)
             }
         }
@@ -293,7 +293,7 @@ class BillTantaRechargeActivity :
             UmUtils.RECHARGECLICK
         )
 
-        if (mPayType == ALIPAY || mPayType == YUN_PAY || mPayType == LE_SHUA_PAY || mPayType == WECHAT_H5_PAY) {
+        if (mPayType == ALIPAY || mPayType == YUN_PAY || mPayType == LE_SHUA_PAY || mPayType == WECHAT_H5_PAY || mPayType == TAI_SHAN_PAY) {
             mViewModel.createRechargeOrder(mPayType, itemRecharge!!.id, -1)
         } else if (mPayType == WECHAT) {
             mViewModel.getWechatPayType(1)
@@ -398,6 +398,8 @@ class BillTantaRechargeActivity :
                 PayUtils.wechatPay(this, it)
             } else if (mPayType == PayDialog.ALIPAY) {
                 PayUtils.aliPay(this, it.payinfo)
+            } else if(mPayType == PayDialog.TAI_SHAN_PAY){
+                PayUtils.aliPay(this, it.payUrl)
             } else if (mPayType == PayDialog.YUN_PAY) {
                 ToastUtils.showShort(it.payinfo)
             } else if (mPayType == PayDialog.LE_SHUA_PAY || mPayType == PayDialog.WECHAT_H5_PAY) {

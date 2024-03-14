@@ -26,22 +26,22 @@
 		"SG_back":"connect-ws-dra.hispace.dbankcloud.com"
 	},
 	"client":{
-		"cp_id":"30086000635645376",
-		"product_id":"99536292102836219",
-		"client_id":"1045583091105549632",
-		"client_secret":"E9389E37441C5610BE8428B5B63D45535778F9C7E16A4A6940B09C29811EE6F9",
-		"project_id":"99536292102836219",
-		"app_id":"107460895",
-		"api_key":"DAEDAIWKAwYTcMk5qIDffmuiykVO+brMUaXWgVShCZi25jJ/BAXpM/ziJ51zCWwPL5lbZPKSKdtgbH6s2hbd24JJSn0I8+ZWvFUj9g==",
-		"package_name":"com.mshy.VInterestSpeed"
+		"cp_id":"30086000684969319",
+		"product_id":"388421841221974332",
+		"client_id":"1360843871818376896",
+		"client_secret":"01C8D5B7A878F1AF4186A1E3C437F078C3A87705308A2BCD362D76A79A74E857",
+		"project_id":"388421841221974332",
+		"app_id":"110367913",
+		"api_key":"DAEDAF+i9lAmGr9QeQ4wcMf8nuTIG6fbce3t8Wf7UNW6re2HbiG/0LUGfmvbDCBujYHsFajkS9Hkbi+LCC5glQaMCvuzlRv7s4OhTQ==",
+		"package_name":"com.gxyisikeji.micheng"
 	},
 	"oauth_client":{
-		"client_id":"107460895",
+		"client_id":"110367913",
 		"client_type":1
 	},
 	"app_info":{
-		"app_id":"107460895",
-		"package_name":"com.mshy.VInterestSpeed"
+		"app_id":"110367913",
+		"package_name":"com.gxyisikeji.micheng"
 	},
 	"service":{
 		"analytics":{
@@ -52,6 +52,10 @@
 			"collector_url_cn":"datacollector-drcn.dt.hicloud.com,datacollector-drcn.dt.dbankcloud.cn",
 			"resource_id":"p1",
 			"channel_id":""
+		},
+		"edukit":{
+			"edu_url":"edukit.cloud.huawei.com.cn",
+			"dh_url":"edukit.cloud.huawei.com.cn"
 		},
 		"search":{
 			"url":"https://search-drcn.cloud.huawei.com"
@@ -75,17 +79,17 @@
 	"configuration_version":"3.0",
 	"appInfos":[
 		{
-			"package_name":"com.mshy.VInterestSpeed",
+			"package_name":"com.gxyisikeji.micheng",
 			"client":{
-				"app_id":"107460895"
+				"app_id":"110367913"
 			},
 			"app_info":{
-				"package_name":"com.mshy.VInterestSpeed",
-				"app_id":"107460895"
+				"package_name":"com.gxyisikeji.micheng",
+				"app_id":"110367913"
 			},
 			"oauth_client":{
 				"client_type":1,
-				"client_id":"107460895"
+				"client_id":"110367913"
 			}
 		}
 	]

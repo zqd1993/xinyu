@@ -16,6 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.alibaba.fastjson.JSONObject;
 import com.live.vquonline.base.constant.VersionStatus;
 import com.live.vquonline.base.utils.SpUtils;
 import com.live.vquonline.base.utils.UtilsKt;
@@ -511,8 +512,14 @@ public class MessageFragment extends TFragment implements ModuleProxy {
         String content = customConfig.getPushContent(message);
         Map<String, Object> payload = customConfig.getPushPayload(message);
         Map<String, Object> vivoField = new HashMap<>();
+        Map<String, Object> oppoField = new HashMap<>();
         vivoField.put("classification", 1);
+        oppoField.put("channel_id", "1");
+        JSONObject jsonObject = new JSONObject(oppoField);
+        String jsonString = jsonObject.toString();
         payload.put("vivoField", vivoField);//vivo运营消息
+        payload.put("channel_id", "116302");
+//        payload.put("oppoField", jsonString);
         if (!TextUtils.isEmpty(content)) {
             message.setPushContent(content);
         }

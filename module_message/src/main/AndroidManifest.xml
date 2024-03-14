@@ -82,7 +82,7 @@
 
         <meta-data
             android:name="com.huawei.hms.client.appid"
-            android:value="107460895" />
+            android:value="110367913" />
         <!-- 华为推送end -->
 
         <!-- vivo推送start -->
@@ -90,10 +90,10 @@
 
         <meta-data
             android:name="com.vivo.push.api_key"
-            android:value="ee1768e7dc59b1c33a57ce1ac49d1fed" />
+            android:value="1a5ced58a2a1c1ee01b1ce91f6194ba7" />
         <meta-data
             android:name="com.vivo.push.app_id"
-            android:value="105703722" />
+            android:value="105723731" />
 
         <service
             android:name="com.vivo.push.sdk.service.CommandClientService"

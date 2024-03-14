@@ -229,7 +229,7 @@ class CommonRechargeDialog :
                     mViewModel.recharge(mPayType, item.id.toString())
                 }
 
-                "wechat_h5_pay" -> {
+                "wechat_h5_pay", "TaishanPay" -> {
                     mViewModel.recharge(mPayType, item.id.toString())
                 }
             }
@@ -293,7 +293,7 @@ class CommonRechargeDialog :
         mViewModel.payData.observe(this) {
             if (mPayType == PayDialog.WECHAT) {
                 PayUtils.wechatPay(requireActivity(), it)
-            } else if (mPayType == PayDialog.LE_SHUA_PAY || mPayType == PayDialog.WECHAT_H5_PAY) {
+            } else if (mPayType == PayDialog.LE_SHUA_PAY || mPayType == PayDialog.WECHAT_H5_PAY || mPayType == PayDialog.TAI_SHAN_PAY) {
                 if (it.payUrl.isNotEmpty()) {
                     val intent = Intent()
                     intent.action = Intent.ACTION_VIEW
@@ -303,6 +303,8 @@ class CommonRechargeDialog :
                 }
             } else if (mPayType == PayDialog.ALIPAY) {
                 PayUtils.aliPay(requireActivity(), it.payinfo)
+            } else if(mPayType == PayDialog.TAI_SHAN_PAY){
+                PayUtils.aliPay(requireActivity(), it.payUrl)
             }
         }
 

@@ -107,19 +107,17 @@ class SettingVquActivity : BaseActivity<SettingTantaActivitySettingBinding, Sett
                     true
                 )
             )
-
-            settingList.add(
-                SettingBean(
-                    getString(R.string.contact_vqu_setting_rate),
-                    "",
-                    "",
-                    false,
-                    true
-                )
-            )
         }
 
-
+        settingList.add(
+            SettingBean(
+                getString(R.string.contact_vqu_setting_rate),
+                "",
+                "",
+                false,
+                true
+            )
+        )
 
         settingList.add(SettingBean(getString(R.string.setting_teen_mode), "", "", false, true))
         settingList.add(SettingBean(getString(R.string.setting_blacklist), "", "", false, true))

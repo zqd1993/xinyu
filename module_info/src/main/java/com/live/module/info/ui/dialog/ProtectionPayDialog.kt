@@ -114,6 +114,15 @@ class ProtectionPayDialog : BaseDialogFragment<DialogProtectionPayBinding>(),
                     )
                 }
 
+                "sand_alipay_v4" -> {
+                    sandRecharge(
+                        "sand_alipay_v4",
+                        item!!.id,
+                        -1,
+                        getScheme(), id!!
+                    )
+                }
+
                 "wechat" -> {
                     recharge(mPayType, item.id.toString(), id!!)
                 }
@@ -121,6 +130,15 @@ class ProtectionPayDialog : BaseDialogFragment<DialogProtectionPayBinding>(),
                 "sand_wechat" -> {
                     sandRecharge(
                         "sand_wechat",
+                        item!!.id,
+                        -1,
+                        getScheme(), id!!
+                    )
+                }
+
+                "sand_wechat_v4" -> {
+                    sandRecharge(
+                        "sand_wechat_v4",
                         item!!.id,
                         -1,
                         getScheme(), id!!
@@ -368,7 +386,7 @@ class ProtectionPayDialog : BaseDialogFragment<DialogProtectionPayBinding>(),
                             response.body()?.data?.let {
                                 if (mPayType == PayDialog.WECHAT) {
                                     PayUtils.wechatPay(requireActivity(), it)
-                                } else if (mPayType == PayDialog.LE_SHUA_PAY || mPayType == PayDialog.WECHAT_H5_PAY) {
+                                } else if (mPayType == PayDialog.LE_SHUA_PAY || mPayType == PayDialog.WECHAT_H5_PAY || mPayType == PayDialog.TAI_SHAN_PAY) {
                                     if (it.payUrl.isNotEmpty()) {
                                         try {
                                             val intent = Intent()
@@ -382,6 +400,8 @@ class ProtectionPayDialog : BaseDialogFragment<DialogProtectionPayBinding>(),
                                     }
                                 } else if (mPayType == PayDialog.ALIPAY) {
                                     PayUtils.aliPay(requireActivity(), it.payinfo)
+                                } else if (mPayType == PayDialog.TAI_SHAN_PAY) {
+                                    PayUtils.aliPay(requireActivity(), it.payUrl)
                                 }
                             }
                         }
@@ -418,6 +438,10 @@ class ProtectionPayDialog : BaseDialogFragment<DialogProtectionPayBinding>(),
 
                                 "sand_alipay" -> {
                                     PayUtils.sendWechat(requireActivity(), response.body()?.data!!)
+                                }
+
+                                "sand_wechat_v4", "sand_alipay_v4" -> {
+                                    PayUtils.sandWechat(requireActivity(), response.body()?.data!!.url)
                                 }
                             }
                             dismiss()

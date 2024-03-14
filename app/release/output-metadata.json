@@ -10,9 +10,9 @@
     {
       "type": "SINGLE",
       "filters": [],
-      "versionCode": 1,
-      "versionName": "1.0.0",
-      "outputFile": "com.gxyisikeji.micheng_1(1.0.0)_release.apk"
+      "versionCode": 2,
+      "versionName": "1.0.1",
+      "outputFile": "com.gxyisikeji.micheng_2(1.0.1)_release.apk"
     }
   ]
 }
